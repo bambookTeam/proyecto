@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 
 //Se declaran todos los accesos de los archivos routes.
 const sucursal_route = require('./router/sucursal');
+const genero_route = require('./router/genero');
 
 const app = express();
 app.use(cors());
@@ -51,5 +52,6 @@ function handleError(res, reason, message, code) {
 
 // Conexion a todas la rutas.z
 app.use('/api', sucursal_route);
+app.use('/api', genero_route);
 
 //localhost:3000/api/registrar-sucursal
