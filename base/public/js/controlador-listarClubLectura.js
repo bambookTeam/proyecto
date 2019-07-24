@@ -38,7 +38,6 @@ let listarClubes = async()=>{
     let temaGenerolinea = document.createElement('h3');
     temaGenerolinea.innerHTML=listaClubes[i].tema + ' - ' + listaClubes[i].genero;
     let btn = document.createElement('button');
-
     btn.innerHTML="Unirse";
     btn.setAttribute('class','unirse_Club');
 
