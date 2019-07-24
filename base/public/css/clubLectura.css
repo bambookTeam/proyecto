@@ -1,0 +1,187 @@
+    html{
+        min-width: 1024px;
+    }
+    .modal-content{
+        width:40%;
+        text-align: center;
+        height:1020px;
+    }
+    #navi button{
+        display:block;
+         margin:10px 5px 10px 839px;
+         padding:5px 10px;
+         background-color:#d7cec7;
+         border:solid 0;
+         float:left;
+         border-radius:5px;
+     }
+     
+     #navi button:hover{
+         opacity:0.9;
+         color:white;
+         background-color:#c09f80;
+     }
+   
+     .filtrar{
+         float:left;
+         margin-left: 15px;
+     }
+     #buscarClub{
+         width:250px;
+         border:none;
+         padding:8px;
+     }
+     .filtrar label{
+         font-size:0px;
+     }
+     .botonesClubes{
+         margin:20px 0 60px 600px;
+         display:flow-root;
+     }
+
+     .botonesClubes button{
+        border-radius:5px; 
+        padding:5px 10px;
+     }
+     .btn2{
+         margin:0 30px;
+         background-color:#76323f;
+         color:#fff;
+         width:30%;
+         float:left;
+     }
+    
+     .btn2:hover{
+         background-color: #3d1e24;   
+     }
+     #clubes{
+         
+         background-color:#aaaaaa;
+     }
+ 
+     #clubes img,#RegistrarClubScreen img{
+         width:75px;
+         float:left; 
+         margin:35px 20px 0 20px;
+     }
+ 
+     .club{
+         float:left;
+         background-color:#76323f;
+         width:45%;
+         height:150px;
+         margin:10px 20px;
+         border-radius: 15px;
+     }
+ 
+     .club-info{
+         float:left; 
+         font-size:10px;
+         color:#d7cec7;
+     }
+ 
+     .club-info h1{
+         font-size:20px;
+         margin:5px 0;
+         width:210px;
+     }
+ 
+     .club-info h3{
+         margin:2px 0;
+     }
+
+     .sign-in img{
+         padding-left:150px;
+     }
+
+     .sign-in label{
+         width:100%;
+         font-size: 13px;
+         margin:10px 0;
+     }
+
+    
+
+     .dateInput{
+         width:250px;
+         text-align: center;
+         margin:10px 0 0 0;
+         display:inline-block;
+     }
+
+     .dateInput input{
+         width:250px;
+         
+     }
+     .modal input[type=date],input{
+        width:75%;
+        height:15px;
+        border-radius:5px;
+
+     }
+     #txt-clubLectura{
+         width:350px;
+     }
+    .modal-content h2{
+        font-size:10px;
+        color:red;
+        margin:5px 0;
+        display:none;
+    }
+   .listas{
+       width:100%;
+       float:left;
+   }
+
+   .modal select{
+       width:200px;
+   }
+
+   
+    #modalidad_Club_lista{
+        display:flow-root;
+    }
+
+
+
+    .btnsForm{
+        display:flow-root;
+        width:100%;
+        padding:30px 0;
+        height:50px;
+    }
+
+    #error_listas{
+        display:flow-root;
+        width:100%;
+        padding-top:10px;
+        display:none;
+    }
+
+    .dateErrors {
+        display:flow-root;
+        width:100%;
+    }
+
+    .unirse_Club{
+        margin:95px 0 0 25px;
+    }
+
+    .unirse_Club:hover{
+        background-color:#c09f80;
+    }
+    
+    
+    #horaClub{
+        width:189px;
+    }
+
+    input{
+        height:15px;
+    }
+
+    select{
+        height:25px;
+    }
+
+    

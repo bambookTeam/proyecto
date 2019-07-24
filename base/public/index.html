@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Bambooks
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/landingPageVisitor.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <section id="navi">
+            <a href="index.html"> <img src="imgs/panda_grain.png" alt=""></a>
+
+            <button type="btn" class="sesion" id="myBtn">Iniciar Sesion</button>
+
+        </section>
+    </header>
+
+    <main>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="sign-in">
+                    <h1>Inicio</h1>
+                    <img src="imgs/pandauser.png" alt="">
+                    <div class="line"></div>
+                    <form action="" id="formulario">
+                        <label for="usuario">Usuario</label>
+                        <input id="txt-username" type="text" placeholder="Nombre de Usuario" id="usuario">
+
+                        <label for="pw">Contraseña</label>
+                        <input id="txt-contrasena" type="password" placeholder="Contraseña" id="pw">
+                    </form>
+
+                </div>
+                <div id="rellene">
+                    <p>Por favor rellene los espacios en rojo e intente de nuevo</p>
+                </div>
+                <div class="botones">
+                        <button id="btnCancel">Cancelar</button>
+                        <button id="btnSignIn">Sign In</button>
+                </div>
+                <div class="forgot">
+                    <a href="">Olvidé mi contraseña</a>
+                    <a href="">Registrarme</a>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="banner">
+            <video autoplay muted loop id="myVideo">
+                <source src="imgs/library-timelapse.mp4" type="video/mp4">
+            </video>
+
+            <div class="banner-content">
+                <h1>¡Construye tu propia librería!</h1>
+                <p>Bambooks te ofrece variedad en géneros y autores</p>
+                
+
+            </div>
+        </section>
+
+        <section id="booklists">
+
+        </section>
+
+    </main>
+    <script src="js/noback.js"></script>
+    <script src="js/landingVisitor.js"></script>
+    <script src="js/controlador-index.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+</body>
+
+</html>
