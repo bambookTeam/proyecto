@@ -1,0 +1,108 @@
+body{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.boton_registrar {
+
+    background: #2f3542;
+    color: #fff;
+    font-size: 16px;
+    width: 150px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+
+nav{
+    height: 50px;
+    background-color: #76323F;
+}
+
+nav img{
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+  
+nav ul li {
+    display: inline;
+}
+
+nav ul li a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+    color: #D7CEC7;
+}
+
+.cerrar_sesion {
+
+    border: 1px solid #D7CEC7;
+}
+
+main{
+
+    display: flow-root;
+    text-align: center;
+}
+
+h1{
+
+    color: #76323F;
+    font-size: 30px;
+    margin: 30px;
+}
+
+.nombre_categoria{
+
+    text-align: center;
+}
+
+h2 {
+
+    color: #76323F;
+    font-size: 20px;
+    margin: 30px;
+
+}
+
+input{
+    width: 60%;
+    margin: 15px;
+    padding: 5px;
+    border: 1px solid #76323F;
+    background: none;
+    outline: none;
+    
+}
+
+.input_error {
+    
+    border: 2px #e74c3c solid !important;
+}
+
+::-webkit-input-placeholder{
+    color: #76323F;
+}
+
+button{
+
+    margin: 50px 0;
+    padding: 10px;
+    border: 1px solid #76323F;
+    font-size: 20px;
+    color: #76323F;
+    background: none;
+    outline: none; 
+}
