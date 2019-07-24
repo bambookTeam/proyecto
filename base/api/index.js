@@ -9,6 +9,8 @@ const mongoose = require('mongoose');
 const libreria_route = require('./router/libreria');
 const sucursal_route = require('./router/sucursal');
 const genero_route = require('./router/genero');
+const clubLectura_route=require('./router/clubLectura');
+const evento_route=require('./router/evento');
 
 const app = express();
 app.use(cors());
@@ -55,6 +57,6 @@ function handleError(res, reason, message, code) {
 app.use('/api', libreria_route);
 app.use('/api', sucursal_route);
 app.use('/api', genero_route);
-
-//localhost:3000/api/registrar-libreria
+app.use('/api', clubLectura_route);
+app.use('/api',evento_route);
 //localhost:3000/api/registrar-sucursal
