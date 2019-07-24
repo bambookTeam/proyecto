@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+
+    <title>
+      Registro
+    </title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/registrar_cliente.css">
+
+
+  </head>
+
+  <body>
+      
+    <nav>
+
+        <img src="imgs/panda color grain.png" alt="">         
+
+    </nav>
+
+    <main>
+
+        <h1>Registar </h1>
+
+        <section id = "datos_personales">
+  
+          <h2>Datos personales</h2>
+  
+          <input id="txt_primer_nombre"  type="text"  placeholder = "Primer Nombre" >
+          <input id="txt_segundo_nombre"  type="text"  placeholder = "Segundo Nombre" >
+          <input id="txt_primer_apellido"  type="text"  placeholder = "Primer Apellido" >
+          <input id="txt_segundo_apellido"  type="text"  placeholder = "Segundo Apellido" >
+
+          <select name="" id="txt_sexo">
+            <option value="">Sexo</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Otro">Otro</option>
+         </select>
+
+          <input id="txt_identificacion"  type="text"  placeholder = "Identificación" >
+          <input id="txt_correo"  type="text"  placeholder = "Correo Electrónico" >
+
+          <select name="" id="txt_provincia">
+            <option value="">Provincia</option>
+            <option value="Alajuela">Alajuela</option>
+            <option value="Cartago">Cartago</option>
+            <option value="Heredia">Heredia</option>
+            <option value="San Jose">San José</option>
+            <option value="Puntarenas">Puntarenas</option>
+            <option value="Limon">Limón</option>
+            <option value="Guanacaste">Guanacaste</option>
+         </select>
+
+         <input id="txt_canton"  type="text"  placeholder = "Cantón" >
+
+         <input id="txt_distrito"  type="text"  placeholder = "Distrito" >
+
+         <input id="txt_direccion"  type="text"  placeholder = "Dirección Exacta" >
+
+         <input id="txt_nombre_usuario"  type="text"  placeholder = "Nombre Usuario" >
+
+         <input id="img_avatar"  type="image"  placeholder = "Avatar" >
+
+
+
+
+
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1915192287242!2d-84.04903608571853!3d9.918001777163246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e397932ca451%3A0xef8088362eda931!2sMultiplaza+Curridabat!5e0!3m2!1ses-419!2scr!4v1562653229172!5m2!1ses-419!2scr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+
+
+
+  
+        </section>
+  
+  
+        <button type ="button" class="boton_registrar" id="btn_registrar">Registrar</button>  
+
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/servicio_cliente.js"></script>
+    <script src="js/controlador_registrar_cliente.js"></script>
+
+   
+    
+  </body>
+
+
+</html>
