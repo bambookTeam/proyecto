@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Registro Club de Lectura
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/landingPageVisitor.css">
+    <link rel="stylesheet" href="css/clubLectura.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<header>
+    <section id="navi">
+
+        <a href="index.html"> <img src="imgs/panda color grain.png" alt=""></a>
+
+        <button type="btn" class="sesion" id="">CerrarSesion</button>
+
+    </section>
+</header>
+
+<body>
+
+    <main>
+            <div class="filtrar">
+                    <label for="buscarClub">Buscar Club de Lectura</label>
+                    <input type="text" placeholder="Buscar" id="buscarClub"> 
+            </div>
+        <div class="botonesClubes">
+            <button class="btn2" id="btnRegistrarClub">Registrar Club</button>
+            <button class="btn2" id="btnListarMisClubes">Mis Clubes</button>
+        </div>
+
+        <div id="RegistrarClubScreen" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content" id="modal-content">
+                <span class="close">&times;</span>
+                <div class="sign-in">
+                    <h1>Nuevo Club de Lectura</h1>
+                    <img src="imgs/readingPanda.png" alt="">
+                    <div class="line"></div>
+                    <form action="" id="formulario-ClubLectura">
+                        <label for="txt-clubLectura">Nombre del Club de Lectura</label>
+                        <input id="txt-clubLectura" type="text" placeholder="Nombre del Club" maxlength="60">
+
+                        <h2 id="error_content" class="error">Por favor rellene los campos marcados</h2>
+
+                        <div>
+                                <label for="modalidad_Club">Modalidad</label>
+                                <select name="" id="modalidad_Club" onchange="hideHora()">
+    
+                                        <option value="Presencial">Presencial</option>
+                                    <option value="Virtual">Virtual</option>
+                                    
+                                </select>
+                        </div>
+                        <h2 id="error_modalidad" class="error">Seleccione un valor de la lista</h2>
+
+                        <div class="dateInput">
+                            <label>Fecha de Inicio</label>
+                            <input type="date" id="fechaInicioClub">
+                        </div>
+
+                        <div class="dateInput">
+                            <label>Fecha de Fin</label>
+                            <input type="date" id="fechaFinClub">
+                        </div>
+
+                        <div class="dateErrors">
+
+                            <h2 id="error_fechaDia" class="error">La fecha no puede ser anterior al día de hoy</h2>
+                            <h2 id="error_fecha" class="error">Seleccione una fecha Válida</h2>
+                            <h2 id="error_fechaFin" class="error">La fecha de fin no puede ser antes que la de
+                                Inicio</h2>
+                        </div>
+
+                        <div id="horasClub">
+                            <label for="">Hora:</label>
+                            <input type="time" value="08:30" step="600" id="horaClub">
+                        </div>
+
+                        <div>
+                            <label for="">Frecuencia</label>
+                            <select name="" id="frecuencia_club">
+                                <option value="Todos los días">Todos los días</option>
+                                <option value="Lunes y Miercoles">Lunes & Miércoles</option>
+                                <option value="Martes y Jueves">Martes & Jueves</option>
+                                <option value="Todos los Viernes">Todos los Viernes</option>
+                                <option value="Todos los Sábados">Todos los Sabados</option>
+                            </select>
+                        </div>
+
+                        <div id="lista_tema_clubes" class="listas">
+                            <label for="temas_club">Tema</label>
+                        </div>
+
+                        <div id="lista_genero_clubes" class="listas">
+                            <label for="generos_club">Géneros</label>
+                        </div>
+
+                        <div id="lista_categoria_club" class="listas">
+                            <label for="categorias_club">Categorías</label>
+                        </div>
+
+                        <div id="lista_libreria_club" class="listas">
+                            <label for="librerias_club">Librerias</label>
+                        </div>
+
+                        <div id="lista_sucursal_club" class="listas">
+                            <label for="sucursales_club">Sucursales</label>
+                        </div>
+
+                        
+
+                        <h2 id="error_listas" class="error">Seleccione un valor de la lista</h2>
+
+                    </form>
+
+                    <div class="btnsForm">
+                        <button id="btnCancelClub" class="cancel">Cancelar</button>
+                        <button id="btnCrearClub" class="submit">Crear Club</button>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <section id="clubes">
+
+            
+
+
+        </section>
+
+
+    </main>
+    <script src="js/noback.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/controlador-listarClubLectura.js"></script>
+    <script src="js/controlador-clubLectura.js"></script>
+    
+    <script src="js/servicio-clubLectura.js"></script>
+
+
+</body>
+
+</html>
