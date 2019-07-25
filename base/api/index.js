@@ -11,6 +11,7 @@ const sucursal_route = require('./router/sucursal');
 const genero_route = require('./router/genero');
 const clubLectura_route=require('./router/clubLectura');
 const evento_route=require('./router/evento');
+const usuario_route=require('./router/usuario');
 
 const app = express();
 app.use(cors());
@@ -58,5 +59,7 @@ app.use('/api', libreria_route);
 app.use('/api', sucursal_route);
 app.use('/api', genero_route);
 app.use('/api', clubLectura_route);
-app.use('/api',evento_route);
+app.use('/api', evento_route);
+app.use('/api', usuario_route);
+
 //localhost:3000/api/registrar-sucursal
