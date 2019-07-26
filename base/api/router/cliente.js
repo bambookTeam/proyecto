@@ -1,9 +1,8 @@
-
 'use strict';
 
 const express = require('express'),
-  router = express.Router(),
-  Cliente = require('../models/cliente.model');
+    router = express.Router(),
+    Cliente = require('../models/cliente.model');
 
 router.post('/registrar_cliente', function(req,res){
     

@@ -2,8 +2,6 @@
 
 const mongoose = require('mongoose');
 
-
-
 let cliente_schema = new mongoose.Schema({
     primerNombre: {type: String, required: true,unique: false},
     segundoNombre: {type: String, requiered: false, unique: false},
@@ -17,8 +15,12 @@ let cliente_schema = new mongoose.Schema({
     nombreUsuario: {type: String, required: true, unique: false},
    // avatar:{type: Image, required: false, unique: false}        
 
+   nombreUsuario: { type: String, required: false, unique: false },
+   direccion: { type: String, required: false, unique: false }
+
+   //provincia: {type: String, required: false, unique: false},
+   //canton: {type: String, required: false, unique: false},
+   //distrito: {type: String, required: false, unique: false},
 });
-
 module.exports = mongoose.model('Cliente', cliente_schema);
-
 

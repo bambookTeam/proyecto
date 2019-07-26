@@ -6,14 +6,25 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 //Se declaran todos los accesos de los archivos routes.
+//NATY
 const libreria_route = require('./router/libreria');
 const sucursal_route = require('./router/sucursal');
+//NATY
+
+//ARI
 const genero_route = require('./router/genero');
+//ARI
+
+//DIEGO
 const cliente_route = require('./router/cliente');
 const categoria_route = require('./router/categoria');
+//DIEGO
+
+//SEBAS
 const clubLectura_route=require('./router/clubLectura');
 const evento_route=require('./router/evento');
 const usuario_route = require('./router/cliente');
+
 
 const app = express();
 app.use(cors());
@@ -57,14 +68,24 @@ function handleError(res, reason, message, code) {
 }
 
 // Conexion a todas la rutas.z
+//NATY
 app.use('/api', libreria_route);
 app.use('/api', sucursal_route);
+//NATY
+
+//ARI
 app.use('/api', genero_route);
+//ARI
+
+//DIEGO
 app.use('/api', cliente_route);
 app.use('/api', categoria_route);
+//DIEGO
 
+//SEBAS
 app.use('/api', clubLectura_route);
+
 app.use('/api',evento_route);
 app.use('/api',usuario_route);
+app.use('/api', evento_route);
 
-//localhost:3000/api/registrar-sucursal
