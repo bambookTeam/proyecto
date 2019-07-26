@@ -3,7 +3,7 @@
 let registrarAdminLibreria = (pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/registrar-libreria',
+        url: 'http://localhost:4000/api/registrar_cliente',
         responseType: 'json',
         data: {
 
