@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 
 
-let cliente_shema = new mongoose.Schema({
+let cliente_schema = new mongoose.Schema({
     primerNombre: {type: String, required: true,unique: false},
     segundoNombre: {type: String, requiered: false, unique: false},
     primerApellido: {type: String, required: true,unique: false},
@@ -19,6 +19,6 @@ let cliente_shema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('Cliente', cliente_shema);
+module.exports = mongoose.model('Cliente', cliente_schema);
 
 

@@ -34,12 +34,15 @@ let listarClubes = async()=>{
     }else{
         horaLinea.innerHTML=listaClubes[i].hora+ "-" + listaClubes[i].frecuencia;
     }
-
+    console.log(listaClubes[i].genero);
     let temaGenerolinea = document.createElement('h3');
     temaGenerolinea.innerHTML=listaClubes[i].tema + ' - ' + listaClubes[i].genero;
-    let btn = document.createElement('button');
-    btn.innerHTML="Unirse";
-    btn.setAttribute('class','unirse_Club');
+    let btnUnirseClub = document.createElement('button');
+    btnUnirseClub.innerHTML="Unirse";
+    btnUnirseClub.setAttribute('class','unirse_Club');
+    let btnCrearEvento = document.createElement('button');
+    btnCrearEvento.innerHTML="Agregar Evento";
+    btnCrearEvento.setAttribute('class','crear_Evento');
 
 
     clubInfoDiv.appendChild(h1);
@@ -47,7 +50,8 @@ let listarClubes = async()=>{
     clubInfoDiv.appendChild(fechaLinea);
     clubInfoDiv.appendChild(horaLinea);
     clubInfoDiv.appendChild(temaGenerolinea);
-    div.appendChild(btn);
+    div.appendChild(btnUnirseClub);
+    div.appendChild(btnCrearEvento);
 
 
     }
