@@ -23,7 +23,7 @@ const categoria_route = require('./router/categoria');
 //SEBAS
 const clubLectura_route=require('./router/clubLectura');
 const evento_route=require('./router/evento');
-//SEBAS
+const usuario_route = require('./router/cliente');
 
 const app = express();
 app.use(cors());
@@ -83,5 +83,7 @@ app.use('/api', categoria_route);
 
 //SEBAS
 app.use('/api', clubLectura_route);
-app.use('/api', evento_route);
-//SEBAS
+app.use('/api',evento_route);
+app.use('/api',usuario_route);
+
+//localhost:3000/api/registrar-sucursal

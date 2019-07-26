@@ -28,13 +28,15 @@ btn.onclick = function () {
     modal.style.display = "block";
 }
 
-let showSelects = () => {
+let showSelects = async() => {
 
-    let arrayGenero = ['Sin Género','Drama', 'Sci-Fi', 'Romance'];
+    let arrayGenero = [];
     let arrayTema = ['Cocori', 'Unica Mirando al Mar', '1984'];
     let arrayCategorias= ['Sin Categoría','A','B','C'];
     let arrayLibrerias = ['Libreria Internacional','Wal-mart','Universal'];
     let arraySucursales = ['1','2','3'];
+
+    arrayGenero=await listarGenero();
 
     let parentTema = document.getElementById('lista_tema_clubes');
     let parentGenero = document.getElementById('lista_genero_clubes');
@@ -65,9 +67,9 @@ let showSelects = () => {
 
     for (let i = 0; i < arrayGenero.length; i++) {
         let optionGenero = document.createElement('option');
-        optionGenero.setAttribute('value', arrayGenero[i]);
-
-        optionGenero.innerHTML = arrayGenero[i];
+        optionGenero.setAttribute('value', arrayGenero[i].genero);
+    
+        optionGenero.innerHTML = arrayGenero[i].genero;
         optionGenero.style.width = "300px"
         selectGenero.appendChild(optionGenero);
     }
@@ -241,7 +243,6 @@ btnCrearClub.onclick = function () {
 
     } else {
         document.getElementById('modal-content').style.height = "1080px";
-
     }
 
 }

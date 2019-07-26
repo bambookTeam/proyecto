@@ -55,4 +55,4 @@ router.post('/registrar_cliente', function(req,res){
 
 });
 
-module.exports = router;
+module.exports=router;

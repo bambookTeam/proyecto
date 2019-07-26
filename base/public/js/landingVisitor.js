@@ -36,6 +36,10 @@ let cleanSignIn  = () => {
   document.querySelector('#txt-contrasena').classList.remove('input_error');
   document.querySelector('#rellene').style.display="none";
 }
+
+let validarCredenciales = () =>{
+  
+}
 /*
 let sendEmail = () => {
   Email.send({

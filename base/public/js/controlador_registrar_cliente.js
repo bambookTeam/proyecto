@@ -184,19 +184,19 @@ let guardar =() =>
  
  
     let error = validar(nombre1, nombre2, apellido1, apellido2, identificacion, sexo, correo, direccion, nombreUsuario);
-    
+    error=false;
     if( error == false )
     {
-        registroEnLinea(nombre1,nombre2,apellido1,apellido2,identificacion,sexo,correo,direccion,nombreUsuario)        
+        registroEnLinea(nombre1,nombre2,apellido1,apellido2,sexo,identificacion,correo,direccion,nombreUsuario) 
         Swal.fire({
             title: 'Se ha guardado el cliente',
-            type: 'succes',
+            type: 'success',
             text: 'Se enviara un correo para confirmar su cuenta'
         })
     }else
     {
         Swal.fire({
-            tittle: 'No se pudo hacer el registro',
+            title: 'No se pudo hacer el registro',
             type: 'warning',
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
