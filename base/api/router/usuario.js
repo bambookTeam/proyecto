@@ -1,19 +1,31 @@
 'use strict';
 
+//const nodeMailer = require('./nodemailer');
 const express = require('express'),
-    router = express.Router(),
-    Cliente = require('../models/cliente.model');
+  router = express.Router(),
+  Usuario = require('../models/usuario.model');
 
-router.post('/registrar_cliente', function(req,res){
-    
+
+/*const transporter = nodeMailer.createTransport({
+    service : 'gmail',
+    auth : {
+        user : 'bambooks.team@gmail.com',
+        pass : '#bambook123'
+    }
+
+
+}); */
+
+router.post('/registrar_usuario', function(req,res){
+
     let body = req.body;
 
-    let nuevo_contacto = new Cliente ({
+    let nuevo_usuario = new Usuario ({
         primerNombre: body.primerNombre,
         segundoNombre: body.segundoNombre,
         primerApellido: body.primerApellido,
         segundoApellido: body.segundoApellido,
-        sexo: body.sexo, 
+        sexo: body.sexo,
         identificacion: body.identificacion,
         correo: body.correo,
         //distrito: body.distrito,
@@ -25,23 +37,24 @@ router.post('/registrar_cliente', function(req,res){
 
 
 
-    nuevo_contacto.save(
-        function(err, clienteDB) {
+    nuevo_usuario.save(
+        function(err, usuarioDB) {
 
             if(err){
-                
+
                 return res.status(400).json({
                     success: false,
-                    msj: 'El cliente no se pudo guardad',
+                    msj: 'El usuario no se pudo guardar',
                     err
 
                 });
 
 
             }else {
+
                 res.json({
                     success: true,
-                    msj: 'El cliente se guardó con éxito'                    
+                    msj: 'El usuario se guardó con éxito'
                 });
 
             }
@@ -49,9 +62,7 @@ router.post('/registrar_cliente', function(req,res){
 
         }
 
-    )
-
-
+    );
 
 });
 

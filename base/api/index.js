@@ -13,10 +13,7 @@ const sucursal_route = require('./router/sucursal');
 
 //ARI
 const genero_route = require('./router/genero');
-//ARI
-
-//DIEGO
-const cliente_route = require('./router/cliente');
+const usuario_route = require('./router/usuario');
 const categoria_route = require('./router/categoria');
 //DIEGO
 
@@ -74,14 +71,8 @@ app.use('/api', sucursal_route);
 
 //ARI
 app.use('/api', genero_route);
-//ARI
-
-//DIEGO
-app.use('/api', cliente_route);
+app.use('/api', usuario_route);
 app.use('/api', categoria_route);
-//DIEGO
-
-//SEBAS
 app.use('/api', clubLectura_route);
 app.use('/api',evento_route);
 app.use('/api',usuario_route);
