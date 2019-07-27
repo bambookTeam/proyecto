@@ -1,4 +1,3 @@
-
 'use strict';
 
 //const nodeMailer = require('./nodemailer');
@@ -67,4 +66,4 @@ router.post('/registrar_usuario', function(req,res){
 
 });
 
-module.exports = router;
+module.exports=router;
