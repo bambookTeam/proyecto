@@ -1,0 +1,48 @@
+body{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+nav{
+    height: 50px;
+    background-color: #76323F;
+}
+
+nav img{
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+  
+nav ul li {
+    display: inline;
+}
+
+nav ul li a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+    color: #D7CEC7;
+}
+
+.cerrar_sesion{
+    border: 1px solid #D7CEC7;
+}
+
+main{
+    text-align: center;
+}
+
+h1{
+    color: #76323F;
+    font-size: 30px;
+    margin: 30px;
+}

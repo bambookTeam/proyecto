@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const libreria_route = require('./router/libreria');
 const sucursal_route = require('./router/sucursal');
 const genero_route = require('./router/genero');
-const cliente_route = require('./router/cliente');
+const usuario_route = require('./router/usuario');
 const categoria_route = require('./router/categoria');
 const clubLectura_route=require('./router/clubLectura');
 const evento_route=require('./router/evento');
@@ -59,9 +59,8 @@ function handleError(res, reason, message, code) {
 app.use('/api', libreria_route);
 app.use('/api', sucursal_route);
 app.use('/api', genero_route);
-app.use('/api', cliente_route);
+app.use('/api', usuario_route);
 app.use('/api', categoria_route);
-
 app.use('/api', clubLectura_route);
 app.use('/api',evento_route);
 //localhost:3000/api/registrar-sucursal
