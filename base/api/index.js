@@ -20,7 +20,7 @@ const categoria_route = require('./router/categoria');
 //SEBAS
 const clubLectura_route=require('./router/clubLectura');
 const evento_route=require('./router/evento');
-const usuario_route = require('./router/cliente');
+
 
 const app = express();
 app.use(cors());
