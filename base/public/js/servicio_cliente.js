@@ -12,16 +12,36 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             segundoNombre: pnombre2,
             primerApellido: papellido1,
             segundoApellido: papellido2,
-            sexo: psexo, 
+            sexo: psexo,
             identificacion: pidentificacion,
             correo: pcorreo,
-             //distrito: pdistrito,
+            //distrito: pdistrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
-           // avatar: pavatar
+            // avatar: pavatar
 
         }
     });
 
+};
+
+let iniciar_Sesion = (pidentificacion) => {
+    let respuesta='';
+    let peticion = 
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/validar_credenciales',
+        responseType: 'json',
+        data: {
+            identificacion: pidentificacion
+        }
+    }).then(
+        function (response) {
+            respuesta=response
+            console.log(respuesta);
+        }
+    )
+
+    return respuesta;
 };
 

@@ -32,15 +32,14 @@ let validarSignIn = (pusuario,pcontrasena)=>{
 let saludar = () =>{
     let tusuario = input_usuario.value;
     let tcontrasena=input_contrasena.value;
-    console.log(tusuario,tcontrasena);
     let error = validarSignIn(tusuario,tcontrasena);
+    let errorCredenciales = iniciar_Sesion(tusuario);
 
-    if (error == false) {
-
-        console.log('owo');
-        div_rellene.style.display="none";
+    if (error == false && errorCredenciales==false) {
+        console.log(errorCredenciales);
+        
     } else {
-        console.log('unu');
+        console.log('no existe pa');
         div_rellene.style.display="block";
         
     }
