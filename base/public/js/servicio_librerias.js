@@ -48,3 +48,18 @@ let obtenerLibrerias = async() => {
         console.log(error);
     }
 };
+
+let obtenerLibreriaId = async(_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-libreria-id/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.libreria;
+    } catch (error) {
+        console.log(error);
+    }
+};

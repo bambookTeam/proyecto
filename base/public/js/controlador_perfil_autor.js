@@ -1,7 +1,9 @@
 'use strict';
 
 const urlParams = new URLSearchParams(window.location.search);
+
 let _id = urlParams.get('_id');
+
 const txt_nombre = document.querySelector('#txt_nombre');
 const txt_nombre_artistico = document.querySelector('#txt_nombre_artistico');
 const txt_nacimiento = document.querySelector('#txt_nacimiento');

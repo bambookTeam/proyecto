@@ -1,6 +1,6 @@
 'use strict';
 
-let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pdireccion, pnombreUsuario) => {
+let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pdireccion, pnombreUsuario, pcontrasena) => {
 
     axios({
 
@@ -18,7 +18,8 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             //distrito: pdistrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
-            // avatar: pavatar
+            contrasena: pcontrasena,
+           // avatar: pavatar
 
         }
     });
@@ -26,8 +27,7 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
 };
 
 let iniciar_Sesion = async(pidentificacion)=> {
-    let respuesta = '';
-    axios({
+    let respuesta = await axios({
         method:'post',
         url:'http://localhost:4000/api/validar_credenciales',
         responseType: 'json',
@@ -36,13 +36,43 @@ let iniciar_Sesion = async(pidentificacion)=> {
         }
     }).then(
         function(response){
-            console.log('servicio');
+
+            return(response)
         }
 
     )
+    return respuesta.data.success;
 
-    return respuesta
 
     
 
+};
+let obtenerUsuarios = async() => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: 'http://localhost:4000/api/listar-usuarios',
+            responseType: 'json'
+        });
+
+        return response.data.lista_usuarios;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+let obtenerUsuarioId = async(_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-usuario-id/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.usuario;
+    } catch (error) {
+        console.log(error);
+    }
 };
