@@ -5,7 +5,10 @@ const express = require('express'),
   router = express.Router(),
   Usuario = require('../models/usuario.model');
 
-
+  router.param("_id", function (req, res, next, _id) {
+    req.body._id = _id;
+    next();
+});
 /*const transporter = nodeMailer.createTransport({
     service : 'gmail',
     auth : {
@@ -30,7 +33,8 @@ router.post('/registrar_usuario', function(req,res){
         correo: body.correo,
         //distrito: body.distrito,
         direccion: body.direccion,
-        nombreUsuario: body.nombreUsuario
+        nombreUsuario: body.nombreUsuario,
+        contrasena: body.contrasena
        // avatar: body.avatar
 
     });

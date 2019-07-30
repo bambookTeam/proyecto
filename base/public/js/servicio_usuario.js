@@ -1,6 +1,6 @@
 'use strict';
 
-let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pdireccion, pnombreUsuario) => {
+let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pdireccion, pnombreUsuario, pcontrasena) => {
 
     axios({
 
@@ -18,6 +18,7 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
              //distrito: pdistrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
+            contrasena: pcontrasena,
            // avatar: pavatar
 
         }

@@ -15,6 +15,7 @@ let usuario_shema = new mongoose.Schema({
     //distrito: {type: String, required: true, unique: false},
     direccion: {type: String, required: true, unique: false},
     nombreUsuario: {type: String, required: true, unique: false},
+    contrasena: {type: String, required: true, unique: true},
    // avatar:{type: Image, required: false, unique: false}
 
    //provincia: {type: String, required: false, unique: false},

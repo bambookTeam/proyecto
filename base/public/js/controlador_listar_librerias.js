@@ -14,6 +14,19 @@ let mostrar_tabla = async() => {
         fila.insertCell().innerHTML = lista_librerias[i]['nombre_comercial'];
         fila.insertCell().innerHTML = lista_librerias[i]['nombre_fantasia'];
         fila.insertCell().innerHTML = lista_librerias[i]['direccion'];
+
+        let celda_perfil = fila.insertCell();
+        let boton_perfil = document.createElement('button');
+        boton_perfil.type = 'button';
+        boton_perfil.innerText = 'Ver perfil';
+        boton_perfil.dataset._id = lista_librerias[i]['_id'];
+
+        celda_perfil.appendChild(boton_perfil);
+
+        boton_perfil.addEventListener('click', function() {
+            //console.log(this.dataset._id);
+            window.location.href = `visualizar_perfil_libreria.html?_id=${this.dataset._id}`
+        });
     }
 };
 

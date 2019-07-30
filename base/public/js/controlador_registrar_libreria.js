@@ -14,6 +14,9 @@ const input_segundo_apellido = document.querySelector('#txt_segundo_apellido');
 const input_sexo = document.querySelector('#txt_sexo');
 const input_correo = document.querySelector('#txt_correo');
 
+const input_nombre_usuario = document.querySelector('#txt_nombre_usuario');
+const input_contrasena = document.querySelector('#txt_contrasena');
+
 let validarIdentificacion = (pidentificacion) =>{
     let validacionId = false;
 
@@ -28,7 +31,7 @@ let validarIdentificacion = (pidentificacion) =>{
 
 };
 
-let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo) => {
+let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo, pnombre_usuario, pcontrasena) => {
 
     let error = false;
 
@@ -96,6 +99,22 @@ let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion,
         input_correo.classList.remove('input_error');
     }
 
+    //Validar nombre usuario
+    if (pnombre_usuario == '') {
+        error = true;
+        input_nombre_usuario.classList.add('input_error');
+    } else {
+        input_nombre_usuario.classList.remove('input_error');
+    }
+
+    //Validar contraseña
+    if (pcontrasena == '') {
+        error = true;
+        input_contrasena.classList.add('input_error');
+    } else {
+        input_contrasena.classList.remove('input_error');
+    }
+
     return error;
 };
 
@@ -111,14 +130,16 @@ let saludar = () => {
     let segundo_apellido = input_segundo_apellido.value;
     let sexo = input_sexo.value;
     let correo = input_correo.value;
+    let nombre_usuario = input_nombre_usuario.value;
+    let contrasena = input_contrasena.value;
 
-    let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo);
+    let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo, nombre_usuario, contrasena);
    
     if (error == false) {
 
         registrarLibreria(nombre_comercial, nombre_fantasia, direccion);
         
-        registroEnLinea (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, direccion, 'test');
+        registroEnLinea (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, direccion, nombre_usuario, contrasena);
 
         Swal.fire({ //formato Jason
             title: 'La librería se a registrado exitosamente',

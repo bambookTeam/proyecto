@@ -14,6 +14,9 @@ const input_correo = document.querySelector('#txt_correo');
 //const input_distrito = document.querySelector('#txt_distrito');
 const input_direccion = document.querySelector('#txt_direccion');
 const input_nombre_usuario = document.querySelector('#txt_nombre_usuario');
+
+const input_contrasena = document.querySelector('#txt_contrasena');
+
 const input_avatar = document.querySelector('#img_avatar');
 
 
@@ -41,7 +44,7 @@ let validarIdentificacion = (pidentificacion) =>
 
 
 
-let validar = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pdireccion, pnombreUsuario) => {
+let validar = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pdireccion, pnombreUsuario, pcontrasena) => {
 
     let error = false;
 
@@ -188,6 +191,14 @@ let validar = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacio
 
     }
 
+     //Validar contraseña
+     if (pcontrasena == '') {
+        error = true;
+        input_contrasena.classList.add('input_error');
+    } else {
+        input_contrasena.classList.remove('input_error');
+    }
+
     return error;
 
 };
@@ -206,15 +217,17 @@ let guardar =() =>
     // CANTON
     let direccion = input_direccion.value;
     let nombreUsuario =input_nombre_usuario.value;
+    let contrasena = input_contrasena.value;
+
     //let avatar = input_avatar.value;
 
 
 
-    let error = validar(nombre1, nombre2, apellido1, apellido2,sexo,identificacion, correo, direccion, nombreUsuario);
+    let error = validar(nombre1, nombre2, apellido1, apellido2,sexo,identificacion, correo, direccion, nombreUsuario, contrasena);
 
     if( error == false )
     {
-        registroEnLinea(nombre1,nombre2,apellido1,apellido2,sexo,identificacion,correo,direccion,nombreUsuario)
+        registroEnLinea(nombre1,nombre2,apellido1,apellido2,sexo,identificacion,correo,direccion,nombreUsuario, contrasena)
         Swal.fire({
             title: 'Se ha guardado el cliente',
             type: 'success',
