@@ -7,7 +7,6 @@ var span = document.getElementsByClassName("close")[0];
 
 
 btn.onclick = function() {
-  console.log(sessionStorage);
   modal.style.display = "block";
 }
 

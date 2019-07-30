@@ -55,7 +55,6 @@ let listarClubes = async()=>{
 
     }
 
-    console.log(sessionStorage);
 }
 
 window.addEventListener('load',listarClubes);
