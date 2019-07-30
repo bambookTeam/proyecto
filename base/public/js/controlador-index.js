@@ -34,7 +34,6 @@ let saludar =  async () =>{
     let tcontrasena=input_contrasena.value;
     let error =  validarSignIn(tusuario,tcontrasena);
     let errorCredenciales = await iniciar_Sesion(tusuario);
-    console.log('controlador');
     
     if (error==true) {
         div_rellene.style.display="block";
@@ -52,6 +51,8 @@ let saludar =  async () =>{
             type: 'success'
            
         })
+
+        location.replace('%20clubesLectura.html');
        
        } else {
         
