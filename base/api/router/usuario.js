@@ -52,6 +52,25 @@ router.post('/registrar_usuario', function(req,res){
 
             }else {
 
+               /* let mailOptions = {
+                    from : 'bambooks.team@gmail.com',
+                    to : nuevo_usuario.correo,
+                    subject : 'Bienvenido a bambooks'
+                };
+
+                transporter.sendMail(mailOptions, function(error, info){
+                    if(error) {
+
+                        console.log(error);
+
+                    } else {
+                        
+                        console.log('Correo enviado');
+                    }           
+
+
+                }) */
+                
                 res.json({
                     success: true,
                     msj: 'El usuario se guardó con éxito'

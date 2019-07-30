@@ -233,38 +233,6 @@ let guardar =() =>
 };
 
 
-/*
-
-let sendEmail = () => {
-  Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "schaconr@ucenfotec.ac.cr",
-    Password : "087cfc8e-bab4-4c3b-9d8c-ba905ef7b227",
-    To : 'zebaz9898@gmail.com',
-    From : "schaconr@ucenfotec.ac.cr",
-    Subject : "Test",
-    Body : "testy bodytse"
-  }).then(
-  message => alert(message)
-  );
-}
-window.addEventListener('load',sendEmail);
-
-
-
-let sendEmail = () => {
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "bambooks.team@gmail.com",
-        Password : "b13c386d-6c3a-4215-bfdc-4082fe6c69ba",
-        To : 'jdiegoquan@gmail.com',
-        From : "bambooks.team@gmail.com",
-        Subject : "Test",
-        Body : "hola mundo"
-    }).then(
-        messsage => alert(message)
-    );
-}*/
 
 
 
