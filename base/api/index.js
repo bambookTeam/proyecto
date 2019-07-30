@@ -6,20 +6,15 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 //Se declaran todos los accesos de los archivos routes.
-//NATY
+const autor_route = require('./router/autor');
+
 const libreria_route = require('./router/libreria');
 const sucursal_route = require('./router/sucursal');
-//NATY
-
-//ARI
 const genero_route = require('./router/genero');
-const usuario_route = require('./router/usuario');
 const categoria_route = require('./router/categoria');
-//DIEGO
-
-//SEBAS
 const clubLectura_route=require('./router/clubLectura');
 const evento_route=require('./router/evento');
+const usuario_route = require('./router/usuario');
 
 
 const app = express();
@@ -64,12 +59,10 @@ function handleError(res, reason, message, code) {
 }
 
 // Conexion a todas la rutas.z
-//NATY
+app.use('/api', autor_route);
+
 app.use('/api', libreria_route);
 app.use('/api', sucursal_route);
-//NATY
-
-//ARI
 app.use('/api', genero_route);
 app.use('/api', usuario_route);
 app.use('/api', categoria_route);

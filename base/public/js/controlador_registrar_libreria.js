@@ -6,7 +6,32 @@ const input_nombre_comercial = document.querySelector('#txt_nombre_comercial');
 const input_nombre_fantasia = document.querySelector('#txt_nombre_fantasia');
 const input_direccion = document.querySelector('#txt_direccion');
 
-let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo) => {
+const input_identificacion = document.querySelector('#txt_identificacion');
+const input_primer_nombre = document.querySelector('#txt_primer_nombre');
+const input_segundo_nombre = document.querySelector('#txt_segundo_nombre');
+const input_primer_apellido = document.querySelector('#txt_primer_apellido');
+const input_segundo_apellido = document.querySelector('#txt_segundo_apellido');
+const input_sexo = document.querySelector('#txt_sexo');
+const input_correo = document.querySelector('#txt_correo');
+
+const input_nombre_usuario = document.querySelector('#txt_nombre_usuario');
+const input_contrasena = document.querySelector('#txt_contrasena');
+
+let validarIdentificacion = (pidentificacion) =>{
+    let validacionId = false;
+
+    if (pidentificacion.length != 9) {
+        validacionId = true;
+
+    } else {
+        for(let i =0; i < pidentificacion.length; i++) {
+        pidentificacion.charAT
+        }
+    }
+
+};
+
+let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo, pnombre_usuario, pcontrasena) => {
 
     let error = false;
 
@@ -34,69 +59,70 @@ let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion,
         input_direccion.classList.remove('input_error');
     }
 
+    //Validar identificación
+    if (pidentificacion == '') {
+        error = true;
+        input_identificacion.classList.add('input_error');
+    } else {
+        input_identificacion.classList.remove('input_error');
+    }
 
-        //Validar identificación
-        if (pidentificacion == '') {
-            error = true;
-            input_identificacion.classList.add('input_error');
-        } else {
-            input_identificacion.classList.remove('input_error');
-        }
-    
-        //Validar primer_nombre
-        if (pprimer_nombre == '') {
-            error = true;
-            input_primer_nombre.classList.add('input_error');
-        } else {
-            input_primer_nombre.classList.remove('input_error');
-        }
-    
-        //Validar segundo_nombre
-        if (psegundo_nombre == '') {
-            error = true;
-            input_segundo_nombre.classList.add('input_error');
-        } else {
-            input_segundo_nombre.classList.remove('input_error');
-        }
-    
-        //Validar primer_apellido
-        if (pprimer_apellido == '') {
-            error = true;
-            input_primer_apellido.classList.add('input_error');
-        } else {
-            input_primer_apellido.classList.remove('input_error');
-        }
-    
-        //Validar segundo_apellido
-        if (psegundo_apellido == '') {
-            error = true;
-            input_segundo_apellido.classList.add('input_error');
-        } else {
-            input_segundo_apellido.classList.remove('input_error');
-        }
-    
-        //Validar sexo
-        if (psexo == '') {
-            error = true;
-            input_sexo.classList.add('input_error');
-        } else {
-            input_sexo.classList.remove('input_error');
-        }
-    
-        //Validar correo
-        if (pcorreo == '') {
-            error = true;
-            input_correo.classList.add('input_error');
-        } else {
-            input_correo.classList.remove('input_error');
-        }
+    //Validar primer_nombre
+    if (pprimer_nombre == '') {
+        error = true;
+        input_primer_nombre.classList.add('input_error');
+    } else {
+        input_primer_nombre.classList.remove('input_error');
+    }
 
+    //Validar primer_apellido
+    if (pprimer_apellido == '') {
+        error = true;
+        input_primer_apellido.classList.add('input_error');
+    } else {
+        input_primer_apellido.classList.remove('input_error');
+    }
 
+    //Validar sexo
+    if (psexo == '') {
+        error = true;
+        input_sexo.classList.add('input_error');
+    } else {
+        input_sexo.classList.remove('input_error');
+    }
+
+    //Validar correo
+    if (pcorreo == '') {
+        error = true;
+        input_correo.classList.add('input_error');
+    } else {
+        input_correo.classList.remove('input_error');
+    }
+
+    //Validar nombre usuario
+    if (pnombre_usuario == '') {
+        error = true;
+        input_nombre_usuario.classList.add('input_error');
+    } else {
+        input_nombre_usuario.classList.remove('input_error');
+    }
+
+    //Validar contraseña
+    if (pcontrasena == '') {
+        error = true;
+        input_contrasena.classList.add('input_error');
+    } else {
+        input_contrasena.classList.remove('input_error');
+    }
 
     return error;
 };
 
 let saludar = () => {
+    let nombre_comercial = input_nombre_comercial.value;
+    let nombre_fantasia = input_nombre_fantasia.value;
+    let direccion = input_direccion.value;
+
     let identificacion = input_identificacion.value;
     let primer_nombre = input_primer_nombre.value;
     let segundo_nombre = input_segundo_nombre.value;
@@ -104,13 +130,17 @@ let saludar = () => {
     let segundo_apellido = input_segundo_apellido.value;
     let sexo = input_sexo.value;
     let correo = input_correo.value;
-    let nombre_comercial = input_nombre_comercial.value;
-    let nombre_fantasia = input_nombre_fantasia.value;
-    let direccion = input_direccion.value;
-    let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo);
+    let nombre_usuario = input_nombre_usuario.value;
+    let contrasena = input_contrasena.value;
+
+    let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo, nombre_usuario, contrasena);
+   
     if (error == false) {
 
-        registrarLibreria(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo);
+        registrarLibreria(nombre_comercial, nombre_fantasia, direccion);
+        
+        registroEnLinea (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, direccion, nombre_usuario, contrasena);
+
         Swal.fire({ //formato Jason
             title: 'La librería se a registrado exitosamente',
             type: 'success',
