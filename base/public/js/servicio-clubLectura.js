@@ -36,3 +36,17 @@ let obtenerClubes = async() =>{
         console.log(error);
     }
 };
+
+
+let obtenerClubId = async(_id) =>{
+    try{
+        const response=await axios({
+            method:'get',
+            url: `http://localhost:4000/api/buscar-clubLectura-id/${_id}`,
+            responseType:JSON
+        });
+        return response.data.club;
+    }catch (error){
+        console.log(error);
+    }
+}

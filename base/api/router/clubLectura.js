@@ -58,6 +58,23 @@ router.get('/listar-clubesLectura', function (req, res) {
     })
 });
 
+router.get('/buscar-clubLectura-id/:_id',function(req,res){
+    ClubLectura.findById(req.body._id,function(err,clubLecturaDB){
+        if(err){
+            return res.status(400).json({
+                success:false,
+                msj: 'No se encontró el club de lectura con ese _id',
+                err
+            });
+        }else{
+            return res.json({
+                success:true,
+                club:clubLecturaDB
+            });
+        }
+    })
+});
+
 /*
 
 module.exports

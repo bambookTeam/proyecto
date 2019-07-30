@@ -36,8 +36,9 @@ let iniciar_Sesion = async(pidentificacion)=> {
         }
     }).then(
         function(response){
-
-            return(response)
+            sessionStorage.setItem('conectado',response.data.success);
+            sessionStorage.setItem('usuario',response.data.usuario.identificacion);
+            return(response);
         }
 
     )
