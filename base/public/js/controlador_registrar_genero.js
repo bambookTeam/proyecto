@@ -4,8 +4,9 @@ var btnRegistrargenero = document.getElementById('btn-registrar-genero'),
     popup = document.getElementById('popup'),
     cerrarpopup = document.getElementById('cerrar'),
     input_genero = document.getElementById('txt-genero'),
-    lista_genero=[];
-
+    lista_genero=[],
+    txt_filtro=document.querySelector('#txt_filtro');
+   
 
   btnRegistrargenero.addEventListener('click', function(){
     overlay.classList.add('active');
@@ -53,8 +54,29 @@ let mostrarlista=async() =>{
     
 
 }
+
+let filtrarlista=async() =>{
+let filtro=txt_filtro.value.toLowerCase();
+let section=document.getElementById('generos_lista');
+
+    section.innerHTML=" ";
+
+    for (let index = 0; index < lista_genero.length; index++) {
+      if(lista_genero[index]['genero'].toLowerCase().includes(filtro)){
+        let parrafo=document.createElement('p');
+       parrafo.innerHTML= lista_genero[index]['genero'];
+       section.appendChild(parrafo);
+        
+    }
+
+}
+
+    
+    
+
+}
 let saludar =() =>{
-    console.log('Hola');
+   
 
     
 let genero = input_genero.value;
@@ -77,6 +99,7 @@ const agregar=document.querySelector('#btn-agregar');
 agregar.addEventListener('click',saludar);
 window.addEventListener('load',mostrarlista);
 agregar.addEventListener('click',mostrarlista);
+txt_filtro.addEventListener('keyup' , filtrarlista);
 
 
 
