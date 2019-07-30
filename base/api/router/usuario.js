@@ -68,7 +68,7 @@ router.post('/registrar_usuario', function(req,res){
 
 //iniciar-sesion
 router.post('/validar_credenciales', function (req, res) {
-    Cliente.findOne({ identificacion: req.body.identificacion }).then(
+    Usuario.findOne({ identificacion: req.body.identificacion }).then(
         function (usuario) {
             if (usuario) {
                 res.json({

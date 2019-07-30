@@ -25,9 +25,8 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
 
 };
 
-let iniciar_Sesion = (pidentificacion) => {
+let iniciar_Sesion  =  (pidentificacion) => {
     let respuesta='';
-    let peticion = 
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/validar_credenciales',
@@ -37,11 +36,10 @@ let iniciar_Sesion = (pidentificacion) => {
         }
     }).then(
         function (response) {
-            respuesta=response
-            console.log(respuesta);
-        }
-    )
-
-    return respuesta;
+            respuesta=response.data.success;
+            console.log(response.data.success);
+        } 
+    )  
+    return respuesta    
 };
 

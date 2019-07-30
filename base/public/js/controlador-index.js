@@ -29,19 +29,40 @@ let validarSignIn = (pusuario,pcontrasena)=>{
     return error;
 }
 
-let saludar = () =>{
+let saludar =  async () =>{
     let tusuario = input_usuario.value;
     let tcontrasena=input_contrasena.value;
     let error = validarSignIn(tusuario,tcontrasena);
-    let errorCredenciales = iniciar_Sesion(tusuario);
-
-    if (error == false && errorCredenciales==false) {
-        console.log(errorCredenciales);
-        
-    } else {
-        console.log('no existe pa');
+    const errorCredenciales = await iniciar_Sesion(tusuario);
+    console.log(errorCredenciales);
+    if (error==true) {
         div_rellene.style.display="block";
+        Swal.fire({ //formato json
+            title: 'Por favor revise los campos en rojo',
+            type: 'warning'
+           
+        })
+    } else {
         
+       if (errorCredenciales==true) {
+        
+        Swal.fire({ //formato json
+            title: 'El inicio de sesión fue exitoso',
+            type: 'success'
+           
+        })
+       
+       } else {
+        
+
+        div_rellene.style.display="block";
+        Swal.fire({ //formato json
+            title: 'El usuario no existe',
+            type: 'warning'
+           
+        })
+        
+       }
     }
     
 }
