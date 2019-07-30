@@ -16,7 +16,7 @@ genero:body.genero
 });
 
 nuevo_genero.save(
-    function(err, generoDB){
+    function(err, generoBD){
 if(err){
     return res.status(400).json({
     success:false,
