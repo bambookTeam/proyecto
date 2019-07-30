@@ -57,4 +57,38 @@ router.post('/registrar_usuario', function(req,res){
 
 });
 
-module.exports=router;
+router.get('/listar-usuarios', function (req, res) {
+    Usuario.find(function (err, usuariosBD) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se pueden listar los usuarios',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                lista_usuarios: usuariosBD
+            });
+        }
+    })
+});
+
+router.get('/buscar-usuario-id/:_id', function(req, res) {
+    Usuario.findById(req.body._id, function(err, usuarioBD) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontró ningún usuario con ese _id',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                usuario: usuarioBD
+            });
+        }
+    })
+});
+
+module.exports = router;
