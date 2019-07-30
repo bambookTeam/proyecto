@@ -25,21 +25,24 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
 
 };
 
-let iniciar_Sesion  =  (pidentificacion) => {
-    let respuesta='';
+let iniciar_Sesion = async(pidentificacion)=> {
+    let respuesta = '';
     axios({
-        method: 'post',
-        url: 'http://localhost:4000/api/validar_credenciales',
+        method:'post',
+        url:'http://localhost:4000/api/validar_credenciales',
         responseType: 'json',
         data: {
-            identificacion: pidentificacion
+            identificacion:pidentificacion
         }
     }).then(
-        function (response) {
-            respuesta=response.data.success;
-            console.log(response.data.success);
-        } 
-    )  
-    return respuesta    
-};
+        function(response){
+            console.log('servicio');
+        }
 
+    )
+
+    return respuesta
+
+    
+
+};

@@ -30,39 +30,30 @@ router.post('/registrar_usuario', function(req,res){
         correo: body.correo,
         //distrito: body.distrito,
         direccion: body.direccion,
-        nombreUsuario: body.nombreUsuario,
-        // avatar: body.avatar
+        nombreUsuario: body.nombreUsuario
+       // avatar: body.avatar
 
     });
 
+    nuevo_usuario.save (function (err, usuarioDB) {
 
-
-    nuevo_usuario.save(
-        function(err, usuarioDB) {
-
-            if(err){
-
-                return res.status(400).json({
+        if(err){
+            return res.status(400).json(
+                {
                     success: false,
                     msj: 'El usuario no se pudo guardar',
                     err
-
-                });
-
-
-            }else {
-
-                res.json({
+                }
+            );
+        } else {
+            res.json(
+                {
                     success: true,
                     msj: 'El usuario se guardó con éxito'
-                });
-
-            }
-
-
+                }
+            );
         }
-
-    );
+    });
 
 });
 

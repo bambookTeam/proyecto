@@ -32,9 +32,10 @@ let validarSignIn = (pusuario,pcontrasena)=>{
 let saludar =  async () =>{
     let tusuario = input_usuario.value;
     let tcontrasena=input_contrasena.value;
-    let error = validarSignIn(tusuario,tcontrasena);
-    const errorCredenciales = await iniciar_Sesion(tusuario);
-    console.log(errorCredenciales);
+    let error =  validarSignIn(tusuario,tcontrasena);
+    let errorCredenciales = await iniciar_Sesion(tusuario);
+    console.log('controlador');
+    
     if (error==true) {
         div_rellene.style.display="block";
         Swal.fire({ //formato json
