@@ -96,7 +96,6 @@ if (error == false) {
 }}
 const agregar=document.querySelector('#btn-agregar');
 agregar.addEventListener('click',saludar);
-mostrarlista();
 window.addEventListener('load',mostrarlista);
 agregar.addEventListener('click',mostrarlista);
 txt_filtro.addEventListener('keyup' , filtrarlista);
