@@ -30,7 +30,6 @@ let validar = (pgenero) => {
         input_genero.classList.remove('input_error');
         registrarGenero(pgenero);
         document.location.reload();
-        mostrarlista();
     }
 
     return error;
@@ -97,6 +96,7 @@ if (error == false) {
 }}
 const agregar=document.querySelector('#btn-agregar');
 agregar.addEventListener('click',saludar);
+mostrarlista();
 window.addEventListener('load',mostrarlista);
 agregar.addEventListener('click',mostrarlista);
 txt_filtro.addEventListener('keyup' , filtrarlista);
