@@ -6,6 +6,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 //Se declaran todos los accesos de los archivos routes.
+const autor_route = require('./router/autor');
+
 const libreria_route = require('./router/libreria');
 const sucursal_route = require('./router/sucursal');
 const genero_route = require('./router/genero');
@@ -57,6 +59,8 @@ function handleError(res, reason, message, code) {
 }
 
 // Conexion a todas la rutas.z
+app.use('/api', autor_route);
+
 app.use('/api', libreria_route);
 app.use('/api', sucursal_route);
 app.use('/api', genero_route);
