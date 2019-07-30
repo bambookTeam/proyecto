@@ -13,12 +13,13 @@ const sucursal_route = require('./router/sucursal');
 
 //ARI
 const genero_route = require('./router/genero');
-//ARI
+const usuario_route = require('./router/usuario');
+const categoria_route = require('./router/categoria');
+//DIEGO
 
 //SEBAS
 const clubLectura_route=require('./router/clubLectura');
 const evento_route=require('./router/evento');
-const cliente_route=require('./router/cliente');
 
 
 const app = express();
@@ -70,11 +71,18 @@ app.use('/api', sucursal_route);
 
 //ARI
 app.use('/api', genero_route);
+
 //ARI
 
 
 //SEBAS
 app.use('/api', clubLectura_route);
 app.use('/api', evento_route);
-app.use('/api',cliente_route);
+app.use('/api', usuario_route);
+app.use('/api', categoria_route);
+app.use('/api', clubLectura_route);
+app.use('/api',evento_route);
+
+
+//localhost:3000/api/registrar-sucursal
 

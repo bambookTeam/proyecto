@@ -5,7 +5,7 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
     axios({
 
         method: 'post',
-        url: 'http://localhost:4000/api/registrar_cliente',
+        url: 'http://localhost:4000/api/registrar_usuario',
         responseType: 'json',
         data: {
             primerNombre: pnombre1,
