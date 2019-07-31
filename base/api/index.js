@@ -64,10 +64,18 @@ app.use('/api', autor_route);
 app.use('/api', libreria_route);
 app.use('/api', sucursal_route);
 app.use('/api', genero_route);
+
+//ARI
+
+
+//SEBAS
+app.use('/api', clubLectura_route);
+app.use('/api', evento_route);
 app.use('/api', usuario_route);
 app.use('/api', categoria_route);
 app.use('/api', clubLectura_route);
 app.use('/api',evento_route);
-app.use('/api',usuario_route);
+
 
 //localhost:3000/api/registrar-sucursal
+

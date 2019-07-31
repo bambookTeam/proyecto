@@ -60,6 +60,25 @@ router.post('/registrar_usuario', function(req,res){
 
 });
 
+//iniciar-sesion
+router.post('/validar_credenciales', function (req, res) {
+    Usuario.findOne({ identificacion: req.body.identificacion }).then(
+        function (usuario) {
+            if (usuario) {
+                res.json({
+                    success:true,
+                    usuario:usuario
+                })
+            } else {
+                res.json({
+                    success:false,
+                    usuario:usuario
+                })
+            }
+        }
+    )
+})
+
 router.get('/listar-usuarios', function (req, res) {
     Usuario.find(function (err, usuariosBD) {
         if (err) {

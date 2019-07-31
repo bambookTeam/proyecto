@@ -29,20 +29,42 @@ let validarSignIn = (pusuario,pcontrasena)=>{
     return error;
 }
 
-let saludar = () =>{
+let saludar =  async () =>{
     let tusuario = input_usuario.value;
     let tcontrasena=input_contrasena.value;
-    console.log(tusuario,tcontrasena);
-    let error = validarSignIn(tusuario,tcontrasena);
-
-    if (error == false) {
-
-        console.log('owo');
-        div_rellene.style.display="none";
-    } else {
-        console.log('unu');
+    let error =  validarSignIn(tusuario,tcontrasena);
+    let errorCredenciales = await iniciar_Sesion(tusuario);
+    
+    if (error==true) {
         div_rellene.style.display="block";
+        Swal.fire({ //formato json
+            title: 'Por favor revise los campos en rojo',
+            type: 'warning'
+           
+        })
+    } else {
         
+       if (errorCredenciales==true) {
+        
+        Swal.fire({ //formato json
+            title: 'El inicio de sesión fue exitoso',
+            type: 'success'
+           
+        })
+
+        location.replace('%20clubesLectura.html');
+       
+       } else {
+        
+
+        div_rellene.style.display="block";
+        Swal.fire({ //formato json
+            title: 'El usuario no existe',
+            type: 'warning'
+           
+        })
+        
+       }
     }
     
 }

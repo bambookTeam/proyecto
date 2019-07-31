@@ -12,10 +12,10 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             segundoNombre: pnombre2,
             primerApellido: papellido1,
             segundoApellido: papellido2,
-            sexo: psexo, 
+            sexo: psexo,
             identificacion: pidentificacion,
             correo: pcorreo,
-             //distrito: pdistrito,
+            //distrito: pdistrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasena,
@@ -26,6 +26,27 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
 
 };
 
+let iniciar_Sesion = async(pidentificacion)=> {
+    let respuesta = await axios({
+        method:'post',
+        url:'http://localhost:4000/api/validar_credenciales',
+        responseType: 'json',
+        data: {
+            identificacion:pidentificacion
+        }
+    }).then(
+        function(response){
+            sessionStorage.setItem('conectado',response.data.success);
+            sessionStorage.setItem('usuario',response.data.usuario._id);       
+            return(response);
+        }
+    )
+    return respuesta.data.success;
+
+
+    
+
+};
 let obtenerUsuarios = async() => {
     try {
         // fetch data from an url endpoint
