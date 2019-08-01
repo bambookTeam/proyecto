@@ -1,3 +1,73 @@
+body{
+    width: 1024px;
+    margin: 0 auto;
+}
+nav{
+    height: 50px;
+    background-color: #76323F;
+}
+
+nav img{
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+  
+nav ul li {
+    display: inline;
+}
+
+nav ul li a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+    color: #D7CEC7;
+}
+main{
+    
+    text-align: center;
+}
+
+.cerrar_sesion{
+    border: 1px solid #D7CEC7;
+}
+
+#lista_libros .card{
+    width: 30%;
+    margin: 20px 1.5%;
+    border: solid 1px #76323F;
+    border-radius: 10px;
+    float: left;
+
+}
+#lista_libros .card header{
+    height: 30px;
+    margin: 0px;
+    background: #76323F;
+    color: #D7CEC7;
+    text-align: center;
+    border-radius: 10px;
+}
+#lista_libros .card .contenedor_imagen{
+    text-align: center;
+}
+#lista_libros .card .contenedor_imagen img{
+    width: 100%;
+}
+#lista_libros .card button{
+    background: #76323F;
+    color: #D7CEC7;
+}
+
+
 #lista_libros .card{
     width: 30%;
     margin: 20px 1.5%;
