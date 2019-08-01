@@ -1,6 +1,6 @@
 'use strict';
 
-//const nodeMailer = require('./nodemailer');
+const nodeMailer = require('nodemailer');
 const express = require('express'),
   router = express.Router(),
   Usuario = require('../models/usuario.model');
@@ -9,7 +9,7 @@ const express = require('express'),
     req.body._id = _id;
     next();
 });
-/*const transporter = nodeMailer.createTransport({
+const transporter = nodeMailer.createTransport({
     service : 'gmail',
     auth : {
         user : 'bambooks.team@gmail.com',
@@ -17,7 +17,7 @@ const express = require('express'),
     }
 
 
-}); */
+}); 
 
 router.post('/registrar_usuario', function(req,res){
 
@@ -31,10 +31,14 @@ router.post('/registrar_usuario', function(req,res){
         sexo: body.sexo,
         identificacion: body.identificacion,
         correo: body.correo,
-        //distrito: body.distrito,
+        provincia: body.provincia,
+        canton: body.canton,
+        distrito: body.distrito,
         direccion: body.direccion,
         nombreUsuario: body.nombreUsuario,
-        contrasena: body.contrasena
+        contrasena: body.contrasena,
+        tipo: body.tipo,
+       // contador: body.contador
        // avatar: body.avatar
 
     });
@@ -47,9 +51,30 @@ router.post('/registrar_usuario', function(req,res){
                     success: false,
                     msj: 'El usuario no se pudo guardar',
                     err
-                }
-            );
+                }  );
         } else {
+
+            let mailOptions = {
+
+                from : 'bambooks.team@gmail.com',
+                to : nuevo_usuario.correo,
+                subject : 'Bienvenido a Bambooks',
+                text : ' Usar este pin para iniciar sesion: '+ body.contrasena
+                
+
+            };
+
+            transporter.sendMail(mailOptions, function(error, info){
+                if(error){
+
+                    console.log(error);
+                }else {
+
+                    console.log('Correo enviado')
+                }
+
+
+            });
             res.json(
                 {
                     success: true,
