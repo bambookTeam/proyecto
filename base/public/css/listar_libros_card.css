@@ -1,6 +1,6 @@
 body{
     width: 1024px;
-    margin: 0 auto;
+    margin: auto;
 }
 nav{
     height: 50px;
@@ -54,7 +54,7 @@ main{
     background: #76323F;
     color: #D7CEC7;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
 }
 #lista_libros .card .contenedor_imagen{
     text-align: center;
