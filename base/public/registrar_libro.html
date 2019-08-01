@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registrar Libro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/registrar_libro.css">
+
+</head>
+
+
+<body>
+    <nav>
+        <img src="imgs/panda color grain.png" alt="">
+
+        <ul>
+            <li> <a href="">Axel</a> </li>
+            <li> <a class="cerrar_sesion" href="">Cerrar Sesión</a> </li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <h1>Registrar Libro</h1>
+
+
+        <section id="datos_libro">
+            <div class="subir_imagen">
+                <figure class="portada">
+                    <img src="imgs/img.png" alt="Seleccionar imagen" id="img_preview">
+                </figure>
+                <button type="button" id="btn_seleccionar_imagen" class="boton_subir_imagen">Subir imagen </button>
+            </div>
+
+            <div>
+                <input id="txt_titulo" type="text" placeholder="Título">
+                <input id="txt_edicion" type="text" placeholder="Edición">
+                <input id="txt_editorial" type="text" placeholder="Editorial">
+                <input id="txt_autor" type="text" placeholder="Autor" id="">
+                <input id="txt_anno_edicion" type="number" placeholder="Año de Edición">
+                <input id="txt_idioma" type="text" placeholder="Idioma">
+                <input id="txt_isbn" type="number" placeholder="ISBN">
+
+                <select name="genero" id="txt_genero">
+                    <option value="">Género</option>
+                    <option value="Ciencia Ficción">Ciencia Ficción</option>
+                    <option value="Auto ayuda">Auto ayuda</option>
+                    <option value="Novela">Novela</option>
+                    <option value="Novela Romántica">Novela Romántica</option>
+                    <option value="Historia">Historia</option>
+                    <option value="Investigación">Investigación</option>
+                    <option value="Infantil">Infantil</option>
+                    <option value="Economía">Economía</option>
+                    <option value="Sociedad">Sociedad</option>
+                    <option value="Deportes">Deportes</option>
+                </select>
+
+                <select name="tipo" id="txt_tipo">
+                    <option value="">Tipo</option>
+                    <option value="Pasta dura">Pasta dura</option>
+                    <option value="Digital">Digital</option>
+
+                </select>
+
+                <input id="txt_existencia" type="number" placeholder="Cantidad existencia">
+                <input id="txt_precio" type="number" placeholder="Precio">
+            </div>
+
+            <div>
+                <button type="button" class="boton-registrar" id="btn_registrar">Registrar</button>
+            </div>
+
+        </section>
+
+    </main>
+    
+<script src="js/jquery-3.3.1.js"></script>
+}   <!-- script controlador -->
+    <script src="js/controlador_registrar_libro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/servicio_libro.js"></script>
+
+    <!-- Script servicio subir imagen, clodinari -->
+    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="js/servicio_imagen.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>
