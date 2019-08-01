@@ -12,9 +12,10 @@ const libreria_route = require('./router/libreria');
 const sucursal_route = require('./router/sucursal');
 const genero_route = require('./router/genero');
 const categoria_route = require('./router/categoria');
-const clubLectura_route=require('./router/clubLectura');
-const evento_route=require('./router/evento');
+const clubLectura_route = require('./router/clubLectura');
+const evento_route = require('./router/evento');
 const usuario_route = require('./router/usuario');
+const libro_route = require('./router/libros');
 
 
 const app = express();
@@ -23,7 +24,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({ extended: false }));
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Response-Time, X-PINGOTHER, X-CSRF-Token,Authorization');
@@ -35,7 +36,7 @@ app.use(function(req, res, next) {
 let db;
 
 //Se conecta la base de datos antes de levantar el servidor, mediante los datos del archivo .env en la raiz del proyecto.
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, function(err, database) {
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, function (err, database) {
     if (err) {
         console.log(err);
         process.exit(1);
@@ -46,7 +47,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, function(err,
     console.log("Se estableció la conexión con la base datos.");
 
     // Se inicia la aplicacion.
-    const server = app.listen(process.env.PORT || 8000, function() {
+    const server = app.listen(process.env.PORT || 8000, function () {
         let port = server.address().port;
         console.log("El backend está levantado en el puerto: ", port);
     });
@@ -74,7 +75,8 @@ app.use('/api', evento_route);
 app.use('/api', usuario_route);
 app.use('/api', categoria_route);
 app.use('/api', clubLectura_route);
-app.use('/api',evento_route);
+app.use('/api', evento_route);
+app.use('/api', libro_route);
 
 
 //localhost:3000/api/registrar-sucursal

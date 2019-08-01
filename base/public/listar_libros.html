@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listar Libros</title>
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/listar_libros.css">
+</head>
+
+<body>
+    <nav>
+        <img src="imgs/panda color grain.png" alt="">
+
+        <ul>
+            <li> <a href="">Axel</a> </li>
+            <li> <a class="cerrar_sesion" href="">Cerrar Sesión</a> </li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Listar libros</h1>
+        <table id="tbl_libros">
+            <input type="text" id="txt_filtro">
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Edicion</th>
+                    <th>Editorial</th>
+                    <th>Autor</th>
+                    <th>Año de edición</th>
+                    <th>Idioma</th>
+                    <th>ISBN</th>
+                    <th>Género</th>
+                    <th>Tipo</th>
+                    <th>Existencia</th>
+                    <th>Precio</th>
+                    <th>Portada</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/controlador_listar_libros.js"></script>
+    <script src="js/servicio_libro.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</body>
+
+
+</html>
