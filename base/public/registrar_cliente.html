@@ -48,20 +48,20 @@
           <input id="txt_identificacion"  type="text"  placeholder = "Identificación" >
           <input id="txt_correo"  type="text"  placeholder = "Correo Electrónico" >
 
-          <select name="" id="txt_provincia">
-            <option value="">Provincia</option>
-            <option value="Alajuela">Alajuela</option>
-            <option value="Cartago">Cartago</option>
-            <option value="Heredia">Heredia</option>
-            <option value="San Jose">San José</option>
-            <option value="Puntarenas">Puntarenas</option>
-            <option value="Limon">Limón</option>
-            <option value="Guanacaste">Guanacaste</option>
-         </select>
+          <select name="" id="txt_provincia" onchange="llenarCantones(value)">
+            <option value="#">Seleccionar Provincia </option>
+        </select>
 
-         <input id="txt_canton"  type="text"  placeholder = "Cantón" >
+        <select name="" id="txt_canton" onchange="llenarDistritos(value)">
+          <option value="#">Seleccionar Cantón</option>
+        </select>
 
-         <input id="txt_distrito"  type="text"  placeholder = "Distrito" >
+        <select name="" id="txt_distrito">
+          <option value="#">Seleccionar distrito</option>
+      </select>
+
+
+
 
          <input id="txt_direccion"  type="text"  placeholder = "Dirección Exacta" >
 
@@ -69,10 +69,14 @@
 
          <input id="txt_contrasena" type="text" placeholder="Contraseña">
 
-         <input id="img_avatar"  type="image"  placeholder = "Avatar" >
+         <div class="subir_avatar">
+          <figure class="portada">
+              <img src="imgs/img.png" alt="Seleccionar imagen" id="img_preview">
+          </figure>
+          <button type="button" id="btn_seleccionar_imagen" class="boton_subir_imagen">Subir imagen </button>
+      </div>
 
-
-
+      
 
 
          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1915192287242!2d-84.04903608571853!3d9.918001777163246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e397932ca451%3A0xef8088362eda931!2sMultiplaza+Curridabat!5e0!3m2!1ses-419!2scr!4v1562653229172!5m2!1ses-419!2scr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -89,6 +93,8 @@
 
     </main>
 
+    <script src="js/stringProvincias.js"></script>
+    <script src = "js/ubicacion.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/servicio_usuario.js"></script>

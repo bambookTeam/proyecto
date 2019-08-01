@@ -9,9 +9,9 @@ const input_segundo_apellido = document.querySelector('#txt_segundo_apellido');
 const select_sexo = document.querySelector('#txt_sexo');
 const input_identificacion = document.querySelector('#txt_identificacion');
 const input_correo = document.querySelector('#txt_correo');
-//const select_provincia = document.querySelector('#txt_provincia');
-//const input_canton = document.querySelector('#txt_canton');
-//const input_distrito = document.querySelector('#txt_distrito');
+const select_provincia = document.querySelector('#txt_provincia');
+const select_canton = document.querySelector('#txt_canton');
+const select_distrito = document.querySelector('#txt_distrito');
 const input_direccion = document.querySelector('#txt_direccion');
 const input_nombre_usuario = document.querySelector('#txt_nombre_usuario');
 
@@ -192,12 +192,13 @@ let validar = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacio
     }
 
      //Validar contraseña
-     if (pcontrasena == '') {
+    /* if (pcontrasena == '') {
         error = true;
         input_contrasena.classList.add('input_error');
     } else {
         input_contrasena.classList.remove('input_error');
     }
+    */
 
     return error;
 
@@ -213,21 +214,22 @@ let guardar =() =>
     let identificacion = input_identificacion.value;
     let sexo = select_sexo.value;
     let correo = input_correo.value;
-    //let provincia = select_provincia;
-    // CANTON
+    let provincia = select_provincia.value;
+    let canton = select_canton.value;
+    let distrito = select_distrito.value;
     let direccion = input_direccion.value;
     let nombreUsuario =input_nombre_usuario.value;
-    let contrasena = input_contrasena.value;
+    //let contrasena = input_contrasena.value;
 
     //let avatar = input_avatar.value;
 
 
 
-    let error = validar(nombre1, nombre2, apellido1, apellido2,sexo,identificacion, correo, direccion, nombreUsuario, contrasena);
+    let error = validar(nombre1, nombre2, apellido1, apellido2,sexo,identificacion, correo, direccion, nombreUsuario);
 
     if( error == false )
     {
-        registroEnLinea(nombre1,nombre2,apellido1,apellido2,sexo,identificacion,correo,direccion,nombreUsuario, contrasena)
+        registroEnLinea(nombre1,nombre2,apellido1,apellido2,sexo,identificacion,correo,provincia,canton,distrito,direccion,nombreUsuario)
         Swal.fire({
             title: 'Se ha guardado el cliente',
             type: 'success',

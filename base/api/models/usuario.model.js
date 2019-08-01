@@ -12,10 +12,19 @@ let usuario_shema = new mongoose.Schema({
     sexo: {type: String, requiered: true, unique:false},
     identificacion: {type: String, requiered: true, unique: true},
     correo: {type: String, required: true, unique: true},
-    //distrito: {type: String, required: true, unique: false},
+    provincia: {type: String, required: true, unique: false },
+    canton:  {type: String, required: true, unique: false },
+    distrito: {type: String, required: true, unique: false },
     direccion: {type: String, required: true, unique: false},
     nombreUsuario: {type: String, required: true, unique: false},
     contrasena: {type: String, required: true, unique: true},
+    tipo: {type: Number, required: true, unique: false}, 
+    //contador : {type : Number, required: true, unique: false}
+
+
+
+    // 1 para admin de libreria, 2 para cliente  
+
    // avatar:{type: Image, required: false, unique: false}
 
    //provincia: {type: String, required: false, unique: false},
