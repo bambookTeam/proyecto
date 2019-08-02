@@ -42,23 +42,29 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
         }
     }).then(
         function (response) {
-
+            sessionStorage.clear();
+            let r=false;
             if (response.data.success == true) {
-                if (response.contrasena == pcontrasena) {
-                    sessionStorage.setItem('conectado', response.data.success);
-                    sessionStorage.setItem('usuario', response.data.usuario._id);
+                console.log(response);
+                if (response.data.usuario.contrasena == pcontrasena) {
+                    sessionStorage.setItem('conectado','true');
+                    sessionStorage.setItem('id',response.data.usuario._id);
                     sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
-                } else {
 
+                    
+                    r=true;
+                   console.log('aber');
+                } else {
+                    
                 }
             } else {
 
             }
 
-            return (response);
+            return (r);
         }
     )
-    return respuesta.data.success;
+    return respuesta;
 
 }; 
 
