@@ -25,9 +25,6 @@ let usuario_shema = new mongoose.Schema({
     avatar: {type: String, required: false, unique: false}
 
 
-    avatar:{type: String, required: false, unique: false}
-
-
     // 1 para admin de libreria, 2 para cliente
 
 
