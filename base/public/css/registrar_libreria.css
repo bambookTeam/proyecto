@@ -136,4 +136,9 @@ button{
     outline: none; 
 }
 
+footer{
+    background: #76323F;
+    padding: 1rem;
+}
+
 /* FIN main */

@@ -1,8 +1,8 @@
 'use strict';
 
-let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario) => {
+let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
 
-    let pcontrasenna = generarContrasenna();
+    //let pcontrasenna = generarContrasenna();
 
     axios({
 
@@ -22,8 +22,7 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             distrito: pdistrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
-            contrasena: pcontrasenna,
-            tipo: 2
+            tipo: ptipo
            // avatar: pavatar
 
         }

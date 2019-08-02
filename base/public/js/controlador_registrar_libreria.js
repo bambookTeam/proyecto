@@ -15,7 +15,6 @@ const input_sexo = document.querySelector('#txt_sexo');
 const input_correo = document.querySelector('#txt_correo');
 
 const input_nombre_usuario = document.querySelector('#txt_nombre_usuario');
-const input_contrasena = document.querySelector('#txt_contrasena');
 
 let validarIdentificacion = (pidentificacion) =>{
     let validacionId = false;
@@ -31,7 +30,7 @@ let validarIdentificacion = (pidentificacion) =>{
 
 };
 
-let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo, pnombre_usuario, pcontrasena) => {
+let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo, pnombre_usuario) => {
 
     let error = false;
 
@@ -107,14 +106,6 @@ let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion,
         input_nombre_usuario.classList.remove('input_error');
     }
 
-    //Validar contraseña
-    if (pcontrasena == '') {
-        error = true;
-        input_contrasena.classList.add('input_error');
-    } else {
-        input_contrasena.classList.remove('input_error');
-    }
-
     return error;
 };
 
@@ -131,15 +122,22 @@ let saludar = () => {
     let sexo = input_sexo.value;
     let correo = input_correo.value;
     let nombre_usuario = input_nombre_usuario.value;
-    let contrasena = input_contrasena.value;
 
-    let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo, nombre_usuario, contrasena);
+    let provincia = null;
+    let canton = null;
+    let distrito = null;
+
+    let tipo = 1;
+
+    let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo, nombre_usuario);
    
     if (error == false) {
 
         registrarLibreria(nombre_comercial, nombre_fantasia, direccion);
         
-        registroEnLinea (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, direccion, nombre_usuario, contrasena);
+        registroEnLinea (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombre_usuario,tipo);
+
+        //(pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo)
 
         Swal.fire({ //formato Jason
             title: 'La librería se a registrado exitosamente',

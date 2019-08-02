@@ -31,13 +31,16 @@ router.post('/registrar_usuario', function(req,res){
         sexo: body.sexo,
         identificacion: body.identificacion,
         correo: body.correo,
+
         provincia: body.provincia,
         canton: body.canton,
         distrito: body.distrito,
+
         direccion: body.direccion,
         nombreUsuario: body.nombreUsuario,
         contrasena: body.contrasena,
-        tipo: body.tipo,
+
+        tipo: body.tipo
        // contador: body.contador
        // avatar: body.avatar
 
