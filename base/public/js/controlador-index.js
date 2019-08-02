@@ -53,14 +53,14 @@ let saludar =  async () =>{
            
         })
 
-        location.replace('%20clubesLectura.html');
+        location.replace('inicioCliente.html');
        
        } else {
         
 
         div_rellene.style.display="block";
         Swal.fire({ //formato json
-            title: 'Los credenciales estan correctos',
+            title: 'Los credenciales estan incorrectos',
             type: 'warning'
            
         })

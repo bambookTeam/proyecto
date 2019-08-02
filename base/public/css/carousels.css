@@ -21,6 +21,7 @@ img {vertical-align: middle;}
   top: 50%;
   width: auto;
   padding: 16px;
+  margin-top: -22px;
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -36,7 +37,7 @@ img {vertical-align: middle;}
 }
 
 .prev{
-  left:0;
+  left:0; 
 }
 
 .mySlides img,.libroVendido img{

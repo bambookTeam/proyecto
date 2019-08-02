@@ -31,13 +31,13 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
 
 };
 
-let iniciar_Sesion = async (pidentificacion, pcontrasena) => {
+let iniciar_Sesion = async (pusuario, pcontrasena) => {
     let respuesta = await axios({
         method: 'post',
         url: 'http://localhost:4000/api/validar_credenciales',
         responseType: 'json',
         data: {
-            identificacion: pidentificacion,
+            correo: pusuario,
             contrasena: pcontrasena
         }
     }).then(
@@ -80,13 +80,6 @@ let actualizar_contador = (p_id, pcontador)=>{
     });
 
 }
-
-
-    
-
-
-
-
 let obtenerUsuarios = async() => {
     try {
         // fetch data from an url endpoint

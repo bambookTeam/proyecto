@@ -51,6 +51,8 @@ function showMostSelled(n){
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";  
   }
+
+  slides[slideLibrosVendidos-1].style.display = "block";  
 }
 
 function plusSlidesLibros(n){
