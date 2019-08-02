@@ -3,6 +3,9 @@
 let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
 
     let pcontrasenna = generarContrasenna();
+    let provincia = "pprovincia";
+    let canton = "pcanton";
+    let distrito = "pdistrito";
 
     axios({
 
@@ -17,14 +20,15 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             sexo: psexo,
             identificacion: pidentificacion,
             correo: pcorreo,
-            provincia: pprovincia,
-            canton: pcanton,
-            distrito: pdistrito,
+            provincia: provincia,
+            canton: canton,
+            distrito: distrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasenna,
             tipo: ptipo,
-            contador: 0
+            contador: 0,
+            avatar: imagenUrl 
 
         }
     });
@@ -50,12 +54,9 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
                     sessionStorage.setItem('conectado','true');
                     sessionStorage.setItem('id',response.data.usuario._id);
                     sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
-
-                    
-                    r=true;
-                   console.log('aber');
+                    actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).contador);
                 } else {
-                    
+                
                 }
             } else {
 
@@ -66,11 +67,11 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
     )
     return respuesta;
 
-}; 
+};
 
 let actualizar_contador = (p_id, pcontador)=>{
 
-    let nuevoContador = pcontador + 1;
+    
     
     axios ({
 
@@ -127,4 +128,3 @@ function generarContrasenna()
   }
   return contraseña;
 }
-

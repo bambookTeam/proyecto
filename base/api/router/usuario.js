@@ -15,7 +15,7 @@ const transporter = nodeMailer.createTransport({
         user : 'bambooks.team@gmail.com',
         pass : '#bambook123'
     }
-}); 
+});
 
 router.post('/registrar_usuario', function(req,res){
     let body = req.body;
@@ -27,22 +27,25 @@ router.post('/registrar_usuario', function(req,res){
         sexo: body.sexo,
         identificacion: body.identificacion,
         correo: body.correo,
+
         provincia: body.provincia,
         canton: body.canton,
         distrito: body.distrito,
+
         direccion: body.direccion,
         nombreUsuario: body.nombreUsuario,
         contrasena: body.contrasena,
         tipo: body.tipo,
-        contador: body.contador
-       // avatar: body.avatar
+        contador: body.contador,
+        avatar: body.avatar
 
     });
 
     nuevo_usuario.save (function (err, usuarioDB) {
 
         if(err){
-            return res.status(400).json(
+
+            return res.status(500).json(
                 {
                     success: false,
                     msj: 'El usuario no se pudo guardar',
@@ -56,7 +59,7 @@ router.post('/registrar_usuario', function(req,res){
                 to : nuevo_usuario.correo,
                 subject : 'Bienvenido a Bambooks',
                 text : ' Usar este pin para iniciar sesion: '+ body.contrasena
-                
+
 
             };
 
@@ -155,7 +158,7 @@ router.post('/actualizar-contador', function(req,res){
         },
         function(error){
             if(error){
-                return res.status(400).json ({
+                return res.status(500).json ({
                     success: false,
                     msj: 'No se pudo actualizar el contador',
                     err
@@ -163,7 +166,7 @@ router.post('/actualizar-contador', function(req,res){
 
 
             }else {
-                
+
                 return res.status(400).json({
                     success: true,
                     msj: 'El contador se actualizo correctamente'
@@ -175,7 +178,7 @@ router.post('/actualizar-contador', function(req,res){
 
         }
 
-            
+
     )
 
 
