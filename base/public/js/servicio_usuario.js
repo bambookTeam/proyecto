@@ -24,7 +24,8 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasenna,
             tipo: ptipo,
-            contador: 0
+            contador: 0,
+            avatar: imagenUrl 
 
         }
     });
@@ -56,7 +57,7 @@ let iniciar_Sesion = async(pidentificacion)=> {
 
 let actualizar_contador = (p_id, pcontador)=>{
 
-    let nuevoContador = pcontador + 1;
+    
     
     axios ({
 

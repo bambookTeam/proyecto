@@ -19,7 +19,9 @@ let usuario_shema = new mongoose.Schema({
     nombreUsuario: {type: String, required: true, unique: false},
     contrasena: {type: String, required: true, unique: true},
     tipo: {type: Number, required: true, unique: false}, 
-    contador : {type : Number, required: true, unique: false}
+    contador : {type : Number, required: true, unique: false},
+    avatar: {type: String, required: false, unique: false}
+
 
 
 

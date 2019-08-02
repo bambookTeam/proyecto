@@ -14,11 +14,9 @@ const select_canton = document.querySelector('#txt_canton');
 const select_distrito = document.querySelector('#txt_distrito')
 const input_direccion = document.querySelector('#txt_direccion');
 const input_nombre_usuario = document.querySelector('#txt_nombre_usuario');
+const img_avatar = document.querySelector('#img_avatar');
 
 
-const input_contrasena = document.querySelector('#txt_contrasena');
-
-const input_avatar = document.querySelector('#img_avatar');
 
 
 let validarIdentificacion = (pidentificacion) =>
@@ -221,9 +219,9 @@ let guardar =() =>
     let direccion = input_direccion.value;
     let nombreUsuario =input_nombre_usuario.value;
     let tipo = 2;
-    //let contrasena = input_contrasena.value;
-
-    //let avatar = input_avatar.value;
+    
+    
+    
 
 
 

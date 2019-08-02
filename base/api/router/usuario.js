@@ -38,8 +38,8 @@ router.post('/registrar_usuario', function(req,res){
         nombreUsuario: body.nombreUsuario,
         contrasena: body.contrasena,
         tipo: body.tipo,
-        contador: body.contador
-       // avatar: body.avatar
+        contador: body.contador,
+        avatar: body.avatar
 
     });
 
