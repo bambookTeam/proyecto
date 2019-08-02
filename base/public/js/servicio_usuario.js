@@ -1,6 +1,6 @@
 'use strict';
 
-let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario) => {
+let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
 
     let pcontrasenna = generarContrasenna();
 
@@ -23,13 +23,14 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasenna,
-            tipo: 2
-           // avatar: pavatar
+            tipo: ptipo,
+            contador: 0
 
         }
     });
 
 };
+
 
 let iniciar_Sesion = async(pidentificacion)=> {
     let respuesta = await axios({
@@ -42,16 +43,42 @@ let iniciar_Sesion = async(pidentificacion)=> {
     }).then(
         function(response){
             sessionStorage.setItem('conectado',response.data.success);
-            sessionStorage.setItem('usuario',response.data.usuario._id);       
+            sessionStorage.setItem('usuario',response.data.usuario._id); 
+            
+            actualizar_contador(response.data._id, response.data.contador);
+
             return(response);
         }
     )
     return respuesta.data.success;
 
+}; 
+
+let actualizar_contador = (p_id, pcontador)=>{
+
+    let nuevoContador = pcontador + 1;
+    
+    axios ({
+
+        method: 'post',
+        url: 'http://localhost:4000/api/actualizar-contador',
+        responseType: 'json',
+        data: {
+            _id: p_id,
+            contador: pcontador+1
+        }
+
+
+    });
+
+}
 
 
     
-};
+
+
+
+
 let obtenerUsuarios = async() => {
     try {
         // fetch data from an url endpoint
@@ -93,3 +120,4 @@ function generarContrasenna()
   }
   return contraseña;
 }
+

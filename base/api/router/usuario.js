@@ -38,7 +38,7 @@ router.post('/registrar_usuario', function(req,res){
         nombreUsuario: body.nombreUsuario,
         contrasena: body.contrasena,
         tipo: body.tipo,
-       // contador: body.contador
+        contador: body.contador
        // avatar: body.avatar
 
     });
@@ -138,5 +138,44 @@ router.get('/buscar-usuario-id/:_id', function(req, res) {
         }
     })
 });
+
+router.post('/actualizar-contador', function(req,res){
+    Usuario.update(
+        { _id: req.body._id},
+        {
+            $push: {
+                'contador': req.body.contador
+            }
+
+
+
+        },
+        function(error){
+            if(error){
+                return res.status(400).json ({
+                    success: false,
+                    msj: 'No se pudo actualizar el contador',
+                    err
+                });
+
+
+            }else {
+                
+                return res.status(400).json({
+                    success: true,
+                    msj: 'El contador se actualizo correctamente'
+
+                });
+
+
+            }
+
+        }
+
+            
+    )
+
+
+})
 
 module.exports = router;
