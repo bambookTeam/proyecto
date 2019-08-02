@@ -15,14 +15,10 @@ const transporter = nodeMailer.createTransport({
         user : 'bambooks.team@gmail.com',
         pass : '#bambook123'
     }
-
-
 });
 
 router.post('/registrar_usuario', function(req,res){
-
     let body = req.body;
-
     let nuevo_usuario = new Usuario ({
         primerNombre: body.primerNombre,
         segundoNombre: body.segundoNombre,
@@ -91,13 +87,20 @@ router.post('/registrar_usuario', function(req,res){
 
 //iniciar-sesion
 router.post('/validar_credenciales', function (req, res) {
-    Usuario.findOne({ identificacion: req.body.identificacion }).then(
+    Usuario.findOne({ correo: req.body.correo }).then(
         function (usuario) {
             if (usuario) {
-                res.json({
-                    success:true,
-                    usuario:usuario
-                })
+                if (usuario.contrasena==req.body.contrasena) {
+                    res.json({
+                        success:true,
+                        usuario:usuario
+                    })
+                } else {
+                    res.json({
+                        success:false,
+                        usuario:usuario
+                    })
+                }
             } else {
                 res.json({
                     success:false,

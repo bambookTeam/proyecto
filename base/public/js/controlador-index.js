@@ -33,7 +33,8 @@ let saludar =  async () =>{
     let tusuario = input_usuario.value;
     let tcontrasena=input_contrasena.value;
     let error =  validarSignIn(tusuario,tcontrasena);
-    let errorCredenciales = await iniciar_Sesion(tusuario);
+    let errorCredenciales = await iniciar_Sesion(tusuario,tcontrasena);
+    console.log(errorCredenciales);
     
     if (error==true) {
         div_rellene.style.display="block";
@@ -52,14 +53,14 @@ let saludar =  async () =>{
            
         })
 
-        location.replace('%20clubesLectura.html');
+        location.replace('inicioCliente.html');
        
        } else {
         
 
         div_rellene.style.display="block";
         Swal.fire({ //formato json
-            title: 'El usuario no existe',
+            title: 'Los credenciales estan incorrectos',
             type: 'warning'
            
         })
