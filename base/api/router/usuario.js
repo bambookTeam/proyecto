@@ -17,7 +17,7 @@ const transporter = nodeMailer.createTransport({
     }
 
 
-}); 
+});
 
 router.post('/registrar_usuario', function(req,res){
 
@@ -39,9 +39,8 @@ router.post('/registrar_usuario', function(req,res){
         direccion: body.direccion,
         nombreUsuario: body.nombreUsuario,
         contrasena: body.contrasena,
-
-        tipo: body.tipo
-       // contador: body.contador
+        tipo: body.tipo,
+        contador: body.contador
        // avatar: body.avatar
 
     });
@@ -63,7 +62,7 @@ router.post('/registrar_usuario', function(req,res){
                 to : nuevo_usuario.correo,
                 subject : 'Bienvenido a Bambooks',
                 text : ' Usar este pin para iniciar sesion: '+ body.contrasena
-                
+
 
             };
 
@@ -141,5 +140,44 @@ router.get('/buscar-usuario-id/:_id', function(req, res) {
         }
     })
 });
+
+router.post('/actualizar-contador', function(req,res){
+    Usuario.update(
+        { _id: req.body._id},
+        {
+            $push: {
+                'contador': req.body.contador
+            }
+
+
+
+        },
+        function(error){
+            if(error){
+                return res.status(400).json ({
+                    success: false,
+                    msj: 'No se pudo actualizar el contador',
+                    err
+                });
+
+
+            }else {
+
+                return res.status(400).json({
+                    success: true,
+                    msj: 'El contador se actualizo correctamente'
+
+                });
+
+
+            }
+
+        }
+
+
+    )
+
+
+})
 
 module.exports = router;

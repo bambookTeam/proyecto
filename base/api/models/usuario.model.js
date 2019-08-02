@@ -20,14 +20,12 @@ let usuario_shema = new mongoose.Schema({
     direccion: {type: String, required: true, unique: false},
     nombreUsuario: {type: String, required: true, unique: false},
     contrasena: {type: String, required: true, unique: true},
-
-    tipo: {type: Number, required: true, unique: false}
-    
-    //contador : {type : Number, required: true, unique: false}
+    tipo: {type: Number, required: true, unique: false},
+    contador : {type : Number, required: true, unique: false}
 
 
 
-    // 1 para admin de libreria, 2 para cliente  
+    // 1 para admin de libreria, 2 para cliente
 
    // avatar:{type: Image, required: false, unique: false}
 

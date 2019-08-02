@@ -11,9 +11,10 @@ const input_identificacion = document.querySelector('#txt_identificacion');
 const input_correo = document.querySelector('#txt_correo');
 const select_provincia = document.querySelector('#txt_provincia');
 const select_canton = document.querySelector('#txt_canton');
-const select_distrito = document.querySelector('#txt_distrito');
+const select_distrito = document.querySelector('#txt_distrito')
 const input_direccion = document.querySelector('#txt_direccion');
 const input_nombre_usuario = document.querySelector('#txt_nombre_usuario');
+
 
 const input_contrasena = document.querySelector('#txt_contrasena');
 
@@ -219,6 +220,7 @@ let guardar =() =>
     let distrito = select_distrito.value;
     let direccion = input_direccion.value;
     let nombreUsuario =input_nombre_usuario.value;
+    let tipo = 2;
     //let contrasena = input_contrasena.value;
 
     //let avatar = input_avatar.value;
@@ -229,7 +231,7 @@ let guardar =() =>
 
     if( error == false )
     {
-        registroEnLinea(nombre1,nombre2,apellido1,apellido2,sexo,identificacion,correo,provincia,canton,distrito,direccion,nombreUsuario)
+        registroEnLinea(nombre1,nombre2,apellido1,apellido2,sexo,identificacion,correo,provincia,canton,distrito,direccion,nombreUsuario,tipo)
         Swal.fire({
             title: 'Se ha guardado el cliente',
             type: 'success',
