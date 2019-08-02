@@ -16,6 +16,7 @@ const clubLectura_route = require('./router/clubLectura');
 const evento_route = require('./router/evento');
 const usuario_route = require('./router/usuario');
 const libro_route = require('./router/libros');
+const oferta_route = require('./router/oferta');
 
 
 const app = express();
@@ -77,6 +78,7 @@ app.use('/api', categoria_route);
 app.use('/api', clubLectura_route);
 app.use('/api', evento_route);
 app.use('/api', libro_route);
+app.use('/api', oferta_route);
 
 
 //localhost:3000/api/registrar-sucursal
