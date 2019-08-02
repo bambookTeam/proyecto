@@ -27,8 +27,8 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasenna,
             tipo: ptipo,
-            contador: 0,
-            avatar: imagenUrl 
+            avatar: imagenUrl,
+            contador: 0
 
         }
     });
@@ -58,7 +58,7 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
                     sessionStorage.setItem('contador',response.data.usuario.contador);
                     //actualizar_contador(sessionStorage.getItem('id')),  JSON.parse(sessionStorage.getItem('contador')));
                 } else {
-                
+
                 }
             } else {
 
@@ -73,8 +73,8 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
 
 let actualizar_contador = (p_id, pcontador)=>{
 
-    
-    
+
+
     axios ({
 
         method: 'post',
