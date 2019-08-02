@@ -6,23 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/listar_autores.css">
 </head>
 
 <body>
-    <input type="text" id="txt_filtro" placeholder="Filtrar Nombre/Nacionalidad" style="width: 170px">
-    <a href="registrar-autor.html"><button>Registrar Autor</button></a>
-    <table id="tbl-autores">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Nombre Artístico</th>
-                <th>Nacionalidad</th>
-            </tr>
-        </thead>
-        <tbody>
+    <nav>
 
-        </tbody>
-    </table>
+        <img src="imgs/panda_grain.png" alt="">
+
+        <ul>
+            <li> <a href="">Fabz</a> </li>
+            <li> <a class="cerrar_sesion" href="">Cerrar Sesión</a> </li>
+        </ul>
+
+    </nav>
+
+    <main>
+            <h1>Listar Autores</h1>
+        <input type="text" id="txt_filtro" placeholder="Filtrar Nombre/Nacionalidad" style="width: 170px">
+        <a href="registrar-autor.html"><button>Registrar Autor</button></a>
+        <center>
+        <table id="tbl-autores">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Nombre Artístico</th>
+                    <th>Nacionalidad</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </center>
+
+    </main>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/servicio-autor.js"></script>
     <script src="js/controlador-listar-autores.js"></script>
