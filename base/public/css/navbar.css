@@ -1,0 +1,27 @@
+
+header{
+    height:60px;
+    background-color:#76323f;
+}
+#navi{
+    padding:10px 20px;
+}
+#navi img{
+    float:left;
+    width:50px;
+}
+
+.sesion,#unirse_Club{
+    margin:10px 5px 10px 839px;
+    padding:5px 10px;
+    background-color:#d7cec7;
+    border:solid 0;
+    float:left;
+    border-radius:5px;
+}
+
+.sesion:hover,#unirse_Club:hover{
+    opacity:0.9;
+    color:white;
+    background-color:#c09f80;
+}

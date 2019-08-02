@@ -29,7 +29,7 @@ let validarSignIn = (pusuario,pcontrasena)=>{
     return error;
 }
 
-let saludar =  async () =>{
+let inicioSesion =  async () =>{
     let tusuario = input_usuario.value;
     let tcontrasena=input_contrasena.value;
     let error =  validarSignIn(tusuario,tcontrasena);
@@ -53,7 +53,16 @@ let saludar =  async () =>{
            
         })
 
-        location.replace('inicioCliente.html');
+        let tipoUsuario=sessionStorage.getItem('tipoUsuario');
+        console.log(tipoUsuario)
+        if (tipoUsuario=='2')//cliente
+             {
+            location.replace('inicioCliente.html');
+        } else {
+            location.replace('%20clubesLectura.html')
+        }
+
+       
        
        } else {
         
@@ -70,4 +79,4 @@ let saludar =  async () =>{
     
 }
 
-btn_signin.addEventListener('click',saludar);
+btn_signin.addEventListener('click',inicioSesion);

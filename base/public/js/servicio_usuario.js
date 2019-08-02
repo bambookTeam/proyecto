@@ -55,7 +55,8 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
                     sessionStorage.setItem('conectado','true');
                     sessionStorage.setItem('id',response.data.usuario._id);
                     sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
-                    //actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).data.contador);
+                    sessionStorage.setItem('contador',response.data.usuario.contador);
+                    //actualizar_contador(sessionStorage.getItem('id')),  JSON.parse(sessionStorage.getItem('contador')));
                 } else {
                 
                 }
