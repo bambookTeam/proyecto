@@ -51,10 +51,11 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
             if (response.data.success == true) {
                 console.log(response);
                 if (response.data.usuario.contrasena == pcontrasena) {
+                    r=true;
                     sessionStorage.setItem('conectado','true');
                     sessionStorage.setItem('id',response.data.usuario._id);
                     sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
-                    actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).contador);
+                    //actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).data.contador);
                 } else {
                 
                 }
