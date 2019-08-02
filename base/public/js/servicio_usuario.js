@@ -52,6 +52,8 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
                     sessionStorage.setItem('conectado', response.data.success);
                     sessionStorage.setItem('usuario', response.data.usuario._id);
                     sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
+
+                    actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).contador);
                 } else {
 
                 }
@@ -68,7 +70,7 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
 
 let actualizar_contador = (p_id, pcontador)=>{
 
-    let nuevoContador = pcontador + 1;
+
 
     axios ({
 

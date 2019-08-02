@@ -22,6 +22,8 @@ let usuario_shema = new mongoose.Schema({
     contrasena: {type: String, required: true, unique: true},
     tipo: {type: Number, required: true, unique: false},
     contador : {type : Number, required: true, unique: false},
+    avatar: {type: String, required: false, unique: false}
+
 
     avatar:{type: String, required: false, unique: false}
 
