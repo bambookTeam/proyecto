@@ -1,0 +1,125 @@
+body{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+nav{
+    height: 50px;
+    background-color: #76323F;
+}
+
+nav img{
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+  
+nav ul li {
+    display: inline;
+}
+
+nav ul li a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+    color: #D7CEC7;
+}
+
+.cerrar_sesion{
+    border: 1px solid #D7CEC7;
+}
+
+
+.btn-registrar-tarjeta{
+    padding: 5px;
+    margin: 20px;
+    background-color: #76323F;
+    margin-left: 900px;
+    margin-right: 20px;
+    color: #fff;
+    cursor: pointer;
+
+}
+/*pop up*/
+
+.input_error {
+    border: 2px #e74c3c solid !important;
+}
+
+.overlay{
+background: rgba(0, 0, 0,0.1);
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right:0;
+display: flex;
+align-items: center;
+justify-content: center;
+visibility: hidden;
+
+}
+
+.overlay.active{
+    visibility: visible;
+}
+
+.popup{
+    background: #D7CEC7;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 20px;
+    text-align: center;
+    width: 400px;
+}
+
+.close {
+    
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 16px;
+    text-align: right;
+    margin-left: 385px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.agregar {
+        color: #fff;
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+    padding: 5px;
+    margin: 20px;
+    background-color: #76323F;
+    border: none;
+
+}
+
+
+.popup form .contenedor-inputs input{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 50px;
+    line-height: 52px;
+    font-size: 18px;
+    text-align: center;
+    }
+    
+    
+
+
