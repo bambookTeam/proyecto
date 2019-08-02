@@ -1,6 +1,8 @@
 'use strict';
 
-let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pdireccion, pnombreUsuario, pcontrasena) => {
+let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
+
+    let pcontrasenna = generarContrasenna();
 
     axios({
 
@@ -15,11 +17,14 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             sexo: psexo,
             identificacion: pidentificacion,
             correo: pcorreo,
-            //distrito: pdistrito,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
-            contrasena: pcontrasena,
-            // avatar: pavatar
+            contrasena: pcontrasenna,
+            tipo: ptipo,
+            contador: 0
 
         }
     });
@@ -55,11 +60,34 @@ let iniciar_Sesion = async (pidentificacion, pcontrasena) => {
     )
     return respuesta.data.success;
 
+}; 
+
+let actualizar_contador = (p_id, pcontador)=>{
+
+    let nuevoContador = pcontador + 1;
+    
+    axios ({
+
+        method: 'post',
+        url: 'http://localhost:4000/api/actualizar-contador',
+        responseType: 'json',
+        data: {
+            _id: p_id,
+            contador: pcontador+1
+        }
+
+
+    });
+
+}
+
+
+    
 
 
 
-};
-let obtenerUsuarios = async () => {
+
+let obtenerUsuarios = async() => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -88,3 +116,16 @@ let obtenerUsuarioId = async (_id) => {
         console.log(error);
     }
 };
+
+
+
+function generarContrasenna()
+{
+  let caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
+  let contraseña = "";
+  for (let i=0; i<9; i++){
+   contraseña += caracteres.charAt(Math.floor(Math.random()*caracteres.length));
+  }
+  return contraseña;
+}
+

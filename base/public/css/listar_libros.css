@@ -1,0 +1,68 @@
+body{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+nav{
+    height: 50px;
+    background-color: #76323F;
+}
+
+nav img{
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+  
+nav ul li {
+    display: inline;
+}
+
+nav ul li a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+    color: #D7CEC7;
+}
+
+.cerrar_sesion{
+    border: 1px solid #D7CEC7;
+}
+main{
+    
+    text-align: center;
+}
+
+h1{
+    color: #76323F;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 30px;
+}
+#tbl_libros{
+    border: 1px solid #76323F;
+}
+#tbl_libros thead th{
+    height: 30px;
+    min-width: 85px;
+    background: #76323F;
+    color: #D7CEC7;
+}
+#tbl_libros tbody{
+    border: 1px solid #76323F;
+}
+#tbl_libros tbody tr:hover{
+background: #b2bec3;
+}
+#tbl_libros tbody td {
+    height: 7px;
+    text-align: center;    
+}
