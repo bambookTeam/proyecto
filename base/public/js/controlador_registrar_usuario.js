@@ -43,8 +43,6 @@ let validarIdentificacion = (pidentificacion) =>
 
 }
 
-
-
 let validar = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pdireccion, pnombreUsuario, pcontrasena) => {
 
     let error = false;

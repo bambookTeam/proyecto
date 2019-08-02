@@ -48,7 +48,8 @@ router.post('/registrar_usuario', function(req,res){
     nuevo_usuario.save (function (err, usuarioDB) {
 
         if(err){
-            return res.status(400).json(
+
+            return res.status(500).json(
                 {
                     success: false,
                     msj: 'El usuario no se pudo guardar',

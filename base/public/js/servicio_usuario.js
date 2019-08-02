@@ -2,7 +2,10 @@
 
 let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
 
-    //let pcontrasenna = generarContrasenna();
+    let pcontrasenna = generarContrasenna();
+    let provincia = "pprovincia";
+    let canton = "pcanton";
+    let distrito = "pdistrito";
 
     axios({
 
@@ -17,9 +20,9 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             sexo: psexo,
             identificacion: pidentificacion,
             correo: pcorreo,
-            provincia: pprovincia,
-            canton: pcanton,
-            distrito: pdistrito,
+            provincia: provincia,
+            canton: canton,
+            distrito: distrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasenna,

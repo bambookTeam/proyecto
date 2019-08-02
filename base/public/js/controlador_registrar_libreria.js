@@ -2,6 +2,7 @@
 
 const boton_registrar = document.querySelector('#btn_registrar');
 
+
 const input_nombre_comercial = document.querySelector('#txt_nombre_comercial');
 const input_nombre_fantasia = document.querySelector('#txt_nombre_fantasia');
 const input_direccion = document.querySelector('#txt_direccion');
@@ -119,6 +120,7 @@ let saludar = () => {
     let segundo_nombre = input_segundo_nombre.value;
     let primer_apellido = input_primer_apellido.value;
     let segundo_apellido = input_segundo_apellido.value;
+
     let sexo = input_sexo.value;
     let correo = input_correo.value;
     let nombre_usuario = input_nombre_usuario.value;
@@ -152,5 +154,6 @@ let saludar = () => {
         })
     }
 };
-    
+
 boton_registrar.addEventListener('click',saludar);
+    
