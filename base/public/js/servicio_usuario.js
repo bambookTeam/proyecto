@@ -19,35 +19,47 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasena,
-           // avatar: pavatar
+            // avatar: pavatar
 
         }
     });
 
 };
 
-let iniciar_Sesion = async(pidentificacion)=> {
+let iniciar_Sesion = async (pidentificacion, pcontrasena) => {
     let respuesta = await axios({
-        method:'post',
-        url:'http://localhost:4000/api/validar_credenciales',
+        method: 'post',
+        url: 'http://localhost:4000/api/validar_credenciales',
         responseType: 'json',
         data: {
-            identificacion:pidentificacion
+            identificacion: pidentificacion,
+            contrasena: pcontrasena
         }
     }).then(
-        function(response){
-            sessionStorage.setItem('conectado',response.data.success);
-            sessionStorage.setItem('usuario',response.data.usuario._id);       
-            return(response);
+        function (response) {
+
+            if (response.data.success == true) {
+                if (response.contrasena == pcontrasena) {
+                    sessionStorage.setItem('conectado', response.data.success);
+                    sessionStorage.setItem('usuario', response.data.usuario._id);
+                    sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
+                } else {
+
+                }
+            } else {
+
+            }
+
+            return (response);
         }
     )
     return respuesta.data.success;
 
 
-    
+
 
 };
-let obtenerUsuarios = async() => {
+let obtenerUsuarios = async () => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -62,7 +74,7 @@ let obtenerUsuarios = async() => {
     }
 };
 
-let obtenerUsuarioId = async(_id) => {
+let obtenerUsuarioId = async (_id) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
