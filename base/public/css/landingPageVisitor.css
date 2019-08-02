@@ -4,12 +4,9 @@ Tan: #d7cec7
 Gris: #565656
 Otro: #c09f80
 */
-html{
-    max-width: 1024px;
-}
+
 body{
     font-family: 'Roboto', sans-serif;
-    max-width:1024px;
     background-color: #d7cec7;
 }
 header{

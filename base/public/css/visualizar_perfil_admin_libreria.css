@@ -45,7 +45,6 @@ nav ul li a{
 main{
     display: flow-root;
     margin-top: 50px;
-    text-align: center;
 }
 
 .izquierda{
@@ -56,17 +55,19 @@ main{
 .derecha{
     padding: 20px;
     float: left;
+    border-left: #76323F solid 1px;
+
 }
 
-h1{
+.nombre{
     color: #76323F;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     margin: 30px;
 }
 
 .dato{
     color: #76323F;
-    font-size: 20px;
-    margin: 20px;
+    font-size: 30px;
+    margin: 30px;
 }

@@ -21,5 +21,8 @@
     "nodemon": "^1.19.1",
     "path": "^0.12.7",
     "serve-static": "^1.14.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.0"
   }
 }

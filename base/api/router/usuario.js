@@ -15,14 +15,10 @@ const transporter = nodeMailer.createTransport({
         user : 'bambooks.team@gmail.com',
         pass : '#bambook123'
     }
-
-
-}); 
+});
 
 router.post('/registrar_usuario', function(req,res){
-
     let body = req.body;
-
     let nuevo_usuario = new Usuario ({
         primerNombre: body.primerNombre,
         segundoNombre: body.segundoNombre,
@@ -31,9 +27,11 @@ router.post('/registrar_usuario', function(req,res){
         sexo: body.sexo,
         identificacion: body.identificacion,
         correo: body.correo,
+
         provincia: body.provincia,
         canton: body.canton,
         distrito: body.distrito,
+
         direccion: body.direccion,
         nombreUsuario: body.nombreUsuario,
         contrasena: body.contrasena,
@@ -46,7 +44,8 @@ router.post('/registrar_usuario', function(req,res){
     nuevo_usuario.save (function (err, usuarioDB) {
 
         if(err){
-            return res.status(400).json(
+
+            return res.status(500).json(
                 {
                     success: false,
                     msj: 'El usuario no se pudo guardar',
@@ -60,7 +59,7 @@ router.post('/registrar_usuario', function(req,res){
                 to : nuevo_usuario.correo,
                 subject : 'Bienvenido a Bambooks',
                 text : ' Usar este pin para iniciar sesion: '+ body.contrasena
-                
+
 
             };
 
@@ -88,13 +87,20 @@ router.post('/registrar_usuario', function(req,res){
 
 //iniciar-sesion
 router.post('/validar_credenciales', function (req, res) {
-    Usuario.findOne({ identificacion: req.body.identificacion }).then(
+    Usuario.findOne({ correo: req.body.correo }).then(
         function (usuario) {
             if (usuario) {
-                res.json({
-                    success:true,
-                    usuario:usuario
-                })
+                if (usuario.contrasena==req.body.contrasena) {
+                    res.json({
+                        success:true,
+                        usuario:usuario
+                    })
+                } else {
+                    res.json({
+                        success:false,
+                        usuario:usuario
+                    })
+                }
             } else {
                 res.json({
                     success:false,
@@ -160,7 +166,7 @@ router.post('/actualizar-contador', function(req,res){
 
 
             }else {
-                
+
                 return res.status(400).json({
                     success: true,
                     msj: 'El contador se actualizo correctamente'
@@ -172,7 +178,7 @@ router.post('/actualizar-contador', function(req,res){
 
         }
 
-            
+
     )
 
 

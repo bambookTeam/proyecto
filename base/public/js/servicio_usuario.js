@@ -3,6 +3,9 @@
 let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
 
     let pcontrasenna = generarContrasenna();
+    let provincia = "pprovincia";
+    let canton = "pcanton";
+    let distrito = "pdistrito";
 
     axios({
 
@@ -17,9 +20,9 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             sexo: psexo,
             identificacion: pidentificacion,
             correo: pcorreo,
-            provincia: pprovincia,
-            canton: pcanton,
-            distrito: pdistrito,
+            provincia: provincia,
+            canton: canton,
+            distrito: distrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasenna,
@@ -32,28 +35,36 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
 
 };
 
-
-let iniciar_Sesion = async(pidentificacion)=> {
+let iniciar_Sesion = async (pusuario, pcontrasena) => {
     let respuesta = await axios({
-        method:'post',
-        url:'http://localhost:4000/api/validar_credenciales',
+        method: 'post',
+        url: 'http://localhost:4000/api/validar_credenciales',
         responseType: 'json',
         data: {
-            identificacion:pidentificacion
+            correo: pusuario,
+            contrasena: pcontrasena
         }
     }).then(
-        function(response){
-            sessionStorage.setItem('conectado',response.data.success);
-            sessionStorage.setItem('usuario',response.data.usuario._id); 
-            
-            actualizar_contador(response.data._id, response.data.contador);
+        function (response) {
 
-            return(response);
+            if (response.data.success == true) {
+                if (response.contrasena == pcontrasena) {
+                    sessionStorage.setItem('conectado', response.data.success);
+                    sessionStorage.setItem('usuario', response.data.usuario._id);
+                    sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
+                } else {
+
+                }
+            } else {
+
+            }
+
+            return (response);
         }
     )
     return respuesta.data.success;
 
-}; 
+};
 
 let actualizar_contador = (p_id, pcontador)=>{
 
@@ -73,13 +84,6 @@ let actualizar_contador = (p_id, pcontador)=>{
     });
 
 }
-
-
-    
-
-
-
-
 let obtenerUsuarios = async() => {
     try {
         // fetch data from an url endpoint
@@ -95,7 +99,7 @@ let obtenerUsuarios = async() => {
     }
 };
 
-let obtenerUsuarioId = async(_id) => {
+let obtenerUsuarioId = async (_id) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -121,4 +125,3 @@ function generarContrasenna()
   }
   return contraseña;
 }
-
