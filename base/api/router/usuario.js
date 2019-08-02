@@ -158,7 +158,7 @@ router.post('/actualizar-contador', function(req,res){
         },
         function(error){
             if(error){
-                return res.status(400).json ({
+                return res.status(500).json ({
                     success: false,
                     msj: 'No se pudo actualizar el contador',
                     err
