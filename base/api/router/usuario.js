@@ -214,7 +214,8 @@ router.post('/crear-contrasenna', function(req, res){
 
     )
 
-})
+});
+
 
 router.post('/actualizar-contador', function(req,res){
     Usuario.update(
@@ -253,6 +254,6 @@ router.post('/actualizar-contador', function(req,res){
     )
 
 
-})
+});
 
 module.exports = router;

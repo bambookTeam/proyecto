@@ -54,9 +54,9 @@ let saludar =  async () =>{
         })
 
         // CREAR CONTRASE;A 
-          if( JSON.parse(sessionStorage.getItem('usuario')).contador == 1){
+          if( sessionStorage.getItem('contador') == '0'){
               
-            location.replace('crear_contrasenna')
+            location.replace('crear_contrasenna.html')
 
            } else {
 

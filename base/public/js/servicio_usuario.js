@@ -55,7 +55,12 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
                     sessionStorage.setItem('conectado','true');
                     sessionStorage.setItem('id',response.data.usuario._id);
                     sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
+                    sessionStorage.setItem('contrasena', response.data.usuario.contrasena);
+                    sessionStorage.setItem('contador', response.data.usuario.contador);
                     //actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).data.contador);
+                    actualizar_contador(sessionStorage.getItem('id'), sessionStorage.getItem('contador'));
+
+                    //location.replace('crear_contrasenna.html');
                 } else {
 
                 }
@@ -110,9 +115,13 @@ let validarPin = (ppin, pcontrasena) =>{
 
     let error = false;
     
-    if ( ppin == JSON.parse(sessionStorage.getItem('usuario')).contrasena) {
+   // if ( ppin == JSON.parse(sessionStorage.getItem('usuario')).contrasena) {
 
-        crearContrasenna( JSON.parse(sessionStorage.getItem('usuario'))._id, pcontrasena );
+   if( ppin == sessionStorage.getItem('contrasena')){
+
+       // crearContrasenna( JSON.parse(sessionStorage.getItem('usuario'))._id, pcontrasena );
+
+       crearContrasenna(sessionStorage.getItem('id'), pcontrasena);
 
         return error;
         
@@ -137,14 +146,16 @@ let crearContrasenna = async (p_id, pcontrasena) => {
         }
 
 
-    }) ; 
-}
+    }); 
+};
 
 
 
 let actualizar_contador = (p_id, pcontador)=>{
 
 
+
+    let nuevoContador = parseInt(pcontador) + 1;
 
     axios ({
 
@@ -153,13 +164,13 @@ let actualizar_contador = (p_id, pcontador)=>{
         responseType: 'json',
         data: {
             _id: p_id,
-            contador: pcontador+1
+            contador: nuevoContador
         }
-
 
     });
 
-}
+};
+
 let obtenerUsuarios = async() => {
     try {
         // fetch data from an url endpoint
