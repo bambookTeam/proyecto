@@ -54,7 +54,8 @@ let inicioSesion =  async () =>{
         })
 
         // CREAR CONTRASE;A
-          if( JSON.parse(sessionStorage.getItem('usuario')).contador == 1){
+        /*
+  if( JSON.parse(sessionStorage.getItem('usuario')).contador == 1){
 
             location.replace('crear_contrasenna')
 
@@ -62,6 +63,8 @@ let inicioSesion =  async () =>{
 
             location.replace('inicioCliente.html');
            }
+
+        */
         let tipoUsuario=sessionStorage.getItem('tipoUsuario');
         console.log(tipoUsuario)
         if (tipoUsuario=='2')//cliente
