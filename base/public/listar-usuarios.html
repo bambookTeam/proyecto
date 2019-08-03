@@ -6,9 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/listar_usuarios.css">
 </head>
 
 <body>
+        <nav>
+
+                <img src="imgs/panda_grain.png" alt="">
+        
+                <ul>
+                    <li> <a href="" id="perfil">Fabz</a> </li>
+                    <li> <a class="cerrar_sesion" href="">Cerrar Sesión</a> </li>
+                </ul>
+        
+            </nav>
+            <main>
     <input type="text" id="txt_filtro" placeholder="Filtrar Correo/Identificación" style="width: 170px">
     <a href="registrar_cliente.html"><button>Registrar Usuario</button></a>
     <table id="tbl-usuarios">
@@ -24,6 +37,8 @@
 
         </tbody>
     </table>
+
+</main>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/servicio_usuario.js"></script>
     <script src="js/controlador-listar-usuarios.js"></script>
