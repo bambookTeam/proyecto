@@ -6,56 +6,7 @@ html {
   
   body {
     font-family: 'Catamaran', sans-serif;
-  }
-  
-  /*Nav bar styles #76323f;*/
-  header {
-    background-color: #76323f;
-    display: inline-block;
-    width: 100%;
-    max-width: 1024px;
-    margin: 0;
-  }
-  
-  header a {
-    text-decoration: none;
-    color: white;
-    padding: 0 5px;
-    font-size:10px;
-  }
-  
-  header a:hover {
-    color: #aaaaaa
-  }
-  
-  header .logoBambooks {
-    float: left;
-    margin: 0 40px;
-  }
-  
-  header .nav-container {
-    float: left;
-    margin-top: 15px;
-  }
-  
-  header .optionsNav {
-    float: right;
-    font-size: 10px;
-    margin: 15px 40px 0 90px;
-  }
-  
-  .dropdown-content {
-    display: none;
-  }
-  .optionsNav button {
-    margin-left:50px;
-  }
-  
-  .optionsNav img {
-    position: absolute;
-    margin: -5px 10px 0 10px;
-  }
-  
+  }   
   /* Banner */
   .banner {
     background-image: url("https://images.wallpaperscraft.com/image/book_garland_light_134006_1920x1080.jpg");

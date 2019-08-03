@@ -9,21 +9,39 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/visualizar_perfil_libreria.css">
     <link rel="stylesheet" href="css/registrar_oferta.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 
 
+<header>
+        <nav>
+            <div class="logoBambooks">
+                <a href="inicioCliente.html"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
+            </div>
+            <div class="nav-container">
+                <a href="listar_librerias.html">Librerias</a>
+                <a href="%20clubesLectura.html">Clubes de Lectura</a>
+                <a href="listar_libros.html">Libros</a>
+                <a href="listar-autores.html">Autores</a>
+                <a href="#">Intercambios</a>
+            </div>
+            <div class="optionsNav">
+                <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+                <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px"
+                    alt="">
+                <button id="btn_cerrar">Cerrar Sesion</button>
+            </div>
+        </nav>
+    </header>
+
 <body>
 
-    <nav>
 
-        <img src="imgs/panda_grain.png" alt="">
-
-        <ul>
-            <li> <a href="">Naty</a> </li>
-            <li> <button class="cerrar_sesion" id="btn_cerrar">Cerrar Sesión</button> </li>
-        </ul>
-
-    </nav>
 
     <main>
 
@@ -46,16 +64,13 @@
                         <img src="" alt="" id="image_preview2" width="800" height="300">
                 </div>
 
-            <div class="contenedor">
+                <div class="contenedor">
 
-                <div class="overlay" id="overlay">
+                    <div class="overlay" id="overlay">
+                        <div class="popup" id="popup">
 
-                    <div class="popup" id="popup">
-
-                        <span class="close" id="cerrar">&times;</span>
-
-                        <section>
-
+                            <span class="close" id="cerrar">&times;</span>
+                          <section>
                             <div class="contenedor-inputs">
 
                                 <form>
@@ -87,6 +102,8 @@
 
     <script src="js/controlador_perfil_libreria.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>
+
+    <script src="js/getNombre.js"></script>
 
     <script src="js/jquery-3.3.1.js"></script>
 
