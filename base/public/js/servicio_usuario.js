@@ -72,6 +72,78 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
 
 };
 
+/*
+let validar_pin = async (ppin, pcontrasena) => {
+    let respuesta = await axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/validar_pin',
+        responseType: 'json',
+        data: {
+            contrasena: ppin
+        }
+    }).then(
+        function(response) {
+
+            if(response.data.success == true){
+               if(response.contrasena== ppin){
+                   
+                crearContrasenna(JSON.parse(sessionStorage.getItem('usuario'))._id, pcontrasena );
+                }else {
+
+                }                
+
+            } else {
+
+
+            }
+
+            return (response);
+            
+
+        }
+
+
+    )   
+    return respuesta.data.succes;
+};
+*/
+
+let validarPin = (ppin, pcontrasena) =>{
+
+    let error = false;
+    
+    if ( ppin == JSON.parse(sessionStorage.getItem('usuario')).contrasena) {
+
+        crearContrasenna( JSON.parse(sessionStorage.getItem('usuario'))._id, pcontrasena );
+
+        return error;
+        
+    } else {
+
+        error = true;
+        return error;
+
+
+    }
+};
+
+let crearContrasenna = async (p_id, pcontrasena) => {
+
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/crear-contrasenna',
+        responseType: 'json',
+        data: {
+            _id: p_id,
+            contrasena: pcontrasena
+        }
+
+
+    }) ; 
+}
+
+
+
 let actualizar_contador = (p_id, pcontador)=>{
 
 
