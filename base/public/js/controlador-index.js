@@ -53,7 +53,17 @@ let saludar =  async () =>{
            
         })
 
-        location.replace('inicioCliente.html');
+        // CREAR CONTRASE;A 
+          if( JSON.parse(sessionStorage.getItem('usuario')).contador == 1){
+              
+            location.replace('crear_contrasenna')
+
+           } else {
+
+            location.replace('inicioCliente.html');
+           }
+
+       
        
        } else {
         
