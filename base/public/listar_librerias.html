@@ -19,7 +19,7 @@
             
             <ul>
                 <li> <a href="">Naty</a> </li>
-                <li> <a class="cerrar_sesion" href="">Cerrar Sesión</a> </li>
+                <li> <button class="cerrar_sesion" id="btn_cerrar">Cerrar Sesión</button> </li>
             </ul>
             
         </nav>
@@ -28,7 +28,11 @@
 
             <h1>Listar Librerías</h1>
 
+            
+            <label for="txt_filtro">Filtrar</label>
             <input id="txt_filtro" type="text">
+            
+            <a href="registrar_libreria.html" id="btnNuevaLibreria">Nueva Librería</a>
 
             <table id="tbl_librerias">
 
@@ -38,6 +42,7 @@
                         <th>Nombre Comercial</th>
                         <th>Nombre Fantasia</th>
                         <th>Dirección</th>
+                        <th></th>
                     </tr>
 
                 </thead>
@@ -55,6 +60,7 @@
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="js/servicio_librerias.js"></script>
         <script src="js/controlador_listar_librerias.js"></script>
+        <script src="js/controlador_cerrar_sesion.js"></script>
     
     </body>
 

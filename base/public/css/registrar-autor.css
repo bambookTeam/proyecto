@@ -1,3 +1,8 @@
+
+.input_error {
+    border: 2px #e74c3c solid !important;
+}
+
 body{
     width: 1024px;
     margin: 0 auto;
@@ -57,13 +62,13 @@ h1{
     margin: 30px;
 }
 
-#datos_libreria{
+#datos_autor1{
     width: 50%;
     float: left;
     text-align: center;
 }
 
-#datos_admi_libreria{
+#datos_autor2{
     width: 50%;
     float: left;
     text-align: center;
@@ -124,7 +129,7 @@ iframe{
     height: 122px;
 }
 
-button{
+#btn{
     margin: 50px 0;
     padding: 10px;
     border: 2px solid #76323F;
@@ -133,24 +138,19 @@ button{
     color: #76323F;
     font-weight: bold;
     background: none;
+    outline: none;
+}
+
+#btn:hover{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #76323F;
+    border-radius: 15px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    background:  #76323F;
     outline: none; 
-}
-
-footer{
-    background: #76323F;
-    padding: 1rem;
-}
-
-#txtIdExiste{
-    color: tomato;
-    text-align: center;
-    display: block;
-}
-
-#txtCorreoExiste{
-    color: tomato;
-    text-align: center;
-    display: block;
 }
 
 /* FIN main */

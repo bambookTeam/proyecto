@@ -3,9 +3,6 @@ body{
     margin: 0 auto;
 }
 
-
-/* INICIO nav */
-
 nav{
     height: 50px;
     background-color: #76323F;
@@ -40,36 +37,9 @@ nav ul li a{
     border: 1px solid #D7CEC7;
 }
 
-/* FIN nav */
-
-main{
-    display: flow-root;
-    margin-top: 50px;
-}
-
-.izquierda{
-    float: left;
-    padding: 20px;
-    text-align: center;
-    width: 400px;
-}
-
-.derecha{
-    padding: 20px;
-    float: left;
-    border-left: #76323F solid 1px;
-
-}
-
-.nombre{
-    color: #76323F;
-    font-size: 30px;
-    font-weight: bold;
-    margin: 30px;
-}
-
-.dato{
-    color: #76323F;
-    font-size: 20px;
-    margin: 30px;
+h2{
+font-size: 40px;
+padding: 10px;
+font-family:  Helvetica;
+font-style: normal;
 }

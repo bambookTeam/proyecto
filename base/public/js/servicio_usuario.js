@@ -27,8 +27,8 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasenna,
             tipo: ptipo,
-            contador: 0,
-            avatar: imagenUrl 
+            avatar: imagenUrl,
+            contador: 0
 
         }
     });
@@ -46,25 +46,27 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
         }
     }).then(
         function (response) {
-
+            sessionStorage.clear();
+            let r=false;
             if (response.data.success == true) {
-                if (response.contrasena == pcontrasena) {
-                    sessionStorage.setItem('conectado', response.data.success);
-                    sessionStorage.setItem('usuario', response.data.usuario._id);
+                console.log(response);
+                if (response.data.usuario.contrasena == pcontrasena) {
+                    r=true;
+                    sessionStorage.setItem('conectado','true');
+                    sessionStorage.setItem('id',response.data.usuario._id);
                     sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
-
-                    actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).contador);
+                    //actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).data.contador);
                 } else {
-                
+
                 }
             } else {
 
             }
 
-            return (response);
+            return (r);
         }
     )
-    return respuesta.data.success;
+    return respuesta;
 
 };
 
@@ -142,8 +144,8 @@ let crearContrasenna = async (p_id, pcontrasena) => {
 
 let actualizar_contador = (p_id, pcontador)=>{
 
-    
-    
+
+
     axios ({
 
         method: 'post',
