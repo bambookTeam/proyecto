@@ -55,7 +55,18 @@ let inicioSesion =  async () =>{
 
         // CREAR CONTRASE;A
         /*
-  if( JSON.parse(sessionStorage.getItem('usuario')).contador == 1){
+        if( JSON.parse(sessionStorage.getItem('usuario')).contador == 1){
+
+        let tipoUsuario=sessionStorage.getItem('tipoUsuario');
+        console.log(tipoUsuario)
+        if (tipoUsuario=='2')//cliente
+             {
+            location.replace('inicioCliente.html');
+        } else {
+            location.replace('%20clubesLectura.html')
+        }
+        // CREAR CONTRASE;A
+          if( JSON.parse(sessionStorage.getItem('usuario')).contador == 1){
 
             location.replace('crear_contrasenna')
 
