@@ -36,6 +36,18 @@ nav ul li a{
     color: #D7CEC7;
 }
 
+nav ul li #btn_cerrar{
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+    color: #D7CEC7;
+    border: 1px solid #D7CEC7;
+    background: none;
+    outline: none;
+}
+
+
 .cerrar_sesion{
     border: 1px solid #D7CEC7;
 }
