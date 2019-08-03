@@ -111,6 +111,45 @@ router.post('/validar_credenciales', function (req, res) {
     )
 })
 
+
+
+router.post('/validar_pin', function(req,res){
+    Usuario.findOne({ correo: req.body.correo}).then (
+        function(usuario) {
+
+            if(usuario) {
+
+                if(usuario.pin == req.body.contrasena ){
+                    res.json({
+                        success: true,
+                        usuario : usuario
+                    })
+
+                }else {
+                    res.json({
+                        success: false, 
+                        usuario: usuario
+
+                    })
+                }
+
+            }else {
+
+                res.json({
+                    success: false,
+                    usuario: usuario
+
+                })
+
+            }
+
+
+
+        }
+
+    )
+})
+
 router.get('/listar-usuarios', function (req, res) {
     Usuario.find(function (err, usuariosBD) {
         if (err) {
@@ -144,6 +183,38 @@ router.get('/buscar-usuario-id/:_id', function(req, res) {
         }
     })
 });
+
+router.post('/crear-contrasenna', function(req, res){
+    Usuario.update(
+        { _id: req.body._id},
+        {
+
+            $push: {
+                'contrasena': req.body.contrasena
+            }
+        }, 
+        function(error){
+            if(error){
+                return res.status(500).json ({
+                    success: false, 
+                    msj: 'No se pudo crear la contraseña',
+                    err
+                });
+
+            }else {
+
+                return res.status(400).json({
+                    success: true, 
+                    msj: 'Se pudo crear la contraseña correctamente'
+                });
+            }
+        }    
+
+        
+
+    )
+
+})
 
 router.post('/actualizar-contador', function(req,res){
     Usuario.update(
