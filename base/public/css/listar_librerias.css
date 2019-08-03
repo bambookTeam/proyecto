@@ -1,52 +1,4 @@
-body{
-    width: 1024px;
-    margin: 0 auto;
-}
 
-nav{
-    height: 50px;
-    background-color: #76323F;
-}
-
-nav img{
-    height: 40px;
-    margin-top: 5px;
-    margin-left: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    float: right;
-}
-  
-nav ul li {
-    display: inline;
-}
-
-nav ul li a{
-    text-decoration: none;
-    display: inline-block;
-    padding: 5px;
-    margin: 10px;
-    color: #D7CEC7;
-}
-
-nav ul li #btn_cerrar{
-    text-decoration: none;
-    display: inline-block;
-    padding: 5px;
-    margin: 10px;
-    color: #D7CEC7;
-    border: 1px solid #D7CEC7;
-    background: none;
-    outline: none;
-}
-
-main{
-    text-align: center;
-}
 
 h1{
     color: #76323F;
@@ -71,7 +23,7 @@ input{
     outline: none;
 }
 
-a{
+main a{
     padding: 10px;
     border: 1px solid #76323F;
     border-radius: 15px;

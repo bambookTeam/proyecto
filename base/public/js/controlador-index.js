@@ -10,74 +10,82 @@ let validarSignIn = (pusuario,pcontrasena)=>{
     if (pusuario=='') {
         error=true;
         input_usuario.classList.add('input_error');
-        
+
 
     } else {
         input_usuario.classList.remove('input_error');
-        
+
     }
 
     if (pcontrasena == '') {
         error=true;
         input_contrasena.classList.add('input_error');
-        
+
     } else {
         input_contrasena.classList.remove('input_error');
-        
+
     }
 
     return error;
 }
 
-let saludar =  async () =>{
+let inicioSesion =  async () =>{
     let tusuario = input_usuario.value;
     let tcontrasena=input_contrasena.value;
     let error =  validarSignIn(tusuario,tcontrasena);
     let errorCredenciales = await iniciar_Sesion(tusuario,tcontrasena);
     console.log(errorCredenciales);
-    
+
     if (error==true) {
         div_rellene.style.display="block";
         Swal.fire({ //formato json
             title: 'Por favor revise los campos en rojo',
             type: 'warning'
-           
+
         })
     } else {
-        
+
        if (errorCredenciales==true) {
-        
+
         Swal.fire({ //formato json
             title: 'El inicio de sesión fue exitoso',
             type: 'success'
-           
+
         })
 
-        // CREAR CONTRASE;A 
+        // CREAR CONTRASE;A
           if( JSON.parse(sessionStorage.getItem('usuario')).contador == 1){
-              
+
             location.replace('crear_contrasenna')
 
            } else {
 
             location.replace('inicioCliente.html');
            }
+        let tipoUsuario=sessionStorage.getItem('tipoUsuario');
+        console.log(tipoUsuario)
+        if (tipoUsuario=='2')//cliente
+             {
+            location.replace('inicioCliente.html');
+        } else {
+            location.replace('%20clubesLectura.html')
+        }
 
-       
-       
+
+
        } else {
-        
+
 
         div_rellene.style.display="block";
         Swal.fire({ //formato json
             title: 'Los credenciales estan incorrectos',
             type: 'warning'
-           
+
         })
-        
+
        }
     }
-    
+
 }
 
-btn_signin.addEventListener('click',saludar);
+btn_signin.addEventListener('click',inicioSesion);

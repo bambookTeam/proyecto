@@ -9,28 +9,46 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/visualizar_perfil_libreria.css">
     <link rel="stylesheet" href="css/registrar_oferta.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 
 
+<header>
+        <nav>
+            <div class="logoBambooks">
+                <a href="inicioCliente.html"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
+            </div>
+            <div class="nav-container">
+                <a href="listar_librerias.html">Librerias</a>
+                <a href="%20clubesLectura.html">Clubes de Lectura</a>
+                <a href="listar_libros.html">Libros</a>
+                <a href="listar-autores.html">Autores</a>
+                <a href="#">Intercambios</a>
+            </div>
+            <div class="optionsNav">
+                <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+                <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px"
+                    alt="">
+                <button id="btn_cerrar">Cerrar Sesion</button>
+            </div>
+        </nav>
+    </header>
+
 <body>
 
-    <nav>
 
-        <img src="imgs/panda_grain.png" alt="">
-        
-        <ul>
-            <li> <a href="">Naty</a> </li>
-            <li> <a class="cerrar_sesion" href="">Cerrar Sesión</a> </li>
-        </ul>
-
-    </nav>
 
     <main>
 
         <h1> <span id="txt_nombre_comercial"></span> </h1>
-        
+
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1915192287242!2d-84.04903608571853!3d9.918001777163246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e397932ca451%3A0xef8088362eda931!2sMultiplaza+Curridabat!5e0!3m2!1ses-419!2scr!4v1562653229172!5m2!1ses-419!2scr" width="800" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-        
+
         <p class="dato"> <span id="txt_direccion"></span></p>
 
         <section id="sucursales">
@@ -45,12 +63,12 @@
                 <div>
                         <img src="" alt="" id="image_preview2" width="800" height="300">
                 </div>
-        
+
                 <div class="contenedor">
-        
+
                     <div class="overlay" id="overlay">
                         <div class="popup" id="popup">
-        
+
                             <span class="close" id="cerrar">&times;</span>
                           <section>
                             <div class="contenedor-inputs">
@@ -62,23 +80,24 @@
                                         </figure>
                                         <button type="button" id="btn_seleccionar_imagen" class="boton_subir_imagen">Subir
                                             Oferta </button>
-        
-        
-                                        
+
+
+
                             </form>
                         </div>
                     </div>
-        
+
                 </section>
                 </div>
 
         </section>
 
     </main>
-    
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/servicio_librerias.js"></script>
     <script src="js/controlador_perfil_libreria.js"></script>
+    <script src="js/getNombre.js"></script>
 
     <script src="js/jquery-3.3.1.js"></script>
 
@@ -93,7 +112,7 @@
     <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     <script src="js/servicio_img_prevista.js"></script>
 
-    
+
 
 </body>
 

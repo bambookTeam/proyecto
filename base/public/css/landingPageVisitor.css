@@ -6,13 +6,52 @@ Otro: #c09f80
 */
 
 body{
-    font-family: 'Roboto', sans-serif;
-    background-color: #d7cec7;
-}
+    font-family: 'Roboto', sans-serif;}
 header{
     height:60px;
     background-color:#76323f;
 }
+#navi{
+    padding:10px 20px;
+}
+#navi img{
+    float:left;
+    width:50px;
+}
+
+.sesion,#unirse_Club{
+    margin:10px 5px 10px 839px;
+    padding:5px 10px;
+    background-color:#d7cec7;
+    border:solid 0;
+    float:left;
+    border-radius:5px;
+}
+
+.sesion:hover,#unirse_Club:hover{
+    opacity:0.9;
+    color:white;
+    background-color:#c09f80;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 1024px; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  /*
+Moradito:  #76323f
+Tan: #d7cec7
+Gris: #565656
+Otro: #c09f80
+*/
 #navi{
     padding:10px 20px;
 }
@@ -207,4 +246,258 @@ header{
       border: solid 1px red;
   }
 
-  
+  .container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    }
+    
+    
+    .container .galerias {
+    background-color: #62000F;
+      color:white;
+    }
+    
+    .container .sobrenosotros {
+    background-color: #DFDDD0;
+    color:#000;
+    }
+    
+    .container .registro {
+       color:#fff;
+      background-color: #000;
+    }
+    
+    .container .contacto {
+      background-color: #494949;
+      
+    }
+    .container{
+    padding-top:90px;
+    margin:20px;
+    display: grid;
+    grid-gap: 7px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows:400px 400px ;
+    }
+    
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 300px 5;
+        color: white;
+        text-align: center;
+        background-color: grey;
+        grid-gap: 3px;
+        font-family: 'Roboto', sans-serif;
+      }
+      
+      .footone,
+      .foottwo,
+      .footthree,
+      .footfour,
+      .footfive {
+        background-color: #76323f;
+        
+      }
+      
+      .footfive {
+        grid-column: 1 / -1;
+      }
+      
+      .footone img {
+        padding-top: 25px;
+      }
+      
+      .footone h1 {
+        font-size: 1.2em;
+      }
+      
+      .footone p {
+        font-size: 0.8em;
+        margin: 7px 0 0 5px;
+        padding-bottom: 15px;
+      }
+      
+      .foottwo {
+        text-align: center;
+      }
+      
+      .foottwo h3 {
+        font-size: 0.9em;
+        margin: auto;
+        padding: 105px 0 0 0;
+        width:80%;
+        
+      }
+      
+      .foottwo .redes {
+        margin-top:20px;
+      }
+      
+      .redes .line{
+        background-color:#fff;
+        width:70%;
+        height:1px;
+        margin:10px auto;
+        padding:0 40px;
+      }
+      
+      .redes img:hover{
+        opacity:0.7;
+      }
+      .footthree{
+        height:300px;
+      }
+      
+      .footthree h3 {
+        font-size: 1.2em;
+        padding: 5px 0px 0 0;
+      }
+      
+      .footthree .pw {
+        margin-top: 15px;
+        display: inline-block;
+        text-align: center;
+      }
+      
+      .footfour h2 {
+        padding: 5px 20px;
+        margin: auto;
+        margin-top: 45px;
+        font-size: 1.4em;
+        font-weight: lighter;
+      }
+      
+      .footfour .buttonArt {
+        background-color: transparent;
+        margin: 15px 0 0 19px;
+        border: 2px solid #fff;
+        color: #fff;
+        width: 120px;
+        height: 30px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        padding: 5px;
+      }
+      
+      .footfive p {
+        color: #aaaaaa;
+        font-size: 0.7em;
+        text-align: left;
+        margin-left: 25px;
+      }
+      
+      .footer form {
+        padding: 0 5px;
+        width: 202px;
+        margin: 0 auto;
+      }
+      
+      .footer label {
+        font-size: 0.9em;
+      }
+      
+      .footer input {
+        margin:5px 0;
+        width: 190px;
+        height: 20px;
+        padding:10px;
+      }
+      .footer .button {
+        background-color: transparent;
+        margin: 20px 0 10px 2px;
+        border: 2px solid #fff;
+        color: #fff;
+        width: 90px;
+        height: 30px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        padding:5px;
+      }
+      .footer a:hover{
+       
+        color:#faed27;
+      }
+      .footer .button:hover,
+      .buttonArt:hover {
+        /*color:#ffdf00;*/
+        transition: 0.3s;
+        /*border: 2px solid #ffdf00;*/
+        background-color: #fff;
+        color:black;
+      }
+      
+      .footer a {
+        font-size: 0.7em;
+        text-decoration: none;
+        color: #ffdf11;
+      
+      }
+      
+      @media screen and (max-width: 830px) {
+        .container {
+          margin: 20px;
+          display: grid;
+          grid-gap: 3px;
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-rows: repeat(4, 300px);
+        }
+      
+        .footer {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: 300px 300px;
+        }
+      }
+      
+      @media screen and (max-width: 490px) {
+      
+        /*
+        .nav-container {
+          background-color:#62000F;
+          display: grid;
+          grid-template-columns: repeat(1, auto);
+          grid-auto-rows: auto;
+          grid-gap: 1em;
+        }
+      
+        nav a {
+          color: white;
+          text-decoration: none;
+          text-align: center;
+          margin-top: 3px;
+        }
+      
+        nav a:hover {
+          background-color: #282828;
+          padding:5px;
+        }
+       
+       */
+        .banner h2 {
+          grid-column: 4/10;
+          grid: row 6/-1;
+          padding: 2px 0;
+          text-align: center;
+        }
+      
+        .menu {
+          margin-top: 60px;
+          grid-row: 2 / 4;
+          grid-column: 1/-1;
+        }
+      
+        .content {
+          margin-top: 60px;
+          grid-column: 1 /-1;
+          grid-row: 4 /-1;
+        }
+      
+        .footer {
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-rows: 300px 200px 300px 300px;
+        }
+      }
