@@ -69,6 +69,10 @@ let inicioSesion =  async () =>{
           if( JSON.parse(sessionStorage.getItem('usuario')).contador == 1){
 
             location.replace('crear_contrasenna')
+        // CREAR CONTRASE;A 
+          if( sessionStorage.getItem('contador') == '0'){
+              
+            location.replace('crear_contrasenna.html')
 
            } else {
 
