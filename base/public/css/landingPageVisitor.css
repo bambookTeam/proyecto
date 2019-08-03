@@ -6,9 +6,7 @@ Otro: #c09f80
 */
 
 body{
-    font-family: 'Roboto', sans-serif;
-    background-color: #d7cec7;
-}
+    font-family: 'Roboto', sans-serif;}
 header{
     height:60px;
     background-color:#76323f;
@@ -54,15 +52,6 @@ Tan: #d7cec7
 Gris: #565656
 Otro: #c09f80
 */
-
-body{
-    font-family: 'Roboto', sans-serif;
-    background-color: #d7cec7;
-}
-header{
-    height:60px;
-    background-color:#76323f;
-}
 #navi{
     padding:10px 20px;
 }
