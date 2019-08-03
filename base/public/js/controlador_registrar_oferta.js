@@ -15,12 +15,17 @@ cerrarpopup.addEventListener('click', function () {
     popup.classList.add('remove');
 
 });
+
  let validar =(pimgoferta) => {
 if (pimgoferta == '') {
     error = true;
     imgoferta.classList.add('input_error');
 } else {
     imgoferta.classList.remove('input_error');
+
+    popup.classList.add('remove');
+
+
     registrarOferta(pimgoferta);
 
 }
