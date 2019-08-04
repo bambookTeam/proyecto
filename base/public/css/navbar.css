@@ -56,3 +56,6 @@ html {
     margin: -5px 10px 0 10px;
   }
   
+#optionNavGenero,#optionNavUsuarios,#optionNavCategoria,#optionNavAutores{
+  display:none;
+}

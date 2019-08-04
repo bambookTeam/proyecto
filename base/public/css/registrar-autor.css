@@ -88,7 +88,7 @@ iframe{
     height: 122px;
 }
 
-#btn{
+#btn-registrar-autor,#btn{
     margin: 50px 0;
     padding: 10px;
     border: 2px solid #76323F;
@@ -100,7 +100,7 @@ iframe{
     outline: none;
 }
 
-#btn:hover{
+#btn-registrar-autor:hover,#btn:hover{
     margin: 50px 0;
     padding: 10px;
     border: 2px solid #76323F;

@@ -20,29 +20,32 @@ let listarClubes = async()=>{
 
     div.appendChild(img);
     div.appendChild(clubInfoDiv);
-
+    
 
     let h1 = document.createElement('h1');
     h1.innerHTML=listaClubes[i].nombre_Club;
-    let modalidadLinea =document.createElement('h3');
+    let modalidadLinea =document.createElement('p');
     modalidadLinea.innerHTML=listaClubes[i].modalidad;
-    let fechaLinea = document.createElement('h3');
+    let fechaLinea = document.createElement('p');
     fechaLinea.innerHTML='Inicio: '+listaClubes[i].fechaInicio.substring(0,10) + '- Fin: '+listaClubes[i].fechaFin.substring(0,10);
-    let horaLinea = document.createElement('h3');
+    let horaLinea = document.createElement('p');
     if(listaClubes[i].modalidad=="Virtual"){
         horaLinea.innerHTML="00:00";
     }else{
         horaLinea.innerHTML=listaClubes[i].hora+ "-" + listaClubes[i].frecuencia;
     }
-    let temaGenerolinea = document.createElement('h3');
+    let temaGenerolinea = document.createElement('p');
     temaGenerolinea.innerHTML=listaClubes[i].tema + ' - ' + listaClubes[i].genero;
+    
     let btnUnirseClub = document.createElement('button');
     btnUnirseClub.innerText="Unirse";
     btnUnirseClub.setAttribute('class','unirse_Club');
+    btnUnirseClub.dataset._id=listaClubes[i]._id;
+
     let btnCrearEvento = document.createElement('button');
     btnCrearEvento.innerText="Agregar Evento";
     btnCrearEvento.setAttribute('class','crear_Evento');
-
+    btnCrearEvento.dataset._id=listaClubes[i]._id;
 
     clubInfoDiv.appendChild(h1);
     clubInfoDiv.appendChild(modalidadLinea);
@@ -51,6 +54,10 @@ let listarClubes = async()=>{
     clubInfoDiv.appendChild(temaGenerolinea);
     div.appendChild(btnUnirseClub);
     div.appendChild(btnCrearEvento);
+
+    btnCrearEvento.addEventListener('click',function(){
+        window.location.href=`registrar-evento.html?_id=${this.dataset._id}`
+    });
 
 
     }

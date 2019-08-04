@@ -12,18 +12,18 @@ let mostrar_tabla = async () => {
     for (let i = 0; i < lista_libros.length; i++) {
         let fila = tbody.insertRow();
         fila.insertCell().innerHTML = lista_libros[i]['titulo'];
-        fila.insertCell().innerHTML = lista_libros[i]['edición'];
+        fila.insertCell().innerHTML = lista_libros[i]['edicion'];
         fila.insertCell().innerHTML = lista_libros[i]['editorial'];
         fila.insertCell().innerHTML = lista_libros[i]['autor'];
-        fila.insertCell().innerHTML = lista_libros[i]['año'];
+        fila.insertCell().innerHTML = lista_libros[i]['anno'];
         fila.insertCell().innerHTML = lista_libros[i]['idioma'];
         fila.insertCell().innerHTML = lista_libros[i]['isbn'];
         fila.insertCell().innerHTML = lista_libros[i]['genero'];
         fila.insertCell().innerHTML = lista_libros[i]['tipo'];
-        fila.insertCell().innerHTML = lista_libros[i]['existencia'];
+        fila.insertCell().innerHTML = lista_libros[i]['cantidad'];
         fila.insertCell().innerHTML = lista_libros[i]['precio'];
         fila.insertCell().innerHTML = lista_libros[i]['portada'];
-    
+
         let celda_perfil = fila.insertCell();
         let boton_perfil = document.createElement('button');
         boton_perfil.type = 'button';
@@ -61,7 +61,7 @@ let filtrar_tabla = async () => {
             fila.insertCell().innerHTML = lista_libros[i]['existencia'];
             fila.insertCell().innerHTML = lista_libros[i]['precio'];
             fila.insertCell().innerHTML = lista_libros[i]['portada'];
-            
+
         }
 
     }

@@ -94,7 +94,7 @@ let validarCorreo = async (pcorreo) => {
 
     for( let i = 0; i < usuarios.length; i++){
 
-        if( usuarios[i]['correo'] == pcorreo){
+        if( usuarios[i].correo == pcorreo){
 
             error = true; 
             input_correo.classList.add('input_error');            
