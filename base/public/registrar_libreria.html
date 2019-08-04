@@ -15,11 +15,11 @@
 <header>
     <nav>
       <div class="logoBambooks">
-        <a href="#"><img
+        <a href="#" id="logoRedirect"><img
             src="imgs/panda_grain.png"
             alt="" width="40px"></a>
       </div>
-      <div class="nav-container">
+      <div class="nav-container" id='nav-content'>
         <a href="listar_librerias.html" id="optionNavLibrerias">Librerias</a>
         <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
         <a href="listar_libros.html" id="optionNavLibros">Libros</a>
@@ -29,7 +29,7 @@
         <a href="#" id="optionIntercambio">Intercambios</a>
         <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
       </div>
-      <div class="optionsNav">
+      <div class="optionsNav" id="optionsNav">
           <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
         <div class="dropdown-content">
           <a href="#">Link 1</a>
@@ -41,6 +41,7 @@
       </div>
     </nav>
   </header>
+
 
 <body>
     <main>
@@ -101,10 +102,8 @@
     <script src="js/servicio_librerias.js"></script>
     <script src="js/servicio_usuario.js"></script>
     <script src="js/controlador_registrar_libreria.js"></script>
-
-
     <script src="js/controlador_cerrar_sesion.js"></script>
-    <script src="js/getNombre.js"></script>
+    <script src="js/notSignedIn.js"></script>
 
 
 </body>

@@ -148,6 +148,13 @@ Otro: #c09f80
     font-size: 2em;
     }
     
+    #input_error_footer{
+        margin-top:5px;
+        color:#d1a71b;
+        font-size:10px;
+        display:none;
     
+    }
     
       
+    
