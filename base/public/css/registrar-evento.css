@@ -13,6 +13,7 @@ main{
     display: inline-block
 }
 
-main button{
-    margin: 20px;
+header{
+    margin-top:-8px;
 }
+
