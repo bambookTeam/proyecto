@@ -185,14 +185,8 @@ router.get('/buscar-usuario-id/:_id', function(req, res) {
 });
 
 router.post('/crear-contrasenna', function(req, res){
-    Usuario.update(
-        { _id: req.body._id},
-        {
-
-            $push: {
-                'contrasena': req.body.contrasena
-            }
-        }, 
+    Usuario.updateOne( {_id: req.body._id}, { $set: {contrasena: req.body.contrasena}},
+ 
         function(error){
             if(error){
                 return res.status(500).json ({
@@ -218,33 +212,29 @@ router.post('/crear-contrasenna', function(req, res){
 
 
 router.post('/actualizar-contador', function(req,res){
-    Usuario.update(
-        { _id: req.body._id},
-        {
-            $push: {
-                'contador': req.body.contador
-            }
-
-
-
-        },
+    console.log("inicio funcion  contador");
+    Usuario.updateOne( { _id: req.body._id }, { $set: {contador: req.body.contador } } ,
         function(error){
             if(error){
                 return res.status(500).json ({
                     success: false,
                     msj: 'No se pudo actualizar el contador',
-                    err
+                    error
                 });
 
+                console.log("error contador");
+                console.log(error);
 
             }else {
 
-                return res.status(400).json({
+                return res.status(200).json({
                     success: true,
                     msj: 'El contador se actualizo correctamente'
 
                 });
-
+                console.log("actualizar contador");
+                console.log("Se ejecuta correctamente ");
+                console.log(res);
 
             }
 
@@ -252,7 +242,9 @@ router.post('/actualizar-contador', function(req,res){
 
 
     )
-
+            // $push: {
+            //     'contador': req.body.contador
+            // }
 
 });
 
