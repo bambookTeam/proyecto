@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarContacto = (pnombre, pcorreo) => {
+let registrarContacto = (pnombre, pcorreo,pcontraseña,pavatar) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-contacto',
@@ -8,6 +8,9 @@ let registrarContacto = (pnombre, pcorreo) => {
         data: {
             nombre: pnombre,
             correo: pcorreo,
+            contraseña:pcontraseña,
+            avatar: imagenUrl
+
             
         }
     });

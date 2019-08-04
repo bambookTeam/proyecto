@@ -16,6 +16,7 @@ let llenar_perfil = async() => {
         txt_nombre.innerHTML = contacto['nombre'];
         txt_correo.innerHTML = contacto['correo'];
         txt_contraseña.innerHTML=contacto['contraseña'];
+        
        
 
     }
