@@ -26,24 +26,10 @@ btn_subir_oferta.onclick= function(){
    
 };
 
- let validar =(pimgoferta) => {
-if (pimgoferta == '') {
-    error = true;
-    imgoferta.classList.add('input_error');
-} else {
-    imgoferta.classList.remove('input_error');
-
-    popup.classList.add('remove');
-        registrarOferta(pimgoferta);
-    
-return error;
-}
-
-
+ 
 let saludar = () => {
 let imagen= imgoferta.src;
-
-let error=validar(imagen)
+let error=false;
 
 if (error == false) {
     registrarOferta(imagen);
@@ -64,4 +50,3 @@ if (error == false) {
 
 
  
-}
