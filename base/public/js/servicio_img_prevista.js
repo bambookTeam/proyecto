@@ -21,7 +21,7 @@ $(function () {
                 let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/bambooks/image/upload/' + id;
-                document.querySelector('#image_preview').src = imagenUrl;
+                document.querySelector('#image_preview').src=imagenUrl;
                 console.log(imagenUrl);
             });
     });
