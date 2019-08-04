@@ -50,41 +50,27 @@ let inicioSesion =  async () =>{
 
        if (errorCredenciales==true) {
 
-        // CREAR CONTRASE;A
-        /*
-        if( JSON.parse(sessionStorage.getItem('usuario')).contador == 1){
+    
+       if(sessionStorage.getItem('contador') == '1' ){
+           
+        location.replace('crear_contrasenna.html')        
+
+       }else {
 
         let tipoUsuario=sessionStorage.getItem('tipoUsuario');
         console.log(tipoUsuario)
+
         if (tipoUsuario=='2')//cliente
              {
             location.replace('inicioCliente.html');
         } else {
-            location.replace('%20clubesLectura.html')
+           // location.replace('%20clubesLectura.html')
         }
-        // CREAR CONTRASE;A
-          if( JSON.parse(sessionStorage.getItem('usuario')).contador == 1){
+           
 
-            location.replace('crear_contrasenna')
-        // CREAR CONTRASE;A 
-          if( sessionStorage.getItem('contador') == '0'){
-              
-            location.replace('crear_contrasenna.html')
 
-           } else {
-
-            location.replace('inicioCliente.html');
-           }
-
-        */
-        let tipoUsuario=sessionStorage.getItem('tipoUsuario');
-        console.log(tipoUsuario)
-        if (tipoUsuario=='2')//cliente
-             {
-            location.replace('inicioCliente.html');
-        } else {
-            location.replace('%20clubesLectura.html')
-        }
+       }
+        
 
 
 
