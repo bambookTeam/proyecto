@@ -57,7 +57,7 @@ let guardar = async () => {
     let verificacion = input_verificacion.value;
 
     let error = validar(pin,contrasena,verificacion);
-    let errorPin =  validarPin (pin, contrasena);
+    let errorPin = validarPin (pin, contrasena);
      console.log(errorPin);
 
 
@@ -72,7 +72,7 @@ let guardar = async () => {
 
     }else {
 
-        if( errorPin == true) {
+        if( errorPin == false) {
 
              
         Swal.fire({ //formato json

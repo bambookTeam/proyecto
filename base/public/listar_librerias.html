@@ -13,30 +13,29 @@
     </head>
 
     <header>
-            <nav>
-                <div class="logoBambooks">
-                    <a href="inicioCliente.html"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
+        <nav>
+            <div class="logoBambooks">
+                <a href="inicioCliente.html"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
+            </div>
+            <div class="nav-container">
+                <a href="listar_librerias.html">Librerias</a>
+                <a href="%20clubesLectura.html">Clubes de Lectura</a>
+                <a href="listar_libros.html">Libros</a>
+                <a href="listar-autores.html">Autores</a>
+                <a href="#">Intercambios</a>
+            </div>
+            <div class="optionsNav">
+                <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
                 </div>
-                <div class="nav-container">
-                    <a href="listar_librerias.html">Librerias</a>
-                    <a href="%20clubesLectura.html">Clubes de Lectura</a>
-                    <a href="listar_libros.html">Libros</a>
-                    <a href="listar-autores.html">Autores</a>
-                    <a href="#">Intercambios</a>
-                </div>
-                <div class="optionsNav">
-                    <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                    <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px"
-                        alt="">
-                    <button id="btn_cerrar">Cerrar Sesion</button>
-                </div>
-            </nav>
-        </header>
+                <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
+                <button id="btn_cerrar">Cerrar Sesion</button>
+            </div>
+        </nav>
+    </header>
 
     <body>
 
@@ -76,7 +75,9 @@
 
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
         <script src="js/servicio_librerias.js"></script>
+
         <script src="js/controlador_listar_librerias.js"></script>
         <script src="js/controlador_cerrar_sesion.js"></script>
         <script src="js/getNombre.js"></script>

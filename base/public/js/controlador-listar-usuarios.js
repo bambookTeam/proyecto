@@ -45,7 +45,7 @@ let filtrar_tabla = async () => {
 
 
     for (let i = 0; i < lista_usuarios.length; i++) {
-        if (lista_usuarios[i]['identificacion'].toLowerCase().includes(filtro) || lista_usuarios[i]['correo'].toLowerCase().includes(filtro)) {
+        if (lista_usuarios[i]['identificacion'].toLowerCase().includes(filtro) || lista_usuarios[i]['correo'].toLowerCase().includes(filtro) || lista_usuarios[i]['sexo'].toLowerCase().includes(filtro) || lista_usuarios[i]['tipo'].toLowerCase().includes(filtro)) {
             let fila = tbody.insertRow();
             fila.insertCell().innerHTML = lista_usuarios[i]['primerNombre'];
             fila.insertCell().innerHTML = lista_usuarios[i]['primerApellido'];

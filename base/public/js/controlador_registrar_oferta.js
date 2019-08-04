@@ -3,7 +3,9 @@ var btnRegistraroferta = document.getElementById('btn-registrar-oferta'),
     overlay = document.getElementById('overlay'),
     popup = document.getElementById('popup'),
     cerrarpopup = document.getElementById('cerrar'),
-    imgoferta=document.getElementById('#image_preview');    
+    imgoferta=document.getElementById('#image_preview'),
+    agregar=document.getElementById('#boton_subir_imagen');
+
    
   btnRegistraroferta.addEventListener('click', function(){
     overlay.classList.add('active');
@@ -15,18 +17,22 @@ cerrarpopup.addEventListener('click', function () {
     popup.classList.add('remove');
 
 });
+
  let validar =(pimgoferta) => {
 if (pimgoferta == '') {
     error = true;
     imgoferta.classList.add('input_error');
 } else {
     imgoferta.classList.remove('input_error');
+
+    popup.classList.add('remove');
+
+
     registrarOferta(pimgoferta);
-
-}
-
+    
 return error;
 }
+
 
 let saludar = () => {
 let imagen= imgoferta.src;
@@ -48,9 +54,11 @@ if (error == false) {
 }
 
 };
-const agregar=document.querySelector('#btn-agregar');
+const agregar=document.querySelector('#boton_subir_imagen');
+agregar.addEventListener('click', function(){
+    overlay.classList.add('active');
+    popup.classList.add('active');
+});
 
-
-
-
-
+ }
+ 
