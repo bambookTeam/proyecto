@@ -12,7 +12,7 @@
 
 <body>
     <nav>
-        <img src="imgs/panda color grain.png" alt="">
+        <img src="imgs/panda_grain.png" alt="">
 
         <ul>
             <li> <a href="">Axel</a> </li>
@@ -20,9 +20,11 @@
         </ul>
     </nav>
     <main>
-        <h1>Listar libros</h1>
+        <h1>Libros</h1>
+
+        <input type="text" id="txt_filtro">
+        
         <table id="tbl_libros">
-            <input type="text" id="txt_filtro">
             <thead>
                 <tr>
                     <th>Titulo</th>
@@ -45,10 +47,10 @@
         </table>
 
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/controlador_listar_libros.js"></script>
-    <script src="js/servicio_libro.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/servicio_libro.js"></script>
+    <script src="js/controlador_listar_libros.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 </body>
 
