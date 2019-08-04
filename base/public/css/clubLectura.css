@@ -1,26 +1,10 @@
-    html{
-        min-width: 1024px;
-    }
+
     .modal-content{
         width:40%;
         text-align: center;
         height:1020px;
     }
-    #navi button{
-        display:block;
-         margin:10px 5px 10px 839px;
-         padding:5px 10px;
-         background-color:#d7cec7;
-         border:solid 0;
-         float:left;
-         border-radius:5px;
-     }
-     
-     #navi button:hover{
-         opacity:0.9;
-         color:white;
-         background-color:#c09f80;
-     }
+
    
      .filtrar{
          float:left;
@@ -54,10 +38,7 @@
      .btn2:hover{
          background-color: #3d1e24;   
      }
-     #clubes{
-         
-         background-color:#aaaaaa;
-     }
+     
  
      #clubes img,#RegistrarClubScreen img{
          width:75px;

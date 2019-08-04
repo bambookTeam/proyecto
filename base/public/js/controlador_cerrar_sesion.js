@@ -3,6 +3,7 @@
 
 const boton_cerrar_sesion = document.querySelector('#btn_cerrar');
 
+
 let cerrar_sesion = () => {
 
     sessionStorage.clear();

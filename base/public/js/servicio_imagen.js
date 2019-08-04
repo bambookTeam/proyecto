@@ -22,6 +22,7 @@ $(function () {
                 imagenUrl = 'https://res.cloudinary.com/bambooks/image/upload/' + id;
                 document.querySelector('#img_preview').src = imagenUrl;
                 console.log(imagenUrl);
+                
             });
     });
 

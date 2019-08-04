@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil Librería</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/visualizar_perfil_admin_libreria.css">
+</head>
+
+<body>
+
+    <nav>
+
+        <img src="imgs/panda_grain.png" alt="">
+        
+        <ul>
+            <li> <a href="">Naty</a> </li>
+            <li> <a class="cerrar_sesion" href="">Cerrar Sesión</a> </li>
+        </ul>
+
+    </nav>
+
+    <main>
+
+        <div class="izquierda">
+
+            <img src="imgs/pandauser.png" alt="" width="200px">
+
+            <h1 class="nombre"> <span id="txt_nombre_comercial"> nombre </span> </h1>
+
+        </div>
+
+        <div class="derecha">
+
+            <p class="dato"> <span id="txt_identificacion"> identificación </span></p>
+    
+            <p class="dato"> <span id="txt_sexo"> sexo </span></p>
+    
+            <p class="dato"> <span id="txt_correo"> correo </span></p>
+    
+            <p class="dato"> <span id="txt_nombre_usuario"> nombre usuario </span></p>
+    
+            <p class="dato"> <span id="txt_contrasena"> contraseña </span></p>
+
+        </div>
+
+
+    </main>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/servicio_librerias.js"></script>
+    <script src="js/controlador_perfil_libreria.js"></script>
+
+</body>
+
+</html>

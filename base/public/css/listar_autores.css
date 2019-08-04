@@ -1,0 +1,67 @@
+
+main{
+    text-align: center;
+}
+
+main h1{
+    color: #76323F;
+    font-size: 30px;
+    margin: 30px;
+}
+main button{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid rgb(139, 79, 89);
+    border-radius: 15px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    background: #76323F;
+    outline: none; 
+}
+
+main button:hover{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid rgb(139, 79, 89);
+    border-radius: 15px;
+    font-size: 15px;
+    color:#76323F;
+    font-weight: bold;
+    background: white;
+    outline: none; 
+}
+
+#txt_filtro{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid rgb(139, 79, 89);
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    outline: none; 
+
+}
+
+#tbl-autores{
+    border: 2px solid rgb(139, 79, 89);
+    margin-bottom: 20px
+}
+
+#tbl-autores thead th{
+    border: 2px solid rgb(139, 79, 89);
+    font-size: 35px;
+    padding: 10px
+}
+
+#tbl-autores tbody td{
+    border: 2px solid rgb(139, 79, 89);
+    font-size: 25px;
+    text-align: center;
+
+}
+
+#tbl-autores tbody tr:hover{
+    background: #D7CEC7;
+}
+
