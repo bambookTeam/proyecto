@@ -57,8 +57,9 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
                     sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
                     sessionStorage.setItem('contrasena', response.data.usuario.contrasena);
                     sessionStorage.setItem('contador', response.data.usuario.contador);
+                    sessionStorage.setItem('nombreUsuario',response.data.usuario.nombreUsuario);
                     //actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).data.contador);
-                    actualizar_contador(sessionStorage.getItem('id'), sessionStorage.getItem('contador'));
+                    //actualizar_contador(sessionStorage.getItem('id'), sessionStorage.getItem('contador'));
 
                     //location.replace('crear_contrasenna.html');
                 } else {
@@ -156,6 +157,7 @@ let actualizar_contador = (p_id, pcontador)=>{
 
 
     let nuevoContador = parseInt(pcontador) + 1;
+    console.log(nuevoContador);
 
     axios ({
 
@@ -200,8 +202,6 @@ let obtenerUsuarioId = async (_id) => {
         console.log(error);
     }
 };
-
-
 
 function generarContrasenna()
 {

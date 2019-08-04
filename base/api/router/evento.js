@@ -2,7 +2,7 @@
 
 const express = require('express'),
     router = express.Router(),
-    ClubLectura = require('../models/evento.model');
+    Evento = require('../models/evento.model');
 
 
 router.post('/registrar-evento', function (req, res) {

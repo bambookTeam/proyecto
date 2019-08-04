@@ -1,0 +1,18 @@
+
+main{
+    text-align: center;
+}
+.librosLista{
+    width:100%;
+    
+}
+
+#selectLibros{
+    width:30%;
+    margin:auto;
+    display: inline-block
+}
+
+main button{
+    margin: 20px;
+}
