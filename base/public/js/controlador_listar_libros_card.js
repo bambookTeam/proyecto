@@ -52,7 +52,7 @@ let mostrar_tabla = async () =>{
 
         sct_libros.appendChild(contedor_card);
 
-        // contedor_card.innerHTML = lista_libros[i]['portada'];
+        // contenedor_card.innerHTML = lista_libros[i]['portada'];
         titulo_libro.innerText = lista_libros [i]['titulo'];
         edicion.innerText = lista_libros[i]['edicion'];
         editorial.innerText = lista_libros[i]['editorial'];

@@ -16,6 +16,22 @@ const input_cantidad = document.querySelector('#txt_existencia');
 const input_precio = document.querySelector('#txt_precio');
 const imgLibro = document.querySelector('#img_preview');
 
+let listar_genero = async()=>{
+    let arrayGenero = [];
+    arrayGenero=await listarGenero();
+    let genero_select = document.querySelector('#txt_genero');
+
+    for (let i = 0; i < arrayGenero.length; i++) {
+        let optionGenero = document.createElement('option');
+        optionGenero.setAttribute('value', arrayGenero[i].genero);
+    
+        optionGenero.innerHTML = arrayGenero[i].genero;
+        genero_select.appendChild(optionGenero);
+    }
+
+}
+window.addEventListener('load', listar_genero);
+
 let validar = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pimgLibro, pgenero, ptipo, pcantidad, pprecio, ) => {
 
     let error = false;

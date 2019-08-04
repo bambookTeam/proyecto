@@ -1,0 +1,12 @@
+body{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+/* FIN nav */
+
+main{
+    display: flow-root;
+    margin-top: 50px;
+    text-align: center;
+}
