@@ -7,21 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/registrar_genero.css">
+    <link rel="stylesheet" href="css/navbar.css">
 
 </head>
 
+<header>
+        <nav>
+            <div class="logoBambooks">
+                <a href="inicioCliente.html"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
+            </div>
+            <div class="nav-container">
+                <a href="listar_librerias.html">Librerias</a>
+                <a href="%20clubesLectura.html">Clubes de Lectura</a>
+                <a href="listar_libros.html">Libros</a>
+                <a href="listar-autores.html">Autores</a>
+                <a href="#">Intercambios</a>
+            </div>
+            <div class="optionsNav">
+                <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+    
+                <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px"
+                    alt="">
+                <button id="btn_cerrar">Cerrar Sesion</button>
+            </div>
+        </nav>
+    </header>
+    
+
 <body>
-        <header>
-            <nav>
-    
-                <img src="imgs/panda_grain.png" alt="">
-    
-                <ul>
-                    <li> <a href="">Usuario</a> </li>
-                    <li> <a class="cerrar_sesion" href="">Cerrar Sesión</a> </li>
-                </ul>
-    
-            </nav>
+        
             <button type="button" class="btn-registrar-genero" id="btn-registrar-genero">Registrar Género</button>
            
             <div class="contenedor">
@@ -53,7 +67,7 @@
             <section id="generos_lista">
 
             </section>
-        </header>
+        
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
         <script src="js/servicio_genero.js"></script>
