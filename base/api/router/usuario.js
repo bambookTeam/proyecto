@@ -256,4 +256,36 @@ router.post('/actualizar-contador', function(req,res){
 
 });
 
+router.post('/agregar-tarjeta', function(req, res) {
+
+    Usuario.update(
+        {_id: req.body._id},
+        {
+            $push: {
+                'tarjetas': {
+                    numerotarjeta: req.body.numerotarjeta,
+                    fechavencimiento: req.body.fechavencimiento,
+                    codigocvv: req.body.codigocvv
+                }
+            }
+        },
+
+        function(error){
+            if (error) {
+                return res.status(400).json({
+                    success: false,
+                    msj: 'No se pudo agregar la tarjeta',
+                    err
+                });
+            } else {
+                return res.json({
+                    success: 'true',
+                    msj: 'La tarjeta se agregó correctamente'
+                });
+            }
+        }
+    )
+
+});
+
 module.exports = router;

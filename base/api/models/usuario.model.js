@@ -22,7 +22,17 @@ let usuario_shema = new mongoose.Schema({
     contrasena: {type: String, required: true, unique: true},
     tipo: {type: Number, required: true, unique: false},
     contador : {type : Number, required: true, unique: false},
-    avatar: {type: String, required: false, unique: false}
+    avatar: {type: String, required: false, unique: false},
+
+    tarjetas: [{
+      numerotarjeta:{type:Number, required:true, unique:true},
+      fechavencimiento:{type:Date, required:true, unique:false},
+      codigocvv:{type:Number, required:true, unique:true}
+    }]
+
+
+    
+   });
 
 
     // 1 para admin de libreria, 2 para cliente
@@ -33,6 +43,5 @@ let usuario_shema = new mongoose.Schema({
    //distrito: {type: String, required: false, unique: false},
 
 
-});
 
 module.exports = mongoose.model('Usuario', usuario_shema);

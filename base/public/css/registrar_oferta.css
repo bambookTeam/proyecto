@@ -103,8 +103,13 @@ visibility: hidden;
     display: inline-block;
 }
 
-#img_preview{
-    width: 70px;
+#image_preview2{
+    border-image: 0%;
+}
+
+
+#image_preview{
+    width: 100px;
     border-radius: 200px;
     text-align: center;
 

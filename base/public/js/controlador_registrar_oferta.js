@@ -29,8 +29,7 @@ btn_subir_oferta.onclick= function(){
  
 let saludar = () => {
 let imagen= imgoferta.src;
-
-let error=validar(imagen)
+let error=false;
 
 if (error == false) {
     registrarOferta(imagen);
