@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Perfil libro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/ver_perfil_libro.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+
+<header>
+        <nav>
+            <div class="logoBambooks">
+                <a href="inicioCliente.html"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
+            </div>
+            <div class="nav-container">
+                <a href="listar_librerias.html">Librerias</a>
+                <a href="%20clubesLectura.html">Clubes de Lectura</a>
+                <a href="listar_libros.html">Libros</a>
+                <a href="listar-autores.html">Autores</a>
+                <a href="#">Intercambios</a>
+            </div>
+            <div class="optionsNav">
+                <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+                <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px"
+                    alt="">
+                <button id="btn_cerrar">Cerrar Sesion</button>
+            </div>
+        </nav>
+    </header>
+<body>
+
+  <h2> <span id="txt_titulo"></span></h2>
+  <!-- <img src="" alt="" id="portada">   -->
+<p> <span id="txt_edicion"></span></p>
+<p> <span id="txt_editorial"></span></p>
+<p> <span id="txt_autor"></span></p>
+<p> <span id="txt_anno"></span></p>
+<p> <span id="txt_idioma"></span></p>
+<p> <span id="txt_isbn"></span></p>
+<p> <span id="txt_genero"></span></p>
+<p> <span id="txt_tipo"></span></p>
+
+  </div>
+
+    
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="js/servicio_libro.js"></script>
+        <script src="js/controlador_perfil_libro.js"></script>
+       
+</body>
+</html>

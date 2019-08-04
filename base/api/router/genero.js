@@ -44,7 +44,7 @@ Genero.find(function(err,generosBD){
         });
 
     }else{
-        res.json({
+        return res.json({
             success:true,
             listar_generos:generosBD
     
