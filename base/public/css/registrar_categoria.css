@@ -1,7 +1,4 @@
-body{
-    width: 1024px;
-    margin: 0 auto;
-}
+
 
 .boton_registrar {
 
@@ -16,48 +13,13 @@ body{
 
 }
 
-nav{
-    height: 50px;
-    background-color: #76323F;
-}
-
-nav img{
-    height: 40px;
-    margin-top: 5px;
-    margin-left: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    float: right;
-}
-  
-nav ul li {
-    display: inline;
-}
-
-nav ul li a{
-    text-decoration: none;
-    display: inline-block;
-    padding: 5px;
-    margin: 10px;
-    color: #D7CEC7;
-}
-
-.cerrar_sesion {
-
-    border: 1px solid #D7CEC7;
-}
-
 main{
 
     display: flow-root;
     text-align: center;
 }
 
-h1{
+main h1{
 
     color: #76323F;
     font-size: 30px;
@@ -69,7 +31,7 @@ h1{
     text-align: center;
 }
 
-h2 {
+main h2 {
 
     color: #76323F;
     font-size: 20px;
@@ -77,7 +39,7 @@ h2 {
 
 }
 
-input{
+main input{
     width: 60%;
     margin: 15px;
     padding: 5px;
@@ -96,7 +58,7 @@ input{
     color: #76323F;
 }
 
-button{
+main button{
 
     margin: 50px 0;
     padding: 10px;

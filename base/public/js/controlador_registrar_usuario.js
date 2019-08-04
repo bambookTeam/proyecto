@@ -18,32 +18,131 @@ const img_avatar = document.querySelector('#img_avatar');
 
 
 
-
+/*
 let validarIdentificacion = (pidentificacion) =>
 {
     let validacionId = false;
+
+    let numeros = '0123456789';
+
+    let contNum = 0; 
 
 
     if(pidentificacion.length != 9){
 
         validacionId = true;
 
-    }else
-    {
+        input_identificacion.classList.add('input_error'); 
+       
+    }else {
 
-    for(let i =0; i < pidentificacion.length; i++)
-    {
-        pidentificacion.charAT
+        input_identificacion.classList.remove('input_error'); 
+        
+    }      
+    
+
+    for(let i=0; i<pidentificacion.length; i++){
+
+        if (numeros.indexOf(pidentificacion.charAt(i),0)!=-1){
+            contNum = 1;
+           return contNum;
+        }
+     
+        return contNum;
+
+    }
+   
+
+  if ( contNum == 0){
+
+    validacionId = true;  
+        
+    input_identificacion.classList.add('input_error');
+
+  }else {
+
+    input_identificacion.classList.remove('input_error'); 
+        
+  }
+
+
+    if( pidentificacion.charAt(0) == '0'){ 
+
+        validacionId = true;
+        input_identificacion.classList.add('input_error');
+    } else { 
+
+        input_identificacion.classList.remove('input_error'); 
 
     }
 
+
+
+
+    return validacionId;       
+    
+    
+};
+*/
+
+let validarCorreo = async (pcorreo) => {
+
+    let usuarios = [];
+
+    usuarios = await obtenerUsuarios;
+    let error = false;
+
+    for( let i = 0; i < usuarios.length; i++){
+
+        if( usuarios[i].correo == pcorreo){
+
+            error = true; 
+            input_correo.classList.add('input_error');            
+            
+        }else {
+
+            input_correo.classList.remove('input_error');
+        }
+
     }
 
-}
+    return error;
 
-let validar = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pdireccion, pnombreUsuario, pcontrasena) => {
+};
+    
+
+
+
+let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pnombreUsuario) => {
 
     let error = false;
+
+   // error = validarIdentificacion(pidentificacion); 
+
+
+    if( pidentificacion.charAt(0) == '0'){ 
+
+        error = true;
+        input_identificacion.classList.add('input_error');
+
+    } else { 
+
+        input_identificacion.classList.remove('input_error'); 
+
+    }
+
+
+    if(pidentificacion.length != 9){
+
+        error = true;
+
+        input_identificacion.classList.add('input_error');                                                                                  
+       
+    }else {
+
+        input_identificacion.classList.remove('input_error'); 
+        
+    }      
 
     if (pnombre1 == '')
     {
@@ -95,23 +194,7 @@ let validar = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacio
 
 
 
-
-    /*
-    if( pidentificacion.charAt(0) !='0')
-    {
-
-        error = true;
-        input_identificacion.classList.add('input_error');
-
-    }else
-     {
-
-        input_identificacion.classList.remove('input_error');
-
-    }
-    */
-
-
+ 
     if (pcorreo == '')
     {
         error = true;
@@ -121,60 +204,7 @@ let validar = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacio
     {
         input_correo.classList.remove('input_error');
 
-    }
-
-/*
- SE DEBE DE TENER EN LA BASE DE DATOS LOS CANTONES RELACIONADOS CON LA PROVINCIA
- PARA PODER MOSTRAR UN SELECT CON LOS CANTONES RESPECTIVOS
-
-    if (pprovincia == '')
-    {
-        error = true;
-        select_provincia.classList.add('input_error');
-
-    }else
-    {
-        select_provincia.classList.remove('input_error');
-
-    }
-
-
-    if (pcanton == '')
-    {
-        error = true;
-        input_canton.add('input_error');
-
-    }else
-    {
-        input_canton.remove('input_error');
-
-    }
-
-
-
-
-    if (pdistrito == '')
-    {
-        error = true;
-        input_distrito.add('input_error');
-
-    }else
-    {
-        input_distrito.remove('input_error');
-
-    } */
-
-
-    if (pdireccion == '')
-    {
-        error = true;
-        input_direccion.classList.add('input_error');
-
-    }else
-    {
-        input_direccion.classList.remove('input_error');
-
-    }
+    } 
 
 
     if (pnombreUsuario == '')
@@ -188,18 +218,13 @@ let validar = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacio
 
     }
 
-     //Validar contraseña
-    /* if (pcontrasena == '') {
-        error = true;
-        input_contrasena.classList.add('input_error');
-    } else {
-        input_contrasena.classList.remove('input_error');
-    }
-    */
+  
 
     return error;
 
 };
+
+
 
 let guardar =() =>
 {
@@ -223,7 +248,9 @@ let guardar =() =>
 
 
 
-    let error = validar(nombre1, nombre2, apellido1, apellido2,sexo,identificacion, correo, direccion, nombreUsuario);
+    
+    let error = validar(nombre1, apellido1, sexo,identificacion, correo, nombreUsuario);
+    error = validarCorreo(correo);
 
     if( error == false )
     {

@@ -16,6 +16,8 @@ const evento_route = require('./router/evento');
 const usuario_route = require('./router/usuario');
 const libro_route = require('./router/libros');
 const oferta_route = require('./router/oferta');
+const tarjeta_route = require('./router/tarjeta');
+
 
 
 const app = express();
@@ -34,9 +36,13 @@ app.use(function (req, res, next) {
 
 // Se crea variable db para ser reutilizada en el "callback".
 let db;
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', false);
+
+// { useFindAndModify: true }, { useCreateIndex: true }, 
 
 //Se conecta la base de datos antes de levantar el servidor, mediante los datos del archivo .env en la raiz del proyecto.
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, function (err, database) {
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true }, function (err, database) {
     if (err) {
         console.log(err);
         process.exit(1);
@@ -53,6 +59,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, function (err
     });
 });
 
+
 //Error general en caso de que falle un "endpoint".
 function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
@@ -64,7 +71,7 @@ app.use('/api', autor_route);
 
 app.use('/api', libreria_route);
 app.use('/api', genero_route);
-
+app.use('/api', tarjeta_route);
 //ARI
 
 

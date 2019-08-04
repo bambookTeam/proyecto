@@ -13,32 +13,36 @@
     <link rel="stylesheet" href="css/navbar.css">
 </head>
 
-
 <header>
         <nav>
-            <div class="logoBambooks">
-                <a href="inicioCliente.html"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
+          <div class="logoBambooks">
+            <a href="#"><img
+                src="imgs/panda_grain.png"
+                alt="" width="40px"></a>
+          </div>
+          <div class="nav-container">
+            <a href="listar_librerias.html" id="optionNavLibrerias">Librerias</a>
+            <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
+            <a href="listar_libros.html" id="optionNavLibros">Libros</a>
+            <a href="listar-autores.html" id="optionNavAutores">Autores</a>
+            <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
+            <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
+            <a href="#" id="optionIntercambio">Intercambios</a>
+            <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
+          </div>
+          <div class="optionsNav">
+              <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
             </div>
-            <div class="nav-container">
-                <a href="listar_librerias.html">Librerias</a>
-                <a href="%20clubesLectura.html">Clubes de Lectura</a>
-                <a href="listar_libros.html">Libros</a>
-                <a href="listar-autores.html">Autores</a>
-                <a href="#">Intercambios</a>
-            </div>
-            <div class="optionsNav">
-                <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-                <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px"
-                    alt="">
-                <button id="btn_cerrar">Cerrar Sesion</button>
-            </div>
+            <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
+            <button id="btn_cerrar">Cerrar Sesion</button>
+          </div>
         </nav>
-    </header>
+      </header>
+
 
 <body>
 
@@ -100,6 +104,7 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/noback.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 
     <script src="js/servicio_librerias.js"></script>
