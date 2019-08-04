@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 var btnRegistraroferta = document.getElementById('btn-registrar-oferta'),
     overlay = document.getElementById('overlay'),
     popup = document.getElementById('popup'),
@@ -23,16 +23,16 @@ cerrarpopup.addEventListener('click', function () {
 btn_subir_oferta.onclick= function(){
     overlay.classList.remove('active');
     popup.classList.add('remove');
-   
+    registrarNuevaOferta();   
 };
 
  
-let saludar = () => {
-let imagen= imgoferta.src;
+let registrarNuevaOferta = () => {
+
 let error=false;
 
 if (error == false) {
-    registrarOferta(imagen);
+    registrarOferta();
     Swal.fire({
             type: 'success',
             title: 'El libro se ha registrado exitosamente'

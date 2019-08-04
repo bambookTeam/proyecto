@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 let oferta_schema = new mongoose.Schema({
     
+    id: { type: String, required: true, unique: false },
     imagen: { type: String, required: true, unique: false }
 
 
