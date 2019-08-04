@@ -3,7 +3,7 @@
 let registrarGenero = (pgenero) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/registrar_genero',
+        url: 'http://localhost:4000/api/registrar_generos',
         responseType: 'json',
         data: {
             genero:pgenero
@@ -11,7 +11,7 @@ let registrarGenero = (pgenero) => {
     });
 };
 
-let listarGenero= async() =>{
+let listarGenero = async() =>{
     try {
         const response=await axios({
             method: 'get',

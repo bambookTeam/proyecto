@@ -35,9 +35,13 @@ app.use(function (req, res, next) {
 
 // Se crea variable db para ser reutilizada en el "callback".
 let db;
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', false);
+
+// { useFindAndModify: true }, { useCreateIndex: true }, 
 
 //Se conecta la base de datos antes de levantar el servidor, mediante los datos del archivo .env en la raiz del proyecto.
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, function (err, database) {
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true }, function (err, database) {
     if (err) {
         console.log(err);
         process.exit(1);
@@ -53,6 +57,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, function (err
         console.log("El backend está levantado en el puerto: ", port);
     });
 });
+
 
 //Error general en caso de que falle un "endpoint".
 function handleError(res, reason, message, code) {

@@ -29,7 +29,8 @@ let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pis
 
 };
 
-let listar_Libros = async () => {
+//funsión listar libros
+let obtenerLibros = async () => {
     try {
         //fetch data from a url endpoint
         const response = await axios({
@@ -37,8 +38,24 @@ let listar_Libros = async () => {
             url: 'http://localhost:4000/api/listar_libros',
             responseType: 'json'
         });
+        
+        return result.data.lista_libros;
+    } catch (error) {
+        console.log(error);
+    }
+}
 
-        return response.data.lista_libros;
+//funsion para ver el perfil del libro
+let obtener_libroId = async (_id) => {
+    try {
+        //fetch data from a url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/listar_libro_id/${_id}`,
+            responseType: 'json'
+        });
+        
+        return response.data.libros;  //sino funciona condata.libros, procaar con data.librosBD
     } catch (error) {
         console.log(error);
     }
