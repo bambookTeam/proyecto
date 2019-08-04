@@ -1,5 +1,7 @@
+
+var imagenUrl = '';
 $(function () {
-    let imagenUrl = '';
+
 
     //ConfiguracionCloudinary
     //with credentials available on

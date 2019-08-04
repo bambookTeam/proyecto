@@ -11,9 +11,8 @@ router.post('/registrar_oferta', function(req,res){
 let body = req.body;
 
 let nueva_oferta=new Oferta({
-    imagen: body.imagen,
-
-
+    id: body.id,
+    imagen: body.imagen
 });
 
 nueva_oferta.save(
