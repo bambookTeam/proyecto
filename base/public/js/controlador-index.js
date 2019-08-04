@@ -58,16 +58,8 @@ let inicioSesion =  async () =>{
        }else {
 
         let tipoUsuario=sessionStorage.getItem('tipoUsuario');
-        console.log(tipoUsuario)
 
-        if (tipoUsuario=='2')//cliente
-             {
-            location.replace('inicioCliente.html');
-        } else {
-           // location.replace('%20clubesLectura.html')
-        }
-           
-
+        location.replace('inicioCliente.html');
 
        }
         
