@@ -29,23 +29,24 @@ let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pis
 
 };
 
-let listar_Libros = async () => {
+//funsión listar libros
+let obtenerLibros = async () => {
     try {
         //fetch data from a url endpoint
-        const response = axios({
+        const response = await axios({
             method: 'get',
             url: 'http://localhost:4000/api/listar_libros',
             responseType: 'json'
         });
-        const result = await response;
+        
         return result.data.lista_libros;
     } catch (error) {
-        //console.log(error);
+        console.log(error);
     }
 }
 
-//funcion para ver el perfil del libro
-let obtener_libroID = async () => {
+//funsion para ver el perfil del libro
+let obtener_libroId = async (_id) => {
     try {
         //fetch data from a url endpoint
         const response = await axios({
@@ -54,7 +55,7 @@ let obtener_libroID = async () => {
             responseType: 'json'
         });
         
-        return response.data.librosBD;
+        return response.data.libros;  //sino funciona condata.libros, procaar con data.librosBD
     } catch (error) {
         console.log(error);
     }

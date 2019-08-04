@@ -1,14 +1,12 @@
 'use strict';
-let txt_filtro = document.querySelector('#txt_filtro');
 const tbody = document.querySelector('#tbl_libros tbody');
 let lista_libros = [];
-
-
+let txt_filtro = document.querySelector('#txt_filtro');
 
 
 let mostrar_tabla = async () => {
 
-    lista_libros = await listar_Libros();
+    lista_libros = await obtenerLibros();
     tbody.innerHTML = '';
 
     for (let i = 0; i < lista_libros.length; i++) {
@@ -26,6 +24,17 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_libros[i]['precio'];
         fila.insertCell().innerHTML = lista_libros[i]['portada'];
     
+        let celda_perfil = fila.insertCell();
+        let boton_perfil = document.createElement('button');
+        boton_perfil.type = 'button';
+        boton_perfil.innerText = 'Ver perfil';
+        boton_perfil.dataset._id = lista_librerias[i]['_id'];
+
+        celda_perfil.appendChild(boton_perfil);
+
+        boton_perfil.addEventListener('click', function() {
+            //console.log(this.dataset._id);
+            window.location.href = `listar_libros.html?_id=${this.dataset._id}`
 
     }
 };
@@ -59,7 +68,6 @@ let filtrar_tabla = async () => {
 
 };
 
+mostrar_tabla();
 txt_filtro.addEventListener('keyup', filtrar_tabla);
-
-
-window.addEventListener('load', mostrar_tabla);
+//window.addEventListener('load', mostrar_tabla);

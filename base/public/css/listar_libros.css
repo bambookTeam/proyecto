@@ -1,31 +1,61 @@
-
-main{
-    
-    text-align: center;
-}
-
 h1{
     color: #76323F;
     font-size: 30px;
-    font-weight: bold;
     margin: 30px;
 }
-#tbl_libros{
-    border: 1px solid #76323F;
+
+label{
+    color: #76323F;
+    font-size: 20px;
+    margin: 30px;
 }
-#tbl_libros thead th{
+
+input{
+    width: 60%;
     height: 30px;
-    min-width: 85px;
-    background: #76323F;
-    color: #D7CEC7;
-}
-#tbl_libros tbody{
+    margin: 20px;
+    padding: 5px;
     border: 1px solid #76323F;
+    border-radius: 15px;
+    background: none;
+    outline: none;
 }
-#tbl_libros tbody tr:hover{
-background: #b2bec3;
+
+main a{
+    padding: 10px;
+    border: 1px solid #76323F;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #76323F;
+    font-weight: bold;
+    background: none;
+    outline: none; 
+    text-decoration: none;
 }
-#tbl_libros tbody td {
-    height: 7px;
-    text-align: center;    
+
+main button{
+    padding: 10px;
+    border: 1px solid #76323F;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #76323F;
+    font-weight: bold;
+    background: none;
+    outline: none; 
 }
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color: #76323F;
+    color: white;
+  }
