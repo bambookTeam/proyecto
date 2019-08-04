@@ -8,6 +8,7 @@ $(function () {
 
     //Upload button
     let uploaButton = $('#btn_seleccionar_imagen');
+    let uploadOferta = $('#subir_oferta');
 
 
     //Upload button event
@@ -21,10 +22,15 @@ $(function () {
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/bambooks/image/upload/' + id;
                 document.querySelector('#image_preview').src = imagenUrl;
-                document.querySelector('#image_preview2').src = imagenUrl;
                 console.log(imagenUrl);
             });
     });
+
+    uploadOferta.on('click',function(e){
+        document.querySelector('#image_preview2').src = imagenUrl;
+    });
+
+
 
     function processImage(id) {
         let options = {
