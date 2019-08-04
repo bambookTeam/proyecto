@@ -1,5 +1,5 @@
 var modal = document.getElementById("myModal");
-
+var modalContent=document.querySelector("#signinpopup")
 var btn = document.getElementById("myBtn");
 var btnCancelInicioSesion = document.getElementById("btnCancel");
 
@@ -12,18 +12,20 @@ btn.onclick = function() {
 
 btnCancelInicioSesion.onclick = function(){
     modal.style.display = "none";
+    modalContent.style.height="450px";
     cleanSignIn();
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
- 
+  modalContent.style.height="450px";
   cleanSignIn();
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
+    modalContent.style.height="450px";
     modal.style.display = "none";
     cleanSignIn();
   }

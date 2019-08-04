@@ -8,22 +8,36 @@
     <title>Registrar Librería</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/registrar_libreria.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 
+<header>
+    <nav>
+        <div class="logoBambooks">
+            <a href="#"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
+        </div>
+        <div class="nav-container">
+            <a href="listar_librerias.html">Librerias</a>
+            <a href="%20clubesLectura.html">Clubes de Lectura</a>
+            <a href="listar_libros.html">Libros</a>
+            <a href="listar-autores.html">Autores</a>
+            <a href="#">Intercambios</a>
+        </div>
+        <div class="optionsNav">
+                <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+            <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px"
+                alt="">
+            <button id="btn_cerrar">Cerrar Sesion</button>
+        </div>
+    </nav>
+</header>
 
 <body>
-
-    <nav>
-
-        <img src="imgs/panda_grain.png" alt="">
-        
-        <ul>
-            <li> <a href="">Naty</a> </li>
-            <li> <a class="cerrar_sesion" href="">Cerrar Sesión</a> </li>
-        </ul>
-
-    </nav>
-
     <main>
 
         <h1>Registrar Librería</h1>
@@ -36,7 +50,9 @@
             <input id="txt_nombre_fantasia" type="text" placeholder="Nombre Fantasía">
             <textarea name="" id="txt_direccion" placeholder="Dirección"></textarea>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1915192287242!2d-84.04903608571853!3d9.918001777163246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e397932ca451%3A0xef8088362eda931!2sMultiplaza+Curridabat!5e0!3m2!1ses-419!2scr!4v1562653229172!5m2!1ses-419!2scr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1915192287242!2d-84.04903608571853!3d9.918001777163246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e397932ca451%3A0xef8088362eda931!2sMultiplaza+Curridabat!5e0!3m2!1ses-419!2scr!4v1562653229172!5m2!1ses-419!2scr"
+                width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
         </section>
 
@@ -69,17 +85,17 @@
         <button id="btn_registrar"> Registrar </button>
 
         <footer>
-            
+
         </footer>
 
     </main>
-    
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/servicio_librerias.js"></script>
     <script src="js/servicio_usuario.js"></script>
     <script src="js/controlador_registrar_libreria.js"></script>
-
+    <script src="js/getNombre.js"></script>
 </body>
 
 </html>

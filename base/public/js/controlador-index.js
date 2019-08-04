@@ -34,10 +34,13 @@ let inicioSesion =  async () =>{
     let tcontrasena=input_contrasena.value;
     let error =  validarSignIn(tusuario,tcontrasena);
     let errorCredenciales = await iniciar_Sesion(tusuario,tcontrasena);
+    let modalContent=document.querySelector('#signinpopup');
     console.log(errorCredenciales);
     
     if (error==true) {
         div_rellene.style.display="block";
+        modalContent.style.height="470px";
+
         Swal.fire({ //formato json
             title: 'Por favor revise los campos en rojo',
             type: 'warning'
@@ -46,12 +49,6 @@ let inicioSesion =  async () =>{
     } else {
         
        if (errorCredenciales==true) {
-        
-        Swal.fire({ //formato json
-            title: 'El inicio de sesión fue exitoso',
-            type: 'success'
-           
-        })
 
         let tipoUsuario=sessionStorage.getItem('tipoUsuario');
         console.log(tipoUsuario)
