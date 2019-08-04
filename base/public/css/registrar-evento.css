@@ -1,0 +1,19 @@
+
+main{
+    text-align: center;
+}
+.librosLista{
+    width:100%;
+    
+}
+
+#selectLibros{
+    width:30%;
+    margin:auto;
+    display: inline-block
+}
+
+header{
+    margin-top:-8px;
+}
+
