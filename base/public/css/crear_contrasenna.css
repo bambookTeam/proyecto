@@ -7,3 +7,10 @@ main {
 .input_error {
     border: 2px #e74c3c solid !important;
 }
+
+input{
+
+    width: 100%;
+    
+
+}

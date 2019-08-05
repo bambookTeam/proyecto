@@ -9,6 +9,7 @@ let txt_filtrar = document.querySelector('#txt_filtrar');
 let mostrar_tabla = async() => {
     
     lista_categorias = await obtenerCategorias();
+    lista_categorias = lista_categorias.reverse();
     tbody.innerHTML = " ";
 
     for(let i = 0; i < lista_categorias.length; i++){

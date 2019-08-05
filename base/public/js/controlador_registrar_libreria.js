@@ -1,5 +1,15 @@
 'use strict';
 
+let obtenerListaUsuarios = async (pcorreo) => {
+
+    usuarios = await obtenerUsuarios();
+    console.log(usuarios);
+};
+var usuarios = [];
+ usuarios = obtenerListaUsuarios();
+
+
+
 const boton_registrar = document.querySelector('#btn_registrar');
 
 
@@ -17,19 +27,72 @@ const input_correo = document.querySelector('#txt_correo');
 
 const input_nombre_usuario = document.querySelector('#txt_nombre_usuario');
 
-let validarIdentificacion = (pidentificacion) =>{
-    let validacionId = false;
+let validarIdentificacion = (pidentificacion) => {
 
-    if (pidentificacion.length != 9) {
-        validacionId = true;
+    let error = false;
 
-    } else {
-        for(let i =0; i < pidentificacion.length; i++) {
-        pidentificacion.charAT
+    for ( let i = 0; i < usuarios.length; i++){
+
+
+        
+        if( usuarios[i].identificacion == pidentificacion){
+            
+            error = true; 
+            input_identificacion.classList.add('input_error');
+            
+        }else {
+            
+            if (pidentificacion.charAt(0) == '0') {
+
+                error = true;
+                input_identificacion.classList.add('input_error');
+        
+            } else {
+
+                if (pidentificacion.length != 9) {
+
+                    error = true;
+            
+                    input_identificacion.classList.add('input_error');
+            
+                } else {
+            
+                    input_identificacion.classList.remove('input_error');
+            
+                }        
+               
+        
+            }
+
         }
+
     }
 
+    return error;
 };
+
+let validarCorreo = (pcorreo) => {
+
+    let error = false;
+
+    for (let i = 0; i < usuarios.length; i++) {
+
+        if (usuarios[i].correo == pcorreo) {
+
+            error = true;
+            input_correo.classList.add('input_error');
+
+        } else {
+
+            input_correo.classList.remove('input_error');
+        }
+
+    }
+
+    return error;
+
+};
+
 
 let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo, pnombre_usuario) => {
 
@@ -64,7 +127,20 @@ let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion,
         error = true;
         input_identificacion.classList.add('input_error');
     } else {
+        //input_identificacion.classList.remove('input_error');
+
         input_identificacion.classList.remove('input_error');
+        error = validarIdentificacion(pidentificacion);
+
+        if ( error == true){
+        
+            input_identificacion.classList.add('input_error');
+    
+        }else {
+            
+            input_identificacion.classList.remove('input_error');
+    
+        }
     }
 
     //Validar primer_nombre
@@ -92,11 +168,25 @@ let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion,
     }
 
     //Validar correo
+    
     if (pcorreo == '') {
         error = true;
         input_correo.classList.add('input_error');
+
     } else {
         input_correo.classList.remove('input_error');
+        error = validarCorreo(pcorreo);
+
+    if ( error == true){
+        
+        input_correo.classList.add('input_error');
+
+    }else {
+        
+        input_correo.classList.remove('input_error');
+
+    }
+
     }
 
     //Validar nombre usuario

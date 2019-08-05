@@ -7,7 +7,8 @@ let obtenerListaUsuarios = async (pcorreo) => {
     usuarios = await obtenerUsuarios();
     console.log(usuarios);
 };
-var usuarios = obtenerListaUsuarios();
+var usuarios = [];
+ usuarios = obtenerListaUsuarios();
 
 
 
@@ -118,39 +119,105 @@ let validarCorreo = (pcorreo) => {
 };
 
 
-
-
-let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pnombreUsuario) => {
+let validarIdentificacion = (pidentificacion) => {
 
     let error = false;
 
-    // error = validarIdentificacion(pidentificacion);
+    for ( let i = 0; i < usuarios.length; i++){
+        
+        if( usuarios[i].identificacion == pidentificacion){
+            
+            error = true; 
+            input_identificacion.classList.add('input_error');
+            
+        }else {            
+            
+            if (pidentificacion.charAt(0) == '0') {
 
+                error = true;
+                input_identificacion.classList.add('input_error');
+        
+            } else {
 
-    if (pidentificacion.charAt(0) == '0') {
+                if (pidentificacion.length != 9) {
 
-        error = true;
-        input_identificacion.classList.add('input_error');
+                    error = true;
+            
+                    input_identificacion.classList.add('input_error');
+            
+                } else {
+            
+                    input_identificacion.classList.remove('input_error');
+            
+                }        
+               
+        
+            }
 
-    } else {
-
-        input_identificacion.classList.remove('input_error');
+        }
 
     }
 
+    return error;
+};
 
-    if (pidentificacion.length != 9) {
 
+
+
+let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo,pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario) => {
+
+    let error = false;
+
+
+    if (pprovincia == ''){
+        
         error = true;
+        select_provincia.classList.add('input_error');
 
-        input_identificacion.classList.add('input_error');
+    }else {
 
-    } else {
+        select_provincia.classList.remove('input_error');            
 
-        input_identificacion.classList.remove('input_error');
+    }
+    
+    if (pcanton == ''){
+        
+        error = true;
+        select_canton.classList.add('input_error');
+
+    }else {
+
+        select_canton.classList.remove('input_error');       
+        
 
     }
 
+    if (pdistrito == ''){
+        
+        error = true;
+        select_distrito.classList.add('input_error');
+
+    }else {
+
+        select_distrito.classList.remove('input_error');       
+        
+
+    }
+
+    if( pdireccion == ''){
+
+        error = true;
+        input_direccion.classList.add('input_error');
+
+    }else {
+
+        input_direccion.classList.remove('input_error')
+
+
+    }
+    
+
+    
     if (pnombre1 == '') {
         error = true;
         input_primer_nombre.classList.add('input_error');
@@ -187,7 +254,19 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pnombreUsu
         input_identificacion.classList.add('input_error');
 
     } else {
+
         input_identificacion.classList.remove('input_error');
+        error = validarIdentificacion(pidentificacion);
+
+        if ( error == true){
+        
+            input_identificacion.classList.add('input_error');
+    
+        }else {
+            
+            input_identificacion.remove('input_error');
+    
+        }
 
     }
 
@@ -200,6 +279,17 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pnombreUsu
 
     } else {
         input_correo.classList.remove('input_error');
+        error = validarCorreo(pcorreo);
+
+    if ( error == true){
+        
+        input_correo.classList.add('input_error');
+
+    }else {
+        
+        input_correo.classList.remove('input_error');
+
+    }
 
     }
 
@@ -243,9 +333,9 @@ let guardar = () => {
 
 
 
-    let error = validar(nombre1, apellido1, sexo, identificacion, correo, nombreUsuario);
-    error = validarCorreo(correo);
+    let error = validar(nombre1, apellido1, sexo, identificacion, correo,provincia, canton, distrito, direccion, nombreUsuario);
     
+
 
     if (error == false) {
         registroEnLinea(nombre1, nombre2, apellido1, apellido2, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario, tipo)
