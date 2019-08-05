@@ -28,7 +28,7 @@ let mostrar_tabla = async () => {
         let boton_perfil = document.createElement('button');
         boton_perfil.type = 'button';
         boton_perfil.innerText = 'Ver perfil';
-        boton_perfil.dataset._id = lista_librerias[i]['_id'];
+        boton_perfil.dataset._id = lista_libros[i]._id;
 
         celda_perfil.appendChild(boton_perfil);
 
@@ -36,7 +36,8 @@ let mostrar_tabla = async () => {
             //console.log(this.dataset._id);
             window.location.href = `listar_libros.html?_id=${this.dataset._id}`
 
-    }
+    });
+}
 };
 
 
@@ -68,6 +69,5 @@ let filtrar_tabla = async () => {
 
 };
 
-mostrar_tabla();
+window.addEventListener('load', mostrar_tabla);
 txt_filtro.addEventListener('keyup', filtrar_tabla);
-//window.addEventListener('load', mostrar_tabla);
