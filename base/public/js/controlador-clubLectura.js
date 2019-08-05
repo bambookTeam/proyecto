@@ -34,12 +34,13 @@ let showSelects = async() => {
     let arrayTema = [];
     let arrayCategorias= [];
     let arrayLibrerias = [];
-    let arraySucursales = ['1','2','3'];
+    let arraySucursales = [];
 
     arrayGenero=await listarGenero();
     arrayTema=await obtenerLibros();
     arrayCategorias=await obtenerCategorias();
     arrayLibrerias=await obtenerLibrerias();
+    arraySucursales=await obtenerSucursales();
 
     let parentTema = document.getElementById('lista_tema_clubes');
     let parentGenero = document.getElementById('lista_genero_clubes');
@@ -103,8 +104,8 @@ let showSelects = async() => {
 
     for (let i = 0; i < arraySucursales.length; i++) {
         let optionSucursal = document.createElement('option');
-        optionSucursal.setAttribute('value', arraySucursales[i]);
-        optionSucursal.innerHTML = arraySucursales[i];
+        optionSucursal.setAttribute('value', arraySucursales[i].nombre);
+        optionSucursal.innerHTML = arraySucursales[i].nombre;
         optionSucursal.style.width = "300px"
         selectSucursal.appendChild(optionSucursal);
     }
