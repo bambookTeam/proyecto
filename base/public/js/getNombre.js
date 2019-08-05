@@ -33,5 +33,10 @@ let hideOptions = () =>{
     
 }
 
+let verperfil=()=>{
+    let idAdmin=sessionStorage.getItem('id');
+    window.location.href = `ver-perfil-usuario.html?_id=${idAdmin}`
+}
+
 window.addEventListener('load',getName);
 window.addEventListener('load',hideOptions);

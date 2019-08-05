@@ -23,7 +23,7 @@ let obtenerSucursales = async() => {
         const response = await axios({
             method: 'get',
             url: 'http://localhost:4000/api/listar-sucursales',
-            responseType: 'json'.
+            responseType: 'json',
             data: {
                 id: idUsuarioActivo
             }
