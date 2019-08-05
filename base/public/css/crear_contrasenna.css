@@ -1,0 +1,9 @@
+main {
+
+    display: flow-root;
+    text-align: center;
+}
+
+.input_error {
+    border: 2px #e74c3c solid !important;
+}

@@ -11,7 +11,9 @@ let validar = (ppin,pcontrasenna,pverificacion)=> {
 
     let error = false;
 
-    if(ppin =''){
+    
+
+    if(ppin ==''){
 
         error = true;
         input_pin.classList.add('input_error');
@@ -23,7 +25,7 @@ let validar = (ppin,pcontrasenna,pverificacion)=> {
 
     }
 
-    if(pcontrasenna =''){
+    if(pcontrasenna ==''){
 
         error = true;
         input_contrasenna.classList.add('input_error');
@@ -35,7 +37,7 @@ let validar = (ppin,pcontrasenna,pverificacion)=> {
 
     }
 
-    if(pverificacion =''){
+    if(pverificacion ==''){
 
         error = true;
         input_verificacion.classList.add('input_error');
@@ -63,10 +65,12 @@ let validar = (ppin,pcontrasenna,pverificacion)=> {
 
     }
 
+    return error;
+
 
 };
 
-let guardar = async () => {
+let guardar = () => {
 
     let pin = input_pin.value;
     let contrasena = input_contrasenna.value;
@@ -90,6 +94,8 @@ let guardar = async () => {
 
         if( errorPin == false) {
 
+            
+        location.replace('inicioCliente.html');
              
         Swal.fire({ //formato json
             title: 'La creacion de contraseña fue exitosa',
