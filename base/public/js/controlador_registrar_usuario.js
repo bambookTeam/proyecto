@@ -117,9 +117,6 @@ let validarCorreo = (pcorreo) => {
 
 };
 
-
-
-
 let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pnombreUsuario) => {
 
     let error = false;
@@ -218,8 +215,6 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pnombreUsu
 
 };
 
-
-
 let guardar = () => {
 
     let nombre1 = input_primer_nombre.value;
@@ -236,18 +231,9 @@ let guardar = () => {
     let nombreUsuario = input_nombre_usuario.value;
     let tipo = 2;
 
-
-
-
-
-
-
     let error = validar(nombre1, apellido1, sexo, identificacion, correo, nombreUsuario);
 
-    //error = validarCorreo(correo);
-
     if (error == false) {
-
 
         registroEnLinea(nombre1, nombre2, apellido1, apellido2, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario, tipo)
 
@@ -263,12 +249,7 @@ let guardar = () => {
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
 
-
     }
 };
-
-
-
-
 
 boton_registrar.addEventListener('click', guardar);
