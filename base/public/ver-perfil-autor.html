@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/ver-perfil-autor.css">
+</head>
+
+<body>
+    <nav>
+
+        <img src="imgs/panda_grain.png" alt="">
+
+        <ul>
+            <li> <a href="">Fabz</a> </li>
+            <li> <a class="cerrar_sesion" href="">Cerrar Sesión</a> </li>
+        </ul>
+
+    </nav>
+    <main>
+        <h2>Autor <span id="txt_nombre"></span> </h2>
+        <p><span id="foto"></span></p>
+        <p>Nombre Artístico: <span id="txt_nombre_artistico"></span></p>
+        <p>Fecha de Nacimiento: <span id="txt_nacimiento"></span></p>
+        <p>Fecha de Muerte: <span id="txt_muerte"></span></p>
+        <p>Nacionalidad: <span id="txt_nacionalidad"></span></p>
+        <p>Biografía: <span id="txt_bio"></span></p>
+        <p>Premios: <span id="txt_premios"></span></p>
+
+        <a href="listar-autores.html"><button type="button">Volver</button></a>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/servicio-autor.js"></script>
+    <script src="js/controlador_perfil_autor.js"></script>
+</body>
+
+</html>
