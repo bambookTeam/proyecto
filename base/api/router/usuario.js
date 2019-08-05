@@ -256,6 +256,26 @@ router.get('/buscar-usuario-id/:_id', function (req, res) {
     })
 });
 
+router.post('/buscar-usuario-perfil', function (req, res) {
+    Usuario.findById(req.body._id, function (err, usuarioBD) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontró ningún usuario con ese _id',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                usuario: usuarioBD
+            });
+        }
+    })
+});
+
+
+
+
 router.post('/crear-contrasenna', function (req, res) {
     Usuario.updateOne({ _id: req.body._id }, { $set: { contrasena: req.body.contrasena } },
 
