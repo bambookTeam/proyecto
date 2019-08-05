@@ -71,6 +71,8 @@ let filtrar_tabla = async () => {
             fila.insertCell().innerHTML = lista_libros[i]['precio'];
             fila.insertCell().innerHTML = lista_libros[i]['portada'];
 
+        
+
         }
 
     }
