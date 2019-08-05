@@ -239,7 +239,7 @@ btnCrearClub.onclick = function () {
 
     if (error == false) {
        
-        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,0);
+        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,localStorage.getItem('idUsuario'));
         modal.style.display = "none";
         cleanupFormClubes();
 
