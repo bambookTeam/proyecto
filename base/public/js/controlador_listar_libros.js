@@ -23,7 +23,7 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_libros[i]['cantidad'];
         fila.insertCell().innerHTML = lista_libros[i]['precio'];
         fila.insertCell().innerHTML = lista_libros[i]['portada'];
-    
+
         let celda_perfil = fila.insertCell();
         let boton_perfil = document.createElement('button');
         boton_perfil.type = 'button';
@@ -62,7 +62,7 @@ let filtrar_tabla = async () => {
             fila.insertCell().innerHTML = lista_libros[i]['existencia'];
             fila.insertCell().innerHTML = lista_libros[i]['precio'];
             fila.insertCell().innerHTML = lista_libros[i]['portada'];
-            
+
         }
 
     }
