@@ -51,7 +51,7 @@ let inicioSesion =  async () =>{
        if (errorCredenciales==true) {
 
     
-       if(sessionStorage.getItem('contador') == '1' ){
+       if(sessionStorage.getItem('contador') == '0' ){
            
         location.replace('crear_contrasenna.html')        
 

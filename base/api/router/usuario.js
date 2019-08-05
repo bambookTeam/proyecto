@@ -18,6 +18,9 @@ const transporter = nodeMailer.createTransport({
 });
 
 router.post('/registrar_usuario', function(req,res){
+
+    console.log('Registrar usuario');
+
     let body = req.body;
     let nuevo_usuario = new Usuario ({
         primerNombre: body.primerNombre,
@@ -41,7 +44,8 @@ router.post('/registrar_usuario', function(req,res){
 
     });
 
-    nuevo_usuario.save (function (err, usuarioDB) {
+   // nuevo_usuario.save (function (err, usuarioDB) {
+   Usuario.save (function (err, usuarioDB) {
 
         if(err){
 
@@ -52,7 +56,7 @@ router.post('/registrar_usuario', function(req,res){
                     err
                 }  );
         } else {
-
+            console.log('funcion guardar usuario');
             let mailOptions = {
 
                 from : 'bambooks.team@gmail.com',
@@ -248,20 +252,18 @@ router.post('/actualizar-contador', function(req,res){
 
 });
 
-router.post('/agregar-tarjeta', function(req, res) {
-
-    Usuario.update(
-        {_id: req.body._id},
-        {
-            $push: {
-                'tarjetas': {
+/*  'tarjetas': {
                     numerotarjeta: req.body.numerotarjeta,
                     fechavencimiento: req.body.fechavencimiento,
                     codigocvv: req.body.codigocvv
                 }
             }
-        },
+            */
 
+router.post('/agregar-tarjeta', function(req, res) {
+
+            
+    Usuario.updateOne( { _id: req.body._id }, { $set: {tarjetas: {numerotarjeta: req.body.numerotarjeta, fechavencimiento: req.body.fechavencimiento, codigocvv: req.body.codigocvv} } } ,       
         function(error){
             if (error) {
                 return res.status(400).json({

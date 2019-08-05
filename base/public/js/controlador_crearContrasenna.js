@@ -47,6 +47,22 @@ let validar = (ppin,pcontrasenna,pverificacion)=> {
 
     }
 
+    if ( pcontrasenna == pverificacion){
+        
+        input_contrasenna.classList.remove('input_error');
+        input_verificacion.classList.remove('input_error');
+
+
+    }else {
+
+        error = true;
+
+        input_contrasenna.classList.add('input_error');
+        input_verificacion.classList.add('input_error');
+
+
+    }
+
 
 };
 

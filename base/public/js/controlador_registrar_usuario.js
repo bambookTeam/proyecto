@@ -84,12 +84,12 @@ let validarIdentificacion = (pidentificacion) =>
     
 };
 */
-
+/*
 let validarCorreo = async (pcorreo) => {
 
     let usuarios = [];
 
-    usuarios = await obtenerUsuarios;
+    usuarios = await obtenerUsuarios();
     let error = false;
 
     for( let i = 0; i < usuarios.length; i++){
@@ -109,6 +109,8 @@ let validarCorreo = async (pcorreo) => {
     return error;
 
 };
+
+*/
     
 
 
@@ -226,7 +228,7 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pnombreUsu
 
 
 
-let guardar =() =>
+let guardar =  () =>
 {
 
     let nombre1 = input_primer_nombre.value;
@@ -250,7 +252,7 @@ let guardar =() =>
 
     
     let error = validar(nombre1, apellido1, sexo,identificacion, correo, nombreUsuario);
-    error = validarCorreo(correo);
+   //error = validarCorreo(correo);
 
     if( error == false )
     {
