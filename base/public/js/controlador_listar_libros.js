@@ -23,7 +23,13 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_libros[i]['tipo'];
         fila.insertCell().innerHTML = lista_libros[i]['cantidad'];
         fila.insertCell().innerHTML = lista_libros[i]['precio'];
-        fila.insertCell().innerHTML = lista_libros[i]['imagen'];
+        
+        let img=document.createElement('img');
+        img.setAttribute('src',lista_libros[i]['imagen']);
+        img.classList.add('imgTabla');
+
+        let x = fila.insertCell();
+        x.appendChild(img);
 
         let celda_perfil = fila.insertCell();
         let boton_perfil = document.createElement('button');
