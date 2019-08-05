@@ -10,7 +10,7 @@ router.post('/registrar_tarjeta', function (req, res) {
 
     let body = req.body;
 
-    // console.log(body);
+    console.log(body);
 
 
     let nueva_tarjeta = new Tarjeta({
@@ -20,13 +20,13 @@ router.post('/registrar_tarjeta', function (req, res) {
         codigocvv: body.codigocvv
     });
 
-    // console.log("guardado de tarjeta");
+    console.log("guardado de tarjeta");
     nueva_tarjeta.save(
 
         function (err, tarjetaDB) {
             if (err) {
-                // console.log("error  de tarjeta");
-                // console.log(err);
+                console.log("error  de tarjeta");
+                console.log(err);
                 return res.status(400).json({
                     success: false,
                     msj: 'La tarjeta no se pudo guardar',
@@ -41,8 +41,8 @@ router.post('/registrar_tarjeta', function (req, res) {
 
                 })
 
-                // console.log(res);
-                // console.log("se guardó  de tarjeta");
+                console.log(res);
+                console.log("se guardó  de tarjeta");
             }
         }
     );
