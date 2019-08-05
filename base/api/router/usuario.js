@@ -19,6 +19,10 @@ const transporter = nodeMailer.createTransport({
 
 router.post('/registrar_usuario', function (req, res) {
     let body = req.body;
+
+    console.log("registro de usuario activado");
+    console.log(req.body);
+
     let nuevo_usuario = new Usuario({
         primerNombre: body.primerNombre,
         segundoNombre: body.segundoNombre,
@@ -44,6 +48,76 @@ router.post('/registrar_usuario', function (req, res) {
     nuevo_usuario.save(function (err, usuarioDB) {
 
         if (err) {
+            console.log("error registro de usuario");
+            console.log(err);
+            return res.status(500).json(
+                {
+                    success: false,
+                    msj: 'El usuario no se pudo guardar',
+                    err
+                });
+        } else {
+
+            let mailOptions = {
+
+                from: 'bambooks.team@gmail.com',
+                to: nuevo_usuario.correo,
+                subject: 'Bienvenido a Bambooks',
+                text: ' Usar este pin para iniciar sesion: ' + body.contrasena
+
+
+            };
+
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+
+                    console.log(error);
+                } else {
+
+                    console.log('Correo enviado')
+                }
+
+
+            });
+            res.json(
+                {
+                    success: true,
+                    msj: 'El usuario se guardó con éxito'
+                }
+            );
+            console.log("sirvió");
+            // console.log(res);
+        }
+    });
+
+});
+
+router.post('/registrar_admin_libreria', function (req, res) {
+    let body = req.body;
+
+    console.log('Impresion datos')
+    console.log(body)
+
+    let nuevo_usuario = new Usuario({
+        identificacion: body.identificacion,
+        primerNombre: body.primerNombre,
+        segundoNombre: body.segundoNombre,
+        primerApellido: body.primerApellido,
+        segundoApellido: body.segundoApellido,
+        sexo: body.sexo,
+        correo: body.correo,
+        nombreUsuario: body.nombreUsuario,
+
+        contrasena: body.contrasena,
+        tipo: body.tipo,
+        contador: body.contador
+    });
+
+    nuevo_usuario.save(function (err, usuarioDB) {
+
+        if (err) {
+            console.log('Error registro Admin Librería')
+            console.log(err)
 
             return res.status(500).json(
                 {
@@ -84,6 +158,7 @@ router.post('/registrar_usuario', function (req, res) {
     });
 
 });
+
 
 //iniciar-sesion
 router.post('/validar_credenciales', function (req, res) {

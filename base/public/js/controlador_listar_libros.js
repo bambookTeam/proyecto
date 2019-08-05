@@ -8,7 +8,7 @@ let mostrar_tabla = async () => {
 
     lista_libros = await obtenerLibros();
     tbody.innerHTML = '';
-    
+
     for (let i = 0; i < lista_libros.length; i++) {
         let fila = tbody.insertRow();
         fila.insertCell().innerHTML = lista_libros[i]['titulo'];

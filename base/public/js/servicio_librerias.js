@@ -13,10 +13,10 @@ let registrarLibreria = (pnombre_comercial, pnombre_fantasia, pdireccion) => {
     });
 };
 
-let registrarAdminLibreria = (pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo, pdireccion, pnombreUsuario) => {
+let registrarAdminLibreria = (pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo, pdireccion, pnombreUsuario, ptipo) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/registrar_usuario',
+        url: 'http://localhost:4000/api/registrar_admin_libreria',
         responseType: 'json',
         data: {
 
@@ -27,9 +27,11 @@ let registrarAdminLibreria = (pidentificacion, pprimer_nombre, psegundo_nombre, 
             segundoApellido: psegundo_apellido,
             sexo: psexo,
             correo: pcorreo,
+            nombreUsuario: pnombreUsuario,
 
-            direccion: pdireccion,
-            nombreUsuario: pnombreUsuario
+            contrasena: pcontrasenna,
+            tipo: ptipo,
+            contador: 0
         }
     });
 };

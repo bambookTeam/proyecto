@@ -5,33 +5,25 @@ const mongoose = require('mongoose');
 
 
 let usuario_shema = new mongoose.Schema({
-    primerNombre: {type: String, required: true,unique: false},
-    segundoNombre: {type: String, requiered: false, unique: false},
-    primerApellido: {type: String, required: true,unique: false},
-    segundoApellido: {type: String, requiered: false, unique: false},
-    sexo: {type: String, requiered: true, unique:false},
-    identificacion: {type: String, requiered: true, unique: true},
-    correo: {type: String, required: true, unique: true},
+  primerNombre: {type: String, required: true,unique: false},
+  segundoNombre: {type: String, requiered: false, unique: false},
+  primerApellido: {type: String, required: true,unique: false},
+  segundoApellido: {type: String, requiered: false, unique: false},
+  sexo: {type: String, requiered: true, unique:false},
+  identificacion: {type: String, requiered: true, unique: true},
+  correo: {type: String, required: true, unique: true},
 
-    provincia: {type: String, required: false, unique: false },
-    canton:  {type: String, required: false, unique: false },
-    distrito: {type: String, required: false, unique: false },
+  provincia: {type: String, required: false, unique: false },
+  canton:  {type: String, required: false, unique: false },
+  distrito: {type: String, required: false, unique: false },
 
-    direccion: {type: String, required: true, unique: false},
-    nombreUsuario: {type: String, required: true, unique: false},
-    contrasena: {type: String, required: true, unique: true},
-    tipo: {type: Number, required: true, unique: false},
-    contador : {type : Number, required: true, unique: false},
-    avatar: {type: String, required: false, unique: false},
+  direccion: {type: String, required: false, unique: false},
+  nombreUsuario: {type: String, required: true, unique: false},
+  contrasena: {type: String, required: true, unique: true},
+  tipo: {type: Number, required: true, unique: false},
+  contador : {type : Number, required: true, unique: false},
+  avatar: {type: String, required: false, unique: false}
 
-    tarjetas: [{
-      numerotarjeta:{type:Number, required:true, unique:true},
-      fechavencimiento:{type:Date, required:true, unique:false},
-      codigocvv:{type:Number, required:true, unique:true}
-    }]
-
-
-    
    });
 
 
