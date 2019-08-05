@@ -1,6 +1,6 @@
-main{  
+main{
     text-align: center;
-    
+
 }
 
 #contenedor_titulo{
@@ -9,8 +9,8 @@ main{
     font-size: 30px;
     margin: 30px;
     align-content: flex-end;
-    text-align: center;
-    margin-top: 1% solid #76323F; 
+    /* text-align: center; */
+    margin-top: 1% solid #76323F;
 }
 
 .contenedor-perfil {
@@ -46,19 +46,24 @@ main{
     background: #76323F;
     border: solid 1px #76323F;
     border-radius: 15px;
-    width: 100%;  
+    width: 100%;
 }
 
 #infoLibro p{
     color: #aaaaaa;
     font-size: 20px;
     margin: 1%;
-    margin-left: 5%;     
+    margin-left: 5%;
 }
 #btn_regresar{
-    margin-top: 20%;
-}
 
+margin-top: 5%;
+background-color:#76323f;
+     color:#fff;
+     width:15%;
+     border-radius:5px;
+    padding:5px 10px;
+}
 
 html {
     min-height: 100%;
