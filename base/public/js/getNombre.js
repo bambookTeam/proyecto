@@ -1,5 +1,6 @@
 
 const name= document.querySelector('#nombrePerfil');
+const miperfil=document.querySelector('#nombrePerfil');
 
 let getName = () =>{
     let nombre=sessionStorage.getItem('nombreUsuario');
@@ -35,8 +36,10 @@ let hideOptions = () =>{
 
 let verperfil=()=>{
     let idAdmin=sessionStorage.getItem('id');
-    window.location.href = `ver-perfil-usuario.html?_id=${idAdmin}`
+    window.location.href = `ver-perfil-usuario.html?_id=dAdmin`;
+    console.log(idAdmin);
 }
 
 window.addEventListener('load',getName);
 window.addEventListener('load',hideOptions);
+nombrePerfil.addEventListener('click',verperfil);
