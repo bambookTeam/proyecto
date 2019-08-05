@@ -245,6 +245,7 @@ let guardar = () => {
 
     let error = validar(nombre1, apellido1, sexo, identificacion, correo, nombreUsuario);
     error = validarCorreo(correo);
+    
 
     if (error == false) {
         registroEnLinea(nombre1, nombre2, apellido1, apellido2, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario, tipo)
