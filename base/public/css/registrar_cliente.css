@@ -1,19 +1,4 @@
 
-
-.boton_registrar {
-
-    background: #2f3542;
-    color: #fff;
-    font-size: 16px;
-    width: 150px;
-    height: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-
-}
-
-
 main{
 
     display: flow-root;
@@ -24,15 +9,43 @@ main h1{
 
     color: #76323F;
     font-size: 30px;
+    font-weight: bold;
     margin: 30px;
 }
 
-input{
+main h2{
+
+    color: #76323F;
+    font-size: 30px;
+    margin: 30px;
+
+
+}
+
+#datos_personales1 {
+
+    width: 50%;
+    float: left;
+    text-align: center;
+
+
+}
+
+#datos_personales2 {
+
+    width: 50%;
+    float: left;
+    text-align: center;
+
+}
+
+main input{
     width: 60%;
-    height:40px;
+    height: 30px;
     margin: 15px;
     padding: 5px;
     border: 1px solid #76323F;
+    border-radius: 15px;
     background: none;
     outline: none;
     
@@ -42,6 +55,8 @@ input{
     
     border: 2px #e74c3c solid !important;
 }
+
+
 
 ::-webkit-input-placeholder{
     color: #76323F;
@@ -54,14 +69,52 @@ iframe{
 }
 
 
-select{
+main select{
 
-    width: 61%;
+    width: 63%;
+    height: 42px;
     margin: 15px;
     padding: 5px;
     border: 1px solid #76323F;
+    border-radius: 15px;
     background: none;
     color: #76323F;
-    outline: none;   
+    outline: none;     
 }
 
+#img_avatar {
+
+    height: 200px;
+
+}
+
+main button{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #76323F;
+    border-radius: 15px;
+    font-size: 20px;
+    color: #76323F;
+    font-weight: bold;
+    background: none;
+    outline: none; 
+}
+
+.boton_subir_avatar{
+
+    margin: 50px 0;
+    padding: 5px;
+    border: 2px solid #76323F;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #76323F;
+    font-weight: bold;
+    background: none;
+    outline: none; 
+
+}
+
+footer{
+    background: #76323F;
+    padding: 1rem;
+}
