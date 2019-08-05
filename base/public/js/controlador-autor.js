@@ -7,13 +7,12 @@ const input_fecha_nacimiento = document.querySelector('#txt-nacimiento-autor');
 const input_fecha_muerte = document.querySelector('#txt-muerte-autor');
 const input_nacionalidad = document.querySelector('#txt-nacionalidad-autor');
 const input_biografia = document.querySelector('#txt-biografia-autor');
-const input_libros = document.querySelector('#txt-libros-autor');
 const input_premios = document.querySelector('#txt-premios-autor');
 const input_foto = document.querySelector('#foto');
 
 
 
-let validar = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pnacionalidad, pbiografia, plibros, ppremios, pfoto) => {
+let validar = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pnacionalidad, pbiografia, ppremios, pfoto) => {
 
     let error = false;
 
@@ -59,13 +58,6 @@ let validar = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pna
         input_biografia.classList.remove('input_error');
     }
 
-    if (plibros == '') {
-        error = true;
-        input_libros.classList.add('input_error');
-    } else {
-        input_libros.classList.remove('input_error');
-    }
-
     if (ppremios == '') {
         error = true;
         input_premios.classList.add('input_error');
@@ -92,14 +84,13 @@ let saludar = () => {
     let fecha_muerte = input_fecha_muerte.value;
     let nacionalidad = input_nacionalidad.value;
     let biografia = input_biografia.value;
-    let libros = input_libros.value;
     let premios = input_premios.value;
     let foto = input_foto.value;
 
-    let error = validar(nombre, nombre_artistico, fecha_nacimiento, fecha_muerte, nacionalidad, biografia, libros, premios, foto);
+    let error = validar(nombre, nombre_artistico, fecha_nacimiento, fecha_muerte, nacionalidad, biografia, premios, foto);
 
     if (error == false) {
-        registrarAutor(nombre, nombre_artistico, fecha_nacimiento, fecha_muerte, nacionalidad, biografia, libros, premios, foto);
+        registrarAutor(nombre, nombre_artistico, fecha_nacimiento, fecha_muerte, nacionalidad, biografia, premios, foto);
         Swal.fire({ //formato json
             title: 'Se ha registrado exitosamente',
             type: 'success',

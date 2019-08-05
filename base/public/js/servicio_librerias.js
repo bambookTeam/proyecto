@@ -1,11 +1,12 @@
 'use strict';
 
-let registrarLibreria = (pnombre_comercial, pnombre_fantasia, pdireccion) => {
+let registrarLibreria = (pnombre_comercial,identificacionUsuarioLibreria, pnombre_fantasia, pdireccion) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libreria',
         responseType: 'json',
         data: {
+            id: identificacionUsuarioLibreria,
             nombre_comercial: pnombre_comercial,
             nombre_fantasia: pnombre_fantasia,
             direccion: pdireccion

@@ -32,7 +32,9 @@ cerrarpopup.addEventListener('click', function () {
 let validar = (pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
     let error = false;
 
-    if (pnumerotarjeta == '') {
+    // (pnumerotarjeta.length != 16)
+
+    if ((pnumerotarjeta == '')){
         error = true;
         input_numerotarjeta.classList.add('input_error');
     } else {
@@ -48,12 +50,13 @@ let validar = (pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
     }
 
 
-    if (pcodigocvv == '') {
+    if (pcodigocvv == ''){
         error = true;
         input_codigocvv.classList.add('input_error');
     } else {
         input_codigocvv.classList.remove('input_error');
         registrarTarjeta(pnumerotarjeta, pfechavencimiento, pcodigocvv);
+        mostrarlista();
     }
 
     return error;

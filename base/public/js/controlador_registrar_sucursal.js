@@ -47,6 +47,8 @@ let validar = (pnombre, ptelefono, pcorreo, pdireccion) => {
 };
 
 let saludar = () => {
+
+
     let nombre = input_nombre.value;
     let telefono = input_telefono.value;
     let correo = input_correo.value;
@@ -55,7 +57,11 @@ let saludar = () => {
     let error = validar(nombre, telefono, correo, direccion);
 
     if (error == false) {
+
+        console.log(error);
+
         registrarSucursal(nombre, telefono, correo, direccion);
+        
         Swal.fire({ //formato Jason
             title: 'La sucursal se a registrado exitosamente',
             type: 'success',
