@@ -3,6 +3,8 @@ let listar_tarjetas = [];
 
 let mostrarlista = async () => {
         listar_tarjetas = await obtenerTarjetas();
+        listar_tarjetas = listar_tarjetas.reverse();
+
 
 //         for (let index = 0; index < listar_tarjetas.length; index++) {
 
