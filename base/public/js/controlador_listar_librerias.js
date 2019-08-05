@@ -14,6 +14,7 @@ let mostrar_tabla = async() => {
         fila.insertCell().innerHTML = lista_librerias[i]['nombre_comercial'];
         fila.insertCell().innerHTML = lista_librerias[i]['nombre_fantasia'];
         fila.insertCell().innerHTML = lista_librerias[i]['direccion'];
+        fila.insertCell();
 
         let celda_perfil = fila.insertCell();
         let boton_perfil = document.createElement('button');
@@ -27,6 +28,15 @@ let mostrar_tabla = async() => {
             //console.log(this.dataset._id);
             window.location.href = `visualizar_perfil_libreria.html?_id=${this.dataset._id}`
         });
+
+
+
+        let celda_sucursal = fila.insertCell();
+        let boton_sucursal = document.createElement('button');
+        boton_sucursal.href = '#';
+        boton_sucursal.innerHTML = 'Agregar Sucursal';
+
+        celda_sucursal.appendChild(boton_sucursal);
     }
 };
 
