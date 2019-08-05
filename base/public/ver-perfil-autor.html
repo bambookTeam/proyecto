@@ -8,10 +8,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/ver-perfil-autor.css">
-    <link rel="stylesheet" href="css/navbar.css">
 </head>
 
-<header>
+<body>
     <nav>
       <div class="logoBambooks">
         <a href="inicioCliente.html"><img
@@ -45,6 +44,7 @@
 
 <body>
 
+    </nav>
     <main>
         <h2>Autor <span id="txt_nombre"></span> </h2>
         <p><span id="foto"></span></p>
@@ -53,7 +53,6 @@
         <p>Fecha de Muerte: <span id="txt_muerte"></span></p>
         <p>Nacionalidad: <span id="txt_nacionalidad"></span></p>
         <p>Biografía: <span id="txt_bio"></span></p>
-        <p>Libros: <span id="txt_libros"></span></p>
         <p>Premios: <span id="txt_premios"></span></p>
 
         <a href="listar-autores.html"><button type="button">Volver</button></a>
@@ -62,8 +61,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/servicio-autor.js"></script>
     <script src="js/controlador_perfil_autor.js"></script>
-    <script src="js/getNombre.js"></script>
-    <script src="js/controlador_cerrar_sesion.js"></script>
 </body>
 
 </html>

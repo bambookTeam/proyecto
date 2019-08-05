@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarAutor = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pnacionalidad, pbiografia, plibros, ppremios, pfoto) => {
+let registrarAutor = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pnacionalidad, pbiografia, ppremios, pfoto) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-autor',
@@ -12,7 +12,6 @@ let registrarAutor = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muer
         fecha_muerte: pfecha_muerte,
         nacionalidad_autor: pnacionalidad,
         biografia_autor: pbiografia,
-        libros_autor: plibros,
         premios_autor: ppremios,
         foto_autor: pfoto
         }

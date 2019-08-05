@@ -22,7 +22,6 @@ router.post('/registrar-autor', function (req, res) {
         fecha_muerte: body.fecha_muerte,
         nacionalidad_autor: body.nacionalidad_autor,
         biografia_autor: body.biografia_autor,
-        libros_autor: body.libros_autor,
         premios_autor: body.premios_autor,
         foto_autor: body.foto_autor
     });
