@@ -8,20 +8,42 @@
     <title>Perfil Librería</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/visualizar_perfil_admin_libreria.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 
+<header>
+        <nav>
+          <div class="logoBambooks">
+            <a href="inicioCliente.html"><img
+                src="imgs/panda_grain.png"
+                alt="" width="40px"></a>
+          </div>
+          <div class="nav-container">
+            <a href="listar_librerias.html" id="optionNavLibrerias">Librerias</a>
+            <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
+            <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
+            <a href="listar_libros.html" id="optionNavLibros">Libros</a>
+            <a href="listar-autores.html" id="optionNavAutores">Autores</a>
+            <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
+            <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
+            <a href="listar_tarjetas.html">Tarjetas</a>
+            <a href="#" id="optionIntercambio">Intercambios</a>
+            <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
+          </div>
+          <div class="optionsNav">
+              <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+            <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
+            <button id="btn_cerrar">Cerrar Sesion</button>
+          </div>
+        </nav>
+      </header>
+
 <body>
-
-    <nav>
-
-        <img src="imgs/panda_grain.png" alt="">
-        
-        <ul>
-            <li> <a href="">Naty</a> </li>
-            <li> <a class="cerrar_sesion" href="">Cerrar Sesión</a> </li>
-        </ul>
-
-    </nav>
 
     <main>
 
@@ -53,6 +75,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/servicio_librerias.js"></script>
     <script src="js/controlador_perfil_libreria.js"></script>
+    <script src="js/getNombre.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
+    <script src="js/controlador_perfil_admin_libreria.js"></script>
 
 </body>
 

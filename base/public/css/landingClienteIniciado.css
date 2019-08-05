@@ -26,12 +26,12 @@ html {
   }
   
   .banner h2 {
-    font-size: 0.9em;
+    font-size: 1.5em;
     font-weight: lighter;
     text-align: right;
     margin-right: 25px;
     grid-column: 7/13;
-    grid-row: 1/-1;
+    grid-row: 12/12;
     padding: 2px 0;
   }
   

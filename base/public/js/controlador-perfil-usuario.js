@@ -16,8 +16,8 @@ const avatar = document.querySelector('#avatar');
 const txt_provincia = document.querySelector('#txt_provincia');
 const txt_canton = document.querySelector('#txt_canton');
 
-let llenar_perfil = async() => {
-    let usuario = await obtenerUsuarioId(_id);
+let llenar_perfil = () => {
+    let usuario = JSON.parse(localStorage.getItem("datosUsuario"));
     if (usuario) {
         txt_nombreUsuario.innerHTML = usuario['nombreUsuario'];
         avatar.innerHTML = usuario['avatar'];
@@ -32,6 +32,7 @@ let llenar_perfil = async() => {
         txt_canton.innerHTML = usuario['canton'];
         txt_distrito.innerHTML = usuario['distrito'];
         txt_direccion.innerHTML = usuario['direccion'];
+        localStorage.removeItem("datosUsuario");
     }
 };
 

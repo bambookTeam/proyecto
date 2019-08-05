@@ -28,7 +28,8 @@ let mostrar_tabla = async () => {
 
         boton_perfil.addEventListener('click', function() {
             //console.log(this.dataset._id);
-            window.location.href = `ver-perfil-usuario.html?_id=${this.dataset._id}`
+            localStorage.setItem("datosUsuario", JSON.stringify(lista_usuarios[i]));
+            window.location.href = 'ver-perfil-usuario.html'
         });
 
 
