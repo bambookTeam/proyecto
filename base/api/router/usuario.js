@@ -159,7 +159,6 @@ router.post('/registrar_admin_libreria', function (req, res) {
 
 });
 
-
 //iniciar-sesion
 router.post('/validar_credenciales', function (req, res) {
     Usuario.findOne({ correo: req.body.correo }).then(
@@ -185,8 +184,6 @@ router.post('/validar_credenciales', function (req, res) {
         }
     )
 })
-
-
 
 router.post('/validar_pin', function (req, res) {
     Usuario.findOne({ correo: req.body.correo }).then(
