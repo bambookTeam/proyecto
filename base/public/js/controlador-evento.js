@@ -24,7 +24,7 @@ let validarEvento = (pnombre) =>{
     let error=false;
 
     if (pnombre=="") {
-        console.log('c mamut');
+        nombre_evento_input.classList.add('input_error');
         error=true;
     } else {
         console.log('owo');
@@ -41,15 +41,31 @@ let crearEvento = () =>{
     let error=validarEvento(nombreEvento);
     
     if (error==true) {
-        
+        Swal.fire({ //formato json
+            title: 'No se ha podido registrar su evento',
+            type: 'warning',
+            text: 'Revise los campos resaltados e inténtelo de nuevo'
+        })
     } else {
+        Swal.fire({ //formato json
+            title: 'Se ha agregado su evento exitosamente',
+            type: 'success'
+
+        })
         registrarEvento(nombreEvento,idClub,tema_input.value);
+        localStorage.removeItem('idClub');
+        location.replace('%20clubesLectura.html')
         
     }
-    localStorage.removeItem('idClub');
+    
     //registrarEvento(pnombre_Evento,pidClub,pLibro);
+}
+const btnCancel=document.querySelector('#cancelEventRegister');
+let gotoClubs = () =>{
+    location.replace('%20clubesLectura.html');
 }
 
 window.addEventListener('load',showSelectEvento);
 
 btn_registrar_evento.addEventListener('click',crearEvento);
+btnCancel.addEventListener('click',gotoClubs);

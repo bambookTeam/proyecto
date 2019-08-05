@@ -135,7 +135,7 @@ let saludar = () => {
    
     if (error == false) {
 
-        registrarLibreria(nombre_comercial, nombre_fantasia, direccion);
+        registrarLibreria(nombre_comercial, identificacion, nombre_fantasia, direccion);
         
         registroAdminLibreria (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombre_usuario,tipo);
 

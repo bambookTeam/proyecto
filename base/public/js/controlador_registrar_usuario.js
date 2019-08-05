@@ -35,21 +35,21 @@ let validarIdentificacion = (pidentificacion) =>
 
     let numeros = '0123456789';
 
-    let contNum = 0; 
+    let contNum = 0;
 
 
     if(pidentificacion.length != 9){
 
         validacionId = true;
 
-        input_identificacion.classList.add('input_error'); 
-       
+        input_identificacion.classList.add('input_error');
+
     }else {
 
-        input_identificacion.classList.remove('input_error'); 
-        
-    }      
-    
+        input_identificacion.classList.remove('input_error');
+
+    }
+
 
     for(let i=0; i<pidentificacion.length; i++){
 
@@ -57,41 +57,41 @@ let validarIdentificacion = (pidentificacion) =>
             contNum = 1;
            return contNum;
         }
-     
+
         return contNum;
 
     }
-   
+
 
   if ( contNum == 0){
 
-    validacionId = true;  
-        
+    validacionId = true;
+
     input_identificacion.classList.add('input_error');
 
   }else {
 
-    input_identificacion.classList.remove('input_error'); 
-        
+    input_identificacion.classList.remove('input_error');
+
   }
 
 
-    if( pidentificacion.charAt(0) == '0'){ 
+    if( pidentificacion.charAt(0) == '0'){
 
         validacionId = true;
         input_identificacion.classList.add('input_error');
-    } else { 
+    } else {
 
-        input_identificacion.classList.remove('input_error'); 
+        input_identificacion.classList.remove('input_error');
 
     }
 
 
 
 
-    return validacionId;       
-    
-    
+    return validacionId;
+
+
 };
 */
 
@@ -120,13 +120,11 @@ let validarCorreo = (pcorreo) => {
 
 
 
-
-
 let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pnombreUsuario) => {
 
     let error = false;
 
-    // error = validarIdentificacion(pidentificacion); 
+    // error = validarIdentificacion(pidentificacion);
 
 
     if (pidentificacion.charAt(0) == '0') {

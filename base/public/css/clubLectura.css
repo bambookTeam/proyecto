@@ -46,7 +46,7 @@
         float:left;
         background-color:#76323f;
         width:45%;
-        height:150px;
+        height:180px;
         margin:10px 20px;
         border-radius: 15px;
     }
@@ -65,9 +65,9 @@
          width:80%;
          float:left; 
          font-size:10px;
-         height:90px;
+         height:120px;
          color:#d7cec7;
-         margin:20px 0 23px 0;
+         margin:20px 0 21px 0;
      }
  
      .club-info h1{
@@ -101,6 +101,20 @@
          width:250px;
          
      }
+
+     
+     #lista_tema_clubes,#frecuenciaClub,#lista_genero_clubes,#lista_categoria_club,#lista_libreria_club,#lista_sucursal_club{
+         width:30%;
+         float:left;
+         margin:0;
+     }
+
+     #frecuenciaClub,#lista_genero_clubes,#lista_libreria_club{
+         margin: 0 20px 0 145px;
+     }
+     form select{
+         height:30px;
+     }
      .modal input[type=date],input{
         width:75%;
         height:15px;
@@ -108,7 +122,7 @@
 
      }
      #txt-clubLectura{
-         width:350px;
+         width:80%;
      }
     .modal-content h2{
         font-size:10px;
@@ -128,6 +142,8 @@
    
     #modalidad_Club_lista{
         display:flow-root;
+        width:50%;
+        float:left;
     }
 
     .btnsForm{
@@ -152,6 +168,10 @@
     .unirse_Club,.crear_Evento{
         float:left;
         width:50%;
+        background-color:#3d1e24;
+        border:solid 1px #fff;
+        color:#fff;
+        padding:3px;
     }
 
     .unirse_Club{
@@ -181,11 +201,6 @@
 
     
 
-.sesion:hover,#unirse_Club:hover{
-    opacity:0.9;
-    color:white;
-    background-color:#c09f80;
-}
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -202,13 +217,13 @@
   
   /* Modal Content */
   .modal-content {
-      text-align: center;
+    text-align: center;
     background-color: #d7cec7;
     margin: auto;
     padding:20px;
     border: 1px solid #888;
     width: 55%;
-    height:1750px;
+    height:600px;
     text-align: center;
   }
   
@@ -220,10 +235,7 @@
       margin-bottom:15px;
       margin-left:25px;
   }
-  .sign-in img{
-      width:128px;
-      margin-bottom:15px;
-  }
+
   form{
       padding:10px 0;
       margin:auto;

@@ -33,8 +33,11 @@ let mostrar_tabla = async() => {
 
         let celda_sucursal = fila.insertCell();
         let boton_sucursal = document.createElement('button');
-        boton_sucursal.href = '#';
         boton_sucursal.innerHTML = 'Agregar Sucursal';
+        boton_sucursal.addEventListener('click', function(){
+            localStorage.setItem('idLibreria', lista_librerias[i]['_id']);
+            location.replace('registrar_sucursal.html');
+        })
 
         celda_sucursal.appendChild(boton_sucursal);
     }

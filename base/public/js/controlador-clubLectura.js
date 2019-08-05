@@ -34,12 +34,13 @@ let showSelects = async() => {
     let arrayTema = [];
     let arrayCategorias= [];
     let arrayLibrerias = [];
-    let arraySucursales = ['1','2','3'];
+    let arraySucursales = [];
 
     arrayGenero=await listarGenero();
     arrayTema=await obtenerLibros();
     arrayCategorias=await obtenerCategorias();
     arrayLibrerias=await obtenerLibrerias();
+    arraySucursales=await obtenerSucursales();
 
     let parentTema = document.getElementById('lista_tema_clubes');
     let parentGenero = document.getElementById('lista_genero_clubes');
@@ -103,8 +104,8 @@ let showSelects = async() => {
 
     for (let i = 0; i < arraySucursales.length; i++) {
         let optionSucursal = document.createElement('option');
-        optionSucursal.setAttribute('value', arraySucursales[i]);
-        optionSucursal.innerHTML = arraySucursales[i];
+        optionSucursal.setAttribute('value', arraySucursales[i].nombre);
+        optionSucursal.innerHTML = arraySucursales[i].nombre;
         optionSucursal.style.width = "300px"
         selectSucursal.appendChild(optionSucursal);
     }
@@ -236,16 +237,22 @@ btnCrearClub.onclick = function () {
 
 
     error=validarDatos(nombreClub,modalidad,fechainicio,fechaFin);
+    let idAdminClub = sessionStorage.getItem('id');
+
+    if (modalidad=='Virtual') {
+        hora="00:00"
+    }
+    
 
     if (error == false) {
        
-        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,localStorage.getItem('idUsuario'));
+        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,idAdminClub);
         modal.style.display = "none";
         cleanupFormClubes();
-
+        document.location.reload();
 
     } else {
-        document.getElementById('modal-content').style.height = "1080px";
+        document.getElementById('modal-content').style.height = "640px";
     }
 
 }

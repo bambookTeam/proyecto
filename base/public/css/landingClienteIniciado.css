@@ -26,13 +26,23 @@ html {
   }
   
   .banner h2 {
-    font-size: 0.9em;
+    font-size: 1.5em;
     font-weight: lighter;
     text-align: right;
     margin-right: 25px;
     grid-column: 7/13;
-    grid-row: 1/-1;
+    grid-row: 12/12;
     padding: 2px 0;
+  }
+
+  .banner h4{
+    font-size: 1.1em;
+    font-weight: lighter;
+    margin-right: 25px;
+    grid-column: 1/7;
+    grid-row: 1/4;
+    padding: 2px 0;
+    margin:20px;
   }
   
   /**/
@@ -40,34 +50,44 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #000;
+    color:white;
+    
   }
   
   .info-container {
-    padding-top: 30px;
-    margin: 20px;
+    width:100%;
+    padding: 70px 25px 90px 25px;
     display: grid;
     grid-gap: 3px;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 40px 200px 40px;
+    background-color:#76323f;
+   
   }
   
   .header {
-    font-size: 1.6em;
+    font-size: 5em;
     grid-column: 1/-1;
+    font-weight: lighter;
+    margin:50px 0;
   }
   
-  .menu {
-    margin-top: 60px;
-    grid-row: 2 / 4;
-    grid-column: 4/-1;
-  }
+
   
   .content {
-    margin-top: 60px;
-    grid-column: 1 /4;
+    display:grid;
+    padding-top: 120px;
+    grid-column: 1 /12;
     grid-row: 2 / 5;
-    font-size: 1.7em;
+    font-size: 1.4em;
+  }
+
+  .content p{
+    padding:25px 15px;
+    font-weight:lighter;
+    margin:10px 50px;
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff;
   }
   
   /**/
@@ -117,7 +137,6 @@ html {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 400px;
   }
-  
   .footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -126,6 +145,7 @@ html {
     text-align: center;
     background-color: grey;
     grid-gap: 3px;
+    font-family: 'Roboto', sans-serif;
   }
   
   .footone,
@@ -139,6 +159,7 @@ html {
   
   .footfive {
     grid-column: 1 / -1;
+    padding:10px;
   }
   
   .footone img {
@@ -159,25 +180,36 @@ html {
     text-align: center;
   }
   
-  .foottwo h1 {
-    font-size: 1.7em;
-    margin: 0;
-    padding: 25px 0 0 0;
+  .foottwo h3 {
+    font-size: 0.9em;
+    margin: auto;
+    padding: 105px 0 0 0;
+    width:80%;
+    
   }
   
-  .foottwo p {
-    font-size: 0.8em;
-    padding: 0px 15px;
-    margin-top: 30px;
+  .foottwo .redes {
+    margin-top:20px;
   }
   
+  .redes .line{
+    background-color:#fff;
+    width:70%;
+    height:1px;
+    margin:10px auto;
+    padding:0 40px;
+  }
+  
+  .redes img:hover{
+    opacity:0.7;
+  }
   .footthree{
     height:300px;
   }
   
   .footthree h3 {
     font-size: 1.2em;
-    padding: 5px 0px 20px 0;
+    padding: 5px 0px 0 0;
   }
   
   .footthree .pw {
@@ -187,11 +219,10 @@ html {
   }
   
   .footfour h2 {
-    padding: 5px 20px;
-    margin: auto;
-    margin-top: 45px;
-    font-size: 1.4em;
+    margin:auto;
     font-weight: lighter;
+    width:85%;
+    padding-top:96px;
   }
   
   .footfour .buttonArt {
@@ -206,6 +237,8 @@ html {
     cursor: pointer;
     padding: 5px;
   }
+
+  
   
   .footfive p {
     color: #aaaaaa;
@@ -243,7 +276,8 @@ html {
     padding:5px;
   }
   .footer a:hover{
-    color:rgb(19, 19, 20);
+    font-weight: bolder;
+    text-decoration: underline
   }
   .footer .button:hover,
   .buttonArt:hover {
@@ -251,31 +285,15 @@ html {
     transition: 0.3s;
     /*border: 2px solid #ffdf00;*/
     background-color: #fff;
-    color:#000;
+    color:black;
   }
   
   .footer a {
     font-size: 0.7em;
     text-decoration: none;
-    color: #ffdf00;
+    color: #ffdf11;
   
   }
-  
-  @media screen and (max-width: 830px) {
-    .container {
-      margin: 20px;
-      display: grid;
-      grid-gap: 3px;
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: repeat(4, 300px);
-    }
-  
-    .footer {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 300px 300px;
-    }
-  }
-  
   @media screen and (max-width: 490px) {
   
     /*
@@ -307,11 +325,6 @@ html {
       text-align: center;
     }
   
-    .menu {
-      margin-top: 60px;
-      grid-row: 2 / 4;
-      grid-column: 1/-1;
-    }
   
     .content {
       margin-top: 60px;

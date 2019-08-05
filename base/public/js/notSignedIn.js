@@ -1,5 +1,5 @@
 
-
+const name= document.querySelector('#nombrePerfil');
 let getName = () =>{
     let nombre=sessionStorage.getItem('nombreUsuario');
     nombre=nombre.charAt(0).toUpperCase()+nombre.slice(1);
@@ -33,11 +33,10 @@ let hideOptions = () =>{
 }
 
 let hide= () =>{
-    let div = document.querySelector('#nav-content');
-    let div2 = document.querySelector('#optionsNav');
+    let div = document.querySelector('#nav-containers');
+    let div2 = document.querySelector('#optionsNavs');
     let logoRedirect=document.querySelector('#logoRedirect');
 
-    
     if(sessionStorage.length==0){
         div.style.display="none";
         div2.style.display="none";
@@ -49,7 +48,10 @@ let hide= () =>{
         div2.style.display="inline";
         getName();
         hideOptions();
+
+        
     }
 }
+
 
 window.addEventListener('load',hide);

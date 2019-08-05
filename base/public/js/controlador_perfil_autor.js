@@ -10,7 +10,6 @@ const txt_nacimiento = document.querySelector('#txt_nacimiento');
 const txt_muerte = document.querySelector('#txt_muerte');
 const txt_nacionalidad = document.querySelector('#txt_nacionalidad');
 const txt_bio = document.querySelector('#txt_bio');
-const txt_libros = document.querySelector('#txt_libros');
 const txt_premios = document.querySelector('#txt_premios');
 const foto = document.querySelector('#foto');
 
@@ -24,7 +23,6 @@ let llenar_perfil = async() => {
         txt_muerte.innerHTML = autor['fecha_muerte'];
         txt_nacionalidad.innerHTML = autor['nacionalidad_autor'];
         txt_bio.innerHTML = autor['biografia_autor'];
-        txt_libros.innerHTML = autor['libros_autor'];
         txt_premios.innerHTML = autor['premios_autor'];
     }
 };
