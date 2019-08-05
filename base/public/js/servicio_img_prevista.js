@@ -29,7 +29,7 @@ $(function () {
     });
 
     uploadOferta.on('click',function(e){
-        document.querySelector('#image_preview2').src = imagenUrl;
+        // document.querySelector('#image_preview2').src = imagenUrl;
     });
 
 

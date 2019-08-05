@@ -33,14 +33,21 @@ let error=false;
 
 if (error == false) {
     registrarOferta();
+    
+    setTimeout(function(){ parent.innerHtml = ""; 
+    addNew() 
+    alert("Hello");
+
+}, 3000);
+
     Swal.fire({
             type: 'success',
-            title: 'El libro se ha registrado exitosamente'
+            title: 'La oferta se ha registrado exitosamente'
         })
 } else {
     Swal.fire({
             type: 'warning',
-            title: 'No se ha podido registrar el libro',
+            title: 'No se ha podido registrar la oferta',
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
 }
