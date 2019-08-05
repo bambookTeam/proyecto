@@ -9,6 +9,7 @@ let mostrar_tabla = async () => {
     lista_libros = await obtenerLibros();
     tbody.innerHTML = '';
 
+    lista_libros = lista_libros.reverse();
     for (let i = 0; i < lista_libros.length; i++) {
         let fila = tbody.insertRow();
         fila.insertCell().innerHTML = lista_libros[i]['titulo'];
@@ -22,15 +23,12 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_libros[i]['tipo'];
         fila.insertCell().innerHTML = lista_libros[i]['cantidad'];
         fila.insertCell().innerHTML = lista_libros[i]['precio'];
-
-
+        
         let img=document.createElement('img');
         img.setAttribute('src',lista_libros[i]['imagen']);
-        
         img.classList.add('imgTabla');
 
-        let x=fila.insertCell();
-
+        let x = fila.insertCell();
         x.appendChild(img);
 
         let celda_perfil = fila.insertCell();
@@ -43,7 +41,8 @@ let mostrar_tabla = async () => {
 
         boton_perfil.addEventListener('click', function() {
             //console.log(this.dataset._id);
-            window.location.href = `listar_libros.html?_id=${this.dataset._id}`
+            localStorage.setItem("infoLibro", JSON.stringify(lista_libros[i]));
+            window.location.href = 'ver_perfil_libro.html'
 
     });
 }

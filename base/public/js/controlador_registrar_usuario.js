@@ -1,6 +1,16 @@
 'use strict';
 
 
+
+let obtenerListaUsuarios = async (pcorreo) => {
+
+    usuarios = await obtenerUsuarios();;
+    console.log(usuarios);
+};
+var usuarios = obtenerListaUsuarios();
+
+
+
 const boton_registrar = document.querySelector('#btn_registrar');
 const input_primer_nombre = document.querySelector('#txt_primer_nombre');
 const input_segundo_nombre = document.querySelector('#txt_segundo_nombre');
@@ -85,21 +95,18 @@ let validarIdentificacion = (pidentificacion) =>
 };
 */
 
-let validarCorreo = async (pcorreo) => {
+let validarCorreo = (pcorreo) => {
 
-    let usuarios = [];
-
-    usuarios = await obtenerUsuarios;
     let error = false;
 
-    for( let i = 0; i < usuarios.length; i++){
+    for (let i = 0; i < usuarios.length; i++) {
 
-        if( usuarios[i].correo == pcorreo){
+        if (usuarios[i].correo == pcorreo) {
 
-            error = true; 
-            input_correo.classList.add('input_error');            
-            
-        }else {
+            error = true;
+            input_correo.classList.add('input_error');
+
+        } else {
 
             input_correo.classList.remove('input_error');
         }
@@ -109,7 +116,7 @@ let validarCorreo = async (pcorreo) => {
     return error;
 
 };
-    
+
 
 
 
@@ -117,108 +124,96 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pnombreUsu
 
     let error = false;
 
-   // error = validarIdentificacion(pidentificacion); 
+    // error = validarIdentificacion(pidentificacion); 
 
 
-    if( pidentificacion.charAt(0) == '0'){ 
+    if (pidentificacion.charAt(0) == '0') {
 
         error = true;
         input_identificacion.classList.add('input_error');
 
-    } else { 
+    } else {
 
-        input_identificacion.classList.remove('input_error'); 
+        input_identificacion.classList.remove('input_error');
 
     }
 
 
-    if(pidentificacion.length != 9){
+    if (pidentificacion.length != 9) {
 
         error = true;
 
-        input_identificacion.classList.add('input_error');                                                                                  
-       
-    }else {
+        input_identificacion.classList.add('input_error');
 
-        input_identificacion.classList.remove('input_error'); 
-        
-    }      
+    } else {
 
-    if (pnombre1 == '')
-    {
+        input_identificacion.classList.remove('input_error');
+
+    }
+
+    if (pnombre1 == '') {
         error = true;
         input_primer_nombre.classList.add('input_error');
 
-    }else
-    {
+    } else {
         input_primer_nombre.classList.remove('input_error');
 
     }
 
 
-    if (papellido1 == '')
-    {
+    if (papellido1 == '') {
         error = true;
         input_primer_apellido.classList.add('input_error');
 
-    }else
-    {
+    } else {
         input_primer_apellido.classList.remove('input_error');
 
     }
 
 
 
-    if (psexo== '')
-    {
+    if (psexo == '') {
         error = true;
         select_sexo.classList.add('input_error');
 
-    }else
-    {
+    } else {
         select_sexo.classList.remove('input_error');
 
     }
 
 
-    if (pidentificacion == '')
-    {
+    if (pidentificacion == '') {
         error = true;
         input_identificacion.classList.add('input_error');
 
-    }else
-    {
+    } else {
         input_identificacion.classList.remove('input_error');
 
     }
 
 
 
- 
-    if (pcorreo == '')
-    {
+
+    if (pcorreo == '') {
         error = true;
         input_correo.classList.add('input_error');
 
-    }else
-    {
+    } else {
         input_correo.classList.remove('input_error');
 
-    } 
+    }
 
 
-    if (pnombreUsuario == '')
-    {
+    if (pnombreUsuario == '') {
         error = true;
         input_nombre_usuario.classList.add('input_error');
 
-    }else
-    {
+    } else {
         input_nombre_usuario.classList.remove('input_error');
 
     }
 
-  
+
 
     return error;
 
@@ -226,8 +221,7 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pnombreUsu
 
 
 
-let guardar =() =>
-{
+let guardar = () => {
 
     let nombre1 = input_primer_nombre.value;
     let nombre2 = input_segundo_nombre.value;
@@ -240,21 +234,26 @@ let guardar =() =>
     let canton = select_canton.value;
     let distrito = select_distrito.value;
     let direccion = input_direccion.value;
-    let nombreUsuario =input_nombre_usuario.value;
-    let tipo = 2;    
-    let error = validar(nombre1, apellido1, sexo,identificacion, correo, nombreUsuario);
-    //error = validarCorreo(correo);
+    let nombreUsuario = input_nombre_usuario.value;
+    let tipo = 2;
 
-    if( error == false )
-    {
-        registroEnLinea(nombre1,nombre2,apellido1,apellido2,sexo,identificacion,correo,provincia,canton,distrito,direccion,nombreUsuario,tipo)
+
+
+
+
+
+
+    let error = validar(nombre1, apellido1, sexo, identificacion, correo, nombreUsuario);
+    error = validarCorreo(correo);
+
+    if (error == false) {
+        registroEnLinea(nombre1, nombre2, apellido1, apellido2, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario, tipo)
         Swal.fire({
             title: 'Se ha guardado el cliente',
             type: 'success',
             text: 'Se enviara un correo para confirmar su cuenta'
         })
-    }else
-    {
+    } else {
         Swal.fire({
             title: 'No se pudo hacer el registro',
             type: 'warning',
