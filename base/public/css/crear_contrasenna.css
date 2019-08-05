@@ -8,9 +8,23 @@ main {
     border: 2px #e74c3c solid !important;
 }
 
-input{
+
+main div {
 
     width: 100%;
-    
+    text-align: center;
 
 }
+input{
+
+    width: 60%;
+    height: 30px;
+    margin: 15px;
+    padding: 5px;
+    border: 1px solid #76323F;
+    border-radius: 15px;
+    background: none;
+    outline: none;
+
+}
+
