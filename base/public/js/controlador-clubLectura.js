@@ -31,12 +31,15 @@ btn.onclick = function () {
 let showSelects = async() => {
 
     let arrayGenero = [];
-    let arrayTema = ['Cocori', 'Unica Mirando al Mar', '1984'];
-    let arrayCategorias= ['Sin Categoría','A','B','C'];
-    let arrayLibrerias = ['Libreria Internacional','Wal-mart','Universal'];
+    let arrayTema = [];
+    let arrayCategorias= [];
+    let arrayLibrerias = [];
     let arraySucursales = ['1','2','3'];
 
     arrayGenero=await listarGenero();
+    arrayTema=await obtenerLibros();
+    arrayCategorias=await obtenerCategorias();
+    arrayLibrerias=await obtenerLibrerias();
 
     let parentTema = document.getElementById('lista_tema_clubes');
     let parentGenero = document.getElementById('lista_genero_clubes');
@@ -76,24 +79,24 @@ let showSelects = async() => {
 
     for (let i = 0; i < arrayTema.length; i++) {
         let optionTema = document.createElement('option');
-        optionTema.setAttribute('value', arrayTema[i]);
-        optionTema.innerHTML = arrayTema[i];
+        optionTema.setAttribute('value', arrayTema[i].titulo);
+        optionTema.innerHTML = arrayTema[i].titulo;
         optionTema.style.width = "300px"
         selectTema.appendChild(optionTema);
     }
 
     for (let i = 0; i < arrayCategorias.length; i++) {
         let optionCategoria = document.createElement('option');
-        optionCategoria.setAttribute('value', arrayCategorias[i]);
-        optionCategoria.innerHTML = arrayCategorias[i];
+        optionCategoria.setAttribute('value', arrayCategorias[i].nombre);
+        optionCategoria.innerHTML = arrayCategorias[i].nombre;
         optionCategoria.style.width = "300px"
         selectCategoria.appendChild(optionCategoria);
     }
 
     for (let i = 0; i < arrayLibrerias.length; i++) {
         let optionLibreria = document.createElement('option');
-        optionLibreria.setAttribute('value', arrayLibrerias[i]);
-        optionLibreria.innerHTML = arrayLibrerias[i];
+        optionLibreria.setAttribute('value', arrayLibrerias[i].nombre_comercial);
+        optionLibreria.innerHTML = arrayLibrerias[i].nombre_comercial;
         optionLibreria.style.width = "300px"
         selectLibreria.appendChild(optionLibreria);
     }
@@ -236,7 +239,7 @@ btnCrearClub.onclick = function () {
 
     if (error == false) {
        
-        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,0);
+        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,localStorage.getItem('idUsuario'));
         modal.style.display = "none";
         cleanupFormClubes();
 
