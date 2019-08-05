@@ -47,6 +47,7 @@ router.post('/registrar_tarjeta', function (req, res) {
         }
     );
 })
+
 router.post('/listar_tarjetas', function (req, res) {
 
     console.log("listar tajetas ejecutado 2 ");
