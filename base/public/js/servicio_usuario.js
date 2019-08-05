@@ -82,17 +82,17 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
     }).then(
         function (response) {
             sessionStorage.clear();
-            let r=false;
+            let r = false;
             if (response.data.success == true) {
                 console.log(response);
                 if (response.data.usuario.contrasena == pcontrasena) {
-                    r=true;
-                    sessionStorage.setItem('conectado','true');
-                    sessionStorage.setItem('id',response.data.usuario._id);
-                    sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
+                    r = true;
+                    sessionStorage.setItem('conectado', 'true');
+                    sessionStorage.setItem('id', response.data.usuario._id);
+                    sessionStorage.setItem('tipoUsuario', response.data.usuario.tipo);
                     sessionStorage.setItem('contrasena', response.data.usuario.contrasena);
                     sessionStorage.setItem('contador', response.data.usuario.contador);
-                    sessionStorage.setItem('nombreUsuario',response.data.usuario.nombreUsuario);
+                    sessionStorage.setItem('nombreUsuario', response.data.usuario.nombreUsuario);
                     //actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).data.contador);
                     //actualizar_contador(sessionStorage.getItem('id'), sessionStorage.getItem('contador'));
 
@@ -147,17 +147,17 @@ let validar_pin = async (ppin, pcontrasena) => {
 };
 */
 
-let validarPin = (ppin, pcontrasena) =>{
+let validarPin = (ppin, pcontrasena) => {
 
     let error = false;
 
-   // if ( ppin == JSON.parse(sessionStorage.getItem('usuario')).contrasena) {
+    // if ( ppin == JSON.parse(sessionStorage.getItem('usuario')).contrasena) {
 
-   if( ppin == sessionStorage.getItem('contrasena')){
+    if (ppin == sessionStorage.getItem('contrasena')) {
 
-       // crearContrasenna( JSON.parse(sessionStorage.getItem('usuario'))._id, pcontrasena );
+        // crearContrasenna( JSON.parse(sessionStorage.getItem('usuario'))._id, pcontrasena );
 
-       crearContrasenna(sessionStorage.getItem('id'), pcontrasena);
+        crearContrasenna(sessionStorage.getItem('id'), pcontrasena);
 
         return error;
 
@@ -187,14 +187,14 @@ let crearContrasenna = async (p_id, pcontrasena) => {
 
 
 
-let actualizar_contador = (p_id, pcontador)=>{
+let actualizar_contador = (p_id, pcontador) => {
 
 
 
     let nuevoContador = parseInt(pcontador) + 1;
     console.log(nuevoContador);
 
-    axios ({
+    axios({
 
         method: 'post',
         url: 'http://localhost:4000/api/actualizar-contador',
@@ -208,29 +208,29 @@ let actualizar_contador = (p_id, pcontador)=>{
 
 };
 
-let asociarTarjeta = (p_id,pnumeroTarjeta, pfechaVen, pcodigo) => {
+let asociarTarjeta = (p_id, pnumeroTarjeta, pfechaVen, pcodigo) => {
 
-    
-    
+
+
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/agregar-tarjeta',
         responseType: 'json',
         data: {
-           // _id: sessionStorage.getItem('id'),
-           _id: p_id,
+            // _id: sessionStorage.getItem('id'),
+            _id: p_id,
             numerotarjeta: pnumeroTarjeta,
             fechavencimiento: pfechaVen,
             codigocvv: pcodigo
         }
 
     });
-    
+
 
 
 };
 
-let obtenerUsuarios = async() => {
+let obtenerUsuarios = async () => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -260,12 +260,29 @@ let obtenerUsuarioId = async (_id) => {
     }
 };
 
-function generarContrasenna()
-{
-  let caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
-  let contraseña = "";
-  for (let i=0; i<9; i++){
-   contraseña += caracteres.charAt(Math.floor(Math.random()*caracteres.length));
-  }
-  return contraseña;
+let obtenerUsuarioPerfil = async (idUsuario) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'post',
+            url: 'http://localhost:4000/api/buscar-usuario-perfil',
+            responseType: 'json',
+            data: {
+                _id: idUsuario
+            }
+        });
+
+        return response.data.usuario;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+function generarContrasenna() {
+    let caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
+    let contraseña = "";
+    for (let i = 0; i < 9; i++) {
+        contraseña += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+    return contraseña;
 }

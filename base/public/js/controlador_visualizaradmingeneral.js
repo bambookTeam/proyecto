@@ -9,16 +9,15 @@ const avatar = document.querySelector('#avatar');
 
 
 
-let llenar_perfil = async() => {
-    let usuario = await obtenerContactoId(_id);
+let llenar_perfil = async () => {
+    let usuario = await obtenerUsuarioPerfil(sessionStorage.getItem("id"));
     if (usuario) {
-        avatar.innerHTML = usuario['avatar'];
-        txt_nombre.innerHTML = contacto['nombre'];
-        txt_correo.innerHTML = contacto['correo'];
-        txt_contraseña.innerHTML=contacto['contraseña'];
-        
-       
-
+        let img = document.createElement("img");
+        img.src = usuario.avatar;
+        img.classList.add("avatar-admin");
+        avatar.appendChild(img);
+        txt_nombre.innerHTML = usuario.nombre;
+        txt_correo.innerHTML = usuario.correo;
     }
 };
 
