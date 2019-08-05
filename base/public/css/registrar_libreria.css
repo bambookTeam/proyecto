@@ -93,10 +93,6 @@ main button{
     outline: none; 
 }
 
-footer{
-    background: #76323F;
-    padding: 1rem;
-}
 
 #txtIdExiste{
     color: tomato;
