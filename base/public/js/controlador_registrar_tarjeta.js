@@ -41,7 +41,7 @@ let validar = (pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
         input_numerotarjeta.classList.remove('input_error');
     }
 
-    if ((pfechavencimiento == '') || (pfechavencimiento < today)) {
+    if ((pfechavencimiento == '') || (pfechavencimiento != today)) {
         error = true;
         input_fechavencimiento.classList.add('input_error');
     } else {
@@ -50,7 +50,7 @@ let validar = (pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
     }
 
 
-    if ((pcodigocvv == '') (pcodigocvv.length != 3)){
+    if ((pcodigocvv == '') || (pcodigocvv.length != 3)){
         error = true;
         input_codigocvv.classList.add('input_error');
     } else {
