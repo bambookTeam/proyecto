@@ -14,6 +14,8 @@ let txt_genero = document.querySelector('#txt_genero');
 let txt_tipo = document.querySelector('#txt_tipo');
 let txt_portada = document.querySelector('#portada');
 
+let img=document.querySelector('#imagen');
+
 
 
 let llenar_perfil = async () => {
@@ -29,7 +31,9 @@ let llenar_perfil = async () => {
     txt_isbn.innerHTML = libro['isbn'];
     txt_genero.innerHTML = libro['genero'];
     txt_tipo.innerHTML = libro['tipo'];
-    txt_portada.innerHTML = libro['imagen'];
+
+    img.setAttribute('src',libro['imagen']);
+   
 
     localStorage.removeItem("infoLibro");
    }
