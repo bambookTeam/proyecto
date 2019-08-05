@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/registrar-evento.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>
@@ -51,23 +52,43 @@
             
         <h1>Registrar Evento</h1>
 
-        <input type="text" placeholder="Nombre del Club" id="event_Name">
+        <input type="text" placeholder="Nombre del Evento" id="event_Name">
         
         <div id="lista_libros_evento" class="listas">
             <label for="lista_libros_evento">Libro</label>
         </div>
 
         <button id="registrar-evento">Registrar</button>
-        <button>Cancelar</button>
+        <button id="cancelEventRegister"">Cancelar</button>
 
+        <section>
+
+            <h1>Eventos de este Club</h1>
+  
+              <table id="tbl_eventos">
+                  <thead>
+                      <tr>
+                          <th>Nombre del Evento</th>
+                          <th>Nombre del Libro</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+      
+                  </tbody>
+              </table>
+          </section>
+  
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
     <script src="js/controlador-evento.js"></script>
     <script src="js/servicio-evento.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>
     <script src="js/getNombre.js"></script>
     <script src="js/servicio_libro.js"></script>
+    <script src="js/controlador_listar_eventos.js"></script>
 
 </body>
 

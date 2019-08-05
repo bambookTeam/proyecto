@@ -25,7 +25,7 @@ function showSlides(n) {
 function addNew(){
   let lista=[];
   lista=['https://tinypng.com/images/social/website.jpg','http://www.titikshapublicschool.com/wp-content/uploads/2018/11/developer-api.jpg','https://tinypng.com/images/social/photoshop.jpg'];
-  let parent= document.getElementById('daddy')
+  let parent= document.getElementById('parentVendidos')
   for(i=0;i<3;i++){
      let div= document.createElement('div');
   div.classList.add('mySlides');

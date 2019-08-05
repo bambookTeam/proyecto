@@ -238,6 +238,10 @@ btnCrearClub.onclick = function () {
 
     error=validarDatos(nombreClub,modalidad,fechainicio,fechaFin);
     let idAdminClub = sessionStorage.getItem('id');
+
+    if (modalidad=='Virtual') {
+        hora="00:00"
+    }
     
 
     if (error == false) {
@@ -245,10 +249,10 @@ btnCrearClub.onclick = function () {
         registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,idAdminClub);
         modal.style.display = "none";
         cleanupFormClubes();
-
+        document.location.reload();
 
     } else {
-        document.getElementById('modal-content').style.height = "1080px";
+        document.getElementById('modal-content').style.height = "640px";
     }
 
 }
