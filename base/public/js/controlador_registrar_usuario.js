@@ -138,7 +138,6 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pnombreUsu
 
     }
 
-
     if (pidentificacion.length != 9) {
 
         error = true;
@@ -244,10 +243,14 @@ let guardar = () => {
 
 
     let error = validar(nombre1, apellido1, sexo, identificacion, correo, nombreUsuario);
-    error = validarCorreo(correo);
+
+    //error = validarCorreo(correo);
 
     if (error == false) {
+
+
         registroEnLinea(nombre1, nombre2, apellido1, apellido2, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario, tipo)
+
         Swal.fire({
             title: 'Se ha guardado el cliente',
             type: 'success',

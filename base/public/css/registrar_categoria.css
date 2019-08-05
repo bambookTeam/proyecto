@@ -1,22 +1,23 @@
 
 
-.boton_registrar {
 
-    background: #2f3542;
-    color: #fff;
-    font-size: 16px;
-    width: 150px;
-    height: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-
-}
 
 main{
 
     display: flow-root;
     text-align: center;
+}
+
+main button{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #76323F;
+    border-radius: 15px;
+    font-size: 20px;
+    color: #76323F;
+    font-weight: bold;
+    background: none;
+    outline: none; 
 }
 
 main h1{
@@ -41,12 +42,13 @@ main h2 {
 
 main input{
     width: 60%;
+    height: 30px;
     margin: 15px;
     padding: 5px;
     border: 1px solid #76323F;
+    border-radius: 15px;
     background: none;
     outline: none;
-    
 }
 
 .input_error {
@@ -58,13 +60,9 @@ main input{
     color: #76323F;
 }
 
-main button{
-
-    margin: 50px 0;
-    padding: 10px;
-    border: 1px solid #76323F;
-    font-size: 20px;
-    color: #76323F;
-    background: none;
-    outline: none; 
+footer{
+    background: #76323F;
+    padding: 1rem;
+    margin-top: 170px;
 }
+
