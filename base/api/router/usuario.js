@@ -2,24 +2,24 @@
 
 const nodeMailer = require('nodemailer');
 const express = require('express'),
-  router = express.Router(),
-  Usuario = require('../models/usuario.model');
+    router = express.Router(),
+    Usuario = require('../models/usuario.model');
 
-  router.param("_id", function (req, res, next, _id) {
+router.param("_id", function (req, res, next, _id) {
     req.body._id = _id;
     next();
 });
 const transporter = nodeMailer.createTransport({
-    service : 'gmail',
-    auth : {
-        user : 'bambooks.team@gmail.com',
-        pass : '#bambook123'
+    service: 'gmail',
+    auth: {
+        user: 'bambooks.team@gmail.com',
+        pass: '#bambook123'
     }
 });
 
-router.post('/registrar_usuario', function(req,res){
+router.post('/registrar_usuario', function (req, res) {
     let body = req.body;
-    let nuevo_usuario = new Usuario ({
+    let nuevo_usuario = new Usuario({
         primerNombre: body.primerNombre,
         segundoNombre: body.segundoNombre,
         primerApellido: body.primerApellido,
@@ -41,33 +41,33 @@ router.post('/registrar_usuario', function(req,res){
 
     });
 
-    nuevo_usuario.save (function (err, usuarioDB) {
+    nuevo_usuario.save(function (err, usuarioDB) {
 
-        if(err){
+        if (err) {
 
             return res.status(500).json(
                 {
                     success: false,
                     msj: 'El usuario no se pudo guardar',
                     err
-                }  );
+                });
         } else {
 
             let mailOptions = {
 
-                from : 'bambooks.team@gmail.com',
-                to : nuevo_usuario.correo,
-                subject : 'Bienvenido a Bambooks',
-                text : ' Usar este pin para iniciar sesion: '+ body.contrasena
+                from: 'bambooks.team@gmail.com',
+                to: nuevo_usuario.correo,
+                subject: 'Bienvenido a Bambooks',
+                text: ' Usar este pin para iniciar sesion: ' + body.contrasena
 
 
             };
 
-            transporter.sendMail(mailOptions, function(error, info){
-                if(error){
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
 
                     console.log(error);
-                }else {
+                } else {
 
                     console.log('Correo enviado')
                 }
@@ -90,21 +90,21 @@ router.post('/validar_credenciales', function (req, res) {
     Usuario.findOne({ correo: req.body.correo }).then(
         function (usuario) {
             if (usuario) {
-                if (usuario.contrasena==req.body.contrasena) {
+                if (usuario.contrasena == req.body.contrasena) {
                     res.json({
-                        success:true,
-                        usuario:usuario
+                        success: true,
+                        usuario: usuario
                     })
                 } else {
                     res.json({
-                        success:false,
-                        usuario:usuario
+                        success: false,
+                        usuario: usuario
                     })
                 }
             } else {
                 res.json({
-                    success:false,
-                    usuario:usuario
+                    success: false,
+                    usuario: usuario
                 })
             }
         }
@@ -113,27 +113,27 @@ router.post('/validar_credenciales', function (req, res) {
 
 
 
-router.post('/validar_pin', function(req,res){
-    Usuario.findOne({ correo: req.body.correo}).then (
-        function(usuario) {
+router.post('/validar_pin', function (req, res) {
+    Usuario.findOne({ correo: req.body.correo }).then(
+        function (usuario) {
 
-            if(usuario) {
+            if (usuario) {
 
-                if(usuario.pin == req.body.contrasena ){
+                if (usuario.pin == req.body.contrasena) {
                     res.json({
                         success: true,
-                        usuario : usuario
+                        usuario: usuario
                     })
 
-                }else {
+                } else {
                     res.json({
-                        success: false, 
+                        success: false,
                         usuario: usuario
 
                     })
                 }
 
-            }else {
+            } else {
 
                 res.json({
                     success: false,
@@ -167,8 +167,8 @@ router.get('/listar-usuarios', function (req, res) {
     })
 });
 
-router.get('/buscar-usuario-id/:_id', function(req, res) {
-    Usuario.findById(req.body._id, function(err, usuarioBD) {
+router.get('/buscar-usuario-id/:_id', function (req, res) {
+    Usuario.findById(req.body._id, function (err, usuarioBD) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -184,39 +184,39 @@ router.get('/buscar-usuario-id/:_id', function(req, res) {
     })
 });
 
-router.post('/crear-contrasenna', function(req, res){
-    Usuario.updateOne( {_id: req.body._id}, { $set: {contrasena: req.body.contrasena}},
- 
-        function(error){
-            if(error){
-                return res.status(500).json ({
-                    success: false, 
+router.post('/crear-contrasenna', function (req, res) {
+    Usuario.updateOne({ _id: req.body._id }, { $set: { contrasena: req.body.contrasena } },
+
+        function (error) {
+            if (error) {
+                return res.status(500).json({
+                    success: false,
                     msj: 'No se pudo crear la contraseña',
                     err
                 });
 
-            }else {
+            } else {
 
                 return res.status(400).json({
-                    success: true, 
+                    success: true,
                     msj: 'Se pudo crear la contraseña correctamente'
                 });
             }
-        }    
+        }
 
-        
+
 
     )
 
 });
 
 
-router.post('/actualizar-contador', function(req,res){
+router.post('/actualizar-contador', function (req, res) {
     console.log("inicio funcion  contador");
-    Usuario.updateOne( { _id: req.body._id }, { $set: {contador: req.body.contador } } ,
-        function(error){
-            if(error){
-                return res.status(500).json ({
+    Usuario.updateOne({ _id: req.body._id }, { $set: { contador: req.body.contador } },
+        function (error) {
+            if (error) {
+                return res.status(500).json({
                     success: false,
                     msj: 'No se pudo actualizar el contador',
                     error
@@ -225,7 +225,7 @@ router.post('/actualizar-contador', function(req,res){
                 console.log("error contador");
                 console.log(error);
 
-            }else {
+            } else {
 
                 return res.status(200).json({
                     success: true,
@@ -242,18 +242,19 @@ router.post('/actualizar-contador', function(req,res){
 
 
     )
-            // $push: {
-            //     'contador': req.body.contador
-            // }
+    // $push: {
+    //     'contador': req.body.contador
+    // }
 
 });
 
-router.post('/agregar-tarjeta', function(req, res) {
+router.post('/agregar-tarjeta', function (req, res) {
 
-    Usuario.update(
-        {_id: req.body._id},
+    console.log("aqui se agrega la tarjeta");
+    Usuario.updateOne(
+        { _id: req.body._id },
         {
-            $push: {
+            $set: {
                 'tarjetas': {
                     numerotarjeta: req.body.numerotarjeta,
                     fechavencimiento: req.body.fechavencimiento,
@@ -262,7 +263,7 @@ router.post('/agregar-tarjeta', function(req, res) {
             }
         },
 
-        function(error){
+        function (error) {
             if (error) {
                 return res.status(400).json({
                     success: false,
