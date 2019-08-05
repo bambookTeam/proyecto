@@ -19,6 +19,10 @@ const transporter = nodeMailer.createTransport({
 
 router.post('/registrar_usuario', function (req, res) {
     let body = req.body;
+
+    console.log("registro de usuario activado");
+    console.log(req.body);
+
     let nuevo_usuario = new Usuario({
         primerNombre: body.primerNombre,
         segundoNombre: body.segundoNombre,
@@ -44,7 +48,8 @@ router.post('/registrar_usuario', function (req, res) {
     nuevo_usuario.save(function (err, usuarioDB) {
 
         if (err) {
-
+            console.log("error registro de usuario");
+            console.log(err);
             return res.status(500).json(
                 {
                     success: false,
@@ -80,6 +85,8 @@ router.post('/registrar_usuario', function (req, res) {
                     msj: 'El usuario se guardó con éxito'
                 }
             );
+            console.log("sirvió");
+            // console.log(res);
         }
     });
 
