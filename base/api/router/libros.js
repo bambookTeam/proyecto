@@ -65,7 +65,7 @@ router.get('/listar_libros', function(req, res) {
     })
 });
 
-router.get('/buscar_libro-id/:_id', function(req, res) {
+router.get('/buscar_libro-id/_id', function(req, res) {
     Libro.findById(function(err, librosBD) {
         
         if (err) {
