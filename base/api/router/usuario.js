@@ -126,7 +126,7 @@ router.post('/registrar_admin_libreria', function (req, res) {
                     err
                 });
         } else {
-
+            console.log('funcion guardar usuario');
             let mailOptions = {
 
                 from: 'bambooks.team@gmail.com',
