@@ -1,11 +1,13 @@
 'use strict';
 
 let registrarTarjeta = (pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
+    let idUsuarioActivo = sessionStorage.getItem("id");
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar_tarjeta',
         responseType: 'json',
         data: {
+            id: idUsuarioActivo,
             numerotarjeta: pnumerotarjeta,
             fechavencimiento: pfechavencimiento,
             codigocvv: pcodigocvv
@@ -15,13 +17,17 @@ let registrarTarjeta = (pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
 
 
 
-let obtenerTarjetas = async() => {
+let obtenerTarjetas = async () => {
     try {
         // fetch data from an url endpoint
+        let idUsuarioActivo = sessionStorage.getItem("id");
         const response = await axios({
-            method: 'get',
+            method: 'post',
             url: 'http://localhost:4000/api/listar_tarjetas',
-            responseType: 'json'
+            responseType: 'json',
+            data: {
+                id: idUsuarioActivo
+            }
         });
 
         return response.data.listar_tarjetas;

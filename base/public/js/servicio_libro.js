@@ -39,7 +39,7 @@ let obtenerLibros = async () => {
             responseType: 'json'
         });
         
-        return result.data.lista_libros;
+        return response.data.lista_libros;
     } catch (error) {
         console.log(error);
     }

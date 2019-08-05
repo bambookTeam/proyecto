@@ -1,7 +1,4 @@
-body{
-    width: 1024px;
-    margin: 0 auto;
-}
+
 
 .boton_registrar {
 
@@ -16,16 +13,6 @@ body{
 
 }
 
-nav{
-    height: 50px;
-    background-color: #76323F;
-}
-
-nav img{
-    height: 40px;
-    margin-top: 5px;
-    margin-left: 10px;
-}
 
 main{
 
@@ -33,7 +20,7 @@ main{
     text-align: center;
 }
 
-h1{
+main h1{
 
     color: #76323F;
     font-size: 30px;
