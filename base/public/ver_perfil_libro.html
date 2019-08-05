@@ -46,22 +46,44 @@
 
 <body>
 
-  <h1> <span id="txt_titulo"></span></h1>
+    <button onclick="goBack()">Regresar</button id="btn_regresar">
+
+<div class="contenedor-perfil">
+
+
   <div id="portada">
-   <img src="" alt="" id="imagen">
-  </div>
-  <div id="infoLibro">
-    <p> <span id="txt_edicion"></span></p>
-    <p> <span id="txt_editorial"></span></p>
-    <p> <span id="txt_autor"></span></p>
-    <p> <span id="txt_anno"></span></p>
-    <p> <span id="txt_idioma"></span></p>
-    <p> <span id="txt_isbn"></span></p>
-    <p> <span id="txt_genero"></span></p>
-    <p> <span id="txt_tipo"></span></p>
+    <img src="" alt="" id="imagen">
   </div>
 
+  <div class="infoPerfil">
+
+    <section id="contenedor_titulo">
+      <h1 id=""> <span id="txt_titulo"></span></h1>
+    </section>
+
+    <section id="contenedor_infoLibro">
+
+      <div id="infoLibro">
+          <p>Edición:<span id="txt_edicion"></span></p>
+          <p>Editorial: <span id="txt_editorial"></span></p>
+          <p>Autor:  <span id="txt_autor"></span></p>
+          <p>Año edición: <span id="txt_anno"></span></p>
+          <p>Idioma:  <span id="txt_idioma"></span></p>
+          <p>ISBN: <span id="txt_isbn"></span></p>
+          <p>Género: <span id="txt_genero"></span></p>
+          <p>Tipo: <span id="txt_tipo"></span></p>
+      </div>
+       
+    </section>
+    
+
   </div>
+</div>
+
+
+
+
+
 
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -69,6 +91,11 @@
   <script src="js/controlador_perfil_libro.js"></script>
   <script src="js/getNombre.js"></script>
   <script src="js/controlador_cerrar_sesion.js"></script>
+  <script>
+      function goBack() {
+        window.history.back();
+      }
+      </script>
 </body>
 
 </html>
