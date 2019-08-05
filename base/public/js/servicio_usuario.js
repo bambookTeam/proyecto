@@ -208,6 +208,28 @@ let actualizar_contador = (p_id, pcontador)=>{
 
 };
 
+let asociarTarjeta = (p_id,pnumeroTarjeta, pfechaVen, pcodigo) => {
+
+    
+    
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-tarjeta',
+        responseType: 'json',
+        data: {
+           // _id: sessionStorage.getItem('id'),
+           _id: p_id,
+            numerotarjeta: pnumeroTarjeta,
+            fechavencimiento: pfechaVen,
+            codigocvv: pcodigo
+        }
+
+    });
+    
+
+
+};
+
 let obtenerUsuarios = async() => {
     try {
         // fetch data from an url endpoint
