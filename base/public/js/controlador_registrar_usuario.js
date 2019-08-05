@@ -241,16 +241,9 @@ let guardar =() =>
     let distrito = select_distrito.value;
     let direccion = input_direccion.value;
     let nombreUsuario =input_nombre_usuario.value;
-    let tipo = 2;
-    
-    
-    
-
-
-
-    
+    let tipo = 2;    
     let error = validar(nombre1, apellido1, sexo,identificacion, correo, nombreUsuario);
-    error = validarCorreo(correo);
+    //error = validarCorreo(correo);
 
     if( error == false )
     {

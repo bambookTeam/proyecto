@@ -56,7 +56,7 @@ let listarClubes = async()=>{
     div.appendChild(btnCrearEvento);
 
     btnCrearEvento.addEventListener('click',function(){
-        window.location.href=`registrar-evento.html?_id=${this.dataset._id}`
+        window.location.href=`registrar-evento.html?_id=${this.dataset._id}`;
     });
 
 
