@@ -43,7 +43,10 @@ let guardar = () => {
                 text: 'La categoría se ha registrado existosamente'
 
             }
-        )     
+        )   
+        
+        location.replace('listar_categoría.html');
+        
     } else 
     {
         Swal.fire

@@ -60,9 +60,22 @@ main input{
     color: #76323F;
 }
 
-footer{
-    background: #76323F;
-    padding: 1rem;
-    margin-top: 170px;
+
+html {
+    min-height: 100%;
+    position: relative;
 }
 
+body {
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+footer {
+    background-color: #76323F;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    color: white;
+  }
