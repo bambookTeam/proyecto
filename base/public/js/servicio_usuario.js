@@ -35,6 +35,41 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
 
 };
 
+let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
+
+    let pcontrasenna = generarContrasenna();
+    let provincia = "pprovincia";
+    let canton = "pcanton";
+    let distrito = "pdistrito";
+
+    axios({
+
+        method: 'post',
+        url: 'http://localhost:4000/api/registrar_admin_libreria',
+        responseType: 'json',
+        data: {
+            primerNombre: pnombre1,
+            segundoNombre: pnombre2,
+            primerApellido: papellido1,
+            segundoApellido: papellido2,
+            sexo: psexo,
+            identificacion: pidentificacion,
+            correo: pcorreo,
+            provincia: provincia,
+            canton: canton,
+            distrito: distrito,
+            direccion: pdireccion,
+            nombreUsuario: pnombreUsuario,
+            contrasena: pcontrasenna,
+            tipo: ptipo,
+            contador: 0
+
+        }
+    });
+
+};
+
+
 let iniciar_Sesion = async (pusuario, pcontrasena) => {
     let respuesta = await axios({
         method: 'post',
