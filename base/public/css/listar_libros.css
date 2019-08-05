@@ -59,3 +59,8 @@ table {
     background-color: #76323F;
     color: white;
   }
+
+  .imgTabla{
+      margin-top:5px;
+      width:100%;
+  }

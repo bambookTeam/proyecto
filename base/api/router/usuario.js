@@ -20,7 +20,10 @@ const transporter = nodeMailer.createTransport({
 router.post('/registrar_usuario', function (req, res) {
     let body = req.body;
 
-    let nuevo_usuario = new Usuario ({
+    console.log("registro de usuario activado");
+    console.log(req.body);
+
+    let nuevo_usuario = new Usuario({
         primerNombre: body.primerNombre,
         segundoNombre: body.segundoNombre,
         primerApellido: body.primerApellido,
@@ -45,7 +48,8 @@ router.post('/registrar_usuario', function (req, res) {
     nuevo_usuario.save(function (err, usuarioDB) {
 
         if (err) {
-
+            console.log("error registro de usuario");
+            console.log(err);
             return res.status(500).json(
                 {
                     success: false,
@@ -81,18 +85,20 @@ router.post('/registrar_usuario', function (req, res) {
                     msj: 'El usuario se guardó con éxito'
                 }
             );
+            console.log("sirvió");
+            // console.log(res);
         }
     });
 
 });
 
-router.post('/registrar_admin_libreria', function(req,res){
+router.post('/registrar_admin_libreria', function (req, res) {
     let body = req.body;
 
     console.log('Impresion datos')
     console.log(body)
 
-    let nuevo_usuario = new Usuario ({
+    let nuevo_usuario = new Usuario({
         identificacion: body.identificacion,
         primerNombre: body.primerNombre,
         segundoNombre: body.segundoNombre,
@@ -107,9 +113,9 @@ router.post('/registrar_admin_libreria', function(req,res){
         contador: body.contador
     });
 
-    nuevo_usuario.save (function (err, usuarioDB) {
+    nuevo_usuario.save(function (err, usuarioDB) {
 
-        if(err){
+        if (err) {
             console.log('Error registro Admin Librería')
             console.log(err)
 
@@ -118,24 +124,24 @@ router.post('/registrar_admin_libreria', function(req,res){
                     success: false,
                     msj: 'El usuario no se pudo guardar',
                     err
-                }  );
+                });
         } else {
 
             let mailOptions = {
 
-                from : 'bambooks.team@gmail.com',
-                to : nuevo_usuario.correo,
-                subject : 'Bienvenido a Bambooks',
-                text : ' Usar este pin para iniciar sesion: '+ body.contrasena
+                from: 'bambooks.team@gmail.com',
+                to: nuevo_usuario.correo,
+                subject: 'Bienvenido a Bambooks',
+                text: ' Usar este pin para iniciar sesion: ' + body.contrasena
 
 
             };
 
-            transporter.sendMail(mailOptions, function(error, info){
-                if(error){
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
 
                     console.log(error);
-                }else {
+                } else {
 
                     console.log('Correo enviado')
                 }
@@ -314,39 +320,6 @@ router.post('/actualizar-contador', function (req, res) {
     // $push: {
     //     'contador': req.body.contador
     // }
-
-});
-
-router.post('/agregar-tarjeta', function (req, res) {
-
-    console.log("aqui se agrega la tarjeta");
-    Usuario.updateOne(
-        { _id: req.body._id },
-        {
-            $set: {
-                'tarjetas': {
-                    numerotarjeta: req.body.numerotarjeta,
-                    fechavencimiento: req.body.fechavencimiento,
-                    codigocvv: req.body.codigocvv
-                }
-            }
-        },
-
-        function (error) {
-            if (error) {
-                return res.status(400).json({
-                    success: false,
-                    msj: 'No se pudo agregar la tarjeta',
-                    err
-                });
-            } else {
-                return res.json({
-                    success: 'true',
-                    msj: 'La tarjeta se agregó correctamente'
-                });
-            }
-        }
-    )
 
 });
 

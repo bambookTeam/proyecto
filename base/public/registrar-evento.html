@@ -48,14 +48,14 @@
     <main>
             
         <h1>Registrar Evento</h1>
-        
-       <div class="librosLista">
-            <select name="" id="selectLibros">
-                    <option value="">aber</option>
-                </select>
-       </div>
 
-        <button>Registrar</button>
+        <input type="text" placeholder="Nombre del Club" id="event_Name">
+        
+        <div id="lista_libros_evento" class="listas">
+            <label for="lista_libros_evento">Libro</label>
+        </div>
+
+        <button id="registrar-evento">Registrar</button>
         <button>Cancelar</button>
 
     </main>
@@ -65,6 +65,7 @@
     <script src="js/servicio-evento.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>
     <script src="js/getNombre.js"></script>
+    <script src="js/servicio_libro.js"></script>
 
 </body>
 
