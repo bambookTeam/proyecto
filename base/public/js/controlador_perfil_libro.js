@@ -12,12 +12,13 @@ let txt_idioma = document.querySelector('#txt_idioma');
 let txt_isbn = document.querySelector('#txt_isbn');
 let txt_genero = document.querySelector('#txt_genero');
 let txt_tipo = document.querySelector('#txt_tipo');
+let txt_portada = document.querySelector('#portada');
 
 
 
 let llenar_perfil = async () => {
 
-    let libro = await obtener_libroId();
+    let libro = JSON.parse(localStorage.getItem("infoLibro"));
    if(libro){
     txt_titulo.innerHTML = libro['titulo'];
     txt_edicion.innerHTML = libro['edicion'];
@@ -28,6 +29,9 @@ let llenar_perfil = async () => {
     txt_isbn.innerHTML = libro['isbn'];
     txt_genero.innerHTML = libro['genero'];
     txt_tipo.innerHTML = libro['tipo'];
+    txt_portada.innerHTML = libro['imagen'];
+
+    localStorage.removeItem("infoLibro");
    }
 };
 

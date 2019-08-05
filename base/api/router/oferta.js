@@ -34,5 +34,32 @@ if(err){
 );
 })
 
+router.post('/listar_ofertas', function (req, res) {
+
+    console.log("listar ofertas ejecutado 2 ");
+    console.log(req.body);
+
+    Oferta.find({ id: req.body.id }, function (err, ofertasBD) {
+        if (err) {
+            console.log("error");
+            console.log(err);
+            return res.status(400).json({
+                success: false,
+                msj: 'No se pueden listar las ofertas',
+                err
+            });
+
+        } else {
+            res.json({
+                success: true,
+                listar_ofertas: ofertasBD
+
+            })
+            console.log("sirve");
+            //console.log(res);
+        }
+    })
+})
+
 module.exports = router;
 

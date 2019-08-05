@@ -9,6 +9,7 @@ router.post('/registrar-sucursal', function(req, res) {
     let body = req.body;
 
     let nueva_sucursal = new Sucursal({
+        id: body.id,
         nombre: body.nombre,
         telefono : body.telefono,
         correo: body.correo,
@@ -34,7 +35,11 @@ router.post('/registrar-sucursal', function(req, res) {
 });
 
 router.get('/listar-sucursales', function(req, res) {
-    Sucursal.find(function(err, sucursalBD) {
+
+    console.log("listar sucursales");
+    console.log(req.body);
+
+    Sucursal.find({ id: req.body.id }, function (err, sucursalBD) {
         if (err) {
             return res.status(400).json({
                 success: false,

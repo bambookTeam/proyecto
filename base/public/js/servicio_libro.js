@@ -39,7 +39,7 @@ let obtenerLibros = async () => {
             responseType: 'json'
         });
         
-        return result.data.lista_libros;
+        return response.data.lista_libros;
     } catch (error) {
         console.log(error);
     }
@@ -55,8 +55,8 @@ let obtener_libroId = async (_id) => {
             responseType: 'json'
         });
         
-        return response.data.libros;  //sino funciona condata.libros, procaar con data.librosBD
+        return response.data.librosBD
     } catch (error) {
-        console.log(error);
+        // console.log(error);
     }
 }

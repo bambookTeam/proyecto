@@ -2,27 +2,28 @@
 
 const nodeMailer = require('nodemailer');
 const express = require('express'),
-  router = express.Router(),
-  Usuario = require('../models/usuario.model');
+    router = express.Router(),
+    Usuario = require('../models/usuario.model');
 
-  router.param("_id", function (req, res, next, _id) {
+router.param("_id", function (req, res, next, _id) {
     req.body._id = _id;
     next();
 });
 const transporter = nodeMailer.createTransport({
-    service : 'gmail',
-    auth : {
-        user : 'bambooks.team@gmail.com',
-        pass : '#bambook123'
+    service: 'gmail',
+    auth: {
+        user: 'bambooks.team@gmail.com',
+        pass: '#bambook123'
     }
 });
 
-router.post('/registrar_usuario', function(req,res){
-
-    console.log('Registrar usuario');
-
+router.post('/registrar_usuario', function (req, res) {
     let body = req.body;
-    let nuevo_usuario = new Usuario ({
+
+    console.log("registro de usuario activado");
+    console.log(req.body);
+
+    let nuevo_usuario = new Usuario({
         primerNombre: body.primerNombre,
         segundoNombre: body.segundoNombre,
         primerApellido: body.primerApellido,
@@ -44,34 +45,103 @@ router.post('/registrar_usuario', function(req,res){
 
     });
 
-   // nuevo_usuario.save (function (err, usuarioDB) {
-   Usuario.save (function (err, usuarioDB) {
+    nuevo_usuario.save(function (err, usuarioDB) {
 
-        if(err){
+        if (err) {
+            console.log("error registro de usuario");
+            console.log(err);
+            return res.status(500).json(
+                {
+                    success: false,
+                    msj: 'El usuario no se pudo guardar',
+                    err
+                });
+        } else {
+
+            let mailOptions = {
+
+                from: 'bambooks.team@gmail.com',
+                to: nuevo_usuario.correo,
+                subject: 'Bienvenido a Bambooks',
+                text: ' Usar este pin para iniciar sesion: ' + body.contrasena
+
+
+            };
+
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+
+                    console.log(error);
+                } else {
+
+                    console.log('Correo enviado')
+                }
+
+
+            });
+            res.json(
+                {
+                    success: true,
+                    msj: 'El usuario se guardó con éxito'
+                }
+            );
+            console.log("sirvió");
+            // console.log(res);
+        }
+    });
+
+});
+
+router.post('/registrar_admin_libreria', function (req, res) {
+    let body = req.body;
+
+    console.log('Impresion datos')
+    console.log(body)
+
+    let nuevo_usuario = new Usuario({
+        identificacion: body.identificacion,
+        primerNombre: body.primerNombre,
+        segundoNombre: body.segundoNombre,
+        primerApellido: body.primerApellido,
+        segundoApellido: body.segundoApellido,
+        sexo: body.sexo,
+        correo: body.correo,
+        nombreUsuario: body.nombreUsuario,
+
+        contrasena: body.contrasena,
+        tipo: body.tipo,
+        contador: body.contador
+    });
+
+    nuevo_usuario.save(function (err, usuarioDB) {
+
+        if (err) {
+            console.log('Error registro Admin Librería')
+            console.log(err)
 
             return res.status(500).json(
                 {
                     success: false,
                     msj: 'El usuario no se pudo guardar',
                     err
-                }  );
+                });
         } else {
             console.log('funcion guardar usuario');
             let mailOptions = {
 
-                from : 'bambooks.team@gmail.com',
-                to : nuevo_usuario.correo,
-                subject : 'Bienvenido a Bambooks',
-                text : ' Usar este pin para iniciar sesion: '+ body.contrasena
+                from: 'bambooks.team@gmail.com',
+                to: nuevo_usuario.correo,
+                subject: 'Bienvenido a Bambooks',
+                text: ' Usar este pin para iniciar sesion: ' + body.contrasena
 
 
             };
 
-            transporter.sendMail(mailOptions, function(error, info){
-                if(error){
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
 
                     console.log(error);
-                }else {
+                } else {
 
                     console.log('Correo enviado')
                 }
@@ -94,50 +164,48 @@ router.post('/validar_credenciales', function (req, res) {
     Usuario.findOne({ correo: req.body.correo }).then(
         function (usuario) {
             if (usuario) {
-                if (usuario.contrasena==req.body.contrasena) {
+                if (usuario.contrasena == req.body.contrasena) {
                     res.json({
-                        success:true,
-                        usuario:usuario
+                        success: true,
+                        usuario: usuario
                     })
                 } else {
                     res.json({
-                        success:false,
-                        usuario:usuario
+                        success: false,
+                        usuario: usuario
                     })
                 }
             } else {
                 res.json({
-                    success:false,
-                    usuario:usuario
+                    success: false,
+                    usuario: usuario
                 })
             }
         }
     )
 })
 
+router.post('/validar_pin', function (req, res) {
+    Usuario.findOne({ correo: req.body.correo }).then(
+        function (usuario) {
 
+            if (usuario) {
 
-router.post('/validar_pin', function(req,res){
-    Usuario.findOne({ correo: req.body.correo}).then (
-        function(usuario) {
-
-            if(usuario) {
-
-                if(usuario.pin == req.body.contrasena ){
+                if (usuario.pin == req.body.contrasena) {
                     res.json({
                         success: true,
-                        usuario : usuario
+                        usuario: usuario
                     })
 
-                }else {
+                } else {
                     res.json({
-                        success: false, 
+                        success: false,
                         usuario: usuario
 
                     })
                 }
 
-            }else {
+            } else {
 
                 res.json({
                     success: false,
@@ -171,8 +239,8 @@ router.get('/listar-usuarios', function (req, res) {
     })
 });
 
-router.get('/buscar-usuario-id/:_id', function(req, res) {
-    Usuario.findById(req.body._id, function(err, usuarioBD) {
+router.get('/buscar-usuario-id/:_id', function (req, res) {
+    Usuario.findById(req.body._id, function (err, usuarioBD) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -188,39 +256,39 @@ router.get('/buscar-usuario-id/:_id', function(req, res) {
     })
 });
 
-router.post('/crear-contrasenna', function(req, res){
-    Usuario.updateOne( {_id: req.body._id}, { $set: {contrasena: req.body.contrasena}},
- 
-        function(error){
-            if(error){
-                return res.status(500).json ({
-                    success: false, 
+router.post('/crear-contrasenna', function (req, res) {
+    Usuario.updateOne({ _id: req.body._id }, { $set: { contrasena: req.body.contrasena } },
+
+        function (error) {
+            if (error) {
+                return res.status(500).json({
+                    success: false,
                     msj: 'No se pudo crear la contraseña',
                     err
                 });
 
-            }else {
+            } else {
 
                 return res.status(400).json({
-                    success: true, 
+                    success: true,
                     msj: 'Se pudo crear la contraseña correctamente'
                 });
             }
-        }    
+        }
 
-        
+
 
     )
 
 });
 
 
-router.post('/actualizar-contador', function(req,res){
+router.post('/actualizar-contador', function (req, res) {
     console.log("inicio funcion  contador");
-    Usuario.updateOne( { _id: req.body._id }, { $set: {contador: req.body.contador } } ,
-        function(error){
-            if(error){
-                return res.status(500).json ({
+    Usuario.updateOne({ _id: req.body._id }, { $set: { contador: req.body.contador } },
+        function (error) {
+            if (error) {
+                return res.status(500).json({
                     success: false,
                     msj: 'No se pudo actualizar el contador',
                     error
@@ -229,7 +297,7 @@ router.post('/actualizar-contador', function(req,res){
                 console.log("error contador");
                 console.log(error);
 
-            }else {
+            } else {
 
                 return res.status(200).json({
                     success: true,
@@ -246,39 +314,9 @@ router.post('/actualizar-contador', function(req,res){
 
 
     )
-            // $push: {
-            //     'contador': req.body.contador
-            // }
-
-});
-
-/*  'tarjetas': {
-                    numerotarjeta: req.body.numerotarjeta,
-                    fechavencimiento: req.body.fechavencimiento,
-                    codigocvv: req.body.codigocvv
-                }
-            }
-            */
-
-router.post('/agregar-tarjeta', function(req, res) {
-
-            
-    Usuario.updateOne( { _id: req.body._id }, { $set: {tarjetas: {numerotarjeta: req.body.numerotarjeta, fechavencimiento: req.body.fechavencimiento, codigocvv: req.body.codigocvv} } } ,       
-        function(error){
-            if (error) {
-                return res.status(400).json({
-                    success: false,
-                    msj: 'No se pudo agregar la tarjeta',
-                    err
-                });
-            } else {
-                return res.json({
-                    success: 'true',
-                    msj: 'La tarjeta se agregó correctamente'
-                });
-            }
-        }
-    )
+    // $push: {
+    //     'contador': req.body.contador
+    // }
 
 });
 

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/ver-perfil-usuario.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/registrar-evento.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>
+            Registro Evento
+        </title>
 </head>
-
 
 <header>
     <nav>
@@ -43,31 +44,29 @@
   </header>
 
 <body>
-            <main>
 
+    <main>
             
-    <h2> <span id="txt_nombreUsuario"></span></h2>
-    <p><span id="avatar"></span></p>
-    <p>Primer Nombre: <span id="txt_primerNombre"></span></p>
-    <p>Segundo Nombre: <span id="txt_segundoNombre"></span></p>
-    <p>Primer Apellido: <span id="txt_primerApellido"></span></p>
-    <p>Segundo Apellido: <span id="txt_segundoApellido"></span></p>
-    <p>Sexo: <span id="txt_sexo"></span></p>
-    <p>Identificación: <span id="txt_identificacion"></span></p>
-    <p>Correo: <span id="txt_correo"></span></p>
-    <p>Provincia: <span id="txt_provincia"></span></p>
-    <p>Cantón: <span id="txt_canton"></span></p>
-    <p>Distrito: <span id="txt_distrito"></span></p>
-    <p>Dirección: <span id="txt_direccion"></span></p>
+        <h1>Registrar Evento</h1>
 
-    <a href="listar-usuarios.html"><button type="button">Volver</button></a>
-</main>
+        <input type="text" placeholder="Nombre del Club" id="event_Name">
+        
+        <div id="lista_libros_evento" class="listas">
+            <label for="lista_libros_evento">Libro</label>
+        </div>
+
+        <button id="registrar-evento">Registrar</button>
+        <button>Cancelar</button>
+
+    </main>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/servicio_usuario.js"></script>
-    <script src="js/controlador-perfil-usuario.js"></script>
-    <script src="js/getNombre.js"></script>
+    <script src="js/controlador-evento.js"></script>
+    <script src="js/servicio-evento.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>
+    <script src="js/getNombre.js"></script>
+    <script src="js/servicio_libro.js"></script>
+
 </body>
 
 </html>

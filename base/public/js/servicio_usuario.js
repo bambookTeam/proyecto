@@ -20,9 +20,9 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             sexo: psexo,
             identificacion: pidentificacion,
             correo: pcorreo,
-            provincia: provincia,
-            canton: canton,
-            distrito: distrito,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasenna,
@@ -34,6 +34,41 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
     });
 
 };
+
+let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
+
+    let pcontrasenna = generarContrasenna();
+    let provincia = "pprovincia";
+    let canton = "pcanton";
+    let distrito = "pdistrito";
+
+    axios({
+
+        method: 'post',
+        url: 'http://localhost:4000/api/registrar_admin_libreria',
+        responseType: 'json',
+        data: {
+            primerNombre: pnombre1,
+            segundoNombre: pnombre2,
+            primerApellido: papellido1,
+            segundoApellido: papellido2,
+            sexo: psexo,
+            identificacion: pidentificacion,
+            correo: pcorreo,
+            provincia: provincia,
+            canton: canton,
+            distrito: distrito,
+            direccion: pdireccion,
+            nombreUsuario: pnombreUsuario,
+            contrasena: pcontrasenna,
+            tipo: ptipo,
+            contador: 0
+
+        }
+    });
+
+};
+
 
 let iniciar_Sesion = async (pusuario, pcontrasena) => {
     let respuesta = await axios({
@@ -57,8 +92,9 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
                     sessionStorage.setItem('tipoUsuario',response.data.usuario.tipo);
                     sessionStorage.setItem('contrasena', response.data.usuario.contrasena);
                     sessionStorage.setItem('contador', response.data.usuario.contador);
+                    sessionStorage.setItem('nombreUsuario',response.data.usuario.nombreUsuario);
                     //actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).data.contador);
-                    actualizar_contador(sessionStorage.getItem('id'), sessionStorage.getItem('contador'));
+                    //actualizar_contador(sessionStorage.getItem('id'), sessionStorage.getItem('contador'));
 
                     //location.replace('crear_contrasenna.html');
                 } else {
@@ -156,6 +192,7 @@ let actualizar_contador = (p_id, pcontador)=>{
 
 
     let nuevoContador = parseInt(pcontador) + 1;
+    console.log(nuevoContador);
 
     axios ({
 
@@ -222,8 +259,6 @@ let obtenerUsuarioId = async (_id) => {
         console.log(error);
     }
 };
-
-
 
 function generarContrasenna()
 {
