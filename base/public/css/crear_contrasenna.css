@@ -9,6 +9,8 @@ main {
 }
 
 
+main div {
+
 html {
     min-height: 100%;
     position: relative;
@@ -24,13 +26,18 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 20px;
-    color: white;
-  }
+    text-align: center;
 
-  input{
+}
+input{
 
-      width: 100%;
+    width: 60%;
+    height: 30px;
+    margin: 15px;
+    padding: 5px;
+    border: 1px solid #76323F;
+    border-radius: 15px;
+    background: none;
+    outline: none;
 
-
-  }
+}
