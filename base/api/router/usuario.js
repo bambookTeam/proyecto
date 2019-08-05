@@ -159,7 +159,6 @@ router.post('/registrar_admin_libreria', function (req, res) {
 
 });
 
-
 //iniciar-sesion
 router.post('/validar_credenciales', function (req, res) {
     Usuario.findOne({ correo: req.body.correo }).then(
@@ -185,8 +184,6 @@ router.post('/validar_credenciales', function (req, res) {
         }
     )
 })
-
-
 
 router.post('/validar_pin', function (req, res) {
     Usuario.findOne({ correo: req.body.correo }).then(
@@ -320,39 +317,6 @@ router.post('/actualizar-contador', function (req, res) {
     // $push: {
     //     'contador': req.body.contador
     // }
-
-});
-
-router.post('/agregar-tarjeta', function (req, res) {
-
-    console.log("aqui se agrega la tarjeta");
-    Usuario.updateOne(
-        { _id: req.body._id },
-        {
-            $set: {
-                'tarjetas': {
-                    numerotarjeta: req.body.numerotarjeta,
-                    fechavencimiento: req.body.fechavencimiento,
-                    codigocvv: req.body.codigocvv
-                }
-            }
-        },
-
-        function (error) {
-            if (error) {
-                return res.status(400).json({
-                    success: false,
-                    msj: 'No se pudo agregar la tarjeta',
-                    err
-                });
-            } else {
-                return res.json({
-                    success: 'true',
-                    msj: 'La tarjeta se agregó correctamente'
-                });
-            }
-        }
-    )
 
 });
 

@@ -1,60 +1,55 @@
+let btn_registrar_evento=document.querySelector('#registrar-evento');
+const nombre_evento_input = document.querySelector('#event_Name');
+let showSelectEvento = async()=>{
+ 
+    let listaLibros=[];
+    listaLibros=await obtenerLibros();
 
-var modal = document.getElementById("registrar_Evento_screen");
+    let parentTema = document.getElementById('lista_libros_evento');
+    
+    let selectTema = document.createElement('select');
+    selectTema.setAttribute('id', 'temas_club');
+    parentTema.appendChild(selectTema);
 
-let btn = document.getElementById("btnRegistrarEvento");
-let btnRegistro_evento = document.getElementById("btnCrearEvento");
-let btnCancelar_registro_evento = document.getElementById("btnCancelEvento")
-
-let nombreEvento_input = document.querySelector('#txt-evento');
-let id=1;
-
-let span = document.getElementsByClassName("close")[0];
-
-let showLibrosEvento = () =>{
-    const parentLibro=document.querySelector('#lista_libros_evento');
-    let arrayLibros_Eventos=["Cocori","Unica Mirando al Mar","1984"];
-    let i=0;
-
-    let selectLibro=document.createElement('select');
-    selectLibro.setAttribute('id','libro_evento');
-    parentLibro.appendChild(selectLibro);
-
-
-
-    for(i=0;i<arrayLibros_Eventos.length;i++){
-        let optionLibro = document.createElement('option');
-        optionLibro.setAttribute('value',arrayLibros_Eventos[i]);
-
-        optionLibro.innerHTML = arrayLibros_Eventos[i];
-        optionLibro.style.width = "300px"
-        selectLibro.appendChild(optionLibro);
+    for (let i = 0; i < listaLibros.length; i++) {
+        let optionTema = document.createElement('option');
+        optionTema.setAttribute('value', listaLibros[i].titulo);
+        optionTema.innerHTML = listaLibros[i].titulo;
+        optionTema.style.width = "300px"
+        selectTema.appendChild(optionTema);
     }
 }
 
-let crearEvento = () =>{
+let validarEvento = (pnombre) =>{
+    let error=false;
 
-}
-
-btn.onclick = function () {
-    modal.style.display = "block";
-}
-
-
-btnCancelar_registro_evento.onclick = function () {
-    modal.style.display = "none";
-
-}
-
-span.onclick = function () {
-    modal.style.display = "none";
- 
-}
-
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (pnombre=="") {
+        console.log('c mamut');
+        error=true;
+    } else {
+        console.log('owo');
         
     }
+
+    return error
+    
+}
+let crearEvento = () =>{
+    let nombreEvento=nombre_evento_input.value;
+    let idClub=localStorage.getItem('idClub');
+    let tema_input = document.querySelector("#temas_club");
+    let error=validarEvento(nombreEvento);
+    
+    if (error==true) {
+        
+    } else {
+        registrarEvento(nombreEvento,idClub,tema_input.value);
+        
+    }
+    localStorage.removeItem('idClub');
+    //registrarEvento(pnombre_Evento,pidClub,pLibro);
 }
 
-window.addEventListener('load',showLibrosEvento);
+window.addEventListener('load',showSelectEvento);
+
+btn_registrar_evento.addEventListener('click',crearEvento);
