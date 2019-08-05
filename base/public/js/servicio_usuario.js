@@ -94,7 +94,7 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
                     sessionStorage.setItem('contador', response.data.usuario.contador);
                     sessionStorage.setItem('nombreUsuario', response.data.usuario.nombreUsuario);
                     //actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).data.contador);
-                    //actualizar_contador(sessionStorage.getItem('id'), sessionStorage.getItem('contador'));
+                    actualizar_contador(sessionStorage.getItem('id'), sessionStorage.getItem('contador'));
 
                     //location.replace('crear_contrasenna.html');
                 } else {
@@ -159,15 +159,15 @@ let validarPin = (ppin, pcontrasena) => {
 
         crearContrasenna(sessionStorage.getItem('id'), pcontrasena);
 
-        return error;
+       
 
     } else {
 
         error = true;
-        return error;
-
-
+       
     }
+
+    return error;
 };
 
 let crearContrasenna = async (p_id, pcontrasena) => {

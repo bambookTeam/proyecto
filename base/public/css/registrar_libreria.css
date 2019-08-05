@@ -54,6 +54,7 @@ main textarea{
     resize: none;
 }
 
+
 main select{
     width: 63%;
     height: 42px;
@@ -92,10 +93,6 @@ main button{
     outline: none; 
 }
 
-footer{
-    background: #76323F;
-    padding: 1rem;
-}
 
 #txtIdExiste{
     color: tomato;
