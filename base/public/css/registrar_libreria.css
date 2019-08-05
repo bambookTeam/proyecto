@@ -78,7 +78,7 @@ main select{
 main iframe{
     width: 60%;
     margin: 15px;
-    height: 122px;
+    height: 276px;
 }
 
 main button{
@@ -93,10 +93,6 @@ main button{
     outline: none; 
 }
 
-footer{
-    background: #76323F;
-    padding: 1rem;
-}
 
 #txtIdExiste{
     color: tomato;

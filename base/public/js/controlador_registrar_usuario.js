@@ -124,34 +124,34 @@ let validarIdentificacion = (pidentificacion) => {
     let error = false;
 
     for ( let i = 0; i < usuarios.length; i++){
-        
+
         if( usuarios[i].identificacion == pidentificacion){
-            
-            error = true; 
+
+            error = true;
             input_identificacion.classList.add('input_error');
-            
-        }else {            
-            
+
+        }else {
+
             if (pidentificacion.charAt(0) == '0') {
 
                 error = true;
                 input_identificacion.classList.add('input_error');
-        
+
             } else {
 
                 if (pidentificacion.length != 9) {
 
                     error = true;
-            
+
                     input_identificacion.classList.add('input_error');
-            
+
                 } else {
-            
+
                     input_identificacion.classList.remove('input_error');
-            
-                }        
-               
-        
+
+                }
+
+
             }
 
         }
@@ -170,37 +170,37 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo,pprovincia,
 
 
     if (pprovincia == ''){
-        
+
         error = true;
         select_provincia.classList.add('input_error');
 
     }else {
 
-        select_provincia.classList.remove('input_error');            
+        select_provincia.classList.remove('input_error');
 
     }
-    
+
     if (pcanton == ''){
-        
+
         error = true;
         select_canton.classList.add('input_error');
 
     }else {
 
-        select_canton.classList.remove('input_error');       
-        
+        select_canton.classList.remove('input_error');
+
 
     }
 
     if (pdistrito == ''){
-        
+
         error = true;
         select_distrito.classList.add('input_error');
 
     }else {
 
-        select_distrito.classList.remove('input_error');       
-        
+        select_distrito.classList.remove('input_error');
+
 
     }
 
@@ -215,9 +215,9 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo,pprovincia,
 
 
     }
-    
 
-    
+
+
     if (pnombre1 == '') {
         error = true;
         input_primer_nombre.classList.add('input_error');
@@ -259,13 +259,13 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo,pprovincia,
         error = validarIdentificacion(pidentificacion);
 
         if ( error == true){
-        
+
             input_identificacion.classList.add('input_error');
-    
+
         }else {
-            
+
             input_identificacion.remove('input_error');
-    
+
         }
 
     }
@@ -282,11 +282,11 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo,pprovincia,
         error = validarCorreo(pcorreo);
 
     if ( error == true){
-        
+
         input_correo.classList.add('input_error');
 
     }else {
-        
+
         input_correo.classList.remove('input_error');
 
     }
@@ -308,8 +308,6 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo,pprovincia,
     return error;
 
 };
-
-
 
 let guardar = () => {
 
@@ -334,11 +332,13 @@ let guardar = () => {
 
 
     let error = validar(nombre1, apellido1, sexo, identificacion, correo,provincia, canton, distrito, direccion, nombreUsuario);
-    
+
 
 
     if (error == false) {
+
         registroEnLinea(nombre1, nombre2, apellido1, apellido2, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario, tipo)
+
         Swal.fire({
             title: 'Se ha guardado el cliente',
             type: 'success',
@@ -351,12 +351,7 @@ let guardar = () => {
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
 
-
     }
 };
-
-
-
-
 
 boton_registrar.addEventListener('click', guardar);
