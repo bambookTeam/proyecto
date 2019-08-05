@@ -1,13 +1,13 @@
 'use strict';
 
 let registrarSucursal = (pnombre, ptelefono, pcorreo, pdireccion) => {
-    let idUsuarioActivo = sessionStorage.getItem("id");
+    let idUsuarioActivo = localStorage.getItem("idLibreria");
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-sucursal',
         responseType: 'json',
         data: {
-            id: idUsuarioActivo,
+            idLibreria: idUsuarioActivo,
             nombre: pnombre,
             telefono : ptelefono,
             correo: pcorreo,

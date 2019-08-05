@@ -13,7 +13,9 @@ const express = require('express'),
 router.post('/registrar-libreria', function(req, res) {
     let body = req.body;
 
+
     let nueva_libreria = new Libreria({
+        id: body.id,
         nombre_comercial: body.nombre_comercial,
         nombre_fantasia: body.nombre_fantasia,
         direccion: body.direccion
