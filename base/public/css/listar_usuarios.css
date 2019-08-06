@@ -31,7 +31,11 @@ main button:hover{
     background: white;
     outline: none; 
 }
-
+label{
+    color: #76323F;
+    font-size: 20px;
+    margin: 30px;
+}
 #txt_filtro{
     margin: 50px 0;
     padding: 10px;
@@ -43,44 +47,19 @@ main button:hover{
 
 }
 
-#tbl-usuarios{
-    border: 2px solid rgb(139, 79, 89);
-    margin-bottom: 20px
-}
-
-#tbl-usuarios thead th{
-    border: 2px solid rgb(139, 79, 89);
-    font-size: 35px;
-    padding: 10px
-}
-
-#tbl-usuarios tbody td{
-    border: 2px solid rgb(139, 79, 89);
-    font-size: 25px;
-    text-align: center;
-
-}
-
-#tbl-usuarios tbody tr:hover{
-    background: #D7CEC7;
-}
-
-
-html {
-    min-height: 100%;
-    position: relative;
-}
-
-body {
-    margin: 0;
-    margin-bottom: 40px;
-}
-
-footer {
-    background-color: #76323F;
-    position: absolute;
-    bottom: 0;
+table {
+    border-collapse: collapse;
     width: 100%;
-    height: 20px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color: #76323F;
     color: white;
   }
