@@ -38,6 +38,8 @@ let validar = (pgenero) => {
 let mostrarlista=async() =>{
     lista_genero=[];
     lista_genero= await listarGenero();
+    lista_genero = lista_genero.reverse();
+
 
     let section=document.getElementById('generos_lista');
     section.innerHTML=" ";

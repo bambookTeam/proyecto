@@ -36,7 +36,7 @@ if (error == false) {
     
     setTimeout(function(){ parent.innerHtml = ""; 
     addNew() 
-    alert("Hello");
+    alert("Oferta Actualizada");
 
 }, 3000);
 
