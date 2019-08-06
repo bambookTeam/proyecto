@@ -37,14 +37,8 @@ let validar = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pna
         input_fecha_nacimiento.classList.remove('input_error');
     }
 
-    if (pfecha_muerte == '') {
-        error = true;
-        input_fecha_muerte.classList.add('input_error');
-    } else {
-        input_fecha_muerte.classList.remove('input_error');
-    }
 
-    if (pnacionalidad == '') {
+    if (pnacionalidad == 'Nacionalidad') {
         error = true;
         input_nacionalidad.classList.add('input_error');
     } else {
