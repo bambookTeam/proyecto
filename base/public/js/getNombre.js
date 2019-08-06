@@ -13,6 +13,7 @@ const optionUsuarios=document.querySelector('#optionNavUsuarios');
 const optionCategorias=document.querySelector('#optionNavCategoria');
 const optionIntercambios=document.querySelector('#optionIntercambio');
 const optionAutores=document.querySelector('#optionNavAutores');
+const optionSucursales= document.querySelector('#optionNavSucursales');
 
 $(document).ready(hideOptions = () =>{
     let tipoUsuarioConectado=sessionStorage.getItem('tipoUsuario');
@@ -27,7 +28,7 @@ $(document).ready(hideOptions = () =>{
         if (tipoUsuarioConectado==1) {
             
         } else {
-            
+            optionNavSucursales.style.display="none"
         }
     }
 
