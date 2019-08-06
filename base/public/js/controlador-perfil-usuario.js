@@ -15,12 +15,16 @@ const txt_nombreUsuario = document.querySelector('#txt_nombreUsuario');
 const avatar = document.querySelector('#avatar');
 const txt_provincia = document.querySelector('#txt_provincia');
 const txt_canton = document.querySelector('#txt_canton');
+let img = document.createElement('img');
 
-let llenar_perfil = () => {
-    let usuario = JSON.parse(localStorage.getItem("datosUsuario"));
+let llenar_perfil = async () => {
+    let usuario = await obtenerUsuarioId(_id);
+
     if (usuario) {
         txt_nombreUsuario.innerHTML = usuario['nombreUsuario'];
-        avatar.innerHTML = usuario['avatar'];
+        img.setAttribute('src', usuario['avatar']);
+        img.classList.add('imgTabla');
+        avatar.innerHTML = img;
         txt_primerNombre.innerHTML = usuario['primerNombre'];
         txt_segundoNombre.innerHTML = usuario['segundoNombre'];
         txt_primerApellido.innerHTML = usuario['primerApellido'];
@@ -32,7 +36,7 @@ let llenar_perfil = () => {
         txt_canton.innerHTML = usuario['canton'];
         txt_distrito.innerHTML = usuario['distrito'];
         txt_direccion.innerHTML = usuario['direccion'];
-        localStorage.removeItem("datosUsuario");
+
     }
 };
 
