@@ -85,8 +85,6 @@ visibility: hidden;
     table {
         border-collapse: collapse;
         width: 100%;
-        border: 1px solid black;
-        margin: 300px,left;
       }
       
       th, td {
