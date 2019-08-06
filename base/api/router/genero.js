@@ -9,15 +9,18 @@ const express= require('express'),
 router.post('/registrar_genero', function(req,res){
 
 let body = req.body;
-
+console.log("activado");
+console.log(body);
 let  nuevo_genero=new Genero({
-genero:body.genero
+    genero:body.genero
 
 });
 
 nuevo_genero.save(
     function(err, generoBD){
 if(err){
+    console.log("error");
+    console.log(err);
     return res.status(400).json({
     success:false,
     msj:'El genero no se pudo guardar',
@@ -29,6 +32,8 @@ if(err){
         msj:'El genero se guardó con éxito'
 
     })
+    console.log("funciona");
+    console.log(res);
     }
 }
 );
