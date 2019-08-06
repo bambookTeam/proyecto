@@ -8,9 +8,6 @@ main {
     border: 2px #e74c3c solid !important;
 }
 
-
-main div {
-
 html {
     min-height: 100%;
     position: relative;

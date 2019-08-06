@@ -29,16 +29,15 @@ let validar = (pgenero) => {
     } else {
         input_genero.classList.remove('input_error');
         registrarGenero(pgenero);
-        document.location.reload();
+        mostrarlista();
     }
 
     return error;
 };
 
 let mostrarlista=async() =>{
-    lista_genero=[];
-    lista_genero= await listarGenero();
-    lista_genero = lista_genero.reverse();
+    lista_genero = await listarGenero();
+    lista_genero= lista_genero.reverse();
 
 
     let section=document.getElementById('generos_lista');
