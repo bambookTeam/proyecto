@@ -49,7 +49,9 @@ let mostrar_tabla = async () => {
 
             boton_perfil.addEventListener('click', function () {
                 //console.log(this.dataset._id);
-                window.location.href = `visualizar_perfil_admin_libreria.html?_id=${this.dataset._id}`
+                window.location.href = `ver-perfil-usuario.html?_id=${this.dataset._id}`
+                
+                //`visualizar_perfil_admin_libreria.html?_id=${this.dataset._id}`
             });
 
         }
@@ -64,7 +66,8 @@ let mostrar_tabla = async () => {
 
             boton_perfil.addEventListener('click', function () {
                 //console.log(this.dataset._id);
-                window.location.href = `visualizarperfil_admingeneral.html?_id=${this.dataset._id}`
+                window.location.href = `ver-perfil-usuario.html?_id=${this.dataset._id}`
+                // `visualizarperfil_admingeneral.html?_id=${this.dataset._id}`
             });
 
         }
