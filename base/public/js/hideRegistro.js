@@ -8,7 +8,7 @@ let hidenombre = () =>{
         if (tipoUser==2) {
             btnRegistrar.style.display="none";
         } else {
-            
+           
         }
 
         
