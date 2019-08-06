@@ -10,6 +10,8 @@ let mostrar_tabla = async () => {
     lista_usuarios = await obtenerUsuarios();
     tbody.innerHTML = '';
 
+    lista_usuarios = lista_usuarios.reverse();
+
 
     for (let i = 0; i < lista_usuarios.length; i++) {
         let fila = tbody.insertRow();
@@ -79,7 +81,8 @@ let filtrar_tabla = async () => {
 
 
     for (let i = 0; i < lista_usuarios.length; i++) {
-        if (lista_usuarios[i]['identificacion'].toLowerCase().includes(filtro) || lista_usuarios[i]['correo'].toLowerCase().includes(filtro)) {
+        if (  lista_usuarios[i]['primerNombre'].toLowerCase().includes(filtro) || lista_usuarios[i]['primerApellido'].toLowerCase().includes(filtro) || lista_usuarios[i]['correo'].toLowerCase().includes(filtro) || lista_usuarios[i]['identificacion'].toLowerCase().includes(filtro)) {
+            
             let fila = tbody.insertRow();
             fila.insertCell().innerHTML = lista_usuarios[i]['tipo'];
             fila.insertCell().innerHTML = lista_usuarios[i]['primerNombre'];
