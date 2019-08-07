@@ -5,7 +5,7 @@
 let obtenerListaUsuarios = async (pcorreo) => {
 
     usuarios = await obtenerUsuarios();
-    console.log(usuarios);
+    
 };
 var usuarios = [];
  usuarios = obtenerListaUsuarios();
