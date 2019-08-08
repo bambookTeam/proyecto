@@ -36,7 +36,7 @@ visibility: hidden;
 }
 
 .popup{
-    background: #D7CEC7;
+    background: #fff;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
     border-radius: 3px;
     padding: 20px;
@@ -122,7 +122,12 @@ visibility: hidden;
     padding: 5px;
     margin: 20px;
     text-align: center;
-    background-color: #76323F;
+    background-color: #f1c40f;
     border: none;
 }
 
+#btn_seleccionar_imagen{
+    background: none;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+}

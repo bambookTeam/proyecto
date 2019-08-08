@@ -19,6 +19,7 @@ let mostrar_tabla = async() => {
         fila.insertCell().innerHTML = lista_librerias[i]['direccion'];
         fila.insertCell();
 
+        //botón ver perfil libreria
         let celda_perfil = fila.insertCell();
         let boton_perfil = document.createElement('button');
         boton_perfil.type = 'button';
@@ -32,8 +33,7 @@ let mostrar_tabla = async() => {
             window.location.href = `visualizar_perfil_libreria.html?_id=${this.dataset._id}`
         });
 
-
-
+        //botón agregar sucursal
         let celda_sucursal = fila.insertCell();
         let boton_sucursal = document.createElement('button');
         boton_sucursal.innerHTML = 'Agregar Sucursal';
@@ -62,4 +62,5 @@ let filtrar_tabla = async() => {
 };
 
 mostrar_tabla();
+
 txt_filtro.addEventListener('keyup', filtrar_tabla);
