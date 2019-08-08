@@ -12,8 +12,6 @@ var usuarios = [];
 
 const boton_registrar = document.querySelector('#btn_registrar');
 
-const boton_registrar = document.querySelector('#btn_registrar');
-
 const input_nombre_comercial = document.querySelector('#txt_nombre_comercial');
 const input_nombre_fantasia = document.querySelector('#txt_nombre_fantasia');
 const input_direccion = document.querySelector('#txt_direccion');

@@ -9,6 +9,7 @@ let mostrar_tabla = async() => {
     lista_librerias = await obtenerLibrerias();
 
     lista_librerias = lista_librerias.reverse();
+    
     tbody.innerHTML = '';
 
     for (let i = 0; i < lista_librerias.length; i++) {
