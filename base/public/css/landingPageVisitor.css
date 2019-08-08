@@ -30,8 +30,8 @@ Otro: #c09f80
     margin: auto;
     padding:20px;
     border: 1px solid #888;
-    width: 25%;
-    height:450px;
+    width: 20%;
+    height:430px;
   }
   
   .sign-in{
@@ -52,6 +52,7 @@ Otro: #c09f80
 
   }
   form label{
+      width:100%;
       display:inline-block;
       font-size:13px;
       margin:10px 0;

@@ -167,9 +167,6 @@ let misClubes = async () => {
     parentClubes.innerHTML = "";
     listaClubes = listaClubes.reverse();
     let usuarioActivo=sessionStorage.getItem('id');
-    
-    console.log(usuarioActivo);
-    
 
 
     for (let i = 0; i < listaClubes.length; i++) {

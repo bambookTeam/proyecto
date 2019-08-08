@@ -8,6 +8,16 @@ main {
     border: 2px #e74c3c solid !important;
 }
 
+
+main div {
+
+    width: 100%;
+    text-align: center;
+
+
+
+}
+
 html {
     min-height: 100%;
     position: relative;
@@ -26,7 +36,7 @@ footer {
     text-align: center;
 
 }
-input{
+main input{
 
     width: 60%;
     height: 30px;
