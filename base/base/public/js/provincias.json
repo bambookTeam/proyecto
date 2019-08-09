@@ -1,0 +1,2444 @@
+{
+    "provincias": [
+        {
+            "numero": "0",
+            "nombre": "none",
+            "cantones": [
+                {
+                    "numero": "0",
+                    "nombre": "none",
+                    "distritos": [
+                        {
+                            "numero": "0",
+                            "nombre": "none"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "numero": "1",
+            "nombre": "San José",
+            "cantones": [
+                {
+                    "numero": "1",
+                    "nombre": "San José",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Carmen"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Merced"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Hospital"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Catedral"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Zapote"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "San Francisco de Dos Ríos"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Uruca"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Mata Redonda"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "Pavas"
+                        },
+                        {
+                            "numero": "10",
+                            "nombre": "Hatillo"
+                        },
+                        {
+                            "numero": "11",
+                            "nombre": "San Sebastián"
+                        }
+                    ]
+                },
+                {
+                    "numero": "2",
+                    "nombre": "Escazú",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Escazú"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Antonio"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Rafael"
+                        }
+                    ]
+                },
+                {
+                    "numero": "3",
+                    "nombre": "Desamparados",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Desamparados"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Miguel"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Juan de Dios"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Rafael Arriba"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "San Antonio"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Frailes"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Patarrá"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "San Cristóbal"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "Rosario"
+                        },
+                        {
+                            "numero": "10",
+                            "nombre": "Damas"
+                        },
+                        {
+                            "numero": "11",
+                            "nombre": "San Rafael Abajo"
+                        },
+                        {
+                            "numero": "12",
+                            "nombre": "Gravilias"
+                        },
+                        {
+                            "numero": "13",
+                            "nombre": "Los Guido"
+                        }
+                    ]
+                },
+                {
+                    "numero": "4",
+                    "nombre": "Puriscal",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Santiago"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Mercedes Sur"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Barbacoas"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Grifo Alto"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "San Rafael"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Candelarita"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Desamparaditos"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "San Antonio"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "Chires"
+                        }
+                    ]
+                },
+                {
+                    "numero": "5",
+                    "nombre": "Tarrazú",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Marcos"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Lorenzo"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Carlos"
+                        }
+                    ]
+                },
+                {
+                    "numero": "6",
+                    "nombre": "Aserrí",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Aserrí"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Tarbaca"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Vuelta de Jorco"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Gabriel"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Legua"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Monterrey"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Salitrillos"
+                        }
+                    ]
+                },
+                {
+                    "numero": "7",
+                    "nombre": "Mora",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Ciudad Colón"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Guayabo"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Tabarcia"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Piedras Negras"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Picagres"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Jaris"
+                        }
+                    ]
+                },
+                {
+                    "numero": "8",
+                    "nombre": "Goicoechea",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Guadalupe"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Francisco"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Calle Blancos"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Mata de Plátano"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Ipís"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Rancho Redondo"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Purral"
+                        }
+                    ]
+                },
+                {
+                    "numero": "9",
+                    "nombre": "Santa Ana",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Santa Ana"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Salitral"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Pozos"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Uruca"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Piedades"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Brasil"
+                        }
+                    ]
+                },
+                {
+                    "numero": "10",
+                    "nombre": "Alajuelita",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Alajuelita"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Josecito"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Antonio"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Concepción"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "San Felipe"
+                        }
+                    ]
+                },
+                {
+                    "numero": "11",
+                    "nombre": "Vásquez de Coronado",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Isidro"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Rafael"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Dulce Nombre de Jesús"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Patalillo"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Cascajal"
+                        }
+                    ]
+                },
+                {
+                    "numero": "12",
+                    "nombre": "Acosta",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Ignacio"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Guaitil"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Palmichal"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Cangrejal"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Sabanillas"
+                        }
+                    ]
+                },
+                {
+                    "numero": "13",
+                    "nombre": "Tibás",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Juan"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Cinco Esquinas"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Anselmo Llorente"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "León XIII"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Colima"
+                        }
+                    ]
+                },
+                {
+                    "numero": "14",
+                    "nombre": "Moravia",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Vicente"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Jerónimo"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Trinidad"
+                        }
+                    ]
+                },
+                {
+                    "numero": "15",
+                    "nombre": "Montes de Oca",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Pedro"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Sabanilla"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Mercedes"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Rafael"
+                        }
+                    ]
+                },
+                {
+                    "numero": "16",
+                    "nombre": "Turrubares",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Pablo"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Pedro"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Juan de Mata"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Luis"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Carara"
+                        }
+                    ]
+                },
+                {
+                    "numero": "17",
+                    "nombre": "Dota",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Santa María"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Jardín"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Copey"
+                        }
+                    ]
+                },
+                {
+                    "numero": "18",
+                    "nombre": "Curridabat",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Curridabat"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Granadilla"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Sánchez"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Tirrases"
+                        }
+                    ]
+                },
+                {
+                    "numero": "19",
+                    "nombre": "Pérez Zeledón",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Isidro de El General"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "El General"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Daniel Flores"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Rivas"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "San Pedro"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Platanares"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Pejibaye"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Cajón"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "Barú"
+                        },
+                        {
+                            "numero": "10",
+                            "nombre": "Río Nuevo"
+                        },
+                        {
+                            "numero": "11",
+                            "nombre": "Páramo"
+                        }
+                    ]
+                },
+                {
+                    "numero": "20",
+                    "nombre": "León Cortés Castro",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Pablo"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Andrés"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Llano Bonito"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Isidro"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Santa Cruz"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "San Antonio"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "numero": "2",
+            "nombre": "Alajuela",
+            "cantones": [
+                {
+                    "numero": "1",
+                    "nombre": "Alajuela",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Alajuela"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San José"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Carrizal"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Antonio"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Guácima"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "San Isidro"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Sabanilla"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "San Rafael"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "Río Segundo"
+                        },
+                        {
+                            "numero": "10",
+                            "nombre": "Desamparados"
+                        },
+                        {
+                            "numero": "11",
+                            "nombre": "Turrúcares"
+                        },
+                        {
+                            "numero": "12",
+                            "nombre": "Tambor"
+                        },
+                        {
+                            "numero": "13",
+                            "nombre": "Garita"
+                        },
+                        {
+                            "numero": "14",
+                            "nombre": "Sarapiquí"
+                        }
+                    ]
+                },
+                {
+                    "numero": "2",
+                    "nombre": "San Ramón",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Ramón"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Santiago"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Juan"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Piedades Norte"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Piedades Sur"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "San Rafael"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "San Isidro"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Ángeles"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "Alfaro"
+                        },
+                        {
+                            "numero": "10",
+                            "nombre": "Volio"
+                        },
+                        {
+                            "numero": "11",
+                            "nombre": "Concepción"
+                        },
+                        {
+                            "numero": "12",
+                            "nombre": "Zapotal"
+                        },
+                        {
+                            "numero": "13",
+                            "nombre": "Peñas Blancas"
+                        }
+                    ]
+                },
+                {
+                    "numero": "3",
+                    "nombre": "Grecia",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Grecia"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Isidro"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San José"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Roque"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Tacares"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Río Cuarto"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Puente de Piedra"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "olívar"
+                        }
+                    ]
+                },
+                {
+                    "numero": "4",
+                    "nombre": "San Mateo",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Mateo"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Desmonte"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Jesús María"
+                        }
+                    ]
+                },
+                {
+                    "numero": "5",
+                    "nombre": "Atenas",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Atenas"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Jesús"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Mercedes"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Isidro"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Concepción"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "San José"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Santa Eulalia"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Escobal"
+                        }
+                    ]
+                },
+                {
+                    "numero": "6",
+                    "nombre": "Naranjo",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Naranjo"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Miguel"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San José"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Cirrí Sur"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "San Jerónimo"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "San Juan"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "El Rosario"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Palmitos"
+                        }
+                    ]
+                },
+                {
+                    "numero": "7",
+                    "nombre": "Palmares",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Palmares"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Zaragoza"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Buenos Aires"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Santiago"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Candelaria"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Esquipulas"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "La Granja"
+                        }
+                    ]
+                },
+                {
+                    "numero": "8",
+                    "nombre": "Poás",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Pedro"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Juan"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Rafael"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Carrillos"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Sabana Redonda"
+                        }
+                    ]
+                },
+                {
+                    "numero": "9",
+                    "nombre": "Orotina",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Orotina"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Mastate"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Hacienda Vieja"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Coyolar"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "La Ceiba"
+                        }
+                    ]
+                },
+                {
+                    "numero": "10",
+                    "nombre": "San Carlos",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Quesada"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Florencia"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Buenavista"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Aguas Zarcas"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Venecia"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Pital"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "La Fortuna"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "La Tigra"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "La Palmera"
+                        },
+                        {
+                            "numero": "10",
+                            "nombre": "Venado"
+                        },
+                        {
+                            "numero": "11",
+                            "nombre": "Cutris"
+                        },
+                        {
+                            "numero": "12",
+                            "nombre": "Monterrey"
+                        },
+                        {
+                            "numero": "13",
+                            "nombre": "Pocosol"
+                        }
+                    ]
+                },
+                {
+                    "numero": "11",
+                    "nombre": "Zarcero",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Zarcero"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Laguna"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Tapezco"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Guadalupe"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Palmira"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Zapote"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Brisas"
+                        }
+                    ]
+                },
+                {
+                    "numero": "12",
+                    "nombre": "Valverde Vega",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Sarchí Norte"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Sarchí Sur"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Toro Amarillo"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Pedro"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Rodríguez"
+                        }
+                    ]
+                },
+                {
+                    "numero": "13",
+                    "nombre": "Upala",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Upala"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Aguas Claras"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San José (Pizote)"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Bijagua"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Delicias"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Dos Ríos"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Yolillal"
+                        }
+                    ]
+                },
+                {
+                    "numero": "14",
+                    "nombre": "Los Chiles",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Los Chiles"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Caño Negro"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "El Amparo"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Jorge"
+                        }
+                    ]
+                },
+                {
+                    "numero": "15",
+                    "nombre": "Guatuso",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Rafael"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Buenavista"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Cote"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Katira"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "numero": "3",
+            "nombre": "Cartago",
+            "cantones": [
+                {
+                    "numero": "1",
+                    "nombre": "Cartago",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Oriental"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Occidental"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Carmen"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Nicolás"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Agua Caliente (San Francisco)"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Guadalupe (Arenilla)"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Corralillo"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Tierra Blanca"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "Dulce Nombre"
+                        },
+                        {
+                            "numero": "10",
+                            "nombre": "Llano Grande"
+                        },
+                        {
+                            "numero": "11",
+                            "nombre": "Quebradilla"
+                        }
+                    ]
+                },
+                {
+                    "numero": "2",
+                    "nombre": "Paraíso",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Paraíso"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Santiago de Paraíso"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Orosi"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Cachí"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Llanos de Santa Lucía"
+                        }
+                    ]
+                },
+                {
+                    "numero": "3",
+                    "nombre": "La Unión",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Tres Ríos"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Diego"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Juan"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Rafael"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Concepción"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Dulce Nombre"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "San Ramón"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Río Azul"
+                        }
+                    ]
+                },
+                {
+                    "numero": "4",
+                    "nombre": "Jiménez",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Juan Viñas"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Tucurrique"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Pejibaye"
+                        }
+                    ]
+                },
+                {
+                    "numero": "5",
+                    "nombre": "Turrialba",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Turrialba"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "La Suiza"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Peralta"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Santa Cruz"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Santa Teresita"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Pavones"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Tuis"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Tayutic"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "Santa Rosa"
+                        },
+                        {
+                            "numero": "10",
+                            "nombre": "Tres Equis"
+                        },
+                        {
+                            "numero": "11",
+                            "nombre": "La Isabel"
+                        },
+                        {
+                            "numero": "12",
+                            "nombre": "Chirripó"
+                        }
+                    ]
+                },
+                {
+                    "numero": "6",
+                    "nombre": "Alvarado",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Pacayas"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Cervantes"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Capellades"
+                        }
+                    ]
+                },
+                {
+                    "numero": "7",
+                    "nombre": "Oreamuno",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Rafael"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Cot"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Potrero Cerrado"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Cipreses"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Santa Rosa"
+                        }
+                    ]
+                },
+                {
+                    "numero": "8",
+                    "nombre": "El Guarco",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Tejar"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Isidro"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Tobosi"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Patio de Agua"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "numero": "4",
+            "nombre": "Heredia",
+            "cantones": [
+                {
+                    "numero": "1",
+                    "nombre": "Heredia",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Heredia"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Mercedes"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Francisco"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Ulloa"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Varablanca"
+                        }
+                    ]
+                },
+                {
+                    "numero": "2",
+                    "nombre": "Barva",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Barva"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Pedro"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Pablo"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Roque"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Santa Lucía"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "San José de la Montaña"
+                        }
+                    ]
+                },
+                {
+                    "numero": "3",
+                    "nombre": "Santo Domingo",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Santo Domingo"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Vicente"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Miguel"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Paracito"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Santo Tomás"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Santa Rosa"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Tures"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Pará"
+                        }
+                    ]
+                },
+                {
+                    "numero": "4",
+                    "nombre": "Santa Bárbara",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Santa Bárbara"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Pedro"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Juan"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Jesús"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Santo Domingo"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Purabá"
+                        }
+                    ]
+                },
+                {
+                    "numero": "5",
+                    "nombre": "San Rafael",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Rafael"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Josecito"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Santiago"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Ángeles"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Concepción"
+                        }
+                    ]
+                },
+                {
+                    "numero": "6",
+                    "nombre": "San Isidro",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Isidro"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San José"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Concepción"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Francisco"
+                        }
+                    ]
+                },
+                {
+                    "numero": "7",
+                    "nombre": "Belén",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Antonio"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "La Ribera"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "La Asunción"
+                        }
+                    ]
+                },
+                {
+                    "numero": "8",
+                    "nombre": "Flores",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Joaquín"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Barrantes"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Llorente"
+                        }
+                    ]
+                },
+                {
+                    "numero": "9",
+                    "nombre": "San Pablo",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Pablo"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Rincón de Sabanilla"
+                        }
+                    ]
+                },
+                {
+                    "numero": "10",
+                    "nombre": "Sarapiquí",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Puerto Viejo"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "La Virgen"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Las Horquetas"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Llanuras del Gaspar"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Cureña"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "numero": "5",
+            "nombre": "Guanacaste",
+            "cantones": [
+                {
+                    "numero": "1",
+                    "nombre": "Liberia",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Liberia"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Cañas Dulces"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Mayorga"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Nacascolo"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Curubandé"
+                        }
+                    ]
+                },
+                {
+                    "numero": "2",
+                    "nombre": "Nicoya",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Nicoya"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Mansión"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Antonio"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Quebrada Honda"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Sámara"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Nosara"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Belén de Nosarita"
+                        }
+                    ]
+                },
+                {
+                    "numero": "3",
+                    "nombre": "Santa Cruz",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Santa Cruz"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Bolsón"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Veintisiete de Abril"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Tempate"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Cartagena"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Cuajiniquil"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Diriá"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Cabo Velas"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "Tamarindo"
+                        }
+                    ]
+                },
+                {
+                    "numero": "4",
+                    "nombre": "Bagaces",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Bagaces"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "La Fortuna"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Mogote"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Río Naranjo"
+                        }
+                    ]
+                },
+                {
+                    "numero": "5",
+                    "nombre": "Carrillo",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Filadelfia"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Palmira"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Sardinal"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Belén"
+                        }
+                    ]
+                },
+                {
+                    "numero": "6",
+                    "nombre": "Cañas",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Cañas"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Palmira"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Miguel"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Bebedero"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Porozal"
+                        }
+                    ]
+                },
+                {
+                    "numero": "7",
+                    "nombre": "Abangares",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Las Juntas"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Sierra"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Juan"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Colorado"
+                        }
+                    ]
+                },
+                {
+                    "numero": "8",
+                    "nombre": "Tilarán",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Tilarán"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Quebrada Grande"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Tronadora"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Santa Rosa"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Líbano"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Tierras Morenas"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Arenal"
+                        }
+                    ]
+                },
+                {
+                    "numero": "9",
+                    "nombre": "Nandayure",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Carmona"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Santa Rita"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Zapotal"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Pablo"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Porvenir"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Bejuco"
+                        }
+                    ]
+                },
+                {
+                    "numero": "10",
+                    "nombre": "La Cruz",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "La Cruz"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Santa Cecilia"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "La Garita"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Santa Elena"
+                        }
+                    ]
+                },
+                {
+                    "numero": "11",
+                    "nombre": "Hojancha",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Hojancha"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Monte Romo"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Puerto Carrillo"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Huacas"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "numero": "6",
+            "nombre": "Puntarenas",
+            "cantones": [
+                {
+                    "numero": "1",
+                    "nombre": "Puntarenas",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Puntarenas"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Pitahaya"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Chomes"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Lepanto"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Paquera"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Manzanillo"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Guacimal"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Barranca"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "Monteverde"
+                        },
+                        {
+                            "numero": "10",
+                            "nombre": "Isla del Coco"
+                        },
+                        {
+                            "numero": "11",
+                            "nombre": "Cóbano"
+                        },
+                        {
+                            "numero": "12",
+                            "nombre": "Chacarita"
+                        },
+                        {
+                            "numero": "13",
+                            "nombre": "Chira"
+                        },
+                        {
+                            "numero": "14",
+                            "nombre": "Acapulco"
+                        },
+                        {
+                            "numero": "15",
+                            "nombre": "El Roble"
+                        },
+                        {
+                            "numero": "16",
+                            "nombre": "Arancibia"
+                        }
+                    ]
+                },
+                {
+                    "numero": "2",
+                    "nombre": "Esparza",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Espíritu Santo"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "San Juan Grande"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Macacona"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "San Rafael"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "San Jerónimo"
+                        }
+                    ]
+                },
+                {
+                    "numero": "3",
+                    "nombre": "Buenos Aires",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Buenos Aires"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Volcán"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Potrero Grande"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Boruca"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Pilas"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Colinas"
+                        },
+                        {
+                            "numero": "7",
+                            "nombre": "Chánguena"
+                        },
+                        {
+                            "numero": "8",
+                            "nombre": "Biolley"
+                        },
+                        {
+                            "numero": "9",
+                            "nombre": "Brunka"
+                        }
+                    ]
+                },
+                {
+                    "numero": "4",
+                    "nombre": "Montes de Oro",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Miramar"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "La Unión"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "San Isidro"
+                        }
+                    ]
+                },
+                {
+                    "numero": "5",
+                    "nombre": "Osa",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Cortés"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Palmar"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Sierpe"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Bahía Ballena"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Piedras Blancas"
+                        }
+                    ]
+                },
+                {
+                    "numero": "6",
+                    "nombre": "Quepos",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Quepos"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Savegre"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Naranjito"
+                        }
+                    ]
+                },
+                {
+                    "numero": "7",
+                    "nombre": "Golfito",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Golfito"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Puerto Jiménez"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Guaycará"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Pavón"
+                        }
+                    ]
+                },
+                {
+                    "numero": "8",
+                    "nombre": "Coto Brus",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "San Vito"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Sabalito"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Aguabuena"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Limoncito"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Pittier"
+                        }
+                    ]
+                },
+                {
+                    "numero": "9",
+                    "nombre": "Parrita",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Parrita"
+                        }
+                    ]
+                },
+                {
+                    "numero": "10",
+                    "nombre": "Corredores",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Corredor"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "La Cuesta"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Paso Canoas"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Laurel"
+                        }
+                    ]
+                },
+                {
+                    "numero": "11",
+                    "nombre": "Garabito",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Jacó"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Tárcoles"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "numero": "7",
+            "nombre": "Limón",
+            "cantones": [
+                {
+                    "numero": "1",
+                    "nombre": "Limón",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Limón"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Valle La Estrella"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Río Blanco"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Matama"
+                        }
+                    ]
+                },
+                {
+                    "numero": "2",
+                    "nombre": "Pococí",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Guápiles"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Jiménez"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Rita"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Roxana"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Cariari"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Colorado"
+                        }
+                    ]
+                },
+                {
+                    "numero": "3",
+                    "nombre": "Siquirres",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Siquirres"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Pacuarito"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Florida"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Germania"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Cairo"
+                        },
+                        {
+                            "numero": "6",
+                            "nombre": "Alegría"
+                        }
+                    ]
+                },
+                {
+                    "numero": "4",
+                    "nombre": "Talamanca",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Bratsi"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Sixaola"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Cahuita"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Telire"
+                        }
+                    ]
+                },
+                {
+                    "numero": "5",
+                    "nombre": "Matina",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Matina"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Batán"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Carrandi"
+                        }
+                    ]
+                },
+                {
+                    "numero": "6",
+                    "nombre": "Guácimo",
+                    "distritos": [
+                        {
+                            "numero": "1",
+                            "nombre": "Guácimo"
+                        },
+                        {
+                            "numero": "2",
+                            "nombre": "Mercedes"
+                        },
+                        {
+                            "numero": "3",
+                            "nombre": "Pocora"
+                        },
+                        {
+                            "numero": "4",
+                            "nombre": "Río Jiménez"
+                        },
+                        {
+                            "numero": "5",
+                            "nombre": "Duacarí"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
