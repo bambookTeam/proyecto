@@ -77,21 +77,3 @@ main button{
     outline: none; 
 }
 
-
-html {
-    min-height: 100%;
-    position: relative;
-}
-
-body {
-    margin: 0;
-}
-
-footer {
-    background-color: #f1c40f;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 20px;
-    color: white;
-  }
