@@ -11,4 +11,3 @@ let evento_schema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Evento', evento_schema);
-

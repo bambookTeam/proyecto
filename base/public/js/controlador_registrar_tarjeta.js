@@ -44,20 +44,8 @@ let validar = (pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
     if (pfechavencimiento == '')  {
         error = true;
         input_fechavencimiento.classList.add('input_error');
-
-
     } else {
-        
-        if(Date.parse(input_fechavencimiento.value) < Date.parse(today)){
-        
-            error = true;
-            input_fechavencimiento.classList.add('input_error');
-
-        }else {
-
-            input_fechavencimiento.classList.remove('input_error');
-        }
-
+        input_fechavencimiento.classList.remove('input_error');
 
     }
 

@@ -16,23 +16,4 @@ let llenar_perfil = async() => {
     }
 };
 
-const tbody = document.querySelector('#tbl_sucursales tbody');
-
-let lista_sucursales = [];
-
-let mostrar_tabla = async() => {
-
-    lista_sucursales = await obtenerSucursales();
-
-    tbody.innerHTML = '';
-
-    for (let i = 0; i < lista_sucursales.length; i++) {
-        let fila = tbody.insertRow();
-        fila.insertCell().innerHTML = lista_sucursales[i]['nombre'];
-        fila.insertCell().innerHTML = lista_sucursales[i]['direccion'];
-    }
-};
-
 llenar_perfil();
-
-mostrar_tabla();

@@ -1,3 +1,10 @@
+body{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+/* FIN nav */
+
 main{
     display: flow-root;
     margin-top: 50px;
@@ -25,26 +32,6 @@ h1{
     color: #76323F;
     font-size: 20px;
     margin: 20px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 500px;
-    display: inline-block;
-}
-  
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-  
-tr:nth-child(even){
-    background-color: #f2f2f2
-}
-  
-th {
-    background-color: #76323F;
-    color: white;
 }
 
 
