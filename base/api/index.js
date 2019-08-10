@@ -17,6 +17,7 @@ const usuario_route = require('./router/usuario');
 const libro_route = require('./router/libros');
 const oferta_route = require('./router/oferta');
 const tarjeta_route = require('./router/tarjeta');
+const inventarioGeneral_route = require('./router/inventarioGeneral');
 
 const sucursal_route = require('./router/sucursal');
 
@@ -86,6 +87,7 @@ app.use('/api', clubLectura_route);
 app.use('/api', evento_route);
 app.use('/api', libro_route);
 app.use('/api', oferta_route);
+app.use('/api', inventarioGeneral_route);
 
 app.use('/api', sucursal_route);
 
