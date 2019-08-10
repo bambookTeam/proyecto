@@ -9,51 +9,60 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
-   
+
     <link rel="stylesheet" href="css/clubLectura.css">
     <link rel="stylesheet" href="css/navbar.css">
 
-
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
 <header>
-        <nav>
-          <div class="logoBambooks">
-            <a href="inicioCliente.html"><img
-                src="imgs/panda_grain.png"
-                alt="" width="40px"></a>
-          </div>
-          <div class="nav-container">
-            <a href="listar_librerias.html" id="optionNavLibrerias">Librerias</a>
-            <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
-            <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
-            <a href="listar_libros.html" id="optionNavLibros">Libros</a>
-            <a href="listar-autores.html" id="optionNavAutores">Autores</a>
-            <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
-            <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
-            <a href="listar_tarjetas.html">Tarjetas</a>
-            <a href="#" id="optionIntercambio">Intercambios</a>
-            <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
-          </div>
-          <div class="optionsNav">
-              <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-            <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
-            <button id="btn_cerrar">Cerrar Sesion</button>
-          </div>
-        </nav>
-      </header>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <a href="index.html">
+        <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+            id="barnesLogo">
+    </a>
+    <div class="sign-in-button">
+        <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+    </div>
+</header>
+
+
+
 <body>
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent"><a href="#">Librerias</a>
+                <ul class="child">
+                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li><a href="#">Géneros</a></li>
+                    <li><a href="#">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
+                <ul class="child">
+                    <li><a href="#">Ver todos los Clubes</a></li>
+                    <li><a href="#">Ver mis Clubes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
 
     <main>
         <div class="filtrar">
-            <label for="buscarClub">Buscar Club de Lectura</label>
+           
             <input type="text" placeholder="Buscar" id="buscarClub">
+           <div>
+            <button><img src="https://img.icons8.com/metro/52/000000/google-web-search.png"></button>
+           </div>
         </div>
 
         <div class="botonesClubes">
@@ -61,13 +70,16 @@
             <button class="btn2" id="btnListarMisClubes">Mis Clubes</button>
         </div>
 
-        <div id="RegistrarClubScreen" class="modal">
-            <!-- Modal content -->
+<!---
+
+
+            <div id="RegistrarClubScreen" class="modal">
+
             <div class="modal-content" id="modal-content">
                 <span class="close">&times;</span>
                 <div class="sign-in">
                     <h1>Nuevo Club de Lectura</h1>
-                    
+
                     <div class="line"></div>
                     <form action="" id="formulario-ClubLectura">
                         <label for="txt-clubLectura">Nombre del Club de Lectura</label>
@@ -159,6 +171,8 @@
             </div>
 
         </div>
+    
+    !-->
 
         <section id="clubes">
 

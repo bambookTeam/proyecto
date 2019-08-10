@@ -4,11 +4,300 @@ Tan: #d7cec7
 Gris: #565656
 Otro: #c09f80
 */
-.sesion:hover,#unirse_Club:hover{
-    opacity:0.9;
-    color:white;
-    background-color:#c09f80;
-}
+#banner {
+    margin: 40px 0 0 0;
+    height: 400px;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url('http://latestwallpapershd.com/wp-content/uploads/2019/01/Reading-books-essay-wallpaper-HD.jpg ');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: local;
+    background-position: 50% 5%;
+  }
+  
+  .bannerContent {
+    width: 100%;
+    text-align: center;
+  }
+  
+  #banner h1 {
+    padding: 180px 10px 0 0;
+    font-size: 40px;
+    width: 70%;
+    margin: auto;
+    color: #fff;
+    font-weight: lighter;
+  }
+  
+  #banner span {
+    color: #f6b93b;
+  }
+  
+  .bannerContent button {
+    padding: 15px 15px;
+    background-color: transparent;
+    border: solid 1px #fff;
+    color: #fff;
+    font-weight: lighter;
+    font-size: 20px;
+    margin: 30px 10px;
+    width: 190px;
+  }
+  
+  .bannerContent button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  @keyframes fadein {
+    from {
+      opacity: .6;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  * {
+    box-sizing: border-box
+  }
+  
+  .whybarnes {
+    margin: 0;
+    position: relative;
+    text-align: center;
+  }
+  
+  .whybarnes h1 {
+    padding: 90px 0 150px 0;
+    background-color: #00b894;
+    /**/
+    font-size: 45px;
+    color: #fff;
+    font-weight: lighter;
+  }
+  
+  .whybarnes p {
+    padding-bottom: 7px;
+  }
+  
+  .facts {
+    width: 90%;
+    margin: auto;
+    height: 500px;
+    margin-top: -170px;
+  }
+  
+  .fact {
+    width: 28%;
+    float: left;
+    margin: 30px 24px;
+    padding: 5px;
+  }
+  
+  .fact img {
+    border: solid 4px black;
+    border-radius: 50%;
+    height: 200px;
+    padding: 0;
+  }
+  
+  .fact h5 {
+    font-size: 40px;
+    padding: 0;
+    margin: 30px 0 20px 0;
+  }
+  
+  .fact p {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .best-rated,
+  .most-sold {
+    float: left;
+    width: 25%;
+  }
+  
+  #booklists {
+    width: 100%;
+    overflow: auto;
+    margin-top: 20px;
+  }
+  
+  .booksoffered {
+    float: left;
+    width: 50%;
+    height: 451px;
+    text-align: center;
+  }
+  
+  .lists {
+    float: left;
+    width: 50%;
+    overflow: auto;
+    margin-top:55px;
+  }
+  
+  .lists button {
+    background-color: #fff;
+    padding: 10px 20px;
+    color: #000;
+    float: right;
+    border: solid 1px #000;
+    margin: 10px 19px 0 0;
+  }
+  
+  .lists button:hover {
+    background-color: #000;
+    padding: 10px 20px;
+    color: #fff;
+    float: right;
+    margin: 10px 19px 0 0;
+  }
+  
+  #genres,#categories{
+    margin:120px 0 70px auto;
+    text-align: center;
+    overflow:auto;
+    width:100%;
+  }
+  
+  #genres h1,#categories h1{
+    margin:0 0 40px 0;
+    font-size:30px;
+  }
+
+  #genres p,#categories p{
+    margin:10px 0;
+  }
+  #categories{
+    margin:10px 0 70px auto;
+  }
+  
+  #genres > div,#categories > div{
+    width:20%;
+  
+    float:left;
+    padding:10px 20px;
+  }
+  #genres > div:hover,#categories > div:hover{
+    background-color:#ced6e0;
+  }
+  
+  .banneroferta {
+    float: left;
+    width: 50%;
+    height: 1000px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://www.3wallpapers.fr/wp-content/uploads/2015/05/Library-iPhone-3Wallpapers-Parallax.jpg');
+    text-align: right;
+    color: #fff;
+  }
+  
+  .banneroferta h3 {
+    font-weight: lighter;
+    font-size: 50px;
+    width: 75%;
+    margin: 250px auto 0 auto;
+    font-family: 'Permanent Marker', cursive;
+  }
+  
+  .banneroferta p {
+    margin: 20px auto;
+    width: 75%;
+  }
+  
+  .lists>div {
+    float: left;
+    width: 50%;
+    padding: 10px 0 30px 0;
+    text-align: center
+  }
+  
+  .lists h2 {
+    margin-bottom: 7px;
+  }
+  
+  .lists img {
+    height: 325px;
+    width: 215px;
+  }
+  
+  #booklists .line {
+    align-self: center;
+    width: 70%;
+    float: left;
+    height: 2px;
+    background-color: black;
+    margin: 0 auto 25px 40px;
+  }
+  
+  #ofertas {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url('https://cdn.wallpaper.com/main/styles/fp_922x565/s3/galleries/16/02/liberia_01.jpg');
+    background-size: 100% 100%;
+    background-attachment: no-repeat;
+    height: 550px;
+    width: 90%;
+    margin: auto;
+  }
+  
+  #footer {
+    margin-top: 30px;
+    text-align: center;
+    overflow: auto;
+    background-color: #f6b93b;
+  }
+  
+  #footer>div {
+    height: 320px;
+    width: 25%;
+    background-color: #f6b93b;
+    float: left;
+    border-left: solid 2px #000;
+    margin: 30px 0px;
+  }
+  
+  #footer .footerLogo {
+    border-left: solid 0;
+  }
+  
+  #footer .footermap {
+    width: 50%;
+    text-align: left;
+  }
+  
+  .footermap .list {
+    width: 45%;
+    float: left;
+    margin: 0 10px;
+  }
+  
+  .list a {
+    text-decoration: none;
+    color: #000;
+    margin: 10px 0;
+  }
+  
+  .list a:hover {
+    color: #fff;
+  }
+  
+  .list li {
+    margin: 5px 0;
+  }
+  
+  .list ul {
+    list-style: none;
+    margin-top: 10px;
+  }
+  
+  .socials h3 {
+    margin-top: 0px
+  }
+
+  
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -22,140 +311,151 @@ Otro: #c09f80
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
-  
+
   /* Modal Content */
   .modal-content {
-      text-align: center;
-    background-color: #d7cec7;
-    margin: auto;
-    padding:20px;
-    border: 1px solid #888;
-    width: 20%;
-    height:430px;
-  }
-  
-  .sign-in{
-      margin-top:10px;
-  }
+    text-align: center;
+  background-color: #fff;
+  margin: auto;
+  padding:20px;
+  width: 260px;
+  height:440px;
+}
 
-  .sign-in h1{
-      margin-bottom:15px;
-      margin-left:25px;
-  }
-  .sign-in img{
-      width:128px;
-      margin-bottom:15px;
-  }
-  form{
-      padding:10px 0;
-      margin:auto;
-
-  }
-  form label{
-      width:100%;
-      display:inline-block;
-      font-size:13px;
-      margin:10px 0;
-  }
-
-  form input{
-      padding:7px 5px;
-      width:200px;
-      border-style:none;
-      margin-bottom:10px;
-  }
-  form input:focus{
-      border:solid 1px #76323f;
-      outline: none;
-  }
-  button:focus{
-    outline: none;
-  }
-
-  
-.forgot a{
-    float:left;
-    width:50%; 
-    font-size:10px;
-    text-decoration: none;
-    color:#76323f;
+.sign-in{
     margin-top:10px;
 }
+
+.sign-in h1{
+    margin-bottom:15px;
+    margin-left:15px;
+}
+
+.sign-in-button button{
+  background-color:transparent;
+  border:0;
+}
+
+.sign-in-button button{
+  background-color:transparent;
+  border:0;
+}
+
+.sign-in img{
+    width:128px;
+    margin-bottom:15px;
+}
+form{
+    padding:10px 0;
+    margin:auto;
+
+}
+form label{
+    width:100%;
+    display:inline-block;
+    font-size:13px;
+    margin:10px 0;
+}
+
+form input{
+    padding:7px 5px;
+    width:200px;
+    margin-bottom:10px;
+    border:solid 1px #000;
+}
+form input:focus{
+    border:solid 1px #f6b93b;
+    outline: none;
+}
+button:focus{
+  outline: none;
+}
+
+
+.forgot a{
+  float:left;
+  width:50%; 
+  font-size:10px;
+  text-decoration: none;
+  color:#000;
+  margin-top:10px;
+}
 .forgot a:hover{
-    color:#c09f80;
-    text-decoration: underline;
+  color:#f6b93b;
+  text-decoration: underline;
 }
 #rellene{
-    display:none;
-    color:red;
-    font-size:10px;
-    margin-bottom:10px;
+  display:none;
+  color:red;
+  font-size:10px;
+  margin-bottom:10px;
 }
-  /* The Close Button */
-  .close {
-    
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
 
-  .sign-in .line{
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-    margin:auto;
-    background-color:#76323f;
-    height:1px;
-    width:85%;
+.sign-in .line{
+
+  margin:auto;
+  background-color:#000;
+  height:1px;
+  width:85%;
 }
 
 .modal-content button{
-    width:50%;
-    float:left;
-    padding:10px 10px;
-    border:solid 0;
-    display:block;
+  width:50%;
+  float:left;
+  padding:10px 10px;
+  border:solid 0;
+  display:block;
+  background-color:#000;
+  color:#fff;
 }
 
 #btnCancel,.cancel{
-    background-color:#76323f;
-    color:#fff;
+  background-color:#f6b93b;
+  color:#000;
 }
 
 
 .modal-content button:hover{
-   opacity:0.8;
+ opacity:0.8;
 }
 
 
-  
-  
-  /* Add some content at the bottom of the video/page */
-  
-  .input_error{
-      border: solid 1px red;
-  }
 
-  .container > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    }
+
+/* Add some content at the bottom of the video/page */
+
+.input_error{
+    border: solid 1px red;
+}
+
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  }
+  
+  #input_error_footer{
+      margin-top:5px;
+      color:#d1a71b;
+      font-size:10px;
+      display:none;
+  
+  }
+  
     
-    #input_error_footer{
-        margin-top:5px;
-        color:#d1a71b;
-        font-size:10px;
-        display:none;
-    
-    }
-    
-      
-    
+  
