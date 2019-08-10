@@ -1,61 +1,67 @@
 html {
-    min-width: 360px;
-    max-width: 1024px;
-    margin: auto;
-  }
+  margin: auto;
+}
   
-  body {
-    font-family: 'Catamaran', sans-serif;
-  }
+body {
+  font-family: 'Catamaran', sans-serif;
+}
   
-  /*Nav bar styles #76323f;*/
-  header {
-    background-color: #76323f;
-    display: inline-block;
-    width: 100%;
-    max-width: 1024px;
-    margin: 0;
-  }
+/*Nav bar styles #76323f;*/
+header {
+  background-color: #f1c40f;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
   
-  header a {
-    text-decoration: none;
-    color: white;
-    padding: 0 5px;
-    font-size:10px;
-  }
+header a {
+  text-decoration: none;
+  color: white;
+  padding: 0 5px;
+  font-size: 15px;
+}
   
-  header a:hover {
-    color: #aaaaaa
-  }
+header a:hover {
+  color: #aaaaaa
+}
   
-  header .logoBambooks {
-    float: left;
-    margin: 10px 40px;
-  }
+header .logoBambooks {
+  float: left;
+  margin: 10px 40px;
+}
   
-  header .nav-container {
-    float: left;
-    margin-top: 15px;
-  }
+header .nav-container {
+  float: left;
+  margin-top: 15px;
+}
   
-  header .optionsNav {
-    float: right;
-    font-size: 10px;
-    margin: 15px 40px 0 90px;
-  }
+header .optionsNav {
+  float: right;
+  font-size: 20px;
+  margin: 15px 40px 0 90px;
+}
   
-  .dropdown-content {
-    display: none;
-  }
-  .optionsNav button {
-    margin-left:50px;
-  }
+.dropdown-content {
+  display: none;
+}
+
+.optionsNav button {
+  margin-left:50px;
+}
   
-  .optionsNav img {
-    position: absolute;
-    margin: -5px 10px 0 10px;
-  }
+.optionsNav img {
+  position: absolute;
+  margin: -5px 10px 0 10px;
+}
   
 #optionNavGenero,#optionNavUsuarios,#optionNavCategoria,#optionNavAutores{
   display:none;
+}
+
+#btn_cerrar{
+  background: none;
+  border: 1px #fff solid;
+  color: #fff;
+  padding: 5px;
+  margin-left: 60px;
 }
