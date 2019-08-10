@@ -1,0 +1,85 @@
+main{
+    text-align: center;
+
+}
+
+#contenedor_titulo{
+    width: 50%;
+    color: #76323F;
+    font-size: 30px;
+    margin: 30px;
+    align-content: flex-end;
+    /* text-align: center; */
+    margin-top: 1% solid #76323F;
+}
+
+.contenedor-perfil {
+    display: flow-root;
+}
+
+#portada{
+    margin-top: 10%;
+    margin-left: 10%;
+    height: 300px;
+    width: 225px;
+    border: solid 1px #76323F;
+    border-radius: 15px;
+    float: left;
+}
+
+.infoPerfil {
+    float: left;
+    margin: 74px 0 0 116px;
+    width: 44%;
+}
+
+#imagen{
+    height: 220px;
+    width: 100%;
+    height:100%;
+    border-radius: 15px 15px;
+}
+
+#infoLibro{
+    font-size: 30px;
+    color: #76323F;
+    background: #76323F;
+    border: solid 1px #76323F;
+    border-radius: 15px;
+    width: 100%;
+}
+
+#infoLibro p{
+    color: #aaaaaa;
+    font-size: 20px;
+    margin: 1%;
+    margin-left: 5%;
+}
+#btn_regresar{
+
+margin-top: 5%;
+background-color:#76323f;
+     color:#fff;
+     width:15%;
+     border-radius:5px;
+    padding:5px 10px;
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+footer {
+    background-color: #76323F;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    color: white;
+  }

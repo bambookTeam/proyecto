@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Listar Sucursales</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/listar_sucursales.css">
+        <link rel="stylesheet" href="css/listar_librerias.css">
+        <link rel="stylesheet" href="css/navbar.css">
+    </head>
+
+    <header>
+        <nav>
+          <div class="logoBambooks">
+            <a href="inicioCliente.html"><img
+                src="imgs/panda_grain.png"
+                alt="" width="40px"></a>
+          </div>
+          <div class="nav-container">
+            <a href="listar_librerias.html" id="optionNavLibrerias">Librerias</a>
+            <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
+            <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
+            <a href="listar_libros.html" id="optionNavLibros">Libros</a>
+            <a href="listar-autores.html" id="optionNavAutores">Autores</a>
+            <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
+            <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
+            <a href="listar_tarjetas.html">Tarjetas</a>
+            <a href="#" id="optionIntercambio">Intercambios</a>
+            <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
+          </div>
+          <div class="optionsNav">
+              <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+            <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
+            <button id="btn_cerrar">Cerrar Sesion</button>
+          </div>
+        </nav>
+      </header>
+    <body>
+
+        <main>
+
+            <h1>Listar Sucursales</h1>
+
+            <input id="txt_filtro" type="text">
+
+            <table id="tbl_sucursales">
+
+                <thead>
+
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Correo</th>
+                        <th>Dirección</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+            
+                </tbody>
+
+            </table>
+
+        </main>
+
+        <footer></footer>
+
+
+        <script src="js/jquery-3.3.1.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="js/servicio_sucursales.js"></script>
+        <script src="js/controlador_listar_sucursales.js"></script>
+        <script src="js/getNombre.js"></script>
+    
+    </body>
+
+</html>
