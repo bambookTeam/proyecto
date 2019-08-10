@@ -28,6 +28,7 @@ let mostrar_tabla = async() => {
 
         boton_perfil.addEventListener('click', function() {
             //console.log(this.dataset._id);
+            localStorage.setItem('idLibreria', lista_librerias[i]['_id']);
             window.location.href = `visualizar_perfil_libreria.html?_id=${this.dataset._id}`
         });
 
