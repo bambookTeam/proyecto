@@ -1,0 +1,109 @@
+
+/* INICIO main */
+
+main{
+    display: flow-root;
+    text-align: center;
+}
+
+main h1{
+    color: #76323F;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 30px;
+}
+
+#datos_libreria{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+#datos_admi_libreria{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+main h2{
+    color: #76323F;
+    font-size: 20px;
+    margin: 30px;
+}
+
+main input{
+    width: 60%;
+    height: 30px;
+    margin: 15px;
+    padding: 5px;
+    border: 1px solid #76323F;
+    border-radius: 15px;
+    background: none;
+    outline: none;
+}
+
+main textarea{
+    width: 60%;
+    height: 80px;
+    margin: 15px;
+    padding: 5px;
+    border: 1px solid #76323F;
+    border-radius: 15px;
+    background: none;
+    outline: none;
+    resize: none;
+}
+
+
+main select{
+    width: 63%;
+    height: 42px;
+    margin: 15px;
+    padding: 5px;
+    border: 1px solid #76323F;
+    border-radius: 15px;
+    background: none;
+    color: #76323F;
+    outline: none;   
+}
+
+.input_error {
+    border: 2px #e74c3c solid !important;
+}
+
+::-webkit-input-placeholder{
+    color: #76323F;
+}
+
+main iframe{
+    width: 60%;
+    margin: 15px;
+    height: 276px;
+}
+
+main button{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #76323F;
+    border-radius: 15px;
+    font-size: 20px;
+    color: #76323F;
+    font-weight: bold;
+    background: none;
+    outline: none; 
+}
+
+
+#txtIdExiste{
+    color: tomato;
+    text-align: center;
+    display: block;
+}
+
+#txtCorreoExiste{
+    color: tomato;
+    text-align: center;
+    display: block;
+}
+
+/* FIN main */
