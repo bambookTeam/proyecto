@@ -45,8 +45,15 @@ Otro: #c09f80
   }
   
   .bannerContent button:hover {
-    background-color: #fff;
+    padding: 15px 15px;
+    background-color: transparent;
+    border: solid 1px #fff;
     color: #000;
+    background-color:#fff;
+    font-weight: lighter;
+    font-size: 20px;
+    margin: 30px 10px;
+    width: 190px;
   }
   
   @keyframes fadein {
@@ -252,11 +259,11 @@ Otro: #c09f80
   
   #footer>div {
     height: 320px;
-    width: 25%;
+    width: 35%;
     background-color: #f6b93b;
     float: left;
     border-left: solid 2px #000;
-    margin: 30px 0px;
+    margin: 30px 0px 0 0;
   }
   
   #footer .footerLogo {
@@ -264,10 +271,19 @@ Otro: #c09f80
   }
   
   #footer .footermap {
-    width: 50%;
+    width: 65%;
     text-align: left;
   }
-  
+  #footer .socials{
+      height:50px;
+    width:100%;
+    background-color: #f6b93b;
+    float: left;
+    padding:20px 0;
+    margin:0;
+    text-align: left;
+    border-left: 0;
+  }
   .footermap .list {
     width: 45%;
     float: left;
@@ -286,18 +302,27 @@ Otro: #c09f80
   
   .list li {
     margin: 5px 0;
+    font-weight:lighter
   }
   
   .list ul {
     list-style: none;
     margin-top: 10px;
+    margin-left:20px;
+
   }
   
   .socials h3 {
     margin-top: 0px
   }
 
-  
+  .uhead{
+      font-weight: bolder;
+  }
+
+  .uhead a:hover{
+    color:grey;
+}
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -413,26 +438,6 @@ button:focus{
   width:85%;
 }
 
-.modal-content button{
-  width:50%;
-  float:left;
-  padding:10px 10px;
-  border:solid 0;
-  display:block;
-  background-color:#000;
-  color:#fff;
-}
-
-#btnCancel,.cancel{
-  background-color:#f6b93b;
-  color:#000;
-}
-
-
-.modal-content button:hover{
- opacity:0.8;
-}
-
 
 
 
@@ -458,4 +463,27 @@ button:focus{
   }
   
     
+  
+.modal-content button{
+    width:50%;
+    float:left;
+    padding:10px 10px;
+    border:solid 0;
+    display:block;
+    background-color:#f6b93b;
+    color:#000;
+  }
+  
+  #btnCancel,.cancel{
+    background-color:#000;
+    color:#fff;
+  }
+  
+  
+  .modal-content button:hover,#btnCancel:hover{
+   padding:10px 10px;
+    border:solid 0;
+    opacity:0.7;
+    
+  }
   

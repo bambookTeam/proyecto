@@ -149,6 +149,10 @@ text-align: left;
   cursor:pointer;
 }
 
+#myBtn img{
+  margin-top:-5px;
+}
+
 /*
 
 
