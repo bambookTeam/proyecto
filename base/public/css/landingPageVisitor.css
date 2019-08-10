@@ -318,11 +318,9 @@ Otro: #c09f80
 
   .uhead{
       font-weight: bolder;
+      font-size:20px;
   }
 
-  .uhead a:hover{
-    color:grey;
-}
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
