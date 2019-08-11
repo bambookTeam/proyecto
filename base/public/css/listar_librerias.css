@@ -1,23 +1,36 @@
+.hovernav{
+    text-decoration: none;
+    border-bottom: solid 2px #f6b93b;
+}
 
+
+
+
+
+
+
+main{
+    text-align: center;
+}
 
 h1{
-    color: #76323F;
+    color: #f6b93b;
     font-size: 30px;
-    margin: 30px;
+    margin: 60px;
+    font-weight: bold;
 }
 
 label{
-    color: #76323F;
+    color: #000;
     font-size: 20px;
-    margin: 30px;
 }
 
 input{
-    width: 60%;
+    width: 30%;
     height: 30px;
     margin: 20px;
     padding: 5px;
-    border: 1px solid #76323F;
+    border: 1px solid #000;
     border-radius: 15px;
     background: none;
     outline: none;
@@ -25,42 +38,67 @@ input{
 
 main a{
     padding: 10px;
-    border: 1px solid #76323F;
+    border: 2px solid #000;
     border-radius: 15px;
     font-size: 15px;
-    color: #76323F;
+    color: #000;
     font-weight: bold;
+    margin: 15px;
     background: none;
-    outline: none; 
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
+
+main a:hover{
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #f6b93b;
+    font-weight: bold;
+    margin: 15px;
+    background: none;
+    float: right;
+    outline: none;
     text-decoration: none;
 }
 
 main button{
     padding: 10px;
-    border: 1px solid #76323F;
+    border: 1px solid #f6b93b;
     border-radius: 15px;
     font-size: 15px;
-    color: #76323F;
+    color: #fff;
     font-weight: bold;
-    background: none;
+    background: #f6b93b;
     outline: none; 
+}
+
+main button:hover{
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
-  }
+}
   
-  th, td {
+th, td {
     text-align: left;
-    padding: 8px;
-  }
+    padding: 15px;
+}
   
-  tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even){background-color: #f2f2f2}
   
-  th {
-    background-color: #76323F;
+th {
+    background-color: #f6b93b;
     color: white;
-  }
-
-  
+}

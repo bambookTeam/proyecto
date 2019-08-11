@@ -1,16 +1,16 @@
-button{
-  padding:10px 15px; 
+/*button{
+  padding:10px 15px;
   background-color: #fff;
   color:#000;
   border:solid 2px #000;
 }
 
 button:hover{
-  padding:10px 15px; 
+  padding:10px 15px;
   background-color: #000;
   color:#fff;
   border:solid 2px #000;
-}
+}*/
 * {
   box-sizing: border-box
 }
@@ -137,7 +137,7 @@ text-align: left;
 #info-barnes{
   text-align: center;
   padding:50px 0;
-  
+
 }
 
 .sign-in-button button{
@@ -147,6 +147,10 @@ text-align: left;
 
 .sign-in-button button{
   cursor:pointer;
+}
+
+#myBtn img{
+  margin-top: 5px;
 }
 
 /*
@@ -215,4 +219,3 @@ color:#000
 
 }
 */
-
