@@ -1,3 +1,14 @@
+.hovernav{
+    text-decoration: none;
+    border-bottom: solid 2px #f6b93b;
+}
+
+
+
+
+
+
+
 main{
     text-align: center;
 }
@@ -27,13 +38,13 @@ input{
 
 main a{
     padding: 10px;
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 15px;
     font-size: 15px;
-    color: #fff;
+    color: #000;
     font-weight: bold;
     margin: 15px;
-    background: #000;
+    background: none;
     float: right;
     outline: none;
     text-decoration: none;
@@ -41,13 +52,13 @@ main a{
 
 main a:hover{
     padding: 10px;
-    border: 1px solid #f6b93b;
+    border: 2px solid #f6b93b;
     border-radius: 15px;
     font-size: 15px;
-    color: #fff;
+    color: #f6b93b;
     font-weight: bold;
     margin: 15px;
-    background: #f6b93b;
+    background: none;
     float: right;
     outline: none;
     text-decoration: none;
