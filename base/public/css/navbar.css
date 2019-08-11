@@ -143,6 +143,7 @@ text-align: left;
 .sign-in-button button{
   background-color:transparent;
   border:0;
+  outline: none;
 }
 
 .sign-in-button button{
