@@ -254,13 +254,12 @@ Otro: #c09f80
   #footer {
     margin-top: 30px;
     text-align: center;
-    overflow: auto;
     background-color: #f6b93b;
+    display: flow-root;
   }
 
   #footer>div {
-    height: 320px;
-    width: 35%;
+    width: 30%;
     background-color: #f6b93b;
     float: left;
     border-left: solid 2px #000;
@@ -268,7 +267,8 @@ Otro: #c09f80
   }
 
   #footer .footerLogo {
-    border-left: solid 0;
+    border-left: 0;
+    margin-top: 70px;
   }
 
   #footer .footermap {
@@ -276,17 +276,15 @@ Otro: #c09f80
     text-align: left;
   }
   #footer .socials{
-      height:50px;
     width:100%;
     background-color: #f6b93b;
     float: left;
     padding:20px 0;
     margin:0;
-    text-align: left;
     border-left: 0;
   }
   .footermap .list {
-    width: 45%;
+    width: 30%;
     float: left;
     margin: 0 10px;
   }
@@ -485,3 +483,12 @@ button:focus{
     opacity:0.7;
 
   }
+
+
+
+.socials{
+  text-align: center;
+}
+.socials img{
+  margin: 20px;
+}
