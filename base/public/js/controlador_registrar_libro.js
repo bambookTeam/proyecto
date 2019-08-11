@@ -6,7 +6,7 @@ const boton_registrar = document.querySelector('#btn_registrar');
 const input_titulo = document.querySelector('#txt_titulo');
 const input_edicion = document.querySelector('#txt_edicion');
 const input_editorial = document.querySelector('#txt_editorial');
-const input_autor = document.querySelector('#txt_autor');
+const input_autor = document.querySelector('#txt-nombre-autor');
 const input_anno = document.querySelector('#txt_anno_edicion');
 const input_idioma = document.querySelector('#txt_idioma');
 const input_isbn = document.querySelector('#txt_isbn');
@@ -16,6 +16,7 @@ const input_cantidad = document.querySelector('#txt_existencia');
 const input_precio = document.querySelector('#txt_precio');
 const imgLibro = document.querySelector('#img_preview');
 
+//Funsión para seleccionar genero previamente registrado
 let listar_genero = async()=>{
     let arrayGenero = [];
     arrayGenero=await listarGenero();
@@ -31,6 +32,24 @@ let listar_genero = async()=>{
 
 }
 window.addEventListener('load', listar_genero);
+
+//Funsión para seleccionar autor previamente registrado
+let listar_autor = async()=>{
+    let arrayAutor =[];
+    arrayAutor = await obtenerAutores();
+    let autor_select = document.querySelector('#txt-nombre-autor');
+
+    for (let i = 0; i < arrayAutor.length; i++) {
+        let optionAutor = document.createElement('option');
+        optionAutor.setAttribute('value', arrayAutor[i].autor);
+    
+        optionAutor.innerHTML = arrayAutor[i].autor;
+        autor_select.appendChild(optionAutor);
+    }
+}
+window.addEventListener('load', listar_autor);
+
+
 
 let validar = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pimgLibro, pgenero, ptipo, pcantidad, pprecio, ) => {
 
@@ -147,7 +166,7 @@ let saludar = () => {
     let tipo = input_tipo.value;
     let cantidad = Number(input_cantidad.value);
     let precio = Number(input_precio.value);
-    let imagen = imgLibro.src;
+    let imagen = imgLibro.src;   
 
     let error = validar(titulo, edicion, editorial, autor, anno, idioma, isbn, imagen, genero, tipo, cantidad, precio);
     
