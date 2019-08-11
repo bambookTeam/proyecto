@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Registro Club de Lectura
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" href="css/registrar_clubLectura.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<header>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <a href="index.html">
+        <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+            id="barnesLogo">
+    </a>
+    <div class="sign-in-button">
+        <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+    </div>
+</header>
+
+
+
+<body>
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent"><a href="#">Librerias</a>
+                <ul class="child">
+                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li><a href="#">Géneros</a></li>
+                    <li><a href="#">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
+                <ul class="child">
+                    <li><a href="#">Ver todos los Clubes</a></li>
+                    <li><a href="#">Ver mis Clubes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
+
+    <main>
+        
+    
+    <div class="sign-in">
+        <h1>Nuevo Club de Lectura</h1>
+        <div class="line"></div>
+        <form action="" id="formulario-ClubLectura">
+          <label for="txt-clubLectura">Nombre del Club de Lectura</label>
+          <input id="txt-clubLectura" type="text" placeholder="Nombre del Club" maxlength="60">
+          <h2 id="error_content" class="error">Por favor rellene los campos marcados</h2>
+          <div>
+            <label for="modalidad_Club">Modalidad</label>
+            <select name="" id="modalidad_Club" onchange="hideHora()">
+              <option value="Presencial">Presencial</option>
+              <option value="Virtual">Virtual</option>
+            </select>
+          </div>
+          <h2 id="error_modalidad" class="error">Seleccione un valor de la lista</h2>
+          <div class="dateInput">
+            <label>Fecha de Inicio</label>
+            <input type="date" id="fechaInicioClub">
+          </div>
+          <div class="dateInput">
+            <label>Fecha de Fin</label>
+            <input type="date" id="fechaFinClub">
+          </div>
+          <div class="dateErrors">
+            <h2 id="error_fechaDia" class="error">La fecha no puede ser anterior al día de hoy</h2>
+            <h2 id="error_fecha" class="error">Seleccione una fecha Válida</h2>
+            <h2 id="error_fechaFin" class="error">La fecha de fin no puede ser antes que la de Inicio</h2>
+          </div>
+          <div id="horasClub">
+            <label for="">Hora:</label>
+            <input type="time" value="08:30" step="600" id="horaClub">
+          </div>
+          <div id="frecuenciaClub">
+            <label for="">Frecuencia</label>
+            <select name="" id="frecuencia_club">
+              <option value="Todos los días">Todos los días</option>
+              <option value="Lunes y Miercoles">Lunes & Miércoles</option>
+              <option value="Martes y Jueves">Martes & Jueves</option>
+              <option value="Todos los Viernes">Todos los Viernes</option>
+              <option value="Todos los Sábados">Todos los Sabados</option>
+            </select>
+          </div>
+          <div id="lista_tema_clubes" class="listas">
+            <label for="temas_club">Tema</label>
+          </div>
+          <div id="lista_genero_clubes" class="listas">
+            <label for="generos_club">Géneros</label>
+          </div>
+          <div id="lista_categoria_club" class="listas">
+            <label for="categorias_club">Categorías</label>
+          </div>
+          <div id="lista_libreria_club" class="listas">
+            <label for="librerias_club">Librerias</label>
+          </div>
+          <div id="lista_sucursal_club" class="listas">
+            <label for="sucursales_club">Sucursales</label>
+          </div>
+          <h2 id="error_listas" class="error">Seleccione un valor de la lista</h2>
+        </form>
+        <div class="btnsForm">
+          <button id="btnCancelClub" class="cancel">Cancelar</button>
+          <button id="btnCrearClub" class="submit">Crear Club</button>
+        </div>
+      </div>
+  
+  
+
+    </main>
+
+    <footer></footer>
+
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/servicio_librerias.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="js/controlador-clubLectura.js"></script>
+    <script src="js/servicio-clubLectura.js"></script>
+    <script src="js/servicio_genero.js"></script>
+    <script src="js/servicio_sucursales.js"></script>
+   
+    <script src="js/servicio_libro.js"></script>
+    <script src="js/servicio_categoria.js"></script>
+
+    <script src="js/servicio_sucursales.js"></script>
+
+
+</body>
+
+</html>

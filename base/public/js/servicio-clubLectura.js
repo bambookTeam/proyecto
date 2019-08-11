@@ -17,7 +17,8 @@ let registrarClub = (pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, p
             categoria: pcategoria,
             libreria: plibreria,
             sucursal: psucursal,
-            idAdmin: pidAdmin
+            idAdmin: pidAdmin,
+            estado: 1
         }
     });
 };
