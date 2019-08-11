@@ -4,6 +4,7 @@ Tan: #d7cec7
 Gris: #565656
 Otro: #c09f80
 */
+
 #banner {
     margin: 40px 0 0 0;
     height: 400px;
@@ -14,12 +15,12 @@ Otro: #c09f80
     background-attachment: local;
     background-position: 50% 5%;
   }
-  
+
   .bannerContent {
     width: 100%;
     text-align: center;
   }
-  
+
   #banner h1 {
     padding: 180px 10px 0 0;
     font-size: 40px;
@@ -28,11 +29,11 @@ Otro: #c09f80
     color: #fff;
     font-weight: lighter;
   }
-  
+
   #banner span {
     color: #f6b93b;
   }
-  
+
   .bannerContent button {
     padding: 15px 15px;
     background-color: transparent;
@@ -43,7 +44,7 @@ Otro: #c09f80
     margin: 30px 10px;
     width: 190px;
   }
-  
+
   .bannerContent button:hover {
     padding: 15px 15px;
     background-color: transparent;
@@ -55,27 +56,27 @@ Otro: #c09f80
     margin: 30px 10px;
     width: 190px;
   }
-  
+
   @keyframes fadein {
     from {
       opacity: .6;
     }
-  
+
     to {
       opacity: 1;
     }
   }
-  
+
   * {
     box-sizing: border-box
   }
-  
+
   .whybarnes {
     margin: 0;
     position: relative;
     text-align: center;
   }
-  
+
   .whybarnes h1 {
     padding: 90px 0 150px 0;
     background-color: #00b894;
@@ -84,69 +85,69 @@ Otro: #c09f80
     color: #fff;
     font-weight: lighter;
   }
-  
+
   .whybarnes p {
     padding-bottom: 7px;
   }
-  
+
   .facts {
     width: 90%;
     margin: auto;
     height: 500px;
     margin-top: -170px;
   }
-  
+
   .fact {
     width: 28%;
     float: left;
     margin: 30px 24px;
     padding: 5px;
   }
-  
+
   .fact img {
     border: solid 4px black;
     border-radius: 50%;
     height: 200px;
     padding: 0;
   }
-  
+
   .fact h5 {
     font-size: 40px;
     padding: 0;
     margin: 30px 0 20px 0;
   }
-  
+
   .fact p {
     width: 80%;
     margin: auto;
   }
-  
+
   .best-rated,
   .most-sold {
     float: left;
     width: 25%;
   }
-  
+
   #booklists {
     width: 100%;
     overflow: auto;
     margin-top: 20px;
   }
-  
+
   .booksoffered {
     float: left;
     width: 50%;
     height: 451px;
     text-align: center;
   }
-  
+
   .lists {
     float: left;
     width: 50%;
     overflow: auto;
     margin-top:55px;
   }
-  
+
   .lists button {
     background-color: #fff;
     padding: 10px 20px;
@@ -155,7 +156,7 @@ Otro: #c09f80
     border: solid 1px #000;
     margin: 10px 19px 0 0;
   }
-  
+
   .lists button:hover {
     background-color: #000;
     padding: 10px 20px;
@@ -163,14 +164,14 @@ Otro: #c09f80
     float: right;
     margin: 10px 19px 0 0;
   }
-  
+
   #genres,#categories{
     margin:120px 0 70px auto;
     text-align: center;
     overflow:auto;
     width:100%;
   }
-  
+
   #genres h1,#categories h1{
     margin:0 0 40px 0;
     font-size:30px;
@@ -182,17 +183,17 @@ Otro: #c09f80
   #categories{
     margin:10px 0 70px auto;
   }
-  
+
   #genres > div,#categories > div{
     width:20%;
-  
+
     float:left;
     padding:10px 20px;
   }
   #genres > div:hover,#categories > div:hover{
     background-color:#ced6e0;
   }
-  
+
   .banneroferta {
     float: left;
     width: 50%;
@@ -202,7 +203,7 @@ Otro: #c09f80
     text-align: right;
     color: #fff;
   }
-  
+
   .banneroferta h3 {
     font-weight: lighter;
     font-size: 50px;
@@ -210,28 +211,28 @@ Otro: #c09f80
     margin: 250px auto 0 auto;
     font-family: 'Permanent Marker', cursive;
   }
-  
+
   .banneroferta p {
     margin: 20px auto;
     width: 75%;
   }
-  
+
   .lists>div {
     float: left;
     width: 50%;
     padding: 10px 0 30px 0;
     text-align: center
   }
-  
+
   .lists h2 {
     margin-bottom: 7px;
   }
-  
+
   .lists img {
     height: 325px;
     width: 215px;
   }
-  
+
   #booklists .line {
     align-self: center;
     width: 70%;
@@ -240,7 +241,7 @@ Otro: #c09f80
     background-color: black;
     margin: 0 auto 25px 40px;
   }
-  
+
   #ofertas {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url('https://cdn.wallpaper.com/main/styles/fp_922x565/s3/galleries/16/02/liberia_01.jpg');
     background-size: 100% 100%;
@@ -248,77 +249,6 @@ Otro: #c09f80
     height: 550px;
     width: 90%;
     margin: auto;
-  }
-  
-  #footer {
-    margin-top: 30px;
-    text-align: center;
-    overflow: auto;
-    background-color: #f6b93b;
-  }
-  
-  #footer>div {
-    height: 320px;
-    width: 35%;
-    background-color: #f6b93b;
-    float: left;
-    border-left: solid 2px #000;
-    margin: 30px 0px 0 0;
-  }
-  
-  #footer .footerLogo {
-    border-left: solid 0;
-  }
-  
-  #footer .footermap {
-    width: 65%;
-    text-align: left;
-  }
-  #footer .socials{
-      height:50px;
-    width:100%;
-    background-color: #f6b93b;
-    float: left;
-    padding:20px 0;
-    margin:0;
-    text-align: left;
-    border-left: 0;
-  }
-  .footermap .list {
-    width: 45%;
-    float: left;
-    margin: 0 10px;
-  }
-  
-  .list a {
-    text-decoration: none;
-    color: #000;
-    margin: 10px 0;
-  }
-  
-  .list a:hover {
-    color: #fff;
-  }
-  
-  .list li {
-    margin: 5px 0;
-    font-weight:lighter
-  }
-  
-  .list ul {
-    list-style: none;
-    margin-top: 10px;
-    margin-left:20px;
-
-  }
-  
-  .socials h3 {
-    margin-top: 0px
-  }
-
-  .uhead{
-      font-weight: bolder;
-      font-size:20px;
   }
 
 .modal {
@@ -397,7 +327,7 @@ button:focus{
 
 .forgot a{
   float:left;
-  width:50%; 
+  width:50%;
   font-size:10px;
   text-decoration: none;
   color:#000;
@@ -451,17 +381,17 @@ button:focus{
   align-items: center;
   font-size: 2em;
   }
-  
+
   #input_error_footer{
       margin-top:5px;
       color:#d1a71b;
       font-size:10px;
       display:none;
-  
+
   }
-  
-    
-  
+
+
+
 .modal-content button{
     width:50%;
     float:left;
@@ -471,17 +401,19 @@ button:focus{
     background-color:#f6b93b;
     color:#000;
   }
-  
+
   #btnCancel,.cancel{
     background-color:#000;
     color:#fff;
   }
-  
-  
+
+
   .modal-content button:hover,#btnCancel:hover{
    padding:10px 10px;
     border:solid 0;
     opacity:0.7;
-    
+
   }
-  
+
+
+

@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box
 }
@@ -125,12 +124,13 @@ text-align: left;
 #info-barnes{
   text-align: center;
   padding:50px 0;
-  
+
 }
 
 .sign-in-button button{
   background-color:transparent;
   border:0;
+  outline: none;
 }
 
 .sign-in-button button{
@@ -138,7 +138,7 @@ text-align: left;
 }
 
 #myBtn img{
-  margin-top:-5px;
+  margin-top: 5px;
 }
 
 /*
@@ -207,4 +207,3 @@ color:#000
 
 }
 */
-
