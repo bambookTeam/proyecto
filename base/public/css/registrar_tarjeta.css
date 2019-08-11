@@ -1,14 +1,31 @@
 
 
 .btn-registrar-tarjeta{
-    padding: 5px;
-    margin: 20px;
-    background-color: #76323F;
-    margin-left: 900px;
-    margin-right: 20px;
-    color: #fff;
-    cursor: pointer;
+  padding: 10px;
+  border: 2px solid #000;
+  font-size: 15px;
+  color: #fff;
+  font-weight: bold;
+  background: #000;
+  outline: none; 
+  margin: 20px;
+  float: right;
+  cursor: pointer;
 
+  
+  }
+
+  .btn-registrar-tarjeta:hover{
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: #f6b93b;
+    outline: none; 
+    margin: 20px;
+    float: right;
+    cursor: pointer;
 }
 /*pop up*/
 
