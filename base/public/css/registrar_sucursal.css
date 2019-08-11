@@ -1,0 +1,113 @@
+.hovernav{
+    text-decoration: none;
+    border-bottom: solid 2px #f6b93b;
+}
+
+
+
+
+
+
+main{
+    text-align: center;
+}
+
+h1{
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 60px;
+}
+
+#datos{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+#localizacion{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+label{
+    width: 60px;
+    text-align: left;
+    display: inline-block;
+}
+
+input{
+    width: 300px;
+    height: 30px;
+    margin: 15px;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #f6b93b;
+    background: none;
+    outline: none;
+}
+
+textarea{
+    width: 300px;
+    height: 80px;
+    margin: 0 15px;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #f6b93b;
+    background: none;
+    outline: none;
+    resize: none;
+}
+
+.input_error {
+    border-bottom: 2px #e74c3c solid !important;
+}
+
+iframe{
+    width: 350px;
+    height: 150px;
+    border-radius: 15px;
+}
+
+main button{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #000;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
+}
+
+main button:hover{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #f6b93b;
+    outline: none;
+}
+
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+footer {
+    background-color: #f6b93b;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    color: white;
+  }

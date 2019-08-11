@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil Librería</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/visualizar_perfil_libreria.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+
+<header>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <a href="#">
+        <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+            id="barnesLogo">
+    </a>
+    <div class="sign-in-button">
+        <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+    </div>
+</header>
+
+<body>
+
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent"><a class="hovernav" href="#">Librerias</a>
+                <ul class="child">
+                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li><a href="#">Géneros</a></li>
+                    <li><a href="#">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Clubes de Lectura</a>
+                <ul class="child">
+                    <li><a href="#">Ver todos los Clubes</a></li>
+                    <li><a href="#">Ver mis Clubes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="info">
+
+            <h1> <span id="txt_nombre_comercial"></span> </h1>
+    
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1915192287242!2d-84.04903608571853!3d9.918001777163246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e397932ca451%3A0xef8088362eda931!2sMultiplaza+Curridabat!5e0!3m2!1ses-419!2scr!4v1562653229172!5m2!1ses-419!2scr" width="800" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    
+            <p class="dato"> <span id="txt_direccion"></span></p>
+
+        </section>
+
+
+        <section id="sucursales">
+
+            <table id="tbl_sucursales">
+
+                <thead>
+                    <th>Sucursales</th>
+                    <th></th>
+                </thead>
+
+                <tbody>
+        
+                </tbody>
+        
+            </table>
+
+        </section>
+
+
+
+        <section id="ofertas">
+
+            <button type="button" class="btn-registrar-oferta" id="btn-registrar-oferta">Registrar Oferta</button>
+                
+            <div>
+                <img src="" alt="" id="image_preview2" width="800" height="300">
+            </div>
+
+            <div class="galerias">
+                
+                <div class="slideshow-container" id="daddy">
+                    <p>Ofertas</p>
+    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+    
+            </div>
+
+            <div class="contenedor">
+
+                <div class="overlay" id="overlay">
+                    
+                    <div class="popup" id="popup">
+
+                        <span class="close" id="cerrar">&times;</span>
+                        
+                        <section>
+                            
+                            <div class="contenedor-inputs">
+
+                                <form>
+
+                                    <div class="subir_imagen">
+
+                                        <label for="">Archivo a subir:</label>
+                                        <figure class="image_holder">
+                                            <img src="imgs/noimage.png" alt="seleccionar imagen" id="image_preview">
+                                        </figure>
+                                        
+                                        
+                                        <button type="button" id="btn_seleccionar_imagen" class="boton_subir_imagen">Seleccionar Imagen </button>
+                                        <button type="button" id="subir_oferta" class="btn_subir_oferta">Subir Oferta </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer></footer>
+
+    <script src="js/jquery-3.3.1.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+
+    <script src="js/servicio_librerias.js"></script>
+    <script src="js/servicio_oferta.js"></script>
+    <script src="js/servicio_sucursales.js"></script>
+
+
+    <script src="js/controlador_perfil_libreria.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
+    <script src="js/controlador_listar_sucursales.js"></script>
+    <script src="js/controlador_registrar_oferta.js"></script>
+    <script src="js/controlador_listarofertas.js"></script>
+
+
+
+
+
+    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js'
+        type='text/javascript'></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="js/servicio_img_prevista.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/getNombre.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
+
+
+</body>
+
+</html>

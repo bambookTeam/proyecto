@@ -1,0 +1,104 @@
+.hovernav{
+    text-decoration: none;
+    border-bottom: solid 2px #f6b93b;
+}
+
+
+
+
+
+
+
+main{
+    text-align: center;
+}
+
+h1{
+    color: #f6b93b;
+    font-size: 30px;
+    margin: 60px;
+    font-weight: bold;
+}
+
+label{
+    color: #000;
+    font-size: 20px;
+}
+
+input{
+    width: 30%;
+    height: 30px;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    background: none;
+    outline: none;
+}
+
+main a{
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+    margin: 15px;
+    background: none;
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
+
+main a:hover{
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #f6b93b;
+    font-weight: bold;
+    margin: 15px;
+    background: none;
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
+
+main button{
+    padding: 10px;
+    border: 1px solid #f6b93b;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: #f6b93b;
+    outline: none; 
+}
+
+main button:hover{
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+th, td {
+    text-align: left;
+    padding: 15px;
+}
+  
+tr:nth-child(even){background-color: #f2f2f2}
+  
+th {
+    background-color: #f6b93b;
+    color: white;
+}
