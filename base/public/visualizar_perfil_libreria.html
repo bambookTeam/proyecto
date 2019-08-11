@@ -8,11 +8,8 @@
     <title>Perfil Librería</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/visualizar_perfil_libreria.css">
-    <link rel="stylesheet" href="css/registrar_oferta.css">
-    <link rel="stylesheet" href="css/listar_sucursales.css">
     <link rel="stylesheet" href="css/navbar.css">
 </head>
-
 
 <header>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -25,8 +22,6 @@
         <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
     </div>
 </header>
-
-
 
 <body>
 
@@ -53,15 +48,18 @@
         </ul>
     </nav>
 
-
-
     <main>
 
-        <h1> <span id="txt_nombre_comercial"></span> </h1>
+        <section id="info">
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1915192287242!2d-84.04903608571853!3d9.918001777163246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e397932ca451%3A0xef8088362eda931!2sMultiplaza+Curridabat!5e0!3m2!1ses-419!2scr!4v1562653229172!5m2!1ses-419!2scr" width="800" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <h1> <span id="txt_nombre_comercial"></span> </h1>
+    
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1915192287242!2d-84.04903608571853!3d9.918001777163246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e397932ca451%3A0xef8088362eda931!2sMultiplaza+Curridabat!5e0!3m2!1ses-419!2scr!4v1562653229172!5m2!1ses-419!2scr" width="800" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    
+            <p class="dato"> <span id="txt_direccion"></span></p>
 
-        <p class="dato"> <span id="txt_direccion"></span></p>
+        </section>
+
 
         <section id="sucursales">
 
@@ -83,28 +81,34 @@
 
 
         <section id="ofertas">
-                <button type="button" class="btn-registrar-oferta" id="btn-registrar-oferta">Registrar Oferta</button>
-                <div>
-                        <img src="" alt="" id="image_preview2" width="800" height="300">
+
+            <button type="button" class="btn-registrar-oferta" id="btn-registrar-oferta">Registrar Oferta</button>
+                
+            <div>
+                <img src="" alt="" id="image_preview2" width="800" height="300">
+            </div>
+
+            <div class="galerias">
+                
+                <div class="slideshow-container" id="daddy">
+                    <p>Ofertas</p>
+    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
-
-                <div class="galerias">
-                        <div class="slideshow-container" id="daddy">
-                            <p>Ofertas</p>
     
-                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                        </div>
-    
-                    </div>
+            </div>
 
-                <div class="contenedor">
+            <div class="contenedor">
 
-                    <div class="overlay" id="overlay">
-                        <div class="popup" id="popup">
+                <div class="overlay" id="overlay">
+                    
+                    <div class="popup" id="popup">
 
-                            <span class="close" id="cerrar">&times;</span>
-                          <section>
+                        <span class="close" id="cerrar">&times;</span>
+                        
+                        <section>
+                            
                             <div class="contenedor-inputs">
 
                                 <form>
