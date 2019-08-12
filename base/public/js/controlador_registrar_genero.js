@@ -16,7 +16,7 @@ var btnRegistrargenero = document.getElementById('btn-registrar-genero'),
 cerrarpopup.addEventListener('click', function () {
     overlay.classList.remove('active');
     popup.classList.add('remove');
-    cleanupFormTarjetas();
+    cleanupFormGenero();
 
 });
 
