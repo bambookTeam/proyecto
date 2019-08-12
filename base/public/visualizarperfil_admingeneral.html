@@ -7,7 +7,6 @@
   <title>Perfil Administrador General</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/visualizarperfil_adminge.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/perfil_admin.css">
 
@@ -50,12 +49,14 @@
         </header>
 
 
+        <div class="izquierda">
 
 
         <p><span id="avatar"></span></p>
-        <p>Usuario: <span id="txt_primerNombre"></span></p>
-        <p>Primer Apellido: <span id="txt_primerApellido"></span></p>
-        <p>Identificación: <span id="txt_identificacion"></span></p>
+
+        <div class="derecha">
+        <p>Usuario: <span id="txt_usuario"></span></p>
+        <p>Contraseña: <span id="txt_contrasena"></span></p>
         <p>Correo: <span id="txt_correo"></span></p>
    
 
@@ -68,7 +69,6 @@
 
     <script src="js/jquery-3.3.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/servicio_admingeneral.js"></script>
     <script src="js/servicio_usuario.js"></script>
     <script src="js/controlador_visualizaradmingeneral.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>
