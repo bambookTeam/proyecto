@@ -4,7 +4,7 @@
 
 let modal = document.getElementById("RegistrarClubScreen");
 
-let btn = document.getElementById("btnRegistrarClub");
+
 let btnCancelClub = document.getElementById("btnCancelClub");
 let btnCrearClub = document.getElementById("btnCrearClub");
 
@@ -24,9 +24,7 @@ let yyyy = today.getFullYear();
 
 today = yyyy + '-' + mm + '-' + dd;
 
-btn.onclick = function () {
-    modal.style.display = "block";
-}
+
 
 let showSelects = async() => {
 
@@ -112,25 +110,6 @@ let showSelects = async() => {
 }
 
 window.addEventListener('load', showSelects);
-
-btnCancelClub.onclick = function () {
-    modal.style.display = "none";
-    cleanupFormClubes();
-
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-    cleanupFormClubes();
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-        cleanupFormClubes();
-    }
-}
 
 
 let cleanupFormClubes = () => {
@@ -247,12 +226,10 @@ btnCrearClub.onclick = function () {
     if (error == false) {
        
         registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,idAdminClub);
-        modal.style.display = "none";
         cleanupFormClubes();
-        document.location.reload();
-
+        
     } else {
-        document.getElementById('modal-content').style.height = "640px";
+        
     }
 
 }
