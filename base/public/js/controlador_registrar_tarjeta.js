@@ -8,7 +8,9 @@ var btnRegistrartarjeta = document.getElementById('btn-registrar-tarjeta'),
     input_codigocvv = document.querySelector('#txt-codigocvv');
      
 
-var today = new Date();
+var fechadevencimiento = new Date(input_fechavencimiento.value);
+
+var today= new Date();
 var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
@@ -46,6 +48,13 @@ let validar = (pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
         input_fechavencimiento.classList.add('input_error');
     } else {
         input_fechavencimiento.classList.remove('input_error');
+        if(Date.parse(input_fechavencimiento.value) < Date.parse(today)){
+            error=true;
+            input_fechavencimiento.classList.add('input_error');
+        }else{
+            input_fechavencimiento.classList.remove('input_error');
+
+        }
 
     }
 
