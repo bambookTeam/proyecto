@@ -7,11 +7,13 @@
 
 .club{
     width:440px;
-    border:solid 2px #000;
     float:left;
     margin:10px;
     height:395px;
     text-align: center;
+    -webkit-box-shadow: -3px -1px 5px 3px rgba(0,0,0,0.27);
+    -moz-box-shadow: -3px -1px 5px 3px rgba(0,0,0,0.27);
+    box-shadow: -3px -1px 5px 3px rgba(0,0,0,0.27);
 }
 
 .mi-club{
@@ -30,10 +32,10 @@
 
 .club button{
     width:100%;
-    margin-top:3px;
-    border:solid 1px #000;
+    margin-top:9px;
     color:#fff;
     background-color:#000;
+    opacity:0.6;    
     padding:9px 0;
 }
 
@@ -42,12 +44,14 @@
     margin-top:32px;
     border:solid 1px #000;
     color:#fff;
-    background-color:#000;
+    opacity:0.6;
+    
     padding:9px 0;
 }
 
 .club button:hover,.mi-club button:hover{
-    opacity:0.6;
+    background-color:#000;
+    opacity:1;
 }
 
 .club h1,.mi-club h1{
@@ -56,6 +60,7 @@
     background-color:#f6b93b;
     padding:120px 0 20px 0;
     margin-top:-132px;
+
 }
 
 .club p,.mi-club p{

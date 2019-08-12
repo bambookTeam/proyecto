@@ -226,12 +226,10 @@ btnCrearClub.onclick = function () {
     if (error == false) {
        
         registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,idAdminClub);
-        modal.style.display = "none";
         cleanupFormClubes();
-        document.location.reload();
-
+        document.replace('%20clubLectura.html');
     } else {
-        document.getElementById('modal-content').style.height = "640px";
+        
     }
 
 }

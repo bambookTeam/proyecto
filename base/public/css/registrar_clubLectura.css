@@ -4,8 +4,7 @@ body {
   
   .sign-in {
     width: 90%;
-    margin: auto;
-    margin-left:20px;
+    margin-left:10px auto 39px 20px;
   }
   .line{
     background-color: #f6b93b;
@@ -31,6 +30,9 @@ body {
     padding:10px;
      margin:10px 0;
      margin-left:20px;
+     appearance: none;
+     height:30px;
+     background-color:#fff;
   }
   
   label{
@@ -40,6 +42,7 @@ body {
   .btnsForm{
     float:right;
     margin-right:10px;
+    margin-bottom:30px;
   }
   
   .btnsForm button{
@@ -58,6 +61,16 @@ body {
   
   .error{
     display:none;
+    color:red;
+    margin:20px;
+    font-size:10px;
+  }
+
+
+  .input_error{
+  
+      border:solid 2px red;
   }
   
+
   
