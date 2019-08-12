@@ -227,7 +227,7 @@ btnCrearClub.onclick = function () {
        
         registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,idAdminClub);
         cleanupFormClubes();
-        document.replace('%20clubLectura.html');
+        
     } else {
         
     }

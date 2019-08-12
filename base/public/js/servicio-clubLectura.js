@@ -1,6 +1,8 @@
 'use strict';
 
-let registrarClub = (pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, pFrecuencia, ptema, pgenero,pcategoria,plibreria,psucursal,pidAdmin) => {
+let registrarClub = (pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, pFrecuencia, ptema, pgenero, pcategoria, plibreria, psucursal, pidAdmin) => {
+    let pestado=1;
+    
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-clubLectura',
@@ -18,12 +20,12 @@ let registrarClub = (pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, p
             libreria: plibreria,
             sucursal: psucursal,
             idAdmin: pidAdmin,
-            estado: 1
+            estado: pestado
         }
     });
 };
 
-let obtenerClubes = async() =>{
+let obtenerClubes = async () => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -39,15 +41,15 @@ let obtenerClubes = async() =>{
 };
 
 
-let obtenerClubId = async(_id) =>{
-    try{
-        const response=await axios({
-            method:'get',
+let obtenerClubId = async (_id) => {
+    try {
+        const response = await axios({
+            method: 'get',
             url: `http://localhost:4000/api/buscar-clubLectura-id/${_id}`,
-            responseType:JSON
+            responseType: JSON
         });
         return response.data.club;
-    }catch (error){
+    } catch (error) {
         console.log(error);
     }
 }

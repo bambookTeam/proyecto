@@ -17,7 +17,7 @@ let clubLectura_schema = new mongoose.Schema({
     libreria: {type: String, required:true, unique:false},
     sucursal: {type: String, required:true, unique:false},
     idAdmin: {type: String, required:true, unique:false},
-    estado: {type:String, required:true,unique:false}
+    estado: {type:Number, required:true,unique:false}
 });
 
 module.exports = mongoose.model('ClubLectura', clubLectura_schema);
