@@ -187,5 +187,6 @@ let saludar = () => {
 
 };
 
+
 boton_registrar.addEventListener('click', saludar);
 
