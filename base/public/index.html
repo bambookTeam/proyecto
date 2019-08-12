@@ -34,270 +34,270 @@
 </header>
 
 
-    <body>
+<body>
 
-        <nav class="nav-menu">
-            <ul>
-                <li class="parent"><a href="#">Librerías</a>
-                    <ul class="child">
-                        <li><a href="#">Sucursales</a></li>
-                        <li><a href="#">Ofertas</a></li>
-                    </ul>
-                </li>
-                <li class="parent" id="dropdown"><a href="#">Libros</a>
-                    <ul class="child">
-                        <li><a href="listar_genero.html">Géneros</a></li>
-                        <li><a href="#">Categorías</a></li>
-                    </ul>
-                </li>
-                <li class="parent" id="dropdown"><a href="#">Clubes de Lectura</a>
-                    <ul class="child">
-                        <li><a href="#">Buscar Clubes</a></li>
-                        <li><a href="#">Mis Clubes</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent"><a href="#">Librerías</a>
+                <ul class="child">
+                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li><a href="listar_genero.html">Géneros</a></li>
+                    <li><a href="#">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Clubes de Lectura</a>
+                <ul class="child">
+                    <li><a href="#">Buscar Clubes</a></li>
+                    <li><a href="#">Mis Clubes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
 
-        <section id="banner">
-            <div class="bannerContent">
-                <h1>Vienes buscando un libro y te vas siendo parte de una<span> familia </span>!</h1>
-                <button> Registrarme </button>
-                <button> Iniciar Sesión </button>
+    <section id="banner">
+        <div class="bannerContent">
+            <h1>Vienes buscando un libro y te vas siendo parte de una<span> familia </span>!</h1>
+            <button> Registrarme </button>
+            <button> Iniciar Sesión </button>
+        </div>
+    </section>
+
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content" id="signinpopup">
+            <span class="close">&times;</span>
+            <div class="sign-in">
+                <h1>Inicio</h1>
+                <img src="https://img.icons8.com/dotty/2x/user.png">
+                <div class="line"></div>
+                <form action="" id="formulario">
+                    <label for="usuario">Correo</label>
+                    <input id="txt-username" type="text" placeholder="Correo" id="usuario">
+
+                    <label for="pw">Contraseña</label>
+                    <input id="txt-contrasena" type="password" placeholder="Contraseña" id="pw">
+                </form>
+
             </div>
-        </section>
-
-
-        <div id="myModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content" id="signinpopup">
-                <span class="close">&times;</span>
-                <div class="sign-in">
-                    <h1>Inicio</h1>
-                    <img src="https://img.icons8.com/dotty/2x/user.png">
-                    <div class="line"></div>
-                    <form action="" id="formulario">
-                        <label for="usuario">Correo</label>
-                        <input id="txt-username" type="text" placeholder="Correo" id="usuario">
-
-                        <label for="pw">Contraseña</label>
-                        <input id="txt-contrasena" type="password" placeholder="Contraseña" id="pw">
-                    </form>
-
-                </div>
-                <div id="rellene">
-                    <p>Por favor revise los espacios en rojo e intente de nuevo</p>
-                </div>
-                <div class="botones">
-                    <button id="btnCancel">Cancelar</button>
-                    <button id="btnSignIn">Sign In</button>
-                </div>
-                <div class="forgot">
-                    <a href="">Olvidé mi contraseña</a>
-                    <a href="registrar_cliente.html">Registrarme</a>
-                </div>
+            <div id="rellene">
+                <p>Por favor revise los espacios en rojo e intente de nuevo</p>
             </div>
-
+            <div class="botones">
+                <button id="btnCancel">Cancelar</button>
+                <button id="btnSignIn">Sign In</button>
+            </div>
+            <div class="forgot">
+                <a href="">Olvidé mi contraseña</a>
+                <a href="registrar_cliente.html">Registrarme</a>
+            </div>
         </div>
 
-
-        <section id="info-barnes">
-            <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png">
-        </section>
-
-        
-        <section id="categories">
-            <h1>Categorías</h1>
-            <div class="category">
-                <a href=""> <img src="https://img.icons8.com/wired/64/000000/paint-brush.png" width="56px'"></a>
-                <p>Arte</p>
-            </div>
-            <div class="category">
-                <img src="https://img.icons8.com/ios/50/000000/science-application.png" width="56px'">
-                <p>Ciencia</p>
-            </div>
-            <div class="category">
-                <img src="https://img.icons8.com/ios/50/000000/cooking-pot.png" width="56px'">
-                <p>Cocina</p>
-            </div>
-            <div class="category">
-                <img src="https://img.icons8.com/ios/50/000000/dragon.png" width="56px'">
-                <p>Fantasía</p>
-            </div>
-            <div class="category">
-                <img src="https://img.icons8.com/metro/52/000000/ledger.png" width="56px'">
-                <p>Economía</p>
-            </div>
-        </section>
+    </div>
 
 
-        <section id="booklists">
-            <div class="lists">
-                <div class="best-rated">
-                    <h2>Mejor calificados</h2>
-                    <div class="line"></div>
-                    <img src="https://images.penguinrandomhouse.com/cover/9780399585050" alt="">
-                    <button>Ver Todos</button>
-                </div>
-                <div class="most-sold">
-                    <h2>Más Vendidos</h2>
-                    <div class="line"></div>
-                    <img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/creative_bookcover.png" alt="">
-                    <button>Ver Todos</button>
-                </div>
-                <div class="best-rated">
-                    <h2>Ver por Géneros</h2>
-                    <div class="line"></div>
-                    <img src="https://dbrbooks.files.wordpress.com/2014/07/eyeofstorm.jpg" alt="">
-                    <button>Ver Todos</button>
-                </div>
-                <div class="best-rated">
-                    <h2>Ver por Categorías</h2>
-                    <div class="line"></div>
-                    <img src="https://idobookcovers.com/wp-content/uploads/2017/01/Music-Book-Cover-Design.jpg" alt="">
-                    <button>Ver Todos</button>
-                </div>
+    <section id="info-barnes">
+        <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png">
+    </section>
+
+
+    <section id="categories">
+        <h1>Categorías</h1>
+        <div class="category">
+            <a href=""> <img src="https://img.icons8.com/wired/64/000000/paint-brush.png" width="56px'"></a>
+            <p>Arte</p>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/ios/50/000000/science-application.png" width="56px'">
+            <p>Ciencia</p>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/ios/50/000000/cooking-pot.png" width="56px'">
+            <p>Cocina</p>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/ios/50/000000/dragon.png" width="56px'">
+            <p>Fantasía</p>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/metro/52/000000/ledger.png" width="56px'">
+            <p>Economía</p>
+        </div>
+    </section>
+
+
+    <section id="booklists">
+        <div class="lists">
+            <div class="best-rated">
+                <h2>Mejor calificados</h2>
+                <div class="line"></div>
+                <img src="https://images.penguinrandomhouse.com/cover/9780399585050" alt="">
+                <button>Ver Todos</button>
             </div>
-            <div class="banneroferta">
-                <h3>La lectura nos regala mucha compañía, libertad para ser de otra manera y ser más.</h3>
-                <p>- Pedro Laín Entralgo</p>
+            <div class="most-sold">
+                <h2>Más Vendidos</h2>
+                <div class="line"></div>
+                <img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/creative_bookcover.png" alt="">
+                <button>Ver Todos</button>
             </div>
-        </section>
-
-
-        <section id="genres">
-            <h1>Géneros</h1>
-            <div class="category">
-                <img src="https://img.icons8.com/ios/50/000000/sci-fi.png" width="56px'">
-                <p>Sci-Fi</p>
+            <div class="best-rated">
+                <h2>Ver por Géneros</h2>
+                <div class="line"></div>
+                <img src="https://dbrbooks.files.wordpress.com/2014/07/eyeofstorm.jpg" alt="">
+                <button>Ver Todos</button>
             </div>
-            <div class="category">
-                <img src="https://img.icons8.com/ios-filled/50/000000/love-book.png" width="56px'">
-                <p>Romance</p>
+            <div class="best-rated">
+                <h2>Ver por Categorías</h2>
+                <div class="line"></div>
+                <img src="https://idobookcovers.com/wp-content/uploads/2017/01/Music-Book-Cover-Design.jpg" alt="">
+                <button>Ver Todos</button>
             </div>
-            <div class="category">
-                <img src="https://img.icons8.com/ios/50/000000/drama.png" width="56px'">
-                <p>Drama</p>
+        </div>
+        <div class="banneroferta">
+            <h3>La lectura nos regala mucha compañía, libertad para ser de otra manera y ser más.</h3>
+            <p>- Pedro Laín Entralgo</p>
+        </div>
+    </section>
+
+
+    <section id="genres">
+        <h1>Géneros</h1>
+        <div class="category">
+            <img src="https://img.icons8.com/ios/50/000000/sci-fi.png" width="56px'">
+            <p>Sci-Fi</p>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/ios-filled/50/000000/love-book.png" width="56px'">
+            <p>Romance</p>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/ios/50/000000/drama.png" width="56px'">
+            <p>Drama</p>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/wired/64/000000/children.png" width="56px'">
+            <p>Infantil</p>
+        </div>
+        <div class="category">
+            <img src="https://img.icons8.com/pastel-glyph/64/000000/thriller.png" width="56px'">
+            <p>Thriller</p>
+        </div>
+    </section>
+
+
+    <section class="whybarnes">
+        <h1> ¿Por qué elegir Barnes & Noble? </h1>
+        <div class="facts">
+            <div class="fact">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Tg6Y8y7xHdm4is_pxG-XsK7PTdqaQ1qO9w2crleT8hO8t0dQFQ"
+                    width="200px">
+                <h5> Fácil </h5>
+                <p>Tan fácil como 1,2,3. </p>
+                <p> Así de fácil puedes elegir tus libros y adquirirlos cuando así desees.</p>
             </div>
-            <div class="category">
-                <img src="https://img.icons8.com/wired/64/000000/children.png" width="56px'">
-                <p>Infantil</p>
+            <div class="fact">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/dolly-512.png" width="200px">
+                <h5> Rápido </h5>
+                <p> Tu copia digital podrá estar disponible tan pronto lo compres. Tu libro físico llegará en 1 a 3
+                    días </p>
             </div>
-            <div class="category">
-                <img src="https://img.icons8.com/pastel-glyph/64/000000/thriller.png" width="56px'">
-                <p>Thriller</p>
+            <div class="fact">
+                <img src="https://docksidephysio.com/wp-content/uploads/2018/08/book-icon.png" width="200px">
+                <h5> Variado </h5>
+                <p>Varios géneros, categorías, colecciones, autores, nacionalidades, etc... </p>
+                <p>Tú eliges lo que quieres y nosotros te lo brindamos</p>
             </div>
-        </section>
+        </div>
+    </section>
 
 
-        <section class="whybarnes">
-            <h1> ¿Por qué elegir Barnes & Noble? </h1>
-            <div class="facts">
-                <div class="fact">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Tg6Y8y7xHdm4is_pxG-XsK7PTdqaQ1qO9w2crleT8hO8t0dQFQ"
-                        width="200px">
-                    <h5> Fácil </h5>
-                    <p>Tan fácil como 1,2,3. </p>
-                    <p> Así de fácil puedes elegir tus libros y adquirirlos cuando así desees.</p>
-                </div>
-                <div class="fact">
-                    <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/dolly-512.png" width="200px">
-                    <h5> Rápido </h5>
-                    <p> Tu copia digital podrá estar disponible tan pronto lo compres. Tu libro físico llegará en 1 a 3
-                        días </p>
-                </div>
-                <div class="fact">
-                    <img src="https://docksidephysio.com/wp-content/uploads/2018/08/book-icon.png" width="200px">
-                    <h5> Variado </h5>
-                    <p>Varios géneros, categorías, colecciones, autores, nacionalidades, etc... </p>
-                    <p>Tú eliges lo que quieres y nosotros te lo brindamos</p>
-                </div>
-            </div>
-        </section>
+    <section id="ofertas">
+        <h1>Ofertas </h1>
+
+    </section>
 
 
-        <section id="ofertas">
-            <h1>Ofertas </h1>
-            
-        </section>
+    <section id="footer">
 
+        <div class="footerLogo">
+            <img src="imgs/panda_negro.png" width="150px">
+        </div>
+        <div class="footermap">
 
-        <section id="footer">
-
-            <div class="footerLogo">
-                <img src="imgs/panda_negro.png" width="150px">
-            </div>
-            <div class="footermap">
-
-                <div class="list">
+            <div class="list">
+                <ul>
+                    <li class="uhead"><a href="">Librerías</a></li>
                     <ul>
-                        <li class="uhead"><a href="">Librerías</a></li>
-                        <ul>
-                            <li><a href="">Ver las librerías</a></li>
-                            <li><a href="">Registrar mi librería</a></li>
-                            <li><a href="">Sucursales</a></li>
-                            <li><a href="">Ofertas</a></li>
-                        </ul>
+                        <li><a href="">Ver las librerías</a></li>
+                        <li><a href="">Registrar mi librería</a></li>
+                        <li><a href="">Sucursales</a></li>
+                        <li><a href="">Ofertas</a></li>
                     </ul>
- 
-                </div>
+                </ul>
 
-                <div class="list">
-
-                        <ul>
-                            <li class="uhead"><a href="" >Libros</a></li>
-                            <ul>
-                                <li><a href="">Ver todos los libros</a></li>
-                                <li><a href="">Categorías</a></li>
-                                <li><a href="">Géneros</a></li>
-                                <li><a href="">Más Vendidos</a></li>
-                                <li><a href="">Mejor Calificados</a></li>
-                            </ul>
-                        </ul>
-                </div>
-
-                <div class="list">
-                    <ul>
-                        <li class="uhead"><a href="">Clubes de Lectura</a></li>
-                        <ul>
-                            <li><a href="">Ver los clubes</a></li>
-                            <li><a href="">Crear mi club</a></li>
-                            <li><a href="">Unirme a un club</a></li>
-                            <li><a href="">Ver mis clubes</a></li>
-                        </ul>
-                    </ul>
-                </div>
             </div>
 
-            <div class="socials">
-                <img src="https://img.icons8.com/ios-filled/40/000000/horizontal-line.png">
+            <div class="list">
 
-                <img src="https://img.icons8.com/ios-filled/40/000000/facebook-new.png">
+                <ul>
+                    <li class="uhead"><a href="">Libros</a></li>
+                    <ul>
+                        <li><a href="">Ver todos los libros</a></li>
+                        <li><a href="">Categorías</a></li>
+                        <li><a href="">Géneros</a></li>
+                        <li><a href="">Más Vendidos</a></li>
+                        <li><a href="">Mejor Calificados</a></li>
+                    </ul>
+                </ul>
+            </div>
 
-                <img src="https://img.icons8.com/ios-filled/40/000000/instagram-new.png">
+            <div class="list">
+                <ul>
+                    <li class="uhead"><a href="">Clubes de Lectura</a></li>
+                    <ul>
+                        <li><a href="">Ver los clubes</a></li>
+                        <li><a href="">Crear mi club</a></li>
+                        <li><a href="">Unirme a un club</a></li>
+                        <li><a href="">Ver mis clubes</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
 
-                <img src="https://img.icons8.com/windows/40/000000/twitter.png">
+        <div class="socials">
+            <img src="https://img.icons8.com/ios-filled/40/000000/horizontal-line.png">
 
-                <img src="https://img.icons8.com/ios-filled/40/000000/horizontal-line.png">
-                                    
-                <div class="line-soc"></div>
-                <div>
-                    <!--
+            <img src="https://img.icons8.com/ios-filled/40/000000/facebook-new.png">
+
+            <img src="https://img.icons8.com/ios-filled/40/000000/instagram-new.png">
+
+            <img src="https://img.icons8.com/windows/40/000000/twitter.png">
+
+            <img src="https://img.icons8.com/ios-filled/40/000000/horizontal-line.png">
+
+            <div class="line-soc"></div>
+            <div>
+                <!--
 
                 <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
 
               <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
               <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!-->
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
 
 
-        <!--
+    <!--
 
 
       <table>
