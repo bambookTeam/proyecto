@@ -17,12 +17,7 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_libros[i]['edicion'];
         fila.insertCell().innerHTML = lista_libros[i]['genero'];
         fila.insertCell().innerHTML = lista_libros[i]['anno'];
-        // fila.insertCell().innerHTML = lista_libros[i]['editorial'];
-        // fila.insertCell().innerHTML = lista_libros[i]['idioma'];
-        // fila.insertCell().innerHTML = lista_libros[i]['isbn'];
-        // fila.insertCell().innerHTML = lista_libros[i]['tipo'];
-        // fila.insertCell().innerHTML = lista_libros[i]['cantidad'];
-        // fila.insertCell().innerHTML = lista_libros[i]['precio'];
+        
 
         // let img = document.createElement('img');
         // img.setAttribute('src', lista_libros[i]['imagen']);
@@ -63,13 +58,7 @@ let filtrar_tabla = async () => {
             fila.insertCell().innerHTML = lista_libros[i]['edición'];
             fila.insertCell().innerHTML = lista_libros[i]['genero'];
             fila.insertCell().innerHTML = lista_libros[i]['año'];
-            // fila.insertCell().innerHTML = lista_libros[i]['editorial'];
-            // fila.insertCell().innerHTML = lista_libros[i]['idioma'];
-            // fila.insertCell().innerHTML = lista_libros[i]['isbn'];
-            // fila.insertCell().innerHTML = lista_libros[i]['tipo'];
-            // fila.insertCell().innerHTML = lista_libros[i]['existencia'];
-            // fila.insertCell().innerHTML = lista_libros[i]['precio'];
-            // fila.insertCell().innerHTML = lista_libros[i]['portada'];
+    
 
             // let img = document.createElement('img');
             // img.setAttribute('src', lista_libros[i]['imagen']);
