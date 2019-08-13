@@ -1,4 +1,26 @@
-.avatar-admin {
-    height: 250px;
+main{
+    display: flow-root;
+    margin-top: 50px;
+}
+
+.izquierda{
+    float: left;
+    padding: 20px;
+    text-align: center;
+    width: 400px;
+}
+
+.derecha{
+    padding: 20px;
+    float: left;
+    border-left: #76323F solid 1px;
+
+}
+
+
+.dato{
+    color: #76323F;
+    font-size: 20px;
+    margin: 30px;
 }
 

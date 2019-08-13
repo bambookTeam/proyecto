@@ -13,74 +13,99 @@
 </head>
 
 <header>
-    <nav>
-      <div class="logoBambooks">
-        <a href="inicioCliente.html"><img
-            src="imgs/panda_grain.png"
-            alt="" width="40px"></a>
+  <nav>
+    <div class="logoBambooks">
+      <a href="inicioCliente.html"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
+    </div>
+    <div class="nav-container">
+      <a href="listar_librerias_admins.html" id="optionNavLibrerias">Librerias</a>
+      <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
+      <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
+      <a href="listar_libros.html" id="optionNavLibros">Libros</a>
+      <a href="listar-autores.html" id="optionNavAutores">Autores</a>
+      <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
+      <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
+      <a href="listar_tarjetas.html">Tarjetas</a>
+      <a href="#" id="optionIntercambio">Intercambios</a>
+      <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
+    </div>
+    <div class="optionsNav">
+      <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
       </div>
-      <div class="nav-container">
-        <a href="listar_librerias_admins.html" id="optionNavLibrerias">Librerias</a>
-        <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
-        <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
-        <a href="listar_libros.html" id="optionNavLibros">Libros</a>
-        <a href="listar-autores.html" id="optionNavAutores">Autores</a>
-        <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
-        <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
-        <a href="listar_tarjetas.html">Tarjetas</a>
-        <a href="#" id="optionIntercambio">Intercambios</a>
-        <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
-      </div>
-      <div class="optionsNav">
-          <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-        <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
-        <button id="btn_cerrar">Cerrar Sesion</button>
-      </div>
-    </nav>
-  </header>
+      <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
+      <button id="btn_cerrar">Cerrar Sesion</button>
+    </div>
+  </nav>
+</header>
+
 <body>
 
-    <button id="btn_regresar" onclick="goBack()">Regresar</button >
-
-<div class="contenedor-perfil">
 
 
-  <div id="portada">
+  <div class="contenedor-perfil">
+
+
+    <!-- <div id="portada">
     <img src="" alt="" id="imagen">
-  </div>
+  </div> -->
+    <div>
+      <!-- Slideshow container -->
+      <div id="contenedor_portada">
 
-  <div class="infoPerfil">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 2</div>
+          <img src="" alt="" id="imagen" width="500px" height="625px">
+        </div>
 
-    <section id="contenedor_titulo">
-      <h1 id=""> <span id="txt_titulo"></span></h1>
-    </section>
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 2</div>
+          <img src="" alt="" id="imagen" width="500px" height="225px">
+        </div>
 
-    <section id="contenedor_infoLibro">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-      <div id="infoLibro">
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+
+      </div>
+    </div>
+
+    <div class="infoPerfil">
+
+      <section id="contenedor_titulo">
+        <h1 id=""> <span id="txt_titulo"></span></h1>
+      </section>
+
+      <section id="contenedor_infoLibro">
+
+        <div id="infoLibro">
           <p>Edición:<span id="txt_edicion"></span></p>
           <p>Editorial: <span id="txt_editorial"></span></p>
-          <p>Autor:  <span id="txt_autor"></span></p>
+          <p>Autor: <span id="txt_autor"></span></p>
           <p>Año edición: <span id="txt_anno"></span></p>
-          <p>Idioma:  <span id="txt_idioma"></span></p>
+          <p>Idioma: <span id="txt_idioma"></span></p>
           <p>ISBN: <span id="txt_isbn"></span></p>
           <p>Género: <span id="txt_genero"></span></p>
           <p>Tipo: <span id="txt_tipo"></span></p>
-      </div>
-       
-    </section>
-    
+        </div>
 
+      </section>
+
+
+    </div>
   </div>
-</div>
 
 
-<footer></footer>
+  <footer></footer>
 
 
 
@@ -90,11 +115,5 @@
   <script src="js/controlador_perfil_libro.js"></script>
   <script src="js/getNombre.js"></script>
   <script src="js/controlador_cerrar_sesion.js"></script>
-  <script>
-      function goBack() {
-        window.history.back();
-      }
-      </script>
-</body>
 
 </html>

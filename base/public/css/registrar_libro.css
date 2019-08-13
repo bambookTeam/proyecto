@@ -1,71 +1,107 @@
-body{
-    width: 1024px;
-    margin: auto;
-}
-nav{
-    height: 50px;
-    background-color: #76323F;
-}
-
-nav img{
-    height: 40px;
-    margin-top: 5px;
-    margin-left: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    float: right;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a{
+.hovernav{
     text-decoration: none;
-    display: inline-block;
-    padding: 5px;
-    margin: 10px;
-    color: #D7CEC7;
+    border-bottom: solid 2px #f6b93b;
 }
-main{
 
+main{
     text-align: center;
 }
 
 h1{
-    color: #76323F;
+    color: #000;
     font-size: 30px;
+    margin: 60px;
     font-weight: bold;
-    margin: 30px;
+}
+
+label{
+    color: #000;
+    font-size: 20px;
+}
+
+input{
+    width: 30%;
+    height: 30px;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid #000;
+    background: none;
+    outline: none;
+}
+
+main a{
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+    margin: 15px;
+    background: none;
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
+
+main a:hover{
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #f6b93b;
+    font-weight: bold;
+    margin: 15px;
+    background: none;
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
+
+main button{
+    padding: 10px;
+    border: 1px solid #f6b93b;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: #f6b93b;
+    outline: none; 
+}
+
+main button:hover{
+    padding: 10px;
+    border: 1px solid #000;
+    /* border-radius: 15px; */
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
 }
 
 
-/* Estilos d el formulario */
+
+/* Estilos del formulario */
 #sct_formulario {
     display: inline-block;
     margin: 20%;
     margin-top: 5%;
     margin-left: 25%;
     text-align: left;
-    font-size: 25px;
+    font-size: 20px;
 }
 #sct_formulario input{
     width: 300px;
     margin: 10px;
     border: none;
-    border-bottom: 1px solid #76323F;
-    font-size: 25px;
+    border-bottom: 1px solid #000;
+    font-size: 20px;
 }
 #sct_formulario select{
     width: 300px;
     margin: 10px;
     border: none;
-    border-bottom: 1px solid #76323F;
-    font-size: 25px;
+    border-bottom: 1px solid #000;
+    font-size: 20px;
 }
 
 
@@ -80,12 +116,11 @@ h1{
 
 
 .boton-registrar{
-    margin: 50px 0;
+    margin: 20px;
     padding: 10px;
-    border: 2px solid #76323F;
-    border-radius: 15px;
+    border: 2px solid #000;
     font-size: 20px;
-    color: #76323F;
+    color: #000;
     font-weight: bold;
     background: none;
     outline: none;
@@ -96,27 +131,23 @@ h1{
 .subir_imagen{
     height: 250px;
     width: 150px;
-    border: solid 1px #76323F;
-    border-radius: 15px;
+    border: solid 1px #000;
     display: inline-block;
 }
 .portada{
     height: 220px;
     width: 150px;
-    border-radius: 15px 15px 0 0;
 }
 #img_preview{
     width: 100%;
     height: 100%;
-    border-radius: 15px 15px 0px 0px;
     margin-bottom: 0px;
 
 }
 .boton_subir_imagen{
-    width: 150px;
-    background: #76323F;
+    width: 100%;
+    background: #000;
     color: #FFF;
     border: none;
     height: 30px;
-    border-radius: 0 0 15px 15px;
 }
