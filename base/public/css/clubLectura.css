@@ -1,62 +1,68 @@
+#clubes{
+    width:100%;
+    margin:auto;
 
-.filtrar{
-    width:70%;
-    float:left;
-}
-.botonesClubes{
-    float:left;
-    margin:5px 0 0 30px;
-}
-.filtrar label{
-    font-size:15px;
-}
-.filtrar > div{
-    float:left;
-    margin:7px 10px 0 10px;
-    padding:0;
-    
-
+    overflow:auto;
 }
 
-.botonesClubes button{
-    background-color:#fff;
-    color:#000;
-    border:0;
-    padding:10px 15px;
-    margin:0 10px 0 0;
+.club{
+    width:440px;
+    float:left;
+    margin:10px;
+    height:395px;
+    text-align: center;
+    -webkit-box-shadow: -3px -1px 5px 3px rgba(0,0,0,0.27);
+    -moz-box-shadow: -3px -1px 5px 3px rgba(0,0,0,0.27);
+    box-shadow: -3px -1px 5px 3px rgba(0,0,0,0.27);
+}
+
+.mi-club{
+    width:440px;
     border:solid 2px #000;
+    float:left;
+    margin:10px;
+    height:395px;
+    text-align: center;
 }
 
+.club img,.mi-club img{
+    width:90px;
+    margin:20px 0;
+}
 
-.botonesClubes button:hover{
-    background-color:#000;
+.club button{
+    width:100%;
+    margin-top:9px;
     color:#fff;
-    border:0;
-    padding:10px 15px;
-    margin:0 10px 0 0;
-
-    border:solid 2px #000;
+    background-color:#000;
+    opacity:0.6;    
+    padding:9px 0;
 }
 
-
-.filtrar button{
-    background:none;
-    border:solid 0;
-    padding:0;
-    margin-top:-1px;
-  
+.mi-club button{
+    width:50%;
+    margin-top:32px;
+    border:solid 1px #000;
+    color:#fff;
+    opacity:0.6;
+    
+    padding:9px 0;
 }
 
-.filtrar img{
-    width:40px;
+.club button:hover,.mi-club button:hover{
+    background-color:#000;
+    opacity:1;
 }
 
-#buscarClub{
-    width:340px;
-    padding: 10px 15px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #000;
-    box-sizing: border-box;
-    float:left;
+.club h1,.mi-club h1{
+    font-size:35px;
+    width:100%;
+    background-color:#f6b93b;
+    padding:120px 0 20px 0;
+    margin-top:-132px;
+
+}
+
+.club p,.mi-club p{
+    margin:12px 0;
 }

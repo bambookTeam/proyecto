@@ -14,10 +14,10 @@ let llenar_perfil = async() => {
     let usuario = await obtenerUsuarioId(_id);
     if (usuario) {
         nombreUsuario.innerHTML = usuario['nombreUsuario'];
-        identificacion.innerHTML = contacto['identificacion'];
-        nombre.innerHTML = contacto['primerNombre'];
-        sexo.innerHTML=contacto['sexo'];
-        correo.innerHTML=contacto['correo'];
+        identificacion.innerHTML = usuario['identificacion'];
+        nombre.innerHTML = usuario['primerNombre'] + ' ' + usuario['segundoNombre'] + ' ' + usuario['primerApellido'] + ' ' + usuario['segundoApellido'];
+        sexo.innerHTML= usuario['sexo'];
+        correo.innerHTML= usuario['correo'];
     }
 };
 

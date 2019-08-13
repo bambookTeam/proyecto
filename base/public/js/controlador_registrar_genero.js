@@ -16,8 +16,22 @@ var btnRegistrargenero = document.getElementById('btn-registrar-genero'),
 cerrarpopup.addEventListener('click', function () {
     overlay.classList.remove('active');
     popup.classList.add('remove');
+    cleanupFormGenero();
 
 });
+
+let cleanupFormGenero = () => {
+
+    document.getElementById('txt-genero').reset();
+    var h2Elements = document.getElementsByClassName("error");
+
+    for (var i = 0; i < h2Elements.length; i++) {
+        h2Elements[i].style.display = "none"
+    }
+
+    input_genero.classList.remove('input_error');
+   
+}
 
 
 let validar = (pgenero) => {
@@ -30,6 +44,8 @@ let validar = (pgenero) => {
         input_genero.classList.remove('input_error');
         registrarGenero(pgenero);
         mostrarlista();
+        cleanupFormGenero();
+        document.location.reload();
     }
 
     return error;

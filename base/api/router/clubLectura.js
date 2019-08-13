@@ -21,7 +21,8 @@ router.post('/registrar-clubLectura', function (req, res) {
         categoria: body.categoria,
         libreria: body.libreria,
         sucursal: body.sucursal,
-        idAdmin: body.idAdmin
+        idAdmin: body.idAdmin,
+        estado: body.estado
     });
 
     nuevo_clubLectura.save(

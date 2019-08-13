@@ -164,7 +164,7 @@ let validarIdentificacion = (pidentificacion) => {
 
 
 
-let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo,pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario) => {
+let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario) => {
 
     let error = false;
 
@@ -325,14 +325,7 @@ let guardar = () => {
     let nombreUsuario = input_nombre_usuario.value;
     let tipo = 2;
 
-
-
-
-
-
-
-    let error = validar(nombre1, apellido1, sexo, identificacion, correo,provincia, canton, distrito, direccion, nombreUsuario);
-
+    let error = validar(nombre1, apellido1, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario);
 
 
     if (error == false) {
