@@ -1,31 +1,100 @@
+hovernav{
+    text-decoration: none;
+    border-bottom: solid 2px #f6b93b;
+}
+
+
 main{
     text-align: center;
+}
 
+/* h1{
+    color: #f6b93b;
+    font-size: 30px;
+    margin: 60px;
+    font-weight: bold;
+} */
+
+label{
+    color: #000;
+    font-size: 20px;
+}
+
+input{
+    width: 30%;
+    height: 30px;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    background: none;
+    outline: none;
+}
+
+main a{
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+    margin: 15px;
+    background: none;
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
+
+main a:hover{
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #f6b93b;
+    font-weight: bold;
+    margin: 15px;
+    background: none;
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
+
+main button{
+    padding: 10px;
+    border: 1px solid #f6b93b;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: #f6b93b;
+    outline: none; 
+}
+
+main button:hover{
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
 }
 
 #contenedor_titulo{
-    width: 50%;
-    color: #76323F;
-    font-size: 30px;
-    margin: 30px;
+    width: 300%;
+    color: #000;
+    font-size: 70px;
     align-content: flex-end;
-    /* text-align: center; */
-    margin-top: 1% solid #76323F;
+    margin-top: 10%;
+    margin-left: 70px;
 }
 
 .contenedor-perfil {
-    display: flow-root;
+    display: flex;
 }
 
-#portada{
-    margin-top: 10%;
-    margin-left: 10%;
-    height: 300px;
-    width: 225px;
-    border: solid 1px #76323F;
-    border-radius: 15px;
-    float: left;
-}
+
 
 .infoPerfil {
     float: left;
@@ -33,26 +102,17 @@ main{
     width: 44%;
 }
 
-#imagen{
-    height: 220px;
-    width: 100%;
-    height:100%;
-    border-radius: 15px 15px;
-}
+
 
 #infoLibro{
-    font-size: 30px;
-    color: #76323F;
-    background: #76323F;
-    border: solid 1px #76323F;
-    border-radius: 15px;
-    width: 100%;
+    font-size: 40px;
+    width: 500%;
 }
 
 #infoLibro p{
     color: #aaaaaa;
-    font-size: 20px;
-    margin: 1%;
+    font-size: 40px;
+    margin: 3%;
     margin-left: 5%;
 }
 #btn_regresar{
@@ -63,4 +123,114 @@ background-color:#76323f;
      width:15%;
      border-radius:5px;
     padding:5px 10px;
+}
+
+
+/* Estilos carousel portada y contraportada */
+* {box-sizing:border-box}
+
+/* Slideshow container */
+#contenedor_portada {
+  /* max-width: 700px; */
+  align-content: center;
+  position: relative; 
+  margin: auto;
+  float: left;
+  margin: 74px 0 0 116px;
+  /* width: 44%; */
+}
+#contenedor_portada image{
+    width: 20px;
+    height: 20px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: inline-block;
+  width: 600px;
+}
+.mySlides image{
+    width: 20px;
+    height: 20px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: #f6b93b;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/2 etc) */
+.numbertext {
+  /* color: #000; */
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
