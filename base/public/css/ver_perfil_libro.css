@@ -8,13 +8,6 @@ main{
     text-align: center;
 }
 
-/* h1{
-    color: #f6b93b;
-    font-size: 30px;
-    margin: 60px;
-    font-weight: bold;
-} */
-
 label{
     color: #000;
     font-size: 20px;
@@ -105,13 +98,13 @@ main button:hover{
 
 
 #infoLibro{
-    font-size: 40px;
+    font-size: 30px;
     width: 500%;
 }
 
 #infoLibro p{
     color: #aaaaaa;
-    font-size: 40px;
+    font-size: 30px;
     margin: 3%;
     margin-left: 5%;
 }
