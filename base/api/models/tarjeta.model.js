@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 let tarjeta_schema = new mongoose.Schema({
     id: { type: String, required: true, unique: false },
-    numerotarjeta: { type: String, required: true, unique: true },
+    numerotarjeta: { type: String, required: true, unique: false },
     fechavencimiento: { type: String, required: true, unique: false },
     codigocvv: { type: String, required: true, unique: true }
 
