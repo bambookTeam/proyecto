@@ -3,13 +3,12 @@
     border-bottom: solid 2px #f6b93b;
 }
 
-
 main{
     text-align: center;
 }
 
 h1{
-    color: #f6b93b;
+    color: #000;
     font-size: 30px;
     margin: 60px;
     font-weight: bold;
@@ -26,7 +25,6 @@ input{
     margin: 20px;
     padding: 5px;
     border: 1px solid #000;
-    border-radius: 15px;
     background: none;
     outline: none;
 }
@@ -61,40 +59,21 @@ main a:hover{
 
 main button{
     padding: 10px;
-    font-size: 5px;
-    border: none;
+    border: 1px solid #f6b93b;
+    font-size: 15px;
     color: #fff;
     font-weight: bold;
-    background-color: transparent;
-    outline: none;
+    background: #f6b93b;
+    outline: none; 
 }
 
 main button:hover{
     padding: 10px;
+    border: 1px solid #000;
+    /* border-radius: 15px; */
+    font-size: 15px;
     color: #fff;
     font-weight: bold;
+    background: #000;
     outline: none;
-    cursor: pointer;
 }
-main button img{
-width: 20px;
-height: 20px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-  
-th, td {
-    text-align: center;
-    padding: 15px;
-}
-  
-tr:nth-child(even){background-color: #f2f2f2}
-  
-th {
-    background-color: #f6b93b;
-    color: white;
-}
-
