@@ -30,21 +30,21 @@ router.post('/unirse-Club', function (req, res) {
         }
     );
 });
-/*router.get('/listar-clubesLectura', function (req, res) {
-    ClubLectura.find(function (err, clubLecturaDB) {
+router.get('/listar-miembros', function (req, res) {
+    ClubMiembro.find(function (err, ClubMiembroDB) {
         if (err) {
             return res.status(400).json({
                 success: false,
-                msj: 'No se pueden listar los clubes',
+                msj: 'No se pueden listar la lista de miembros por club',
                 err
             });
         } else {
             return res.json({
                 success: true,
-                lista_clubes: clubLecturaDB
+                lista_miembros: ClubMiembroDB
             });
         }
     })
-});*/
+});
 
 module.exports = router;
