@@ -18,10 +18,41 @@ let registrarInventario = (pisbn ) => {
 };
 
 
+let obtenerInventario = async () => {
+
+    try{
+
+        const response = await axios ({
+            method: 'get',
+            url: 'http://localhost:4000/api/listar_inventario',
+            responseType: 'json'
+
+        });
+
+        return response.data.lista_inventario;
+    }catch(error) {
+        
+        console.log(error);
+    }
+
+};
 
 
-let agregarInventario = ( pcant) => {
+
+let agregarInventario =  (p_id, pcant) => {
 
     
+    axios({
+        
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar_inventario',
+        responseType: 'json',
+        data: {            
+            _id: p_id,
+            cant: pcant
+            }
+
+    });
+        
 
 };
