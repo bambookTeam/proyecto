@@ -1,0 +1,46 @@
+h1{
+    color: #76323F;
+    font-size: 30px;
+    margin: 30px;
+}
+
+main a{
+    padding: 10px;
+    border: 1px solid #76323F;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #76323F;
+    font-weight: bold;
+    background: none;
+    outline: none;
+    text-decoration: none;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
+
+  tr:nth-child(even){background-color: #f2f2f2}
+
+  th {
+    background-color: #76323F;
+    color: white;
+  }
+
+  
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 40px;
+}
