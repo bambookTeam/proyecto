@@ -2,100 +2,227 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Registrar Libro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="CSS/reset.css">
-    <link rel="stylesheet" href="CSS/registrar_libro.css">
-    <link rel="stylesheet" href="css/navbar.css">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Registrar Libro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="CSS/reset.css">
+  <link rel="stylesheet" href="CSS/registrar_libro.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
 
 </head>
 
 
 
 <header>
-        <nav>
-          <div class="logoBambooks">
-            <a href="inicioCliente.html"><img
-                src="imgs/panda_grain.png"
-                alt="" width="40px"></a>
-          </div>
-          <div class="nav-container">
-            <a href="listar_librerias.html" id="optionNavLibrerias">Librerias</a>
-            <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
-            <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
-            <a href="listar_libros.html" id="optionNavLibros">Libros</a>
-            <a href="listar-autores.html" id="optionNavAutores">Autores</a>
-            <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
-            <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
-            <a href="listar_tarjetas.html">Tarjetas</a>
-            <a href="#" id="optionIntercambio">Intercambios</a>
-            <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
-          </div>
-          <div class="optionsNav">
-              <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-            <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
-            <button id="btn_cerrar">Cerrar Sesion</button>
-          </div>
-        </nav>
-      </header>
+  <nav>
+    <div class="logoBambooks">
+      <a href="inicioCliente.html"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
+    </div>
+    <div class="nav-container">
+      <a href="listar_librerias.html" id="optionNavLibrerias">Librerias</a>
+      <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
+      <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
+      <a href="listar_libros.html" id="optionNavLibros">Libros</a>
+      <a href="listar-autores.html" id="optionNavAutores">Autores</a>
+      <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
+      <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
+      <a href="listar_tarjetas.html">Tarjetas</a>
+      <a href="#" id="optionIntercambio">Intercambios</a>
+      <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
+    </div>
+    <div class="optionsNav">
+      <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+      <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
+      <button id="btn_cerrar">Cerrar Sesion</button>
+    </div>
+  </nav>
+</header>
+
 <body>
 
-    <main>
-        <h1>Registrar Libro</h1>
+  <main>
+    <h1>Registrar Libro</h1>
 
 
-        <section id="datos_libro">
-            <div class="subir_imagen">
-                <figure class="portada">
-                    <img src="imgs/img.png" alt="Seleccionar imagen" id="img_preview">
-                </figure>
-                <button type="button" id="btn_seleccionar_imagen" class="boton_subir_imagen">Subir imagen </button>
-            </div>
+    <section id="datos_libro">
+      <div class="subir_imagen">
+        <figure class="portada">
+          <img src="imgs/img.png" alt="Seleccionar imagen" id="img_preview">
+        </figure>
+        <button type="button" id="btn_seleccionar_imagen" class="boton_subir_imagen">Subir imagen </button>
+      </div>
 
-            <div>
-                <input id="txt_titulo" type="text" placeholder="Título">
-                <input id="txt_edicion" type="text" placeholder="Edición">
-                <input id="txt_editorial" type="text" placeholder="Editorial">
-                <input id="txt_autor" type="text" placeholder="Autor" id="">
-                <input id="txt_anno_edicion" type="number" placeholder="Año de Edición">
-                <input id="txt_idioma" type="text" placeholder="Idioma">
-                <input id="txt_isbn" type="number" placeholder="ISBN">
+<!-- Aquí empieza el formulario del libro -->
+      <section id="sct_formulario">
+        <form>
+          <div>
+            <label for="txt_titulo">Título:</label>
+            <input id="txt_titulo" type="text">
+          </div>
+          <div>
+            <label for="txt_edicion">Edición:</label>
+            <input id="txt_edicion" type="text">
+          </div>
+          <div>
+            <label for="txt_editorial">Editorial:</label>
+            <input id="txt_editorial" type="text">
+          </div>
+          <div>
+            <label for="autor">Autor:</label>
+            <select name="autor" id="txt-nombre-autor">
+              <option value=""></option>
+              <!-- <option>Autor 1</option>
+              <option>Autor 2</option>
+              <option>Autor 3</option> -->
+            </select>
+          </div>
+          <div>
+            <label for="txt_anno_edicion">Año de edición:</label>
+            <input id="txt_anno_edicion" type="number">
+          </div>
+          <div>
+            <label for="idioma">Idioma:</label>
+            <select name="idioma" id="txt_idioma">
+              <option value=""></option>
+              <option>Español</option>
+              <option>Inglés</option>
+            </select>
+          </div>
+          <div>
+            <label for="txt_isbn">ISBN:</label>
+            <input id="txt_isbn" type="number">
+        </form>
+        </div>
+        <div>
+          <label for="genero">Seleccionar género</label>
+          <select name="genero" id="txt_genero">
+            <option value=""></option>
+          </select>
+        </div>
+        <div>
+          <label for="tipo">Tipo</label>
+          <select name="tipo" id="txt_tipo">
+            <option value=""></option>
+            <option value="Digital">Digital</option>
+            <option value="Pasta dura">Pasta dura</option>
+            <option value="Pasta gruesa">Pasta gruesa</option>
+            <option value="bolsillo">Bolsillo</option>
+          </select>
+        </div>
+        <div>
+          <label for="existencia">Existencia:</label>
+          <input id="txt_existencia" type="number">
+        </div>
+        <div>
+          <label for="precio">Precio:</label>
+          <input id="txt_precio" type="number">
+        </div>
 
-                <select name="genero" id="txt_genero">
-                    <option value=""> Seleccionar género</option>
-                    
-                </select>
+        </form>
+      </section>
 
-                <select name="tipo" id="txt_tipo">
-                    <option value="">Tipo</option>
-                    <option value="Pasta dura">Pasta dura</option>
-                    <option value="Digital">Digital</option>
+      <div>
+        <button type="button" class="boton-registrar" id="btn_registrar">Registrar</button>
+      </div>
 
-                </select>
+    </section>
 
-                <input id="txt_existencia" type="number" placeholder="Cantidad existencia">
-                <input id="txt_precio" type="number" placeholder="Precio">
-            </div>
+  </main>
 
-            <div>
-                <button type="button" class="boton-registrar" id="btn_registrar">Registrar</button>
-            </div>
+  <section id="footer">
 
-        </section>
+      <div class="footerLogo">
+          <img src="imgs/panda_blanco.png" width="150px">
+      </div>
+      <div class="footermap">
+  
+          <div class="list">
+              <ul>
+                  <li class="uhead"><a href="">Librerías</a></li>
+                  <ul>
+                      <li><a href="">Ver las librerías</a></li>
+                      <li><a href="">Registrar mi librería</a></li>
+                      <li><a href="">Sucursales</a></li>
+                      <li><a href="">Ofertas</a></li>
+                  </ul>
+              </ul>
+  
+          </div>
+  
+          <div class="list">
+  
+                  <ul>
+                      <li class="uhead"><a href="" >Libros</a></li>
+                      <ul>
+                          <li><a href="">Ver todos los libros</a></li>
+                          <li><a href="">Categorías</a></li>
+                          <li><a href="">Géneros</a></li>
+                          <li><a href="">Más Vendidos</a></li>
+                          <li><a href="">Mejor Calificados</a></li>
+                      </ul>
+                  </ul>
+          </div>
+  
+          <div class="list">
+              <ul>
+                  <li class="uhead"><a href="">Clubes de Lectura</a></li>
+                  <ul>
+                      <li><a href="">Ver los clubes</a></li>
+                      <li><a href="">Crear mi club</a></li>
+                      <li><a href="">Unirme a un club</a></li>
+                      <li><a href="">Ver mis clubes</a></li>
+                  </ul>
+              </ul>
+          </div>
+      </div>
+  
+      <div class="socials">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
+  
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png">
+  
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png">
+  
+          <img src="https://img.icons8.com/windows/20/ffffff/twitter.png">
+  
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
+                              
+          <div class="line-soc"></div>
+          <!-- <div>
+              
+  
+          <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
+  
+        <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
+        <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!
+          </div> -->
+      </div>
+  </section>
 
-    </main>
-
-    <footer></footer>
-    
-<script src="js/jquery-3.3.1.js"></script>
+  <script src="js/jquery-3.3.1.js"></script>
   <!-- script controlador -->
+
+  <script src="js/controlador_cerrar_sesion.js"></script>
+  <script src="js/controlador_registrar_libro.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="js/servicio_libro.js"></script>
+  <script src="js/servicio_genero.js"></script>
+  <script src="js/servicio-autor.js"></script>
+
+  <!-- Script servicio subir imagen, cloudinari -->
+  <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+  <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+  <script src="js/servicio_imagen.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/getNombre.js"></script>
+
 
 <script src="js/controlador_cerrar_sesion.js"></script>
     <script src="js/controlador_registrar_libro.js"></script>

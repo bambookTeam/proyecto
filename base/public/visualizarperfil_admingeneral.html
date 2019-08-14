@@ -7,7 +7,6 @@
   <title>Perfil Administrador General</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/visualizarperfil_adminge.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/perfil_admin.css">
 
@@ -25,7 +24,7 @@
                   alt="" width="40px"></a>
             </div>
             <div class="nav-container">
-              <a href="listar_librerias.html" id="optionNavLibrerias">Librerias</a>
+              <a href="listar_librerias_admins.html" id="optionNavLibrerias">Librerias</a>
               <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
               <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
               <a href="listar_libros.html" id="optionNavLibros">Libros</a>
@@ -37,7 +36,7 @@
               <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
             </div>
             <div class="optionsNav">
-                <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
+                <a href="" class="perfil" id="nombrePerfil">Mi Perfil</a>
               <div class="dropdown-content">
                 <a href="#">Link 1</a>
                 <a href="#">Link 2</a>
@@ -50,28 +49,34 @@
         </header>
 
 
+        <div class="izquierda">
 
+                <img src="imgs/pandauser.png" alt="" width="200px">
+</div>
 
+            <div class="derecha">
 
-    <div class="datos">
+                <p class="dato"> <span id="txt_nombreusuario"> Nombre Usuario: </span></p>
+                <p class="dato"> <span id="txt_correo"> Correo </span></p>
 
-      <div id="avatar"></div>
-
-      <p class="dato"> <span id="txt_nombre">Usuario</span></p>
-
-      <p class="dato"> <span id="txt_correo"> Correo </span></p>
-
+          
+                <p class="dato"> <span id="txt_contrasena"> Contraseña </span></p>
+                
+          
+          
+              </div>
+    
 
 
     </div>
 
-    <footer></footer>
 
     </header>
 
+   
+
     <script src="js/jquery-3.3.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/servicio_admingeneral.js"></script>
     <script src="js/servicio_usuario.js"></script>
     <script src="js/controlador_visualizaradmingeneral.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>

@@ -24,35 +24,41 @@ btn_subir_oferta.onclick= function(){
     overlay.classList.remove('active');
     popup.classList.add('remove');
     registrarNuevaOferta();   
+
 };
 
- 
+
 let registrarNuevaOferta = () => {
 
-let error=false;
-
-if (error == false) {
-    registrarOferta();
+    let error=false;
     
-    setTimeout(function(){ parent.innerHtml = ""; 
-    addNew() 
-    alert("Oferta Actualizada");
+    if (error == false) {
+        registrarOferta();
+        
+        setTimeout(function(){ parent.innerHtml = ""; 
+        addNew() 
+        alert("Oferta Actualizada");
+    
+    }, 3000);
+    
+        Swal.fire({
+                type: 'success',
+                title: 'La oferta se ha registrado exitosamente'
+            })
+    } else {
+        Swal.fire({
+                type: 'warning',
+                title: 'No se ha podido registrar la oferta',
+                text: 'Revise los campos resaltados e inténtelo de nuevo'
+            })
+    }
+    
+    };
+    
 
-}, 3000);
+ 
 
-    Swal.fire({
-            type: 'success',
-            title: 'La oferta se ha registrado exitosamente'
-        })
-} else {
-    Swal.fire({
-            type: 'warning',
-            title: 'No se ha podido registrar la oferta',
-            text: 'Revise los campos resaltados e inténtelo de nuevo'
-        })
-}
 
-};
 
 
 
