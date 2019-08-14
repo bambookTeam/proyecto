@@ -32,7 +32,6 @@ cerrarpopup.addEventListener('click', function () {
 let validar = (pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
     let error = false;
 
-    // 
 
     if ((pnumerotarjeta == '') ||(pnumerotarjeta.length != 16)){
         error = true;
