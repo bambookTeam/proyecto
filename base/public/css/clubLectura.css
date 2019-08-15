@@ -39,14 +39,14 @@
     padding:9px 0;
 }
 
-.mi-club button{
+.unirse_Club,.crear_Evento{
     width:50%;
-    margin-top:32px;
-    border:solid 1px #000;
+    margin-top:34px;
     color:#fff;
-    opacity:0.6;
-    
+    background-color:#000;
+    opacity:0.6;   
     padding:9px 0;
+    border:0;
 }
 
 .club button:hover,.mi-club button:hover{
@@ -65,4 +65,9 @@
 
 .club p,.mi-club p{
     margin:12px 0;
+}
+
+
+#joinedClubs_h1{
+    display:none;
 }

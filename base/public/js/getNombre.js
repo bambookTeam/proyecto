@@ -1,44 +1,33 @@
+let usuario_activo=sessionStorage.getItem('tipoUsuario')
+let optionSucursales=document.querySelector('#optionSucursales');
+let optionLibrerias = document.querySelector('#optionlibrerias');
+let optionUsuarios = document.querySelector('#optionUsers');
+let optionGeneros = document.querySelector('#optionGeneros');
+let optionCategorias = document.querySelector('#optionCategorias');
+let options=document.getElementsByClassName('optionProfile');
+var numItems = $('.optionProfile').length;
+var items = $('.optionProfile')
 
-const name= document.querySelector('#nombrePerfil');
-const miperfil=document.querySelector('#nombrePerfil');
 
-$(document).ready( getName = () =>{
-    let nombre=sessionStorage.getItem('nombreUsuario');
-    nombre=nombre.charAt(0).toUpperCase()+nombre.slice(1);
-    name.innerHTML=nombre;
-});
-
-const optionGenero=document.querySelector('#optionNavGenero');
-const optionUsuarios=document.querySelector('#optionNavUsuarios');
-const optionCategorias=document.querySelector('#optionNavCategoria');
-const optionIntercambios=document.querySelector('#optionIntercambio');
-const optionAutores=document.querySelector('#optionNavAutores');
-const optionSucursales= document.querySelector('#optionNavSucursales');
-
-$(document).ready(hideOptions = () =>{
-    let tipoUsuarioConectado=sessionStorage.getItem('tipoUsuario');
-    
-
-    if(tipoUsuarioConectado==0){
-        optionGenero.style.display="inline";
-        optionUsuarios.style.display="inline";
-        optionCategorias.style.display="inline";
-        optionAutores.style.display="inline";
+window.addEventListener('load',function(){
+    if(usuario_activo==2){
+        
+    optionSucursales.style.display="none";
+    optionLibrerias.href='%20clubesLectura.html';
+    optionUsuarios.style.display="none";
+    optionGeneros.style.display="none";
+    optionCategorias.style.display="none";
+    document.querySelector('#optionBitacora').style.display='none';
+    document.querySelector('#optionReportes').style.display='none';
+    document.querySelector('#optionInventario').style.display='none';
     }else{
-        if (tipoUsuarioConectado==1) {
+        for (let index = 0; index < options.length; index++) {
+            options[index].style.display='none';
             
-        } else {
-            optionNavSucursales.style.display="none"
         }
-    }
 
+        document.querySelector('#idVerPerfil').style.display="block";
+        document.querySelector('#signinpopup').style.height="58px"
+    }
     
 });
-
-let verperfil=()=>{
-    let idAdmin=sessionStorage.getItem('id');
-    window.location.href = `ver-perfil-usuario.html?_id=dAdmin`;
-    console.log(idAdmin);
-}
-
-nombrePerfil.addEventListener('click',verperfil);
