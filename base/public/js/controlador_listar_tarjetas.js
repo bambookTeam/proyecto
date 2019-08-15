@@ -16,15 +16,32 @@ for (let index = 0; index < listar_tarjetas.length; index++) {
     fila.insertCell().innerHTML = "***";
     
            
- }
-}
+
+
 //     listar_tarjetas = await obtenerTarjetas();
 
+let estilos_modificar = document.createElement('img');
+        estilos_modificar.setAttribute('src', './imgs/edit-icon.png')
 
+        let celda_modificar = fila.insertCell();
+        let modificar = document.createElement('button');
+        modificar.type = 'button';
+
+        modificar.dataset._id = listar_tarjetas[index]['_id'];
+
+        celda_modificar.appendChild(modificar);
+        modificar.appendChild(estilos_modificar);
+
+        modificar.addEventListener('click', function () {
+            localStorage.setItem("modificarTarjeta", JSON.stringify(listar_tarjetas[index]));
+            window.location.href = 'modificar_tarjeta.html'
+        })
     
+        
+}
+
+}
 
 
-
-
-mostrarlista();
+        window.addEventListener('load', mostrarlista);
 
