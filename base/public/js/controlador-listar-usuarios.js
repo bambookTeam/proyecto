@@ -37,6 +37,39 @@ let mostrar_tabla = async () => {
                 window.location.href = `ver-perfil-usuario.html?_id=${this.dataset._id}`
             });
 
+            let celda_estado = fila.insertCell();
+            let enlace_habilitado = document.createElement('a');
+            enlace_habilitado.innerText = 'Habilitar';
+            enlace_habilitado.href = 'listar-usuarios.html';
+            enlace_habilitado.addEventListener('click', function() {
+                habilitar(lista_usuarios[i]['_id']);
+                mostrar_tabla();
+            });
+    
+    
+            let enlace_deshabilitado = document.createElement('a');
+            enlace_deshabilitado.innerText = 'Deshabilitar';
+            enlace_deshabilitado.href = 'listar-usuarios.html';;
+            enlace_deshabilitado.addEventListener('click', function() {
+                deshabilitar(lista_usuarios[i]['_id']);
+                mostrar_tabla();
+            });
+    
+            if (lista_usuarios[i]['estado'] == 1) {
+                celda_estado.appendChild(enlace_deshabilitado);
+            } else {
+    
+                celda_estado.appendChild(enlace_habilitado);
+                fila.classList.add('deshabilitado');
+            }
+    
+            let celda_editar = fila.insertCell();
+            let enlace_editar = document.createElement('a');
+            enlace_editar.innerText = 'Editar';
+            enlace_editar.href = `editar-usuario.html?_id=${lista_usuarios[i]['_id']}`;
+    
+            celda_editar.appendChild(enlace_editar);
+
         }
         if (lista_usuarios[i]['tipo'] == "1") {
             let celda_perfil = fila.insertCell();
@@ -52,6 +85,39 @@ let mostrar_tabla = async () => {
                 window.location.href = `visualizar_perfil_admin_libreria.html?_id=${this.dataset._id}`
             });
 
+            let celda_estado = fila.insertCell();
+            let enlace_habilitado = document.createElement('a');
+            enlace_habilitado.innerText = 'Habilitar';
+            enlace_habilitado.href = 'listar-usuarios.html';
+            enlace_habilitado.addEventListener('click', function() {
+                habilitar(lista_usuarios[i]['_id']);
+                mostrar_tabla();
+            });
+    
+    
+            let enlace_deshabilitado = document.createElement('a');
+            enlace_deshabilitado.innerText = 'Deshabilitar';
+            enlace_deshabilitado.href = 'listar-usuarios.html';;
+            enlace_deshabilitado.addEventListener('click', function() {
+                deshabilitar(lista_usuarios[i]['_id']);
+                mostrar_tabla();
+            });
+    
+            if (lista_usuarios[i]['estado'] == 1) {
+                celda_estado.appendChild(enlace_deshabilitado);
+            } else {
+    
+                celda_estado.appendChild(enlace_habilitado);
+                fila.classList.add('deshabilitado');
+            }
+    
+            let celda_editar = fila.insertCell();
+            let enlace_editar = document.createElement('a');
+            enlace_editar.innerText = 'Editar';
+            enlace_editar.href = `editar-usuario.html?_id=${lista_usuarios[i]['_id']}`;
+    
+            celda_editar.appendChild(enlace_editar);
+
         }
         if (lista_usuarios[i]['tipo'] == "0") {
             let celda_perfil = fila.insertCell();
@@ -66,6 +132,39 @@ let mostrar_tabla = async () => {
                 //console.log(this.dataset._id);
                 window.location.href = `visualizarperfil_admingeneral.html?_id=${this.dataset._id}`
             });
+
+            let celda_estado = fila.insertCell();
+            let enlace_habilitado = document.createElement('a');
+            enlace_habilitado.innerText = 'Habilitar';
+            enlace_habilitado.href = 'listar-usuarios.html';
+            enlace_habilitado.addEventListener('click', function() {
+                habilitar(lista_usuarios[i]['_id']);
+                mostrar_tabla();
+            });
+    
+    
+            let enlace_deshabilitado = document.createElement('a');
+            enlace_deshabilitado.innerText = 'Deshabilitar';
+            enlace_deshabilitado.href = 'listar-usuarios.html';;
+            enlace_deshabilitado.addEventListener('click', function() {
+                deshabilitar(lista_usuarios[i]['_id']);
+                mostrar_tabla();
+            });
+    
+            if (lista_usuarios[i]['estado'] == 1) {
+                celda_estado.appendChild(enlace_deshabilitado);
+            } else {
+    
+                celda_estado.appendChild(enlace_habilitado);
+                fila.classList.add('deshabilitado');
+            }
+    
+            let celda_editar = fila.insertCell();
+            let enlace_editar = document.createElement('a');
+            enlace_editar.innerText = 'Editar';
+            enlace_editar.href = `editar-usuario.html?_id=${lista_usuarios[i]['_id']}`;
+    
+            celda_editar.appendChild(enlace_editar);
 
         }
     };
@@ -103,6 +202,39 @@ let filtrar_tabla = async () => {
                 //console.log(this.dataset._id);
                 window.location.href = `ver-perfil-usuario.html?_id=${this.dataset._id}`
             });
+
+            let celda_estado = fila.insertCell();
+            let enlace_habilitado = document.createElement('a');
+            enlace_habilitado.innerText = 'Habilitar';
+            enlace_habilitado.href = 'listar-usuarios.html';
+            enlace_habilitado.addEventListener('click', function() {
+                habilitar(lista_usuarios[i]['_id']);
+                mostrar_tabla();
+            });
+    
+    
+            let enlace_deshabilitado = document.createElement('a');
+            enlace_deshabilitado.innerText = 'Deshabilitar';
+            enlace_deshabilitado.href = 'listar-usuarios.html';;
+            enlace_deshabilitado.addEventListener('click', function() {
+                deshabilitar(lista_usuarios[i]['_id']);
+                mostrar_tabla();
+            });
+    
+            if (lista_usuarios[i]['estado'] == 1) {
+                celda_estado.appendChild(enlace_deshabilitado);
+            } else {
+    
+                celda_estado.appendChild(enlace_habilitado);
+                fila.classList.add('deshabilitado');
+            }
+    
+            let celda_editar = fila.insertCell();
+            let enlace_editar = document.createElement('a');
+            enlace_editar.innerText = 'Editar';
+            enlace_editar.href = `editar-usuario.html?_id=${lista_usuarios[i]['_id']}`;
+    
+            celda_editar.appendChild(enlace_editar);
         }
 
     }

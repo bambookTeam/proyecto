@@ -172,7 +172,7 @@ let saludar = () => {
     
     if (error == false) {
         registrarLibro(titulo, edicion, editorial, autor, anno, idioma, isbn, imagen, genero, tipo, cantidad, precio);
-     
+        registrarInventario(isbn);
         Swal.fire({
                 type: 'success',
                 title: 'El libro se ha registrado exitosamente'

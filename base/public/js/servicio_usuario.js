@@ -1,6 +1,6 @@
 'use strict';
 
-let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
+let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado) => {
 
     let pcontrasenna = generarContrasenna();
     let provincia = "pprovincia";
@@ -28,11 +28,41 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
             contrasena: pcontrasenna,
             tipo: ptipo,
             avatar: imagenUrl,
-            contador: 0
+            contador: 0,
+            estado: pestado
 
         }
     });
 
+};
+
+let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado) => {
+    console.log(pnombre1);
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-usuario',
+        responseType: 'json',
+        data: {
+            _id: idCliente,
+            primerNombre: pnombre1,
+            segundoNombre: pnombre2,
+            primerApellido: papellido1,
+            segundoApellido: papellido2,
+            sexo: psexo,
+            identificacion: pidentificacion,
+            correo: pcorreo,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
+            direccion: pdireccion,
+            nombreUsuario: pnombreUsuario,
+            contrasena: pcontrasenna,
+            tipo: ptipo,
+            avatar: imagenUrl,
+            contador: 0,
+            estado, pestado
+        }
+    });
 };
 
 let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
@@ -69,27 +99,6 @@ let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, 
 
 };
 
-let registroAdminGeneral = (pusuario, pcorreo, pcontrasena, ptipo,imagenUrl) => {
-
-
-
-    axios({
-
-        method: 'post',
-        url: 'http://localhost:4000/api/registrar_',
-        responseType: 'json',
-        data: {
-            usuario:pusuario,
-            contrasena: pcontrasena,
-            correo: pcorreo,
-            tipo: ptipo,
-            avatar: imagenUrl,
-            contador: 0
-
-        }
-    });
-
-};
 
 
 let iniciar_Sesion = async (pusuario, pcontrasena) => {
@@ -204,6 +213,7 @@ let crearContrasenna = async (p_id, pcontrasena) => {
         }
 
 
+
     });
 };
 
@@ -308,3 +318,26 @@ function generarContrasenna() {
     }
     return contraseña;
 }
+
+let habilitar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/habilitar-usuario',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};
+let deshabilitar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/deshabilitar-usuario',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};

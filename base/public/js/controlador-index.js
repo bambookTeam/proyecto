@@ -174,7 +174,6 @@ let redirectRegistroUsuario = () =>{
 }
 
 btn_signin.addEventListener('click',inicioSesion);
-btn_signinFoot.addEventListener('click',inicioSesionFooter);
-btn_registroLibreria.addEventListener('click',redirectRegistroLibreria);
-btn_registroenLinea.addEventListener('click',redirectRegistroUsuario)
+//btn_registroLibreria.addEventListener('click',redirectRegistroLibreria);
+//btn_registroenLinea.addEventListener('click',redirectRegistroUsuario)
 
