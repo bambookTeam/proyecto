@@ -36,29 +36,62 @@ let validar = (pgenero) => {
     return error;
 };
 
+let validarElGenero = (pElGenero) => {
+    let error = false;
+    for (let i = 0; i < lista_genero.length; i++) {
+        if (pElGenero === lista_genero[i].genero) {
+            error = true;
+        
+        }
+    }
+    return error;
+};
 
-let saludar =() =>{
+let limpiarForm = () => {
+    document.getElementById('txt-genero').value = "";
+
+};
+
+let cerrar =() => {
+    overlay.classList.remove('active');
+    popup.classList.add('remove');
+}
+
+let registraGenero =() =>{
    
 
 let genero = input_genero.value;
+let erroGenero = validarElGenero(genero);
 let error = validar(genero);
 
-if (error == false) {
+if(erroGenero == true) {
     Swal.fire({ //formato json
-        title: 'Se ha agregado su género exitosamente',
-        type: 'success'
-       
-    })
-} else {
-    Swal.fire({ //formato json
-        title: 'No se ha podido registrar el género',
+        title: 'El Género ya se encuentra registrado',
         type: 'warning',
-        text: 'Revise los campos resaltados e inténtelo de nuevo'
-    })
-}}
+        text: 'Registre otro género'
+    })           
+} else {
+    if (error == false) {
+        Swal.fire({ //formato json
+            title: 'Se ha agregado su tarjeta exitosamente',
+            type: 'success'
+        })
+        registraGenero(genero);
+        limpiarForm();
+        cerrar();
+    } else {
+        Swal.fire({ //formato json
+            title: 'No se ha podido registrar su género',
+            type: 'warning',
+            text: 'Revise los campos resaltados e inténtelo de nuevo'
+        })
+    }
+}
+
+
+}
 const agregar=document.querySelector('#btn-agregar');
-agregar.addEventListener('click',saludar);
-agregar.addEventListener('click',mostrarlista);
+agregar.addEventListener('click',registraGenero);
 
 
 
