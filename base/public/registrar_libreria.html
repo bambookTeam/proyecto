@@ -33,13 +33,19 @@
 
             <h2>Datos de la Librería</h2>
 
-            <input id="txt_nombre_comercial" type="text" placeholder="Nombre Comercial">
-            <input id="txt_nombre_fantasia" type="text" placeholder="Nombre Fantasía">
-            <textarea name="" id="txt_direccion" placeholder="Dirección"></textarea>
+            <label for="txt_nombre_comercial"> Nombre Comercial</label>
+            <input id="txt_nombre_comercial" type="text">
+            
+            <label for="txt_nombre_fantasia">Nombre Fantasía</label>
+            <input id="txt_nombre_fantasia" type="text">
+            
+            <label for="txt_direccion">Dirección</label>
+            <textarea name="" id="txt_direccion"></textarea>
 
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1915192287242!2d-84.04903608571853!3d9.918001777163246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e397932ca451%3A0xef8088362eda931!2sMultiplaza+Curridabat!5e0!3m2!1ses-419!2scr!4v1562653229172!5m2!1ses-419!2scr"
-                width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+            </iframe>
 
         </section>
 
@@ -47,43 +53,65 @@
 
             <h2>Datos del Administrador de Librería</h2>
 
-            <input id="txt_identificacion" type="text" placeholder="Identificación">
-            <output id="txtIdExiste"></output>
-
-            <input id="txt_primer_nombre" type="text" placeholder="Primer Nombre">
-            <input id="txt_segundo_nombre" type="text" placeholder="Segundo Nombre">
-            <input id="txt_primer_apellido" type="text" placeholder="Primer Apellido">
-            <input id="txt_segundo_apellido" type="text" placeholder="Segundo Apellido">
-
-            <select name="" id="txt_sexo">
-                <option value="">Sexo</option>
-                <option value="Femenino">Femenino</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Otro">Otro</option>
-            </select>
-
-            <input id="txt_correo" type="text" placeholder="Correo">
-            <output id="txtCorreoExiste"></output>
-
-            <input id="txt_nombre_usuario" type="text" placeholder="Nombre Usuario">
-
-            <select name="" id="txt_provincia" onchange="llenarCantones(value)">
-                <option value="#">Seleccionar Provincia </option>
-            </select>
-              
-            <select name="" id="txt_canton" onchange="llenarDistritos(value)">
-              <option value="#">Seleccionar Cantón</option>
-            </select>
-                
-            <select name="" id="txt_distrito">
-              <option value="#">Seleccionar Distrito</option>
-            </select>
-
             <div class="subir_avatar">
                 <figure class="avatar">
                     <img src="imgs/img_avatar.jpg" alt="Seleccionar imagen" id="img_avatar">
                 </figure>
                 <button type="button" id="btn_seleccionar_avatar" class="boton_subir_avatar">Subir imagen </button>
+            </div>
+
+            <label for="txt_identificacion">Identificación</label>
+            <input id="txt_identificacion" type="text">
+
+            <div class="izquierda">
+    
+                <label for="txt_primer_nombre">Primer Nombre</label>
+                <input id="txt_primer_nombre" type="text">
+
+                <label for="txt_segundo_nombre">Segundo Nombre</label>
+                <input id="txt_segundo_nombre" type="text">
+
+                <label for="txt_primer_apellido">Primer Apellido</label>
+                <input id="txt_primer_apellido" type="text">
+
+                <label for="txt_segundo_apellido">Segundo Apellido</label>
+                <input id="txt_segundo_apellido" type="text">
+
+                <label for="txt_nombre_usuario">Nombre Usuario</label>
+                <input id="txt_nombre_usuario" type="text">
+    
+                
+            </div>
+            
+            
+            <div class="izquierda">
+
+                <label for="txt_sexo">Genero</label>
+                <select name="" id="txt_sexo">
+                    <option value="">Genero</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+
+                <label for="txt_correo">Correo</label>
+                <input id="txt_correo" type="text">
+    
+                <label for="txt_provincia">Provincia</label>
+                <select name="" id="txt_provincia" onchange="llenarCantones(value)">
+                    <option value="#">Seleccionar Provincia </option>
+                </select>
+                
+                <label for="txt_canton">Cantón</label>
+                <select name="" id="txt_canton" onchange="llenarDistritos(value)">
+                  <option value="#">Seleccionar Cantón</option>
+                </select>
+                    
+                <label for="txt_distrito">Distrito</label>
+                <select name="" id="txt_distrito">
+                  <option value="#">Seleccionar Distrito</option>
+                </select>
+
             </div>
 
         </section>
