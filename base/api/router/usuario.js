@@ -41,7 +41,8 @@ router.post('/registrar_usuario', function (req, res) {
         contrasena: body.contrasena,
         tipo: body.tipo,
         contador: body.contador,
-        avatar: body.avatar
+        avatar: body.avatar,
+        estado: body.estado
 
     });
 
@@ -92,6 +93,67 @@ router.post('/registrar_usuario', function (req, res) {
 
 });
 
+router.post('/modificar-usuario', function (req, res) {
+    let body = req.body;
+    console.log("modificar usuario ejecutado");
+    console.log(body);
+
+    Usuario.findByIdAndUpdate(body._id, {
+        $set: req.body
+    },
+        function (error) {
+
+            if (error) {
+                console.log("error");
+                console.log(error);
+                res.json({ success: false, msg: 'No se pudo habilitar el usuario' });
+            } else {
+                console.log("conoce");
+                res.json({ success: true, msg: 'El usuario se habilitó con éxito' });
+            }
+        }
+    )
+
+});
+router.post('/deshabilitar-usuario', function (req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: 0
+        }
+    },
+        function (error) {
+            if (error) {
+                console.log("error")
+                console.log(error)
+                res.json({ success: false, msg: 'No se pudo deshabilitar el usuario' });
+            } else {
+                console.log("sirve")
+                res.json({ success: true, msg: 'El usuario se deshabilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/habilitar-usuario', function (req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: 1
+        }
+    },
+        function (error) {
+
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar el usuario' });
+            } else {
+                res.json({ success: true, msg: 'El usuario se habilitó con éxito' });
+            }
+        }
+    )
+});
 router.post('/registrar_admin_libreria', function (req, res) {
     let body = req.body;
 

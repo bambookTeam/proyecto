@@ -136,7 +136,6 @@ let registraTarjeta = () => {
     
 }
 const agregar = document.getElementById('btn-agregar');
-console.log("hola mundo");
 agregar.addEventListener('click', registraTarjeta);
 
 

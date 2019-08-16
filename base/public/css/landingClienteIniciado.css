@@ -1,339 +1,432 @@
-html {
-    min-width: 360px;
-    max-width: 1024px;
-    margin: auto;
-  }
-  
-  body {
-    font-family: 'Catamaran', sans-serif;
-  }   
-  /* Banner */
-  .banner {
-    background-image: url("https://images.wallpaperscraft.com/image/book_garland_light_134006_1920x1080.jpg");
-    background-color: #cccccc;
-    height: 450px;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: fill;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, 45px);
-    padding: 30px 0;
-    text-align: center;
-    color: #fff;
-    margin-top:-10px; /* sorry ahi */
-  }
-  
-  .banner h2 {
-    font-size: 1.5em;
-    font-weight: lighter;
-    text-align: right;
-    margin-right: 25px;
-    grid-column: 7/13;
-    grid-row: 12/12;
-    padding: 2px 0;
+/*
+Moradito:  #76323f
+Tan: #d7cec7
+Gris: #565656
+Otro: #c09f80
+*/
+
+#banner {
+  margin: 40px 0 0 0;
+  height: 400px;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url('http://latestwallpapershd.com/wp-content/uploads/2019/01/Reading-books-essay-wallpaper-HD.jpg ');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: local;
+  background-position: 50% 5%;
+}
+
+.bannerContent {
+  width: 100%;
+  text-align: center;
+}
+
+#banner h1 {
+  padding: 180px 10px 0 0;
+  font-size: 40px;
+  width: 70%;
+  margin: auto;
+  color: #fff;
+  font-weight: lighter;
+}
+
+#banner span {
+  color: #f6b93b;
+}
+
+.bannerContent button {
+  padding: 15px 15px;
+  background-color: transparent;
+  border: solid 1px #fff;
+  color: #fff;
+  font-weight: lighter;
+  font-size: 20px;
+  margin: 30px 10px;
+  width: 190px;
+}
+
+.bannerContent button:hover {
+  padding: 15px 15px;
+  background-color: transparent;
+  border: solid 1px #fff;
+  color: #000;
+  background-color:#fff;
+  font-weight: lighter;
+  font-size: 20px;
+  margin: 30px 10px;
+  width: 190px;
+}
+
+@keyframes fadein {
+  from {
+    opacity: .6;
   }
 
-  .banner h4{
-    font-size: 1.1em;
-    font-weight: lighter;
-    margin-right: 25px;
-    grid-column: 1/7;
-    grid-row: 1/4;
-    padding: 2px 0;
-    margin:20px;
+  to {
+    opacity: 1;
   }
-  
+}
+
+* {
+  box-sizing: border-box
+}
+
+.whybarnes {
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+
+.whybarnes h1 {
+  padding: 90px 0 150px 0;
+  background-color: #00b894;
   /**/
-  .info-container>div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:white;
-    
-  }
-  
-  .info-container {
-    width:100%;
-    padding: 70px 25px 90px 25px;
-    display: grid;
-    grid-gap: 3px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 40px 200px 40px;
-    background-color:#76323f;
-   
-  }
-  
-  .header {
-    font-size: 5em;
-    grid-column: 1/-1;
-    font-weight: lighter;
-    margin:50px 0;
-  }
-  
+  font-size: 45px;
+  color: #fff;
+  font-weight: lighter;
+}
 
-  
-  .content {
-    display:grid;
-    padding-top: 120px;
-    grid-column: 1 /12;
-    grid-row: 2 / 5;
-    font-size: 1.4em;
-  }
+.whybarnes p {
+  padding-bottom: 7px;
+}
 
-  .content p{
-    padding:25px 15px;
-    font-weight:lighter;
-    margin:10px 50px;
-    border-top: solid 1px #fff;
-    border-bottom: solid 1px #fff;
-  }
-  
-  /**/
-  .container>div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-  }
-  
-  .container .galerias {
-    color: white;
-    text-align: center;
-  }
-  
-  
-  .galerias p{
-    display: inline-block;
-    font-size:25px;
-    color:black;
-    margin:20px 0;
-  }
-  
-  .galerias div{
-    display:inline-block;
-  }
-  
-  .container .sobrenosotros {
-    background-color: #DFDDD0;
-    color: #000;
-  }
-  
-  .container .registro {
-    color: #fff;
-    background-color: #000;
-  }
-  
-  .container .contacto {
-    background-color: #494949;
-  }
-  
-  .container {
-    padding-top: 90px;
-    margin: 20px;
-    display: grid;
-    grid-gap: 7px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 400px;
-  }
-  .footer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 300px 5;
-    color: white;
-    text-align: center;
-    background-color: grey;
-    grid-gap: 3px;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .footone,
-  .foottwo,
-  .footthree,
-  .footfour,
-  .footfive {
-    background-color: #76323f;
-    
-  }
-  
-  .footfive {
-    grid-column: 1 / -1;
-    padding:10px;
-  }
-  
-  .footone img {
-    padding-top: 25px;
-  }
-  
-  .footone h1 {
-    font-size: 1.2em;
-  }
-  
-  .footone p {
-    font-size: 0.8em;
-    margin: 7px 0 0 5px;
-    padding-bottom: 15px;
-  }
-  
-  .foottwo {
-    text-align: center;
-  }
-  
-  .foottwo h3 {
-    font-size: 0.9em;
-    margin: auto;
-    padding: 105px 0 0 0;
-    width:80%;
-    
-  }
-  
-  .foottwo .redes {
-    margin-top:20px;
-  }
-  
-  .redes .line{
-    background-color:#fff;
-    width:70%;
-    height:1px;
-    margin:10px auto;
-    padding:0 40px;
-  }
-  
-  .redes img:hover{
-    opacity:0.7;
-  }
-  .footthree{
-    height:300px;
-  }
-  
-  .footthree h3 {
-    font-size: 1.2em;
-    padding: 5px 0px 0 0;
-  }
-  
-  .footthree .pw {
-    margin-top: 15px;
-    display: inline-block;
-    text-align: center;
-  }
-  
-  .footfour h2 {
-    margin:auto;
-    font-weight: lighter;
-    width:85%;
-    padding-top:96px;
-  }
-  
-  .footfour .buttonArt {
-    background-color: transparent;
-    margin: 15px 0 0 19px;
-    border: 2px solid #fff;
-    color: #fff;
-    width: 120px;
-    height: 30px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    padding: 5px;
-  }
+.facts {
+  width: 90%;
+  margin: auto;
+  height: 500px;
+  margin-top: -170px;
+}
 
-  
-  
-  .footfive p {
-    color: #aaaaaa;
-    font-size: 0.7em;
-    text-align: left;
-    margin-left: 25px;
-  }
-  
-  .footer form {
-    padding: 0 5px;
-    width: 202px;
-    margin: 0 auto;
-  }
-  
-  .footer label {
-    font-size: 0.9em;
-  }
-  
-  .footer input {
-    margin:5px 0;
-    width: 190px;
-    height: 20px;
-    padding:10px;
-  }
-  .footer .button {
-    background-color: transparent;
-    margin: 20px 0 10px 2px;
-    border: 2px solid #fff;
-    color: #fff;
-    width: 90px;
-    height: 30px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    padding:5px;
-  }
-  .footer a:hover{
-    font-weight: bolder;
-    text-decoration: underline
-  }
-  .footer .button:hover,
-  .buttonArt:hover {
-    /*color:#ffdf00;*/
-    transition: 0.3s;
-    /*border: 2px solid #ffdf00;*/
-    background-color: #fff;
-    color:black;
-  }
-  
-  .footer a {
-    font-size: 0.7em;
-    text-decoration: none;
-    color: #ffdf11;
-  
-  }
-  @media screen and (max-width: 490px) {
-  
-    /*
-    .nav-container {
-      background-color:#62000F;
-      display: grid;
-      grid-template-columns: repeat(1, auto);
-      grid-auto-rows: auto;
-      grid-gap: 1em;
-    }
-  
-    nav a {
-      color: white;
-      text-decoration: none;
-      text-align: center;
-      margin-top: 3px;
-    }
-  
-    nav a:hover {
-      background-color: #282828;
-      padding:5px;
-    }
-   
-   */
-    .banner h2 {
-      grid-column: 4/10;
-      grid: row 6/-1;
-      padding: 2px 0;
-      text-align: center;
-    }
-  
-  
-    .content {
-      margin-top: 60px;
-      grid-column: 1 /-1;
-      grid-row: 4 /-1;
-    }
-  
-    .footer {
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: 300px 200px 300px 300px;
-    }
-  }
+.fact {
+  width: 28%;
+  float: left;
+  margin: 30px 24px;
+  padding: 5px;
+}
+
+.fact img {
+  border: solid 4px black;
+  border-radius: 50%;
+  height: 200px;
+  padding: 0;
+}
+
+.fact h5 {
+  font-size: 40px;
+  padding: 0;
+  margin: 30px 0 20px 0;
+}
+
+.fact p {
+  width: 80%;
+  margin: auto;
+}
+
+.best-rated,
+.most-sold {
+  float: left;
+  width: 25%;
+}
+
+#booklists {
+  width: 100%;
+  overflow: auto;
+  margin-top: 20px;
+}
+
+.booksoffered {
+  float: left;
+  width: 50%;
+  height: 451px;
+  text-align: center;
+}
+
+.lists {
+  float: left;
+  width: 50%;
+  overflow: auto;
+  margin-top:55px;
+}
+
+.lists button {
+  background-color: #fff;
+  padding: 10px 20px;
+  color: #000;
+  float: right;
+  border: solid 1px #000;
+  margin: 10px 19px 0 0;
+}
+
+.lists button:hover {
+  background-color: #000;
+  padding: 10px 20px;
+  color: #fff;
+  float: right;
+  margin: 10px 19px 0 0;
+}
+
+#genres,#categories{
+  margin:120px 0 70px auto;
+  text-align: center;
+  overflow:auto;
+  width:100%;
+}
+
+#genres h1,#categories h1{
+  margin:0 0 40px 0;
+  font-size:30px;
+}
+
+#genres p,#categories p{
+  margin:10px 0;
+}
+#categories{
+  margin:10px 0 70px auto;
+}
+
+#genres > div,#categories > div{
+  width:20%;
+
+  float:left;
+  padding:10px 20px;
+}
+#genres > div:hover,#categories > div:hover{
+  background-color:#ced6e0;
+}
+
+.banneroferta {
+  float: left;
+  width: 50%;
+  height: 1000px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://www.3wallpapers.fr/wp-content/uploads/2015/05/Library-iPhone-3Wallpapers-Parallax.jpg');
+  text-align: right;
+  color: #fff;
+}
+
+.banneroferta h3 {
+  font-weight: lighter;
+  font-size: 50px;
+  width: 75%;
+  margin: 250px auto 0 auto;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.banneroferta p {
+  margin: 20px auto;
+  width: 75%;
+}
+
+.lists>div {
+  float: left;
+  width: 50%;
+  padding: 10px 0 30px 0;
+  text-align: center
+}
+
+.lists h2 {
+  margin-bottom: 7px;
+}
+
+.lists img {
+  height: 325px;
+  width: 215px;
+}
+
+#booklists .line {
+  align-self: center;
+  width: 70%;
+  float: left;
+  height: 2px;
+  background-color: black;
+  margin: 0 auto 25px 40px;
+}
+
+#ofertas {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url('https://cdn.wallpaper.com/main/styles/fp_922x565/s3/galleries/16/02/liberia_01.jpg');
+  background-size: 100% 100%;
+  background-attachment: no-repeat;
+  height: 550px;
+  width: 90%;
+  margin: auto;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 1024px; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+  text-align: center;
+background-color: grey;
+float:right;
+width: 200px;
+height:188px;
+margin-top:55px;
+}
+
+.sign-in{
+  margin-top:10px;
+}
+
+.sign-in h1{
+  margin-bottom:15px;
+  margin-left:15px;
+}
+
+.sign-in-button button{
+background-color:transparent;
+border:0;
+}
+
+.sign-in-button button{
+background-color:transparent;
+border:0;
+}
+
+.sign-in img{
+  width:128px;
+  margin-bottom:15px;
+}
+form{
+  padding:10px 0;
+  margin:auto;
+
+}
+form label{
+  width:100%;
+  display:inline-block;
+  font-size:13px;
+  margin:10px 0;
+}
+
+form input{
+  padding:7px 5px;
+  width:200px;
+  margin-bottom:10px;
+  border:solid 1px #000;
+}
+form input:focus{
+  border:solid 1px #f6b93b;
+  outline: none;
+}
+button:focus{
+outline: none;
+}
+
+
+.forgot a{
+float:left;
+width:50%;
+font-size:10px;
+text-decoration: none;
+color:#000;
+margin-top:10px;
+}
+.forgot a:hover{
+color:#f6b93b;
+text-decoration: underline;
+}
+#rellene{
+display:none;
+color:red;
+font-size:10px;
+margin-bottom:10px;
+}
+/* The Close Button */
+.close {
+color: #aaaaaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+
+.sign-in .line{
+
+margin:auto;
+background-color:#000;
+height:1px;
+width:85%;
+}
+
+
+
+
+/* Add some content at the bottom of the video/page */
+
+.input_error{
+  border: solid 1px red;
+}
+
+.container > div {
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 2em;
+}
+
+#input_error_footer{
+    margin-top:5px;
+    color:#d1a71b;
+    font-size:10px;
+    display:none;
+
+}
+
+
+
+.modal-content button{
+  width:50%;
+  float:left;
+  padding:10px 10px;
+  border:solid 0;
+  display:block;
+  background-color:#f6b93b;
+  color:#000;
+}
+
+#btnCancel,.cancel{
+  background-color:#000;
+  color:#fff;
+}
+
+
+.modal-content button:hover,#btnCancel:hover{
+ padding:10px 10px;
+  border:solid 0;
+  opacity:0.7;
+
+}
+
+.modal-content >div{
+  width:100%;
+  padding:5px 0;
+}
+.optionProfile:hover{
+  background-color:#000;
+}
+
+.modal-content a{
+  font-size:9px;
+  width:100%;
+  text-decoration: none;
+  color:#fff;
+}
+
+.modal-content button{
+  width:100%;
+}
