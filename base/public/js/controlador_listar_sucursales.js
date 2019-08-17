@@ -32,6 +32,21 @@ let mostrar_tabla = async () => {
         });
         /*                    MODIFICAR SUCURSAL                   */
 
+
+        let celda_agregar = fila.insertCell();
+        let boton_agregar = document.createElement('button');
+
+        boton_agregar.type = 'button';
+        boton_agregar.innerText = 'Inventario';
+        boton_agregar.dataset._id =lista_sucursales[i]['_id'];
+
+        celda_agregar.appendChild(boton_agregar);
+
+        boton_agregar.addEventListener('click', function(){
+
+            window.location.href = 'inventario_sucursal.html';
+
+        });
     }
 
 };

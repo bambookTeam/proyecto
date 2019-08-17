@@ -36,8 +36,29 @@ for (let index = 0; index < lista_genero.length; index++) {
     
 }
 
-}
 
+let celda_estado = fila.insertCell();
+
+
+        let enlace_habilitado = document.createElement('a');
+        if (lista_genero[index]["estado"] == "Habilitado") {
+            enlace_habilitado.innerText = "Habilitado";
+        } else {
+            enlace_habilitado.innerText = "Deshabilitado";
+        }
+        enlace_habilitado.href = 'listar_tarjetas.html';
+        enlace_habilitado.addEventListener('click', function () {
+            if (lista_genero[index]["estado"] == "Habilitado") {
+                habilitar(lista_genero[index]['_id'], "Desabilitado");
+            } else {
+                habilitar(lista_genero[index]['_id'], "Habilitado");
+            }
+
+            mostrar_tabla();
+        });
+        celda_estado.appendChild(enlace_habilitado);
+
+    }
 
 
     

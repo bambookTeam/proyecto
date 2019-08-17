@@ -83,4 +83,57 @@ router.get('/buscar_libro-id/_id', function(req, res) {
     })
 });
 
+router.post('/deshabilitar_libro', function(req, res) {
+    let body = req.body;
+
+    Libro.findByIdAndUpdate(body._id, {
+            $set: {
+                estado: 'Deshabilitado'
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo deshabilitar el libro' });
+            } else {
+                res.json({ success: true, msg: 'El libro se deshabilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/habilitar_libro', function(req, res) {
+    let body = req.body;
+
+    Libro.findByIdAndUpdate(body._id, {
+            $set: {
+                estado: 'Habilitado'
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar el libro' });
+            } else {
+                res.json({ success: true, msg: 'El libro se habilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/modificar_libro', function(req, res) {
+    let body = req.body;
+
+    Libro.findByIdAndUpdate(body._id, {
+            $set: req.body
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar el libro' });
+            } else {
+                res.json({ success: true, msg: 'El libro se modificó con éxito' });
+            }
+        }
+    )
+});
+
+
 module.exports = router;
