@@ -8,7 +8,7 @@ const urlParams = new URLSearchParams(window.location.search);
 let _id = urlParams.get('_id');
 
 let cargar_formulario = async () => {
-    let genero = await obtener_generoId(_id);
+    let genero = JSON.parse(localStorage.getItem("modificarGenero"));
     if (genero) {
     
         input_genero.value = genero['genero'];
