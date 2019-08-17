@@ -1,32 +1,41 @@
 'use strict';
 
+let usuario = JSON.parse(localStorage.getItem("usuario"));
+let lista_sucursales = [];
+let idSucursal = localStorage.getItem('_idSucursal');
 
-const boton_modificar = document.querySelector('#btn_modificar');
+let modificarSucursal = async (id) => {
+    console.log(id);
 
-const txt_nombre = document.querySelector('#txt_nombre');
-const txt_telefono = document.querySelector('#txt_telefono');
-const txt_correo = document.querySelector('#txt_correo');
-const txt_direccion = document.querySelector('#txt_direccion');
+    const input_nombre = document.querySelector('#txt_nombre').value;
+    const input_telefono = document.querySelector('#txt_telefono').value;
+    const input_correo = document.querySelector('#txt_correo').value;
+    const input_direccion = document.querySelector('#txt_direccion').value;
 
-const urlParams = new URLSearchParams(window.location.search);
-let _id = urlParams.get('_id');
-
-let cargar_formulario = async () => {
-
-    let sucursal = await obtener_sucursalId(_id);
-    if (sucursal) {
-        txt_nombre.value = sucursal['nombre'];
-        txt_telefono.value = sucursal['telefono'];
-        txt_correo.value = sucursal['correo'];
-        txt_direccion.value = sucursal['direccion'];
-    }
-
+    modificar_sucursal(id, input_nombre, input_telefono, input_correo, input_direccion);
 }
 
-let editar_sucursal = () => {
+document.querySelector("#btn_modificar").addEventListener("click", function () {
+    modificarSucursal(idSucursal);
+});
 
-    modificar_sucursal(_id, nombre, telefono, correo, direccion);
+let llenarFormulario = async () => {
+
+    lista_sucursales = await obtenerSucursales();
+
+    for (let i = 0; i < lista_sucursales.length; i++) {
+        if (idSucursal == lista_sucursales[i]._id) {
+            document.querySelector('#txt_nombre').value = lista_sucursales[i].nombre;
+            document.querySelector('#txt_telefono').value = lista_sucursales[i].telefono;
+            document.querySelector('#txt_correo').value = lista_sucursales[i].correo;
+            document.querySelector('#txt-direccion').value = lista_sucursales[i].direccion;
+        }
+    }
+    limpiar();
 };
 
-cargar_formulario();
-boton_modificar.addEventListener('click', editar_sucursal);
+let limpiar = () => {
+    localStorage.removeItem("usuario");
+}
+
+llenarFormulario();

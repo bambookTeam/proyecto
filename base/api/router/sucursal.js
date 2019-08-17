@@ -65,8 +65,9 @@ router.get('/listar-sucursales', function (req, res) {
     })
 });
 
-router.get('/buscar-sucursal-id/:_id', function (req, res) {
-    Sucursal.findById(req.body._id, function (err, sucursalBD) {
+router.get('/buscar-sucursal-id/_id', function (req, res) {
+    Sucursal.findById(function (err, sucursalBD) {
+
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -76,7 +77,7 @@ router.get('/buscar-sucursal-id/:_id', function (req, res) {
         } else {
             return res.json({
                 success: true,
-                sucursal: sucursalBD
+                lista_libros: sucursalBD
             });
         }
     })
@@ -86,7 +87,7 @@ router.post('/modificar-sucursal', function (req, res) {
     let body = req.body;
 
     Sucursal.findByIdAndUpdate(body._id, {
-        $set: req.body;
+        $set: req.body
     },
         function (error) {
 
@@ -95,7 +96,7 @@ router.post('/modificar-sucursal', function (req, res) {
                 console.log(error);
                 res.json({ success: false, msg: 'No se pudo habilitar el club' });
             } else {
-                console.log("conoce");
+                console.log("Modificar sucursal BIEN");
                 res.json({ success: true, msg: 'El club se habilitó con éxito' });
             }
         }

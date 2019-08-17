@@ -28,7 +28,7 @@ let mostrar_tabla = async () => {
         boton_modificar.addEventListener('click', function () {
             //console.log(this.dataset._id);
             localStorage.setItem('idSucursal', lista_sucursales[i]['_id']);
-            window.location.href = `modificar_sucursal.html?_id=${this.dataset._id}`
+            window.location.href = `modificar_sucursal.html`;
         });
         /*                    MODIFICAR SUCURSAL                   */
 
@@ -38,11 +38,11 @@ let mostrar_tabla = async () => {
 
         boton_agregar.type = 'button';
         boton_agregar.innerText = 'Inventario';
-        boton_agregar.dataset._id =lista_sucursales[i]['_id'];
+        boton_agregar.dataset._id = lista_sucursales[i]['_id'];
 
         celda_agregar.appendChild(boton_agregar);
 
-        boton_agregar.addEventListener('click', function(){
+        boton_agregar.addEventListener('click', function () {
 
             window.location.href = 'inventario_sucursal.html';
 
