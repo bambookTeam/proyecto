@@ -36,7 +36,7 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
 
 };
 
-let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado) => {
+let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario,pcontrasenna, ptipo, pestado) => {
     console.log(pnombre1);
     axios({
         method: 'post',
@@ -60,7 +60,7 @@ let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papell
             tipo: ptipo,
             avatar: imagenUrl,
             contador: 0,
-            estado, pestado
+            estado: pestado
         }
     });
 };
@@ -99,6 +99,28 @@ let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, 
 
 };
 
+
+let modificarAdminGeneral = (pusuario, pcorreo, pcontrasena, ptipo,imagenUrl) => {
+
+
+
+    axios({
+
+        method: 'post',
+        url: 'http://localhost:4000/api/editar-admin-general',
+        responseType: 'json',
+        data: {
+            usuario:pusuario,
+            contrasena: pcontrasena,
+            correo: pcorreo,
+            tipo: ptipo,
+            avatar: imagenUrl,
+            contador: 0
+
+        }
+    });
+
+};
 
 
 let iniciar_Sesion = async (pusuario, pcontrasena) => {
