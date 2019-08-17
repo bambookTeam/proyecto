@@ -4,6 +4,9 @@ const tbody = document.querySelector('#tbl_sucursales tbody');
 let lista_sucursales = [];
 let txt_filtro = document.querySelector('#txt_filtro');
 
+// Como este listar Sucursales es para el admin de libreria, solo se le deben de mostrar las sucursales que le pertenecen
+
+
 let mostrar_tabla = async() => {
 
     lista_sucursales = await obtenerSucursales();
@@ -15,22 +18,6 @@ let mostrar_tabla = async() => {
         fila.insertCell().innerHTML = lista_sucursales[i]['telefono'];
         fila.insertCell().innerHTML = lista_sucursales[i]['correo'];
         fila.insertCell().innerHTML = lista_sucursales[i]['direccion'];
-
-
-        let celda_agregar = fila.insertCell();
-        let boton_agregar = document.createElement('button');
-
-        boton_agregar.type = 'button';
-        boton_agregar.innerText = 'Inventario';
-        boton_agregar.dataset._id =lista_sucursales[i]['_id'];
-
-        celda_agregar.appendChild(boton_agregar);
-
-        boton_agregar.addEventListener('click', function(){
-            
-            window.location.href = 'inventario_sucursal.html';
-            
-        });
     }
 
 };
