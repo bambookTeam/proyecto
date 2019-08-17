@@ -67,7 +67,9 @@ let deshabilitar = (pid) => {
         url: 'http://localhost:4000/api/deshabilitar_tarjeta',
         responseType: 'json',
         data: {
-            _id: pid
+            _id: pid,
+            estado: pestado
+
 
         }
     });

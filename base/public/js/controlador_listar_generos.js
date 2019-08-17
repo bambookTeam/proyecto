@@ -29,7 +29,8 @@ for (let index = 0; index < lista_genero.length; index++) {
     modificar.appendChild(estilos_modificar);
 
     modificar.addEventListener('click', function () {
-        localStorage.setItem("_idGenero",lista_genero[index]._id);
+        localStorage.setItem("modificarLibro", JSON.stringify(lista_genero[index]));
+        localStorage.setItem("_idgenero",lista_genero[index]._id);
         window.location.href = 'modificar_genero.html'
 
     })
@@ -89,9 +90,23 @@ let celda_estado = fila.insertCell();
       
         
     
-    }
+      
+           
+    let estilos_modificar = document.createElement('img');
+    estilos_modificar.setAttribute('src', './imgs/edit-icon.png')
+
+    let celda_modificar = fila.insertCell();
+    let modificar = document.createElement('button');
+    modificar.type = 'button';
+
+    modificar.dataset._id = lista_genero[index]['_id'];
+
+    celda_modificar.appendChild(modificar);
+    modificar.appendChild(estilos_modificar);
 
         }
+
+    }
     }
 
 window.addEventListener('load', mostrarlista);

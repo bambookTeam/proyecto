@@ -1,23 +1,43 @@
+
+
 'use strict';
 
+let usuario = JSON.parse(localStorage.getItem("usuario"));
+let lista_genero = [];
+let idGenero=localStorage.getItem('_idgenero');
 
-const modificar = document.getElementById('btn-modificar');
- var input_genero = document.getElementById('txt-genero');
 
-const urlParams = new URLSearchParams(window.location.search);
-let _id = urlParams.get('_id');
+let modifgenero = async(id) => {
+    var input_genero = document.getElementById('txt-genero');
 
-let cargar_formulario = async () => {
-    let genero = JSON.parse(localStorage.getItem("modificarGenero"));
-    if (genero) {
+    console.log(id);
     
-        input_genero.value = genero['genero'];
-    }
+    modifgenero(id, input_genero)
 
 }
-let editar_genero = () => {
-    modificarGenero(_idgenero,pgenero);
+
+document.getElementById("btn-modificar").addEventListener("click", function () {
+    modificarLibro(idGenero);
+});
+
+let llenarFormulario = async () => {
+
+    lista_genero=await listarGenero();
+
+
+    for (let index = 0; index < lista_genero.length; index++) {
+        if (idGenero==lista_genero[index]._id) {
+    document.getElementById('txt-genero').value = lista_genero[index].genero;
+
+        }
+        
+    }
+    limpiar();
 };
 
-cargar_formulario();
-modificar.addEventListener('click', editar_genero);
+
+let limpiar = () => {
+    localStorage.removeItem("usuario");
+}
+
+llenarFormulario();

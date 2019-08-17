@@ -55,7 +55,7 @@ let estilos_modificar = document.createElement('img');
                 habilitar(listar_tarjetas[index]['_id'], "Habilitado");
             }
 
-            mostrar_tabla();
+            mostrarlista();
         });
         celda_estado.appendChild(enlace_habilitado);
 }

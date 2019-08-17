@@ -128,8 +128,7 @@ router.post('/habilitar-tarjeta', function (req, res) {
 
     Tarjeta.findByIdAndUpdate(body._id, {
         $set: {
-            estado: req.body.estado
-        }
+            estado: 'Habilitado'  
     },
         function (error) {
 
@@ -139,8 +138,10 @@ router.post('/habilitar-tarjeta', function (req, res) {
                 res.json({ success: true, msg: 'La tarjeta se habilitó con éxito' });
             }
         }
-    )
+    
 });
 
+});
 module.exports = router;
+
 
