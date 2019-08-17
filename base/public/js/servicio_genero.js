@@ -53,7 +53,7 @@ let listarGenero = async() =>{
     }
 };
 
-let modificarGenero = (pgenero) => {
+let modificarGenero = (pid,pgenero) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar_genero',
@@ -61,6 +61,7 @@ let modificarGenero = (pgenero) => {
 
 
         data: {
+            _id:pid,
            genero:pgenero
         }
     });
@@ -81,6 +82,18 @@ let deshabilitar = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar_genero',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};
+
+let eliminar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar_genero',
         responseType: 'json',
         data: {
             _id: pid

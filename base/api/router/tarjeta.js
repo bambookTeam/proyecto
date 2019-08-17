@@ -53,7 +53,7 @@ router.post('/modificar_tarjeta', function (req, res) {
     console.log("modificar tarjeta ejecutado");
     console.log(body);
 
-    Contacto.findByIdAndUpdate(body._id, {
+    Tarjeta.findByIdAndUpdate(body._id, {
         $set: {
             numerotarjeta: body.numerotarjeta,
             fechavencimiento: body.fechavencimiento,
@@ -101,6 +101,46 @@ router.post('/listar_tarjetas', function (req, res) {
         }
     })
 })
+
+router.post('/deshabilitar-tarjeta', function (req, res) {
+    let body = req.body;
+
+    Tarjeta.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: 'Deshabilitado'
+        }
+    },
+        function (error) {
+            if (error) {
+                console.log("error")
+                console.log(error)
+                res.json({ success: false, msg: 'No se pudo deshabilitar la tarjeta' });
+            } else {
+                console.log("sirve")
+                res.json({ success: true, msg: 'La tarjeta se deshabilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/habilitar-tarjeta', function (req, res) {
+    let body = req.body;
+
+    Tarjeta.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: req.body.estado
+        }
+    },
+        function (error) {
+
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar la tarjeta' });
+            } else {
+                res.json({ success: true, msg: 'La tarjeta se habilitó con éxito' });
+            }
+        }
+    )
+});
 
 module.exports = router;
 

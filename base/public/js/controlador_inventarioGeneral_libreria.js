@@ -25,7 +25,7 @@ let mostrar_inventario = async () => {
         fila.insertCell().innerHTML = inventario_general[i]['titulo'];
         fila.insertCell().innerHTML = inventario_general[i]['autor'];
         fila.insertCell().innerHTML = inventario_general[i]['precio'];
-        fila.insertCell().innerHTML = inventario_general[i]['cant'];
+       // fila.insertCell().innerHTML = inventario_general[i]['cant'];
 
         let celda_agregar = fila.insertCell();
         let boton_agregar = document.createElement('button');
@@ -33,7 +33,7 @@ let mostrar_inventario = async () => {
 
 
         boton_agregar.type = 'button';
-        boton_agregar.innerText = 'Agregar';
+        boton_agregar.innerText = 'Agregar a inventario';
         
         celda_agregar.appendChild(boton_agregar);
 
@@ -114,4 +114,5 @@ let crearInventario = async() => {
 };
 
 window.addEventListener('load', mostrar_inventario);
+
 
