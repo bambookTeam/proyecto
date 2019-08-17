@@ -78,4 +78,55 @@ router.get('/buscar-autor-id/:_id', function(req, res) {
     })
 });
 
+router.post('/modificar_autor', function(req, res) {
+    let body = req.body;
+
+    Autor.findByIdAndUpdate(body._id, {
+            $set: req.body
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo modificar el autor' });
+            } else {
+                res.json({ success: true, msg: 'El autor se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/deshabilitar_autor', function(req, res) {
+    let body = req.body;
+
+    Autor.findByIdAndUpdate(body._id, {
+            $set: {
+                estado: 'Deshabilitado'
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo deshabilitar el autor' });
+            } else {
+                res.json({ success: true, msg: 'El autor se deshabilitó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/habilitar_autor', function(req, res) {
+    let body = req.body;
+
+    Autor.findByIdAndUpdate(body._id, {
+            $set: {
+                estado: 'Habilitado'
+            }
+        },
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar el autor' });
+            } else {
+                res.json({ success: true, msg: 'El autor se habilitó con éxito' });
+            }
+        }
+    )
+});
 module.exports = router;

@@ -26,7 +26,7 @@ router.post('/registrar_libro', function (req, res) {
     tipo: body.tipo,
     cantidad: body.cantidad,
     precio: body.precio,
-    imagen: body.imagen,
+    portada: body.portada
 
   })
 
@@ -130,6 +130,20 @@ router.post('/modificar_libro', function(req, res) {
                 res.json({ success: false, msg: 'No se pudo modificar el libro' });
             } else {
                 res.json({ success: true, msg: 'El libro se modificó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/eliminar_libro', function(req, res) {
+    let body = req.body;
+
+    Libro.findByIdAndRemove(body._id,  
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el libro' });
+            } else {
+                res.json({ success: true, msg: 'El libro se eliminó con éxito' });
             }
         }
     )

@@ -151,3 +151,9 @@ main button:hover{
     border: none;
     height: 30px;
 }
+#portada_libro{
+    align-content: center;
+}
+#portada_libro img{
+    display: inline-block;
+}

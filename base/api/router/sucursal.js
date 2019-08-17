@@ -86,7 +86,7 @@ router.post('/modificar-sucursal', function (req, res) {
     let body = req.body;
 
     Sucursal.findByIdAndUpdate(body._id, {
-        $set: req.body;
+        $set: req.body
     },
         function (error) {
 

@@ -14,18 +14,19 @@ const input_genero = document.querySelector('#txt_genero');
 const input_tipo = document.querySelector('#txt_tipo');
 const input_cantidad = document.querySelector('#txt_existencia');
 const input_precio = document.querySelector('#txt_precio');
-const imgLibro = document.querySelector('#img_preview');
+const portadaLibro = document.querySelector('#img_preview');
+const contraportadaLibro = document.querySelector('#img_preview');
 
 //Funsión para seleccionar genero previamente registrado
-let listar_genero = async()=>{
+let listar_genero = async () => {
     let arrayGenero = [];
-    arrayGenero=await listarGenero();
+    arrayGenero = await listarGenero();
     let genero_select = document.querySelector('#txt_genero');
 
     for (let i = 0; i < arrayGenero.length; i++) {
         let optionGenero = document.createElement('option');
         optionGenero.setAttribute('value', arrayGenero[i].genero);
-    
+
         optionGenero.innerHTML = arrayGenero[i].genero;
         genero_select.appendChild(optionGenero);
     }
@@ -34,15 +35,15 @@ let listar_genero = async()=>{
 window.addEventListener('load', listar_genero);
 
 //Funsión para seleccionar autor previamente registrado
-let listar_autor = async()=>{
-    let arrayAutor =[];
+let listar_autor = async () => {
+    let arrayAutor = [];
     arrayAutor = await obtenerAutores();
     let autor_select = document.querySelector('#txt-nombre-autor');
 
     for (let i = 0; i < arrayAutor.length; i++) {
         let optionAutor = document.createElement('option');
         optionAutor.setAttribute('value', arrayAutor[i].autor);
-    
+
         optionAutor.innerHTML = arrayAutor[i].autor;
         autor_select.appendChild(optionAutor);
     }
@@ -51,7 +52,7 @@ window.addEventListener('load', listar_autor);
 
 
 
-let validar = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pimgLibro, pgenero, ptipo, pcantidad, pprecio, ) => {
+let validar = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pimgLibro, pgenero, ptipo, pcantidad, pprecio, pcontraportada ) => {
 
     let error = false;
     //Validar titulo
@@ -118,6 +119,14 @@ let validar = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pim
         imgLibro.classList.remove('input_error');
     }
 
+    //validar contraportada
+    if (pcontraportada == '') {
+        error = true;
+        contraportada.classList.add('input_error');
+    } else {
+        contraportada.classList.remove('input_error');
+    }
+
     //validar género
     if (pgenero == '') {
         error = true;
@@ -166,23 +175,25 @@ let saludar = () => {
     let tipo = input_tipo.value;
     let cantidad = Number(input_cantidad.value);
     let precio = Number(input_precio.value);
-    let imagen = imgLibro.src;   
-
-    let error = validar(titulo, edicion, editorial, autor, anno, idioma, isbn, imagen, genero, tipo, cantidad, precio);
+    let portada = portadaLibro.src;
+    let contraportada = contraportada.src;
     
+
+    let error = validar(titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio, portada, contraportada,);
+
     if (error == false) {
-        registrarLibro(titulo, edicion, editorial, autor, anno, idioma, isbn, imagen, genero, tipo, cantidad, precio);
+        registrarLibro(titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio, portada, contraportada,);
         registrarInventario(isbn);
         Swal.fire({
-                type: 'success',
-                title: 'El libro se ha registrado exitosamente'
-            })
+            type: 'success',
+            title: 'El libro se ha registrado exitosamente'
+        })
     } else {
         Swal.fire({
-                type: 'warning',
-                title: 'No se ha podido registrar el libro',
-                text: 'Revise los campos resaltados e inténtelo de nuevo'
-            })
+            type: 'warning',
+            title: 'No se ha podido registrar el libro',
+            text: 'Revise los campos resaltados e inténtelo de nuevo'
+        })
     }
 
 };
