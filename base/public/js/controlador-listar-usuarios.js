@@ -25,11 +25,20 @@ let mostrar_tabla = async () => {
         if (lista_usuarios[i]['tipo'] == "2") {
             fila.insertCell().innerHTML = "Usuario Cliente"
         }
-        fila.insertCell().innerHTML = lista_usuarios[i]['primerNombre'];
-        fila.insertCell().innerHTML = lista_usuarios[i]['primerApellido'];
+
+        if (lista_usuarios[i]['tipo'] == "0") {
+        fila.insertCell().innerHTML = "";
+        fila.insertCell().innerHTML = "";
         fila.insertCell().innerHTML = lista_usuarios[i]['correo'];
-        fila.insertCell().innerHTML = lista_usuarios[i]['identificacion'];
-        fila.insertCell().innerHTML = lista_usuarios[i]['sexo'];
+        fila.insertCell().innerHTML = "";
+        fila.insertCell().innerHTML = "";
+        }else{
+            fila.insertCell().innerHTML = lista_usuarios[i]['primerNombre'];
+            fila.insertCell().innerHTML = lista_usuarios[i]['primerApellido'];
+            fila.insertCell().innerHTML = lista_usuarios[i]['correo'];
+            fila.insertCell().innerHTML = lista_usuarios[i]['identificacion'];
+            fila.insertCell().innerHTML = lista_usuarios[i]['sexo'];
+        }
 
         if (lista_usuarios[i]['tipo'] == "2") {
 
