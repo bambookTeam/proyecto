@@ -85,3 +85,26 @@ let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidiom
         }
     });
 };
+
+// let habilitar_libro = (pid) => {
+//     axios({
+//         method: 'post',
+//         url: 'http://localhost:4000/api/habilitar_libro',
+//         responseType: 'json',
+//         data: {
+//             _id: pid,
+            
+//         }
+//     });
+// };
+// let deshabilitar_libro = (pid) => {
+//     axios({
+//         method: 'post',
+//         url: 'http://localhost:4000/api/deshabilitar_libro',
+//         responseType: 'json',
+//         data: {
+//             _id: pid
+
+//         }
+//     });
+// };
