@@ -2,25 +2,25 @@ const tbody = document.querySelector('#tbl_tarjetas tbody');
 let listar_tarjetas = [];
 
 let mostrarlista = async () => {
-        listar_tarjetas = await obtenerTarjetas();
-        listar_tarjetas = listar_tarjetas.reverse();
+    listar_tarjetas = await obtenerTarjetas();
+    listar_tarjetas = listar_tarjetas.reverse();
 
 
 
-tbody.innerHTML = '';
+    tbody.innerHTML = '';
 
-for (let index = 0; index < listar_tarjetas.length; index++) {
-    let fila = tbody.insertRow();
-    fila.insertCell().innerHTML = listar_tarjetas[index]['numerotarjeta'];
-    fila.insertCell().innerHTML = listar_tarjetas[index]['fechavencimiento'];
-    fila.insertCell().innerHTML = "***";
-    
-           
+    for (let index = 0; index < listar_tarjetas.length; index++) {
+        let fila = tbody.insertRow();
+        fila.insertCell().innerHTML = listar_tarjetas[index]['numerotarjeta'];
+        fila.insertCell().innerHTML = listar_tarjetas[index]['fechavencimiento'];
+        fila.insertCell().innerHTML = "***";
 
 
-//     listar_tarjetas = await obtenerTarjetas();
 
-let estilos_modificar = document.createElement('img');
+
+        //     listar_tarjetas = await obtenerTarjetas();
+
+        let estilos_modificar = document.createElement('img');
         estilos_modificar.setAttribute('src', './imgs/edit-icon.png')
 
         let celda_modificar = fila.insertCell();
@@ -57,11 +57,11 @@ let estilos_modificar = document.createElement('img');
             mostrar_tabla();
         });
         celda_estado.appendChild(enlace_habilitado);
-}
+    }
 };
-        
 
 
 
-        window.addEventListener('load', mostrarlista);
+
+window.addEventListener('load', mostrarlista);
 

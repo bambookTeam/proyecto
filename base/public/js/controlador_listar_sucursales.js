@@ -17,19 +17,24 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_sucursales[i]['direccion'];
 
         /*                    MODIFICAR SUCURSAL                   */
+        let estilos_modificar = document.createElement('img');
+        estilos_modificar.setAttribute('src', './imgs/edit-icon.png')
+
         let celda_modificar = fila.insertCell();
-        let boton_modificar = document.createElement('button');
-        boton_modificar.type = 'button';
-        boton_modificar.innerText = 'Modificar';
-        boton_modificar.dataset._id = lista_sucursales[i]['_id'];
+        let modificar = document.createElement('button');
+        modificar.type = 'button';
 
-        celda_modificar.appendChild(boton_modificar);
+        modificar.dataset._id = lista_sucursales[i]['_id'];
 
-        boton_modificar.addEventListener('click', function () {
-            //console.log(this.dataset._id);
-            localStorage.setItem('idSucursal', lista_sucursales[i]['_id']);
-            window.location.href = `modificar_sucursal.html`;
-        });
+        celda_modificar.appendChild(modificar);
+        modificar.appendChild(estilos_modificar);
+
+        modificar.addEventListener('click', function () {
+            localStorage.setItem("_idSucursal", lista_sucursales[i]._id);
+
+            //   localStorage.setItem("modificarTarjeta", JSON.stringify(listar_sucursales[index]));
+            window.location.href = 'modificar_sucursal.html'
+        })
         /*                    MODIFICAR SUCURSAL                   */
 
 

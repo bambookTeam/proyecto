@@ -17,6 +17,8 @@ let modificarSucursal = async (id) => {
 
 document.querySelector("#btn_modificar").addEventListener("click", function () {
     modificarSucursal(idSucursal);
+
+    window.location.href = 'listar_sucursales.html'
 });
 
 let llenarFormulario = async () => {
@@ -28,7 +30,7 @@ let llenarFormulario = async () => {
             document.querySelector('#txt_nombre').value = lista_sucursales[i].nombre;
             document.querySelector('#txt_telefono').value = lista_sucursales[i].telefono;
             document.querySelector('#txt_correo').value = lista_sucursales[i].correo;
-            document.querySelector('#txt-direccion').value = lista_sucursales[i].direccion;
+            document.querySelector('#txt_direccion').value = lista_sucursales[i].direccion;
         }
     }
     limpiar();
