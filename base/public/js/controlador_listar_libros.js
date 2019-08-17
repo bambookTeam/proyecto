@@ -55,8 +55,9 @@ let mostrar_tabla = async () => {
         btn_modificar.appendChild(estilos_btn_modificar);
 
         btn_modificar.addEventListener('click', function () {
-            localStorage.setItem("modificarLibro", JSON.stringify(lista_libros[i]));
-            window.location.href = 'modificar_libro.html'
+            localStorage.setItem("_idLibro", lista_libros[i]._id);
+            window.location.href = 'modificar_libro.html';
+
         })
 
 
