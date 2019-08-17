@@ -114,7 +114,7 @@ let mostrar_tabla = async () => {
             let celda_editar = fila.insertCell();
             let enlace_editar = document.createElement('a');
             enlace_editar.innerText = 'Editar';
-            enlace_editar.href = `editar-usuario.html?_id=${lista_usuarios[i]['_id']}`;
+            enlace_editar.href = `editar-admin-libreria.html?_id=${lista_usuarios[i]['_id']}`;
     
             celda_editar.appendChild(enlace_editar);
 
@@ -162,7 +162,7 @@ let mostrar_tabla = async () => {
             let celda_editar = fila.insertCell();
             let enlace_editar = document.createElement('a');
             enlace_editar.innerText = 'Editar';
-            enlace_editar.href = `editar-usuario.html?_id=${lista_usuarios[i]['_id']}`;
+            enlace_editar.href = `editar-admin-general.html?_id=${lista_usuarios[i]['_id']}`;
     
             celda_editar.appendChild(enlace_editar);
 
