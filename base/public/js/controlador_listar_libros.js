@@ -55,8 +55,9 @@ let mostrar_tabla = async () => {
         btn_modificar.appendChild(estilos_btn_modificar);
 
         btn_modificar.addEventListener('click', function () {
-            localStorage.setItem("modificarLibro", JSON.stringify(lista_libros[i]));
-            window.location.href = 'modificar_libro.html'
+            localStorage.setItem("_idLibro", lista_libros[i]._id);
+            window.location.href = 'modificar_libro.html';
+
         })
 
 
@@ -102,7 +103,7 @@ let filtrar_tabla = async () => {
             //Botón ver perfil
 
             let estilos_btn_perfil = document.createElement('img');
-            estilos_btn_perfil.setAttribute('src', './imgs/perfil-libro-icon.png');
+            // estilos_btn_perfil.setAttribute('src', './imgs/perfil-libro-icon.png');
 
             let celda_btn_perfil = fila.insertCell();
             let btn_perfil = document.createElement('button');
@@ -112,6 +113,8 @@ let filtrar_tabla = async () => {
 
             celda_btn_perfil.appendChild(btn_perfil);
             btn_perfil.appendChild(estilos_btn_perfil);
+
+            
 
             btn_perfil.addEventListener('click', function () {
                 localStorage.setItem("infoLibro", JSON.stringify(lista_libros[i]));

@@ -66,3 +66,26 @@ let modificar_autor = (pid, pnombre, pnombre_artistico, pfecha_nacimiento, pfech
         }
     });
 };
+
+let habilitar_autor = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/habilitar_autor',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            
+        }
+    });
+};
+let deshabilitar_autor = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/deshabilitar_autor',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};
