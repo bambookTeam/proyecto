@@ -48,6 +48,33 @@ router.post('/registrar_tarjeta', function (req, res) {
     );
 })
 
+router.post('/modificar_tarjeta', function (req, res) {
+    let body = req.body;
+    console.log("modificar tarjeta ejecutado");
+    console.log(body);
+
+    Contacto.findByIdAndUpdate(body._id, {
+        $set: {
+            numerotarjeta: body.numerotarjeta,
+            fechavencimiento: body.fechavencimiento,
+            codigocvv: body.codigocvv
+        }
+    },
+        function (error) {
+
+            if (error) {
+                console.log("error");
+                console.log(error);
+                res.json({ success: false, msg: 'No se pudo habilitar la tarjeta' });
+            } else {
+                console.log("conoce");
+                res.json({ success: true, msg: 'La tarjeta se habilitó con éxito' });
+            }
+        }
+    )
+
+});
+
 router.post('/listar_tarjetas', function (req, res) {
 
     console.log("listar tajetas ejecutado 2 ");

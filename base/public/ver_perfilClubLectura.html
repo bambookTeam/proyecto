@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Registro Club de Lectura
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/perfil_club.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<header>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <a href="index.html">
+        <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+            id="barnesLogo">
+    </a>
+    <div class="sign-in-button">
+        <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+    </div>
+</header>
+
+
+
+<body>
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent"><a href="#">Librerias</a>
+                <ul class="child">
+                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li><a href="#">Géneros</a></li>
+                    <li><a href="#">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
+                <ul class="child">
+                    <li><a href="#">Ver todos los Clubes</a></li>
+                    <li><a href="#">Ver mis Clubes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+    <main>
+
+        <section id="info">
+        
+
+        </section>
+        <section class="chatSection">
+            <h2>Chat del Club</h2>
+            <div class="chat">
+                <div id="chatArea">
+                    <div class="msgVisitor">
+                        <img alt"aber" src="https://img.icons8.com/bubbles/35/000000/lady-with-envelope.png">
+                        <div class="textVisitor">
+                            <h3>Sender_Name <span id="msgTime">[00:00]</span></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed posuere tortor.
+                                Suspendisse et nibh vitae nisl pretium ultricies. Pellentesque habitant morbi tristique
+                                senectus et netus et malesuada fames ac turpis egestas</p>
+                        </div>
+                    </div>
+                    <div class="msgSender">
+                        <img src="https://img.icons8.com/bubbles/35/000000/lady-with-mail.png">
+                        <div class="textSender">
+                            <h3>Sender_Name</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed posuere tortor.
+                                Suspendisse et nibh vitae nisl pretium ultricies. Pellentesque habitant morbi tristique
+                                senectus et netus et malesuada fames ac turpis egestas</p>
+                        </div>
+                    </div>
+                    <div class="msgVisitor">
+                        <img src="https://img.icons8.com/bubbles/35/000000/lady-with-envelope.png">
+                        <div class="textVisitor">
+                            <h3>Sender_Name</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed posuere tortor.
+                                Suspendisse et nibh vitae nisl pretium ultricies. Pellentesque habitant morbi tristique
+                                senectus et netus et malesuada fames ac turpis egestas</p>
+                        </div>
+                    </div>
+                    <div class="msgSender">
+                        <img src="https://img.icons8.com/bubbles/35/000000/lady-with-mail.png">
+                        <div class="textSender">
+                            <h3>Sender_Name </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed posuere tortor.
+                                Suspendisse et nibh vitae nisl pretium ultricies. Pellentesque habitant morbi tristique
+                                senectus et netus et malesuada fames ac turpis egestas</p>
+                        </div>
+                    </div>
+                    <div class="msgSender">
+                        <img src="https://img.icons8.com/bubbles/35/000000/lady-with-mail.png">
+                        <div class="textSender">
+                            <h3>Sender_Name</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed posuere tortor.
+                                Suspendisse et nibh vitae nisl pretium ultricies. Pellentesque habitant morbi tristique
+                                senectus et netus et malesuada fames ac turpis egestas</p>
+                        </div>
+                    </div>
+                    <div class="msgSender">
+                        <img src="https://img.icons8.com/bubbles/35/000000/lady-with-mail.png">
+                        <div class="textSender">
+                            <h3>Sender_Name</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed posuere tortor.
+                                Suspendisse et nibh vitae nisl pretium ultricies. Pellentesque habitant morbi tristique
+                                senectus et netus et malesuada fames ac turpis egestas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="msgtoSend">
+                    <textarea name="" id="chattextInput" cols="" rows=""></textarea>
+                    <button id="btnSendMsg"><img
+                            src="https://img.icons8.com/material-rounded/24/000000/filled-sent.png"></button>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/servicio-clubLectura.js"></script>
+    <script src="js/servicio_clubMiembro.js"></script>
+    <script src="js/controlador_perfil_club.js"></script>
+
+
+
+
+
+</body>
+
+</html>

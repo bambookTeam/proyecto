@@ -2,7 +2,7 @@
 
 // import { type } from "os";
 
-let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pimagen, pgenero, ptipo, pcantiddad, pprecio) => {
+let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pimagen, pgenero, ptipo, pcantidad, pprecio) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar_libro',
@@ -19,7 +19,7 @@ let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pis
             isbn: pisbn,
             genero: pgenero,
             tipo: ptipo,
-            cantidad: pcantiddad,
+            cantidad: pcantidad,
             precio: pprecio,
             imagen: pimagen
         }
@@ -60,3 +60,28 @@ let obtener_libroId = async (_id) => {
         // console.log(error);
     }
 }
+
+let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pimagen, pgenero, ptipo, pcantidad, pprecio) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar_libro',
+        responseType: 'json',
+
+
+        data: {
+            _id: pid,
+            titulo: ptitulo,
+            edicion: pedicion,
+            editorial: peditorial,
+            autor: pautor,
+            anno: panno,
+            idioma: pidioma,
+            isbn: pisbn,
+            genero: pgenero,
+            tipo: ptipo,
+            cantidad: pcantidad,
+            precio: pprecio,
+            imagen: pimagen
+        }
+    });
+};

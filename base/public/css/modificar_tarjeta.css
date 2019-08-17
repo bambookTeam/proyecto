@@ -1,0 +1,48 @@
+main a{
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+    margin: 15px;
+    background: none;
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
+
+main a:hover{
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #f6b93b;
+    font-weight: bold;
+    margin: 15px;
+    background: none;
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
+
+main button{
+    padding: 10px;
+    border: 1px solid #f6b93b;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: #f6b93b;
+    outline: none; 
+}
+
+main button:hover{
+    padding: 10px;
+    border: 1px solid #000;
+    /* border-radius: 15px; */
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
+}

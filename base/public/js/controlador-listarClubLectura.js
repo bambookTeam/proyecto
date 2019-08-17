@@ -1,6 +1,7 @@
 let buscar_Club_input = document.querySelector('#buscarClub');
 let btn_misClubes = document.querySelector('#btnListarMisClubes');
 let btn = document.getElementById("btnRegistrarClub");
+let btnClubes = document.getElementById("btnListarTodosLosClubes");
 
 let listarClubes = async () => {
     let listaClubes = [];
@@ -59,16 +60,39 @@ let listarClubes = async () => {
         clubInfoDiv.appendChild(libreriaSucursal);
         clubInfoDiv.appendChild(categorialinea);
         div.appendChild(btnUnirseClub);
-       
 
-        
+        btnUnirseClub.addEventListener('click', async function () {
+            let listaMiembros = [];
+            listaMiembros = await obtenerListaMiembros();
+            localStorage.setItem('idClub', listaClubes[i]._id);
+            let idUsuario = sessionStorage.getItem('id');
+            let errorExists = false;
 
+            for (let index = 0; index < listaMiembros.length; index++) {
 
+                if (listaMiembros[index].idClub == listaClubes[i]._id && idUsuario == listaMiembros[index].idUsuario) {
+                    errorExists = true;
+
+                } else {
+
+                }
+            }
+
+            if (listaClubes[i].idAdmin == idUsuario) {
+                console.log('ya es admin pa');
+            } else {
+                if (errorExists == true) {
+                    console.log('ya se unio antes pa');
+                } else {
+                    console.log('se unio');
+                    registrarMiembro_Club(listaClubes[i]._id, idUsuario);
+                }
+            }
+
+        })
     }
 
 }
-
-
 
 let filtrar_Clubes = async () => {
     let listaClubes = [];
@@ -83,63 +107,63 @@ let filtrar_Clubes = async () => {
     for (let i = 0; i < listaClubes.length; i++) {
 
         if ((listaClubes[i].nombre_Club).toLowerCase().includes(txt_filtrar_Club) || (listaClubes[i].genero).toLowerCase().includes(txt_filtrar_Club) || (listaClubes[i].categoria).toLowerCase().includes(txt_filtrar_Club)) {
-           
-
-        let div = document.createElement('div');
-        div.classList.add('club');
-
-        let clubInfoDiv = document.createElement('div');
-        clubInfoDiv.classList.add('club-info');
-
-        parentClubes.appendChild(div);
-
-        let img = document.createElement('img');
-        img.setAttribute('src', 'https://img.icons8.com/ios/100/000000/book-shelf.png');
-
-        div.appendChild(img);
-        div.appendChild(clubInfoDiv);
 
 
-        let h1 = document.createElement('h1');
-        h1.innerHTML = listaClubes[i].nombre_Club;
-        let modalidadLinea = document.createElement('p');
-        modalidadLinea.innerHTML = listaClubes[i].modalidad;
-        let fechaLinea = document.createElement('p');
-        fechaLinea.innerHTML = 'Inicio: ' + listaClubes[i].fechaInicio.substring(0, 10) + '- Fin: ' + listaClubes[i].fechaFin.substring(0, 10);
-        let horaLinea = document.createElement('p');
-        if (listaClubes[i].modalidad == "Virtual") {
-            horaLinea.innerHTML = "00:00";
-        } else {
-            horaLinea.innerHTML = listaClubes[i].hora + "-" + listaClubes[i].frecuencia;
+            let div = document.createElement('div');
+            div.classList.add('club');
+
+            let clubInfoDiv = document.createElement('div');
+            clubInfoDiv.classList.add('club-info');
+
+            parentClubes.appendChild(div);
+
+            let img = document.createElement('img');
+            img.setAttribute('src', 'https://img.icons8.com/ios/100/000000/book-shelf.png');
+
+            div.appendChild(img);
+            div.appendChild(clubInfoDiv);
+
+
+            let h1 = document.createElement('h1');
+            h1.innerHTML = listaClubes[i].nombre_Club;
+            let modalidadLinea = document.createElement('p');
+            modalidadLinea.innerHTML = listaClubes[i].modalidad;
+            let fechaLinea = document.createElement('p');
+            fechaLinea.innerHTML = 'Inicio: ' + listaClubes[i].fechaInicio.substring(0, 10) + '- Fin: ' + listaClubes[i].fechaFin.substring(0, 10);
+            let horaLinea = document.createElement('p');
+            if (listaClubes[i].modalidad == "Virtual") {
+                horaLinea.innerHTML = "00:00";
+            } else {
+                horaLinea.innerHTML = listaClubes[i].hora + "-" + listaClubes[i].frecuencia;
+            }
+            let temaGenerolinea = document.createElement('p');
+            temaGenerolinea.innerHTML = listaClubes[i].tema + ' - ' + listaClubes[i].genero;
+
+            let libreriaSucursal = document.createElement('p');
+            libreriaSucursal.innerHTML = listaClubes[i].libreria;
+
+            let categorialinea = document.createElement('p');
+            categorialinea.innerHTML = listaClubes[i].categoria;
+
+            let btnUnirseClub = document.createElement('button');
+            btnUnirseClub.innerText = "Unirse";
+            btnUnirseClub.setAttribute('class', 'unirse_Club');
+            btnUnirseClub.dataset._id = listaClubes[i]._id;
+
+            clubInfoDiv.appendChild(h1);
+            clubInfoDiv.appendChild(modalidadLinea);
+            clubInfoDiv.appendChild(fechaLinea);
+            clubInfoDiv.appendChild(horaLinea);
+            clubInfoDiv.appendChild(temaGenerolinea);
+            clubInfoDiv.appendChild(libreriaSucursal);
+            clubInfoDiv.appendChild(categorialinea);
+            div.appendChild(btnUnirseClub);
+
+
+
+
+
         }
-        let temaGenerolinea = document.createElement('p');
-        temaGenerolinea.innerHTML = listaClubes[i].tema + ' - ' + listaClubes[i].genero;
-
-        let libreriaSucursal = document.createElement('p');
-        libreriaSucursal.innerHTML = listaClubes[i].libreria;
-
-        let categorialinea = document.createElement('p');
-        categorialinea.innerHTML = listaClubes[i].categoria;
-
-        let btnUnirseClub = document.createElement('button');
-        btnUnirseClub.innerText = "Unirse";
-        btnUnirseClub.setAttribute('class', 'unirse_Club');
-        btnUnirseClub.dataset._id = listaClubes[i]._id;
-
-        clubInfoDiv.appendChild(h1);
-        clubInfoDiv.appendChild(modalidadLinea);
-        clubInfoDiv.appendChild(fechaLinea);
-        clubInfoDiv.appendChild(horaLinea);
-        clubInfoDiv.appendChild(temaGenerolinea);
-        clubInfoDiv.appendChild(libreriaSucursal);
-        clubInfoDiv.appendChild(categorialinea);
-        div.appendChild(btnUnirseClub);
-       
-
-        
-
-
-    }
 
 
 
@@ -150,16 +174,16 @@ let filtrar_Clubes = async () => {
 };
 
 let misClubes = async () => {
+    document.querySelector('#joinedClubs_h1').display = "block";
     let listaClubes = [];
-
     listaClubes = await obtenerClubes();
     let parentClubes = document.getElementById('clubes');
     parentClubes.innerHTML = "";
     listaClubes = listaClubes.reverse();
-    let usuarioActivo=sessionStorage.getItem('id');
+    let usuarioActivo = sessionStorage.getItem('id');
     for (let i = 0; i < listaClubes.length; i++) {
-        
-        if (listaClubes[i].idAdmin==usuarioActivo) {
+
+        if (listaClubes[i].idAdmin == usuarioActivo) {
             let div = document.createElement('div');
             div.classList.add('mi-club');
 
@@ -193,10 +217,10 @@ let misClubes = async () => {
             let categorialinea = document.createElement('p');
             categorialinea.innerHTML = listaClubes[i].categoria;
 
-            let btnUnirseClub = document.createElement('button');
-            btnUnirseClub.innerText = "Unirse";
-            btnUnirseClub.setAttribute('class', 'unirse_Club');
-            btnUnirseClub.dataset._id = listaClubes[i]._id;
+            let verClub = document.createElement('button');
+            verClub.innerText = "Ver Club";
+            verClub.setAttribute('class', 'unirse_Club');
+            verClub.dataset._id = listaClubes[i]._id;
 
             let btnCrearEvento = document.createElement('button');
             btnCrearEvento.innerText = "Agregar Evento";
@@ -209,15 +233,106 @@ let misClubes = async () => {
             clubInfoDiv.appendChild(horaLinea);
             clubInfoDiv.appendChild(temaGenerolinea);
             clubInfoDiv.appendChild(categorialinea);
-            div.appendChild(btnUnirseClub);
+            div.appendChild(verClub);
             div.appendChild(btnCrearEvento);
 
             btnCrearEvento.addEventListener('click', function () {
                 localStorage.setItem('idClub', listaClubes[i]._id);
                 location.replace('registrar-evento.html');
                 //location.replace('registrar-evento.html');
-
             });
+
+
+            verClub.addEventListener('click',function(){
+                localStorage.setItem('idClub',listaClubes[i]._id);
+                location.replace('ver_perfilClubLectura.html');
+            });
+        }
+
+
+
+    }
+
+
+    let listaMiembros = [];
+    listaMiembros = await obtenerListaMiembros();
+
+    for (let i = 0; i < listaClubes.length; i++) {
+
+        for (let index = 0; index < listaMiembros.length; index++) {
+            if (listaMiembros[index].idUsuario == usuarioActivo && listaMiembros[index].idClub == listaClubes[i]._id) {
+
+                let titleJoined = document.querySelector('#joinedClubs_h1');
+                titleJoined.style.display = 'block';
+
+                let div = document.createElement('div');
+                div.classList.add('mi-club');
+
+                let clubInfoDiv = document.createElement('div');
+                clubInfoDiv.classList.add('club-info');
+
+
+                let parentMisClubes = document.getElementById('joined_Clubes');
+                parentMisClubes.appendChild(div);
+
+                let img = document.createElement('img');
+                img.setAttribute('src', 'https://res.cloudinary.com/dc8k6i5xm/image/upload/v1563223101/pandauser_sw7weq.png');
+
+                div.appendChild(img);
+                div.appendChild(clubInfoDiv);
+
+
+                let h1 = document.createElement('h1');
+                h1.innerHTML = listaClubes[i].nombre_Club;
+                let modalidadLinea = document.createElement('p');
+                modalidadLinea.innerHTML = listaClubes[i].modalidad;
+                let fechaLinea = document.createElement('p');
+                fechaLinea.innerHTML = 'Inicio: ' + listaClubes[i].fechaInicio.substring(0, 10) + '- Fin: ' + listaClubes[i].fechaFin.substring(0, 10);
+                let horaLinea = document.createElement('p');
+                if (listaClubes[i].modalidad == "Virtual") {
+                    horaLinea.innerHTML = "00:00";
+                } else {
+                    horaLinea.innerHTML = listaClubes[i].hora + "-" + listaClubes[i].frecuencia;
+                }
+                let temaGenerolinea = document.createElement('p');
+                temaGenerolinea.innerHTML = listaClubes[i].tema + ' - ' + listaClubes[i].genero;
+
+                let categorialinea = document.createElement('p');
+                categorialinea.innerHTML = listaClubes[i].categoria;
+
+                let verClub = document.createElement('button');
+                verClub.innerText = "Ver Club";
+                verClub.setAttribute('class', 'unirse_Club');
+                verClub.dataset._id = listaClubes[i]._id;
+
+                let btnCrearEvento = document.createElement('button');
+                btnCrearEvento.innerText = "Salirme";
+                btnCrearEvento.setAttribute('class', 'crear_Evento');
+                btnCrearEvento.dataset._id = listaClubes[i]._id;
+
+                clubInfoDiv.appendChild(h1);
+                clubInfoDiv.appendChild(modalidadLinea);
+                clubInfoDiv.appendChild(fechaLinea);
+                clubInfoDiv.appendChild(horaLinea);
+                clubInfoDiv.appendChild(temaGenerolinea);
+                clubInfoDiv.appendChild(categorialinea);
+                div.appendChild(verClub);
+                div.appendChild(btnCrearEvento);
+
+                btnCrearEvento.addEventListener('click', function () {
+
+                    //location.replace('registrar-evento.html');
+                });
+
+                verClub.addEventListener('click', function () {
+                    localStorage.setItem('idClub',listaClubes[i]._id);
+                    location.replace('ver_perfilClubLectura.html');
+                });
+
+            } else {
+
+            }
+
         }
 
 
@@ -230,7 +345,8 @@ btn.onclick = function () {
 }
 
 window.addEventListener('load', listarClubes);
+btnClubes.addEventListener('click', listarClubes);
 buscar_Club_input.addEventListener('keyup', filtrar_Clubes);
-btn_misClubes.addEventListener('click',misClubes);
+btn_misClubes.addEventListener('click', misClubes);
 
 

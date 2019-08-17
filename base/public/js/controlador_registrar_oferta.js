@@ -24,9 +24,35 @@ btn_subir_oferta.onclick= function(){
     overlay.classList.remove('active');
     popup.classList.add('remove');
     registrarNuevaOferta();   
-    window.addEventListener('reload');
 
 };
+
+
+let registrarNuevaOferta = () => {
+
+    let error=false;
+    
+    if (error == false) {
+        registrarOferta();
+        
+        setTimeout(function(){ parent.innerHtml = ""; 
+        
+    }, 3000);
+    
+        Swal.fire({
+                type: 'success',
+                title: 'La oferta se ha registrado exitosamente'
+            })
+    } else {
+        Swal.fire({
+                type: 'warning',
+                title: 'No se ha podido registrar la oferta',
+                text: 'Revise los campos resaltados e inténtelo de nuevo'
+            })
+    }
+    
+    };
+    
 
  
 

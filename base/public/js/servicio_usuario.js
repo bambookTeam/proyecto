@@ -99,27 +99,6 @@ let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, 
 
 };
 
-let registroAdminGeneral = (pusuario, pcorreo, pcontrasena, ptipo,imagenUrl) => {
-
-
-
-    axios({
-
-        method: 'post',
-        url: 'http://localhost:4000/api/registrar_',
-        responseType: 'json',
-        data: {
-            usuario:pusuario,
-            contrasena: pcontrasena,
-            correo: pcorreo,
-            tipo: ptipo,
-            avatar: imagenUrl,
-            contador: 0
-
-        }
-    });
-
-};
 
 let modificarAdminGeneral = (pusuario, pcorreo, pcontrasena, ptipo,imagenUrl) => {
 
@@ -254,6 +233,7 @@ let crearContrasenna = async (p_id, pcontrasena) => {
             _id: p_id,
             contrasena: pcontrasena
         }
+
 
 
     });

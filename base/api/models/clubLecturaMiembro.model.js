@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 let clubMiembro_schema = new mongoose.Schema({
     idClub: {type:String, required:true, unique:false},
-    idUsuario: {type:String, required:true, unique:false},
+    idUsuario: {type:String, required:true, unique:false}
 });
 
 module.exports = mongoose.model('ClubMiembro', clubMiembro_schema);
