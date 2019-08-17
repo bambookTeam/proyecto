@@ -53,7 +53,7 @@ let obtenerTarjetas = async () => {
 let habilitar = (pid, pestado) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/habilitar-contacto',
+        url: 'http://localhost:4000/api/habilitar_tarjeta',
         responseType: 'json',
         data: {
             _id: pid,
@@ -64,7 +64,7 @@ let habilitar = (pid, pestado) => {
 let deshabilitar = (pid) => {
     axios({
         method: 'post',
-        url: 'http://localhost:4000/api/deshabilitar-contacto',
+        url: 'http://localhost:4000/api/deshabilitar_tarjeta',
         responseType: 'json',
         data: {
             _id: pid

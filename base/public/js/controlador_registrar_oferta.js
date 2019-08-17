@@ -36,9 +36,7 @@ let registrarNuevaOferta = () => {
         registrarOferta();
         
         setTimeout(function(){ parent.innerHtml = ""; 
-        addNew() 
-        alert("Oferta Actualizada");
-    
+        
     }, 3000);
     
         Swal.fire({

@@ -19,8 +19,6 @@ today = mm + '-' + dd + '-' + yyyy;
 
 
 
-
-
 btnRegistrartarjeta.addEventListener('click', function () {
     overlay.classList.add('active');
     popup.classList.add('active');

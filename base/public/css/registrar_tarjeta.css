@@ -132,3 +132,25 @@ visibility: hidden;
       color: white;
   }
   
+
+  main button{
+    padding: 10px;
+    font-size: 5px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+}
+
+main button:hover{
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
+main button img{
+width: 20px;
+height: 20px;
+}
