@@ -1,5 +1,6 @@
 'use strict';
 
+
 const tbody = document.querySelector('#tbl-usuarios tbody');
 let lista_usuarios = [];
 let txt_filtro = document.querySelector('#txt_filtro');
@@ -15,7 +16,15 @@ let mostrar_tabla = async () => {
 
     for (let i = 0; i < lista_usuarios.length; i++) {
         let fila = tbody.insertRow();
-        fila.insertCell().innerHTML = lista_usuarios[i]['tipo'];
+        if (lista_usuarios[i]['tipo'] == "0") {
+            fila.insertCell().innerHTML = "Admin General"
+        }
+        if (lista_usuarios[i]['tipo'] == "1") {
+            fila.insertCell().innerHTML = "Admin Librería"
+        }
+        if (lista_usuarios[i]['tipo'] == "2") {
+            fila.insertCell().innerHTML = "Usuario Cliente"
+        }
         fila.insertCell().innerHTML = lista_usuarios[i]['primerNombre'];
         fila.insertCell().innerHTML = lista_usuarios[i]['primerApellido'];
         fila.insertCell().innerHTML = lista_usuarios[i]['correo'];
@@ -38,36 +47,40 @@ let mostrar_tabla = async () => {
             });
 
             let celda_estado = fila.insertCell();
-            let enlace_habilitado = document.createElement('a');
+            let enlace_habilitado = document.createElement('button');
             enlace_habilitado.innerText = 'Habilitar';
-            enlace_habilitado.href = 'listar-usuarios.html';
-            enlace_habilitado.addEventListener('click', function() {
+            //enlace_habilitado.href = 'listar-usuarios.html';
+            enlace_habilitado.addEventListener('click', function () {
                 habilitar(lista_usuarios[i]['_id']);
                 mostrar_tabla();
+                window.location.href="listar-usuarios.html"
             });
-    
-    
-            let enlace_deshabilitado = document.createElement('a');
+
+
+            let enlace_deshabilitado = document.createElement('button');
             enlace_deshabilitado.innerText = 'Deshabilitar';
-            enlace_deshabilitado.href = 'listar-usuarios.html';;
-            enlace_deshabilitado.addEventListener('click', function() {
+            //enlace_deshabilitado.href = 'listar-usuarios.html';;
+            enlace_deshabilitado.addEventListener('click', function () {
                 deshabilitar(lista_usuarios[i]['_id']);
                 mostrar_tabla();
+                window.location.href="listar-usuarios.html"
             });
-    
+
             if (lista_usuarios[i]['estado'] == 1) {
                 celda_estado.appendChild(enlace_deshabilitado);
             } else {
-    
+
                 celda_estado.appendChild(enlace_habilitado);
                 fila.classList.add('deshabilitado');
             }
-    
+
             let celda_editar = fila.insertCell();
-            let enlace_editar = document.createElement('a');
+            let enlace_editar = document.createElement('button');
             enlace_editar.innerText = 'Editar';
-            enlace_editar.href = `editar-usuario.html?_id=${lista_usuarios[i]['_id']}`;
-    
+            //enlace_editar.href = `editar-usuario.html?_id=${lista_usuarios[i]['_id']}`;
+            enlace_editar.addEventListener('click', function () {
+                window.location.href= `editar-usuario.html?_id=${lista_usuarios[i]['_id']}`;
+            });
             celda_editar.appendChild(enlace_editar);
 
         }
@@ -86,36 +99,40 @@ let mostrar_tabla = async () => {
             });
 
             let celda_estado = fila.insertCell();
-            let enlace_habilitado = document.createElement('a');
+            let enlace_habilitado = document.createElement('button');
             enlace_habilitado.innerText = 'Habilitar';
-            enlace_habilitado.href = 'listar-usuarios.html';
-            enlace_habilitado.addEventListener('click', function() {
+            //enlace_habilitado.href = 'listar-usuarios.html';
+            enlace_habilitado.addEventListener('click', function () {
                 habilitar(lista_usuarios[i]['_id']);
                 mostrar_tabla();
+                window.location.href="listar-usuarios.html"
             });
-    
-    
-            let enlace_deshabilitado = document.createElement('a');
+
+
+            let enlace_deshabilitado = document.createElement('button');
             enlace_deshabilitado.innerText = 'Deshabilitar';
-            enlace_deshabilitado.href = 'listar-usuarios.html';;
-            enlace_deshabilitado.addEventListener('click', function() {
+            //enlace_deshabilitado.href = 'listar-usuarios.html';;
+            enlace_deshabilitado.addEventListener('click', function () {
                 deshabilitar(lista_usuarios[i]['_id']);
                 mostrar_tabla();
+                window.location.href="listar-usuarios.html"
             });
-    
+
             if (lista_usuarios[i]['estado'] == 1) {
                 celda_estado.appendChild(enlace_deshabilitado);
             } else {
-    
+
                 celda_estado.appendChild(enlace_habilitado);
                 fila.classList.add('deshabilitado');
             }
-    
+
             let celda_editar = fila.insertCell();
-            let enlace_editar = document.createElement('a');
+            let enlace_editar = document.createElement('button');
             enlace_editar.innerText = 'Editar';
-            enlace_editar.href = `editar-admin-libreria.html?_id=${lista_usuarios[i]['_id']}`;
-    
+            //enlace_editar.href = `editar-admin-libreria.html?_id=${lista_usuarios[i]['_id']}`;
+            enlace_editar.addEventListener('click', function () {
+                window.location.href= `editar-admin-libreria.html?_id=${lista_usuarios[i]['_id']}`;
+            });
             celda_editar.appendChild(enlace_editar);
 
         }
@@ -134,36 +151,40 @@ let mostrar_tabla = async () => {
             });
 
             let celda_estado = fila.insertCell();
-            let enlace_habilitado = document.createElement('a');
+            let enlace_habilitado = document.createElement('button');
             enlace_habilitado.innerText = 'Habilitar';
-            enlace_habilitado.href = 'listar-usuarios.html';
-            enlace_habilitado.addEventListener('click', function() {
+            //enlace_habilitado.href = 'listar-usuarios.html';
+            enlace_habilitado.addEventListener('click', function () {
                 habilitar(lista_usuarios[i]['_id']);
                 mostrar_tabla();
+                window.location.href="listar-usuarios.html"
             });
-    
-    
-            let enlace_deshabilitado = document.createElement('a');
+
+
+            let enlace_deshabilitado = document.createElement('button');
             enlace_deshabilitado.innerText = 'Deshabilitar';
-            enlace_deshabilitado.href = 'listar-usuarios.html';;
-            enlace_deshabilitado.addEventListener('click', function() {
+            //enlace_deshabilitado.href = 'listar-usuarios.html';;
+            enlace_deshabilitado.addEventListener('click', function () {
                 deshabilitar(lista_usuarios[i]['_id']);
                 mostrar_tabla();
+                window.location.href="listar-usuarios.html"
             });
-    
+
             if (lista_usuarios[i]['estado'] == 1) {
                 celda_estado.appendChild(enlace_deshabilitado);
             } else {
-    
+
                 celda_estado.appendChild(enlace_habilitado);
                 fila.classList.add('deshabilitado');
             }
-    
+
             let celda_editar = fila.insertCell();
-            let enlace_editar = document.createElement('a');
+            let enlace_editar = document.createElement('button');
             enlace_editar.innerText = 'Editar';
-            enlace_editar.href = `editar-admin-general.html?_id=${lista_usuarios[i]['_id']}`;
-    
+            //enlace_editar.href = `editar-admin-general.html?_id=${lista_usuarios[i]['_id']}`;
+enlace_editar.addEventListener("click", function(){
+    window.location.href= `editar-admin-general.html?_id=${lista_usuarios[i]['_id']}`;
+})
             celda_editar.appendChild(enlace_editar);
 
         }
@@ -180,8 +201,8 @@ let filtrar_tabla = async () => {
 
 
     for (let i = 0; i < lista_usuarios.length; i++) {
-        if (  lista_usuarios[i]['primerNombre'].toLowerCase().includes(filtro) || lista_usuarios[i]['primerApellido'].toLowerCase().includes(filtro) || lista_usuarios[i]['correo'].toLowerCase().includes(filtro) || lista_usuarios[i]['identificacion'].toLowerCase().includes(filtro)) {
-            
+        if (lista_usuarios[i]['primerNombre'].toLowerCase().includes(filtro) || lista_usuarios[i]['primerApellido'].toLowerCase().includes(filtro) || lista_usuarios[i]['correo'].toLowerCase().includes(filtro) || lista_usuarios[i]['identificacion'].toLowerCase().includes(filtro)) {
+
             let fila = tbody.insertRow();
             fila.insertCell().innerHTML = lista_usuarios[i]['tipo'];
             fila.insertCell().innerHTML = lista_usuarios[i]['primerNombre'];
@@ -207,33 +228,33 @@ let filtrar_tabla = async () => {
             let enlace_habilitado = document.createElement('a');
             enlace_habilitado.innerText = 'Habilitar';
             enlace_habilitado.href = 'listar-usuarios.html';
-            enlace_habilitado.addEventListener('click', function() {
+            enlace_habilitado.addEventListener('click', function () {
                 habilitar(lista_usuarios[i]['_id']);
                 mostrar_tabla();
             });
-    
-    
+
+
             let enlace_deshabilitado = document.createElement('a');
             enlace_deshabilitado.innerText = 'Deshabilitar';
             enlace_deshabilitado.href = 'listar-usuarios.html';;
-            enlace_deshabilitado.addEventListener('click', function() {
+            enlace_deshabilitado.addEventListener('click', function () {
                 deshabilitar(lista_usuarios[i]['_id']);
                 mostrar_tabla();
             });
-    
+
             if (lista_usuarios[i]['estado'] == 1) {
                 celda_estado.appendChild(enlace_deshabilitado);
             } else {
-    
+
                 celda_estado.appendChild(enlace_habilitado);
                 fila.classList.add('deshabilitado');
             }
-    
+
             let celda_editar = fila.insertCell();
             let enlace_editar = document.createElement('a');
             enlace_editar.innerText = 'Editar';
             enlace_editar.href = `editar-usuario.html?_id=${lista_usuarios[i]['_id']}`;
-    
+
             celda_editar.appendChild(enlace_editar);
         }
 
