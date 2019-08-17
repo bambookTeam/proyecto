@@ -29,12 +29,26 @@ for (let index = 0; index < lista_genero.length; index++) {
     modificar.appendChild(estilos_modificar);
 
     modificar.addEventListener('click', function () {
-        localStorage.setItem("modificarGenero", JSON.stringify(lista_genero[index]));
+        localStorage.setItem("_idGenero",lista_genero[index]._id);
         window.location.href = 'modificar_genero.html'
+
     })
 
     
 }
+
+let celda_eliminar=fila.insertCell();
+let enlace_eliminar=document.createElement('button');
+eliminar.type = 'button';
+
+eliminar.dataset._id=lista_genero[index]['_id'];
+
+celda_eliminar.appendChild(modificar);
+    modificar.appendChild(estilos_modificar);
+
+
+
+
 
 
 let celda_estado = fila.insertCell();
@@ -82,5 +96,6 @@ let celda_estado = fila.insertCell();
 
 window.addEventListener('load', mostrarlista);
 txt_filtro.addEventListener('keyup', filtrarlista);
+
 
     

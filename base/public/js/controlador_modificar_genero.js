@@ -16,7 +16,7 @@ let cargar_formulario = async () => {
 
 }
 let editar_genero = () => {
-    modificarGenero(_id,pgenero);
+    modificarGenero(_idgenero,pgenero);
 };
 
 cargar_formulario();

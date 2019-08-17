@@ -36,6 +36,7 @@ let estilos_modificar = document.createElement('img');
             localStorage.setItem("modificarTarjeta", JSON.stringify(listar_tarjetas[index]));
             window.location.href = 'modificar_tarjeta.html'
         })
+        
 
         let celda_estado = fila.insertCell();
 

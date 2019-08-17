@@ -1,30 +1,25 @@
 'use strict';
 
-let modificarTarjeta = (id) => {
-    console.log(id);
-    let numerotarjeta = document.getElementById('txt-numerotarjeta').value;
-    let fechavencimiento = document.getElementById('txt-fechadevencimiento').value;
-    let codigocvv = document.getElementById('txt-codigocvv').value;
-    modificarTarjetaServicio(id, numerotarjeta, fechavencimiento, codigocvv);
 
+const modificar = document.getElementById('btn-modificar');
+var  input_numerotarjeta = document.getElementById('txt-numerotarjeta'),
+    input_fechavencimiento = document.getElementById('txt-fechadevencimiento'),
+    input_codigocvv = document.querySelector('#txt-codigocvv');
+
+const urlParams = new URLSearchParams(window.location.search);
+let _id = urlParams.get('_id');
+
+let cargar_formulario = async () => {
+    let genero = JSON.parse(localStorage.getItem("modificarGenero"));
+    if (genero) {
     
+        input_genero.value = genero['genero'];
+    }
+
 }
-document.getElementById("modificar").addEventListener("click", function () {
-    modificarTarjeta(usuario._id);
-});
-
-let llenarFormulario = () => {
-
-    document.getElementById('txt-numerotarjeta').value = tarjeta.numerotarjeta;
-    // document.querySelector('').value = new Date(usuario.fecha);
-    document.getElementById('txt-fechadevencimiento').value = tarjeta.fechavencimiento;
-    document.getElementById('txt-codigocvv').value = tarjeta.codigocvv;
-    limpiar();
+let editar_genero = () => {
+    modificarGenero(_id,pgenero);
 };
 
-
-let limpiar = () => {
-    localStorage.removeItem("usuario");
-}
-
-llenarFormulario();
+cargar_formulario();
+modificar.addEventListener('click', editar_genero);
