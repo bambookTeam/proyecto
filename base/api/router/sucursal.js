@@ -5,7 +5,7 @@ const express = require('express'),
     Sucursal = require('../models/sucursal.model');
 
 //Definición de la ruta para registrar sucursales
-router.post('/registrar-sucursal', function(req, res) {
+router.post('/registrar-sucursal', function (req, res) {
     let body = req.body;
 
     console.log(body)
@@ -13,14 +13,14 @@ router.post('/registrar-sucursal', function(req, res) {
     let nueva_sucursal = new Sucursal({
         idLibreria: body.idLibreria,
         nombre: body.nombre,
-        telefono : body.telefono,
+        telefono: body.telefono,
         correo: body.correo,
-        direccion : body.direccion
+        direccion: body.direccion
     });
 
-   
+
     nueva_sucursal.save(
-        function(err, sucursalDB) {
+        function (err, sucursalDB) {
             if (err) {
 
                 console.log(err);
@@ -40,7 +40,7 @@ router.post('/registrar-sucursal', function(req, res) {
     );
 });
 
-router.get('/listar-sucursales', function(req, res) {
+router.get('/listar-sucursales', function (req, res) {
 
     console.log("listar sucursales");
     console.log(req.body);
@@ -63,6 +63,44 @@ router.get('/listar-sucursales', function(req, res) {
             });
         }
     })
+});
+
+router.get('/buscar-sucursal-id/:_id', function (req, res) {
+    Sucursal.findById(req.body._id, function (err, sucursalBD) {
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontró ninguna librería con ese id',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                sucursal: sucursalBD
+            });
+        }
+    })
+});
+
+router.post('/modificar-sucursal', function (req, res) {
+    let body = req.body;
+
+    Sucursal.findByIdAndUpdate(body._id, {
+        $set: req.body;
+    },
+        function (error) {
+
+            if (error) {
+                console.log("error");
+                console.log(error);
+                res.json({ success: false, msg: 'No se pudo habilitar el club' });
+            } else {
+                console.log("conoce");
+                res.json({ success: true, msg: 'El club se habilitó con éxito' });
+            }
+        }
+    )
+
 });
 
 module.exports = router;

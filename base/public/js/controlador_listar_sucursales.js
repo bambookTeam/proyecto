@@ -4,7 +4,7 @@ const tbody = document.querySelector('#tbl_sucursales tbody');
 let lista_sucursales = [];
 let txt_filtro = document.querySelector('#txt_filtro');
 
-let mostrar_tabla = async() => {
+let mostrar_tabla = async () => {
 
     lista_sucursales = await obtenerSucursales();
     tbody.innerHTML = " ";
@@ -15,11 +15,28 @@ let mostrar_tabla = async() => {
         fila.insertCell().innerHTML = lista_sucursales[i]['telefono'];
         fila.insertCell().innerHTML = lista_sucursales[i]['correo'];
         fila.insertCell().innerHTML = lista_sucursales[i]['direccion'];
+
+        /*                    MODIFICAR SUCURSAL                   */
+        let celda_modificar = fila.insertCell();
+        let boton_modificar = document.createElement('button');
+        boton_modificar.type = 'button';
+        boton_modificar.innerText = 'Modificar';
+        boton_modificar.dataset._id = lista_sucursales[i]['_id'];
+
+        celda_modificar.appendChild(boton_modificar);
+
+        boton_modificar.addEventListener('click', function () {
+            //console.log(this.dataset._id);
+            localStorage.setItem('idSucursal', lista_sucursales[i]['_id']);
+            window.location.href = `modificar_sucursal.html?_id=${this.dataset._id}`
+        });
+        /*                    MODIFICAR SUCURSAL                   */
+
     }
 
 };
 
-let filtrar_tabla = async() => {
+let filtrar_tabla = async () => {
 
     let filtro = txt_filtro.value.toLowerCase();
     tbody.innerHTML = '';

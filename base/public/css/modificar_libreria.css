@@ -14,20 +14,9 @@ main h1{
 }
 
 #datos_libreria{
-    width: 35%;
-    float: left;
     text-align: center;
-}
-
-#datos_admi_libreria{
-    width: 65%;
-    float: left;
-    text-align: center;
-}
-
-.izquierda{
-    float: left;
     width: 50%;
+    display: inline-block;
 }
 
 main h2{
@@ -61,25 +50,9 @@ main textarea{
     background: none;
 }
 
-main select{
-    width: 90%;
-    height: 30px;
-    margin: 0 15px;
-    margin-bottom: 50px;
-    padding: 5px;
-    border: none;
-    border-bottom: 1px solid #000;
-    background: none;
-    outline: none;
-}
-
 .input_error {
     border: none;
     border-bottom: 2px #e74c3c solid !important;
-}
-
-#img_avatar{
-    width: 100px;
 }
 
 main iframe{
