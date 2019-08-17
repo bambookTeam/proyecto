@@ -1,30 +1,16 @@
+'use strict'
 
-'use strict';
-
-const boton_crear = document.querySelector('#btn_crear_contrasenna');
-const input_pin = document.querySelector('#txt_pin')
-const input_contrasenna =  document.querySelector('#txt_contrasenna');
+const boton_modificar = document.querySelector('#btn_modificar_contrasenna');
+const input_contrasenna = document.querySelector('#txt_contrasenna')
+const input_contrasennaNueva =  document.querySelector('#txt_contrasenna_nueva');
 const input_verificacion =  document.querySelector('#txt_verificacion');
 
 
-
-let validar = (ppin,pcontrasenna,pverificacion)=> {
+let validar = (pcontrasenna,pcontrasennaNueva,pverificacion)=> {
 
     let error = false;
 
     
-
-    if(ppin ==''){
-
-        error = true;
-        input_pin.classList.add('input_error');
-
-    }else {
-
-        input_pin.classList.remove('input_error');
-
-
-    }
 
     if(pcontrasenna ==''){
 
@@ -34,6 +20,18 @@ let validar = (ppin,pcontrasenna,pverificacion)=> {
     }else {
 
         input_contrasenna.classList.remove('input_error');
+
+
+    }
+
+    if(pcontrasennaNueva ==''){
+
+        error = true;
+        input_contrasennaNueva.classList.add('input_error');
+
+    }else {
+
+        input_contrasennaNueva.classList.remove('input_error');
 
 
     }
@@ -50,9 +48,9 @@ let validar = (ppin,pcontrasenna,pverificacion)=> {
 
     }
 
-    if ( pcontrasenna == pverificacion){
+    if ( pcontrasennaNueva == pverificacion){
         
-        input_contrasenna.classList.remove('input_error');
+        input_contrasennaNueva.classList.remove('input_error');
         input_verificacion.classList.remove('input_error');
 
 
@@ -60,7 +58,7 @@ let validar = (ppin,pcontrasenna,pverificacion)=> {
 
         error = true;
 
-        input_contrasenna.classList.add('input_error');
+        input_contrasennaNueva.classList.add('input_error');
         input_verificacion.classList.add('input_error');
 
 
@@ -71,14 +69,16 @@ let validar = (ppin,pcontrasenna,pverificacion)=> {
 
 };
 
+
+
 let guardar = () => {
 
-    let pin = input_pin.value;
-    let contrasena = input_contrasenna.value;
+    let contrasenna = input_contrasenna.value;
+    let contrasennaNueva = input_contrasennaNueva.value;
     let verificacion = input_verificacion.value;
 
-    let error = validar(pin,contrasena,verificacion);
-    let errorPin = validarPin (pin, contrasena);
+    let error = validar(contrasenna,contrasennaNueva,verificacion);
+    let errorPin = validarPin (contrasenna, contrasennaNueva);
      console.log(errorPin);
 
 
@@ -116,4 +116,4 @@ let guardar = () => {
 
 }
 
-boton_crear.addEventListener('click', guardar);
+boton_modificar.addEventListener('click', guardar);

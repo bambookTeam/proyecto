@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
 
@@ -279,6 +279,32 @@ let obtenerUsuarioPerfil = async (idUsuario) => {
         console.log(error);
     }
 };
+
+
+
+
+let recuperarContrasena = (p_id,pcorreo) => {
+
+    let nuevaContrasena = generarContrasenna();
+
+    axios({
+        
+        method: 'post',
+        url: 'http://localhost:4000/api/recuperar-contrasena', 
+        responseType:'json',
+        data: {
+        
+            _id: p_id,
+            correo: pcorreo,
+            contrasena: nuevaContrasena
+        }
+
+    });
+
+
+};
+
+
 
 function generarContrasenna() {
     let caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
