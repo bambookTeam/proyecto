@@ -166,7 +166,7 @@ let filtrar_tabla = async () => {
 
         btn_eliminar.addEventListener('click', function () {
             localStorage.setItem("eliminarAutor", JSON.stringify(lista_autores[i]));
-            window.location.href = 'eliminar_autor.html'
+            window.location.href = 'eliminar_autor+.html'
         })  
         
     }
