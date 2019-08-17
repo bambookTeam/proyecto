@@ -269,7 +269,7 @@ let saludar = () => {
 
         registroAdminLibreria (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombre_usuario,tipo);
 
-        location.replace('index.html');
+        //location.replace('index.html');
 
     } else {
         Swal.fire({
