@@ -36,11 +36,31 @@ let estilos_modificar = document.createElement('img');
             localStorage.setItem("modificarTarjeta", JSON.stringify(listar_tarjetas[index]));
             window.location.href = 'modificar_tarjeta.html'
         })
-    
-        
-}
 
+        let celda_estado = fila.insertCell();
+
+
+        let enlace_habilitado = document.createElement('a');
+        if (listar_tarjetas[index]["estado"] == "Habilitado") {
+            enlace_habilitado.innerText = "Habilitado";
+        } else {
+            enlace_habilitado.innerText = "Deshabilitado";
+        }
+        enlace_habilitado.href = 'listar_tarjetas.html';
+        enlace_habilitado.addEventListener('click', function () {
+            if (listar_tarjetas[index]["estado"] == "Habilitado") {
+                habilitar(listar_tarjetas[index]['_id'], "Desabilitado");
+            } else {
+                habilitar(listar_tarjetas[index]['_id'], "Habilitado");
+            }
+
+            mostrar_tabla();
+        });
+        celda_estado.appendChild(enlace_habilitado);
 }
+};
+        
+
 
 
         window.addEventListener('load', mostrarlista);
