@@ -33,7 +33,7 @@ let mostrarlista = async () => {
         modificar.appendChild(estilos_modificar);
 
         modificar.addEventListener('click', function () {
-            localStorage.setItem("modificarTarjeta", JSON.stringify(listar_tarjetas[index]));
+            localStorage.setItem("_idTarjeta", JSON.stringify(listar_tarjetas[index]));
             window.location.href = 'modificar_tarjeta.html'
         })
         
@@ -50,9 +50,9 @@ let mostrarlista = async () => {
         enlace_habilitado.href = 'listar_tarjetas.html';
         enlace_habilitado.addEventListener('click', function () {
             if (listar_tarjetas[index]["estado"] == "Habilitado") {
-                habilitar(listar_tarjetas[index]['_id'], "Desabilitado");
+                habilitar(listar_tarjetas[index]['_idTarjeta'], "Desabilitado");
             } else {
-                habilitar(listar_tarjetas[index]['_id'], "Habilitado");
+                habilitar(listar_tarjetas[index]['_idTarjeta'], "Habilitado");
             }
 
             mostrarlista();
