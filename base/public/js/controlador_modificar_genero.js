@@ -1,22 +1,51 @@
-
-
 'use strict';
 
 let usuario = JSON.parse(localStorage.getItem("usuario"));
 let lista_genero = [];
 let idGenero=localStorage.getItem('_idgenero');
 
-
-let modifgenero = async(id) => {
+let modificarGenero = async (id) => {
     var input_genero = document.getElementById('txt-genero');
-
     console.log(id);
     
     modifgenero(id, input_genero)
 
 }
 
-document.getElementById("btn-modificar").addEventListener("click", function () {
+document.getElementById("modificar").addEventListener("click", function () {
+    modificarTarjeta(idTarjeta);
+
+    window.location.href = 'listar_tarjetas.html'
+});
+
+let llenarFormulario = async () => {
+
+    listar_tarjetas = await obtenerTarjetas();
+
+    for (let index = 0; index < listar_tarjetas.length; index++) {
+        if (idTarjeta == listar_tarjetas[index]._id) {
+            document.getElementById('txt-numerotarjeta').value = listar_tarjetas[index].numerotarjeta;
+            document.getElementById('txt-fechadevencimiento').value = listar_tarjetas[index].fechavencimiento;
+            document.getElementById('txt-codigocvv').value = listar_tarjetas[index].codigocvv;
+        }
+    }
+    limpiar();
+};
+
+let limpiar = () => {
+    localStorage.removeItem("usuario");
+}
+
+llenarFormulario();
+
+
+
+
+let modifgenero = async(id) => {
+   
+}
+
+document.getElementById("modificar").addEventListener("click", function () {
     modificarLibro(idGenero);
 });
 

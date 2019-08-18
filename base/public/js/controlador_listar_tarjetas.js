@@ -15,9 +15,6 @@ let mostrarlista = async () => {
         fila.insertCell().innerHTML = listar_tarjetas[index]['fechavencimiento'];
         fila.insertCell().innerHTML = "***";
 
-
-
-
         //     listar_tarjetas = await obtenerTarjetas();
 
         let estilos_modificar = document.createElement('img');
@@ -59,6 +56,8 @@ let mostrarlista = async () => {
         });
         celda_estado.appendChild(enlace_habilitado);
     }
+
+
 };
 
 
