@@ -47,15 +47,7 @@ let validarElGenero = (pElGenero) => {
     return error;
 };
 
-let limpiarForm = () => {
-    document.getElementById('txt-genero').value = "";
 
-};
-
-let cerrar =() => {
-    overlay.classList.remove('active');
-    popup.classList.add('remove');
-}
 
 let registraGenero =() =>{
    
