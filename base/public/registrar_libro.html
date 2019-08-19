@@ -16,130 +16,132 @@
 
 
 <header>
-  <nav>
-    <div class="logoBambooks">
-      <a href="inicioCliente.html"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <a href="index.html">
+        <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+            id="barnesLogo">
+    </a>
+    <div class="sign-in-button">
+        <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
     </div>
-    <div class="nav-container">
-      <a href="listar_librerias.html" id="optionNavLibrerias">Librerias</a>
-      <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
-      <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
-      <a href="listar_libros.html" id="optionNavLibros">Libros</a>
-      <a href="listar-autores.html" id="optionNavAutores">Autores</a>
-      <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
-      <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
-      <a href="listar_tarjetas.html">Tarjetas</a>
-      <a href="#" id="optionIntercambio">Intercambios</a>
-      <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
-    </div>
-    <div class="optionsNav">
-      <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-      <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
-      <button id="btn_cerrar">Cerrar Sesion</button>
-    </div>
-  </nav>
 </header>
 
 <body>
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent"><a href="#">Librerias</a>
+                <ul class="child">
+                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li><a href="#">Géneros</a></li>
+                    <li><a href="#">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
+                <ul class="child">
+                    <li><a href="#">Ver todos los Clubes</a></li>
+                    <li><a href="#">Ver mis Clubes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
   <main>
-    <h1>Registrar Libro</h1>
+    <div class="sign-in">
+      <h1>Nuevo Libro</h1>
+      <div class="line"></div>        
+      <form action="" id="formulario-ClubLectura">     
 
+        
+              <div class="subir_imagen">
+                <figure class="portada">
+                  <img src="imgs/img.png" alt="Seleccionar imagen" id="img_preview">
+                </figure>
+                <button type="button" id="btn_seleccionar_portada" class="boton_subir_imagen">Portada </button>
 
-    <section id="portada_libro">
-      <div class="subir_imagen">
-        <figure class="portada">
-          <img src="imgs/img.png" alt="Seleccionar imagen" id="img_preview">
-        </figure>
-        <button type="button" id="btn_seleccionar_portada" class="boton_subir_imagen">Portada </button>
+                <figure class="portada">
+                  <img src="imgs/img.png" alt="Seleccionar imagen" id="img_preview">
+                </figure>
+                <button type="button" id="btn_seleccionar_contraportada" class="boton_subir_imagen">Contraportada </button>
+              </div>
+            
+           
+            <div>
+              <label for="txt_titulo">Título:</label>
+              <input id="txt_titulo" type="text">
+            </div>
+            <div>
+              <label for="txt_edicion">Edición:</label>
+              <input id="txt_edicion" type="text">
+            </div>
+            <div>
+              <label for="txt_editorial">Editorial:</label>
+              <input id="txt_editorial" type="text">
+            </div>
+            <div id="lista_autores" class="listas">
+              <label for="txt_autor">Autor:</label>
+              <!-- <select name="autor" id="txt-nombre-autor"> -->
+                <!-- <option value=""></option> -->
+                <!-- <option>Autor 1</option>
+                  <option>Autor 2</option>
+                  <option>Autor 3</option> -->
+              <!-- </select> -->
+            </div>
+            <div>
+              <label for="txt_anno_edicion">Año de edición:</label>
+              <input id="txt_anno_edicion" type="number">
+            </div>
+            <div>
+              <label for="idioma">Idioma:</label>
+              <select name="idioma" id="txt_idioma">
+                <option value=""></option>
+                <option>Español</option>
+                <option>Inglés</option>
+              </select>
+            </div>
+            <div>
+              <label for="txt_isbn">ISBN:</label>
+              <input id="txt_isbn" type="number">
+          </div>
+          <div id="lista_genero" class="listas">
+            <label for="txt_genero">Seleccionar género:</label>
+            <!-- <select name="genero" id="txt_genero"> -->
+              <!-- <option value=""></option> -->
+            <!-- </select> -->
+          </div>
+          <div>
+            <label for="tipo">Tipo:</label>
+            <select name="tipo" id="txt_tipo">
+              <option value=""></option>
+              <option value="bolsillo">Bolsillo</option>
+              <option value="Digital">Digital</option>
+              <option value="Pasta dura">Pasta dura</option>
+              <option value="Pasta gruesa">Pasta gruesa</option>
+            </select>
+          </div>
+          <div>
+            <label for="existencia">Existencia:</label>
+            <input id="txt_existencia" type="number">
+          </div>
+          <div>
+            <label for="precio">Precio:</label>
+            <input id="txt_precio" type="number">
+          </div>
 
-        <figure class="portada">
-          <img src="imgs/img.png" alt="Seleccionar imagen" id="img_preview">
-        </figure>
-        <button type="button" id="btn_seleccionar_contraportada" class="boton_subir_imagen">Contraportada </button>
-      </div>
-    </section>
-    <!-- Aquí empieza el formulario del libro -->
-    <section id="sct_formulario">
-      <form>
-        <div>
-          <label for="txt_titulo">Título:</label>
-          <input id="txt_titulo" type="text">
+        </form>
+        
+        <div btnsForm button>
+         <button type="button" class="boton-registrar" id="btn_registrar">Registrar</button>
         </div>
-        <div>
-          <label for="txt_edicion">Edición:</label>
-          <input id="txt_edicion" type="text">
-        </div>
-        <div>
-          <label for="txt_editorial">Editorial:</label>
-          <input id="txt_editorial" type="text">
-        </div>
-        <div>
-          <label for="autor">Autor:</label>
-          <select name="autor" id="txt-nombre-autor">
-            <option value=""></option>
-            <!-- <option>Autor 1</option>
-              <option>Autor 2</option>
-              <option>Autor 3</option> -->
-          </select>
-        </div>
-        <div>
-          <label for="txt_anno_edicion">Año de edición:</label>
-          <input id="txt_anno_edicion" type="number">
-        </div>
-        <div>
-          <label for="idioma">Idioma:</label>
-          <select name="idioma" id="txt_idioma">
-            <option value=""></option>
-            <option>Español</option>
-            <option>Inglés</option>
-          </select>
-        </div>
-        <div>
-          <label for="txt_isbn">ISBN:</label>
-          <input id="txt_isbn" type="number">
-      </form>
       </div>
-      <div>
-        <label for="genero">Seleccionar género</label>
-        <select name="genero" id="txt_genero">
-          <option value=""></option>
-        </select>
-      </div>
-      <div>
-        <label for="tipo">Tipo</label>
-        <select name="tipo" id="txt_tipo">
-          <option value=""></option>
-          <option value="bolsillo">Bolsillo</option>
-          <option value="Digital">Digital</option>
-          <option value="Pasta dura">Pasta dura</option>
-          <option value="Pasta gruesa">Pasta gruesa</option>
-        </select>
-      </div>
-      <div>
-        <label for="existencia">Existencia:</label>
-        <input id="txt_existencia" type="number">
-      </div>
-      <div>
-        <label for="precio">Precio:</label>
-        <input id="txt_precio" type="number">
-      </div>
-
-      </form>
-    </section>
-
-    <div>
-      <button type="button" class="boton-registrar" id="btn_registrar">Registrar</button>
-    </div>
-
-    </section>
-
-  </main>
+  
+    
+    </main>
 
   <section id="footer">
 

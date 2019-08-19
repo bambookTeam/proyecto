@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // import { type } from "os";
 
@@ -110,7 +110,7 @@ let deshabilitar_libro = (pid) => {
         }
     });
 };
-let eliminar = (pid) => {
+let eliminar_libro = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar_libro',

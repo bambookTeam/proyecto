@@ -1,4 +1,100 @@
-.hovernav{
+body {
+    background-color: #fff
+  }
+  h1{
+      margin: 18px;
+  }
+  .sign-in {
+    width: 90%;
+    margin-left:10px auto 39px 20px;
+  }
+  .line{
+    background-color: #f6b93b;
+    height:2px;
+    width:100%;
+    margin-bottom:30px;
+  }
+  .sign-in h1 {
+    margin:20px;
+  }
+  
+  
+  input {
+    display: block;
+    width:800px;
+    padding:10px;
+    margin:10px 0;
+    margin-left:20px;
+  }
+  
+  select{
+    width:800px;
+    padding:10px;
+     margin:10px 0;
+     margin-left:20px;
+     appearance: none;
+     height:40px;
+     background-color:#fff;
+  }
+  
+  label{
+    display: block;
+    margin-left:20px;
+  }
+  .btnsForm{
+    float:right;
+    margin-right:10px;
+    margin-bottom:30px;
+  }
+  
+  .btnsForm button{
+    padding:15px 45px;
+    border:solid 1px #000;
+    background-color:#fff;
+    color:#000;
+  }
+  
+  .btnsForm button:hover{
+      border:solid 1px #000;
+    background-color:#000;
+    color:#fff;
+  
+  }
+  
+  .error{
+    display:none;
+    color:red;
+    margin:20px;
+    font-size:10px;
+  }
+
+
+  .input_error{
+  
+      border:solid 2px red;
+  }
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .hovernav{
     text-decoration: none;
     border-bottom: solid 2px #f6b93b;
 }
@@ -156,4 +252,4 @@ main button:hover{
 }
 #portada_libro img{
     display: inline-block;
-}
+} */
