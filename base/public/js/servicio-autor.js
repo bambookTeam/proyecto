@@ -29,7 +29,7 @@ let obtenerAutores = async() => {
 
         return response.data.lista_autores;
     } catch (error) {
-        console.log(error);
+        //console.log(error);
     }
 };
 

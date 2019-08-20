@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 
 const boton_registrar = document.querySelector('#btn_registrar');
@@ -18,38 +18,80 @@ const portadaLibro = document.querySelector('#img_preview');
 const contraportadaLibro = document.querySelector('#img_preview');
 
 //Funsión para seleccionar genero previamente registrado
-let listar_genero = async () => {
+// let listar_genero = async () => {
+//     let arrayGenero = [];
+//     arrayGenero = await listarGenero ();
+//     let genero_select = document.querySelector('#txt_genero');
+
+//     for (let i = 0; i < arrayGenero.length; i++) {
+//         let optionGenero = document.createElement('option');
+//         optionGenero.setAttribute('value', arrayGenero[i].genero);
+
+//         optionGenero.innerHTML = arrayGenero[i].genero;
+//         genero_select.appendChild(optionGenero);
+//     }
+
+// }
+// window.addEventListener('load', listar_genero);
+
+//Funsión para seleccionar autor previamente registrado
+// let listar_autor = async () => {
+//     let arrayAutor = [];
+//     arrayAutor = await obtenerAutores();
+//     let autor_select = document.querySelector('#txt-nombre-autor');
+
+//     for (let i = 0; i < arrayAutor.length; i++) {
+//         let optionAutor = document.createElement('option');
+//         optionAutor.setAttribute('value', arrayAutor[i].autor);
+
+//         optionAutor.innerHTML = arrayAutor[i].autor;
+//         autor_select.appendChild(optionAutor);
+//     }
+// }
+// window.addEventListener('load', listar_autor);
+
+let showSelects = async() => {
+
     let arrayGenero = [];
+    let arrayAutor = [];
+    
     arrayGenero = await listarGenero();
-    let genero_select = document.querySelector('#txt_genero');
+    arrayAutor = await obtenerAutores();
+
+    let parentGenero = document.getElementById('lista_genero');
+    let parentAutor = document.getElementById('lista_autores');
+    
+
+    let selectGenero = document.createElement('select');
+    selectGenero.setAttribute('id', 'txt_genero');
+    parentGenero.appendChild(selectGenero);
+
+    let selectAutor = document.createElement('select');
+    selectAutor.setAttribute('id', 'txt_autor');
+    parentAutor.appendChild(selectAutor);
+
 
     for (let i = 0; i < arrayGenero.length; i++) {
         let optionGenero = document.createElement('option');
         optionGenero.setAttribute('value', arrayGenero[i].genero);
-
+    
         optionGenero.innerHTML = arrayGenero[i].genero;
-        genero_select.appendChild(optionGenero);
+        optionGenero.style.width = "300px"
+        selectGenero.appendChild(optionGenero);
     }
-
-}
-window.addEventListener('load', listar_genero);
-
-//Funsión para seleccionar autor previamente registrado
-let listar_autor = async () => {
-    let arrayAutor = [];
-    arrayAutor = await obtenerAutores();
-    let autor_select = document.querySelector('#txt-nombre-autor');
 
     for (let i = 0; i < arrayAutor.length; i++) {
         let optionAutor = document.createElement('option');
         optionAutor.setAttribute('value', arrayAutor[i].autor);
-
+    
         optionAutor.innerHTML = arrayAutor[i].autor;
-        autor_select.appendChild(optionAutor);
+        optionAutor.style.width = "300px"
+        selectAutor.appendChild(optionAutor);
     }
-}
-window.addEventListener('load', listar_autor);
 
+}
+
+window.addEventListener('load', showSelects);
 
 
 let validar = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pimgLibro, pgenero, ptipo, pcantidad, pprecio, pcontraportada ) => {
@@ -199,5 +241,5 @@ let saludar = () => {
 };
 
 
-boton_registrar.addEventListener('click', saludar);
+boton_registrar.addEventListener('click', saludar)
 
