@@ -17,7 +17,7 @@ router.post('/registrar_tarjeta', function (req, res) {
         id: body.id,
         numerotarjeta: body.numerotarjeta,
         fechavencimiento: body.fechavencimiento,
-        codigocvv: body.codigocvv
+        codigocvv: body.codigocvv,
     });
 
     console.log("guardado de tarjeta");
@@ -48,32 +48,6 @@ router.post('/registrar_tarjeta', function (req, res) {
     );
 })
 
-router.post('/modificar_tarjeta', function (req, res) {
-    let body = req.body;
-    console.log("modificar tarjeta ejecutado");
-    console.log(body);
-
-    Tarjeta.findByIdAndUpdate(body._id, {
-        $set: {
-            numerotarjeta: body.numerotarjeta,
-            fechavencimiento: body.fechavencimiento,
-            codigocvv: body.codigocvv
-        }
-    },
-        function (error) {
-
-            if (error) {
-                console.log("error");
-                console.log(error);
-                res.json({ success: false, msg: 'No se pudo habilitar la tarjeta' });
-            } else {
-                console.log("conoce");
-                res.json({ success: true, msg: 'La tarjeta se habilitó con éxito' });
-            }
-        }
-    )
-
-});
 
 router.post('/listar_tarjetas', function (req, res) {
 
@@ -140,8 +114,39 @@ router.post('/habilitar-tarjeta', function (req, res) {
         }
     
 });
+router.post('/modificar_tarjeta', function (req, res) {
+    let body = req.body;
+    console.log("modificar tarjeta ejecutado");
+    console.log(body);
+
+    Tarjeta.findByIdAndUpdate(body._id, {
+        $set: req.body
+    },
+    function(error) {
+        if (error) {
+            res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+        } else {
+            res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+        }
+    }
+)
+});
+router.post('/eliminar-contacto', function(req, res) {
+    let body = req.body;
+
+    Contacto.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo borrar el contacto' });
+            } else {
+                res.json({ success: true, msg: 'El contacto se borró con éxito' });
+            }
+        }
+    )
+});
 
 });
+
 module.exports = router;
 
 

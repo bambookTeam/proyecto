@@ -6,13 +6,12 @@ let idTarjeta = localStorage.getItem('_idTarjeta');
 
 let modificarTarjeta = async (id) => {
     console.log(id);
-    var  input_numerotarjeta = document.getElementById('txt-numerotarjeta'),
+    const  input_numerotarjeta = document.getElementById('txt-numerotarjeta'),
     input_fechavencimiento = document.getElementById('txt-fechadevencimiento'),
     input_codigocvv = document.getElementById('txt-codigocvv');
     modificar_tarjeta(id, input_numerotarjeta, input_fechavencimiento, input_codigocvv);
 }
-
-document.getElementById("modificar").addEventListener("click", function () {
+document.getElementById('btn-agregar').addEventListener("click", function () {
     modificarTarjeta(idTarjeta);
 
     window.location.href = 'listar_tarjetas.html'

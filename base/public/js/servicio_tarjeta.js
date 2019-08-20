@@ -39,7 +39,7 @@ let obtenerTarjetaId = async (_id) => {
         // fetch data from an url endpoint
         const response = await axios({
             method: 'get',
-            url: `http://localhost:4000/api/buscar_tarjeta-id/${_id}`,
+            url: `http://localhost:4000/api/buscar-tarjeta-id/${_id}`,
             responseType: 'json'
         });
 

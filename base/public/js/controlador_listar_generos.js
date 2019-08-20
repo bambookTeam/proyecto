@@ -3,12 +3,9 @@ let lista_genero = [];
 txt_filtro=document.querySelector('#txt_filtro');
 
 let mostrarlista = async () => {
-        lista_genero = await listarGenero();
+        lista_genero = await listarGeneros();
         lista_genero = lista_genero.reverse();
-
-
-
-tbody.innerHTML = '';
+        tbody.innerHTML = "";
 
 for (let index = 0; index < lista_genero.length; index++) {
     let fila = tbody.insertRow();

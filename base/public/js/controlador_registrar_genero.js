@@ -28,7 +28,7 @@ let validar = (pgenero) => {
         input_genero.classList.add('input_error');
     } else {
         input_genero.classList.remove('input_error');
-        registrarGenero(pgenero);
+        //registrarGenero(pgenero);
         mostrarlista();
         
     }
@@ -68,8 +68,8 @@ if(erroGenero == true) {
             title: 'Se ha agregado su tarjeta exitosamente',
             type: 'success'
         })
-        registraGenero(genero);
-        limpiarForm();
+        agregarGenero(genero);
+       // limpiarForm();
         cerrar();
     } else {
         Swal.fire({ //formato json

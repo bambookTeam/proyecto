@@ -4,10 +4,7 @@ let listar_tarjetas = [];
 let mostrarlista = async () => {
     listar_tarjetas = await obtenerTarjetas();
     listar_tarjetas = listar_tarjetas.reverse();
-
-
-
-    tbody.innerHTML = '';
+     tbody.innerHTML = "";
 
     for (let index = 0; index < listar_tarjetas.length; index++) {
         let fila = tbody.insertRow();
@@ -30,7 +27,7 @@ let mostrarlista = async () => {
         modificar.appendChild(estilos_modificar);
 
         modificar.addEventListener('click', function () {
-            localStorage.setItem("_idTarjeta", JSON.stringify(listar_tarjetas[index]));
+            localStorage.setItem("_idTarjeta",listar_tarjetas[index]);
             window.location.href = 'modificar_tarjeta.html'
         })
         
