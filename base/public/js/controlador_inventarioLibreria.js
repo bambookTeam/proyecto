@@ -1,5 +1,9 @@
 'use strict'
 
+var lista_inventarioLibreria = [];
+var lista_libros = [];
+
+
 const tbody = document.querySelector('#tbl_inventario tbody');
 const cerrarpopup = document.querySelector('#cerrar');
 const boton_agregarLibro = document.querySelector('#btn-agregar-libro');
@@ -8,9 +12,9 @@ let mostrar_inventario = async() =>{
 
     let inventario_libreria = await crearInventario(); 
 
-    inventraio_libreria = inventraio_libreria.reverse();
+    inventario_libreria = inventario_libreria.reverse();
 
-    for ( let i = 0; i< inventraio_libreria.length; i++){
+    for ( let i = 0; i< inventario_libreria.length; i++){
 
         let fila = tbody.insertRow();
         
@@ -24,7 +28,36 @@ let mostrar_inventario = async() =>{
         fila.insertCell().innerHTML = inventario_libreria[i]['precio'];
         fila.insertCell().innerHTML = inventario_libreria[i]['cant'];
         
+        /*
+        let celda_agregar = fila.insertCell();
+        let boton_agregar = document.createElement('button');
+            
+
+
+        boton_agregar.type = 'button';
+        boton_agregar.innerText = 'Agregar';
         
+        celda_agregar.appendChild(boton_agregar);
+
+        boton_agregar.addEventListener('click', function(){
+        
+            localStorage.setItem("inventario", JSON.stringify(inventario_libreria[i]));
+
+                    
+            
+            overlay.classList.add('active');
+            popup.classList.add('active');
+            
+
+        });
+
+        cerrarpopup.addEventListener('click', function () {
+            overlay.classList.remove('active');
+            popup.classList.add('remove');
+        
+        });
+
+        */
     
     }
 
@@ -35,17 +68,22 @@ let crearInventario = async() => {
 
     let inventario_libreria = [];
 
-    lsita_inventarioLibreria = await obtenerInventarioLibreria();
+    lista_inventarioLibreria = await inventario();
     lista_libros = await obtenerLibros ();
 
+    let cont = 0; 
+
+    //REVISAR EL USO DE CONT!!
 
     for( let i = 0; i < lista_libros.length; i++){
 
         for ( let j = 0; j< lista_inventarioLibreria.length; j++){
 
+        
+            
             if(lista_libros[i]['isbn'] == lista_inventarioLibreria[j]['isbn']){
 
-                inventario_general[cont] = {
+                inventario_libreria[cont] = {
                     "isbn" : lista_libros[i]['isbn'],
                     "titulo": lista_libros[i]['titulo'],
                     "autor": lista_libros[i]['autor'],
@@ -59,22 +97,28 @@ let crearInventario = async() => {
                 
             }
 
+            
+
         }
     
 
     }
 
-    localStorage.clear
+// OJO CON EL LOCALStorage 
 
+    localStorage.clear();
+    
 
-
+    return inventario_libreria;
 
 };
 
 
 boton_agregarLibro.addEventListener('click', function() {
     
-    window.location.href = 'agregar_inventario_libreria.html'; 
+    window.location.href = 'registrar_inventario_libreria.html'; 
 
 
 });
+
+window.addEventListener('load', mostrar_inventario);
