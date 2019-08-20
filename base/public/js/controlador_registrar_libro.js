@@ -1,61 +1,26 @@
 'use strict'
 
-
-const boton_registrar = document.querySelector('#btn_registrar');
-
 const input_titulo = document.querySelector('#txt_titulo');
 const input_edicion = document.querySelector('#txt_edicion');
 const input_editorial = document.querySelector('#txt_editorial');
-const input_autor = document.querySelector('#txt-nombre-autor');
+//const input_autor = document.querySelector('#txt-nombre-autor');
 const input_anno = document.querySelector('#txt_anno_edicion');
 const input_idioma = document.querySelector('#txt_idioma');
 const input_isbn = document.querySelector('#txt_isbn');
-const input_genero = document.querySelector('#txt_genero');
+//const input_genero = document.querySelector('#txt_genero');
 const input_tipo = document.querySelector('#txt_tipo');
 const input_cantidad = document.querySelector('#txt_existencia');
 const input_precio = document.querySelector('#txt_precio');
 const portadaLibro = document.querySelector('#portada_preview');
 const contraportadaLibro = document.querySelector('#contraportada_preview');
 
-//Funsión para seleccionar genero previamente registrado
-// let listar_genero = async () => {
-//     let arrayGenero = [];
-//     arrayGenero = await listarGenero ();
-//     let genero_select = document.querySelector('#txt_genero');
-
-//     for (let i = 0; i < arrayGenero.length; i++) {
-//         let optionGenero = document.createElement('option');
-//         optionGenero.setAttribute('value', arrayGenero[i].genero);
-
-//         optionGenero.innerHTML = arrayGenero[i].genero;
-//         genero_select.appendChild(optionGenero);
-//     }
-
-// }
-// window.addEventListener('load', listar_genero);
-
-//Funsión para seleccionar autor previamente registrado
-// let listar_autor = async () => {
-//     let arrayAutor = [];
-//     arrayAutor = await obtenerAutores();
-//     let autor_select = document.querySelector('#txt-nombre-autor');
-
-//     for (let i = 0; i < arrayAutor.length; i++) {
-//         let optionAutor = document.createElement('option');
-//         optionAutor.setAttribute('value', arrayAutor[i].autor);
-
-//         optionAutor.innerHTML = arrayAutor[i].autor;
-//         autor_select.appendChild(optionAutor);
-//     }
-// }
-// window.addEventListener('load', listar_autor);
 
 let showSelects = async() => {
 
     let arrayGenero = [];
     let arrayAutor = [];
     
-    arrayGenero = await listarGenero();
+    arrayGenero = await listarGeneros();
     arrayAutor = await obtenerAutores();
 
     let parentGenero = document.getElementById('lista_genero');
@@ -70,8 +35,15 @@ let showSelects = async() => {
     selectAutor.setAttribute('id', 'txt_autor');
     parentAutor.appendChild(selectAutor);
 
+  
 
     for (let i = 0; i < arrayGenero.length; i++) {
+        if(i==0){
+            let escoger_opcion = document.createElement('option');
+            escoger_opcion.setAttribute('value',"");
+            escoger_opcion.innerHTML="--Seleccione un Género--";
+            selectGenero.appendChild(escoger_opcion);
+        }
         let optionGenero = document.createElement('option');
         optionGenero.setAttribute('value', arrayGenero[i].genero);
     
@@ -81,6 +53,13 @@ let showSelects = async() => {
     }
 
     for (let i = 0; i < arrayAutor.length; i++) {
+
+        if(i==0){
+            let escoger_opcion = document.createElement('option');
+            escoger_opcion.setAttribute('value',"");
+            escoger_opcion.innerHTML="--Seleccione un Autor--";
+            selectAutor.appendChild(escoger_opcion);
+        }
         let optionAutor = document.createElement('option');
         optionAutor.setAttribute('value', arrayAutor[i].nombre_autor);
        
@@ -241,6 +220,6 @@ let saludar = () => {
 
 };
 
-
-boton_registrar.addEventListener('click', saludar)
+const boton_registrar = document.querySelector('#btn_registrar');
+boton_registrar.addEventListener('click', saludar);
 

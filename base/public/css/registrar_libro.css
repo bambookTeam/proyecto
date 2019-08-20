@@ -17,10 +17,10 @@ body {
   .sign-in h1 {
     margin:20px;
   }
-  img{
-      width: 148px;
-      height: 221px;
-  }
+ .sign-in  img{
+    width: 148px;
+    height: 221px;
+}
   
   input {
     display: block;
@@ -45,9 +45,9 @@ body {
     margin-left:20px;
   }
   .btnsForm{
-    float:right;
-    margin-right:10px;
-    margin-bottom:30px;
+    /* float:right;
+    margin-right:50px;
+    margin-bottom:30px; */
   }
   
   .btnsForm button{
@@ -76,9 +76,21 @@ body {
   
       border:solid 2px red;
   }
+  .boton_subir_imagen{
+    border:solid 1px #000;
+    background-color:#fff;
+    color:#000;
+    height: 25px;
+    width: 148px;
+    margin-bottom:30px;
+  }
+  .boton_subir_imagen:hover{
+    border:solid 1px #000;
+    background-color:#000;
+    color:#fff;
+  }
   
 
-  
 
 
 
@@ -96,8 +108,7 @@ body {
 
 
 
-
-/* .hovernav{
+ /* .hovernav{
     text-decoration: none;
     border-bottom: solid 2px #f6b93b;
 }
@@ -169,7 +180,7 @@ main button{
 main button:hover{
     padding: 10px;
     border: 1px solid #000;
-    /* border-radius: 15px; */
+    border-radius: 15px;
     font-size: 15px;
     color: #fff;
     font-weight: bold;
@@ -179,7 +190,7 @@ main button:hover{
 
 
 
-/* Estilos del formulario */
+
 #sct_formulario {
     display: inline-block;
     margin: 20%;
@@ -209,12 +220,12 @@ main button:hover{
 
 .input_error {
     border: 2px #e74c3c solid !important;
-}
+} */
 
 
 
 
-.boton-registrar{
+/* .boton-registrar{
     margin: 20px;
     padding: 10px;
     border: 2px solid #000;
@@ -223,10 +234,10 @@ main button:hover{
     font-weight: bold;
     background: none;
     outline: none;
-}
+} */
 
 
-
+/* 
 .subir_imagen{
     height: 250px;
     width: 150px;
