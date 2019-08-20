@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
-let registrarGenero = (pgenero) => {
+let agregarGenero = (pgenero) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar_genero',
@@ -25,20 +25,20 @@ let obtener_generoId = async (_id) => {
         // console.log(error);
     }
 }
-let modificarGeneroServicio = (idContacto, pgenero) => {
-    axios({
-        method: 'post',
-        url: 'http://localhost:4000/api/modificar_genero',
-        responseType: 'json',
-        data: {
-            _id: idContacto,
-            genero: pgenero
+//let modificarGeneroServicio = (idContacto, pgenero) => {
+  //  axios({
+    //    method: 'post',
+      //  url: 'http://localhost:4000/api/modificar_genero',
+        //responseType: 'json',
+        //data: {
+          //  _id: idContacto,
+            //genero: pgenero
        
-        }
-    });
-};
+     //   }
+   // });
+//};
 
-let listarGenero = async() =>{
+let listarGeneros = async() =>{
     try {
         const response=await axios({
             method: 'get',

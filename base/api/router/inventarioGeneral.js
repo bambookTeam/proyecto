@@ -67,6 +67,22 @@ router.get('/listar_inventario', function(req, res){
 
 });
 
+/*
+router.post('/disminuir_inventario', function(req, res){
+
+    inventarioGeneral.findByIdAndUpdate(req.body._id, {$set: {cant: req.body.cant}},
+        function(error){
+
+            if(error){
+
+                return res.stat
+            }
+        }
+        
+        )
+
+});
+*/
 
 
 router.post('/agregar_inventario', function(req, res){       

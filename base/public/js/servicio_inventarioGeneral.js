@@ -17,6 +17,21 @@ let registrarInventario = (pisbn ) => {
 
 };
 
+let disminuirInventario =(p_id,pexistencias) => {
+    
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar_inventario',
+        responseType: 'json',
+        data: {
+            _id: p_id,
+            cant: pexistencias 
+        }
+
+    })
+
+};
+
 
 let obtenerInventario = async () => {
 
