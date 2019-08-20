@@ -28,7 +28,7 @@ let validar = (pgenero) => {
         input_genero.classList.add('input_error');
     } else {
         input_genero.classList.remove('input_error');
-        registrarGenero(pgenero);
+        //registrarGenero(pgenero);
         mostrarlista();
         
     }
@@ -47,15 +47,7 @@ let validarElGenero = (pElGenero) => {
     return error;
 };
 
-let limpiarForm = () => {
-    document.getElementById('txt-genero').value = "";
 
-};
-
-let cerrar =() => {
-    overlay.classList.remove('active');
-    popup.classList.add('remove');
-}
 
 let registraGenero =() =>{
    
@@ -76,8 +68,8 @@ if(erroGenero == true) {
             title: 'Se ha agregado su tarjeta exitosamente',
             type: 'success'
         })
-        registraGenero(genero);
-        limpiarForm();
+        agregarGenero(genero);
+       // limpiarForm();
         cerrar();
     } else {
         Swal.fire({ //formato json
