@@ -2,8 +2,8 @@
 var btnRegistrartarjeta = document.getElementById('btn-registrar-tarjeta'),
     overlay = document.getElementById('overlay'),
     popup = document.getElementById('popup'),
-    cerrarpopup = document.getElementById('cerrar'),
-    input_numerotarjeta = document.getElementById('txt-numerotarjeta'),
+    cerrarpopup = document.getElementById('cerrar');
+const  input_numerotarjeta = document.getElementById('txt-numerotarjeta'),
     input_fechavencimiento = document.getElementById('txt-fechadevencimiento'),
     input_codigocvv = document.querySelector('#txt-codigocvv');
 
