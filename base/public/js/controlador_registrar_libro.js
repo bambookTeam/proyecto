@@ -14,8 +14,8 @@ const input_genero = document.querySelector('#txt_genero');
 const input_tipo = document.querySelector('#txt_tipo');
 const input_cantidad = document.querySelector('#txt_existencia');
 const input_precio = document.querySelector('#txt_precio');
-const portadaLibro = document.querySelector('#img_preview');
-const contraportadaLibro = document.querySelector('#img_preview');
+const portadaLibro = document.querySelector('#portada_preview');
+const contraportadaLibro = document.querySelector('#contraportada_preview');
 
 //Funsión para seleccionar genero previamente registrado
 // let listar_genero = async () => {
@@ -82,9 +82,10 @@ let showSelects = async() => {
 
     for (let i = 0; i < arrayAutor.length; i++) {
         let optionAutor = document.createElement('option');
-        optionAutor.setAttribute('value', arrayAutor[i].autor);
+        optionAutor.setAttribute('value', arrayAutor[i].nombre_autor);
+       
     
-        optionAutor.innerHTML = arrayAutor[i].autor;
+        optionAutor.innerHTML = arrayAutor[i].nombre_autor;
         optionAutor.style.width = "300px"
         selectAutor.appendChild(optionAutor);
     }

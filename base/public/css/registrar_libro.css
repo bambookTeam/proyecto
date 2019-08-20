@@ -17,7 +17,10 @@ body {
   .sign-in h1 {
     margin:20px;
   }
-  
+  img{
+      width: 148px;
+      height: 221px;
+  }
   
   input {
     display: block;
