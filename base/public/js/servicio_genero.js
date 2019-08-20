@@ -11,16 +11,31 @@ let agregarGenero = (pgenero) => {
     });
 };
 
+let obtenerGeneros = async() =>{
+    try {
+        const response = await axios({
+            method: 'get',
+            url:'http://localhost:4000/api/listar_generos',
+            responseType: 'json'
+            
+        });
+
+        return response.data.listar_generos;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 let obtener_generoId = async (_id) => {
     try {
         //fetch data from a url endpoint
         const response = await axios({
             method: 'get',
-            url: `http://localhost:4000/api/listar-generos_id/${_id}`,
+            url: `http://localhost:4000/api/buscar_genero_id/${_id}`,
             responseType: 'json'
         });
         
-        return response.data.generosBD
+        return response.data.genero;
     } catch (error) {
         // console.log(error);
     }
@@ -38,20 +53,7 @@ let obtener_generoId = async (_id) => {
    // });
 //};
 
-let listarGeneros = async() =>{
-    try {
-        const response=await axios({
-            method: 'get',
-            url:'http://localhost:4000/api/listar-generos',
-            responseType: 'json'
-            
-        });
 
-        return response.data.listar_generos;
-    } catch (error) {
-        console.log(error);
-    }
-};
 
 let modificarGenero = (pid,pgenero) => {
     axios({
