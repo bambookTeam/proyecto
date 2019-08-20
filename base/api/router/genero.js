@@ -115,9 +115,9 @@ router.post('/habilitar-genero', function (req, res) {
         function (error) {
 
             if (error) {
-                res.json({ success: false, msg: 'No se pudo habilitar la tarjeta' });
+                res.json({ success: false, msg: 'No se pudo habilitar el género' });
             } else {
-                res.json({ success: true, msg: 'La tarjeta se habilitó con éxito' });
+                res.json({ success: true, msg: 'El género se habilitó con éxito' });
             }
         }
     )
@@ -131,9 +131,9 @@ router.post('/eliminar-tarjeta', function (req, res) {
         function (error) {
 
             if (error) {
-                res.json({ success: false, msg: 'No se pudo eliminar la tarjeta' });
+                res.json({ success: false, msg: 'No se pudo eliminar el género' });
             } else {
-                res.json({ success: true, msg: 'La tarjeta se eliminó con éxito' });
+                res.json({ success: true, msg: 'El género se eliminó con éxito' });
             }
         }
     

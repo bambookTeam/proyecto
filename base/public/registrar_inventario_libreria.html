@@ -16,7 +16,6 @@
     <title>Registro</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/inventario_general.css">
-    <link rel="stylesheet" href="css/registrar_tarjeta.css">
     <link rel="stylesheet" href="css/navbar.css">
 
 
@@ -54,6 +53,7 @@
                         <th>Titulo</th>
                         <th>Autor</th>
                         <th>Precio</th>
+                        <th>Existencias</th>
                         
 
 
@@ -83,13 +83,13 @@
                 
                 <div>
 
-                  <label for="">Existencias</label>
+                  <label for="txt-existencias">Existencias</label>
                   <input type="number" id = "txt-existencias">
 
 
                 </div>
 
-                <button type = "button" class = "agregar" id = "btn-agregar">Agregar Existencias</button>
+                <button type = "button" class = "agregar" id = "btn-agregar-inventario">Agregar Existencias</button>
 
 
               </form>
@@ -109,9 +109,10 @@
       
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/servicio_inventarioGeneral.js"></script> 
-    <script src="js/servicio_libro.js"></script>   
+    <script src="js/servicio_libro.js"></script> 
+    <script src="js/servicio_inventarioLibreria.js"></script>  
     <script src="js/controlador_inventarioGeneral_libreria.js"></script>
-    <script src="js/controlador_agregar_inventarioGeneral.js"></script>
+    <script src="js/controlador_registrar_inventarioLibreria.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 

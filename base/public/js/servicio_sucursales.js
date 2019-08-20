@@ -9,14 +9,14 @@ let registrarSucursal = (pnombre, ptelefono, pcorreo, pdireccion) => {
         data: {
             idLibreria: idUsuarioActivo,
             nombre: pnombre,
-            telefono : ptelefono,
+            telefono: ptelefono,
             correo: pcorreo,
-            direccion : pdireccion
+            direccion: pdireccion
         }
     });
 };
 
-let obtenerSucursales = async() => {
+let obtenerSucursales = async () => {
     try {
         // fetch data from a url endpoint
         let idUsuarioActivo = sessionStorage.getItem("id");
@@ -33,4 +33,34 @@ let obtenerSucursales = async() => {
     } catch (error) {
         console.log(error);
     }
+};
+
+let obtenerSucursalId = async (_id) => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:4000/api/buscar-sucursal-id/${_id}`,
+            responseType: 'json'
+        });
+
+        return response.data.sucursal;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+let modificar_sucursal = (pid, pnombre, ptelefono, pcorreo, pdireccion) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-sucursal',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            nombre: pnombre,
+            telefono: ptelefono,
+            correo: pcorreo,
+            direccion: pdireccion
+        }
+    });
 };

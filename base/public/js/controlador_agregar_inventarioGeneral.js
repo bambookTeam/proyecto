@@ -37,7 +37,7 @@ let agregar = () => {
 
         
 
-        agregarInventario(inventario._id, existencias);
+        agregarInventario(inventario._id, inventario.cant + existencias);
 
         Swal.fire({ //formato Jason
             title: 'Se ha agregado con exito',
@@ -50,7 +50,7 @@ let agregar = () => {
         Swal.fire({ //formato Jason
             title: 'No se pudo registrar el inventario',
             type: 'warning',
-            text: 'Se agregó el inventario con exitó'
+            text: 'Se agregó el inventario con éxito'
 
         })
 

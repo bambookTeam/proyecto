@@ -25,7 +25,7 @@ let mostrar_inventario = async () => {
         fila.insertCell().innerHTML = inventario_general[i]['titulo'];
         fila.insertCell().innerHTML = inventario_general[i]['autor'];
         fila.insertCell().innerHTML = inventario_general[i]['precio'];
-       // fila.insertCell().innerHTML = inventario_general[i]['cant'];
+        fila.insertCell().innerHTML = inventario_general[i]['cant'];
 
         let celda_agregar = fila.insertCell();
         let boton_agregar = document.createElement('button');
@@ -81,7 +81,7 @@ let crearInventario = async() => {
 
         for ( let j = 0; j< lista_inventario.length; j++){
 
-            if(lista_libros[i]['isbn'] == lista_inventario[j]['isbn']){
+            if(lista_libros[i]['isbn'] == lista_inventario[j]['isbn'] && lista_inventario[j]['cant'] > 0){
 
                 inventario_general[cont] = {
                     "isbn" : lista_libros[i]['isbn'],

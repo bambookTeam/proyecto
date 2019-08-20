@@ -20,6 +20,7 @@ const tarjeta_route = require('./router/tarjeta');
 const sucursal_route = require('./router/sucursal');
 const clubMiembro_route = require('./router/clubLecturaMiembro');
 const inventario_general_route = require('./router/inventarioGeneral');
+const inventario_libreria_route = require('./router/inventarioLibreria');
 
 
 
@@ -89,6 +90,7 @@ app.use('/api', sucursal_route);
 app.use('/api', clubMiembro_route);
 
 app.use('/api', inventario_general_route);
+app.use('/api', inventario_libreria_route);
 
 
 //localhost:3000/api/registrar-sucursal

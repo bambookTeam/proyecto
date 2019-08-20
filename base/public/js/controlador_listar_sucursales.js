@@ -4,7 +4,7 @@ const tbody = document.querySelector('#tbl_sucursales tbody');
 let lista_sucursales = [];
 let txt_filtro = document.querySelector('#txt_filtro');
 
-let mostrar_tabla = async() => {
+let mostrar_tabla = async () => {
 
     lista_sucursales = await obtenerSucursales();
     tbody.innerHTML = " ";
@@ -16,26 +16,47 @@ let mostrar_tabla = async() => {
         fila.insertCell().innerHTML = lista_sucursales[i]['correo'];
         fila.insertCell().innerHTML = lista_sucursales[i]['direccion'];
 
+        /*                    MODIFICAR SUCURSAL                   */
+        let estilos_modificar = document.createElement('img');
+        estilos_modificar.setAttribute('src', './imgs/edit-icon.png')
+
+        let celda_modificar = fila.insertCell();
+        let modificar = document.createElement('button');
+        modificar.type = 'button';
+
+        modificar.dataset._id = lista_sucursales[i]['_id'];
+
+        celda_modificar.appendChild(modificar);
+        modificar.appendChild(estilos_modificar);
+
+        modificar.addEventListener('click', function () {
+            localStorage.setItem("_idSucursal", lista_sucursales[i]._id);
+
+            //   localStorage.setItem("modificarTarjeta", JSON.stringify(listar_sucursales[index]));
+            window.location.href = 'modificar_sucursal.html'
+        })
+        /*                    MODIFICAR SUCURSAL                   */
+
 
         let celda_agregar = fila.insertCell();
         let boton_agregar = document.createElement('button');
 
         boton_agregar.type = 'button';
         boton_agregar.innerText = 'Inventario';
-        boton_agregar.dataset._id =lista_sucursales[i]['_id'];
+        boton_agregar.dataset._id = lista_sucursales[i]['_id'];
 
         celda_agregar.appendChild(boton_agregar);
 
-        boton_agregar.addEventListener('click', function(){
-            
+        boton_agregar.addEventListener('click', function () {
+
             window.location.href = 'inventario_sucursal.html';
-            
+
         });
     }
 
 };
 
-let filtrar_tabla = async() => {
+let filtrar_tabla = async () => {
 
     let filtro = txt_filtro.value.toLowerCase();
     tbody.innerHTML = '';

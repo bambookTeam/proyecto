@@ -25,11 +25,11 @@ h1{
     text-align: center;
 }
 
-#localizacion{
+/* #localizacion{
     width: 50%;
     float: left;
     text-align: center;
-}
+} */
 
 label{
     width: 60px;
@@ -64,11 +64,11 @@ textarea{
     border-bottom: 2px #e74c3c solid !important;
 }
 
-iframe{
+/* iframe{
     width: 350px;
     height: 150px;
     border-radius: 15px;
-}
+} */
 
 main button{
     margin: 50px 0;

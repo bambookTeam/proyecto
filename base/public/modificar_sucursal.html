@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Listar Sucursales</title>
+    <title>Modificar Sucursal</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/listar_sucursales.css">
-    <link rel="stylesheet" href="css/listar_librerias.css">
+    <link rel="stylesheet" href="css/registrar_sucursal.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
@@ -30,7 +28,7 @@
 
     <nav class="nav-menu">
         <ul>
-            <li class="parent"><a href="#">Librerías</a>
+            <li class="parent"><a class="hovernav" href="#">Librerías</a>
                 <ul class="child">
                     <li><a href="#">Sucursales</a></li>
                     <li><a href="#">Ofertas</a></li>
@@ -53,30 +51,45 @@
 
     <main>
 
-        <h1>Listar Sucursales</h1>
+        <h1>Modificar Sucursal</h1>
 
-        <input id="txt_filtro" type="text">
+        <section id="datos">
 
-        <table id="tbl_sucursales">
+            <div>
+                <label for="txt_nombre">Nombre</label>
+                <input id="txt_nombre" type="text">
+            </div>
 
-            <thead>
+            <div>
+                <label for="txt_telefono">Teléfono</label>
+                <input id="txt_telefono" type="text">
+            </div>
 
-                <tr>
-                    <th>Nombre</th>
-                    <th>Teléfono</th>
-                    <th>Correo</th>
-                    <th>Dirección</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+            <div>
+                <label for="txt_correo">Correo</label>
+                <input id="txt_correo" type="text">
+            </div>
 
-            </thead>
+            <div>
+                <label for="txt_direccion">Dirección</label>
+                <textarea id="txt_direccion"></textarea>
+            </div>
 
-            <tbody>
+        </section>
 
-            </tbody>
 
-        </table>
+        <section id="localizacion">
+
+            <div>
+                <img src="imgs/img_avatar.jpg" height="300px" alt="">
+            </div>
+
+        </section>
+
+        <div>
+            <button id="btn_modificar"> Modificar </button>
+        </div>
+
 
     </main>
 
@@ -150,13 +163,11 @@
         </div>
     </section>
 
-
-
     <script src="js/jquery-3.3.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/servicio_sucursales.js"></script>
-    <script src="js/controlador_listar_sucursales.js"></script>
-    <script src="js/getNombre.js"></script>
+    <script src="js/controlador_modificar_sucursal.js"></script>
 
 </body>
 
