@@ -18,6 +18,7 @@ let mostrar_tabla = async() => {
         fila.insertCell().innerHTML = lista_librerias[i]['direccion'];
         fila.insertCell();
 
+    /*                      VER PERFIL LIBRERÍA                   */
         let celda_perfil = fila.insertCell();
         let boton_perfil = document.createElement('button');
         boton_perfil.type = 'button';
@@ -31,18 +32,38 @@ let mostrar_tabla = async() => {
             localStorage.setItem('idLibreria', lista_librerias[i]['_id']);
             window.location.href = `visualizar_perfil_libreria.html?_id=${this.dataset._id}`
         });
+    /*                      VER PERFIL LIBRERÍA                   */
 
 
 
+    /*                    AGREGAR SUCURSAL                   */
         let celda_sucursal = fila.insertCell();
         let boton_sucursal = document.createElement('button');
         boton_sucursal.innerHTML = 'Agregar Sucursal';
         boton_sucursal.addEventListener('click', function(){
             localStorage.setItem('idLibreria', lista_librerias[i]['_id']);
             location.replace('registrar_sucursal.html');
-        })
+        });
 
         celda_sucursal.appendChild(boton_sucursal);
+    /*                    AGREGAR SUCURSAL                   */
+
+    /*                    MODIFICAR LIBRERÍA                   */
+        let celda_modificar = fila.insertCell();
+        let boton_modificar = document.createElement('button');
+        boton_modificar.type = 'button';
+        boton_modificar.innerText = 'Modificar';
+        boton_modificar.dataset._id = lista_librerias[i]['_id'];
+
+        celda_modificar.appendChild(boton_modificar);
+
+        boton_modificar.addEventListener('click', function() {
+            //console.log(this.dataset._id);
+            localStorage.setItem('idLibreria', lista_librerias[i]['_id']);
+            window.location.href = `modificar_libreria.html?_id=${this.dataset._id}`
+        });
+    /*                    MODIFICAR LIBRERÍA                   */
+
     }
 };
 

@@ -8,7 +8,6 @@ let tarjeta_schema = new mongoose.Schema({
     numerotarjeta: { type: String, required: true, unique: false },
     fechavencimiento: { type: String, required: true, unique: false },
     codigocvv: { type: String, required: true, unique: true }
-
 });
 
 module.exports = mongoose.model('Tarjeta', tarjeta_schema);

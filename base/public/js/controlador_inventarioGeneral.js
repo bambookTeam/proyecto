@@ -20,6 +20,7 @@ let mostrar_inventario = async () => {
     for( let i = 0; i< inventario_general.length; i++){
         let fila = tbody.insertRow();
 
+
         fila.insertCell().innerHTML = inventario_general[i]['isbn'];
         fila.insertCell().innerHTML = inventario_general[i]['titulo'];
         fila.insertCell().innerHTML = inventario_general[i]['autor'];
@@ -100,6 +101,8 @@ let crearInventario = async() => {
     
 
     }
+    
+    //Tener cuidado con el contador a la hora de crear el inventario 
 
     // Analizar donde debe de limpiarse el localStorage
 

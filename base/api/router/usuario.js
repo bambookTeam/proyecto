@@ -157,7 +157,7 @@ router.post('/habilitar-usuario', function (req, res) {
 router.post('/registrar_admin_libreria', function (req, res) {
     let body = req.body;
 
-    console.log('Impresion datos')
+   console.log('Impresion datos')
     console.log(body)
 
     let nuevo_usuario = new Usuario({
@@ -400,6 +400,78 @@ router.post('/actualizar-contador', function (req, res) {
     //     'contador': req.body.contador
     // }
 
+});
+
+router.post('/recuperar-contrasena', function(req, res){
+    
+    Usuario.updateOne({ _id: req.body._id}, {$set: {contrasena: req.body.contrasena}} ,
+        
+        function(error){
+
+            if(error) {
+                return res.status(500).json({
+                    success: false, 
+                    msj: 'No se pudo restablecer la contrasena',
+                    error
+
+                });
+
+            }else {
+
+                let mailOptions = {
+                   
+                    from: 'bambooks.team@gmail.com',
+                    to: req.body.correo,
+                    subject: 'Bienvenido a Bambooks',
+                    text: ' Se ha restablecido su contraseña utilice este pin para iniciar sesión: ' + req.body.contrasena
+    
+
+                };
+
+                transporter.sendMail(mailOptions, function(error, info){
+
+                    if(error ){
+
+                        console.log(error);
+                    }else {
+
+                        console.log('Se ha restablecido la nueva contraseña')
+                    }
+
+                });
+
+
+                return res.status(400).json({
+                    success: true,
+                    msj: 'Se restablecio la contrasenna'
+
+
+                });
+
+
+
+            }
+
+
+        }
+
+
+        )
+
+});
+
+router.post('/eliminar-usuario', function(req, res) {
+    let body = req.body;
+
+    Usuario.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo borrar el usuario' });
+            } else {
+                res.json({ success: true, msg: 'El usuario se borró con éxito' });
+            }
+        }
+    )
 });
 
 module.exports = router;

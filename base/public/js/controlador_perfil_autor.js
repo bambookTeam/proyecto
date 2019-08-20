@@ -14,7 +14,7 @@ const txt_premios = document.querySelector('#txt_premios');
 const foto = document.querySelector('#foto');
 
 let llenar_perfil = async() => {
-    let autor = await obtenerAutorId(_id);
+    let autor = JSON.parse(localStorage.getItem("infoAutor"));
     if (autor) {
         txt_nombre.innerHTML = autor['nombre_autor'];
         foto.innerHTML = autor['foto_autor'];
@@ -24,6 +24,8 @@ let llenar_perfil = async() => {
         txt_nacionalidad.innerHTML = autor['nacionalidad_autor'];
         txt_bio.innerHTML = autor['biografia_autor'];
         txt_premios.innerHTML = autor['premios_autor'];
+
+        localStorage.removeItem('infoAutor');
     }
 };
 

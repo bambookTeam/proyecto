@@ -1,3 +1,4 @@
+
 'use strict';
 
 const boton_crear = document.querySelector('#btn_crear_contrasenna');

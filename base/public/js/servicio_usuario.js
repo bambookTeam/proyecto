@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado) => {
 
@@ -36,7 +36,7 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
 
 };
 
-let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado) => {
+let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario,pcontrasenna, ptipo, pestado) => {
     console.log(pnombre1);
     axios({
         method: 'post',
@@ -99,6 +99,28 @@ let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, 
 };
 
 
+let modificarAdminGeneral = (pusuario, pcorreo, pcontrasena, ptipo,imagenUrl) => {
+
+
+
+    axios({
+
+        method: 'post',
+        url: 'http://localhost:4000/api/editar-admin-general',
+        responseType: 'json',
+        data: {
+            usuario:pusuario,
+            contrasena: pcontrasena,
+            correo: pcorreo,
+            tipo: ptipo,
+            avatar: imagenUrl,
+            contador: 0
+
+        }
+    });
+
+};
+
 
 let iniciar_Sesion = async (pusuario, pcontrasena) => {
     let respuesta = await axios({
@@ -124,6 +146,7 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
                     sessionStorage.setItem('contador', response.data.usuario.contador);
                     sessionStorage.setItem('nombreUsuario', response.data.usuario.nombreUsuario);
                     sessionStorage.setItem('avatar',response.data.usuario.avatar)
+                    sessionStorage.setItem('identificacion', response.data.usuario.identificacion);
                     //actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).data.contador);
                     actualizar_contador(sessionStorage.getItem('id'), sessionStorage.getItem('contador'));
 
@@ -310,6 +333,32 @@ let obtenerUsuarioPerfil = async (idUsuario) => {
     }
 };
 
+
+
+
+let recuperarContrasena = (p_id,pcorreo) => {
+
+    let nuevaContrasena = generarContrasenna();
+
+    axios({
+        
+        method: 'post',
+        url: 'http://localhost:4000/api/recuperar-contrasena', 
+        responseType:'json',
+        data: {
+        
+            _id: p_id,
+            correo: pcorreo,
+            contrasena: nuevaContrasena
+        }
+
+    });
+
+
+};
+
+
+
 function generarContrasenna() {
     let caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
     let contraseña = "";
@@ -334,6 +383,17 @@ let deshabilitar = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar-usuario',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};
+let eliminar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-usuario',
         responseType: 'json',
         data: {
             _id: pid

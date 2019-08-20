@@ -67,7 +67,7 @@ let mostrar_tabla = async () => {
         btn_modificar.appendChild(estilos_btn_modificar);
 
         btn_modificar.addEventListener('click', function () {
-            localStorage.setItem("modificarAutor", JSON.stringify(lista_autores[i]));
+            localStorage.setItem("_idAutor", lista_autores[i]._id);
             window.location.href = 'modificar_autor.html'
         })
 
@@ -166,7 +166,7 @@ let filtrar_tabla = async () => {
 
         btn_eliminar.addEventListener('click', function () {
             localStorage.setItem("eliminarAutor", JSON.stringify(lista_autores[i]));
-            window.location.href = 'eliminar_autor.html'
+            window.location.href = 'eliminar_autor+.html'
         })  
         
     }

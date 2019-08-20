@@ -6,9 +6,9 @@ $(function () {
     // your cloudinary account dashboard
     $.cloudinary.config({ cloud_name: 'bambooks', api_key: '938645956677954' });
 
-    //Upload button
-    let uploaButton = $('#btn_seleccionar_imagen');
-
+    //Upload button1
+    let uploaButton = $('#btn_seleccionar_portada');
+    
 
     //Upload button event
     uploaButton.on('click', function (e) {
@@ -32,7 +32,5 @@ $(function () {
         };
         return $.cloudinary.url(id, options);
     };
-
-
 
 });

@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
-let registrarGenero = (pgenero) => {
+let agregarGenero = (pgenero) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar_genero',
@@ -25,20 +25,20 @@ let obtener_generoId = async (_id) => {
         // console.log(error);
     }
 }
-let modificarGeneroServicio = (idContacto, pgenero) => {
-    axios({
-        method: 'post',
-        url: 'http://localhost:4000/api/modificar_genero',
-        responseType: 'json',
-        data: {
-            _id: idContacto,
-            genero: pgenero
+//let modificarGeneroServicio = (idContacto, pgenero) => {
+  //  axios({
+    //    method: 'post',
+      //  url: 'http://localhost:4000/api/modificar_genero',
+        //responseType: 'json',
+        //data: {
+          //  _id: idContacto,
+            //genero: pgenero
        
-        }
-    });
-};
+     //   }
+   // });
+//};
 
-let listarGenero = async() =>{
+let listarGeneros = async() =>{
     try {
         const response=await axios({
             method: 'get',
@@ -53,7 +53,7 @@ let listarGenero = async() =>{
     }
 };
 
-let modificarGenero = (pgenero) => {
+let modificarGenero = (pid,pgenero) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar_genero',
@@ -61,6 +61,7 @@ let modificarGenero = (pgenero) => {
 
 
         data: {
+            _id:pid,
            genero:pgenero
         }
     });
@@ -81,6 +82,18 @@ let deshabilitar = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar_genero',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};
+
+let eliminar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar_genero',
         responseType: 'json',
         data: {
             _id: pid
