@@ -86,6 +86,38 @@ let mostrar_tabla = async () => {
             });
             celda_editar.appendChild(enlace_editar);
 
+            let celda_eliminar = fila.insertCell();
+        let enlace_eliminar = document.createElement('button');
+        enlace_eliminar.innerText = 'Eliminar';
+
+        enlace_eliminar.addEventListener('click', function() {
+            Swal.fire({
+                title: '¿Está seguro de eliminar el usuario?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminar(lista_usuarios[i]['_id']);
+                    window.location.href="#";
+                    Swal.fire(
+                        'Usuario eliminado!',
+                        'success'
+                    ).then((result) => {
+                        if (result.value) {
+                            window.location.href = 'listar-usuarios.html';
+                        }
+                    });
+                }
+            })
+
+        })
+
+        celda_eliminar.appendChild(enlace_eliminar);
+
         }
         if (lista_usuarios[i]['tipo'] == "1") {
             let celda_perfil = fila.insertCell();

@@ -389,3 +389,14 @@ let deshabilitar = (pid) => {
         }
     });
 };
+let eliminar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar-usuario',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};
