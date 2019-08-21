@@ -42,6 +42,8 @@ router.post('/registrar_genero', function (req, res) {
 
 router.get('/listar_generos', function (req, res) {
 
+    console.log("listar generos");
+
     Genero.find(function (err, generosBD) {
         if (err) {
             return res.status(400).json({
@@ -81,7 +83,10 @@ router.get('/buscar_genero_id/_id', function (req, res) {
 
 
 router.post('/modificar-genero', function (req, res) {
+    console.log("modificar genero");
     let body = req.body;
+
+    console.log(body);
 
     Genero.findByIdAndUpdate(body._id, {
         $set: req.body
@@ -94,7 +99,7 @@ router.post('/modificar-genero', function (req, res) {
                 res.json({ success: false, msg: 'No se pudo habilitar la tarjeta' });
             } else {
                 console.log("conoce");
-                res.json({ success: true, msg: 'La tarjeta se habilitó con éxito' });
+                res.json({ success: true, msg: 'Genero modificado con éxito' });
             }
         }
     )

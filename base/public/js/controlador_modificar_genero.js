@@ -2,45 +2,35 @@
 
 let usuario = JSON.parse(localStorage.getItem("usuario"));
 let listar_generos = [];
-let idGenero = localStorage.getItem('_idGenero');
 
-let editarGenero = async (id) => {
-    console.log(id);
+let genero;
 
-
-    const input_genero = document.getElementById('txt-genero').value;
-
-    modificar-genero(id, input_genero);
+let llamarModicarGenero = async (id) => {
+    let response = await modificarGenero(genero._id, document.getElementById("txt-genero").value);
+    console.log(response);
+    if(response) {
+      window.location.href = 'listar_genero.html'
+    }
 
 }
-
-document.getElementById("btn-agregar").addEventListener("click", function () {
-    modificar-genero(idGenero);
-
-    window.location.href = 'listar_genero.html'
-});
 
 
 
 let llenarFormulario = async () => {
-    let idGenero = localStorage.getItem('_idGenero');
+    genero = JSON.parse(localStorage.getItem('generoModificar'));
 
-    let listar_generos = await obtenerGeneros();
+    console.log(genero);
 
+    document.getElementById('txt-genero').value = genero.genero;
 
-    for (let index = 0; index < listar_generos.length; index++) {
-        if (idGenero == listar_generos[index]._id) {
-            document.querySelector('txt-genero').value = listar_generos[index].genero;
-
-        }
-
-    }
     limpiar();
 };
 
+document.getElementById("btn-agregar").addEventListener("click", llamarModicarGenero);
+
 
 let limpiar = () => {
-    localStorage.removeItem("usuario");
+    localStorage.removeItem("_idGenero");
 }
 
 llenarFormulario();

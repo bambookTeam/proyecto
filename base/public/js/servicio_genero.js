@@ -26,7 +26,7 @@ let obtenerGeneros = async() =>{
     }
 };
 
-let obtener_generoId = async (_id) => {
+let obtenerGeneroId = async (_id) => {
     try {
         //fetch data from a url endpoint
         const response = await axios({
@@ -55,18 +55,26 @@ let obtener_generoId = async (_id) => {
 
 
 
-let modificarGenero = (pid,pgenero) => {
-    axios({
-        method: 'post',
-        url: 'http://localhost:4000/api/modificar_genero',
-        responseType: 'json',
+let modificarGenero = async (pId, nombre) => {
+    try {
+        //fetch data from a url endpoint
+        const response = await axios({
+            method: 'post',
+            url: 'http://localhost:4000/api/modificar-genero',
+            responseType: 'json',
+            data: {
+                _id: pId,
+               genero: nombre
+            }
+        });
+        
+        return response.data.success;
+    } catch (error) {
+        console.log(error);
+    }
 
 
-        data: {
-            _id:pid,
-           genero:pgenero
-        }
-    });
+
 };
 
 let habilitar = (pid, pestado) => {
@@ -76,7 +84,6 @@ let habilitar = (pid, pestado) => {
         responseType: 'json',
         data: {
             _id: pid,
-            estado: pestado
         }
     });
 };

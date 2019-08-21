@@ -4,9 +4,13 @@ const tbody = document.querySelector('#tbl_generos tbody');
 let listar_generos = [];
 let txt_filtro = document.querySelector('#txt_filtro');
 
+let redireccionar = (genero) => {
+    localStorage.setItem("generoModificar", JSON.stringify(genero));
+    window.location.href = 'modificar_genero.html';
+}
+
 let mostrarlista = async () => {
 
-    console.log(listar_generos);
     listar_generos = await obtenerGeneros();
     listar_generos = listar_generos.reverse();
     tbody.innerHTML = " ";
@@ -31,8 +35,7 @@ let mostrarlista = async () => {
         modificar.appendChild(estilos_modificar);
 
         modificar.addEventListener('click', function () {
-            localStorage.setItem("idGenero", listar_generos[index]._id);
-            window.location.href = 'modificar_genero.html'
+            redireccionar(listar_generos[index]);
         })
 
 

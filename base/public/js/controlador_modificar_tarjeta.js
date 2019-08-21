@@ -2,14 +2,12 @@
 
 let usuario = JSON.parse(localStorage.getItem("usuario"));
 let listar_tarjetas = [];
-let idTarjeta = localStorage.getItem('_idTarjeta');
+
 
 let modificarTarjeta = async (id) => {
-    console.log(id);
     const  input_numerotarjeta = document.getElementById('txt-numerotarjeta').value;
    const input_fechavencimiento = document.getElementById('txt-fechadevencimiento').value;
     const input_codigocvv = document.getElementById('txt-codigocvv').value;
-    modificar_tarjeta(id, input_numerotarjeta, input_fechavencimiento, input_codigocvv);
 }
 document.getElementById('btn-agregar').addEventListener("click", function () {
     modificarTarjeta(idTarjeta);
