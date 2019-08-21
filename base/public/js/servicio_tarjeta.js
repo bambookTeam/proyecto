@@ -49,7 +49,6 @@ let obtenerTarjetaId = async (_id) => {
     }
 };
 
-
 let modificar_tarjeta = (pid, pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
     axios({
         method: 'post',

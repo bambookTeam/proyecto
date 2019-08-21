@@ -10,12 +10,12 @@ let editarGenero = async (id) => {
 
     const input_genero = document.getElementById('txt-genero').value;
 
-    modificarGenero(id, input_genero);
+    modificar-genero(id, input_genero);
 
 }
 
 document.getElementById("btn-agregar").addEventListener("click", function () {
-    modificarGenero(idGenero);
+    modificar-genero(idGenero);
 
     window.location.href = 'listar_genero.html'
 });
@@ -23,6 +23,8 @@ document.getElementById("btn-agregar").addEventListener("click", function () {
 
 
 let llenarFormulario = async () => {
+    let idGenero = localStorage.getItem('_idGenero');
+
     let listar_generos = await obtenerGeneros();
 
 

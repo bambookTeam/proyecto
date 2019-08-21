@@ -6,9 +6,9 @@ let idTarjeta = localStorage.getItem('_idTarjeta');
 
 let modificarTarjeta = async (id) => {
     console.log(id);
-    const  input_numerotarjeta = document.getElementById('txt-numerotarjeta'),
-    input_fechavencimiento = document.getElementById('txt-fechadevencimiento'),
-    input_codigocvv = document.getElementById('txt-codigocvv');
+    const  input_numerotarjeta = document.getElementById('txt-numerotarjeta').value;
+   const input_fechavencimiento = document.getElementById('txt-fechadevencimiento').value;
+    const input_codigocvv = document.getElementById('txt-codigocvv').value;
     modificar_tarjeta(id, input_numerotarjeta, input_fechavencimiento, input_codigocvv);
 }
 document.getElementById('btn-agregar').addEventListener("click", function () {
@@ -36,3 +36,45 @@ let limpiar = () => {
 }
 
 llenarFormulario();
+
+'use strict';
+
+
+const boton_agregar = document.getElementById('btn-agregar');
+const input_numerotarjeta = document.getElementById('txt-numerotarjeta');
+const input_fechavencimiento = document.getElementById('txt-fechadevencimiento');
+const input_codigocvv = document.getElementById('txt-codigocvv');
+
+const urlParams = new URLSearchParams(window.location.search);
+let _id = urlParams.get('_id');
+
+let cargar_formulario = async() => {
+
+    let tarjeta = await obtenerTarjetaId(_id);
+    if (tarjeta) {
+        input_numerotarjeta.value = contacto['numerotarjeta'];
+        input_codigocvv.value = tarjeta['codigocvv'];
+        let fecha_original = new Date(tarjeta['fechavencimiento']);
+
+        let mes = fecha_original.getUTCMonth() + 1;
+        if (mes < 10) {
+            mes = '0' + mes;
+        }
+
+        let dia = fecha_original.getDate();
+        if (dia < 10) {
+            dia = '0' + dia;
+        }
+
+
+        input_fechavencimiento.value = fecha_original.getFullYear() + '-' + mes + '-' + dia;
+    }
+};
+let editar = () => {
+
+    modificar(_id, input_numerotarjeta.value, input_codigocvv.value, input_fechavencimiento.value,);
+};
+
+
+cargar_formulario();
+boton_agregar.addEventListener('click', editar);

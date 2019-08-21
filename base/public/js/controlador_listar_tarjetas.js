@@ -2,6 +2,7 @@ const tbody = document.querySelector('#tbl_tarjetas tbody');
 let listar_tarjetas = [];
 
 let mostrarlista = async () => {
+
     listar_tarjetas = await obtenerTarjetas();
     listar_tarjetas = listar_tarjetas.reverse();
      tbody.innerHTML = "";
