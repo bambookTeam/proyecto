@@ -50,8 +50,8 @@ let obtenerTarjetaId = async (_id) => {
 };
 
 
-let modificar_tarjeta = (pid, pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
-    axios({
+let modificarTarjeta = async(pid, pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
+    try({
         method: 'post',
         url: 'http://localhost:4000/api/modificar_tarjeta',
         responseType: 'json',
@@ -62,7 +62,12 @@ let modificar_tarjeta = (pid, pnumerotarjeta, pfechavencimiento, pcodigocvv) => 
             codigocvv: pcodigocvv
         }
     });
-};
+
+    return response.data.success;
+    } catch (error) {
+        console.log(error);
+    }
+
 
 let habilitar = (pid) => {
     axios({

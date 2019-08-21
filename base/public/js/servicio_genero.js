@@ -77,35 +77,35 @@ let modificarGenero = async (pId, nombre) => {
 
 };
 
-let habilitar = (pid, pestado) => {
+let habilitar = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar_genero',
         responseType: 'json',
         data: {
-            _id: pid,
+            _id: pId
         }
     });
 };
-let deshabilitar = (pid) => {
+let deshabilitar = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar_genero',
         responseType: 'json',
         data: {
-            _id: pid
+            _id: pId
 
         }
     });
 };
 
-let eliminar = (pid) => {
+let eliminar = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar_genero',
         responseType: 'json',
         data: {
-            _id: pid
+            _id: pId
 
         }
     });

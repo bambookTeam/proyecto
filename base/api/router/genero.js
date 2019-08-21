@@ -96,7 +96,7 @@ router.post('/modificar-genero', function (req, res) {
             if (error) {
                 console.log("error");
                 console.log(error);
-                res.json({ success: false, msg: 'No se pudo habilitar la tarjeta' });
+                res.json({ success: false, msg: 'No se pudo modificar el género' });
             } else {
                 console.log("conoce");
                 res.json({ success: true, msg: 'Genero modificado con éxito' });
@@ -106,7 +106,7 @@ router.post('/modificar-genero', function (req, res) {
 
 });
 
-router.post('/deshabilitar-genero', function (req, res) {
+router.post('/deshabilitar_genero', function (req, res) {
     let body = req.body;
 
     Genero.findByIdAndUpdate(body._id, {
@@ -127,7 +127,7 @@ router.post('/deshabilitar-genero', function (req, res) {
     )
 });
 
-router.post('/habilitar-genero', function (req, res) {
+router.post('/habilitar_genero', function (req, res) {
     let body = req.body;
 
     Genero.findByIdAndUpdate(body._id, {

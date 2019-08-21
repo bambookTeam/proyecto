@@ -4,7 +4,6 @@ let usuario = JSON.parse(localStorage.getItem("usuario"));
 let listar_tarjetas = [];
 
 
-let modificarTarjeta = async (id) => {
     const  input_numerotarjeta = document.getElementById('txt-numerotarjeta').value;
    const input_fechavencimiento = document.getElementById('txt-fechadevencimiento').value;
     const input_codigocvv = document.getElementById('txt-codigocvv').value;
