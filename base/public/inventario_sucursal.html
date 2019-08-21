@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>
+        Inventario Sucursal 
+    </title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/inventario_sucursal.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+<!--REVISAR ela rchivo registrar tarjeta y por que se usa-->
+
+</head>
+
+<header>
+
+</header>
+
+
+<body>
+
+    <main>
+
+        <h1>Inventario Sucural</h1>
+
+       
+        <button type = "button" class = "agregar" id = "btn-agregar-libro">Agregar Inventario</button>
+      
+        <section class="lista_inventario" >
+
+                <label for="txt_buscar">Buscar</label>
+   
+                <input type="txt_buscar" type = "text">
+   
+      
+                <table id = "tbl_inventario">
+   
+                   <thead>
+   
+                       <tr>
+                           <th>Isbn</th>
+                           <th>Titulo</th>
+                           <th>Autor</th>
+                           <th>Precio</th>
+                           <th>Existencias</th>
+                           
+   
+   
+                       </tr>
+   
+   
+                   </thead>
+   
+                   <tbody>
+   
+                   </tbody>
+   
+   
+                </table>
+   
+   
+           </section>
+
+
+           
+        <div class = "contenedor">
+
+                <div class = "overlay" id = "overlay">
+                  <div class = "popup" id ="popup">
+      
+                    <span class = "close" id = "cerrar">&times;</span>
+                    <form action="">
+                      
+                      <div>
+      
+                        <label for="">Existencias</label>
+                        <input type="number" id = "txt-existencias">
+      
+      
+                      </div>
+      
+                      <button type = "button" class = "agregar" id = "btn-agregar">Agregar Existencias</button>
+      
+      
+                    </form>
+      
+      
+                  </div>
+      
+      
+                </div>
+      
+              </div>
+
+   
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!--<script src="js/servicio_inventarioLibreria.js"></script> -->
+    <script src ="js/servicio_librerias.js"></script>
+    <script src="js/servicio_inventarioSucursal.js"></script>
+    <script src="js/servicio_libro.js"></script>   
+    <script src="js/controlador_inventarioSucursal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+
+    
+</body>
+
+
+</html>

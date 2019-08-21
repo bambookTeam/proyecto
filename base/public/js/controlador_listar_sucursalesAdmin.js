@@ -9,15 +9,41 @@ let txt_filtro = document.querySelector('#txt_filtro');
 
 let mostrar_tabla = async() => {
 
-    lista_sucursales = await obtenerSucursales();
+    localStorage.removeItem("_idSucursal");
+    
+    lista_sucursales = [];
+    lista_sucursales = await obtenerSucursalesLibreria();
+
+    // Un servicio no deberia de llamar a un servicio, se deberia de hacer desde 
+
     tbody.innerHTML = " ";
 
-    for (let i = 0; i < lista_sucursales.length; i++) {
+    for (let i = 0; i <  lista_sucursales.length; i++) {
         let fila = tbody.insertRow();
         fila.insertCell().innerHTML = lista_sucursales[i]['nombre'];
         fila.insertCell().innerHTML = lista_sucursales[i]['telefono'];
         fila.insertCell().innerHTML = lista_sucursales[i]['correo'];
         fila.insertCell().innerHTML = lista_sucursales[i]['direccion'];
+
+
+        
+        let celda_agregar = fila.insertCell();
+        let boton_agregar = document.createElement('button');
+
+        boton_agregar.type = 'button';
+        boton_agregar.innerText = 'Inventario';
+        boton_agregar.dataset._id = lista_sucursales[i]['_id'];
+
+        celda_agregar.appendChild(boton_agregar);
+
+        boton_agregar.addEventListener('click', function () {
+
+            localStorage.setItem('_idSucursal', lista_sucursales[i]['_id'] );
+
+            window.location.href = 'inventario_sucursal.html';
+
+        });
+
     }
 
 };

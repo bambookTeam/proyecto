@@ -110,6 +110,7 @@ let deshabilitar_libro = (pid) => {
         }
     });
 };
+
 let eliminar = (pid) => {
     axios({
         method: 'post',
@@ -121,3 +122,4 @@ let eliminar = (pid) => {
         }
     });
 };
+
