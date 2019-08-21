@@ -67,7 +67,6 @@ let mostrarlista = async () => {
     let celda_eliminar = fila.insertCell();
     let enlace_eliminar = document.createElement('img');
     enlace_eliminar.setAttribute('src', './imgs/delete-icon.png')
-    enlace_eliminar.href = '#';
 
     enlace_eliminar.addEventListener('click', function () {
         Swal.fire({
@@ -83,7 +82,7 @@ let mostrarlista = async () => {
                 eliminar(listar_generos[index]['_id']);
 
                 Swal.fire(
-                    'Contacto eliminado!',
+                    'Género eliminado!',
                     'success'
                 ).then((result) => {
                     if (result.value) {

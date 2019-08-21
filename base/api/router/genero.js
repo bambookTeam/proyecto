@@ -12,7 +12,9 @@ router.post('/registrar_genero', function (req, res) {
     console.log("activado");
     console.log(body);
     let nuevo_genero = new Genero({
-        genero: body.genero
+        genero: body.genero,
+        estado: 'Habilitado'
+
 
     });
 
@@ -116,8 +118,6 @@ router.post('/deshabilitar_genero', function (req, res) {
     },
         function (error) {
             if (error) {
-                console.log("error")
-                console.log(error)
                 res.json({ success: false, msg: 'No se pudo deshabilitar el genero' });
             } else {
                 console.log("sirve")
@@ -132,7 +132,7 @@ router.post('/habilitar_genero', function (req, res) {
 
     Genero.findByIdAndUpdate(body._id, {
         $set: {
-            estado: req.body.estado
+            estado: 'Habilitado'
         }
     },
         function (error) {
