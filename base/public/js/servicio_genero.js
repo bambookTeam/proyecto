@@ -11,16 +11,31 @@ let agregarGenero = (pgenero) => {
     });
 };
 
-let obtener_generoId = async (_id) => {
+let obtenerGeneros = async() =>{
+    try {
+        const response = await axios({
+            method: 'get',
+            url:'http://localhost:4000/api/listar_generos',
+            responseType: 'json'
+            
+        });
+
+        return response.data.listar_generos;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+let obtenerGeneroId = async (_id) => {
     try {
         //fetch data from a url endpoint
         const response = await axios({
             method: 'get',
-            url: `http://localhost:4000/api/listar-generos_id/${_id}`,
+            url: `http://localhost:4000/api/buscar_genero_id/${_id}`,
             responseType: 'json'
         });
         
-        return response.data.generosBD
+        return response.data.genero;
     } catch (error) {
         // console.log(error);
     }
@@ -38,65 +53,59 @@ let obtener_generoId = async (_id) => {
    // });
 //};
 
-let listarGeneros = async() =>{
-    try {
-        const response=await axios({
-            method: 'get',
-            url:'http://localhost:4000/api/listar-generos',
-            responseType: 'json'
-            
-        });
 
-        return response.data.listar_generos;
+
+let modificarGenero = async (pId, nombre) => {
+    try {
+        //fetch data from a url endpoint
+        const response = await axios({
+            method: 'post',
+            url: 'http://localhost:4000/api/modificar-genero',
+            responseType: 'json',
+            data: {
+                _id: pId,
+               genero: nombre
+            }
+        });
+        
+        return response.data.success;
     } catch (error) {
         console.log(error);
     }
+
+
+
 };
 
-let modificarGenero = (pid,pgenero) => {
-    axios({
-        method: 'post',
-        url: 'http://localhost:4000/api/modificar_genero',
-        responseType: 'json',
-
-
-        data: {
-            _id:pid,
-           genero:pgenero
-        }
-    });
-};
-
-let habilitar = (pid, pestado) => {
+let habilitar = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar_genero',
         responseType: 'json',
         data: {
-            _id: pid,
-            estado: pestado
+            _id: pId
         }
     });
 };
-let deshabilitar = (pid) => {
+let deshabilitar = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar_genero',
         responseType: 'json',
         data: {
-            _id: pid
+            _id: pId
 
         }
     });
 };
 
-let eliminar = (pid) => {
+let eliminar = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar_genero',
         responseType: 'json',
         data: {
-            _id: pid
+            _id: pId
 
         }
     });
