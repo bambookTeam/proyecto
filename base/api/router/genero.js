@@ -146,7 +146,7 @@ router.post('/habilitar_genero', function (req, res) {
     )
 });
 
-router.post('/eliminar-tarjeta', function (req, res) {
+router.post('/eliminar_genero', function (req, res) {
     let body = req.body;
 
     Genero.findByIdAndDelete(body._id, {

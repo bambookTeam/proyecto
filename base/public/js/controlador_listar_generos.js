@@ -71,7 +71,7 @@ let mostrarlista = async () => {
 
     enlace_eliminar.addEventListener('click', function () {
         Swal.fire({
-            title: '?Está seguro que desea eliminar el género?',
+            title: 'Está seguro que desea eliminar el género?',
             text: "Ésta acción no se puede revertir",
             type: 'warning',
             showCancelButton: true,
@@ -80,7 +80,7 @@ let mostrarlista = async () => {
             confirmButtonText: 'Sí, estoy seguro'
         }).then((result) => {
             if (result.value) {
-                eliminar(listar_generos[i]['_id']);
+                eliminar(listar_generos[index]['_id']);
 
                 Swal.fire(
                     'Contacto eliminado!',
