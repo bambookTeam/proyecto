@@ -1,12 +1,12 @@
 var modal = document.getElementById("myModal");
 var modalContent=document.querySelector("#signinpopup")
-var btn = document.getElementById("myBtn");
+var btnShowOptions = document.getElementById("myBtn");
 
 
 var span = document.getElementsByClassName("close")[0];
 
 
-btn.onclick = function() {
+btnShowOptions.onclick = function() {
   modal.style.display = "block";
 }
 
