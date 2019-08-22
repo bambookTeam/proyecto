@@ -35,6 +35,13 @@ window.addEventListener('load',function(){
         } else {
             
         }
+
+        if(document.querySelector('#idVerPerfil')) {
+            document.querySelector('#idVerPerfil').style.display="block";
+            document.querySelector('#signinpopup').style.height="58px";
+        }
+
+
     }
     
 });
