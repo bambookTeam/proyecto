@@ -40,25 +40,31 @@ let mostrarlista = async () => {
 
 
         let celda_estado = fila.insertCell();
-
-
         let enlace_habilitado = document.createElement('a');
-        if (listar_generos[index]["estado"] == "Habilitado") {
-            enlace_habilitado.innerText = "Habilitado";
-        } else {
-            enlace_habilitado.innerText = "Deshabilitado";
-        }
+        enlace_habilitado.innerText = 'Habilitar';
         enlace_habilitado.href = 'listar_genero.html';
-        enlace_habilitado.addEventListener('click', function () {
-            if (listar_generos[index]["estado"] == "Habilitado") {
-                habilitar(listar_generos[index]['_id'], "Desabilitado");
-            } else {
-                habilitar(listar_generos[index]['_id'], "Habilitado");
-            }
-
+        enlace_habilitado.addEventListener('click', function() {
+            habilitar(listar_generos[index]['_id']);
             mostrarlista();
         });
-        celda_estado.appendChild(enlace_habilitado);
+
+
+        let enlace_deshabilitado = document.createElement('a');
+        enlace_deshabilitado.innerText = 'Deshabilitar';
+        enlace_deshabilitado.href = 'listar_genero.html';;
+        enlace_deshabilitado.addEventListener('click', function() {
+            deshabilitar(listar_generos[index]['_id']);
+            mostrarlista();
+        });
+
+        if (listar_generos[index]['estado'] == 'Habilitado') {
+            celda_estado.appendChild(enlace_deshabilitado);
+        } else {
+
+            celda_estado.appendChild(enlace_habilitado);
+            fila.classList.add('deshabilitado');
+        }
+
 
 
     
