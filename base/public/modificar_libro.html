@@ -14,38 +14,49 @@
 </head>
 
 
-
-<header>
-  <nav>
-    <div class="logoBambooks">
-      <a href="inicioCliente.html"><img src="imgs/panda_grain.png" alt="" width="40px"></a>
-    </div>
-    <div class="nav-container">
-      <a href="listar_librerias.html" id="optionNavLibrerias">Librerias</a>
-      <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
-      <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
-      <a href="listar_libros.html" id="optionNavLibros">Libros</a>
-      <a href="listar-autores.html" id="optionNavAutores">Autores</a>
-      <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
-      <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
-      <a href="listar_tarjetas.html">Tarjetas</a>
-      <a href="#" id="optionIntercambio">Intercambios</a>
-      <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
-    </div>
-    <div class="optionsNav">
-      <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-      <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
-      <button id="btn_cerrar">Cerrar Sesion</button>
-    </div>
-  </nav>
-</header>
-
 <body>
+
+    <header>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <a href="#">
+            <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+                id="barnesLogo">
+        </a>
+        <div class="sign-in-button">
+            <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
+                    <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
+                <ul class="child">
+                    <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
+                </ul>
+            </li>
+
+            <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
+
+            </li>
+
+            <li class="parent" id="dropdown"><a href="#">Otros</a>
+                <ul class="child">
+                    <li><a href="#">Intercambios</a></li>
+                    <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
+                    <li id='optionBitacora'><a href="#">Bitácora</a></li>
+                    <li id='optionReportes'><a href="#">Reportes</a></li>
+                    <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
   <main>
     <h1>Modificar Libro</h1>
@@ -145,6 +156,7 @@
 
   <script src="js/jquery-3.3.1.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/getNombre.js"></script> 
   <!-- script controlador -->
   <script src="js/servicio_libro.js"></script>
   <script src="js/controlador_cerrar_sesion.js"></script>
