@@ -12,7 +12,9 @@ router.post('/registrar_genero', function (req, res) {
     console.log("activado");
     console.log(body);
     let nuevo_genero = new Genero({
-        genero: body.genero
+        genero: body.genero,
+        estado: 'Habilitado'
+
 
     });
 
@@ -116,8 +118,6 @@ router.post('/deshabilitar_genero', function (req, res) {
     },
         function (error) {
             if (error) {
-                console.log("error")
-                console.log(error)
                 res.json({ success: false, msg: 'No se pudo deshabilitar el genero' });
             } else {
                 console.log("sirve")
@@ -132,7 +132,7 @@ router.post('/habilitar_genero', function (req, res) {
 
     Genero.findByIdAndUpdate(body._id, {
         $set: {
-            estado: req.body.estado
+            estado: 'Habilitado'
         }
     },
         function (error) {
@@ -146,17 +146,22 @@ router.post('/habilitar_genero', function (req, res) {
     )
 });
 
-router.post('/eliminar-tarjeta', function (req, res) {
+router.post('/eliminar_genero', function (req, res) {
     let body = req.body;
+    console.log("eliminar");
+    console.log(body);
 
     Genero.findByIdAndDelete(body._id, {
-
         function(error) {
-
             if (error) {
+                console.log(error);
                 res.json({ success: false, msg: 'No se pudo eliminar el género' });
+                console.log(error);
             } else {
+
                 res.json({ success: true, msg: 'El género se eliminó con éxito' });
+                console.log("ejecutable");
+                console.log(res);
             }
         }
 
