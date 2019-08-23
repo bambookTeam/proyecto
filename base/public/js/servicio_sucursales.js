@@ -48,22 +48,22 @@ let obtenerSucursalesLibreria = async () => {
     let cont = 0;
 
     sucursales = await obtenerSucursales();
-    
-    for ( let i = 0; i< sucursales.length; i++){
 
-        if( sucursales[i]['idLibreria'] ==  idLibreria ){
-        
+    for (let i = 0; i < sucursales.length; i++) {
+
+        if (sucursales[i]['idLibreria'] == idLibreria) {
+
             sucursalesLibreria[cont] = sucursales[i];
 
-            cont ++;
+            cont++;
 
         }
 
 
     }
-    
+
     return sucursalesLibreria;
-    
+
 
 };
 
@@ -93,6 +93,18 @@ let modificar_sucursal = (pid, pnombre, ptelefono, pcorreo, pdireccion) => {
             telefono: ptelefono,
             correo: pcorreo,
             direccion: pdireccion
+        }
+    });
+};
+
+let eliminar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar_sucursal',
+        responseType: 'json',
+        data: {
+            _id: pid
+
         }
     });
 };

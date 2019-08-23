@@ -104,4 +104,18 @@ router.post('/modificar-sucursal', function (req, res) {
 
 });
 
+router.post('/eliminar_sucursal', function (req, res) {
+    let body = req.body;
+
+    Sucursal.findByIdAndRemove(body._id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar la sucursal' });
+            } else {
+                res.json({ success: true, msg: 'La sucursal se eliminó con éxito' });
+            }
+        }
+    )
+});
+
 module.exports = router;

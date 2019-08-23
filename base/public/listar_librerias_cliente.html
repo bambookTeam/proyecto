@@ -2,15 +2,18 @@
 
 <html lang="es">
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Listar Librerías 2</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/listar_librerias.css">
-        <link rel="stylesheet" href="css/navbar.css">
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listar Librerías 2</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/listar_librerias.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+
+
+<body>
 
     <header>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -22,77 +25,75 @@
         <div class="sign-in-button">
             <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
         </div>
-    </header>    
-    
-    <body>
+    </header>
 
-        <nav class="nav-menu">
-            <ul>
-                <li class="parent"><a class="hovernav" href="#">Librerías</a>
-                    <ul class="child">
-                        <li><a href="#">Sucursales</a></li>
-                        <li><a href="#">Ofertas</a></li>
-                    </ul>
-                </li>
-                <li class="parent" id="dropdown"><a href="#">Libros</a>
-                    <ul class="child">
-                        <li><a href="listar_genero.html">Géneros</a></li>
-                        <li><a href="#">Categorías</a></li>
-                    </ul>
-                </li>
-                <li class="parent" id="dropdown"><a href="#">Clubes de Lectura</a>
-                    <ul class="child">
-                        <li><a href="#">Buscar Clubes</a></li>
-                        <li><a href="#">Mis Clubes</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent"><a class="hovernav" href="#">Librerías</a>
+                <ul class="child">
+                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li><a href="listar_genero.html">Géneros</a></li>
+                    <li><a href="#">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Clubes de Lectura</a>
+                <ul class="child">
+                    <li><a href="#">Buscar Clubes</a></li>
+                    <li><a href="#">Mis Clubes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
-        <main>
+    <main>
 
-            <h1>Listar Librerías</h1>
-
-            
-            <label for="txt_filtro">Filtrar</label>
-            <input id="txt_filtro" type="text">
-            
-            <table id="tbl_librerias">
-
-                <thead>
-
-                    <tr>
-                        <th>Nombre Comercial</th>
-                        <th>Nombre Fantasia</th>
-                        <th>Dirección</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-
-                </thead>
-
-                <tbody>
-            
-                </tbody>
-
-            </table>
-
-        </main>
+        <h1>Listar Librerías</h1>
 
 
-        <footer></footer>
+        <label for="txt_filtro">Filtrar</label>
+        <input id="txt_filtro" type="text">
 
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="js/jquery-3.3.1.js"></script>
+        <table id="tbl_librerias">
 
-        <script src="js/servicio_librerias.js"></script>
+            <thead>
 
-        <script src="js/controlador_listar_librerias_cliente.js"></script>
-        <script src="js/controlador_cerrar_sesion.js"></script>
+                <tr>
+                    <th>Nombre Comercial</th>
+                    <th>Nombre Fantasia</th>
+                    <th>Dirección</th>
+                    <th></th>
+                    <th></th>
+                </tr>
 
-        <script src="js/getNombre.js"></script>
-        <script src="js/hideRegistro.js"></script>
-    
-    </body>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </main>
+
+
+    <footer></footer>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+
+    <script src="js/servicio_librerias.js"></script>
+
+    <script src="js/controlador_listar_librerias_cliente.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
+
+    <script src="js/getNombre.js"></script>
+    <script src="js/hideRegistro.js"></script>
+
+</body>
 
 </html>
