@@ -87,7 +87,7 @@ router.post('/agregar-inventarioLibreria', function(req, res){
                 return res.status(500).json({
                     success: false, 
                     msj: 'No se actualizo el inventario',
-                    err
+                    error
                 });
 
 

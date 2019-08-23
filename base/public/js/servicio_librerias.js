@@ -53,6 +53,25 @@ let obtenerLibrerias = async () => {
 };
 
 let obtenerLibreriaId = async (_id) => {
+
+    let librerias = [];
+    let idLibreria;
+
+    librerias = await obtenerLibrerias();
+
+    for (let i = 0; i < librerias.length; i++) {
+
+        if (librerias[i]['id'] == identificacionAdmin) {
+
+            idLibreria = librerias[i]['_id'];
+        }
+    }
+
+
+    return idLibreria;
+};
+
+let obtenerLibreriaId = async (_id) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({

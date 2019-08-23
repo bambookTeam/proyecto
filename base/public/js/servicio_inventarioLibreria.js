@@ -79,9 +79,23 @@ let obtenerInventarioLibreria = async() => {
 
 };
 
+let disminuirInventarioLibreria = (p_id, pexistencias) => {
+
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-inventarioLibreria',
+        responseType: 'json',
+        data: {
+            _id: p_id,
+            cant: pexistencias
+        }
+    })
+
+};
+
 let verificarInventario = async ( pisbn, pIdAdminLibreria, pcant) => {
 
-    
+    //Se pdoria declarar inventarioLibreria aca y no tenerlo como una variable global
     
 
     inventarioLibreria = await inventario();

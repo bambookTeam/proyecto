@@ -26,8 +26,12 @@ window.addEventListener('load',function(){
             
         }
 
-        document.querySelector('#idVerPerfil').style.display="block";
-        document.querySelector('#signinpopup').style.height="58px"
+        if(document.querySelector('#idVerPerfil')) {
+            document.querySelector('#idVerPerfil').style.display="block";
+            document.querySelector('#signinpopup').style.height="58px";
+        }
+
+
     }
     
 });

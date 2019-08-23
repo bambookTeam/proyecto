@@ -11,7 +11,7 @@ let libro_schema = new mongoose.Schema({
     autor: { type: String, required: true, unique: false },
     anno: { type: Number, required: true, unique: false },
     idioma: { type: String, required: true, unique: false },
-    isbn: { type: Number, required: true, unique: false },
+    isbn: { type: String, required: true, unique: false },
     genero: { type: String, required: true, unique: false },
     tipo: { type: String, required: true, unique: false },
     cantidad: { type: Number, required: true, unique: false },

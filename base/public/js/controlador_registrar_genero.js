@@ -2,8 +2,8 @@
 var btnRegistrargenero = document.getElementById('btn-registrar-genero'),
     overlay = document.getElementById('overlay'),
     popup = document.getElementById('popup'),
-    cerrarpopup = document.getElementById('cerrar'),
-    input_genero = document.getElementById('txt-genero');
+    cerrarpopup = document.getElementById('cerrar');
+const  input_genero = document.getElementById('txt-genero');
    
 
   btnRegistrargenero.addEventListener('click', function(){
@@ -38,8 +38,8 @@ let validar = (pgenero) => {
 
 let validarElGenero = (pElGenero) => {
     let error = false;
-    for (let i = 0; i < lista_genero.length; i++) {
-        if (pElGenero === lista_genero[i].genero) {
+    for (let index = 0; index < listar_generos.length; index++) {
+        if (pElGenero === listar_generos[index].genero) {
             error = true;
         
         }
