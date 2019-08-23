@@ -2,16 +2,18 @@
 
 <html lang="es">
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Listar Librerías</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/listar_librerias.css">
-        <link rel="stylesheet" href="css/navbar.css">
-        <link rel="stylesheet" href="css/footer.css">
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listar Librerías</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/listar_librerias.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
 
     <header>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -24,65 +26,63 @@
             <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
         </div>
     </header>
-        
-    <body>
 
-        <nav class="nav-menu">
-                    <ul>
-                        <li class="parent"><a href="#">Librerías</a>
-                            <ul class="child">
-                                <li><a href="#">Sucursales</a></li>
-                                <li><a href="#">Ofertas</a></li>
-                            </ul>
-                        </li>
-                        <li class="parent" id="dropdown"><a href="#">Libros</a>
-                            <ul class="child">
-                                <li><a href="#">Géneros</a></li>
-                                <li><a href="#">Categorías</a></li>
-                            </ul>
-                        </li>
-                        <li class="parent" id="dropdown"><a href="#">Clubes de Lectura</a>
-                            <ul class="child">
-                                <li><a href="#">Buscar Clubes</a></li>
-                                <li><a href="#">Mis Clubes</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-        </nav>
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent"><a href="#">Librerías</a>
+                <ul class="child">
+                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li><a href="#">Géneros</a></li>
+                    <li><a href="#">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Clubes de Lectura</a>
+                <ul class="child">
+                    <li><a href="#">Buscar Clubes</a></li>
+                    <li><a href="#">Mis Clubes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
-        <main>
+    <main>
 
-            <h1>Listar Librerías</h1>
+        <h1>Listar Librerías</h1>
 
-            
-            <label for="txt_filtro">Filtrar</label>
-            <input id="txt_filtro" type="text">
-            
-            <a href="registrar_libreria.html" id="btnNuevaLibreria">Nueva Librería</a>
 
-            <table id="tbl_librerias">
+        <label for="txt_filtro">Filtrar</label>
+        <input id="txt_filtro" type="text">
 
-                <thead>
+        <a href="registrar_libreria.html" id="btnNuevaLibreria">Nueva Librería</a>
 
-                    <tr>
-                        <th>Nombre Comercial</th>
-                        <th>Nombre Fantasia</th>
-                        <th>Dirección</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
+        <table id="tbl_librerias">
 
-                </thead>
+            <thead>
 
-                <tbody>
-            
-                </tbody>
+                <tr>
+                    <th>Nombre Comercial</th>
+                    <th>Nombre Fantasia</th>
+                    <th>Dirección</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
 
-            </table>
+            </thead>
 
-        </main>
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </main>
 
     <section id="footer">
 
@@ -106,16 +106,16 @@
 
             <div class="list">
 
+                <ul>
+                    <li class="uhead"><a href="">Libros</a></li>
                     <ul>
-                        <li class="uhead"><a href="" >Libros</a></li>
-                        <ul>
-                            <li><a href="">Ver todos los libros</a></li>
-                            <li><a href="">Categorías</a></li>
-                            <li><a href="">Géneros</a></li>
-                            <li><a href="">Más Vendidos</a></li>
-                            <li><a href="">Mejor Calificados</a></li>
-                        </ul>
+                        <li><a href="">Ver todos los libros</a></li>
+                        <li><a href="">Categorías</a></li>
+                        <li><a href="">Géneros</a></li>
+                        <li><a href="">Más Vendidos</a></li>
+                        <li><a href="">Mejor Calificados</a></li>
                     </ul>
+                </ul>
             </div>
 
             <div class="list">
@@ -141,7 +141,7 @@
             <img src="https://img.icons8.com/windows/20/ffffff/twitter.png">
 
             <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
-                                
+
             <div class="line-soc"></div>
             <div>
                 <!--
@@ -153,18 +153,18 @@
             </div>
         </div>
     </section>
-        
 
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="js/jquery-3.3.1.js"></script>
-        <script src="js/servicio_librerias.js"></script>
 
-        <script src="js/controlador_listar_librerias.js"></script>
-        <script src="js/controlador_registrar_sucursal.js"></script>
-        <script src="js/controlador_cerrar_sesion.js"></script>
-  
-        <script src="js/hideRegistro.js"></script>
-    
-    </body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/servicio_librerias.js"></script>
+
+    <script src="js/controlador_listar_librerias.js"></script>
+    <script src="js/controlador_registrar_sucursal.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
+
+    <script src="js/hideRegistro.js"></script>
+
+</body>
 
 </html>

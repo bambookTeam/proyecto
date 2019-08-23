@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarLibreria = (pnombre_comercial,identificacionUsuarioLibreria, pnombre_fantasia, pdireccion) => {
+let registrarLibreria = (pnombre_comercial, identificacionUsuarioLibreria, pnombre_fantasia, pdireccion) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libreria',
@@ -37,7 +37,7 @@ let registrarAdminLibreria = (pidentificacion, pprimer_nombre, psegundo_nombre, 
     });
 };
 
-let obtenerLibrerias = async() => {
+let obtenerLibrerias = async () => {
     try {
         // fetch data from a url endpoint
         const response = await axios({
@@ -52,16 +52,16 @@ let obtenerLibrerias = async() => {
     }
 };
 
-let obtenerIdLibreria = async (identificacionAdmin)=>{
+let obtenerLibreriaId = async (_id) => {
 
     let librerias = [];
     let idLibreria;
 
     librerias = await obtenerLibrerias();
 
-    for ( let i = 0; i < librerias.length; i++){
+    for (let i = 0; i < librerias.length; i++) {
 
-        if( librerias[i]['id'] == identificacionAdmin){
+        if (librerias[i]['id'] == identificacionAdmin) {
 
             idLibreria = librerias[i]['_id'];
         }
@@ -71,7 +71,7 @@ let obtenerIdLibreria = async (identificacionAdmin)=>{
     return idLibreria;
 };
 
-let obtenerLibreriaId = async(_id) => {
+let obtenerLibreriaId = async (_id) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
