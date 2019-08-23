@@ -1,9 +1,6 @@
 'use strict';
 
-
-
 let modal = document.getElementById("RegistrarClubScreen");
-
 
 let btnCancelClub = document.getElementById("btnCancelClub");
 let btnCrearClub = document.getElementById("btnCrearClub");
@@ -24,20 +21,19 @@ let yyyy = today.getFullYear();
 
 today = yyyy + '-' + mm + '-' + dd;
 
-
-let showSelects = async() => {
+let showSelects = async () => {
 
     let arrayGenero = [];
     let arrayTema = [];
-    let arrayCategorias= [];
+    let arrayCategorias = [];
     let arrayLibrerias = [];
     let arraySucursales = [];
 
-    arrayGenero=await listarGenero();
-    arrayTema=await obtenerLibros();
-    arrayCategorias=await obtenerCategorias();
-    arrayLibrerias=await obtenerLibrerias();
-    arraySucursales=await obtenerSucursales();
+    arrayGenero = await listarGenero();
+    arrayTema = await obtenerLibros();
+    arrayCategorias = await obtenerCategorias();
+    arrayLibrerias = await obtenerLibrerias();
+    arraySucursales = await obtenerSucursales();
 
     let parentTema = document.getElementById('lista_tema_clubes');
     let parentGenero = document.getElementById('lista_genero_clubes');
@@ -54,22 +50,22 @@ let showSelects = async() => {
     parentTema.appendChild(selectTema);
 
     let selectCategoria = document.createElement('select');
-    selectCategoria.setAttribute('id','categorias_club');
+    selectCategoria.setAttribute('id', 'categorias_club');
     parentCategoria.appendChild(selectCategoria);
 
     let selectLibreria = document.createElement('select');
-    selectLibreria.setAttribute('id','librerias_club');
+    selectLibreria.setAttribute('id', 'librerias_club');
     parentLibreria.appendChild(selectLibreria);
 
     let selectSucursal = document.createElement('select');
-    selectSucursal.setAttribute('id','sucursales_club');
+    selectSucursal.setAttribute('id', 'sucursales_club');
     parentSucursal.appendChild(selectSucursal);
 
 
     for (let i = 0; i < arrayGenero.length; i++) {
         let optionGenero = document.createElement('option');
         optionGenero.setAttribute('value', arrayGenero[i].genero);
-    
+
         optionGenero.innerHTML = arrayGenero[i].genero;
         optionGenero.style.width = "300px"
         selectGenero.appendChild(optionGenero);
@@ -110,7 +106,6 @@ let showSelects = async() => {
 
 window.addEventListener('load', showSelects);
 
-
 let cleanupFormClubes = () => {
 
     document.getElementById('formulario-ClubLectura').reset();
@@ -125,14 +120,13 @@ let cleanupFormClubes = () => {
     fechaFinClub_input.classList.remove('input_error');
 }
 
-
 let hideHora = () => {
     let mod = document.getElementById('modalidad_Club').value;
     let hora = document.getElementById('horasClub');
 
     if (mod == "Virtual") {
         hora.style.display = "none";
-        hora.value="00:00";
+        hora.value = "00:00";
     } else {
         hora.style.display = '';
     }
@@ -197,7 +191,6 @@ let validarDatos = (pnombre, pmodalidad, pfechainicio, pfechafin) => {
     return error;
 }
 
-
 btnCrearClub.onclick = function () {
     let tema_input = document.querySelector("#temas_club");
     let genero_input = document.querySelector("#generos_club");
@@ -214,22 +207,22 @@ btnCrearClub.onclick = function () {
     let frecuencia = frecuencia_input.value;
 
 
-    error=validarDatos(nombreClub,modalidad,fechainicio,fechaFin);
+    error = validarDatos(nombreClub, modalidad, fechainicio, fechaFin);
     let idAdminClub = sessionStorage.getItem('id');
 
-    if (modalidad=='Virtual') {
-        hora="00:00"
+    if (modalidad == 'Virtual') {
+        hora = "00:00"
     }
-    
+
 
     if (error == false) {
-       
-        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,idAdminClub);
+
+        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value, categoria_input.value, librerias_input.value, sucursales_input.value, idAdminClub);
         cleanupFormClubes();
         location.replace('%20clubesLectura.html');
-        
+
     } else {
-        
+
     }
 
 }

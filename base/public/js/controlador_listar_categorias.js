@@ -37,6 +37,45 @@ let mostrar_tabla = async () => {
         })
         /*                    MODIFICAR SUCURSAL                   */
 
+        //Botón eliminar
+
+        let estilos_btn_eliminar = document.createElement('img');
+        estilos_btn_eliminar.setAttribute('src', './imgs/delete-icon.png')
+
+        let celda_btn_eliminar = fila.insertCell();
+        let btn_eliminar = document.createElement('button', 'a');
+        btn_eliminar.innerText = 'Eliminar';
+        btn_eliminar.href = '#';
+        btn_eliminar.type = 'button';
+
+        btn_eliminar.addEventListener('click', function () {
+            Swal.fire({
+                title: '¿Está seguro que desea eliminar la categoría?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminar(lista_categorias[i]._id);
+
+                    Swal.fire(
+                        'Categoría eliminada exitosamente!',
+                        //'success'
+                    ).then((result) => {
+                        if (result.value) {
+                            window.location.href = 'listar_categoría.html';
+                        }
+                    });
+                }
+            })
+            localStorage.setItem("eliminarCategoría", JSON.stringify(lista_categorias[i]));
+        })
+        celda_btn_eliminar.appendChild(btn_eliminar);
+        btn_eliminar.appendChild(estilos_btn_eliminar);
+
 
     }
 

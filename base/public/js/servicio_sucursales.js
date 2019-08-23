@@ -35,9 +35,7 @@ let obtenerSucursales = async () => {
     }
 };
 
-
 // Tratar de no llamar el metodo obtenerIdLiberia desde aca, hacerlo desde un controlador 
-
 let obtenerSucursalesLibreria = async () => {
 
     let sucursales = [];
@@ -93,6 +91,28 @@ let modificar_sucursal = (pid, pnombre, ptelefono, pcorreo, pdireccion) => {
             telefono: ptelefono,
             correo: pcorreo,
             direccion: pdireccion
+        }
+    });
+};
+
+let habilitar_sucursal = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/habilitar-sucursal',
+        responseType: 'json',
+        data: {
+            _id: pid
+        }
+    });
+};
+
+let deshabilitar_sucursal = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/deshabilitar-sucursal',
+        responseType: 'json',
+        data: {
+            _id: pid
         }
     });
 };

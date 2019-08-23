@@ -52,7 +52,6 @@ let obtenerLibrerias = async () => {
     }
 };
 
-
 let obtenerLibreriaId = async (_id) => {
     try {
         // fetch data from an url endpoint
@@ -68,3 +67,14 @@ let obtenerLibreriaId = async (_id) => {
     }
 };
 
+let eliminar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar_libreria',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};

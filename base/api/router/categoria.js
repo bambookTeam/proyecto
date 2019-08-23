@@ -102,5 +102,18 @@ router.post('/modificar-categoria', function (req, res) {
 
 });
 
+router.post('/eliminar_categoria', function (req, res) {
+    let body = req.body;
+
+    Categoria.findByIdAndRemove(body._id,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar la categoría' });
+            } else {
+                res.json({ success: true, msg: 'La categoría se eliminó con éxito' });
+            }
+        }
+    )
+});
 
 module.exports = router;

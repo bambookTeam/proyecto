@@ -16,7 +16,7 @@ let mostrar_tabla = async () => {
         fila.insertCell().innerHTML = lista_sucursales[i]['correo'];
         fila.insertCell().innerHTML = lista_sucursales[i]['direccion'];
 
-        /*                    MODIFICAR SUCURSAL                   */
+        // Modificar
         let estilos_modificar = document.createElement('img');
         estilos_modificar.setAttribute('src', './imgs/edit-icon.png')
 
@@ -31,39 +31,29 @@ let mostrar_tabla = async () => {
 
         modificar.addEventListener('click', function () {
             localStorage.setItem("_idSucursal", lista_sucursales[i]._id);
-
-            //   localStorage.setItem("modificarTarjeta", JSON.stringify(listar_sucursales[index]));
             window.location.href = 'modificar_sucursal.html'
         })
-        /*                    MODIFICAR SUCURSAL                   */
+        // Modificar
 
+        // Estado
+        let celda_cambiar_estado = fila.insertCell();
+        let btnCambiarEstadoSucursal = document.createElement('button');
+        celda_cambiar_estado.appendChild(btnCambiarEstadoSucursal);
+        if (lista_sucursales[i].estado == 0) {
+            btnCambiarEstadoSucursal.innerText = "Activar";
+            btnCambiarEstadoSucursal.addEventListener('click', function () {
+                habilitar_sucursal(lista_sucursales[i]._id);
+                btnCambiarEstadoSucursal.innerText = "Desactivar";
+            });
 
-        let celda_agregar = fila.insertCell();
-        let boton_agregar = document.createElement('button');
-
-        boton_agregar.type = 'button';
-        boton_agregar.innerText = 'Inventario';
-        boton_agregar.dataset._id = lista_sucursales[i]['_id'];
-
-        celda_agregar.appendChild(boton_agregar);
-
-        boton_agregar.addEventListener('click', function () {
-
-            window.location.href = 'inventario_sucursal.html';
-
-        });
-
-
-
-
-
-
-
-
-
-
-
-
+        } else {
+            btnCambiarEstadoSucursal.innerText = "Desactivar";
+            btnCambiarEstadoSucursal.addEventListener('click', function () {
+                deshabilitar_sucursal(lista_sucursales[i]._id);
+                btnCambiarEstadoSucursal.innerText = "Activar";
+            });
+        }
+        // Estado
 
         //Botón eliminar
         let estilos_btn_eliminar = document.createElement('img');
@@ -102,6 +92,22 @@ let mostrar_tabla = async () => {
         })
         celda_btn_eliminar.appendChild(btn_eliminar);
         btn_eliminar.appendChild(estilos_btn_eliminar);
+        //Botón eliminar
+
+        // Inventario
+        let celda_agregar = fila.insertCell();
+        let boton_agregar = document.createElement('button');
+
+        boton_agregar.type = 'button';
+        boton_agregar.innerText = 'Inventario';
+        boton_agregar.dataset._id = lista_sucursales[i]['_id'];
+
+        celda_agregar.appendChild(boton_agregar);
+
+        boton_agregar.addEventListener('click', function () {
+            window.location.href = 'inventario_sucursal.html';
+        });
+        // Inventario
 
     }
 
