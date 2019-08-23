@@ -57,11 +57,12 @@ let listarClubes = async () => {
 
         let usuarioActivo = sessionStorage.getItem('id');
         for (let index = 0; index < listaMiembros.length; index++) {
-            if (usuarioActivo == listaMiembros[index].idUsuario && listaClubes[i]._id == listaMiembros[index].idClub) {
-                btnUnirseClub.innerText = "Ver Perfil";
-                
+            if ((usuarioActivo == listaMiembros[index].idUsuario && listaClubes[i]._id == listaMiembros[index].idClub) || usuarioActivo == listaClubes[i].idAdmin) {
 
-                btnUnirseClub.addEventListener('click',function(){
+                btnUnirseClub.innerText = "Ver Perfil";
+
+
+                btnUnirseClub.addEventListener('click', function () {
                     localStorage.setItem('idClub', listaClubes[i]._id);
                     location.replace('ver_perfilClubLectura.html');
                 })
@@ -84,18 +85,26 @@ let listarClubes = async () => {
                     }
 
                     if (listaClubes[i].idAdmin == idUsuario) {
-                        console.log('ya es admin pa');
+
                     } else {
                         if (errorExists == true) {
 
                         } else {
+                            localStorage.setItem('idClub', listaClubes[i]._id);
+                            setTimeout(function () {
+                                
+                                redirigir_perfil_club();
+                            }, 2000);
                             registrarMiembro_Club(listaClubes[i]._id, idUsuario);
+                            btnUnirseClub.innerText = "Ver Perfil";
                             Swal.fire({ //formato Jason
                                 title: 'Se ha unido al Club con exito',
                                 type: 'success',
-                                text: 'Se redirigirá al Perfil del Club'
+                                text: 'Se redirigirá al Perfil del Club',
+                                showCancelButton: false,
+                                showConfirmButton: false
                             })
-                            
+
                         }
                     }
 
@@ -366,6 +375,10 @@ let misClubes = async () => {
 
 btn.onclick = function () {
     location.replace('registrar_clubLectura.html');
+}
+
+let redirigir_perfil_club = () => {
+    location.replace('ver_perfilClubLectura.html');
 }
 
 window.addEventListener('load', listarClubes);
