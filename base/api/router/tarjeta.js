@@ -17,7 +17,9 @@ router.post('/registrar_tarjeta', function (req, res) {
         id: body.id,
         numerotarjeta: body.numerotarjeta,
         fechavencimiento: body.fechavencimiento,
-        codigocvv: body.codigocvv
+        codigocvv: body.codigocvv,
+        estado: 'Habilitado'
+
     });
 
     console.log("guardado de tarjeta");
