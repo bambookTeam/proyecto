@@ -83,11 +83,11 @@ let mostrarlista = async () => {
             confirmButtonText: 'Sí, estoy seguro'
         }).then((result) => {
             if (result.value) {
-                eliminar(listar_generos[index]['_id']);
+                eliminarGenero(listar_generos[index]['_id']);
 
                 Swal.fire(
                     'Género eliminado!',
-                    'success'
+                    'listo'
                 ).then((result) => {
                     if (result.value) {
                         window.location.href = 'listar_genero.html';

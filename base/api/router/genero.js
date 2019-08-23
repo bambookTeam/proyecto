@@ -148,15 +148,20 @@ router.post('/habilitar_genero', function (req, res) {
 
 router.post('/eliminar_genero', function (req, res) {
     let body = req.body;
+    console.log("eliminar");
+    console.log(body);
 
     Genero.findByIdAndDelete(body._id, {
-
         function(error) {
-
             if (error) {
+                console.log(error);
                 res.json({ success: false, msg: 'No se pudo eliminar el género' });
+                console.log(error);
             } else {
+
                 res.json({ success: true, msg: 'El género se eliminó con éxito' });
+                console.log("ejecutable");
+                console.log(res);
             }
         }
 
