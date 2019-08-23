@@ -6,7 +6,7 @@ let showSelects = async () => {
     let arrayLibrerias = [];
     let arraySucursales = [];
 
-    arrayGenero = await listarGenero();
+    arrayGenero = await obtenerGeneros();
     arrayTema = await obtenerLibros();
     arrayCategorias = await obtenerCategorias();
     arrayLibrerias = await obtenerLibrerias();

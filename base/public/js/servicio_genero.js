@@ -99,7 +99,7 @@ let deshabilitar = (pId) => {
     });
 };
 
-let eliminar = (pId) => {
+let eliminarGenero = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar_genero',

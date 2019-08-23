@@ -2,13 +2,11 @@
 
 
 
-let modal = document.getElementById("RegistrarClubScreen");
 
 
 let btnCancelClub = document.getElementById("btnCancelClub");
 let btnCrearClub = document.getElementById("btnCrearClub");
 
-let span = document.getElementsByClassName("close")[0];
 
 let nombreClub_input = document.querySelector("#txt-clubLectura");
 let modalidad_input = document.querySelector("#modalidad_Club");
@@ -33,7 +31,7 @@ let showSelects = async() => {
     let arrayLibrerias = [];
     let arraySucursales = [];
 
-    arrayGenero=await listarGenero();
+    arrayGenero=await obtenerGeneros();
     arrayTema=await obtenerLibros();
     arrayCategorias=await obtenerCategorias();
     arrayLibrerias=await obtenerLibrerias();
