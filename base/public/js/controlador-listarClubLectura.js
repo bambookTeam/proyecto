@@ -220,7 +220,7 @@ let misClubes = async () => {
             parentClubes.appendChild(div);
 
             let img = document.createElement('img');
-            img.setAttribute('src', 'https://res.cloudinary.com/dc8k6i5xm/image/upload/v1563223101/pandauser_sw7weq.png');
+            img.setAttribute('src', 'https://img.icons8.com/ios/100/000000/book-shelf.png');
 
             div.appendChild(img);
             div.appendChild(clubInfoDiv);
@@ -303,7 +303,7 @@ let misClubes = async () => {
                 parentMisClubes.appendChild(div);
 
                 let img = document.createElement('img');
-                img.setAttribute('src', 'https://res.cloudinary.com/dc8k6i5xm/image/upload/v1563223101/pandauser_sw7weq.png');
+                img.setAttribute('src', 'https://img.icons8.com/ios/100/000000/book-shelf.png');
 
                 div.appendChild(img);
                 div.appendChild(clubInfoDiv);

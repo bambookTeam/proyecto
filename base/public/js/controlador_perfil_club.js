@@ -85,7 +85,8 @@ let sendMsg = () => {
         textContent.classList.add('textSender');
 
         let senderName = document.createElement('h3');
-        senderName.innerHTML = "Le Sender";
+        nombreUsuarioActivo=sessionStorage.getItem('nombreUsuario');
+        senderName.innerHTML = nombreUsuarioActivo;
         let timeMsg = document.createElement('span');
         var today = new Date();
 
@@ -227,17 +228,17 @@ let llenarperfilClub = async () => {
 
             btnSalirseClub.addEventListener('click', async function () {
                 let listaMiembrosClubes = [];
-                listaMiembrosClubes=await obtenerListaMiembros();
-                let getIdUnion="";
-                
-                
+                listaMiembrosClubes = await obtenerListaMiembros();
+                let getIdUnion = "";
+
+
                 for (let x = 0; x < listaMiembrosClubes.length; x++) {
-                    
-                    if (activeUser==listaMiembrosClubes[x].idUsuario&&listaMiembrosClubes[x].idClub==activeClub) {
-                        getIdUnion=listaMiembrosClubes[x]._id;
+
+                    if (activeUser == listaMiembrosClubes[x].idUsuario && listaMiembrosClubes[x].idClub == activeClub) {
+                        getIdUnion = listaMiembrosClubes[x]._id;
                     }
                 }
-                
+
                 Swal.fire({
                     title: '¿Está seguro que desea salirse de este Club de Lectura?',
                     showCancelButton: true,
@@ -248,16 +249,16 @@ let llenarperfilClub = async () => {
                     confirmButtonColor: '#f6b93b',
                     cancelButtonColor: '#000',
                     confirmButtonText: 'Yes, delete it!'
-                    
+
                 }).then((result) => {
                     if (result.value) {
                         setTimeout(function () {
-                                
+
                             location.replace('%20clubesLectura.html');
                         }, 2000);
 
                         expulsar_miembro(getIdUnion);
-                        
+
                         Swal.fire(
                             'Te has salido del Club de Lectura',
                             'Se redireccionará a la página de Clubes',
@@ -267,10 +268,10 @@ let llenarperfilClub = async () => {
                     }
                 })
 
-                
-                
 
-                
+
+
+
 
             });
 
@@ -296,6 +297,122 @@ msgtoSend.addEventListener('keydown', function (e) {
     }
 });
 
- window.addEventListener('load', llenarChat);
+let lista_miembros_club = async () => {
+    let tbody = document.querySelector('#tabla_usuarios tbody');
+    let clubActivo = localStorage.getItem('idClub');
 
+    let listaMiembros = [];
+    listaMiembros = await obtenerListaMiembros();
+
+    let listaUsers = [];
+    listaUsers = await obtenerUsuarios();
+
+    let activeUser = sessionStorage.getItem('id');
+    let listaClubes = await obtenerClubes();
+    let idAdminClubActivo="";
+    for (let y = 0; y < listaClubes.length; y++) {
+        if (activeUser==listaClubes[y].idAdmin) {
+            idAdminClubActivo=listaClubes[y]._id;
+        }
+        
+    }
+
+    for (let index = 0; index < listaMiembros.length; index++) {
+        console.log('aber')
+        let fila = tbody.insertRow();
+
+
+        for (let x = 0; x < listaUsers.length; x++) {
+            if (listaMiembros[index].idUsuario == listaUsers[x]._id && listaMiembros[index].idClub == clubActivo) {
+                fila.insertCell().innerHTML = listaUsers[x].nombreUsuario;
+
+                
+                let celda_perfil = fila.insertCell();
+
+                let btnExpulsarMiembro = document.createElement('button');
+                btnExpulsarMiembro.type = 'button';
+
+                let img = document.createElement('img');
+                btnExpulsarMiembro.appendChild(img);
+                img.setAttribute('src', 'https://img.icons8.com/ios/25/000000/exit.png');
+                
+
+                if (listaUsers[x]._id==idAdminClubActivo) {
+                    
+                } else {
+                    celda_perfil.appendChild(btnExpulsarMiembro);
+                }
+
+
+                btnExpulsarMiembro.addEventListener('click', async function () {
+                    let listaMiembrosClubes = [];
+                    listaMiembrosClubes = await obtenerListaMiembros();
+                    let getIdUnion = "";
+                    
+                    
+                    let usuarioActivoClub = listaUsers[x]._id;
+                    let clubActivo = localStorage.getItem('idClub')
+                    for (let x = 0; x < listaMiembrosClubes.length; x++) {
+                        
+                        if (usuarioActivoClub == listaMiembrosClubes[x].idUsuario && listaMiembrosClubes[x].idClub == clubActivo) {
+                            getIdUnion = listaMiembrosClubes[x]._id;
+                            
+                        }
+                    }
+                    
+                    console.log(getIdUnion);
+
+                    Swal.fire({
+                        title: '¿Está seguro que desea expulsar a este Usuario?',
+                        showCancelButton: true,
+                        imageUrl: 'https://static.thenounproject.com/png/158488-200.png',
+                        imageWidth: 50,
+                        imageHeight: 50,
+                        imageAlt: 'Custom image',
+                        confirmButtonColor: '#f6b93b',
+                        cancelButtonColor: '#000',
+                        confirmButtonText: 'Yes, delete it!'
+
+                    }).then((result) => {
+                        if (result.value) {
+                            setTimeout(function () {
+
+                                location.replace('%20clubesLectura.html');
+                            }, 10000);
+
+                            //expulsar_miembro(getIdUnion);
+
+                            Swal.fire({
+                                title: 'Te has salido del Club de Lectura',
+                                text: 'Se redireccionará a la página de Clubes',
+                                type: 'success',
+                                showCancelButton: false,
+                                showConfirmButton: false,
+                                allowOutsideClick: false
+                            })
+
+                        }
+                    })
+
+
+
+
+
+
+                });
+                
+            }
+        }
+
+
+        
+
+    }
+
+
+}
+
+window.addEventListener('load', llenarChat);
 window.addEventListener('load', llenarperfilClub);
+window.addEventListener('load', lista_miembros_club)
+
