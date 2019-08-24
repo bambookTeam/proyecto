@@ -4,7 +4,7 @@
 
 let parentSucursal = document.getElementById('lista_sucursal_club');
 let selectSucursal = document.createElement('select');
-selectSucursal.setAttribute('id','sucursales_club');
+selectSucursal.setAttribute('id', 'sucursales_club');
 parentSucursal.appendChild(selectSucursal);
 
 let btnCancelClub = document.getElementById("btnCancelClub");
@@ -33,10 +33,10 @@ let showSelects = async () => {
     let arrayLibrerias = [];
 
 
-    arrayGenero=await obtenerGeneros();
-    arrayTema=await obtenerLibros();
-    arrayCategorias=await obtenerCategorias();
-    arrayLibrerias=await obtenerLibrerias();
+    arrayGenero = await obtenerGeneros();
+    arrayTema = await obtenerLibros();
+    arrayCategorias = await obtenerCategorias();
+    arrayLibrerias = await obtenerLibrerias();
 
 
     let parentTema = document.getElementById('lista_tema_clubes');
@@ -103,30 +103,30 @@ let showSelects = async () => {
 
 }
 
-let show_Sucursales_Librerias=async(valueLibreria)=>{
+let show_Sucursales_Librerias = async (valueLibreria) => {
 
 
-    let listaSucursales=[];
+    let listaSucursales = [];
     let arrayLibrerias = [];
 
-    arrayLibrerias=await obtenerLibrerias();
-    listaSucursales=await obtenerSucursales();
+    arrayLibrerias = await obtenerLibrerias();
+    listaSucursales = await obtenerSucursales();
 
 
-    selectSucursal.innerHTML="";
+    selectSucursal.innerHTML = "";
 
 
-    let currentLibreria_id="";
+    let currentLibreria_id = "";
 
     for (let index = 0; index < arrayLibrerias.length; index++) {
-        if (arrayLibrerias[index].nombre_comercial==valueLibreria) {
-            currentLibreria_id=arrayLibrerias[index]._id;
+        if (arrayLibrerias[index].nombre_comercial == valueLibreria) {
+            currentLibreria_id = arrayLibrerias[index]._id;
         }
 
     }
 
     for (let i = 0; i < listaSucursales.length; i++) {
-        if (listaSucursales[i].idLibreria==currentLibreria_id) {
+        if (listaSucursales[i].idLibreria == currentLibreria_id) {
             let optionSucursal = document.createElement('option');
             optionSucursal.setAttribute('value', listaSucursales[i].nombre);
             optionSucursal.innerHTML = listaSucursales[i].nombre;
@@ -162,7 +162,7 @@ let hideHora = () => {
         hora.style.display = "none";
         hora.value = "00:00";
     } else {
-        hora.style.display = '';
+        hora.style.display = 'block';
     }
 }
 
@@ -226,6 +226,7 @@ let validarDatos = (pnombre, pmodalidad, pfechainicio, pfechafin) => {
 }
 
 btnCrearClub.onclick = function () {
+
     let tema_input = document.querySelector("#temas_club");
     let genero_input = document.querySelector("#generos_club");
     let categoria_input = document.querySelector("#categorias_club");
@@ -251,14 +252,41 @@ btnCrearClub.onclick = function () {
 
     if (error == false) {
 
-        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,idAdminClub);
+        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value, categoria_input.value, librerias_input.value, sucursales_input.value, idAdminClub);
+
+        registrarMiembro_Club(listaClubes[i]._id, idUsuario);
+        btnUnirseClub.innerText = "Ver Perfil";
+        
+        Swal.fire({
+            title: 'Se ha creado el Club con éxito',
+            text: 'Se redirigirá a la página de Clubes',
+            imageUrl: 'http://www.mywebshelf.com/images/icons/book.gif',
+            imageWidth: 300,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+            animation: false,
+            showCancelButton: false,
+            showConfirmButton: false,
+            allowOutsideClick: false
+        })
 
         cleanupFormClubes();
 
-        location.replace('%20clubesLectura.html');
+        setTimeout(function () {
+            
+            redigirir_Clubes();
+        }, 2000);
 
     } else {
 
     }
 
 }
+
+let redigirir_Clubes = () => {
+    location.replace('%20clubesLectura.html');
+}
+
+
+
+
