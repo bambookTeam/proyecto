@@ -6,6 +6,9 @@ let btnClubes = document.getElementById("btnListarTodosLosClubes");
 let listarClubes = async () => {
     let listaClubes = [];
     listaClubes = await obtenerClubes();
+
+    let listaMiembros = [];
+    listaMiembros = await obtenerListaMiembros();
     let parentClubes = document.getElementById('clubes');
     parentClubes.innerHTML = "";
     listaClubes = listaClubes.reverse();
@@ -52,6 +55,64 @@ let listarClubes = async () => {
         btnUnirseClub.setAttribute('class', 'unirse_Club');
         btnUnirseClub.dataset._id = listaClubes[i]._id;
 
+        let usuarioActivo = sessionStorage.getItem('id');
+        for (let index = 0; index < listaMiembros.length; index++) {
+            if ((usuarioActivo == listaMiembros[index].idUsuario && listaClubes[i]._id == listaMiembros[index].idClub) || usuarioActivo == listaClubes[i].idAdmin) {
+
+                btnUnirseClub.innerText = "Ver Perfil";
+
+
+                btnUnirseClub.addEventListener('click', function () {
+                    localStorage.setItem('idClub', listaClubes[i]._id);
+                    location.replace('ver_perfilClubLectura.html');
+                })
+            } else {
+                btnUnirseClub.addEventListener('click', async function () {
+                    let listaMiembros = [];
+                    listaMiembros = await obtenerListaMiembros();
+                    localStorage.setItem('idClub', listaClubes[i]._id);
+                    let idUsuario = sessionStorage.getItem('id');
+                    let errorExists = false;
+
+                    for (let index = 0; index < listaMiembros.length; index++) {
+
+                        if (listaMiembros[index].idClub == listaClubes[i]._id && idUsuario == listaMiembros[index].idUsuario) {
+                            errorExists = true;
+
+                        } else {
+
+                        }
+                    }
+
+                    if (listaClubes[i].idAdmin == idUsuario) {
+
+                    } else {
+                        if (errorExists == true) {
+
+                        } else {
+                            localStorage.setItem('idClub', listaClubes[i]._id);
+                            setTimeout(function () {
+                                
+                                redirigir_perfil_club();
+                            }, 2000);
+                            registrarMiembro_Club(listaClubes[i]._id, idUsuario);
+                            btnUnirseClub.innerText = "Ver Perfil";
+                            Swal.fire({ //formato Jason
+                                title: 'Se ha unido al Club con exito',
+                                type: 'success',
+                                text: 'Se redirigirá al Perfil del Club',
+                                showCancelButton: false,
+                                showConfirmButton: false
+                            })
+
+                        }
+                    }
+
+                })
+            }
+
+        }
+
         clubInfoDiv.appendChild(h1);
         clubInfoDiv.appendChild(modalidadLinea);
         clubInfoDiv.appendChild(fechaLinea);
@@ -61,35 +122,7 @@ let listarClubes = async () => {
         clubInfoDiv.appendChild(categorialinea);
         div.appendChild(btnUnirseClub);
 
-        btnUnirseClub.addEventListener('click', async function () {
-            let listaMiembros = [];
-            listaMiembros = await obtenerListaMiembros();
-            localStorage.setItem('idClub', listaClubes[i]._id);
-            let idUsuario = sessionStorage.getItem('id');
-            let errorExists = false;
 
-            for (let index = 0; index < listaMiembros.length; index++) {
-
-                if (listaMiembros[index].idClub == listaClubes[i]._id && idUsuario == listaMiembros[index].idUsuario) {
-                    errorExists = true;
-
-                } else {
-
-                }
-            }
-
-            if (listaClubes[i].idAdmin == idUsuario) {
-                console.log('ya es admin pa');
-            } else {
-                if (errorExists == true) {
-                    console.log('ya se unio antes pa');
-                } else {
-                    console.log('se unio');
-                    registrarMiembro_Club(listaClubes[i]._id, idUsuario);
-                }
-            }
-
-        })
     }
 
 }
@@ -243,8 +276,8 @@ let misClubes = async () => {
             });
 
 
-            verClub.addEventListener('click',function(){
-                localStorage.setItem('idClub',listaClubes[i]._id);
+            verClub.addEventListener('click', function () {
+                localStorage.setItem('idClub', listaClubes[i]._id);
                 location.replace('ver_perfilClubLectura.html');
             });
         }
@@ -325,7 +358,7 @@ let misClubes = async () => {
                 });
 
                 verClub.addEventListener('click', function () {
-                    localStorage.setItem('idClub',listaClubes[i]._id);
+                    localStorage.setItem('idClub', listaClubes[i]._id);
                     location.replace('ver_perfilClubLectura.html');
                 });
 
@@ -342,6 +375,10 @@ let misClubes = async () => {
 
 btn.onclick = function () {
     location.replace('registrar_clubLectura.html');
+}
+
+let redirigir_perfil_club = () => {
+    location.replace('ver_perfilClubLectura.html');
 }
 
 window.addEventListener('load', listarClubes);
