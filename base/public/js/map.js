@@ -1,8 +1,12 @@
 var map;
 var marker;
+
 function initMap() {
+
     let latLong = { lat: 9.934739, lng: -84.087502 };
+
     map = new google.maps.Map(document.getElementById('map'), {
+
         center: latLong,
         zoom: 7,
         styles: [

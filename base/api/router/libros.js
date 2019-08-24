@@ -29,9 +29,9 @@ router.post('/registrar_libro', function (req, res) {
     genero: body.genero,
     tipo: body.tipo,
     cantidad: body.cantidad,
-    precio: body.precio
-
-
+    precio: body.precio,
+    portada: body.portada,
+    estado: body.estado
   })
 
   nuevo_libro.save(
@@ -92,7 +92,7 @@ router.post('/deshabilitar_libro', function(req, res) {
 
     Libro.findByIdAndUpdate(body._id, {
             $set: {
-                estado: 'Deshabilitado'
+                estado: 0
             }
         },
         function(error) {
@@ -110,7 +110,7 @@ router.post('/habilitar_libro', function(req, res) {
 
     Libro.findByIdAndUpdate(body._id, {
             $set: {
-                estado: 'Habilitado'
+                estado: 1
             }
         },
         function(error) {
