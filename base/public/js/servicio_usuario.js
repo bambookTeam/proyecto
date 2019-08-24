@@ -98,7 +98,6 @@ let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, 
 
 };
 
-
 let modificarAdminGeneral = (pusuario, pcorreo, pcontrasena, ptipo,imagenUrl) => {
 
 
@@ -120,7 +119,6 @@ let modificarAdminGeneral = (pusuario, pcorreo, pcontrasena, ptipo,imagenUrl) =>
     });
 
 };
-
 
 let iniciar_Sesion = async (pusuario, pcontrasena) => {
     let respuesta = await axios({

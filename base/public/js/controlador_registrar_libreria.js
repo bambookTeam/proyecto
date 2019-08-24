@@ -269,6 +269,7 @@ let saludar = () => {
 
         registroAdminLibreria (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombre_usuario,tipo);
 
+        obtenerBitacora();
         //location.replace('index.html');
 
     } else {
@@ -279,5 +280,33 @@ let saludar = () => {
         })
     }
 };
+
+let obtenerBitacora = async () => {
+    let listaBitacora = [];
+    listaBitacora = await obtener_Bitacora();
+    let listaUsers = [];
+    listaUsers = await obtenerUsuarios();
+    let date = new Date();
+    let descripcion="";
+
+    let usersBitacora=[];
+    console.log(usersBitacora);
+    for (let x = 0; x < listaBitacora.length; x++) {
+        usersBitacora.push(listaBitacora[x].usuarioRegistrado);
+    }
+
+    for (let index = 0; index < listaUsers.length; index++) {
+        let n=usersBitacora.includes(listaUsers[index]._id);
+        
+       if (n==false) {
+           if (listaUsers[index].tipo==1) {
+               descripcion="Registro Admin Libreria";
+           } else {
+               descripcion="Registro Cliente";
+           }
+           registrarEnBitacora(listaUsers[index]._id,descripcion,date);
+       }   
+    }    
+}
 
 boton_registrar.addEventListener('click',saludar);

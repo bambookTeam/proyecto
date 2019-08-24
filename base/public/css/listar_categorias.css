@@ -29,7 +29,7 @@ input{
 
 main a{
     padding: 10px;
-    border: 1px solid #76323F;
+    
     border-radius: 15px;
     font-size: 15px;
     color: #76323F;
@@ -40,16 +40,7 @@ main a{
 }
 
 
-main button{
-    padding: 10px;
-    border: 1px solid #76323F;
-    border-radius: 15px;
-    font-size: 15px;
-    color: #76323F;
-    font-weight: bold;
-    background: none;
-    outline: none; 
-}
+
 
 
 
