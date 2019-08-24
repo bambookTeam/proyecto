@@ -13,23 +13,29 @@ router.param("_id", function (req, res, next, _id) {
 router.post('/registrar-libreria', function (req, res) {
     let body = req.body;
 
+    console.log(body);
 
     let nueva_libreria = new Libreria({
         id: body.id,
         nombre_comercial: body.nombre_comercial,
         nombre_fantasia: body.nombre_fantasia,
-        direccion: body.direccion
+        direccion: body.direccion,
+        ubicacion: body.ubicacion
     });
 
     nueva_libreria.save(
         function (err, libreriaDB) {
             if (err) {
+                console.log('Error registrar libreria');
+                console.log(err);
                 return res.status(400).json({
                     success: false,
                     msj: 'La librería no se pudo guardar',
                     err
                 });
             } else {
+
+                console.log('Sirve registrar librería');
                 res.json({
                     success: true,
                     msj: 'La librería se guardó con éxito'
