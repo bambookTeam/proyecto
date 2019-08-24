@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarLibreria = (pnombre_comercial,identificacionUsuarioLibreria, pnombre_fantasia, pdireccion) => {
+let registrarLibreria = (pnombre_comercial, identificacionUsuarioLibreria, pnombre_fantasia, pdireccion) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libreria',
@@ -37,7 +37,7 @@ let registrarAdminLibreria = (pidentificacion, pprimer_nombre, psegundo_nombre, 
     });
 };
 
-let obtenerLibrerias = async() => {
+let obtenerLibrerias = async () => {
     try {
         // fetch data from a url endpoint
         const response = await axios({
@@ -52,7 +52,7 @@ let obtenerLibrerias = async() => {
     }
 };
 
-let obtenerLibreriaId = async(_id) => {
+let obtenerLibreriaId = async (_id) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -67,3 +67,14 @@ let obtenerLibreriaId = async(_id) => {
     }
 };
 
+let eliminar = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar_libreria',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};

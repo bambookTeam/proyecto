@@ -1,77 +1,125 @@
+'use strict'
+
 const tbody = document.querySelector('#tbl_generos tbody');
-let lista_genero = [];
-txt_filtro=document.querySelector('#txt_filtro');
+let listar_generos = [];
+let txt_filtro = document.querySelector('#txt_filtro');
+
+let redireccionar = (genero) => {
+    localStorage.setItem("generoModificar", JSON.stringify(genero));
+    window.location.href = 'modificar_genero.html';
+}
 
 let mostrarlista = async () => {
-        lista_genero = await listarGeneros();
-        lista_genero = lista_genero.reverse();
-        tbody.innerHTML = "";
 
-for (let index = 0; index < lista_genero.length; index++) {
-    let fila = tbody.insertRow();
-    fila.insertCell().innerHTML = lista_genero[index]['genero'];
+    listar_generos = await obtenerGeneros();
+    listar_generos = listar_generos.reverse();
+    tbody.innerHTML = " ";
 
-    
-    let estilos_modificar = document.createElement('img');
+    for (let index = 0; index < listar_generos.length; index++) {
+
+
+        let fila = tbody.insertRow();
+        fila.insertCell().innerHTML = listar_generos[index]['genero'];
+
+
+        let estilos_modificar = document.createElement('img');
         estilos_modificar.setAttribute('src', './imgs/edit-icon.png')
 
         let celda_modificar = fila.insertCell();
         let modificar = document.createElement('button');
         modificar.type = 'button';
 
-        modificar.dataset._id = lista_genero[index]['_id'];
+        modificar.dataset._id = listar_generos[index]['_id'];
 
         celda_modificar.appendChild(modificar);
         modificar.appendChild(estilos_modificar);
 
         modificar.addEventListener('click', function () {
-            localStorage.setItem("_idgenero", JSON.stringify(lista_genero[index]));
-            window.location.href = 'modificar_genero.html'
+            redireccionar(listar_generos[index]);
         })
-        
+
 
         let celda_estado = fila.insertCell();
-
-
         let enlace_habilitado = document.createElement('a');
-        if (lista_genero[index]["estado"] == "Habilitado") {
-            enlace_habilitado.innerText = "Habilitado";
-        } else {
-            enlace_habilitado.innerText = "Deshabilitado";
-        }
-        enlace_habilitado.href = 'lista_genero.html';
-        enlace_habilitado.addEventListener('click', function () {
-            if (lista_genero[index]["estado"] == "Habilitado") {
-                habilitar(lista_genero[index]['_idgenero'], "Desabilitado");
-            } else {
-                habilitar(lista_genero[index]['_idgenero'], "Habilitado");
-            }
-
+        enlace_habilitado.innerText = 'Habilitar';
+        enlace_habilitado.href = 'listar_genero.html';
+        enlace_habilitado.addEventListener('click', function() {
+            habilitar(listar_generos[index]['_id']);
             mostrarlista();
         });
-        celda_estado.appendChild(enlace_habilitado);
-    }
 
 
-};
+        let enlace_deshabilitado = document.createElement('a');
+        enlace_deshabilitado.innerText = 'Deshabilitar';
+        enlace_deshabilitado.href = 'listar_genero.html';;
+        enlace_deshabilitado.addEventListener('click', function() {
+            deshabilitar(listar_generos[index]['_id']);
+            mostrarlista();
+        });
+
+        if (listar_generos[index]['estado'] == 'Habilitado') {
+            celda_estado.appendChild(enlace_deshabilitado);
+        } else {
+
+            celda_estado.appendChild(enlace_habilitado);
+            fila.classList.add('deshabilitado');
+        }
+
+    let estilos_eliminar = document.createElement('img');
+    estilos_eliminar.setAttribute('src', './imgs/delete-icon.png')
+
+    let celda_eliminar = fila.insertCell();
+        let eliminar = document.createElement('button');
+        eliminar.type = 'button';
+
+    eliminar.addEventListener('click', function () {
+        Swal.fire({
+            title: 'Está seguro que desea eliminar el género?',
+            text: "Ésta acción no se puede revertir",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, estoy seguro'
+        }).then((result) => {
+            if (result.value) {
+                eliminarGenero(listar_generos[index]['_id']);
+
+                Swal.fire(
+                    'Género eliminado!',
+                    'listo'
+                ).then((result) => {
+                    if (result.value) {
+                        window.location.href = 'listar_genero.html';
+                    }
+                });
+            }
+        })
+        localStorage.setItem("eliminar", JSON.stringify(listar_generos[index]));
+
+    })
+
+    celda_eliminar.appendChild(eliminar);
+    eliminar.appendChild(estilos_eliminar);
 
 
-    
-    let filtrarlista = async () => {
+}
 
-        let filtro = txt_filtro.value.toLowerCase();
-        tbody.innerHTML = '';
-    
-    
-        for (let index = 0; index < lista_genero.length; index++) {
-            if (lista_genero[index]['genero'].toLowerCase().includes(filtro)) {
-                let fila = tbody.insertRow();
-                fila.insertCell().innerHTML = lista_genero[index]['genero'];
-      
+}
+
+let filtrarlista = async () => {
+
+    let filtro = txt_filtro.value.toLowerCase();
+    tbody.innerHTML = '';
+
+
+    for (let index = 0; index < listar_generos.length; index++) {
+        if (listar_generos[index]['genero'].toLowerCase().includes(filtro)) {
+            let fila = tbody.insertRow();
+            fila.insertCell().innerHTML = listar_generos[index]['genero'];
         
     
-      
-           
+
     let estilos_modificar = document.createElement('img');
     estilos_modificar.setAttribute('src', './imgs/edit-icon.png')
 
@@ -79,33 +127,84 @@ for (let index = 0; index < lista_genero.length; index++) {
     let modificar = document.createElement('button');
     modificar.type = 'button';
 
-    modificar.dataset._id = lista_genero[index]['_id'];
+        modificar.dataset._id = listar_generos[index]['_id'];
 
-    celda_modificar.appendChild(modificar);
-    modificar.appendChild(estilos_modificar);
+        celda_modificar.appendChild(modificar);
+        modificar.appendChild(estilos_modificar);
 
-    modificar.addEventListener('click', function () {
-        localStorage.setItem("modificarLibro", JSON.stringify(lista_genero[index]));
-        localStorage.setItem("_idgenero",lista_genero[index]._id);
-        window.location.href = 'modificar_genero.html'
-            });
+        modificar.addEventListener('click', function () {
+            redireccionar(listar_generos[index]);
+        });
 
-    let celda_eliminar=fila.insertCell();
-    let  eliminar=document.createElement('button');
-    eliminar.type = 'button';
-    
-    eliminar.dataset._id=lista_genero[index]['_id'];
-    
-    celda_eliminar.appendChild(modificar);
-        eliminar.appendChild(estilos_eliminar);
-            
-    };
+
+        let celda_estado = fila.insertCell();
+        let enlace_habilitado = document.createElement('a');
+        enlace_habilitado.innerText = 'Habilitar';
+        enlace_habilitado.href = 'listar_genero.html';
+        enlace_habilitado.addEventListener('click', function() {
+            habilitar(listar_generos[index]['_id']);
+            mostrarlista();
+        });
+
+
+        let enlace_deshabilitado = document.createElement('a');
+        enlace_deshabilitado.innerText = 'Deshabilitar';
+        enlace_deshabilitado.href = 'listar_genero.html';;
+        enlace_deshabilitado.addEventListener('click', function() {
+            deshabilitar(listar_generos[index]['_id']);
+            mostrarlista();
+        });
+
+        if (listar_generos[index]['estado'] == 'Habilitado') {
+            celda_estado.appendChild(enlace_deshabilitado);
+        } else {
+
+            celda_estado.appendChild(enlace_habilitado);
+            fila.classList.add('deshabilitado');
+        }
+
+    let estilos_eliminar = document.createElement('img');
+    estilos_eliminar.setAttribute('src', './imgs/delete-icon.png')
+
+    let celda_eliminar = fila.insertCell();
+        let eliminar = document.createElement('button');
+        eliminar.type = 'button';
+
+    eliminar.addEventListener('click', function () {
+        Swal.fire({
+            title: 'Está seguro que desea eliminar el género?',
+            text: "Ésta acción no se puede revertir",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, estoy seguro'
+        }).then((result) => {
+            if (result.value) {
+                eliminar(listar_generos[index]['_id']);
+
+                Swal.fire(
+                    'Género eliminado!',
+                    'success'
+                ).then((result) => {
+                    if (result.value) {
+                        window.location.href = 'listar_genero.html';
+                    }
+                });
+            }
+        })
+        localStorage.setItem("eliminar", JSON.stringify(listar_generos[index]));
+
+    })
+
+    celda_eliminar.appendChild(eliminar);
+    eliminar.appendChild(estilos_eliminar);
+
 
 }
-        };
+}
 
-window.addEventListener('load', mostrarlista);
+}
+
+mostrarlista();
 txt_filtro.addEventListener('keyup', filtrarlista);
-
-        
-    

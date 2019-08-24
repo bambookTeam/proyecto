@@ -39,7 +39,7 @@ let obtenerTarjetaId = async (_id) => {
         // fetch data from an url endpoint
         const response = await axios({
             method: 'get',
-            url: `http://localhost:4000/api/buscar-tarjeta-id/${_id}`,
+            url: `http://localhost:4000/api/buscar_tarjeta-id/${_id}`,
             responseType: 'json'
         });
 
@@ -49,9 +49,9 @@ let obtenerTarjetaId = async (_id) => {
     }
 };
 
-
-let modificar_tarjeta = (pid, pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
-    axios({
+let modificarTarjeta = async(pid, pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
+    try{
+        const response = await axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar_tarjeta',
         responseType: 'json',
@@ -62,28 +62,43 @@ let modificar_tarjeta = (pid, pnumerotarjeta, pfechavencimiento, pcodigocvv) => 
             codigocvv: pcodigocvv
         }
     });
+
+    return response.data.success;
+    } catch (error) {
+        console.log(error);
+    }
 };
 
-let habilitar = (pid, pestado) => {
+let habilitar = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar_tarjeta',
         responseType: 'json',
         data: {
-            _id: pid,
-            estado: pestado
+            _id: pId,
         }
     });
 };
-let deshabilitar = (pid,pestado) => {
+let deshabilitar = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar_tarjeta',
         responseType: 'json',
         data: {
-            _id: pid,
-            estado: pestado
+            _id: pId,
 
+
+        }
+    });
+};
+
+let eliminar = (pId) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar_tarjeta',
+        responseType: 'json',
+        data: {
+            _id: pId
 
         }
     });

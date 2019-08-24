@@ -42,6 +42,7 @@ router.post('/registrar-clubLectura', function (req, res) {
         }
     );
 });
+
 router.get('/listar-clubesLectura', function (req, res) {
     ClubLectura.find(function (err, clubLecturaDB) {
         if (err) {
@@ -150,12 +151,8 @@ router.post('/habilitar-club', function (req, res) {
     )
 });
 
-
-
 /*
-
 module.exports
-
-
 */
+
 module.exports = router;

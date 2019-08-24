@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="es">
 
 <head>
+
+    <title>
+        Registrar Categoría
+    </title>
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Listar Librerías 2</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/listar_librerias.css">
+    <title>Modificar Categoría</title>
+    <link rel="stylesheet" href="css/registrar_categoria.css">
     <link rel="stylesheet" href="css/navbar.css">
-</head>
 
+
+</head>
 
 <body>
 
@@ -29,7 +34,7 @@
 
     <nav class="nav-menu">
         <ul>
-            <li class="parent"><a class="hovernav" href="#">Librerías</a>
+            <li class="parent"><a href="#">Librerías</a>
                 <ul class="child">
                     <li><a href="#">Sucursales</a></li>
                     <li><a href="#">Ofertas</a></li>
@@ -37,7 +42,7 @@
             </li>
             <li class="parent" id="dropdown"><a href="#">Libros</a>
                 <ul class="child">
-                    <li><a href="listar_genero.html">Géneros</a></li>
+                    <li><a href="#">Géneros</a></li>
                     <li><a href="#">Categorías</a></li>
                 </ul>
             </li>
@@ -52,47 +57,28 @@
 
     <main>
 
-        <h1>Listar Librerías</h1>
+        <h1>Modificar Categoría</h1>
 
+        <section id="nombre_categoria">
 
-        <label for="txt_filtro">Filtrar</label>
-        <input id="txt_filtro" type="text">
+            <h2>Datos de la Categoría</h2>
 
-        <table id="tbl_librerias">
+            <input id="txt_nombre_categoria" type="text" placeholder="Nombre Categoría">
 
-            <thead>
+        </section>
 
-                <tr>
-                    <th>Nombre Comercial</th>
-                    <th>Nombre Fantasia</th>
-                    <th>Dirección</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+        <button type="button" class="boton_registrar" id="btn_registrar">Modificar</button>
 
-            </thead>
-
-            <tbody>
-
-            </tbody>
-
-        </table>
+        <footer></footer>
 
     </main>
 
 
-    <footer></footer>
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/jquery-3.3.1.js"></script>
-
-    <script src="js/servicio_librerias.js"></script>
-
-    <script src="js/controlador_listar_librerias_cliente.js"></script>
-    <script src="js/controlador_cerrar_sesion.js"></script>
-
-    <script src="js/getNombre.js"></script>
-    <script src="js/hideRegistro.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/servicio_categoria.js"></script>
+    <script src="js/controlador_modificar_categoria.js"></script>
 
 </body>
 

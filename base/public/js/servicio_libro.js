@@ -39,7 +39,7 @@ let obtenerLibros = async () => {
             url: 'http://localhost:4000/api/listar_libros',
             responseType: 'json'
         });
-        
+
         return response.data.lista_libros;
     } catch (error) {
         console.log(error);
@@ -55,7 +55,7 @@ let obtener_libroId = async (_id) => {
             url: `http://localhost:4000/api/listar_libro_id/${_id}`,
             responseType: 'json'
         });
-        
+
         return response.data.librosBD
     } catch (error) {
         // console.log(error);
@@ -95,7 +95,7 @@ let habilitar_libro = (pid) => {
         responseType: 'json',
         data: {
             _id: pid,
-            
+
         }
     });
 };
@@ -110,7 +110,8 @@ let deshabilitar_libro = (pid) => {
         }
     });
 };
-let eliminar_libro = (pid) => {
+
+let eliminar = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar_libro',
