@@ -106,4 +106,8 @@ main button{
     display: block;
 }
 
+#map {
+    height: 300px;
+}
+
 /* FIN main */

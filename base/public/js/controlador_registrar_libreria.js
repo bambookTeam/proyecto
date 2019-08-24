@@ -6,11 +6,9 @@ let obtenerListaUsuarios = async (pcorreo) => {
     console.log(usuarios);
 };
 var usuarios = [];
- usuarios = obtenerListaUsuarios();
+usuarios = obtenerListaUsuarios();
 
 
-
-const boton_registrar = document.querySelector('#btn_registrar');
 
 const boton_registrar = document.querySelector('#btn_registrar');
 
@@ -32,16 +30,16 @@ let validarIdentificacion = (pidentificacion) => {
 
     let error = false;
 
-    for ( let i = 0; i < usuarios.length; i++){
+    for (let i = 0; i < usuarios.length; i++) {
 
 
 
-        if( usuarios[i].identificacion == pidentificacion){
+        if (usuarios[i].identificacion == pidentificacion) {
 
             error = true;
             input_identificacion.classList.add('input_error');
 
-        }else {
+        } else {
 
             if (pidentificacion.charAt(0) == '0') {
 
@@ -140,11 +138,11 @@ let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion,
         input_identificacion.classList.remove('input_error');
         error = validarIdentificacion(pidentificacion);
 
-        if ( error == true){
+        if (error == true) {
 
             input_identificacion.classList.add('input_error');
 
-        }else {
+        } else {
 
             input_identificacion.classList.remove('input_error');
 
@@ -186,15 +184,15 @@ let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion,
         input_correo.classList.remove('input_error');
         error = validarCorreo(pcorreo);
 
-    if ( error == true){
+        if (error == true) {
 
-        input_correo.classList.add('input_error');
+            input_correo.classList.add('input_error');
 
-    }else {
+        } else {
 
-        input_correo.classList.remove('input_error');
+            input_correo.classList.remove('input_error');
 
-    }
+        }
 
     }
 
@@ -232,13 +230,13 @@ let saludar = () => {
 
     let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo, nombre_usuario);
 
-   // error = validarCorreo(correo);
+    // error = validarCorreo(correo);
 
     if (error == false) {
 
         registrarLibreria(nombre_comercial, identificacion, nombre_fantasia, direccion);
 
-        registroAdminLibreria (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombre_usuario,tipo);
+        registroAdminLibreria(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombre_usuario, tipo);
 
         location.replace('index.html');
 
@@ -251,4 +249,4 @@ let saludar = () => {
     }
 };
 
-boton_registrar.addEventListener('click',saludar);
+boton_registrar.addEventListener('click', saludar);
