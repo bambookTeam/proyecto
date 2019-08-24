@@ -149,7 +149,19 @@ router.post('/habilitar-club', function (req, res) {
         }
     )
 });
+router.post('/elimnar-Club', function(req, res) {
+    let body = req.body;
 
+    ClubLectura.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el Club' });
+            } else {
+                res.json({ success: true, msg: 'Se eliminó el Club  exitosamente' });
+            }
+        }
+    )
+});
 
 
 /*

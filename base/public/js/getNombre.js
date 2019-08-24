@@ -28,7 +28,7 @@ window.addEventListener('load',function(){
             document.querySelector('#signinpopup').style.height="58px"
         }
         if (usuario_activo==1) {
-            console.log(document.querySelector('#refGeneros'));
+           
             document.querySelector('#refGeneros').href='listar_generos_adminlibre.html';
     
            
