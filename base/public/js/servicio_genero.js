@@ -42,20 +42,6 @@ let obtenerGeneroId = async (_id) => {
         // console.log(error);
     }
 }
-//let modificarGeneroServicio = (idContacto, pgenero) => {
-//  axios({
-//    method: 'post',
-//  url: 'http://localhost:4000/api/modificar_genero',
-//responseType: 'json',
-//data: {
-//  _id: idContacto,
-//genero: pgenero
-
-//   }
-// });
-//};
-
-
 
 let modificarGenero = async (pId, nombre) => {
     try {

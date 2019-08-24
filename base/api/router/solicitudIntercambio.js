@@ -2,7 +2,7 @@
 
 const express = require('express'),
     router = express.Router(),
-    Intercambio = require('../models/intercambio.model');
+    Intercambio = require('../models/solicitudIntercambio.model');
 
 // Definicion de la ruta para registrar tarjetas
 
