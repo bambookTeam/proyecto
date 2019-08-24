@@ -1,0 +1,22 @@
+main button{
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    background-color: rgb(19, 18, 18) !important;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    text-align: center;
+}
+
+main button:hover{
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    background-color: #f6b93b !important;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    text-align: center;
+   
+}

@@ -1,17 +1,5 @@
 'use strict'
 
-let eliminarGenero = (pId) => {
-    //fetch data from a url endpoint
-    axios({
-        method: 'post',
-        url: 'http://localhost:4000/api/eliminar_genero',
-        responseType: 'json',
-        data: {
-            _id: pId
-
-        }
-    });
-};
 
 
 let agregarGenero = (pgenero) => {
@@ -105,6 +93,19 @@ let deshabilitar = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar_genero',
+        responseType: 'json',
+        data: {
+            _id: pId
+
+        }
+    });
+};
+
+let eliminarGenero = (pId) => {
+    //fetch data from a url endpoint
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar_genero',
         responseType: 'json',
         data: {
             _id: pId
