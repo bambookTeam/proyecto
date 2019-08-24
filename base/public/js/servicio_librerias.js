@@ -9,7 +9,8 @@ let registrarLibreria = (pnombre_comercial, identificacionUsuarioLibreria, pnomb
             id: identificacionUsuarioLibreria,
             nombre_comercial: pnombre_comercial,
             nombre_fantasia: pnombre_fantasia,
-            direccion: pdireccion
+            direccion: pdireccion,
+            ubicacion: "{" + "lat:" + marker.position.lat() + "," + "lng:" + marker.position.lng() + "}"
         }
     });
 };
