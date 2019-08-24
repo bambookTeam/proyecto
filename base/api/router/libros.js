@@ -13,8 +13,12 @@ router.param('_id', function(req, res, next, _id) {
 
 router.post('/registrar_libro', function (req, res) {
   let body = req.body;
+
+  //console.log(body);
   
   let nuevo_libro = new Libro({
+    portada: body.portada,
+    contraportada: body.contraportada,
     titulo: body.titulo,
     edicion: body.edicion,
     editorial: body.editorial,
@@ -26,8 +30,8 @@ router.post('/registrar_libro', function (req, res) {
     tipo: body.tipo,
     cantidad: body.cantidad,
     precio: body.precio,
-    portada: body.portada
-
+    portada: body.portada,
+    estado: body.estado
   })
 
   nuevo_libro.save(
@@ -88,7 +92,7 @@ router.post('/deshabilitar_libro', function(req, res) {
 
     Libro.findByIdAndUpdate(body._id, {
             $set: {
-                estado: 'Deshabilitado'
+                estado: 0
             }
         },
         function(error) {
@@ -106,7 +110,7 @@ router.post('/habilitar_libro', function(req, res) {
 
     Libro.findByIdAndUpdate(body._id, {
             $set: {
-                estado: 'Habilitado'
+                estado: 1
             }
         },
         function(error) {

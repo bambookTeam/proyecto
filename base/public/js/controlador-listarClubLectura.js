@@ -57,56 +57,58 @@ let listarClubes = async () => {
         btnUnirseClub.innerText = "Unirse";
         btnUnirseClub.setAttribute('class', 'unirse_Club');
         btnUnirseClub.dataset._id = listaClubes[i]._id;
-        let pidMiembro= sessionStorage.getItem('id');
+        let pidMiembro = sessionStorage.getItem('id');
 
-        btnUnirseClub.addEventListener('click',function(){
-            let pidClub= listaClubes[i]._id;
-            console.log(pidClub,pidMiembro)
-            registrarMiembro_Club(pidClub,pidMiembro);
+        let alreadyMember = false;
 
 
-            Swal.fire({
-                title: 'Se ha unido al Club con exito',
-                text: 'Se redirigirá al Perfil del Club',
-                imageUrl: 'http://www.mywebshelf.com/images/icons/book.gif',
-                imageWidth: 300,
-                imageHeight: 200,
-                imageAlt: 'Custom image',
-                animation: false,
-                showCancelButton: false,
-                showConfirmButton: false,
-                allowOutsideClick: false
-            });
-            localStorage.setItem('idClub', listaClubes[i]._id);
-            setTimeout(function () {
-                location.replace('ver_perfilClubLectura.html');
-            }, 2000);
-            
 
-        });
 
-        if (listaClubes[i].idAdmin==pidMiembro) {
+        for (let x = 0; x < listaMiembrosClubes.length; x++) {
+            if (listaMiembrosClubes[x].idClub == listaClubes[i]._id && listaMiembrosClubes[x].idUsuario == pidMiembro) {
+                alreadyMember = true;
+            }
+        }
+
+        if (listaClubes[i].idAdmin == pidMiembro) {
+            alreadyMember = true;
+
+        }
+
+        if (alreadyMember == true) {
             btnUnirseClub.innerText = "Ver Perfil";
             btnUnirseClub.addEventListener('click', function () {
                 localStorage.setItem('idClub', listaClubes[i]._id);
                 location.replace('ver_perfilClubLectura.html');
             });
-        
-        } 
-
-        for (let x = 0; x < listaMiembrosClubes.length; x++) {
-            if (listaMiembrosClubes[x].idClub==listaClubes[i]._id&&listaMiembrosClubes[x].idUsuario==pidMiembro) {
-                btnUnirseClub.innerText = "Ver Perfil";
+        } else {
             btnUnirseClub.addEventListener('click', function () {
+                let pidClub = listaClubes[i]._id;
+
+                registrarMiembro_Club(pidClub, pidMiembro);
+
+
+                Swal.fire({
+                    title: 'Se ha unido al Club con exito',
+                    text: 'Se redirigirá al Perfil del Club',
+                    imageUrl: 'http://www.mywebshelf.com/images/icons/book.gif',
+                    imageWidth: 300,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                    animation: false,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
                 localStorage.setItem('idClub', listaClubes[i]._id);
-                location.replace('ver_perfilClubLectura.html');
+                setTimeout(function () {
+                    location.replace('ver_perfilClubLectura.html');
+                }, 2000);
+
+
             });
         }
-            
-            
-        }
-        
-       
+
         clubInfoDiv.appendChild(h1);
         clubInfoDiv.appendChild(modalidadLinea);
         clubInfoDiv.appendChild(fechaLinea);
@@ -350,18 +352,18 @@ let misClubes = async () => {
                     let listaMiembrosClubes = [];
                     listaMiembrosClubes = await obtenerListaMiembros();
                     let getIdUnion = "";
-                    
-                    
+
+
                     let usuarioActivoClub = sessionStorage.getItem('id');
                     let clubActivo = localStorage.getItem('idClub')
                     for (let x = 0; x < listaMiembrosClubes.length; x++) {
-                        
+
                         if (usuarioActivoClub == listaMiembrosClubes[x].idUsuario && listaMiembrosClubes[x].idClub == listaClubes[i]._id) {
                             getIdUnion = listaMiembrosClubes[x]._id;
-                            
+
                         }
                     }
-                    
+
 
                     Swal.fire({
                         title: '¿Está seguro que desea salirse de este Club de Lectura?',

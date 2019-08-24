@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 let parentSucursal = document.getElementById('lista_sucursal_club');
 let selectSucursal = document.createElement('select');
 selectSucursal.setAttribute('id', 'sucursales_club');
@@ -253,9 +251,6 @@ btnCrearClub.onclick = function () {
     if (error == false) {
 
         registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value, categoria_input.value, librerias_input.value, sucursales_input.value, idAdminClub);
-
-        registrarMiembro_Club(listaClubes[i]._id, idUsuario);
-        btnUnirseClub.innerText = "Ver Perfil";
         
         Swal.fire({
             title: 'Se ha creado el Club con éxito',
@@ -278,7 +273,11 @@ btnCrearClub.onclick = function () {
         }, 2000);
 
     } else {
-
+        Swal.fire({
+            title: 'No se ha podido registrar el Club',
+            type: 'warning',
+            text: 'Por favor revise los campos en rojo'
+        });
     }
 
 }
