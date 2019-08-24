@@ -9,6 +9,8 @@ let obtenerListaUsuarios = async (pcorreo) => {
 var usuarios = [];
 usuarios = obtenerListaUsuarios();
 
+const boton_registrar = document.querySelector('#btn_registrar');
+
 const input_nombre_comercial = document.querySelector('#txt_nombre_comercial');
 const input_nombre_fantasia = document.querySelector('#txt_nombre_fantasia');
 const input_direccion = document.querySelector('#txt_direccion');
@@ -285,26 +287,26 @@ let obtenerBitacora = async () => {
     let listaUsers = [];
     listaUsers = await obtenerUsuarios();
     let date = new Date();
-    let descripcion="";
+    let descripcion = "";
 
-    let usersBitacora=[];
+    let usersBitacora = [];
     console.log(usersBitacora);
     for (let x = 0; x < listaBitacora.length; x++) {
         usersBitacora.push(listaBitacora[x].usuarioRegistrado);
     }
 
     for (let index = 0; index < listaUsers.length; index++) {
-        let n=usersBitacora.includes(listaUsers[index]._id);
-        
-       if (n==false) {
-           if (listaUsers[index].tipo==1) {
-               descripcion="Registro Admin Libreria";
-           } else {
-               descripcion="Registro Cliente";
-           }
-           registrarEnBitacora(listaUsers[index]._id,descripcion,date);
-       }   
-    }    
+        let n = usersBitacora.includes(listaUsers[index]._id);
+
+        if (n == false) {
+            if (listaUsers[index].tipo == 1) {
+                descripcion = "Registro Admin Libreria";
+            } else {
+                descripcion = "Registro Cliente";
+            }
+            registrarEnBitacora(listaUsers[index]._id, descripcion, date);
+        }
+    }
 }
 
-boton_registrar.addEventListener('click',saludar);
+boton_registrar.addEventListener('click', saludar);

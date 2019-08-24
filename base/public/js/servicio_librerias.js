@@ -67,7 +67,7 @@ let obtenerLibreriaId = async (_id) => {
     }
 };
 
-let eliminar = (pid) => {
+let eliminarLibreria = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar_libreria',

@@ -89,7 +89,7 @@ let mostrar_tabla = async () => {
                 confirmButtonText: 'Sí, estoy seguro'
             }).then((result) => {
                 if (result.value) {
-                    eliminar(lista_librerias[i]._id);
+                    eliminarLibreria(lista_librerias[i]._id);
 
                     Swal.fire(
                         'Librería eliminada exitosamente',
