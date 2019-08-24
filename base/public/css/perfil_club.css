@@ -89,5 +89,9 @@ section{
     margin-top:17px;
     cursor:pointer;
   }
+
+  #tabla_usuarios{
+    display:none;
+  }
   
   

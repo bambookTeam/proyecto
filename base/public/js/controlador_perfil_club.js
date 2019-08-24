@@ -192,7 +192,8 @@ let llenarperfilClub = async () => {
                 btnCambiarEstadoClub.innerText = "Activar";
                 btnCambiarEstadoClub.addEventListener('click', function () {
                     habilitar_Club(listaClubes[i]._id);
-                    btnCambiarEstadoClub.innerText = "Desactivar";
+
+                    location.reload();
 
                 });
 
@@ -200,8 +201,10 @@ let llenarperfilClub = async () => {
                 btnCambiarEstadoClub.innerText = "Desactivar";
                 btnCambiarEstadoClub.addEventListener('click', function () {
                     deshabilitar_Club(listaClubes[i]._id);
-                    btnCambiarEstadoClub.innerText = "Activar";
+
+                    location.reload();
                 });
+                
             }
 
             clubInfoDiv.appendChild(h1);
@@ -298,7 +301,10 @@ msgtoSend.addEventListener('keydown', function (e) {
 });
 
 let lista_miembros_club = async () => {
+
     let tbody = document.querySelector('#tabla_usuarios tbody');
+
+    tbody.innerHTML="";
     let clubActivo = localStorage.getItem('idClub');
 
     let listaMiembros = [];
@@ -307,18 +313,27 @@ let lista_miembros_club = async () => {
     let listaUsers = [];
     listaUsers = await obtenerUsuarios();
 
+    let listaClubes=[];
+    listaClubes=await obtenerClubes();
+
     let activeUser = sessionStorage.getItem('id');
-    let listaClubes = await obtenerClubes();
+    
     let idAdminClubActivo="";
     for (let y = 0; y < listaClubes.length; y++) {
-        if (activeUser==listaClubes[y].idAdmin) {
-            idAdminClubActivo=listaClubes[y]._id;
+        if (clubActivo==listaClubes[y]._id) {
+            idAdminClubActivo=listaClubes[y].idAdmin;
         }
         
     }
 
+    if (idAdminClubActivo==activeUser) {
+        document.querySelector('#tabla_usuarios').style.display="block";
+    } else {
+        
+    }
+
     for (let index = 0; index < listaMiembros.length; index++) {
-        console.log('aber')
+       
         let fila = tbody.insertRow();
 
 
@@ -378,7 +393,7 @@ let lista_miembros_club = async () => {
                             setTimeout(function () {
 
                                 location.replace('%20clubesLectura.html');
-                            }, 10000);
+                            }, 2000);
 
                             //expulsar_miembro(getIdUnion);
 
