@@ -13,8 +13,12 @@ router.param('_id', function(req, res, next, _id) {
 
 router.post('/registrar_libro', function (req, res) {
   let body = req.body;
+
+  //console.log(body);
   
   let nuevo_libro = new Libro({
+    portada: body.portada,
+    contraportada: body.contraportada,
     titulo: body.titulo,
     edicion: body.edicion,
     editorial: body.editorial,
@@ -25,8 +29,8 @@ router.post('/registrar_libro', function (req, res) {
     genero: body.genero,
     tipo: body.tipo,
     cantidad: body.cantidad,
-    precio: body.precio,
-    portada: body.portada
+    precio: body.precio
+
 
   })
 

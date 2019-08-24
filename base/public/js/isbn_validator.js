@@ -1,4 +1,5 @@
-document.getElementsByTagName('title')[0].innerHTML = "0041 - ValidateISBN_Demo";
+'use strict';
+// document.getElementsByTagName('title')[0].innerHTML = "0041 - ValidateISBN_Demo";
 
 var body = document.getElementsByTagName('body')[0];
 var print = function ( text ) {

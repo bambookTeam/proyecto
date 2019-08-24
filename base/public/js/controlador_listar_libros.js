@@ -111,7 +111,7 @@ let mostrar_tabla = async () => {
                 confirmButtonText: 'Sí, estoy seguro'
             }).then((result) => {
                 if (result.value) {
-                    eliminar(lista_libros[i]._id);
+                    eliminarLibro(lista_libros[i]._id);
 
                     Swal.fire(
                         'Libro eliminado exitosamente!',
@@ -123,7 +123,7 @@ let mostrar_tabla = async () => {
                     });
                 }
             })
-            localStorage.setItem("eliminarLibro", JSON.stringify(lista_libros[i]));
+            // localStorage.setItem("eliminarLibro", JSON.stringify(lista_libros[i]));
         })
         celda_btn_eliminar.appendChild(btn_eliminar);
         btn_eliminar.appendChild(estilos_btn_eliminar);
