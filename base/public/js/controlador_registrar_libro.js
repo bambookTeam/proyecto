@@ -10,22 +10,22 @@ const input_isbn = document.querySelector('#txt_isbn');
 //const input_genero = document.querySelector('#txt_genero');
 const input_tipo = document.querySelector('#txt_tipo');
 const input_cantidad = document.querySelector('#txt_existencia');
-const input_precio = document.querySelector('#txt_precio');
+const input_precio = document.getElementById('txt_precio');
 const portadaLibro = document.querySelector('#portada_preview');
 const contraportadaLibro = document.querySelector('#contraportada_preview');
 
 
-let showSelects = async() => {
+let showSelects = async () => {
 
     let arrayGenero = [];
     let arrayAutor = [];
-    
-    arrayGenero = await listarGeneros();
+
+    arrayGenero = await obtenerGeneros();
     arrayAutor = await obtenerAutores();
 
     let parentGenero = document.getElementById('lista_genero');
     let parentAutor = document.getElementById('lista_autores');
-    
+
 
     let selectGenero = document.createElement('select');
     selectGenero.setAttribute('id', 'txt_genero');
@@ -35,18 +35,18 @@ let showSelects = async() => {
     selectAutor.setAttribute('id', 'txt_autor');
     parentAutor.appendChild(selectAutor);
 
-  
+
 
     for (let i = 0; i < arrayGenero.length; i++) {
-        if(i==0){
+        if (i == 0) {
             let escoger_opcion = document.createElement('option');
-            escoger_opcion.setAttribute('value',"");
-            escoger_opcion.innerHTML="--Seleccione un Género--";
+            escoger_opcion.setAttribute('value', "");
+            escoger_opcion.innerHTML = "--Seleccione un Género--";
             selectGenero.appendChild(escoger_opcion);
         }
         let optionGenero = document.createElement('option');
         optionGenero.setAttribute('value', arrayGenero[i].genero);
-    
+
         optionGenero.innerHTML = arrayGenero[i].genero;
         optionGenero.style.width = "300px"
         selectGenero.appendChild(optionGenero);
@@ -54,16 +54,16 @@ let showSelects = async() => {
 
     for (let i = 0; i < arrayAutor.length; i++) {
 
-        if(i==0){
+        if (i == 0) {
             let escoger_opcion = document.createElement('option');
-            escoger_opcion.setAttribute('value',"");
-            escoger_opcion.innerHTML="--Seleccione un Autor--";
+            escoger_opcion.setAttribute('value', "");
+            escoger_opcion.innerHTML = "--Seleccione un Autor--";
             selectAutor.appendChild(escoger_opcion);
         }
         let optionAutor = document.createElement('option');
         optionAutor.setAttribute('value', arrayAutor[i].nombre_autor);
-       
-    
+
+
         optionAutor.innerHTML = arrayAutor[i].nombre_autor;
         optionAutor.style.width = "300px"
         selectAutor.appendChild(optionAutor);
@@ -71,12 +71,28 @@ let showSelects = async() => {
 
 }
 
-window.addEventListener('load', showSelects);
 
-
-let validar = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pimgLibro, pgenero, ptipo, pcantidad, pprecio, pcontraportada ) => {
+                //portada, contraportada, titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio
+let validar = (pportada, pcontraportada, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pgenero, ptipo, pcantidad, pprecio ) => {
 
     let error = false;
+
+    //validar portada
+    if (pportada == '') {
+        error = true;
+        portadaLibro.classList.add('input_error');
+    } else {
+        portadaLibro.classList.remove('input_error');
+    }
+
+    //validar contraportada
+    if (pcontraportada == '') {
+        error = true;
+        contraportadaLibro.classList.add('input_error');
+    } else {
+        contraportadaLibro.classList.remove('input_error');
+    }
+
     //Validar titulo
     if (ptitulo == '') {
         error = true;
@@ -104,9 +120,9 @@ let validar = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pim
     //validar autor
     if (pautor == '') {
         error = true;
-        input_autor.classList.add('input_error');
+        document.querySelector('#txt_autor').classList.add('input_error');
     } else {
-        input_autor.classList.remove('input_error');
+        document.querySelector('#txt_autor').classList.remove('input_error');
     }
 
     //validar año de edición
@@ -133,28 +149,12 @@ let validar = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pim
         input_isbn.classList.remove('input_error');
     }
 
-    //validar portada
-    if (pimgLibro == '') {
-        error = true;
-        imgLibro.classList.add('input_error');
-    } else {
-        imgLibro.classList.remove('input_error');
-    }
-
-    //validar contraportada
-    if (pcontraportada == '') {
-        error = true;
-        contraportada.classList.add('input_error');
-    } else {
-        contraportada.classList.remove('input_error');
-    }
-
     //validar género
     if (pgenero == '') {
         error = true;
-        input_genero.classList.add('input_error');
+        document.querySelector('#txt_genero').classList.add('input_error');
     } else {
-        input_genero.classList.remove('input_error');
+        document.querySelector('#txt_genero').classList.remove('input_error');
     }
 
     //validar tipo
@@ -180,31 +180,30 @@ let validar = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pim
     } else {
         input_precio.classList.remove('input_error');
     }
-
     return error;
 }
 
 
 let saludar = () => {
+    let portada = portadaLibro.src;
+    let contraportada = contraportadaLibro.src;
     let titulo = input_titulo.value;
     let edicion = input_edicion.value;
     let editorial = input_editorial.value;
-    let autor = input_autor.value;
-    let anno = Number(input_anno.value);
+    let autor = document.querySelector('#txt_autor').value;
+    let anno = input_anno.value;
     let idioma = input_idioma.value;
     let isbn = input_isbn.value;
-    let genero = input_genero.value;
+    let genero = document.querySelector('#txt_genero').value;
     let tipo = input_tipo.value;
-    let cantidad = Number(input_cantidad.value);
-    let precio = Number(input_precio.value);
-    let portada = portadaLibro.src;
-    let contraportada = contraportada.src;
-    
+    let cantidad = parseInt(input_cantidad.value);
+    let precio = parseFloat(input_precio.value);
 
-    let error = validar(titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio, portada, contraportada,);
+
+    let error = validar(portada, contraportada, titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio);
 
     if (error == false) {
-        registrarLibro(titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio, portada, contraportada,);
+        registrarLibro(portada, contraportada, titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio);
         registrarInventario(isbn);
         Swal.fire({
             type: 'success',

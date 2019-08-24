@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 //Esquema del libro
 
 let libro_schema = new mongoose.Schema({
+   
     titulo: { type: String, required: true, unique: false },
     edicion: { type: String, required: true, unique: false },
     editorial: { type: String, required: true, unique: false },

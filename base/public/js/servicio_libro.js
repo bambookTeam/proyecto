@@ -1,8 +1,8 @@
 'use strict'
 
 // import { type } from "os";
-
-let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pportada, pcontraportada, pgenero, ptipo, pcantidad, pprecio) => {
+                    //portada, contraportada, titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio
+let registrarLibro = (pportada, pcontraportada, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pgenero, ptipo, pcantidad, pprecio) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar_libro',
@@ -13,7 +13,7 @@ let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pis
             titulo: ptitulo,
             edicion: pedicion,
             editorial: peditorial,
-            autor: pautor,
+            autor: pautor, 
             anno: panno,
             idioma: pidioma,
             isbn: pisbn,
@@ -74,7 +74,7 @@ let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidiom
             titulo: ptitulo,
             edicion: pedicion,
             editorial: peditorial,
-            autor: pautor,
+            autor: pautor, 
             anno: panno,
             idioma: pidioma,
             isbn: pisbn,
