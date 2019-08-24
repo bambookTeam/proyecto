@@ -118,12 +118,38 @@ router.post('/eliminar_libreria', function (req, res) {
 
                 res.json({ success: false, msg: 'No se pudo eliminar la librería' });
             } else {
-                console.log("sirve eliminar la sucursal");
+                console.log("sirve eliminar la librería");
                 res.json({ success: true, msg: 'La librería se eliminó con éxito' });
             }
         }
     )
 });
+
+router.post('/modificar-libreria', function (req, res) {
+    let body = req.body;
+
+    console.log('Body');
+    console.log(body);
+    Libreria.findByIdAndUpdate(body._id, {
+        $set: req.body
+    },
+        function (error) {
+
+            if (error) {
+
+                console.log("error");
+                console.log(error);
+
+                res.json({ success: false, msg: 'No se pudo habilitar el club' });
+            } else {
+                console.log("sirve modificar la Librería");
+                res.json({ success: true, msg: 'El club se habilitó con éxito' });
+            }
+        }
+    )
+
+});
+
 
 
 module.exports = router;
