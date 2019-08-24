@@ -1,8 +1,9 @@
 'use strict'
 
 // import { type } from "os";
-                    //portada, contraportada, titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio
-let registrarLibro = (pportada, pcontraportada, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pgenero, ptipo, pcantidad, pprecio) => {
+
+let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pportada, pcontraportada, pgenero, ptipo, pcantidad, pprecio) => {
+    let pestado=1;
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar_libro',
@@ -22,7 +23,8 @@ let registrarLibro = (pportada, pcontraportada, ptitulo, pedicion, peditorial, p
             cantidad: pcantidad,
             precio: pprecio,
             portada: pportada,
-            contraportada: pcontraportada
+            contraportada: pcontraportada,
+            estado:pestado
         }
 
 
@@ -63,11 +65,12 @@ let obtener_libroId = async (_id) => {
 }
 
 let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pportada, pcontraportada,  pgenero, ptipo, pcantidad, pprecio) => {
+    let pestado=1;
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar_libro',
         responseType: 'json',
-
+        
 
         data: {
             _id: pid,
@@ -83,33 +86,35 @@ let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidiom
             cantidad: pcantidad,
             precio: pprecio,
             portada: pportada,
-            contraportada: pcontraportada
+            contraportada: pcontraportada,
+            estado: pestado
         }
     });
 };
 
-let habilitar_libro = (pid) => {
+let habilitar_Libro = (pid) => {
+    console.log(pid)
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar_libro',
         responseType: 'json',
         data: {
-            _id: pid,
-
+            _id: pid
         }
     });
 };
-let deshabilitar_libro = (pid) => {
+let deshabilitar_Libro= (pid) => {
+    console.log(pid)
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar_libro',
         responseType: 'json',
         data: {
             _id: pid
-
         }
     });
 };
+
 
 let eliminarLibro = (pid) => {
     axios({

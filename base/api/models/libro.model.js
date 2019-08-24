@@ -18,7 +18,8 @@ let libro_schema = new mongoose.Schema({
     cantidad: { type: Number, required: true, unique: false },
     precio: { type: Number, required: true, unique: false },
     portada: { type: String, required: true, unique: false },
-    contraportada: {type: String, required: true, unique: false}
+    contraportada: {type: String, required: true, unique: false},
+    estado: {type:Number, required:true, unique:false}
 
 
 });
