@@ -2,7 +2,7 @@
 
 // import { type } from "os";
 
-let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pimagen, pgenero, ptipo, pcantiddad, pprecio) => {
+let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pportada, pcontraportada, pgenero, ptipo, pcantidad, pprecio) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar_libro',
@@ -19,9 +19,10 @@ let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pis
             isbn: pisbn,
             genero: pgenero,
             tipo: ptipo,
-            cantidad: pcantiddad,
+            cantidad: pcantidad,
             precio: pprecio,
-            imagen: pimagen
+            portada: pportada,
+            contraportada: pcontraportada
         }
 
 
@@ -38,7 +39,7 @@ let obtenerLibros = async () => {
             url: 'http://localhost:4000/api/listar_libros',
             responseType: 'json'
         });
-        
+
         return response.data.lista_libros;
     } catch (error) {
         console.log(error);
@@ -54,9 +55,70 @@ let obtener_libroId = async (_id) => {
             url: `http://localhost:4000/api/listar_libro_id/${_id}`,
             responseType: 'json'
         });
-        
+
         return response.data.librosBD
     } catch (error) {
         // console.log(error);
     }
 }
+
+let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pportada, pcontraportada,  pgenero, ptipo, pcantidad, pprecio) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar_libro',
+        responseType: 'json',
+
+
+        data: {
+            _id: pid,
+            titulo: ptitulo,
+            edicion: pedicion,
+            editorial: peditorial,
+            autor: pautor,
+            anno: panno,
+            idioma: pidioma,
+            isbn: pisbn,
+            genero: pgenero,
+            tipo: ptipo,
+            cantidad: pcantidad,
+            precio: pprecio,
+            portada: pportada,
+            contraportada: pcontraportada
+        }
+    });
+};
+
+let habilitar_libro = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/habilitar_libro',
+        responseType: 'json',
+        data: {
+            _id: pid,
+
+        }
+    });
+};
+let deshabilitar_libro = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/deshabilitar_libro',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};
+
+let eliminarLibro = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar_libro',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};

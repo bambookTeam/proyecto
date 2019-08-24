@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Registro Club de Lectura
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/perfil_club.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+        <header>
+                <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+                <a href="#">
+                    <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+                        id="barnesLogo">
+                </a>
+                <div class="sign-in-button">
+                    <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+                </div>
+            </header>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li class="parent" id="dropdown"><a href="#">Libros</a>
+                        <ul class="child">
+                            <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
+                            <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
+                        <ul class="child">
+                            <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
+
+                    </li>
+
+                    <li class="parent" id="dropdown"><a href="#">Otros</a>
+                        <ul class="child">
+                            <li><a href="#">Intercambios</a></li>
+                            <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
+                            <li id='optionBitacora'><a href="#">Bitácora</a></li>
+                            <li id='optionReportes'><a href="#">Reportes</a></li>
+                            <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+
+    <main>
+   
+            <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content" id="signinpopup">
+
+                        <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+                        <div class="optionProfile"><a href="">Mi Carrito</a></div>
+                        <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+                        <div class="optionProfile"><a href="">Mis compras</a></div>
+                        <div class="optionProfile"><a href="">Mis libros</a></div>
+                        <div class="optionProfile"><a href="">Mis intercambios</a></div>
+                        <button id="btn_cerrar">Cerrar Sesión</button>
+                    </div>
+
+                </div>
+        <section id="info">
+
+
+        </section>
+        <section class="chatSection" id="chatSection">
+            <h2>Chat del Club</h2>
+            <div class="chat">
+                <div id="chatArea">
+
+
+
+
+                </div>
+                <div class="msgtoSend">
+                        <textarea name="" id="chattextInput" cols="" rows=""></textarea>
+                        <button id="btnSendMsg"><img
+                                src="https://img.icons8.com/material-rounded/24/000000/filled-sent.png"></button>
+                    </div>
+            </div>
+
+
+        </section>
+
+        <section id="">
+            <table id="Usuarios"></table>
+        </section>
+        
+
+
+
+    </main>
+
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/servicio-clubLectura.js"></script>
+    <script src="js/servicio_usuario.js"></script>
+    <script src="js/servicio_chat.js"></script>
+    <script src="js/servicio_clubMiembro.js"></script>
+    <script src="js/controlador_perfil_club.js"></script>
+    <script src="js/getNombre.js"></script>
+    <script src="js/clienteIniciado.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+
+
+
+</body>
+
+</html>

@@ -61,24 +61,24 @@ main a:hover{
 
 main button{
     padding: 10px;
-    border: 1px solid #f6b93b;
-    border-radius: 15px;
-    font-size: 15px;
+    font-size: 5px;
+    border: none;
     color: #fff;
     font-weight: bold;
-    background: #f6b93b;
-    outline: none; 
+    background-color: transparent;
+    outline: none;
 }
 
 main button:hover{
     padding: 10px;
-    border: 1px solid #000;
-    border-radius: 15px;
-    font-size: 15px;
     color: #fff;
     font-weight: bold;
-    background: #000;
     outline: none;
+    cursor: pointer;
+}
+main button img{
+width: 20px;
+height: 20px;
 }
 
 table {
@@ -87,7 +87,7 @@ table {
 }
   
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 15px;
 }
   
@@ -97,3 +97,4 @@ th {
     background-color: #f6b93b;
     color: white;
 }
+

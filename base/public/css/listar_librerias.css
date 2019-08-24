@@ -3,12 +3,6 @@
     border-bottom: solid 2px #f6b93b;
 }
 
-
-
-
-
-
-
 main{
     text-align: center;
 }
@@ -66,12 +60,12 @@ main a:hover{
 
 main button{
     padding: 10px;
-    border: 1px solid #f6b93b;
+    border: 1px solid grey;
     border-radius: 15px;
     font-size: 15px;
     color: #fff;
     font-weight: bold;
-    background: #f6b93b;
+    background: grey;
     outline: none; 
 }
 
@@ -87,8 +81,9 @@ main button:hover{
 }
 
 table {
+    width: 80%;
+    margin: auto;
     border-collapse: collapse;
-    width: 100%;
 }
   
 th, td {

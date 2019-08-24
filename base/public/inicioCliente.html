@@ -1,118 +1,301 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
-  <title>Bambooks</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/landingClienteIniciado.css">
-  <link rel="stylesheet" href="css/carousels.css">
-  <link rel="stylesheet" href="css/navbar.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Bambooks
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/landingClienteIniciado.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer.css">
+
+
 </head>
 
+
 <body>
+
     <header>
-        <nav>
-          <div class="logoBambooks">
-            <a href="inicioCliente.html"><img
-                src="imgs/panda_grain.png"
-                alt="" width="40px"></a>
-          </div>
-          <div class="nav-container">
-            <a href="listar_librerias.html" id="optionNavLibrerias">Librerias</a>
-            <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
-            <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
-            <a href="listar_libros.html" id="optionNavLibros">Libros</a>
-            <a href="listar-autores.html" id="optionNavAutores">Autores</a>
-            <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
-            <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
-            <a href="listar_tarjetas.html">Tarjetas</a>
-            <a href="#" id="optionIntercambio">Intercambios</a>
-            <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
-          </div>
-          <div class="optionsNav">
-              <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <a href="#">
+            <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+                id="barnesLogo">
+        </a>
+        <div class="sign-in-button">
+            <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
+                    <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
+                <ul class="child">
+                    <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
+                </ul>
+            </li>
+
+            <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
+
+            </li>
+
+            <li class="parent" id="dropdown"><a href="#">Otros</a>
+                <ul class="child">
+                    <li><a href="#">Intercambios</a></li>
+                    <li id='optionUsers'><a href="#">Usuarios</a></li>
+                    <li id='optionBitacora'><a href="#">Bitácora</a></li>
+                    <li id='optionReportes'><a href="#">Reportes</a></li>
+                    <li id='optionInventario'><a href="#">Inventario</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+    <main>
+
+
+        <section id="banner">
+            <div class="bannerContent">
+                <h1>Vienes buscando un libro y te vas siendo parte de una<span> familia </span>!</h1>
+                <button> Unirme a un Club </button>
+                <button> Ver Libros </button>
             </div>
-            <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
-            <button id="btn_cerrar">Cerrar Sesion</button>
-          </div>
-        </nav>
-      </header>
-  <main>
-    <div class="banner">
-      <h2>El que ama la lectura, tiene todo a su alcance</h2>
-    </div>
-    <div class="info-container">
-        <div class="header">Bambooks</div>
-
-        <div class="content">
-            <p>Nuestra meta es siempre brindar el mejor servicio posible a través de nuestra librería
-                    virtual.</p>
-                    <div class="menu"><img src="imgs/pandauser.png" alt="LogoBambooks" width="170px"></div>
-                    <p>Nuestro catálogo es fresco y sigue las tendencias, no sólo te brindamos lo nuevo, si no lo
-                    mejor. </p>
+        </section>
 
 
+        <div id="myModal" class="modal">
 
+            <!-- Modal content -->
+            <div class="modal-content" id="signinpopup">
+
+                <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+                <div class="optionProfile"><a href="">Mi Carrito</a></div>
+                <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+                <div class="optionProfile"><a href="">Mis compras</a></div>
+                <div class="optionProfile"><a href="">Mis libros</a></div>
+                <div class="optionProfile"><a href="">Mis intercambios</a></div>
+                <button id="btn_cerrar">Cerrar Sesión</button>
+            </div>
 
         </div>
-    </div>
-    <div class="container">
 
-        <div class="galerias">
-            <div class="slideshow-container" id="parentVendidos">
-                <p>Mas Vendidos</p>
-                <div class="mySlides">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/I/41IMm2gU7sL.jpg">
+
+        <section id="info-barnes">
+            <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png">
+        </section>
+
+
+        <section id="categories">
+            <h1>Categorías</h1>
+            <div class="category">
+                <a href=""> <img src="https://img.icons8.com/wired/64/000000/paint-brush.png" width="56px'"></a>
+                <p>Arte</p>
+            </div>
+            <div class="category">
+                <img src="https://img.icons8.com/ios/50/000000/science-application.png" width="56px'">
+                <p>Ciencia</p>
+            </div>
+            <div class="category">
+                <img src="https://img.icons8.com/ios/50/000000/cooking-pot.png" width="56px'">
+                <p>Cocina</p>
+            </div>
+            <div class="category">
+                <img src="https://img.icons8.com/ios/50/000000/dragon.png" width="56px'">
+                <p>Fantasía</p>
+            </div>
+            <div class="category">
+                <img src="https://img.icons8.com/metro/52/000000/ledger.png" width="56px'">
+                <p>Economía</p>
+            </div>
+        </section>
+
+
+        <section id="booklists">
+            <div class="lists">
+                <div class="best-rated">
+                    <h2>Mejor calificados</h2>
+                    <div class="line"></div>
+                    <img src="https://images.penguinrandomhouse.com/cover/9780399585050" alt="">
+                    <button>Ver Todos</button>
                 </div>
-                <div class="mySlides">
-                    <img
-                        src="https://images.penguinrandomhouse.com/cover/9780525436140?alt=cover_coming_soon.jpg">
+                <div class="most-sold">
+                    <h2>Más Vendidos</h2>
+                    <div class="line"></div>
+                    <img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/creative_bookcover.png" alt="">
+                    <button>Ver Todos</button>
                 </div>
-                <div class="mySlides">
-                    <img
-                        src="https://i.pinimg.com/564x/da/f2/1e/daf21efc0455c5ed0333edd3b8078055.jpg">
+                <div class="best-rated">
+                    <h2>Ver por Géneros</h2>
+                    <div class="line"></div>
+                    <img src="https://dbrbooks.files.wordpress.com/2014/07/eyeofstorm.jpg" alt="">
+                    <button>Ver Todos</button>
                 </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="best-rated">
+                    <h2>Ver por Categorías</h2>
+                    <div class="line"></div>
+                    <img src="https://idobookcovers.com/wp-content/uploads/2017/01/Music-Book-Cover-Design.jpg" alt="">
+                    <button>Ver Todos</button>
+                </div>
+            </div>
+            <div class="banneroferta">
+                <h3>La lectura nos regala mucha compañía, libertad para ser de otra manera y ser más.</h3>
+                <p>- Pedro Laín Entralgo</p>
+            </div>
+        </section>
+
+
+        <section id="genres">
+            <h1>Géneros</h1>
+            <div class="category">
+                <img src="https://img.icons8.com/ios/50/000000/sci-fi.png" width="56px'">
+                <p>Sci-Fi</p>
+            </div>
+            <div class="category">
+                <img src="https://img.icons8.com/ios-filled/50/000000/love-book.png" width="56px'">
+                <p>Romance</p>
+            </div>
+            <div class="category">
+                <img src="https://img.icons8.com/ios/50/000000/drama.png" width="56px'">
+                <p>Drama</p>
+            </div>
+            <div class="category">
+                <img src="https://img.icons8.com/wired/64/000000/children.png" width="56px'">
+                <p>Infantil</p>
+            </div>
+            <div class="category">
+                <img src="https://img.icons8.com/pastel-glyph/64/000000/thriller.png" width="56px'">
+                <p>Thriller</p>
+            </div>
+        </section>
+
+
+        <section class="whybarnes">
+            <h1> ¿Por qué elegir Barnes & Noble? </h1>
+            <div class="facts">
+                <div class="fact">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Tg6Y8y7xHdm4is_pxG-XsK7PTdqaQ1qO9w2crleT8hO8t0dQFQ"
+                        width="200px">
+                    <h5> Fácil </h5>
+                    <p>Tan fácil como 1,2,3. </p>
+                    <p> Así de fácil puedes elegir tus libros y adquirirlos cuando así desees.</p>
+                </div>
+                <div class="fact">
+                    <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/dolly-512.png" width="200px">
+                    <h5> Rápido </h5>
+                    <p> Tu copia digital podrá estar disponible tan pronto lo compres. Tu libro físico llegará en 1 a 3
+                        días </p>
+                </div>
+                <div class="fact">
+                    <img src="https://docksidephysio.com/wp-content/uploads/2018/08/book-icon.png" width="200px">
+                    <h5> Variado </h5>
+                    <p>Varios géneros, categorías, colecciones, autores, nacionalidades, etc... </p>
+                    <p>Tú eliges lo que quieres y nosotros te lo brindamos</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="ofertas">
+            <h1>Ofertas </h1>
+
+        </section>
+
+
+        <section id="footer">
+
+            <div class="footerLogo">
+                <img src="imgs/panda_negro.png" width="150px">
+            </div>
+            <div class="footermap">
+
+                <div class="list">
+                    <ul>
+                        <li class="uhead"><a href="">Librerías</a></li>
+                        <ul>
+                            <li><a href="">Ver las librerías</a></li>
+                            <li><a href="">Registrar mi librería</a></li>
+                            <li><a href="">Sucursales</a></li>
+                            <li><a href="">Ofertas</a></li>
+                        </ul>
+                    </ul>
+
+                </div>
+
+                <div class="list">
+
+                    <ul>
+                        <li class="uhead"><a href="">Libros</a></li>
+                        <ul>
+                            <li><a href="">Ver todos los libros</a></li>
+                            <li><a href="">Categorías</a></li>
+                            <li><a href="">Géneros</a></li>
+                            <li><a href="">Más Vendidos</a></li>
+                            <li><a href="">Mejor Calificados</a></li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <div class="list">
+                    <ul>
+                        <li class="uhead"><a href="">Clubes de Lectura</a></li>
+                        <ul>
+                            <li><a href="">Ver los clubes</a></li>
+                            <li><a href="">Crear mi club</a></li>
+                            <li><a href="">Unirme a un club</a></li>
+                            <li><a href="">Ver mis clubes</a></li>
+                        </ul>
+                    </ul>
+                </div>
             </div>
 
-            <div id="masVendidos">
-                <p>Mejores Calificados</p>
-                <div class="libroVendido">
-                    <img src="https://www.thebookdesigner.com/wp-content/uploads/2018/09/last-good-300.png" alt="">
-                </div>
+            <div class="socials">
+                <img src="https://img.icons8.com/ios-filled/40/000000/horizontal-line.png">
 
-                <div class="libroVendido">
-                    <img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/children_bookcover.png"
-                        alt="">
-                </div>
+                <img src="https://img.icons8.com/ios-filled/40/000000/facebook-new.png">
 
-                <div class="libroVendido">
-                    <img src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/2e52194b029a65d876d57172b412d63e/5a0ce3f3-5f59-4098-8d45-93a73cf2800c_rw_1200.png?h=40a11543bd7bdc2d8e956150e3a5af2c" alt="">
+                <img src="https://img.icons8.com/ios-filled/40/000000/instagram-new.png">
+
+                <img src="https://img.icons8.com/windows/40/000000/twitter.png">
+
+                <img src="https://img.icons8.com/ios-filled/40/000000/horizontal-line.png">
+
+                <div class="line-soc"></div>
+                <div>
+
                 </div>
-                <a class="prev" onclick="plusSlidesLibros(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlidesLibros(1)">&#10095;</a>
             </div>
-        </div>
+        </section>
 
-    </div>
-  </main>
-  <footer>
-          <div class="footfive">
-              <p>Bambooks Tienda de Libros Virtual</p>
-          </div>
-      </div>
-  </footer>
-  <script src="js/jquery-3.3.1.js"></script>
-  <script src="js/getNombre.js"></script>
-  <script src="js/carousels.js"></script>
-  <script src="js/controlador_cerrar_sesion.js"></script>
-  <script src="js/noback.js"></script>
+</body>
+
+
+<script src="js/jquery-3.3.1.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/servicio_usuario.js"></script>
+<script src="js/clienteIniciado.js"></script>
+<script src="js/noback.js"></script>
+<script src="js/getNombre.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="js/controlador_cerrar_sesion.js"></script>
+
+
 
 
 </body>

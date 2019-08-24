@@ -164,7 +164,7 @@ let validarIdentificacion = (pidentificacion) => {
 
 
 
-let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo,pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario) => {
+let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario) => {
 
     let error = false;
 
@@ -324,20 +324,14 @@ let guardar = () => {
     let direccion = input_direccion.value;
     let nombreUsuario = input_nombre_usuario.value;
     let tipo = 2;
+    let estado= 1
 
-
-
-
-
-
-
-    let error = validar(nombre1, apellido1, sexo, identificacion, correo,provincia, canton, distrito, direccion, nombreUsuario);
-
+    let error = validar(nombre1, apellido1, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario);
 
 
     if (error == false) {
 
-        registroEnLinea(nombre1, nombre2, apellido1, apellido2, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario, tipo)
+        registroEnLinea(nombre1, nombre2, apellido1, apellido2, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario, tipo, estado)
 
         Swal.fire({
             title: 'Se ha guardado el cliente',

@@ -12,44 +12,65 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
 
-<header>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <a href="#">
-        <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
-            id="barnesLogo">
-    </a>
-    <div class="sign-in-button">
-        <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
-    </div>
-</header>
 
 <body>
-
-        <nav class="nav-menu">
+        <header>
+                <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+                <a href="#">
+                    <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+                        id="barnesLogo">
+                </a>
+                <div class="sign-in-button">
+                    <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+                </div>
+            </header>
+        
+            <nav class="nav-menu">
                 <ul>
-                    <li class="parent"><a href="#">Librerías</a>
-                        <ul class="child">
-                            <li><a href="#">Sucursales</a></li>
-                            <li><a href="#">Ofertas</a></li>
-                        </ul>
-                    </li>
                     <li class="parent" id="dropdown"><a href="#">Libros</a>
                         <ul class="child">
-                            <li><a href="#">Géneros</a></li>
-                            <li><a href="#">Categorías</a></li>
+                            <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
+                            <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
                         </ul>
                     </li>
-                    <li class="parent" id="dropdown"><a href="#">Clubes de Lectura</a>
+                    <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
                         <ul class="child">
-                            <li><a href="#">Buscar Clubes</a></li>
-                            <li><a href="#">Mis Clubes</a></li>
+                            <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
+                        </ul>
+                    </li>
+        
+                    <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
+        
+                    </li>
+        
+                    <li class="parent" id="dropdown"><a href="#">Otros</a>
+                        <ul class="child">
+                            <li><a href="#">Intercambios</a></li>
+                            <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
+                            <li id='optionBitacora'><a href="#">Bitácora</a></li>
+                            <li id='optionReportes'><a href="#">Reportes</a></li>
+                            <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
     <main>
+            <div id="myModal" class="modal">
 
+                    <!-- Modal content -->
+                    <div class="modal-content" id="signinpopup">
+        
+                        <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+                        <div class="optionProfile"><a href="">Mi Carrito</a></div>
+                        <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+                        <div class="optionProfile"><a href="">Mis compras</a></div>
+                        <div class="optionProfile"><a href="">Mis libros</a></div>
+                        <div class="optionProfile"><a href="">Mis intercambios</a></div>
+                        <button id="btn_cerrar">Cerrar Sesión</button>
+                    </div>
+        
+                </div>
         <section id="info">
 
             <h1> <span id="txt_nombre_comercial"></span> </h1>
@@ -85,16 +106,16 @@
             <button type="button" class="btn-registrar-oferta" id="btn-registrar-oferta">Registrar Oferta</button>
                 
             <div>
-                <img src="" alt="" id="image_preview2" width="800" height="300">
+                <img src="" alt="" id="image_preview2">
             </div>
 
-            <div class="galerias">
                 
                 <div class="slideshow-container" id="daddy">
-                    <p>Ofertas</p>
-                   
+
+                    <h3>Ofertas</h3>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                   </div>
-                  <br>
                   
                 </div>
     
@@ -137,73 +158,73 @@
 
     <section id="footer">
 
-            <div class="footerLogo">
-                <img src="imgs/panda_negro.png" width="150px">
-            </div>
-            <div class="footermap">
+        <div class="footerLogo">
+            <img src="imgs/panda_blanco.png" width="150px">
+        </div>
+        <div class="footermap">
 
-                <div class="list">
+            <div class="list">
+                <ul>
+                    <li class="uhead"><a href="">Librerías</a></li>
                     <ul>
-                        <li class="uhead"><a href="">Librerías</a></li>
+                        <li><a href="">Ver las librerías</a></li>
+                        <li><a href="">Registrar mi librería</a></li>
+                        <li><a href="">Sucursales</a></li>
+                        <li><a href="">Ofertas</a></li>
+                    </ul>
+                </ul>
+
+            </div>
+
+            <div class="list">
+
+                    <ul>
+                        <li class="uhead"><a href="" >Libros</a></li>
                         <ul>
-                            <li><a href="">Ver las librerías</a></li>
-                            <li><a href="">Registrar mi librería</a></li>
-                            <li><a href="">Sucursales</a></li>
-                            <li><a href="">Ofertas</a></li>
+                            <li><a href="">Ver todos los libros</a></li>
+                            <li><a href="">Categorías</a></li>
+                            <li><a href="">Géneros</a></li>
+                            <li><a href="">Más Vendidos</a></li>
+                            <li><a href="">Mejor Calificados</a></li>
                         </ul>
                     </ul>
- 
-                </div>
+            </div>
 
-                <div class="list">
-
-                        <ul>
-                            <li class="uhead"><a href="" >Libros</a></li>
-                            <ul>
-                                <li><a href="">Ver todos los libros</a></li>
-                                <li><a href="">Categorías</a></li>
-                                <li><a href="">Géneros</a></li>
-                                <li><a href="">Más Vendidos</a></li>
-                                <li><a href="">Mejor Calificados</a></li>
-                            </ul>
-                        </ul>
-                </div>
-
-                <div class="list">
+            <div class="list">
+                <ul>
+                    <li class="uhead"><a href="">Clubes de Lectura</a></li>
                     <ul>
-                        <li class="uhead"><a href="">Clubes de Lectura</a></li>
-                        <ul>
-                            <li><a href="">Ver los clubes</a></li>
-                            <li><a href="">Crear mi club</a></li>
-                            <li><a href="">Unirme a un club</a></li>
-                            <li><a href="">Ver mis clubes</a></li>
-                        </ul>
+                        <li><a href="">Ver los clubes</a></li>
+                        <li><a href="">Crear mi club</a></li>
+                        <li><a href="">Unirme a un club</a></li>
+                        <li><a href="">Ver mis clubes</a></li>
                     </ul>
-                </div>
+                </ul>
             </div>
+        </div>
 
-            <div class="socials">
-                <img src="https://img.icons8.com/ios-filled/40/000000/horizontal-line.png">
+        <div class="socials">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
 
-                <img src="https://img.icons8.com/ios-filled/40/000000/facebook-new.png">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png">
 
-                <img src="https://img.icons8.com/ios-filled/40/000000/instagram-new.png">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png">
 
-                <img src="https://img.icons8.com/windows/40/000000/twitter.png">
+            <img src="https://img.icons8.com/windows/20/ffffff/twitter.png">
 
-                <img src="https://img.icons8.com/ios-filled/40/000000/horizontal-line.png">
-                                    
-                <div class="line-soc"></div>
-                <div>
-                    <!--
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
+                                
+            <div class="line-soc"></div>
+            <div>
+                <!--
 
-                <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
+            <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
 
-              <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
-              <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!-->
-                </div>
+          <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
+          <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!-->
             </div>
-        </section>
+        </div>
+    </section>
 
 
     <script src="js/jquery-3.3.1.js"></script>
@@ -224,6 +245,8 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/getNombre.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>
+    <script src="js/getNombre.js"></script> 
+    <script src="js/clienteIniciado.js"></script>
 
 
 </body>

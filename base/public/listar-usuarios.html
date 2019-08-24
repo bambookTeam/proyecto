@@ -2,79 +2,181 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/listar_usuarios.css">
-    <link rel="stylesheet" href="css/navbar.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/listar_usuarios.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 
-<header>
-    <nav>
-      <div class="logoBambooks">
-        <a href="inicioCliente.html"><img
-            src="imgs/panda_grain.png"
-            alt="" width="40px"></a>
-      </div>
-      <div class="nav-container">
-        <a href="listar_librerias_admins.html" id="optionNavLibrerias">Librerias</a>
-        <a href="listar_sucursales.html" id="optionNavSucursales">Sucursales</a>
-        <a href="%20clubesLectura.html" id="optionNavClubes">Clubes de Lectura</a>
-        <a href="listar_libros.html" id="optionNavLibros">Libros</a>
-        <a href="listar-autores.html" id="optionNavAutores">Autores</a>
-        <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
-        <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
-        <a href="listar_tarjetas.html">Tarjetas</a>
-        <a href="#" id="optionIntercambio">Intercambios</a>
-        <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
-      </div>
-      <div class="optionsNav">
-          <a href="" class="perfil" id="nombrePerfil">Mi perfil</a>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-        <img src="https://icon-library.net/images/cart-icon-png-white/cart-icon-png-white-6.jpg" width="25px" alt="">
-        <button id="btn_cerrar">Cerrar Sesion</button>
-      </div>
-    </nav>
-  </header>
+
 
 <body>
+    <header>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <a href="#">
+            <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+                id="barnesLogo">
+        </a>
+        <div class="sign-in-button">
+            <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+        </div>
+    </header>
 
-            <main>
-    <input type="text" id="txt_filtro" placeholder="Filtrar" style="width: 170px">
-    <a href="registrar_cliente.html"><button>Registrar Usuario</button></a>
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
+                    <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
+                <ul class="child">
+                    <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
+                </ul>
+            </li>
+
+            <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
+
+            </li>
+
+            <li class="parent" id="dropdown"><a href="#">Otros</a>
+                <ul class="child">
+                    <li><a href="#">Intercambios</a></li>
+                    <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
+                    <li id='optionBitacora'><a href="#">Bitácora</a></li>
+                    <li id='optionReportes'><a href="#">Reportes</a></li>
+                    <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+  <main>
+        <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content" id="signinpopup">
+    
+                    <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+                    <div class="optionProfile"><a href="">Mi Carrito</a></div>
+                    <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+                    <div class="optionProfile"><a href="">Mis compras</a></div>
+                    <div class="optionProfile"><a href="">Mis libros</a></div>
+                    <div class="optionProfile"><a href="">Mis intercambios</a></div>
+                    <button id="btn_cerrar">Cerrar Sesión</button>
+                </div>
+    
+            </div>
+    <h1>Listar Usuarios</h1>
+
+    <label for="">Filtrar</label>
+    <input type="text" id="txt_filtro"
+    >
+    <a href="registrar_cliente.html">Registrar Usuario</a>
     <table id="tbl-usuarios">
-        <thead>
-            <tr>
-              <th>Tipo</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Correo</th>
-                <th>Identificación</th>
-                <th>Sexo</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo</th>
+          <th>Identificación</th>
+          <th>Sexo</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
 
-        </tbody>
+      </tbody>
     </table>
 
-</main>
+  </main>
 
-<footer></footer>
+  <section id="footer">
 
-<script src="js/jquery-3.3.1.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/servicio_usuario.js"></script>
-    <script src="js/controlador-listar-usuarios.js"></script>
-    <script src="js/getNombre.js"></script>
-    <script src="js/controlador_cerrar_sesion.js"></script>
+      <div class="footerLogo">
+          <img src="imgs/panda_blanco.png" width="150px">
+      </div>
+      <div class="footermap">
+
+          <div class="list">
+              <ul>
+                  <li class="uhead"><a href="">Librerías</a></li>
+                  <ul>
+                      <li><a href="">Ver las librerías</a></li>
+                      <li><a href="">Registrar mi librería</a></li>
+                      <li><a href="">Sucursales</a></li>
+                      <li><a href="">Ofertas</a></li>
+                  </ul>
+              </ul>
+
+          </div>
+
+          <div class="list">
+
+                  <ul>
+                      <li class="uhead"><a href="" >Libros</a></li>
+                      <ul>
+                          <li><a href="">Ver todos los libros</a></li>
+                          <li><a href="">Categorías</a></li>
+                          <li><a href="">Géneros</a></li>
+                          <li><a href="">Más Vendidos</a></li>
+                          <li><a href="">Mejor Calificados</a></li>
+                      </ul>
+                  </ul>
+          </div>
+
+          <div class="list">
+              <ul>
+                  <li class="uhead"><a href="">Clubes de Lectura</a></li>
+                  <ul>
+                      <li><a href="">Ver los clubes</a></li>
+                      <li><a href="">Crear mi club</a></li>
+                      <li><a href="">Unirme a un club</a></li>
+                      <li><a href="">Ver mis clubes</a></li>
+                  </ul>
+              </ul>
+          </div>
+      </div>
+
+      <div class="socials">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
+
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png">
+
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png">
+
+          <img src="https://img.icons8.com/windows/20/ffffff/twitter.png">
+
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
+                              
+          <div class="line-soc"></div>
+          <div>
+              <!--
+
+          <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
+
+        <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
+        <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!-->
+          </div>
+      </div>
+  </section>
+
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="js/servicio_usuario.js"></script>
+  <script src="js/controlador-listar-usuarios.js"></script>
+  <script src="js/getNombre.js"></script>
+  <script src="js/controlador_cerrar_sesion.js"></script>
+  <script src="js/clienteIniciado.js"></script>
 </body>
 
 </html>

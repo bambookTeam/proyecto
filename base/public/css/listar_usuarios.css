@@ -1,65 +1,126 @@
+.hovernav{
+    text-decoration: none;
+    border-bottom: solid 2px #f6b93b;
+}
+
+
+
+
+
+
 
 main{
     text-align: center;
 }
 
-main h1{
-    color: #76323F;
+h1{
+    color: #000;
     font-size: 30px;
-    margin: 30px;
+    margin: 60px;
+    font-weight: bold;
 }
-main button{
-    margin: 50px 0;
+
+label{
+    color: #000;
+    font-size: 20px;
+}
+
+input{
+    width: 30%;
+    height: 30px;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    background: none;
+    outline: none;
+}
+
+main a{
     padding: 10px;
-    border: 2px solid rgb(139, 79, 89);
+    border: 2px solid #000;
     border-radius: 15px;
     font-size: 15px;
-    color: white;
+    color: #000;
     font-weight: bold;
-    background: #76323F;
+    margin: 15px;
+    background: none;
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
+
+main a:hover{
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #f6b93b;
+    font-weight: bold;
+    margin: 15px;
+    background: none;
+    float: right;
+    outline: none;
+    text-decoration: none;
+}
+
+main button{
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: grey;
     outline: none; 
 }
 
 main button:hover{
-    margin: 50px 0;
     padding: 10px;
-    border: 2px solid rgb(139, 79, 89);
+    border: 1px solid #000;
     border-radius: 15px;
     font-size: 15px;
-    color:#76323F;
+    color: #fff;
     font-weight: bold;
-    background: white;
-    outline: none; 
-}
-label{
-    color: #76323F;
-    font-size: 20px;
-    margin: 30px;
-}
-#txt_filtro{
-    margin: 50px 0;
-    padding: 10px;
-    border: 2px solid rgb(139, 79, 89);
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: bold;
-    outline: none; 
-
+    background: #000;
+    outline: none;
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
-  }
+}
+
+main table a{
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: grey;
+    outline: none; 
+}
+
+main table a:hover{
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
+}
   
-  th, td {
+th, td {
     text-align: left;
-    padding: 8px;
-  }
+    padding: 15px;
+}
   
-  tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even){background-color: #f2f2f2}
   
-  th {
-    background-color: #76323F;
+th {
+    background-color: #f6b93b;
     color: white;
-  }
+}

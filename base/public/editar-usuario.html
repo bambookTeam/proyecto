@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+
+  <head>
+
+    <title>
+      Modificar
+    </title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/registrar_cliente.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+
+  </head>
+
+
+  <body>
+
+
+      <header>
+          <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+          <a href="#">
+              <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+                  id="barnesLogo">
+          </a>
+          <div class="sign-in-button">
+              <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+          </div>
+      </header>
+  
+      <nav class="nav-menu">
+          <ul>
+              <li class="parent" id="dropdown"><a href="#">Libros</a>
+                  <ul class="child">
+                      <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
+                      <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
+                  </ul>
+              </li>
+              <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
+                  <ul class="child">
+                      <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
+                  </ul>
+              </li>
+  
+              <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
+  
+              </li>
+  
+              <li class="parent" id="dropdown"><a href="#">Otros</a>
+                  <ul class="child">
+                      <li><a href="#">Intercambios</a></li>
+                      <li id='optionUsers'><a href="#">Usuarios</a></li>
+                      <li id='optionBitacora'><a href="#">Bitácora</a></li>
+                      <li id='optionReportes'><a href="#">Reportes</a></li>
+                      <li id='optionInventario'><a href="#">Inventario</a></li>
+                  </ul>
+              </li>
+          </ul>
+      </nav>
+  
+
+
+    <main>
+            <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content" id="signinpopup">
+        
+                        <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+                        <div class="optionProfile"><a href="">Mi Carrito</a></div>
+                        <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+                        <div class="optionProfile"><a href="">Mis compras</a></div>
+                        <div class="optionProfile"><a href="">Mis libros</a></div>
+                        <div class="optionProfile"><a href="">Mis intercambios</a></div>
+                        <button id="btn_cerrar">Cerrar Sesión</button>
+                    </div>
+        
+                </div>
+
+        <h1>Modificar </h1>
+
+
+        <h2>Datos personales</h2>
+
+        <section id = "datos_personales1">
+
+
+          <div class="subir_avatar">
+           <figure class="avatar">
+               <img src="imgs/img_avatar.jpg" alt="Seleccionar imagen" id="img_avatar">
+           </figure>
+           <button type="button" id="btn_seleccionar_avatar" class="boton_subir_avatar">Subir imagen </button>
+       </div>
+
+          <input id="txt_primer_nombre"  type="text"  placeholder = "Primer Nombre" >
+          <input id="txt_segundo_nombre"  type="text"  placeholder = "Segundo Nombre" >
+          <input id="txt_primer_apellido"  type="text"  placeholder = "Primer Apellido" >
+          <input id="txt_segundo_apellido"  type="text"  placeholder = "Segundo Apellido" >
+
+          <select name="" id="txt_sexo">
+            <option value="">Sexo</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Otro">Otro</option>
+         </select>
+
+         
+         
+
+         </section>
+         
+
+
+         <section id = "datos_personales2">
+
+           
+          <input id="txt_identificacion"  type="text"  placeholder = "Identificación" >
+          <input id="txt_nombre_usuario"  type="text"  placeholder = "Nombre Usuario" >
+          <input id="txt_contrasena"  type="text"  placeholder = "Contraseña" >
+          <input id="txt_correo"  type="text"  placeholder = "Correo Electrónico" >
+        
+          
+          <select name="" id="txt_provincia" onchange="llenarCantones(value)">
+              <option value="#">Seleccionar Provincia </option>
+            </select>
+            
+            <select name="" id="txt_canton" onchange="llenarDistritos(value)">
+                <option value="#">Seleccionar Cantón</option>
+              </select>
+              
+              <select name="" id="txt_distrito">
+                <option value="#">Seleccionar distrito</option>
+              </select>
+              
+              
+              
+              
+              <input id="txt_direccion"  type="text"  placeholder = "Dirección Exacta" >
+              
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.1915192287242!2d-84.04903608571853!3d9.918001777163246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e397932ca451%3A0xef8088362eda931!2sMultiplaza+Curridabat!5e0!3m2!1ses-419!2scr!4v1562653229172!5m2!1ses-419!2scr" width="600" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </section>
+
+
+        <button type ="button" class="boton_registrar" id="btn-guardar">Guardar</button>
+
+        <footer></footer>
+
+    </main>
+
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/getNombre.js"></script>
+
+    <script src="js/stringProvincias.js"></script>
+    <script src = "js/ubicacion.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/servicio_usuario.js"></script>
+    <script src="js/controlador_editar_usuario.js"></script>
+
+    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="js/servicio_avatar.js"></script>
+    
+    <script src="js/controlador_cerrar_sesion.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/clienteIniciado.js"></script>
+
+
+
+
+
+  </body>
+
+
+</html>

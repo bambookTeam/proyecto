@@ -5,12 +5,9 @@ let obtenerListaUsuarios = async (pcorreo) => {
     usuarios = await obtenerUsuarios();
     console.log(usuarios);
 };
+
 var usuarios = [];
 usuarios = obtenerListaUsuarios();
-
-
-
-const boton_registrar = document.querySelector('#btn_registrar');
 
 const input_nombre_comercial = document.querySelector('#txt_nombre_comercial');
 const input_nombre_fantasia = document.querySelector('#txt_nombre_fantasia');
@@ -26,13 +23,41 @@ const input_correo = document.querySelector('#txt_correo');
 
 const input_nombre_usuario = document.querySelector('#txt_nombre_usuario');
 
-let validarIdentificacion = (pidentificacion) => {
+const select_provincia = document.querySelector('#txt_provincia');
+const select_canton = document.querySelector('#txt_canton');
+const select_distrito = document.querySelector('#txt_distrito')
+
+const img_avatar = document.querySelector('#img_avatar');
+
+
+
+let validarCorreo = (pcorreo) => {
 
     let error = false;
 
     for (let i = 0; i < usuarios.length; i++) {
 
+        if (usuarios[i].correo == pcorreo) {
 
+            error = true;
+            input_correo.classList.add('input_error');
+
+        } else {
+
+            input_correo.classList.remove('input_error');
+        }
+
+    }
+
+    return error;
+
+};
+
+let validarIdentificacion = (pidentificacion) => {
+
+    let error = false;
+
+    for (let i = 0; i < usuarios.length; i++) {
 
         if (usuarios[i].identificacion == pidentificacion) {
 
@@ -70,30 +95,9 @@ let validarIdentificacion = (pidentificacion) => {
     return error;
 };
 
-let validarCorreo = (pcorreo) => {
-
-    let error = false;
-
-    for (let i = 0; i < usuarios.length; i++) {
-
-        if (usuarios[i].correo == pcorreo) {
-
-            error = true;
-            input_correo.classList.add('input_error');
-
-        } else {
-
-            input_correo.classList.remove('input_error');
-        }
-
-    }
-
-    return error;
-
-};
 
 
-let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo, pnombre_usuario) => {
+let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion, pprimer_nombre, pprimer_apellido, psexo, pcorreo, pnombre_usuario, pprovincia, pcanton, pdistrito) => {
 
     let error = false;
 
@@ -204,6 +208,31 @@ let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion,
         input_nombre_usuario.classList.remove('input_error');
     }
 
+    //Validar provincia
+    if (pprovincia == '') {
+        error = true;
+        select_provincia.classList.add('input_error');
+    } else {
+        select_provincia.classList.remove('input_error');
+    }
+
+    //Validar cantón
+    if (pcanton == '') {
+        error = true;
+        select_canton.classList.add('input_error');
+    } else {
+        select_canton.classList.remove('input_error');
+    }
+
+    //Validar distrito
+    if (pdistrito == '') {
+        error = true;
+        select_distrito.classList.add('input_error');
+    } else {
+        select_distrito.classList.remove('input_error');
+    }
+
+
     return error;
 };
 
@@ -222,13 +251,13 @@ let saludar = () => {
     let correo = input_correo.value;
     let nombre_usuario = input_nombre_usuario.value;
 
-    let provincia = null;
-    let canton = null;
-    let distrito = null;
+    let provincia = select_provincia.value;
+    let canton = select_canton.value;
+    let distrito = select_distrito.value;
 
     let tipo = 1;
 
-    let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo, nombre_usuario);
+    let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo, nombre_usuario, provincia, canton, distrito);
 
     // error = validarCorreo(correo);
 
@@ -238,7 +267,7 @@ let saludar = () => {
 
         registroAdminLibreria(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombre_usuario, tipo);
 
-        location.replace('index.html');
+        //location.replace('index.html');
 
     } else {
         Swal.fire({
