@@ -56,7 +56,6 @@ let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papell
             distrito: pdistrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
-            contrasena: pcontrasenna,
             tipo: ptipo,
             avatar: imagenUrl,
             contador: 0,
@@ -146,6 +145,7 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
                     sessionStorage.setItem('contrasena', response.data.usuario.contrasena);
                     sessionStorage.setItem('contador', response.data.usuario.contador);
                     sessionStorage.setItem('nombreUsuario', response.data.usuario.nombreUsuario);
+                    sessionStorage.setItem('avatar',response.data.usuario.avatar)
                     sessionStorage.setItem('identificacion', response.data.usuario.identificacion);
                     //actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).data.contador);
                     actualizar_contador(sessionStorage.getItem('id'), sessionStorage.getItem('contador'));
