@@ -21,7 +21,7 @@
         <header>
                 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
                 <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-                <a href="#">
+                <a href="inicioCliente.html">
                     <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
                         id="barnesLogo">
                 </a>
@@ -50,7 +50,7 @@
 
                     <li class="parent" id="dropdown"><a href="#">Otros</a>
                         <ul class="child">
-                            <li><a href="#">Intercambios</a></li>
+                            <li><a href="intercambios.html">Intercambios</a></li>
                             <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
                             <li id='optionBitacora'><a href="#">Bitácora</a></li>
                             <li id='optionReportes'><a href="#">Reportes</a></li>
@@ -58,25 +58,41 @@
                         </ul>
                     </li>
                 </ul>
-            </nav>
+            </li>
+
+            <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
+
+            </li>
+
+            <li class="parent" id="dropdown"><a href="#">Otros</a>
+                <ul class="child">
+                    <li><a href="#">Intercambios</a></li>
+                    <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
+                    <li id='optionBitacora'><a href="#">Bitácora</a></li>
+                    <li id='optionReportes'><a href="#">Reportes</a></li>
+                    <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
 
     <main>
-            <div id="myModal" class="modal">
+        <div id="myModal" class="modal">
 
-                    <!-- Modal content -->
-                    <div class="modal-content" id="signinpopup">
+            <!-- Modal content -->
+            <div class="modal-content" id="signinpopup">
 
-                        <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
-                        <div class="optionProfile"><a href="">Mi Carrito</a></div>
-                        <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
-                        <div class="optionProfile"><a href="">Mis compras</a></div>
-                        <div class="optionProfile"><a href="">Mis libros</a></div>
-                        <div class="optionProfile"><a href="">Mis intercambios</a></div>
-                        <button id="btn_cerrar">Cerrar Sesión</button>
-                    </div>
+                <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+                <div class="optionProfile"><a href="">Mi Carrito</a></div>
+                <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+                <div class="optionProfile"><a href="">Mis compras</a></div>
+                <div class="optionProfile"><a href="">Mis libros</a></div>
+                <div class="optionProfile"><a href="">Mis intercambios</a></div>
+                <button id="btn_cerrar">Cerrar Sesión</button>
+            </div>
 
-                </div>
+        </div>
 
         <h1>Listar Sucursales</h1>
 
@@ -183,8 +199,11 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
     <script src="js/servicio_sucursales.js"></script>
+
     <script src="js/controlador_listar_sucursales.js"></script>
+
     <script src="js/getNombre.js"></script>
     <script src="js/clienteIniciado.js"></script>
 

@@ -26,3 +26,17 @@ let registrarMiembro_Club = (pidClub,pidMiembro) => {
         console.log(error);
     }
 };
+
+
+let expulsar_miembro = (pid) =>{
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/salir-de-Club',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+  
+}

@@ -4,6 +4,12 @@ const tbody = document.querySelector('#tbl_librerias tbody');
 let lista_librerias = [];
 let txt_filtro = document.querySelector('#txt_filtro');
 
+let redireccionar = (id) => {
+    localStorage.setItem('libreriaModificar', JSON.stringify(id));
+    window.location.href = 'modificar_libreria.html'
+}
+
+
 let mostrar_tabla = async () => {
 
     lista_librerias = await obtenerLibrerias();
@@ -59,8 +65,7 @@ let mostrar_tabla = async () => {
 
         boton_modificar.addEventListener('click', function () {
             //console.log(this.dataset._id);
-            localStorage.setItem('idLibreria', lista_librerias[i]['_id']);
-            window.location.href = `modificar_libreria.html?_id=${this.dataset._id}`
+            redireccionar(lista_librerias[i]);
         });
         /*                    MODIFICAR LIBRERÍA                   */
 
@@ -70,7 +75,6 @@ let mostrar_tabla = async () => {
 
         let celda_btn_eliminar = fila.insertCell();
         let btn_eliminar = document.createElement('button', 'a');
-        btn_eliminar.innerText = 'Eliminar';
         btn_eliminar.href = '#';
         btn_eliminar.type = 'button';
 
@@ -85,7 +89,7 @@ let mostrar_tabla = async () => {
                 confirmButtonText: 'Sí, estoy seguro'
             }).then((result) => {
                 if (result.value) {
-                    eliminar(lista_librerias[i]._id);
+                    eliminarLibreria(lista_librerias[i]._id);
 
                     Swal.fire(
                         'Librería eliminada exitosamente',
@@ -96,16 +100,17 @@ let mostrar_tabla = async () => {
                         }
                     });
                 }
-            })
+            });
             localStorage.setItem("eliminarLibrería", JSON.stringify(lista_librerias[i]));
-        })
+        });
 
         celda_btn_eliminar.appendChild(btn_eliminar);
         btn_eliminar.appendChild(estilos_btn_eliminar);
         //Botón eliminar
 
     }
-};
+}
+
 
 let filtrar_tabla = async () => {
 
@@ -121,6 +126,7 @@ let filtrar_tabla = async () => {
         }
     }
 };
+
 
 mostrar_tabla();
 txt_filtro.addEventListener('keyup', filtrar_tabla);

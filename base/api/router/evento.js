@@ -48,4 +48,18 @@ router.get('/listar-eventos', function (req, res) {
     })
 });
 
+router.post('/eliminar-evento', function(req, res) {
+    let body = req.body;
+
+    Evento.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo borrar el evento' });
+            } else {
+                res.json({ success: true, msg: 'El evento se borró con éxito' });
+            }
+        }
+    )
+});
+
 module.exports = router;

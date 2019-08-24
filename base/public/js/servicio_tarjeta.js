@@ -92,7 +92,7 @@ let deshabilitar = (pId) => {
     });
 };
 
-let eliminar = (pId) => {
+let eliminarTarjeta = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar_tarjeta',

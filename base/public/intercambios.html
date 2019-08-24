@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/ver-perfil-usuario.css">
-    <link rel="stylesheet" href="css/navbar.css">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Géneros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+
 </head>
 
 <body>
+
+
     <header>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -45,54 +49,42 @@
             <li class="parent" id="dropdown"><a href="#">Otros</a>
                 <ul class="child">
                     <li><a href="intercambios.html">Intercambios</a></li>
-                    <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
+                    <li id='optionUsers'><a href="#">Usuarios</a></li>
                     <li id='optionBitacora'><a href="#">Bitácora</a></li>
                     <li id='optionReportes'><a href="#">Reportes</a></li>
-                    <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
+                    <li id='optionInventario'><a href="#">Inventario</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
-    <main>
-        <div id="myModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content" id="signinpopup">
 
-                <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
-                <div class="optionProfile"><a href="">Mi Carrito</a></div>
-                <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
-                <div class="optionProfile"><a href="">Mis compras</a></div>
-                <div class="optionProfile"><a href="">Mis libros</a></div>
-                <div class="optionProfile"><a href="">Mis intercambios</a></div>
-                <button id="btn_cerrar">Cerrar Sesión</button>
-            </div>
+  <main>
 
-        </div>
+      <div id="myModal" class="modal">
 
-        <h2> <span id="txt_nombreUsuario"></span></h2>
-        <p><span id="avatar"></span></p>
-        <p>Primer Nombre: <span id="txt_primerNombre"></span></p>
-        <p>Segundo Nombre: <span id="txt_segundoNombre"></span></p>
-        <p>Primer Apellido: <span id="txt_primerApellido"></span></p>
-        <p>Segundo Apellido: <span id="txt_segundoApellido"></span></p>
-        <p>Sexo: <span id="txt_sexo"></span></p>
-        <p>Identificación: <span id="txt_identificacion"></span></p>
-        <p>Correo: <span id="txt_correo"></span></p>
-        <p>Provincia: <span id="txt_provincia"></span></p>
-        <p>Cantón: <span id="txt_canton"></span></p>
-        <p>Distrito: <span id="txt_distrito"></span></p>
-        <p>Dirección: <span id="txt_direccion"></span></p>
+          <!-- Modal content -->
+          <div class="modal-content" id="signinpopup">
 
-    </main>
+              <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+              <div class="optionProfile"><a href="">Mi Carrito</a></div>
+              <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+              <div class="optionProfile"><a href="">Mis compras</a></div>
+              <div class="optionProfile"><a href="">Mis libros</a></div>
+              <div class="optionProfile"><a href="">Mis intercambios</a></div>
+              <button id="btn_cerrar">Cerrar Sesión</button>
+          </div>
 
-    <section id="footer">
+      </div>
+
+
+      <section id="footer">
 
         <div class="footerLogo">
             <img src="imgs/panda_blanco.png" width="150px">
         </div>
         <div class="footermap">
-
+    
             <div class="list">
                 <ul>
                     <li class="uhead"><a href="">Librerías</a></li>
@@ -103,23 +95,23 @@
                         <li><a href="">Ofertas</a></li>
                     </ul>
                 </ul>
-
+    
             </div>
-
+    
             <div class="list">
-
-                <ul>
-                    <li class="uhead"><a href="">Libros</a></li>
+    
                     <ul>
-                        <li><a href="">Ver todos los libros</a></li>
-                        <li><a href="">Categorías</a></li>
-                        <li><a href="">Géneros</a></li>
-                        <li><a href="">Más Vendidos</a></li>
-                        <li><a href="">Mejor Calificados</a></li>
+                        <li class="uhead"><a href="" >Libros</a></li>
+                        <ul>
+                            <li><a href="">Ver todos los libros</a></li>
+                            <li><a href="">Categorías</a></li>
+                            <li><a href="">Géneros</a></li>
+                            <li><a href="">Más Vendidos</a></li>
+                            <li><a href="">Mejor Calificados</a></li>
+                        </ul>
                     </ul>
-                </ul>
             </div>
-
+    
             <div class="list">
                 <ul>
                     <li class="uhead"><a href="">Clubes de Lectura</a></li>
@@ -132,38 +124,26 @@
                 </ul>
             </div>
         </div>
-
+    
         <div class="socials">
             <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
-
+    
             <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png">
-
+    
             <img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png">
-
+    
             <img src="https://img.icons8.com/windows/20/ffffff/twitter.png">
-
+    
             <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
-
+                                
             <div class="line-soc"></div>
-            <div>
-                <!--
-
-        <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
-
-      <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
-      <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!-->
-            </div>
+            <!-- <div>
+                
+    
+            <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
+    
+          <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
+          <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!
+            </div> -->
         </div>
     </section>
-
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/servicio_usuario.js"></script>
-    <script src="js/controlador-perfil-usuario.js"></script>
-    <script src="js/getNombre.js"></script>
-    <script src="js/controlador_cerrar_sesion.js"></script>
-    <script src="js/getNombre.js"></script>
-    <script src="js/clienteIniciado.js"></script>
-</body>
-
-</html>
