@@ -31,7 +31,7 @@ let obtenerGeneros = async() =>{
             method: 'get',
             url:'http://localhost:4000/api/listar_generos',
             responseType: 'json'
-            
+
         });
 
         return response.data.listar_generos;
@@ -48,7 +48,7 @@ let obtenerGeneroId = async (_id) => {
             url: `http://localhost:4000/api/buscar_genero_id/${_id}`,
             responseType: 'json'
         });
-        
+
         return response.data.genero;
     } catch (error) {
         // console.log(error);
@@ -62,7 +62,7 @@ let obtenerGeneroId = async (_id) => {
         //data: {
           //  _id: idContacto,
             //genero: pgenero
-       
+
      //   }
    // });
 //};
@@ -81,7 +81,7 @@ let modificarGenero = async (pId, nombre) => {
                genero: nombre
             }
         });
-        
+
         return response.data.success;
     } catch (error) {
         console.log(error);
@@ -112,5 +112,3 @@ let deshabilitar = (pId) => {
         }
     });
 };
-
-

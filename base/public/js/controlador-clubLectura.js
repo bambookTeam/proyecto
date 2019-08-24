@@ -1,11 +1,15 @@
 'use strict';
 
-let modal = document.getElementById("RegistrarClubScreen");
+
+
+let parentSucursal = document.getElementById('lista_sucursal_club');
+let selectSucursal = document.createElement('select');
+selectSucursal.setAttribute('id','sucursales_club');
+parentSucursal.appendChild(selectSucursal);
 
 let btnCancelClub = document.getElementById("btnCancelClub");
 let btnCrearClub = document.getElementById("btnCrearClub");
 
-let span = document.getElementsByClassName("close")[0];
 
 let nombreClub_input = document.querySelector("#txt-clubLectura");
 let modalidad_input = document.querySelector("#modalidad_Club");
@@ -27,19 +31,19 @@ let showSelects = async () => {
     let arrayTema = [];
     let arrayCategorias = [];
     let arrayLibrerias = [];
-    let arraySucursales = [];
 
-    arrayGenero = await listarGenero();
-    arrayTema = await obtenerLibros();
-    arrayCategorias = await obtenerCategorias();
-    arrayLibrerias = await obtenerLibrerias();
-    arraySucursales = await obtenerSucursales();
+
+    arrayGenero=await obtenerGeneros();
+    arrayTema=await obtenerLibros();
+    arrayCategorias=await obtenerCategorias();
+    arrayLibrerias=await obtenerLibrerias();
+
 
     let parentTema = document.getElementById('lista_tema_clubes');
     let parentGenero = document.getElementById('lista_genero_clubes');
     let parentCategoria = document.getElementById('lista_categoria_club');
     let parentLibreria = document.getElementById('lista_libreria_club');
-    let parentSucursal = document.getElementById('lista_sucursal_club');
+
 
     let selectGenero = document.createElement('select');
     selectGenero.setAttribute('id', 'generos_club');
@@ -57,9 +61,7 @@ let showSelects = async () => {
     selectLibreria.setAttribute('id', 'librerias_club');
     parentLibreria.appendChild(selectLibreria);
 
-    let selectSucursal = document.createElement('select');
-    selectSucursal.setAttribute('id', 'sucursales_club');
-    parentSucursal.appendChild(selectSucursal);
+
 
 
     for (let i = 0; i < arrayGenero.length; i++) {
@@ -93,15 +95,47 @@ let showSelects = async () => {
         optionLibreria.innerHTML = arrayLibrerias[i].nombre_comercial;
         optionLibreria.style.width = "300px"
         selectLibreria.appendChild(optionLibreria);
+
     }
 
-    for (let i = 0; i < arraySucursales.length; i++) {
-        let optionSucursal = document.createElement('option');
-        optionSucursal.setAttribute('value', arraySucursales[i].nombre);
-        optionSucursal.innerHTML = arraySucursales[i].nombre;
-        optionSucursal.style.width = "300px"
-        selectSucursal.appendChild(optionSucursal);
+
+    selectLibreria.setAttribute("onchange", 'show_Sucursales_Librerias(value)');
+
+}
+
+let show_Sucursales_Librerias=async(valueLibreria)=>{
+
+
+    let listaSucursales=[];
+    let arrayLibrerias = [];
+
+    arrayLibrerias=await obtenerLibrerias();
+    listaSucursales=await obtenerSucursales();
+
+
+    selectSucursal.innerHTML="";
+
+
+    let currentLibreria_id="";
+
+    for (let index = 0; index < arrayLibrerias.length; index++) {
+        if (arrayLibrerias[index].nombre_comercial==valueLibreria) {
+            currentLibreria_id=arrayLibrerias[index]._id;
+        }
+
     }
+
+    for (let i = 0; i < listaSucursales.length; i++) {
+        if (listaSucursales[i].idLibreria==currentLibreria_id) {
+            let optionSucursal = document.createElement('option');
+            optionSucursal.setAttribute('value', listaSucursales[i].nombre);
+            optionSucursal.innerHTML = listaSucursales[i].nombre;
+            optionSucursal.style.width = "300px";
+            selectSucursal.appendChild(optionSucursal);
+        }
+
+    }
+
 }
 
 window.addEventListener('load', showSelects);
@@ -217,8 +251,10 @@ btnCrearClub.onclick = function () {
 
     if (error == false) {
 
-        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value, categoria_input.value, librerias_input.value, sucursales_input.value, idAdminClub);
+        registrarClub(nombreClub, modalidad, fechainicio, fechaFin, hora, frecuencia, tema_input.value, genero_input.value,categoria_input.value,librerias_input.value,sucursales_input.value,idAdminClub);
+
         cleanupFormClubes();
+
         location.replace('%20clubesLectura.html');
 
     } else {
@@ -226,4 +262,3 @@ btnCrearClub.onclick = function () {
     }
 
 }
-

@@ -2,17 +2,87 @@ let btnSend = document.querySelector('#btnSendMsg');
 let msgtoSend = document.querySelector('#chattextInput');
 
 
+
+let llenarChat = async () => {
+    let listaChats = await listarChats();
+    let clubId = localStorage.getItem('idClub');
+    let usuarioConectado = sessionStorage.getItem('id');
+    let listausuarios = await obtenerUsuarios();
+
+    for (let i = 0; i < listaChats.length; i++) {
+
+        if (listaChats[i].idClub == clubId) {
+            localStorage.setItem('idChat',listaChats[i]._id);
+            let listaMensajes=listaChats[i].mensajes;
+            for (let x = 0; x < listaMensajes.length; x++) {
+
+                let div = document.createElement('div');
+                let img = document.createElement('img');
+                let divText = document.createElement('div');
+
+                if (listaMensajes[x].idSender == usuarioConectado) {
+                    div.classList.add('msgSender');
+                    divText.classList.add('textSender');
+                } else {
+                    div.classList.add('msgVisitor');
+                    divText.classList.add('textVisitor');
+
+                }
+
+                let senderName = document.createElement('h3');
+
+                for (let y = 0; y < listausuarios.length; y++) {
+
+                    if (listaMensajes[x].idSender == listausuarios[y]._id) {
+
+                        let avatar = listausuarios[y].avatar;
+                        img.src = avatar;
+
+                        let nombre = listausuarios[y].nombreUsuario;
+                        senderName.innerHTML = nombre;
+
+                    }
+
+                }
+
+                let timeMsg = document.createElement('span');
+                let time = listaMensajes[x].hora;
+                timeMsg.innerHTML = "[" + time + "]";
+
+                senderName.appendChild(timeMsg);
+
+                let p = document.createElement('p');
+                p.innerHTML = listaMensajes[x].descripcion;
+
+                div.appendChild(img);
+                div.appendChild(divText);
+
+                divText.appendChild(senderName);
+                divText.appendChild(p);
+
+                let parent = document.querySelector('#chatArea');
+
+                parent.appendChild(div);
+            }
+        }
+    }
+
+}
+
 let sendMsg = () => {
+    let usuarioConectado = sessionStorage.getItem('id');
+    let activeChat = localStorage.getItem('idChat');
     if (msgtoSend.value == "") {
-        console.log('escriba pa')
+
 
     } else {
         let div = document.createElement('div');
-        div.classList.add('msgVisitor')
+        div.classList.add('msgSender')
         let img = document.createElement('img');
-        img.setAttribute('src', 'https://img.icons8.com/bubbles/35/000000/lady-with-mail.png');
+        let imgSrc= sessionStorage.getItem('avatar');
+        img.setAttribute('src',imgSrc );
         let textContent = document.createElement('div');
-        textContent.classList.add('textVisitor');
+        textContent.classList.add('textSender');
 
         let senderName = document.createElement('h3');
         senderName.innerHTML = "Le Sender";
@@ -39,14 +109,19 @@ let sendMsg = () => {
         let parent = document.querySelector('#chatArea');
 
         parent.appendChild(div);
+
+
+        addMensaje(activeChat,usuarioConectado,msgtoSend.value,time);
         msgtoSend.value = "";
+
+
     }
 }
-
 let llenarperfilClub = async () => {
     let parentSection = document.querySelector('#info');
 
     let activeClub = localStorage.getItem('idClub');
+    let listaMiembros =  await listarChats();
 
     let listaClubes = await obtenerClubes();
 
@@ -76,6 +151,20 @@ let llenarperfilClub = async () => {
             let horaLinea = document.createElement('p');
             if (listaClubes[i].modalidad == "Virtual") {
                 horaLinea.innerHTML = "00:00";
+                document.querySelector('#chatSection').style.display="block";
+
+                let chatExists=false;
+                for (let x = 0; x < listaMiembros.length; x++) {
+                    if (listaMiembros[x].idClub==activeClub) {
+                        chatExists=true;
+                        console.log('ya tiene');
+                    }
+                }
+
+                if (chatExists==false) {
+                    registrarChat(activeClub,"5d4797b01c9d440000f1d408","Bievenido al Chat de " + listaClubes[i].nombre_Club,"00:00");
+                    location.reload();
+                }
             } else {
                 horaLinea.innerHTML = listaClubes[i].hora + "-" + listaClubes[i].frecuencia;
             }
@@ -137,6 +226,8 @@ let llenarperfilClub = async () => {
 
     }
 
+
+
 }
 btnTest = document.querySelector('#test');
 
@@ -152,5 +243,7 @@ msgtoSend.addEventListener('keydown', function (e) {
     }
 });
 
-window.addEventListener('load', llenarperfilClub);
+window.
+window.addEventListener('load', llenarChat);
 
+window.addEventListener('load', llenarperfilClub);
