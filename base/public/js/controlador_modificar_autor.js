@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 let usuario = JSON.parse(localStorage.getItem("usuario"));
 let lista_autores = [];
@@ -17,8 +17,11 @@ let modificarAutor = async(id) =>{
 
     modificar_autor(id, input_nombre, input_nombre_artistico, input_fecha_nacimiento, input_fecha_muerte, input_nacionalidad, input_biografia, input_premios, input_foto);
 }
-document.querySelector("#btn-registrar-autor").addEventListener("click", function () {
-   modificarAutor(idAutor); 
+document.querySelector("#btn_guardar").addEventListener("click", function () {
+    modificarLibro(idAutor);
+    window.location.href = 'listar-autores.html';
+    // window.location.addEventListener("click", saludar,);
+    
 });
 
 let llenarFormulario = async () => {
@@ -37,8 +40,6 @@ let llenarFormulario = async () => {
         }
         
     }
-    let validarDatos = (date)
-
     limpiar();
 };
 
