@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const boton_registrar = document.querySelector('#btn-registrar-autor');
 const input_nombre = document.querySelector('#txt-nombre-autor');
@@ -8,11 +8,11 @@ const input_fecha_muerte = document.querySelector('#txt-muerte-autor');
 const input_nacionalidad = document.querySelector('#txt-nacionalidad-autor');
 const input_biografia = document.querySelector('#txt-biografia-autor');
 const input_premios = document.querySelector('#txt-premios-autor');
-const input_foto = document.querySelector('#foto');
+const foto_perfil = document.querySelector('#autor_foto_preview');
 
 
 
-let validar = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pnacionalidad, pbiografia, ppremios, pfoto) => {
+let validar = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pnacionalidad, pbiografia, ppremios, pfotoPerfil) => {
 
     let error = false;
 
@@ -36,9 +36,15 @@ let validar = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pna
     } else {
         input_fecha_nacimiento.classList.remove('input_error');
     }
+    if (pfecha_muerte == '') {
+        error = true;
+        input_fecha_muerte.classList.add('input_error');
+    } else {
+        input_fecha_muerte.classList.remove('input_error');
+    }
 
 
-    if (pnacionalidad == 'Nacionalidad') {
+    if (pnacionalidad =='') {
         error = true;
         input_nacionalidad.classList.add('input_error');
     } else {
@@ -59,11 +65,11 @@ let validar = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pna
         input_premios.classList.remove('input_error');
     }
 
-    if (pfoto == '') {
+    if (pfotoPerfil == '#autor_foto_preview') {
         error = true;
-        input_foto.classList.add('input_error');
+        foto_perfil.classList.add('input_error');
     } else {
-        input_foto.classList.remove('input_error');
+        foto_perfil.classList.remove('input_error');
     }
 
     return error;
@@ -79,12 +85,12 @@ let saludar = () => {
     let nacionalidad = input_nacionalidad.value;
     let biografia = input_biografia.value;
     let premios = input_premios.value;
-    let foto = input_foto.value;
+    let foto_autor = foto_perfil.src;
 
-    let error = validar(nombre, nombre_artistico, fecha_nacimiento, fecha_muerte, nacionalidad, biografia, premios, foto);
+    let error = validar(nombre, nombre_artistico, fecha_nacimiento, fecha_muerte, nacionalidad, biografia, premios, foto_autor);
 
     if (error == false) {
-        registrarAutor(nombre, nombre_artistico, fecha_nacimiento, fecha_muerte, nacionalidad, biografia, premios, foto);
+        registrarAutor(nombre, nombre_artistico, fecha_nacimiento, fecha_muerte, nacionalidad, biografia, premios, foto_autor);
         Swal.fire({ //formato json
             title: 'Se ha registrado exitosamente',
             type: 'success',
@@ -102,7 +108,6 @@ let saludar = () => {
 
 
 boton_registrar.addEventListener('click', saludar);
-
 
 
 function readURL(input) {

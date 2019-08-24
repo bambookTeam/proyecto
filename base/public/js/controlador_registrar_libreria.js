@@ -59,14 +59,14 @@ let validarIdentificacion = (pidentificacion) => {
 
     let error = false;
 
-    for ( let i = 0; i < usuarios.length; i++){
+    for (let i = 0; i < usuarios.length; i++) {
 
-        if( usuarios[i].identificacion == pidentificacion){
+        if (usuarios[i].identificacion == pidentificacion) {
 
             error = true;
             input_identificacion.classList.add('input_error');
 
-        }else {
+        } else {
 
             if (pidentificacion.charAt(0) == '0') {
 
@@ -144,11 +144,11 @@ let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion,
         input_identificacion.classList.remove('input_error');
         error = validarIdentificacion(pidentificacion);
 
-        if ( error == true){
+        if (error == true) {
 
             input_identificacion.classList.add('input_error');
 
-        }else {
+        } else {
 
             input_identificacion.classList.remove('input_error');
 
@@ -190,15 +190,15 @@ let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion,
         input_correo.classList.remove('input_error');
         error = validarCorreo(pcorreo);
 
-    if ( error == true){
+        if (error == true) {
 
-        input_correo.classList.add('input_error');
+            input_correo.classList.add('input_error');
 
-    }else {
+        } else {
 
-        input_correo.classList.remove('input_error');
+            input_correo.classList.remove('input_error');
 
-    }
+        }
 
     }
 
@@ -211,26 +211,26 @@ let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion,
     }
 
     //Validar provincia
-    if (pprovincia == ''){
+    if (pprovincia == '') {
         error = true;
         select_provincia.classList.add('input_error');
-    }else {
+    } else {
         select_provincia.classList.remove('input_error');
     }
 
     //Validar cantón
-    if (pcanton == ''){
+    if (pcanton == '') {
         error = true;
         select_canton.classList.add('input_error');
-    }else {
+    } else {
         select_canton.classList.remove('input_error');
     }
 
     //Validar distrito
-    if (pdistrito == ''){
+    if (pdistrito == '') {
         error = true;
         select_distrito.classList.add('input_error');
-    }else {
+    } else {
         select_distrito.classList.remove('input_error');
     }
 
@@ -261,14 +261,15 @@ let saludar = () => {
 
     let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo, nombre_usuario, provincia, canton, distrito);
 
-   // error = validarCorreo(correo);
+    // error = validarCorreo(correo);
 
     if (error == false) {
 
         registrarLibreria(nombre_comercial, identificacion, nombre_fantasia, direccion);
 
-        registroAdminLibreria (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombre_usuario,tipo);
+        registroAdminLibreria(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombre_usuario, tipo);
 
+        obtenerBitacora();
         //location.replace('index.html');
 
     } else {
@@ -280,4 +281,32 @@ let saludar = () => {
     }
 };
 
-boton_registrar.addEventListener('click',saludar);
+let obtenerBitacora = async () => {
+    let listaBitacora = [];
+    listaBitacora = await obtener_Bitacora();
+    let listaUsers = [];
+    listaUsers = await obtenerUsuarios();
+    let date = new Date();
+    let descripcion = "";
+
+    let usersBitacora = [];
+    console.log(usersBitacora);
+    for (let x = 0; x < listaBitacora.length; x++) {
+        usersBitacora.push(listaBitacora[x].usuarioRegistrado);
+    }
+
+    for (let index = 0; index < listaUsers.length; index++) {
+        let n = usersBitacora.includes(listaUsers[index]._id);
+
+        if (n == false) {
+            if (listaUsers[index].tipo == 1) {
+                descripcion = "Registro Admin Libreria";
+            } else {
+                descripcion = "Registro Cliente";
+            }
+            registrarEnBitacora(listaUsers[index]._id, descripcion, date);
+        }
+    }
+}
+
+boton_registrar.addEventListener('click', saludar);

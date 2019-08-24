@@ -4,32 +4,38 @@ const express = require('express'),
     router = express.Router(),
     Libreria = require('../models/libreria.model');
 
-    router.param("_id", function (req, res, next, _id) {
-        req.body._id = _id;
-        next();
-    });
+router.param("_id", function (req, res, next, _id) {
+    req.body._id = _id;
+    next();
+});
 
 //Definición de la ruta para registrar librerías
-router.post('/registrar-libreria', function(req, res) {
+router.post('/registrar-libreria', function (req, res) {
     let body = req.body;
 
+    console.log(body);
 
     let nueva_libreria = new Libreria({
         id: body.id,
         nombre_comercial: body.nombre_comercial,
         nombre_fantasia: body.nombre_fantasia,
-        direccion: body.direccion
+        direccion: body.direccion,
+        ubicacion: body.ubicacion
     });
 
     nueva_libreria.save(
-        function(err, libreriaDB) {
+        function (err, libreriaDB) {
             if (err) {
+                console.log('Error registrar libreria');
+                console.log(err);
                 return res.status(400).json({
                     success: false,
                     msj: 'La librería no se pudo guardar',
                     err
                 });
             } else {
+
+                console.log('Sirve registrar librería');
                 res.json({
                     success: true,
                     msj: 'La librería se guardó con éxito'
@@ -39,8 +45,8 @@ router.post('/registrar-libreria', function(req, res) {
     );
 });
 
-router.get('/listar-librerias', function(req, res) {
-    Libreria.find(function(err, libreriaBD) {
+router.get('/listar-librerias', function (req, res) {
+    Libreria.find(function (err, libreriaBD) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -56,8 +62,8 @@ router.get('/listar-librerias', function(req, res) {
     })
 });
 
-router.get('/buscar-libreria-id/:_id', function(req, res) {
-    Libreria.findById(req.body._id, function(err, libreriaBD) {
+router.get('/buscar-libreria-id/:_id', function (req, res) {
+    Libreria.findById(req.body._id, function (err, libreriaBD) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -73,10 +79,10 @@ router.get('/buscar-libreria-id/:_id', function(req, res) {
     })
 });
 
-router.post('/agregar-sucursal', function(req, res) {
+router.post('/agregar-sucursal', function (req, res) {
 
     Libreria.update(
-        {_id: req.body._id},
+        { _id: req.body._id },
         {
             $push: {
                 'sucursales': {
@@ -88,7 +94,7 @@ router.post('/agregar-sucursal', function(req, res) {
             }
         },
 
-        function(error){
+        function (error) {
             if (error) {
                 return res.status(400).json({
                     success: false,
@@ -105,5 +111,51 @@ router.post('/agregar-sucursal', function(req, res) {
     )
 
 });
+
+router.post('/eliminar_libreria', function (req, res) {
+    let body = req.body;
+
+    Libreria.findByIdAndRemove(body._id,
+        function (error) {
+            if (error) {
+
+                console.log('Error');
+                console.log(err);
+
+                res.json({ success: false, msg: 'No se pudo eliminar la librería' });
+            } else {
+                console.log("sirve eliminar la librería");
+                res.json({ success: true, msg: 'La librería se eliminó con éxito' });
+            }
+        }
+    )
+});
+
+router.post('/modificar-libreria', function (req, res) {
+    let body = req.body;
+
+    console.log('Body');
+    console.log(body);
+    Libreria.findByIdAndUpdate(body._id, {
+        $set: req.body
+    },
+        function (error) {
+
+            if (error) {
+
+                console.log("error");
+                console.log(error);
+
+                res.json({ success: false, msg: 'No se pudo habilitar el club' });
+            } else {
+                console.log("sirve modificar la Librería");
+                res.json({ success: true, msg: 'El club se habilitó con éxito' });
+            }
+        }
+    )
+
+});
+
+
 
 module.exports = router;

@@ -46,5 +46,18 @@ router.get('/listar-miembros', function (req, res) {
         }
     })
 });
+router.post('/salir-de-Club', function(req, res) {
+    let body = req.body;
+
+    ClubMiembro.findByIdAndRemove(body._id,
+        function(error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo expulsar del Club' });
+            } else {
+                res.json({ success: true, msg: 'Se salio del grupo exitosamente' });
+            }
+        }
+    )
+});
 
 module.exports = router;

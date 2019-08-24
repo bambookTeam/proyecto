@@ -5,10 +5,10 @@
 let obtenerListaUsuarios = async (pcorreo) => {
 
     usuarios = await obtenerUsuarios();
-    
+
 };
 var usuarios = [];
- usuarios = obtenerListaUsuarios();
+usuarios = obtenerListaUsuarios();
 
 
 
@@ -123,14 +123,14 @@ let validarIdentificacion = (pidentificacion) => {
 
     let error = false;
 
-    for ( let i = 0; i < usuarios.length; i++){
+    for (let i = 0; i < usuarios.length; i++) {
 
-        if( usuarios[i].identificacion == pidentificacion){
+        if (usuarios[i].identificacion == pidentificacion) {
 
             error = true;
             input_identificacion.classList.add('input_error');
 
-        }else {
+        } else {
 
             if (pidentificacion.charAt(0) == '0') {
 
@@ -169,47 +169,47 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pprovincia
     let error = false;
 
 
-    if (pprovincia == ''){
+    if (pprovincia == '') {
 
         error = true;
         select_provincia.classList.add('input_error');
 
-    }else {
+    } else {
 
         select_provincia.classList.remove('input_error');
 
     }
 
-    if (pcanton == ''){
+    if (pcanton == '') {
 
         error = true;
         select_canton.classList.add('input_error');
 
-    }else {
+    } else {
 
         select_canton.classList.remove('input_error');
 
 
     }
 
-    if (pdistrito == ''){
+    if (pdistrito == '') {
 
         error = true;
         select_distrito.classList.add('input_error');
 
-    }else {
+    } else {
 
         select_distrito.classList.remove('input_error');
 
 
     }
 
-    if( pdireccion == ''){
+    if (pdireccion == '') {
 
         error = true;
         input_direccion.classList.add('input_error');
 
-    }else {
+    } else {
 
         input_direccion.classList.remove('input_error')
 
@@ -258,11 +258,11 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pprovincia
         input_identificacion.classList.remove('input_error');
         error = validarIdentificacion(pidentificacion);
 
-        if ( error == true){
+        if (error == true) {
 
             input_identificacion.classList.add('input_error');
 
-        }else {
+        } else {
 
             input_identificacion.remove('input_error');
 
@@ -281,15 +281,15 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pprovincia
         input_correo.classList.remove('input_error');
         error = validarCorreo(pcorreo);
 
-    if ( error == true){
+        if (error == true) {
 
-        input_correo.classList.add('input_error');
+            input_correo.classList.add('input_error');
 
-    }else {
+        } else {
 
-        input_correo.classList.remove('input_error');
+            input_correo.classList.remove('input_error');
 
-    }
+        }
 
     }
 
@@ -310,7 +310,6 @@ let validar = (pnombre1, papellido1, psexo, pidentificacion, pcorreo, pprovincia
 };
 
 let guardar = () => {
-
     let nombre1 = input_primer_nombre.value;
     let nombre2 = input_segundo_nombre.value;
     let apellido1 = input_primer_apellido.value;
@@ -324,8 +323,7 @@ let guardar = () => {
     let direccion = input_direccion.value;
     let nombreUsuario = input_nombre_usuario.value;
     let tipo = 2;
-    let estado= 1
-
+    let estado = 1
     let error = validar(nombre1, apellido1, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario);
 
 
@@ -337,7 +335,8 @@ let guardar = () => {
             title: 'Se ha guardado el cliente',
             type: 'success',
             text: 'Se enviara un correo para confirmar su cuenta'
-        })
+        });
+        obtenerBitacora();
     } else {
         Swal.fire({
             title: 'No se pudo hacer el registro',
@@ -345,7 +344,35 @@ let guardar = () => {
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
 
-    }
+    }    
 };
 
+let obtenerBitacora = async () => {
+    let listaBitacora = [];
+    listaBitacora = await obtener_Bitacora();
+    let listaUsers = [];
+    listaUsers = await obtenerUsuarios();
+    let date = new Date();
+    let descripcion="";
+
+    let usersBitacora=[];
+    console.log(usersBitacora);
+    for (let x = 0; x < listaBitacora.length; x++) {
+        usersBitacora.push(listaBitacora[x].usuarioRegistrado);
+    }
+
+    for (let index = 0; index < listaUsers.length; index++) {
+        let n=usersBitacora.includes(listaUsers[index]._id);
+        
+       if (n==false) {
+           if (listaUsers[index].tipo==1) {
+               descripcion="Registro Admin Libreria";
+           } else {
+               descripcion="Registro Cliente";
+           }
+           registrarEnBitacora(listaUsers[index]._id,descripcion,date);
+       }   
+    }    
+}
 boton_registrar.addEventListener('click', guardar);
+

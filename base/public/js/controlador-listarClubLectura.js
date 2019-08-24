@@ -6,6 +6,12 @@ let btnClubes = document.getElementById("btnListarTodosLosClubes");
 let listarClubes = async () => {
     let listaClubes = [];
     listaClubes = await obtenerClubes();
+
+    let listaMiembrosClubes = [];
+    listaMiembrosClubes = await obtenerListaMiembros();
+
+
+
     let parentClubes = document.getElementById('clubes');
     parentClubes.innerHTML = "";
     listaClubes = listaClubes.reverse();
@@ -51,6 +57,57 @@ let listarClubes = async () => {
         btnUnirseClub.innerText = "Unirse";
         btnUnirseClub.setAttribute('class', 'unirse_Club');
         btnUnirseClub.dataset._id = listaClubes[i]._id;
+        let pidMiembro = sessionStorage.getItem('id');
+
+        let alreadyMember = false;
+
+
+
+
+        for (let x = 0; x < listaMiembrosClubes.length; x++) {
+            if (listaMiembrosClubes[x].idClub == listaClubes[i]._id && listaMiembrosClubes[x].idUsuario == pidMiembro) {
+                alreadyMember = true;
+            }
+        }
+
+        if (listaClubes[i].idAdmin == pidMiembro) {
+            alreadyMember = true;
+
+        }
+
+        if (alreadyMember == true) {
+            btnUnirseClub.innerText = "Ver Perfil";
+            btnUnirseClub.addEventListener('click', function () {
+                localStorage.setItem('idClub', listaClubes[i]._id);
+                location.replace('ver_perfilClubLectura.html');
+            });
+        } else {
+            btnUnirseClub.addEventListener('click', function () {
+                let pidClub = listaClubes[i]._id;
+
+                registrarMiembro_Club(pidClub, pidMiembro);
+
+
+                Swal.fire({
+                    title: 'Se ha unido al Club con exito',
+                    text: 'Se redirigirá al Perfil del Club',
+                    imageUrl: 'http://www.mywebshelf.com/images/icons/book.gif',
+                    imageWidth: 300,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                    animation: false,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
+                localStorage.setItem('idClub', listaClubes[i]._id);
+                setTimeout(function () {
+                    location.replace('ver_perfilClubLectura.html');
+                }, 2000);
+
+
+            });
+        }
 
         clubInfoDiv.appendChild(h1);
         clubInfoDiv.appendChild(modalidadLinea);
@@ -61,35 +118,7 @@ let listarClubes = async () => {
         clubInfoDiv.appendChild(categorialinea);
         div.appendChild(btnUnirseClub);
 
-        btnUnirseClub.addEventListener('click', async function () {
-            let listaMiembros = [];
-            listaMiembros = await obtenerListaMiembros();
-            localStorage.setItem('idClub', listaClubes[i]._id);
-            let idUsuario = sessionStorage.getItem('id');
-            let errorExists = false;
 
-            for (let index = 0; index < listaMiembros.length; index++) {
-
-                if (listaMiembros[index].idClub == listaClubes[i]._id && idUsuario == listaMiembros[index].idUsuario) {
-                    errorExists = true;
-
-                } else {
-
-                }
-            }
-
-            if (listaClubes[i].idAdmin == idUsuario) {
-                console.log('ya es admin pa');
-            } else {
-                if (errorExists == true) {
-                    console.log('ya se unio antes pa');
-                } else {
-                    console.log('se unio');
-                    registrarMiembro_Club(listaClubes[i]._id, idUsuario);
-                }
-            }
-
-        })
     }
 
 }
@@ -193,7 +222,7 @@ let misClubes = async () => {
             parentClubes.appendChild(div);
 
             let img = document.createElement('img');
-            img.setAttribute('src', 'https://res.cloudinary.com/dc8k6i5xm/image/upload/v1563223101/pandauser_sw7weq.png');
+            img.setAttribute('src', 'https://img.icons8.com/ios/100/000000/book-shelf.png');
 
             div.appendChild(img);
             div.appendChild(clubInfoDiv);
@@ -243,8 +272,8 @@ let misClubes = async () => {
             });
 
 
-            verClub.addEventListener('click',function(){
-                localStorage.setItem('idClub',listaClubes[i]._id);
+            verClub.addEventListener('click', function () {
+                localStorage.setItem('idClub', listaClubes[i]._id);
                 location.replace('ver_perfilClubLectura.html');
             });
         }
@@ -276,7 +305,7 @@ let misClubes = async () => {
                 parentMisClubes.appendChild(div);
 
                 let img = document.createElement('img');
-                img.setAttribute('src', 'https://res.cloudinary.com/dc8k6i5xm/image/upload/v1563223101/pandauser_sw7weq.png');
+                img.setAttribute('src', 'https://img.icons8.com/ios/100/000000/book-shelf.png');
 
                 div.appendChild(img);
                 div.appendChild(clubInfoDiv);
@@ -319,13 +348,65 @@ let misClubes = async () => {
                 div.appendChild(verClub);
                 div.appendChild(btnCrearEvento);
 
-                btnCrearEvento.addEventListener('click', function () {
+                btnCrearEvento.addEventListener('click', async function () {
+                    let listaMiembrosClubes = [];
+                    listaMiembrosClubes = await obtenerListaMiembros();
+                    let getIdUnion = "";
 
-                    //location.replace('registrar-evento.html');
+
+                    let usuarioActivoClub = sessionStorage.getItem('id');
+                    let clubActivo = localStorage.getItem('idClub')
+                    for (let x = 0; x < listaMiembrosClubes.length; x++) {
+
+                        if (usuarioActivoClub == listaMiembrosClubes[x].idUsuario && listaMiembrosClubes[x].idClub == listaClubes[i]._id) {
+                            getIdUnion = listaMiembrosClubes[x]._id;
+
+                        }
+                    }
+
+
+                    Swal.fire({
+                        title: '¿Está seguro que desea salirse de este Club de Lectura?',
+                        showCancelButton: true,
+                        imageUrl: 'https://static.thenounproject.com/png/158488-200.png',
+                        imageWidth: 50,
+                        imageHeight: 50,
+                        imageAlt: 'Custom image',
+                        confirmButtonColor: '#f6b93b',
+                        cancelButtonColor: '#000',
+                        confirmButtonText: 'Yes, delete it!'
+
+                    }).then((result) => {
+                        if (result.value) {
+                            setTimeout(function () {
+
+                                location.replace('%20clubesLectura.html');
+                            }, 1500);
+
+                            expulsar_miembro(getIdUnion);
+
+                            Swal.fire({
+                                title: 'Te has salido del Club de Lectura',
+                                text: 'Se redireccionará a la página de Clubes',
+                                type: 'success',
+                                showCancelButton: false,
+                                showConfirmButton: false,
+                                allowOutsideClick: false
+                            })
+
+                        }
+                    })
+
+
+
+
+
+
                 });
 
+
                 verClub.addEventListener('click', function () {
-                    localStorage.setItem('idClub',listaClubes[i]._id);
+                    localStorage.setItem('idClub', listaClubes[i]._id);
                     location.replace('ver_perfilClubLectura.html');
                 });
 
@@ -342,6 +423,10 @@ let misClubes = async () => {
 
 btn.onclick = function () {
     location.replace('registrar_clubLectura.html');
+}
+
+let redirigir_perfil_club = () => {
+    location.replace('ver_perfilClubLectura.html');
 }
 
 window.addEventListener('load', listarClubes);

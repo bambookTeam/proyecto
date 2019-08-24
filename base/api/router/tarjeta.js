@@ -18,6 +18,8 @@ router.post('/registrar_tarjeta', function (req, res) {
         numerotarjeta: body.numerotarjeta,
         fechavencimiento: body.fechavencimiento,
         codigocvv: body.codigocvv,
+        estado: 'Habilitado'
+
     });
 
     console.log("guardado de tarjeta");
@@ -50,10 +52,8 @@ router.post('/registrar_tarjeta', function (req, res) {
 
 
 router.post('/listar_tarjetas', function (req, res) {
-
-    console.log("listar tajetas ejecutado 2 ");
+    console.log("t tarjetas");
     console.log(req.body);
-
     Tarjeta.find({ id: req.body.id }, function (err, tarjetasBD) {
         if (err) {
             console.log("error");
@@ -76,7 +76,41 @@ router.post('/listar_tarjetas', function (req, res) {
     })
 })
 
-router.post('/deshabilitar-tarjeta', function (req, res) {
+router.get('/buscar_tarjeta-id/_id', function (req, res) {
+    
+    Genero.findById(function (err, generoDB) {
+
+        if (err) {
+            return res.status(400).json({
+                success: false,
+                msj: 'No se encontró ningún género con ese _id',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                genero: generoDB
+            });
+        }
+    })
+});
+router.post('/modificar_tarjeta', function (req, res) {
+    let body = req.body;
+   
+    Tarjeta.findByIdAndUpdate(body._id, {
+        $set: req.body
+    },
+    function(error) {
+        if (error) {
+            res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
+        } else {
+            res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
+        }
+    }
+)
+});
+
+router.post('/deshabilitar_tarjeta', function (req, res) {
     let body = req.body;
 
     Tarjeta.findByIdAndUpdate(body._id, {
@@ -97,7 +131,7 @@ router.post('/deshabilitar-tarjeta', function (req, res) {
     )
 });
 
-router.post('/habilitar-tarjeta', function (req, res) {
+router.post('/habilitar_tarjeta', function (req, res) {
     let body = req.body;
 
     Tarjeta.findByIdAndUpdate(body._id, {
@@ -114,30 +148,14 @@ router.post('/habilitar-tarjeta', function (req, res) {
         }
     
 });
-router.post('/modificar_tarjeta', function (req, res) {
-    let body = req.body;
-    console.log("modificar tarjeta ejecutado");
-    console.log(body);
 
-    Tarjeta.findByIdAndUpdate(body._id, {
-        $set: req.body
-    },
-    function(error) {
-        if (error) {
-            res.json({ success: false, msg: 'No se pudo modificar la tarjeta' });
-        } else {
-            res.json({ success: true, msg: 'La tarjeta se modificó con éxito' });
-        }
-    }
-)
-});
-router.post('/eliminar-contacto', function(req, res) {
+router.post('/eliminar_tarjeta', function(req, res) {
     let body = req.body;
 
     Contacto.findByIdAndRemove(body._id,
         function(error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo borrar el contacto' });
+                res.json({ success: false, msg: 'No se pudo borrar la tarjeta' });
             } else {
                 res.json({ success: true, msg: 'El contacto se borró con éxito' });
             }

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+
+    <title>
+        Registrar Categoría
+    </title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>Modificar Categoría</title>
+    <link rel="stylesheet" href="css/registrar_categoria.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+
+</head>
+
+<body>
+
+    <header>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <a href="inicioCliente.html">
+            <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+                id="barnesLogo">
+        </a>
+        <div class="sign-in-button">
+            <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+        </div>
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent"><a href="#">Librerías</a>
+                <ul class="child">
+                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li><a href="#">Géneros</a></li>
+                    <li><a href="#">Categorías</a></li>
+                </ul>
+            </li>
+            <li class="parent" id="dropdown"><a href="#">Clubes de Lectura</a>
+                <ul class="child">
+                    <li><a href="#">Buscar Clubes</a></li>
+                    <li><a href="#">Mis Clubes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <h1>Modificar Categoría</h1>
+
+        <section id="nombre_categoria">
+
+            <h2>Datos de la Categoría</h2>
+
+            <input id="txt_nombre_categoria" type="text" placeholder="Nombre Categoría">
+
+        </section>
+
+        <button type="button" class="boton_registrar" id="btn_registrar">Modificar</button>
+
+        <footer></footer>
+
+    </main>
+
+
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/servicio_categoria.js"></script>
+    <script src="js/controlador_modificar_categoria.js"></script>
+
+</body>
+
+</html>

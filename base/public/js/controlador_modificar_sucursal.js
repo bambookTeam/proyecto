@@ -1,6 +1,7 @@
 'use strict';
 
 let usuario = JSON.parse(localStorage.getItem("usuario"));
+
 let lista_sucursales = [];
 let idSucursal = localStorage.getItem('_idSucursal');
 

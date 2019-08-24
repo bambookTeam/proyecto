@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarLibreria = (pnombre_comercial,identificacionUsuarioLibreria, pnombre_fantasia, pdireccion) => {
+let registrarLibreria = (pnombre_comercial, identificacionUsuarioLibreria, pnombre_fantasia, pdireccion) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-libreria',
@@ -9,7 +9,8 @@ let registrarLibreria = (pnombre_comercial,identificacionUsuarioLibreria, pnombr
             id: identificacionUsuarioLibreria,
             nombre_comercial: pnombre_comercial,
             nombre_fantasia: pnombre_fantasia,
-            direccion: pdireccion
+            direccion: pdireccion,
+            ubicacion: "{" + "lat:" + marker.position.lat() + "," + "lng:" + marker.position.lng() + "}"
         }
     });
 };
@@ -37,7 +38,7 @@ let registrarAdminLibreria = (pidentificacion, pprimer_nombre, psegundo_nombre, 
     });
 };
 
-let obtenerLibrerias = async() => {
+let obtenerLibrerias = async () => {
     try {
         // fetch data from a url endpoint
         const response = await axios({
@@ -52,7 +53,7 @@ let obtenerLibrerias = async() => {
     }
 };
 
-let obtenerLibreriaId = async(_id) => {
+let obtenerLibreriaId = async (_id) => {
     try {
         // fetch data from an url endpoint
         const response = await axios({
@@ -67,3 +68,28 @@ let obtenerLibreriaId = async(_id) => {
     }
 };
 
+let eliminarLibreria = (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar_libreria',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};
+
+let modificar_libreria = (pid, input_nombre_comercial, input_nombre_fantasia, input_direccion) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-libreria',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            nombre_comercial: input_nombre_comercial,
+            nombre_fantasia: input_nombre_fantasia,
+            direccion: input_direccion
+        }
+    });
+};

@@ -33,7 +33,7 @@
           <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
           <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
           <a href="listar_tarjetas.html">Tarjetas</a>
-          <a href="#" id="optionIntercambio">Intercambios</a>
+          <a href="intercambios.html" id="optionIntercambio">Intercambios</a>
           <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
         </div>
         <div class="optionsNav">
@@ -53,7 +53,21 @@
   <body>
       <main>
 
+          <div id="myModal" class="modal">
 
+              <!-- Modal content -->
+              <div class="modal-content" id="signinpopup">
+  
+                  <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+                  <div class="optionProfile"><a href="">Mi Carrito</a></div>
+                  <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+                  <div class="optionProfile"><a href="">Mis compras</a></div>
+                  <div class="optionProfile"><a href="">Mis libros</a></div>
+                  <div class="optionProfile"><a href="">Mis intercambios</a></div>
+                  <button id="btn_cerrar">Cerrar Sesión</button>
+              </div>
+  
+          </div>
         <h1>Modificar Contraseña</h1>
 
         <section id = "datos_contrasenna">
@@ -92,6 +106,8 @@
       <script src = "js/servicio_usuario.js"></script>
       <script src = "js/controlador_modificarContrasena.js"></script>
       <script src="js/controlador_cerrar_sesion.js"></script>
+      <script src="js/getNombre.js"></script>
+      <script src="js/clienteIniciado.js"></script>
 
 
 

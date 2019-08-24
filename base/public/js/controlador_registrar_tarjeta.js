@@ -3,9 +3,9 @@ var btnRegistrartarjeta = document.getElementById('btn-registrar-tarjeta'),
     overlay = document.getElementById('overlay'),
     popup = document.getElementById('popup'),
     cerrarpopup = document.getElementById('cerrar');
-const  input_numerotarjeta = document.getElementById('txt-numerotarjeta'),
-    input_fechavencimiento = document.getElementById('txt-fechadevencimiento'),
-    input_codigocvv = document.querySelector('#txt-codigocvv');
+const  input_numerotarjeta = document.getElementById('txt-numerotarjeta');
+const  input_fechavencimiento = document.getElementById('txt-fechadevencimiento');
+const    input_codigocvv = document.querySelector('#txt-codigocvv');
 
 
 var today = new Date();
