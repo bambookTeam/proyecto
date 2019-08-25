@@ -1,62 +1,72 @@
-
-
-
-
 main{
-
     display: flow-root;
     text-align: center;
 }
 
-main button{
-    margin: 50px 0;
-    padding: 10px;
-    border: 2px solid #76323F;
-    border-radius: 15px;
-    font-size: 20px;
-    color: #76323F;
-    font-weight: bold;
-    background: none;
-    outline: none; 
+.pantalla_dividida1{
+    float: left;
+    background-image: url(https://www.3wallpapers.fr/wp-content/uploads/2015/05/Library-iPhone-3Wallpapers-Parallax.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 300px;
+    margin: 0 40px;
+}
+
+.pantalla_dividida2{
+    float: left;
+    width: 50%;
+    margin: 10px;
 }
 
 main h1{
-
-    color: #76323F;
+    color: #000;
     font-size: 30px;
     margin: 30px;
 }
 
 .nombre_categoria{
-
     text-align: center;
-}
-
-main h2 {
-
-    color: #76323F;
-    font-size: 20px;
-    margin: 30px;
-
 }
 
 main input{
     width: 60%;
     height: 30px;
-    margin: 15px;
+    margin: 0 15px;
+    margin-bottom: 50px;
     padding: 5px;
-    border: 1px solid #76323F;
-    border-radius: 15px;
+    border: none;
+    border-bottom: 1px solid #000;
     background: none;
     outline: none;
 }
 
+::-webkit-input-placeholder{
+    color: #000;
+}
+
 .input_error {
-    
     border: 2px #e74c3c solid !important;
 }
 
-::-webkit-input-placeholder{
-    color: #76323F;
+.boton_registrar{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #000;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
 }
 
+.boton_registrar:hover{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #f6b93b;
+    outline: none;
+}

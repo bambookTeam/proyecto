@@ -5,44 +5,52 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
-        Registro Club de Lectura
+        Restablecer Contraseña
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
 
-    <link rel="stylesheet" href="css/registrar_clubLectura.css">
+    <link rel="stylesheet" href="css/recuperar_contrasenna.css">
     <link rel="stylesheet" href="css/navbar.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
-<header>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <a href="inicioCliente.html">
-        <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
-            id="barnesLogo">
-    </a>
-    <div class="sign-in-button">
-        <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
-    </div>
-</header>
-
 <body>
 
-    <h1>Restablecer Contraseña</h1>
+    <header>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <a href="inicioCliente.html">
+            <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+                id="barnesLogo">
+        </a>
+        <div class="sign-in-button">
+            <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+        </div>
+    </header>
 
-    <section >
+    <main>
 
-        <label for="txt_correo"></label>
-        <input id = "txt_correo" type="text">
+        <h1>Restablecer Contraseña</h1>
 
-        <div>
-            <button type = "button" class="boton-recuperar" id= "btn_recuperar">Recuperar</button>
+        <div class="contenedor">
+
+            <section>
+
+                <div>
+                    <input id="txt_correo" type="text" placeholder="Nueva Contraseña">
+                </div>
+
+            </section>
+
+            <button type="button" class="boton-recuperar" id="btn_recuperar">Recuperar</button>
+
         </div>
 
-    </section>    
+    </main>
+
 
 
 </body>
@@ -50,7 +58,7 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="js/servicio_usuario.js"></script>
-<script src ="js/controlador_recuperarContrasena.js" ></script>
+<script src="js/controlador_recuperarContrasena.js"></script>
 <!--<script src="js/controlador_cerrar_sesion.js"></script> -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
