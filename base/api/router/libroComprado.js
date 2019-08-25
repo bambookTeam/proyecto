@@ -51,6 +51,34 @@ router.post('/registrar-compra', function(req, res){
 
 });
 
+router.get('/listar_librosComprados', function(req, res){
+    LibroComprado.find(function(err, compraDB){
+        
+        if(err){
+
+            return res.status(400).json({
+                success: false, 
+                msj: 'No se encontraron libros comprados'
+            });
+
+        }else {
+
+            return res.json({
+                success: true,
+                lista_librosComprados: compraDB
+
+            });
+
+
+        }
+
+    })
+
+
+});
+
+
+
 router.post('/agregar-libroComprado', function(req, res){
 
     LibroComprado.findByIdAndUpdate(req.body._id, {$set: {cant: req.body.cant}},
