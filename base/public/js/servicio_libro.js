@@ -2,7 +2,7 @@
 
 // import { type } from "os";
 
-let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pportada, pcontraportada, pgenero, ptipo, pcantidad, pprecio) => {
+let registrarLibro = ( pportada, pcontraportada, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pgenero, ptipo, pcantidad, pprecio) => {
     let pestado=1;
     axios({
         method: 'post',
@@ -11,6 +11,8 @@ let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pis
 
 
         data: {
+            portada: pportada,
+            contraportada: pcontraportada,
             titulo: ptitulo,
             edicion: pedicion,
             editorial: peditorial,
@@ -22,8 +24,6 @@ let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pis
             tipo: ptipo,
             cantidad: pcantidad,
             precio: pprecio,
-            portada: pportada,
-            contraportada: pcontraportada,
             estado:pestado
         }
 
@@ -64,7 +64,7 @@ let obtener_libroId = async (_id) => {
     }
 }
 
-let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pportada, pcontraportada,  pgenero, ptipo, pcantidad, pprecio) => {
+let modificar_libro = (pid, pportada, pcontraportada, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pgenero, ptipo, pcantidad, pprecio) => {
     let pestado=1;
     axios({
         method: 'post',
@@ -74,6 +74,8 @@ let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidiom
 
         data: {
             _id: pid,
+            portada: pportada,
+            contraportada: pcontraportada,
             titulo: ptitulo,
             edicion: pedicion,
             editorial: peditorial,
@@ -85,8 +87,6 @@ let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidiom
             tipo: ptipo,
             cantidad: pcantidad,
             precio: pprecio,
-            portada: pportada,
-            contraportada: pcontraportada,
             estado: pestado
         }
     });
