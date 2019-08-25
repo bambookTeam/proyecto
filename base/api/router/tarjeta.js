@@ -83,7 +83,7 @@ router.get('/buscar_tarjeta-id/_id', function (req, res) {
         if (err) {
             return res.status(400).json({
                 success: false,
-                msj: 'No se encontró ningún género con ese _id',
+                msj: 'No se encontró ninguna tarjeta con ese _id',
                 err
             });
         } else {
