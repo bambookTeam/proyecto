@@ -1,8 +1,14 @@
 'use strict';
 
-const tbody = document.querySelector('#tbl_librerias tbody');
+const tbody = document.querySelector('#tbl_solicitudes_librerias tbody');
 let lista_librerias = [];
 let txt_filtro = document.querySelector('#txt_filtro');
+
+let redireccionar = (id) => {
+    localStorage.setItem('libreriaModificar', JSON.stringify(id));
+    // window.location.href = 'modificar_libreria.html'
+}
+
 
 let mostrar_tabla = async () => {
 
@@ -14,9 +20,6 @@ let mostrar_tabla = async () => {
     for (let i = 0; i < lista_librerias.length; i++) {
         let fila = tbody.insertRow();
         fila.insertCell().innerHTML = lista_librerias[i]['nombre_comercial'];
-        fila.insertCell().innerHTML = lista_librerias[i]['nombre_fantasia'];
-        fila.insertCell().innerHTML = lista_librerias[i]['direccion'];
-        fila.insertCell();
 
         /*                      VER PERFIL LIBRERÍA                   */
         let celda_perfil = fila.insertCell();
@@ -34,41 +37,10 @@ let mostrar_tabla = async () => {
         });
         /*                      VER PERFIL LIBRERÍA                   */
 
-
-
-        /*                    AGREGAR SUCURSAL                   */
-        let celda_sucursal = fila.insertCell();
-        let boton_sucursal = document.createElement('button');
-        boton_sucursal.innerHTML = 'Agregar Sucursal';
-        boton_sucursal.addEventListener('click', function () {
-            localStorage.setItem('idLibreria', lista_librerias[i]['_id']);
-            location.replace('registrar_sucursal.html');
-        });
-
-        celda_sucursal.appendChild(boton_sucursal);
-        /*                    AGREGAR SUCURSAL                   */
-
-        /*                    MODIFICAR LIBRERÍA                   */
-        let celda_modificar = fila.insertCell();
-        let boton_modificar = document.createElement('button');
-        boton_modificar.type = 'button';
-        boton_modificar.innerText = 'Modificar';
-        boton_modificar.dataset._id = lista_librerias[i]['_id'];
-
-        celda_modificar.appendChild(boton_modificar);
-
-        boton_modificar.addEventListener('click', function () {
-            //console.log(this.dataset._id);
-            redireccionar(lista_librerias[i]);
-        });
-        /*                    MODIFICAR LIBRERÍA                   */
-
         //Botón eliminar
-        let estilos_btn_eliminar = document.createElement('img');
-        estilos_btn_eliminar.setAttribute('src', './imgs/delete-icon.png')
-
         let celda_btn_eliminar = fila.insertCell();
         let btn_eliminar = document.createElement('button', 'a');
+        btn_eliminar.innerText = 'Rechazar';
         btn_eliminar.href = '#';
         btn_eliminar.type = 'button';
 
