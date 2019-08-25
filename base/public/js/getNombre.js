@@ -1,4 +1,4 @@
-let usuario_activo=sessionStorage.getItem('tipoUsuario')
+let usuario_activo_123=sessionStorage.getItem('tipoUsuario')
 let optionSucursales=document.querySelector('#optionSucursales');
 let optionLibrerias = document.querySelector('#optionlibrerias');
 let optionUsuarios = document.querySelector('#optionUsers');
@@ -12,10 +12,10 @@ var items = $('.optionProfile')
 
 
 window.addEventListener('load',function(){
-    if(usuario_activo==2){
+    if(usuario_activo_123==2){
         
     optionSucursales.style.display="none";
-    optionLibrerias.href='%20clubesLectura.html';
+    optionLibrerias.href='listar_librerias_cliente.html';
     optionUsuarios.style.display="none";
     document.querySelector('#refGeneros').href='listar_generos_adminlibre.html';
     optionCategorias.style.display="none";
@@ -31,7 +31,7 @@ window.addEventListener('load',function(){
             document.querySelector('#signinpopup').style.height="58px";
             
         }
-        if (usuario_activo==1) {
+        if (usuario_activo_123==1) {
             
             document.querySelector('#sucursal_href').setAttribute('href','listar_sucursales_admin.html');
             optionAutores.style.display="none";
