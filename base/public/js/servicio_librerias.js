@@ -15,29 +15,6 @@ let registrarLibreria = (pnombre_comercial, identificacionUsuarioLibreria, pnomb
     });
 };
 
-let registrarAdminLibreria = (pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo, pdireccion, pnombreUsuario, ptipo) => {
-    axios({
-        method: 'post',
-        url: 'http://localhost:4000/api/registrar_admin_libreria',
-        responseType: 'json',
-        data: {
-
-            identificacion: pidentificacion,
-            primerNombre: pprimer_nombre,
-            segundoNombre: psegundo_nombre,
-            primerApellido: pprimer_apellido,
-            segundoApellido: psegundo_apellido,
-            sexo: psexo,
-            correo: pcorreo,
-            nombreUsuario: pnombreUsuario,
-
-            contrasena: pcontrasenna,
-            tipo: ptipo,
-            contador: 0
-        }
-    });
-};
-
 let obtenerLibrerias = async () => {
     try {
         // fetch data from a url endpoint
