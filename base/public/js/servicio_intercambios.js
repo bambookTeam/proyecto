@@ -4,12 +4,12 @@ let obtenerLibrosIntercambiables = async() => {
     try {
         const response = await axios({
             method: 'get',
-            url: 'http://localhost:4000/api/listar_intercambios',
+            url: 'http://localhost:4000/api/lista_librosComprados',
             responseType: 'json'
 
         });
 
-        return response.data.listar_intercambios;
+        return response.data.lista_librosComprados;
     } catch (error) {
         console.log(error);
     }
