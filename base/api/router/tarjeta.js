@@ -152,12 +152,12 @@ router.post('/habilitar_tarjeta', function (req, res) {
 router.post('/eliminar_tarjeta', function(req, res) {
     let body = req.body;
 
-    Contacto.findByIdAndRemove(body._id,
+    Tarjeta.findByIdAndRemove(body._id,
         function(error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo borrar la tarjeta' });
             } else {
-                res.json({ success: true, msg: 'El contacto se borró con éxito' });
+                res.json({ success: true, msg: 'La tarjeta se borró con éxito' });
             }
         }
     )

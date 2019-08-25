@@ -70,7 +70,6 @@ let mostrarlista = async () => {
 
         let celda_eliminar = fila.insertCell();
         let btn_eliminar = document.createElement('button', 'a');
-        btn_eliminar.innerText = 'Eliminar';
         btn_eliminar.href = '#';
         btn_eliminar.type = 'button';
 
