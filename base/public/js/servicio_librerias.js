@@ -70,3 +70,22 @@ let modificar_libreria = (pid, input_nombre_comercial, input_nombre_fantasia, in
         }
     });
 };
+
+let obtenerIdLibreria = async (identificacionAdmin) => {
+
+    let librerias = await obtenerLibrerias();
+
+    let idLibreria;
+
+    for (let i = 0; i < librerias.length; i++) {
+
+        if (identificacionAdmin == librerias[i]['id']) {
+
+
+            idLibreria = librerias[i]['_id'];
+        }
+    }
+
+    return idLibreria;
+
+};

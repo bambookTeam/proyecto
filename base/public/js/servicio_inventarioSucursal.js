@@ -56,6 +56,46 @@ let obtenerInventarioSucursal = async () => {
 
 };
 
+let obtenerIdInventario = async ( pidSucursal, pisbn) => {
+
+    let inventarioSucursal =  await obtenerInventarioSucursal();
+
+    let _idInventarioSucursal ;
+
+    for ( let i = 0; i < inventarioSucursal.length; i++){
+
+        if( pidSucursal == inventarioSucursal[i]['idSucursal'] && pisbn == inventarioSucursal[i]['isbn']){
+
+
+            _idInventarioSucursal = `{"_idInventarioSucursal": "${inventarioSucursal[i]['_id']}","cant":"${inventarioSucursal[i]['cant']}"}`;
+        }
+    }
+
+    return _idInventarioSucursal;
+};
+
+
+let disminuirInventarioSucursal = async (pidSucursal, pisbn, pcantidad) => {
+
+    let infoSucursal = await obtenerIdInventario(pidSucursal, pisbn);
+
+    infoSucursal = JSON.parse(infoSucursal);
+
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/agregar-inventarioSucursal',
+        responseType: 'json',
+        data: {
+            _id: infoSucursal._idInventarioSucursal,
+            cant: parseInt(infoSucursal.cant) - pcantidad
+        }
+
+    })
+    
+    
+   
+};
+
 
 let inventarioSucursal = async (pidSucursal) => {
 
@@ -130,6 +170,62 @@ let verificarInventarioSucursal =  async ( pisbn, pidLibreria, pidSucursal, pcan
     }
 
 }; 
+
+
+let obtenerLibrosComprables =  async ( pidLibreria) => {
+
+
+  
+    let librosComprables = [];
+    let inventarios = await obtenerInventarioSucursal();
+
+    let cont = 0;
+
+   for ( let i = 0; i < inventarios.length; i ++){
+
+    
+      if(pidLibreria == inventarios[i]['idLibreria']){
+
+        
+        librosComprables[cont] = inventarios[i];
+        cont++;
+
+      }    
+
+
+   }
+
+   return librosComprables;
+    
+
+};
+
+
+
+let obtenerSucursalesComprables = async (pidLibreria, pisbn) => {
+
+    // devuelve un arreglo con los ids de las sucursales de la libreria seleccionada por el cliente que contienen el libro a comprar
+
+    let inventarios = await obtenerInventarioSucursal();
+    let sucursalesConLibro = [];
+
+    let cont = 0;
+
+    for( let i = 0; i < inventarios.length; i++){
+
+        if( pidLibreria == inventarios[i]['idLibreria'] && pisbn == inventarios[i]['isbn']){
+
+            sucursalesConLibro[cont] = inventarios[i]['idSucursal'];
+            
+            cont ++;
+        }
+
+    }
+
+    return sucursalesConLibro;    
+
+};
+
 
 let verificarLibro = (pisbn) => {
 
