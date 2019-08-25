@@ -78,3 +78,23 @@ let eliminar = (pid) => {
         }
     });
 };
+
+
+let obtenerIdLibreria = async ( identificacionAdmin) => {
+
+    let librerias = await obtenerLibrerias();
+
+    let idLibreria ;
+
+    for ( let i = 0; i < librerias.length ; i ++){
+
+        if( identificacionAdmin == librerias[i]['id']){
+
+
+            idLibreria = librerias[i]['_id'];
+        }
+    }
+
+    return idLibreria;        
+
+};

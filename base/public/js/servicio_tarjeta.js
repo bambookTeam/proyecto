@@ -50,6 +50,25 @@ let obtenerTarjetaId = async (_id) => {
 };
 
 
+let obtenerIdTarjeta = async (pnumerotarjeta) => {
+
+    let tarjetas = await obtenerTarjetas();
+
+    let idTarjeta;
+
+    for ( let i = 0; i < tarjetas.length; i++){
+
+        if(pnumerotarjeta == tarjetas[i]['numerotarjeta']){
+
+            idTarjeta = tarjetas[i]['_id'];
+        }
+    }
+
+
+    return idTarjeta;
+};
+
+/*
 let modificarTarjeta = async(pid, pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
     try({
         method: 'post',
@@ -67,6 +86,8 @@ let modificarTarjeta = async(pid, pnumerotarjeta, pfechavencimiento, pcodigocvv)
     } catch (error) {
         console.log(error);
     }
+
+    */
 
 
 let habilitar = (pid) => {

@@ -22,7 +22,8 @@ const clubMiembro_route = require('./router/clubLecturaMiembro');
 const inventario_general_route = require('./router/inventarioGeneral');
 const inventario_libreria_route = require('./router/inventarioLibreria');
 const inventario_sucursal_route = require('./router/inventarioSucursal');
-
+const carrito_route = require('./router/carrito');
+const libroComprado_route = require('./router/libroComprado');
 
 
 const app = express();
@@ -73,6 +74,8 @@ function handleError(res, reason, message, code) {
 
 // Conexion a todas la rutas.z
 app.use('/api', autor_route);
+app.use('/api', carrito_route);
+
 
 app.use('/api', libreria_route);
 app.use('/api', genero_route);
@@ -85,6 +88,7 @@ app.use('/api', clubLectura_route);
 app.use('/api', evento_route);
 app.use('/api', libro_route);
 app.use('/api', oferta_route);
+app.use('/api', libroComprado_route);
 
 
 app.use('/api', sucursal_route);

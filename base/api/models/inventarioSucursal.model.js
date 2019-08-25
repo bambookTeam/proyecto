@@ -8,6 +8,8 @@ let inventarioSucursal_schema = new mongoose.Schema({
     idSucursal: {type: String, required: true, unique: false},
     cant: {type: Number, required: true, unique: false}
 
+    //AGREGAR PRECIO
+
 
 });
 
