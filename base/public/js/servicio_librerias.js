@@ -9,30 +9,8 @@ let registrarLibreria = (pnombre_comercial, identificacionUsuarioLibreria, pnomb
             id: identificacionUsuarioLibreria,
             nombre_comercial: pnombre_comercial,
             nombre_fantasia: pnombre_fantasia,
-            direccion: pdireccion
-        }
-    });
-};
-
-let registrarAdminLibreria = (pidentificacion, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, psexo, pcorreo, pdireccion, pnombreUsuario, ptipo) => {
-    axios({
-        method: 'post',
-        url: 'http://localhost:4000/api/registrar_admin_libreria',
-        responseType: 'json',
-        data: {
-
-            identificacion: pidentificacion,
-            primerNombre: pprimer_nombre,
-            segundoNombre: psegundo_nombre,
-            primerApellido: pprimer_apellido,
-            segundoApellido: psegundo_apellido,
-            sexo: psexo,
-            correo: pcorreo,
-            nombreUsuario: pnombreUsuario,
-
-            contrasena: pcontrasenna,
-            tipo: ptipo,
-            contador: 0
+            direccion: pdireccion,
+            ubicacion: "{" + "lat:" + marker.position.lat() + "," + "lng:" + marker.position.lng() + "}"
         }
     });
 };
@@ -79,6 +57,38 @@ let eliminarLibreria = (pid) => {
     });
 };
 
+let modificar_libreria = (pid, input_nombre_comercial, input_nombre_fantasia, input_direccion) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-libreria',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            nombre_comercial: input_nombre_comercial,
+            nombre_fantasia: input_nombre_fantasia,
+            direccion: input_direccion
+        }
+    });
+};
+
+let obtenerIdLibreria = async (identificacionAdmin) => {
+
+    let librerias = await obtenerLibrerias();
+
+    let idLibreria;
+
+    for (let i = 0; i < librerias.length; i++) {
+
+        if (identificacionAdmin == librerias[i]['id']) {
+
+
+            idLibreria = librerias[i]['_id'];
+        }
+    }
+
+    return idLibreria;
+
+};
 let modificar_libreria = (pid, input_nombre_comercial, input_nombre_fantasia, input_direccion) => {
     axios({
         method: 'post',

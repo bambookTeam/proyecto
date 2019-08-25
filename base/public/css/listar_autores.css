@@ -31,7 +31,7 @@ input{
     outline: none;
 }
 
-main a{
+main a button{
     padding: 10px;
     border: 2px solid #000;
     border-radius: 15px;
@@ -45,7 +45,7 @@ main a{
     text-decoration: none;
 }
 
-main a:hover{
+main a button:hover{
     padding: 10px;
     border: 2px solid #f6b93b;
     border-radius: 15px;

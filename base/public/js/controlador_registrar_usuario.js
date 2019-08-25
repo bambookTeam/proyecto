@@ -1,16 +1,11 @@
 'use strict';
 
-
-
 let obtenerListaUsuarios = async (pcorreo) => {
-
     usuarios = await obtenerUsuarios();
-
 };
+
 var usuarios = [];
 usuarios = obtenerListaUsuarios();
-
-
 
 const boton_registrar = document.querySelector('#btn_registrar');
 const input_primer_nombre = document.querySelector('#txt_primer_nombre');
@@ -323,7 +318,7 @@ let guardar = () => {
     let direccion = input_direccion.value;
     let nombreUsuario = input_nombre_usuario.value;
     let tipo = 2;
-    let estado = 1
+    let estado = 1;
     let error = validar(nombre1, apellido1, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombreUsuario);
 
 
@@ -344,7 +339,7 @@ let guardar = () => {
             text: 'Revise los campos resaltados e inténtelo de nuevo'
         })
 
-    }    
+    }
 };
 
 let obtenerBitacora = async () => {
@@ -353,26 +348,26 @@ let obtenerBitacora = async () => {
     let listaUsers = [];
     listaUsers = await obtenerUsuarios();
     let date = new Date();
-    let descripcion="";
+    let descripcion = "";
 
-    let usersBitacora=[];
+    let usersBitacora = [];
     console.log(usersBitacora);
     for (let x = 0; x < listaBitacora.length; x++) {
         usersBitacora.push(listaBitacora[x].usuarioRegistrado);
     }
 
     for (let index = 0; index < listaUsers.length; index++) {
-        let n=usersBitacora.includes(listaUsers[index]._id);
-        
-       if (n==false) {
-           if (listaUsers[index].tipo==1) {
-               descripcion="Registro Admin Libreria";
-           } else {
-               descripcion="Registro Cliente";
-           }
-           registrarEnBitacora(listaUsers[index]._id,descripcion,date);
-       }   
-    }    
+        let n = usersBitacora.includes(listaUsers[index]._id);
+
+        if (n == false) {
+            if (listaUsers[index].tipo == 1) {
+                descripcion = "Registro Admin Libreria";
+            } else {
+                descripcion = "Registro Cliente";
+            }
+            registrarEnBitacora(listaUsers[index]._id, descripcion, date);
+        }
+    }
 }
 boton_registrar.addEventListener('click', guardar);
 

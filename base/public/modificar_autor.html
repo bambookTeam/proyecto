@@ -35,7 +35,7 @@
             <a href="listar_genero.html" id="optionNavGenero">Géneros</a>
             <a href="listar_categoría.html" id="optionNavCategoria">Categoria</a>
             <a href="listar_tarjetas.html">Tarjetas</a>
-            <a href="#" id="optionIntercambio">Intercambios</a>
+            <a href="listar_libros_intercambiables.html" id="optionIntercambio">Intercambios</a>
             <a href="listar-usuarios.html" id="optionNavUsuarios">Usuarios</a>
         </div>
         <div class="optionsNav">
@@ -54,17 +54,20 @@
 
 
 <body>
-    <header>
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-        <a href="#">
-            <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
-                id="barnesLogo">
-        </a>
-        <div class="sign-in-button">
-            <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
-        </div>
-    </header>
+    <main>
+            <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content" id="signinpopup">
+
+                        <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+                        <div class="optionProfile"><a href="">Mi Carrito</a></div>
+                        <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+                        <div class="optionProfile"><a href="">Mis compras</a></div>
+                        <div class="optionProfile"><a href="">Mis libros</a></div>
+                        <div class="optionProfile"><a href="misintercambios.html">Mis intercambios</a></div>
+                        <button id="btn_cerrar">Cerrar Sesión</button>
+                    </div>
 
     <nav class="nav-menu">
         <ul>

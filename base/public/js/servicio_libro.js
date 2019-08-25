@@ -2,8 +2,8 @@
 
 // import { type } from "os";
 
-let registrarLibro = ( pportada, pcontraportada, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pgenero, ptipo, pcantidad, pprecio) => {
-    let pestado=1;
+let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pportada, pcontraportada, pgenero, ptipo, pcantidad, pprecio) => {
+    let pestado = 1;
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar_libro',
@@ -16,7 +16,7 @@ let registrarLibro = ( pportada, pcontraportada, ptitulo, pedicion, peditorial, 
             titulo: ptitulo,
             edicion: pedicion,
             editorial: peditorial,
-            autor: pautor, 
+            autor: pautor,
             anno: panno,
             idioma: pidioma,
             isbn: pisbn,
@@ -24,7 +24,9 @@ let registrarLibro = ( pportada, pcontraportada, ptitulo, pedicion, peditorial, 
             tipo: ptipo,
             cantidad: pcantidad,
             precio: pprecio,
-            estado:pestado
+            portada: pportada,
+            contraportada: pcontraportada,
+            estado: pestado
         }
 
 
@@ -64,13 +66,13 @@ let obtener_libroId = async (_id) => {
     }
 }
 
-let modificar_libro = (pid, pportada, pcontraportada, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pgenero, ptipo, pcantidad, pprecio) => {
-    let pestado=1;
+let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pportada, pcontraportada, pgenero, ptipo, pcantidad, pprecio) => {
+    let pestado = 1;
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar_libro',
         responseType: 'json',
-        
+
 
         data: {
             _id: pid,
@@ -79,7 +81,7 @@ let modificar_libro = (pid, pportada, pcontraportada, ptitulo, pedicion, peditor
             titulo: ptitulo,
             edicion: pedicion,
             editorial: peditorial,
-            autor: pautor, 
+            autor: pautor,
             anno: panno,
             idioma: pidioma,
             isbn: pisbn,
@@ -103,7 +105,7 @@ let habilitar_Libro = (pid) => {
         }
     });
 };
-let deshabilitar_Libro= (pid) => {
+let deshabilitar_Libro = (pid) => {
     console.log(pid)
     axios({
         method: 'post',
@@ -114,7 +116,6 @@ let deshabilitar_Libro= (pid) => {
         }
     });
 };
-
 
 let eliminarLibro = (pid) => {
     axios({

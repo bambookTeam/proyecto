@@ -16,7 +16,8 @@ router.post('/registrar-sucursal', function (req, res) {
         nombre: body.nombre,
         telefono: body.telefono,
         correo: body.correo,
-        direccion: body.direccion
+        direccion: body.direccion,
+        estado:body.estado
     });
 
 

@@ -58,7 +58,7 @@ let modificar_categoria = (pid, pnombre) => {
     });
 };
 
-let eliminar = (pid) => {
+let eliminar_categoria = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar_categoria',

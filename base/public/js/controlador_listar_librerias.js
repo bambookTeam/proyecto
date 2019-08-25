@@ -4,12 +4,6 @@ const tbody = document.querySelector('#tbl_librerias tbody');
 let lista_librerias = [];
 let txt_filtro = document.querySelector('#txt_filtro');
 
-let redireccionar = (id) => {
-    localStorage.setItem('libreriaModificar', JSON.stringify(id));
-    window.location.href = 'modificar_libreria.html'
-}
-
-
 let mostrar_tabla = async () => {
 
     lista_librerias = await obtenerLibrerias();
