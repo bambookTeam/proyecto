@@ -70,7 +70,8 @@ let obtenerIdTarjeta = async (pnumerotarjeta) => {
 
 /*
 let modificarTarjeta = async(pid, pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
-    try({
+    try{
+        const response = await axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar_tarjeta',
         responseType: 'json',
@@ -86,6 +87,7 @@ let modificarTarjeta = async(pid, pnumerotarjeta, pfechavencimiento, pcodigocvv)
     } catch (error) {
         console.log(error);
     }
+};
 
     */
 
@@ -96,30 +98,30 @@ let habilitar = (pid) => {
         url: 'http://localhost:4000/api/habilitar_tarjeta',
         responseType: 'json',
         data: {
-            _id: pid,
+            _id: pId,
         }
     });
 };
-let deshabilitar = (pid) => {
+let deshabilitar = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar_tarjeta',
         responseType: 'json',
         data: {
-            _id: pid,
+            _id: pId,
 
 
         }
     });
 };
 
-let eliminar = (pid) => {
+let eliminarTarjeta = (pId) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/eliminar_tarjeta',
         responseType: 'json',
         data: {
-            _id: pid
+            _id: pId
 
         }
     });

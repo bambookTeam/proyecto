@@ -7,6 +7,9 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
     let canton = "pcanton";
     let distrito = "pdistrito";
 
+
+    console.log(pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado);
+
     axios({
 
         method: 'post',
@@ -36,7 +39,7 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
 
 };
 
-let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario,pcontrasenna, ptipo, pestado) => {
+let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, pcontrasenna, ptipo, pestado) => {
     console.log(pnombre1);
     axios({
         method: 'post',
@@ -56,7 +59,6 @@ let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papell
             distrito: pdistrito,
             direccion: pdireccion,
             nombreUsuario: pnombreUsuario,
-            contrasena: pcontrasenna,
             tipo: ptipo,
             avatar: imagenUrl,
             contador: 0,
@@ -65,12 +67,14 @@ let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papell
     });
 };
 
-let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
+let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado, pavatar) => {
 
     let pcontrasenna = generarContrasenna();
-    let provincia = "pprovincia";
-    let canton = "pcanton";
-    let distrito = "pdistrito";
+    let provincia = pprovincia;
+    let canton = pcanton;
+    let distrito = pdistrito;
+
+    console.log(pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado, pavatar);
 
     axios({
 
@@ -92,15 +96,16 @@ let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, 
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasenna,
             tipo: ptipo,
-            contador: 0
+            contador: 0,
+            estado: pestado,
+            avatar: pavatar
 
         }
     });
 
 };
 
-
-let modificarAdminGeneral = (pusuario, pcorreo, pcontrasena, ptipo,imagenUrl) => {
+let modificarAdminGeneral = (pusuario, pcorreo, pcontrasena, ptipo, imagenUrl) => {
 
 
 
@@ -110,7 +115,7 @@ let modificarAdminGeneral = (pusuario, pcorreo, pcontrasena, ptipo,imagenUrl) =>
         url: 'http://localhost:4000/api/editar-admin-general',
         responseType: 'json',
         data: {
-            usuario:pusuario,
+            usuario: pusuario,
             contrasena: pcontrasena,
             correo: pcorreo,
             tipo: ptipo,
@@ -121,7 +126,6 @@ let modificarAdminGeneral = (pusuario, pcorreo, pcontrasena, ptipo,imagenUrl) =>
     });
 
 };
-
 
 let iniciar_Sesion = async (pusuario, pcontrasena) => {
     let respuesta = await axios({
@@ -146,6 +150,7 @@ let iniciar_Sesion = async (pusuario, pcontrasena) => {
                     sessionStorage.setItem('contrasena', response.data.usuario.contrasena);
                     sessionStorage.setItem('contador', response.data.usuario.contador);
                     sessionStorage.setItem('nombreUsuario', response.data.usuario.nombreUsuario);
+                    sessionStorage.setItem('avatar', response.data.usuario.avatar)
                     sessionStorage.setItem('identificacion', response.data.usuario.identificacion);
                     //actualizar_contador( JSON.parse(sessionStorage.getItem('usuario'))._id,  JSON.parse(sessionStorage.getItem('usuario')).data.contador);
                     actualizar_contador(sessionStorage.getItem('id'), sessionStorage.getItem('contador'));
@@ -213,12 +218,12 @@ let validarPin = (ppin, pcontrasena) => {
 
         crearContrasenna(sessionStorage.getItem('id'), pcontrasena);
 
-       
+
 
     } else {
 
         error = true;
-       
+
     }
 
     return error;
@@ -239,8 +244,6 @@ let crearContrasenna = async (p_id, pcontrasena) => {
 
     });
 };
-
-
 
 let actualizar_contador = (p_id, pcontador) => {
 
@@ -333,20 +336,17 @@ let obtenerUsuarioPerfil = async (idUsuario) => {
     }
 };
 
-
-
-
-let recuperarContrasena = (p_id,pcorreo) => {
+let recuperarContrasena = (p_id, pcorreo) => {
 
     let nuevaContrasena = generarContrasenna();
 
     axios({
-        
+
         method: 'post',
-        url: 'http://localhost:4000/api/recuperar-contrasena', 
-        responseType:'json',
+        url: 'http://localhost:4000/api/recuperar-contrasena',
+        responseType: 'json',
         data: {
-        
+
             _id: p_id,
             correo: pcorreo,
             contrasena: nuevaContrasena
@@ -356,8 +356,6 @@ let recuperarContrasena = (p_id,pcorreo) => {
 
 
 };
-
-
 
 function generarContrasenna() {
     let caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
@@ -379,6 +377,7 @@ let habilitar = (pid) => {
         }
     });
 };
+
 let deshabilitar = (pid) => {
     axios({
         method: 'post',
@@ -390,6 +389,7 @@ let deshabilitar = (pid) => {
         }
     });
 };
+
 let eliminar = (pid) => {
     axios({
         method: 'post',

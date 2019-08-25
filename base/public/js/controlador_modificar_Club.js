@@ -1,22 +1,80 @@
-let showSelects = async () => {
+let parentSucursal = document.getElementById('lista_sucursal_club');
+let selectSucursal = document.createElement('select');
+selectSucursal.setAttribute('id', 'sucursales_club');
+parentSucursal.appendChild(selectSucursal)
+let nombreClub_input = document.querySelector("#txt-clubLectura");
+let modalidad_input = document.querySelector("#modalidad_Club");
+let fechaInicioClub_input = document.querySelector("#fechaInicioClub");
+let fechaFinClub_input = document.querySelector("#fechaFinClub");
+let hora_input = document.querySelector('#horaClub');
+let frecuencia_input = document.querySelector('#frecuencia_club');
+
+let today = new Date();
+let dd = String(today.getDate()).padStart(2, '0');
+let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+let yyyy = today.getFullYear();
+
+today = yyyy + '-' + mm + '-' + dd;
+
+
+let sucursalActiva="";
+let show_Sucursales_Librerias = async (valueLibreria) => {
+
+
+    let listaSucursales = [];
+    let arrayLibrerias = [];
+
+    arrayLibrerias = await obtenerLibrerias();
+    listaSucursales = await obtenerSucursales();
+
+
+    selectSucursal.innerHTML = "";
+
+
+    let currentLibreria_id = "";
+
+    for (let index = 0; index < arrayLibrerias.length; index++) {
+        if (arrayLibrerias[index].nombre_comercial == valueLibreria) {
+            currentLibreria_id = arrayLibrerias[index]._id;
+        }
+
+    }
+
+    for (let i = 0; i < listaSucursales.length; i++) {
+        if (listaSucursales[i].idLibreria == currentLibreria_id) {
+            let optionSucursal = document.createElement('option');
+            optionSucursal.setAttribute('value', listaSucursales[i].nombre);
+            optionSucursal.innerHTML = listaSucursales[i].nombre;
+            optionSucursal.style.width = "300px";
+            selectSucursal.appendChild(optionSucursal);
+        }
+
+    }
+
+    selectSucursal.value="me les cago"
+
+}
+
+let fillform = async () => {
+
 
     let arrayGenero = [];
     let arrayTema = [];
     let arrayCategorias = [];
     let arrayLibrerias = [];
-    let arraySucursales = [];
 
-    arrayGenero = await listarGenero();
+
+    arrayGenero = await obtenerGeneros();
     arrayTema = await obtenerLibros();
     arrayCategorias = await obtenerCategorias();
     arrayLibrerias = await obtenerLibrerias();
-    arraySucursales = await obtenerSucursales();
+
 
     let parentTema = document.getElementById('lista_tema_clubes');
     let parentGenero = document.getElementById('lista_genero_clubes');
     let parentCategoria = document.getElementById('lista_categoria_club');
     let parentLibreria = document.getElementById('lista_libreria_club');
-    let parentSucursal = document.getElementById('lista_sucursal_club');
+
 
     let selectGenero = document.createElement('select');
     selectGenero.setAttribute('id', 'generos_club');
@@ -34,9 +92,7 @@ let showSelects = async () => {
     selectLibreria.setAttribute('id', 'librerias_club');
     parentLibreria.appendChild(selectLibreria);
 
-    let selectSucursal = document.createElement('select');
-    selectSucursal.setAttribute('id', 'sucursales_club');
-    parentSucursal.appendChild(selectSucursal);
+
 
 
     for (let i = 0; i < arrayGenero.length; i++) {
@@ -70,20 +126,14 @@ let showSelects = async () => {
         optionLibreria.innerHTML = arrayLibrerias[i].nombre_comercial;
         optionLibreria.style.width = "300px"
         selectLibreria.appendChild(optionLibreria);
+
     }
 
-    for (let i = 0; i < arraySucursales.length; i++) {
-        let optionSucursal = document.createElement('option');
-        optionSucursal.setAttribute('value', arraySucursales[i].nombre);
-        optionSucursal.innerHTML = arraySucursales[i].nombre;
-        optionSucursal.style.width = "300px"
-        selectSucursal.appendChild(optionSucursal);
-    }
 
-    fillform();
-}
+    selectLibreria.setAttribute("onchange", 'show_Sucursales_Librerias(value)');
+    
 
-let fillform = async () => {
+
     let activeClub = localStorage.getItem('idClub');
 
     let listaClubes = await obtenerClubes();
@@ -93,37 +143,88 @@ let fillform = async () => {
             document.querySelector('#txt-clubLectura').value = listaClubes[i].nombre_Club;
             document.querySelector('#modalidad_Club').value = listaClubes[i].modalidad;
             document.querySelector('#fechaInicioClub').value = listaClubes[i].fechaInicio.substring(0, 10);
-            document.querySelector('#fechaInicioClub').disabled = true;
             document.querySelector('#fechaFinClub').value = listaClubes[i].fechaFin.substring(0, 10);
-            document.querySelector('#horaClub').value = listaClubes[i].hora;
+            if (listaClubes[i].modalidad == "Virtual") {
+                document.querySelector('#horasClub').style.display = "none";
+
+            } else {
+                document.querySelector('#horaClub').value = listaClubes[i].hora;
+            }
+            console.log(listaClubes[i].genero);
             document.querySelector('#frecuencia_club').value = listaClubes[i].frecuencia;
-            document.querySelector('#lista_tema_clubes').value = listaClubes[i].tema;
-            document.querySelector('#lista_genero_clubes').value = listaClubes[i].genero;
-            document.querySelector('#lista_categoria_club').value = listaClubes[i].categoria;
-            document.querySelector('#lista_libreria_club').value = listaClubes[i].libreria;
-            document.querySelector('#lista_sucursal_club').value = listaClubes[i].sucursal;
+            document.querySelector('#temas_club').value = listaClubes[i].tema;
+            document.querySelector('#generos_club').value = listaClubes[i].genero;
+
+            document.querySelector('#categorias_club').value = listaClubes[i].categoria;
+            document.querySelector('#librerias_club').value = listaClubes[i].libreria;
+
+            document.querySelector('#sucursales_club').value = listaClubes[i].sucursal;
+            show_Sucursales_Librerias(listaClubes[i].sucursal)
+
         }
 
     }
+    
 
 }
 
-let validarDatos = (dateFin,dateInicio) => {
+let validarDatos = (pnombre, pmodalidad, pfechainicio, pfechafin) => {
     let error = false;
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
 
-    today = yyyy + '-' + mm + '-' + dd;
-
-    if (dateFin < dateInicio) {
+    if (pnombre == "") {
         error = true;
+        document.getElementById('error_content').style.display = "block";
+        nombreClub_input.classList.add('input_error');
+    } else {
+        document.getElementById('error_content').style.display = "none";
+        nombreClub_input.classList.remove('input_error');
+    }
+
+    if (pmodalidad == "") {
+        error = true;
+        document.getElementById('error_modalidad').style.display = "block";
+        modalidad_input.classList.add('input_error');
+    } else {
+        document.getElementById('error_modalidad').style.display = "none";
+        modalidad_input.classList.remove('input_error');
+    }
+
+
+    if (pfechainicio == '') {
+        error = true;
+        fechaInicioClub_input.classList.add('input_error');
+        document.getElementById('error_fecha').style.display = "block";
+    } else {
+        document.getElementById('error_fecha').style.display = "none";
+        if (pfechainicio < today) {
+            error = true;
+            fechaInicioClub_input.classList.add('input_error');
+            document.getElementById('error_fechaDia').style.display = "block";
+        } else {
+            fechaInicioClub_input.classList.remove('input_error');
+            document.getElementById('error_fechaDia').style.display = "none";
+        }
+    }
+
+    if (pfechafin == '') {
+        error = true;
+        fechaFinClub_input.classList.add('input_error');
+        document.getElementById('error_fecha').style.display = "block";
+    } else {
+        document.getElementById('error_fecha').style.display = "none";
+        if (pfechafin < pfechainicio) {
+            error = true;
+            fechaFinClub_input.classList.add('input_error');
+            document.getElementById('error_fechaFin').style.display = "block";
+        } else {
+            fechaFinClub_input.classList.remove('input_error');
+            document.getElementById('error_fechaFin').style.display = "none";
+        }
+
+
     }
 
     return error;
-
-
 }
 
 let modClub = () => {
@@ -134,25 +235,67 @@ let modClub = () => {
     let pfechaFin = document.querySelector('#fechaFinClub').value;
     let pHora = document.querySelector('#horaClub').value;
     let pFrecuencia = document.querySelector('#frecuencia_club').value;
-    let ptema = document.querySelector('#lista_tema_clubes').value;
-    let pgenero = document.querySelector('#lista_genero_clubes').value;
-    let pcategoria=document.querySelector('#lista_categoria_club').value;
-    let plibreria = document.querySelector('#lista_libreria_club').value;
-    let psucursal = document.querySelector('#lista_sucursal_club').value;
+    let ptema = document.querySelector('#temas_club').value;
+    let pgenero = document.querySelector('#generos_club').value;
+    let pcategoria = document.querySelector('#categorias_club').value;
+    let plibreria = document.querySelector('#librerias_club').value;
+    let psucursal = document.querySelector('#sucursales_club').value;
 
-    let error=validarDatos(pfechaFin,pfechaInicio);
+    let error = validarDatos(pnombre_Club, pmodalidad, pfechaInicio, pfechaFin);
 
-    pid=localStorage.getItem('idClub');
+    pid = localStorage.getItem('idClub');
 
-    if (error==false) {
-        modificarClub(pid,pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, pFrecuencia, ptema, pgenero, pcategoria, plibreria, psucursal);
-       
-    }else{
-        console.log('no pa')
+    if (error == false) {
+
+        /*
+setTimeout(function () {
+
+            redirigir_perfil_club();
+        }, 2000);
+
+        
+        modificarClub(pid, pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, pFrecuencia, ptema, pgenero, pcategoria, plibreria, psucursal);
+        Swal.fire({
+            title: 'Se ha modificado el Club con exito',
+            text: 'Se redirigirá al Perfil del Club',
+            imageUrl: 'http://www.mywebshelf.com/images/icons/book.gif',
+            imageWidth: 300,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+            animation: false,
+            showCancelButton: false,
+            showConfirmButton: false,
+            allowOutsideClick: false
+        })
+        */
+        console.log(pid, pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, pFrecuencia, ptema, pgenero, pcategoria, plibreria, psucursal)
+        modificarClub(pid, pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, pFrecuencia, ptema, pgenero, pcategoria, plibreria, psucursal);
+    } else {
+        Swal.fire({
+            title: 'Por favor revise los campos en rojo',
+            text: 'e intente de nuevo',
+            type: 'warning'
+        })
+    }
+}
+
+let redirigir_perfil_club = () => {
+    location.replace('ver_perfilClubLectura.html');
+}
+
+let hideHora = () => {
+    let mod = document.getElementById('modalidad_Club').value;
+    let hora = document.getElementById('horasClub');
+
+    if (mod == "Virtual") {
+        hora.style.display = "none";
+        hora.value = "00:00";
+    } else {
+        hora.style.display = 'block';
     }
 }
 
 let btnCrearClub = document.querySelector('#btnCrearClub');
 
 btnCrearClub.addEventListener('click', modClub);
-window.addEventListener('load', showSelects);
+window.addEventListener('load', fillform);

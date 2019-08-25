@@ -14,15 +14,23 @@ main h1{
 }
 
 #datos_libreria{
-    width: 35%;
-    float: left;
     text-align: center;
+    margin-bottom: 20px;
+    display: flow-root;
+}
+
+.datos{
+    width: 50%;
+    float: left;
+}
+.mapa{
+    width: 50%;
+    float: left;
 }
 
 #datos_admi_libreria{
-    width: 65%;
-    float: left;
     text-align: center;
+    display: flow-root;
 }
 
 .izquierda{
@@ -123,4 +131,14 @@ main iframe{
 }
 
 
+#map {
+    height: 300px;
+    width: 100%;
+}
+
 /* FIN main */
+
+footer{
+    background: #f6b93b;
+    height: 50px;
+}

@@ -39,6 +39,32 @@ let llenar_perfil = async () => {
    }
 };
 
+//Link que asocia el nombre del autor al perfil del autor
+let autor = [];
+let showAutor = document.createElement('a');
+showAutor.type = 'href';
+
+showAutor.dataset._id = autor[i]['_id'];
+showAutor.addEventListener('click', function () {
+localStorage.setItem('infoAutor', JSON.stringify(autor[i]));
+window.location.href ='ver-perfil-autor.html'
+});
+
+// let showAutor = async() => {
+
+//       let arrayAutor = [];
+//       arrayAutor = await obtenerAutores();
+
+//       let perfilAutor = document.createElement('href');
+//       perfilAutor.setAttribute('href', autor['nombre_autor']);
+//       perfilAutor.appendChild(txt_autor);
+// }
+// window.addEventListener('load', showAutor);
+
+
+
+
+
 // Script para carousel
 var slideIndex = 1;
 showSlides(slideIndex);

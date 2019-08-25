@@ -2,6 +2,8 @@
 
 let registrarSucursal = (pnombre, ptelefono, pcorreo, pdireccion) => {
     let idUsuarioActivo = localStorage.getItem("idLibreria");
+
+    console.log(idUsuarioActivo,pnombre,ptelefono,pcorreo,pdireccion);
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-sucursal',
@@ -11,7 +13,8 @@ let registrarSucursal = (pnombre, ptelefono, pcorreo, pdireccion) => {
             nombre: pnombre,
             telefono: ptelefono,
             correo: pcorreo,
-            direccion: pdireccion
+            direccion: pdireccion,
+            estado:1
         }
     });
 };

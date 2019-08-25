@@ -1,8 +1,9 @@
-'use strict';
+'use strict'
 
 // import { type } from "os";
 
 let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pportada, pcontraportada, pgenero, ptipo, pcantidad, pprecio) => {
+    let pestado=1;
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar_libro',
@@ -13,7 +14,7 @@ let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pis
             titulo: ptitulo,
             edicion: pedicion,
             editorial: peditorial,
-            autor: pautor,
+            autor: pautor, 
             anno: panno,
             idioma: pidioma,
             isbn: pisbn,
@@ -22,7 +23,8 @@ let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pis
             cantidad: pcantidad,
             precio: pprecio,
             portada: pportada,
-            contraportada: pcontraportada
+            contraportada: pcontraportada,
+            estado:pestado
         }
 
 
@@ -63,18 +65,19 @@ let obtener_libroId = async (_id) => {
 }
 
 let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pportada, pcontraportada,  pgenero, ptipo, pcantidad, pprecio) => {
+    let pestado=1;
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar_libro',
         responseType: 'json',
-
+        
 
         data: {
             _id: pid,
             titulo: ptitulo,
             edicion: pedicion,
             editorial: peditorial,
-            autor: pautor,
+            autor: pautor, 
             anno: panno,
             idioma: pidioma,
             isbn: pisbn,
@@ -83,30 +86,31 @@ let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidiom
             cantidad: pcantidad,
             precio: pprecio,
             portada: pportada,
-            contraportada: pcontraportada
+            contraportada: pcontraportada,
+            estado: pestado
         }
     });
 };
 
-let habilitar_libro = (pid) => {
+let habilitar_Libro = (pid) => {
+    console.log(pid)
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar_libro',
         responseType: 'json',
         data: {
-            _id: pid,
-
+            _id: pid
         }
     });
 };
-let deshabilitar_libro = (pid) => {
+let deshabilitar_Libro= (pid) => {
+    console.log(pid)
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar_libro',
         responseType: 'json',
         data: {
             _id: pid
-
         }
     });
 };

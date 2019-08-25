@@ -67,7 +67,7 @@ let mostrar_tabla = async () => {
 
         btn_eliminar.addEventListener('click', function () {
             Swal.fire({
-                title: '¿Está seguro que desea eliminar el libro?',
+                title: '¿Está seguro que desea eliminar la sucursal?',
                 text: "Ésta acción no se puede revertir",
                 type: 'warning',
                 showCancelButton: true,

@@ -17,7 +17,9 @@ router.post('/registrar_tarjeta', function (req, res) {
         id: body.id,
         numerotarjeta: body.numerotarjeta,
         fechavencimiento: body.fechavencimiento,
-        codigocvv: body.codigocvv
+        codigocvv: body.codigocvv,
+        estado: 'Habilitado'
+
     });
 
     console.log("guardado de tarjeta");
@@ -81,7 +83,7 @@ router.get('/buscar_tarjeta-id/_id', function (req, res) {
         if (err) {
             return res.status(400).json({
                 success: false,
-                msj: 'No se encontró ningún género con ese _id',
+                msj: 'No se encontró ninguna tarjeta con ese _id',
                 err
             });
         } else {
@@ -150,12 +152,12 @@ router.post('/habilitar_tarjeta', function (req, res) {
 router.post('/eliminar_tarjeta', function(req, res) {
     let body = req.body;
 
-    Contacto.findByIdAndRemove(body._id,
+    Tarjeta.findByIdAndRemove(body._id,
         function(error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo borrar la tarjeta' });
             } else {
-                res.json({ success: true, msg: 'El contacto se borró con éxito' });
+                res.json({ success: true, msg: 'La tarjeta se borró con éxito' });
             }
         }
     )

@@ -20,10 +20,15 @@ const tarjeta_route = require('./router/tarjeta');
 const sucursal_route = require('./router/sucursal');
 const clubMiembro_route = require('./router/clubLecturaMiembro');
 const inventario_general_route = require('./router/inventarioGeneral');
+const chat_route=require('./router/chat');
 const inventario_libreria_route = require('./router/inventarioLibreria');
 const inventario_sucursal_route = require('./router/inventarioSucursal');
 const carrito_route = require('./router/carrito');
 const libroComprado_route = require('./router/libroComprado');
+const bitacora_route = require('./router/bitacora');
+const intercambios_route = require('./router/libros_intercambiables');
+const solicitudIntercambio_route = require('./router/solicitudIntercambio');
+
 
 
 const app = express();
@@ -45,7 +50,7 @@ let db;
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', false);
 
-// { useFindAndModify: true }, { useCreateIndex: true }, 
+// { useFindAndModify: true }, { useCreateIndex: true },
 
 //Se conecta la base de datos antes de levantar el servidor, mediante los datos del archivo .env en la raiz del proyecto.
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true }, function (err, database) {
@@ -95,10 +100,12 @@ app.use('/api', sucursal_route);
 app.use('/api', clubMiembro_route);
 
 app.use('/api', inventario_sucursal_route);
-
+app.use('/api',bitacora_route);
 app.use('/api', inventario_general_route);
+app.use('/api',chat_route);
 app.use('/api', inventario_libreria_route);
+app.use('/api',intercambios_route);
+app.use('/api',solicitudIntercambio_route);
 
 
 //localhost:3000/api/registrar-sucursal
-
