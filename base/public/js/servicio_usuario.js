@@ -1,5 +1,7 @@
 'use strict'
 
+
+
 let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado) => {
 
     let pcontrasenna = generarContrasenna();
@@ -400,4 +402,20 @@ let eliminar = (pid) => {
 
         }
     });
+};
+let suscribirse_a_sucursal = (pcorreo, plistaImage,ptexto,pofertas) => {
+
+    axios({
+
+        method: 'post',
+        url: 'http://localhost:4000/api/suscribirse-sucursal',
+        responseType: 'json',
+        data: {
+            correo: pcorreo,
+            listaImageSources: plistaImage,
+            text:ptexto,
+            ofertas:pofertas
+        }
+    });
+
 };
