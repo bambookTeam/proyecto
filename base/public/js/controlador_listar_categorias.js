@@ -59,7 +59,7 @@ let mostrar_tabla = async () => {
                 confirmButtonText: 'Sí, estoy seguro'
             }).then((result) => {
                 if (result.value) {
-                    eliminar(lista_categorias[i]._id);
+                    eliminar_categoria(lista_categorias[i]._id);
 
                     Swal.fire(
                         'Categoría eliminada exitosamente!',
