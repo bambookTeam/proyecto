@@ -1,7 +1,7 @@
 'use strict';
 
 let registrarOferta = () => {
-    let idUsuarioActivo = sessionStorage.getItem("id");
+    let idUsuarioActivo = localStorage.getItem("idLibreria");
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar_oferta',
