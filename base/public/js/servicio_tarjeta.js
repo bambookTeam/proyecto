@@ -49,6 +49,26 @@ let obtenerTarjetaId = async (_id) => {
     }
 };
 
+
+let obtenerIdTarjeta = async (pnumerotarjeta) => {
+
+    let tarjetas = await obtenerTarjetas();
+
+    let idTarjeta;
+
+    for (let i = 0; i < tarjetas.length; i++) {
+
+        if (pnumerotarjeta == tarjetas[i]['numerotarjeta']) {
+
+            idTarjeta = tarjetas[i]['_id'];
+        }
+    }
+
+
+    return idTarjeta;
+};
+
+/*
 let modificarTarjeta = async(pid, pnumerotarjeta, pfechavencimiento, pcodigocvv) => {
     try{
         const response = await axios({
@@ -69,7 +89,10 @@ let modificarTarjeta = async(pid, pnumerotarjeta, pfechavencimiento, pcodigocvv)
     }
 };
 
-let habilitar = (pId) => {
+    */
+
+
+let habilitar = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/habilitar_tarjeta',

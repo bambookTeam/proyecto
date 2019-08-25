@@ -20,13 +20,15 @@ const tarjeta_route = require('./router/tarjeta');
 const sucursal_route = require('./router/sucursal');
 const clubMiembro_route = require('./router/clubLecturaMiembro');
 const inventario_general_route = require('./router/inventarioGeneral');
-const chat_route=require('./router/chat');
+const chat_route = require('./router/chat');
 const inventario_libreria_route = require('./router/inventarioLibreria');
 const inventario_sucursal_route = require('./router/inventarioSucursal');
 const bitacora_route = require('./router/bitacora');
 const intercambios_route = require('./router/libros_intercambiables');
 const solicitudIntercambio_route = require('./router/solicitudIntercambio');
 
+const carrito_route = require('./router/carrito');
+const libroComprado_route = require('./router/libroComprado');
 
 
 const app = express();
@@ -77,6 +79,8 @@ function handleError(res, reason, message, code) {
 
 // Conexion a todas la rutas.z
 app.use('/api', autor_route);
+app.use('/api', carrito_route);
+
 
 app.use('/api', libreria_route);
 app.use('/api', genero_route);
@@ -89,18 +93,19 @@ app.use('/api', clubLectura_route);
 app.use('/api', evento_route);
 app.use('/api', libro_route);
 app.use('/api', oferta_route);
+app.use('/api', libroComprado_route);
 
 
 app.use('/api', sucursal_route);
 app.use('/api', clubMiembro_route);
 
 app.use('/api', inventario_sucursal_route);
-app.use('/api',bitacora_route);
+app.use('/api', bitacora_route);
 app.use('/api', inventario_general_route);
-app.use('/api',chat_route);
+app.use('/api', chat_route);
 app.use('/api', inventario_libreria_route);
-app.use('/api',intercambios_route);
-app.use('/api',solicitudIntercambio_route);
+app.use('/api', intercambios_route);
+app.use('/api', solicitudIntercambio_route);
 
 
 //localhost:3000/api/registrar-sucursal
