@@ -59,14 +59,26 @@ let saludar = () => {
     if (error == false) {
 
         console.log(error);
-
+        let activeLibrary = localStorage.getItem("idLibreria");
         registrarSucursal(nombre, telefono, correo, direccion);
         
-        Swal.fire({ //formato Jason
-            title: 'La sucursal se a registrado exitosamente',
-            type: 'success',
-            text: 'Nos pondremos en contacto con usted, tan pronto nos sea posible'
-        })
+        Swal.fire({
+            title: 'Se ha creado la Sucursal con exito',
+            text: 'Se redirigirá al Perfil de la librería',
+            imageUrl: 'http://www.mywebshelf.com/images/icons/book.gif',
+            imageWidth: 300,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+            animation: false,
+            showCancelButton: false,
+            showConfirmButton: false,
+            allowOutsideClick: false
+        });
+        
+        setTimeout(function () {
+            window.location.href = `visualizar_perfil_libreria.html?_id=${activeLibrary}`
+        }, 2000);
+
     } else {
         Swal.fire({ //formato Jason
             title: 'No se ha podido registrar la sucursal',

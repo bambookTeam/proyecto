@@ -11,7 +11,7 @@ let solicitudintercambio_schema = new mongoose.Schema({
    fecha :{type:Date, required:true, unique:true},
    sucursal :{type:String, required:true, unique:true},
    libreria :{type:String, required:true, unique:true},
-    estado: { type: String, required: true, unique: false }
+     estado: { type: String, required: true, unique: false }
 
 });
 
