@@ -2,29 +2,58 @@
 
 const express = require('express'),
     router = express.Router(),
-    Intercambio = require('../models/solicitudIntercambio.model');
+    Solicitud = require('../models/solicitudIntercambio.model');
 
 // Definicion de la ruta para registrar tarjetas
 
+router.post('/registrar_solicitud_intercambio', function (req, res) {
+    let body = req.body;
 
-router.get('/listar_intercambios', function (req, res) {
+    let nueva_solicitud = new Solicitud({
+    idOwner :body.idOwner,
+    idLibroOwner: body.idLibroOwner,
+    idLibroSender:body.idLibroSender,
+    idSender: body.idSender,
+    fecha: body.fecha,
+    sucursal: body.sucursal,
+    libreria:body.librerias,
+    estado:body.estado
+    });
 
-    console.log("listar generos");
+    nueva_solicitud.save(
+        function (err, solicitudesDB) {
+            if (err) {
+                return res.status(400).json({
+                    success: false,
+                    msj: 'El intercambio no se pudo guardar',
+                    err
+                })
+            } else {
+                res.json({
+                    success: true,
+                    msj: 'El intercambio se guardó con éxito'
+                });
+            }
+        }
+    );
+});
 
-    Genero.find(function (err, generosBD) {
+router.get('/listar_solicitudes_intercambios', function (req, res) {
+    Solicitud.find(function (err, solicitudesDB) {
         if (err) {
             return res.status(400).json({
                 success: false,
-                msj: 'No se pueden listar los géneros',
+                msj: 'No se pueden listar las solicitudes',
                 err
             });
-
         } else {
             return res.json({
                 success: true,
-                listar_generos: generosBD
-
-            })
+                lista_solicitudes: solicitudesDB
+            });
         }
     })
-})
+});
+
+
+module.exports = router;

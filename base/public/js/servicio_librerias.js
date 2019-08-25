@@ -70,3 +70,35 @@ let modificar_libreria = (pid, input_nombre_comercial, input_nombre_fantasia, in
         }
     });
 };
+
+let obtenerIdLibreria = async (identificacionAdmin) => {
+
+    let librerias = await obtenerLibrerias();
+
+    let idLibreria;
+
+    for (let i = 0; i < librerias.length; i++) {
+
+        if (identificacionAdmin == librerias[i]['id']) {
+
+
+            idLibreria = librerias[i]['_id'];
+        }
+    }
+
+    return idLibreria;
+
+};
+let modificar_libreria = (pid, input_nombre_comercial, input_nombre_fantasia, input_direccion) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/modificar-libreria',
+        responseType: 'json',
+        data: {
+            _id: pid,
+            nombre_comercial: input_nombre_comercial,
+            nombre_fantasia: input_nombre_fantasia,
+            direccion: input_direccion
+        }
+    });
+};

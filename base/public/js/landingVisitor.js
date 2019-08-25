@@ -2,14 +2,18 @@ var modal = document.getElementById("myModal");
 var modalContent=document.querySelector("#signinpopup")
 var btn = document.getElementById("myBtn");
 var btnCancelInicioSesion = document.getElementById("btnCancel");
+const btn_iniciarSesion = document.querySelector('#iniciar_sesion_banner')
 
 var span = document.getElementsByClassName("close")[0];
 
 
-btn.onclick = function() {
+btn_iniciarSesion.onclick = function() {
   modal.style.display = "block";
 }
 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
 btnCancelInicioSesion.onclick = function(){
     modal.style.display = "none";
     modalContent.style.height="450px";

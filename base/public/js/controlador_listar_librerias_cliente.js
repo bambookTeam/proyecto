@@ -31,6 +31,23 @@ let mostrar_tabla = async() => {
         boton_perfil.addEventListener('click', function() {
             window.location.href = `visualizar_perfil_libreria.html?_id=${this.dataset._id}`
         });
+
+        let celda_libros = fila.insertCell();
+        let boton_libros = document.createElement('button');
+        boton_libros.type = 'button'; 
+        boton_libros.innerText = 'Libros';
+        boton_libros.dataset._id = lista_librerias[i]['_id'];
+        
+        celda_libros.appendChild(boton_libros);
+
+        boton_libros.addEventListener('click', function(){
+
+
+            window.location.href = `listar_librosComprables.html?_id=${this.dataset._id}`
+
+            localStorage.setItem("idLibreria", lista_librerias[i]['_id']);
+        } );
+
     }
 };
 
