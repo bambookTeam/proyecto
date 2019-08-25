@@ -11,7 +11,7 @@ const express = require('express'),
 router.post('/registrar_intercambio',function(req,res){
     let body = req.body;
     let nuevo_intercambio =new Intercambio({
-        
+
     })
 
 })
@@ -21,7 +21,7 @@ router.get('/listar_intercambios', function (req, res) {
         if (err) {
             return res.status(400).json({
                 success: false,
-                msj: 'No se pueden listar los géneros',
+                msj: 'No se pueden listar los intercambios',
                 err
             });
 
