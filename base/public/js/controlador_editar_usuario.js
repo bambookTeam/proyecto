@@ -43,7 +43,14 @@ let editar = () => {
     modificarUsuarioCliente(_id, input_primer_nombre.value, input_segundo_nombre.value, input_primer_apellido.value, input_segundo_apellido.value,
     select_sexo.value, input_identificacion.value, input_correo.value, select_provincia.value, select_canton.value, 
     select_distrito.value, input_direccion.value, input_nombre_usuario.value,input_contrasena.value, img_avatar.value);
+
+        Swal.fire({
+            title: 'Listo',
+            type: 'success',
+            text: 'Se ha modificado el usuario'
+        })
 };
+
 
 
 cargar_formulario();
