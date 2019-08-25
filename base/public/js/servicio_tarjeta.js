@@ -56,9 +56,9 @@ let obtenerIdTarjeta = async (pnumerotarjeta) => {
 
     let idTarjeta;
 
-    for ( let i = 0; i < tarjetas.length; i++){
+    for (let i = 0; i < tarjetas.length; i++) {
 
-        if(pnumerotarjeta == tarjetas[i]['numerotarjeta']){
+        if (pnumerotarjeta == tarjetas[i]['numerotarjeta']) {
 
             idTarjeta = tarjetas[i]['_id'];
         }
