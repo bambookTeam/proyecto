@@ -61,47 +61,47 @@ let mostrarlista = async () => {
 
         let estilos_eliminar = document.createElement('img');
         estilos_eliminar.setAttribute('src', './imgs/delete-icon.png')
-    
+
         let celda_eliminar = fila.insertCell();
-        let enlace_eliminar = document.createElement('button');
-        enlace_eliminar.type = 'button';
-    enlace_eliminar.addEventListener('click', function () {
-        Swal.fire({
-            title: 'Está seguro que desea eliminar la tarjeta?',
-            text: "Ésta acción no se puede revertir",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, estoy seguro'
-        }).then((result) => {
-            if (result.value) {
-                eliminar(listar_tarjetas[index]['_id']);
+        let btn_eliminar = document.createElement('button', 'a');
+        btn_eliminar.href = '#';
+        btn_eliminar.type = 'button';
 
-                Swal.fire(
-                    'Tarjeta eliminada!',
-                    'success'
-                ).then((result) => {
-                    if (result.value) {
-                        window.location.href = 'listar_tarjetas.html';
-                    }
-                });
-            }
+
+        btn_eliminar.addEventListener('click', function () {
+            Swal.fire({
+                title: 'Está seguro que desea eliminar la tarjeta?',
+                text: "Ésta acción no se puede revertir",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, estoy seguro'
+            }).then((result) => {
+                if (result.value) {
+                    eliminarTarjeta(listar_tarjetas[index]._id);
+
+                    Swal.fire(
+                        'Tarjeta eliminada!',
+                        // 'listo'
+                    ).then((result) => {
+                        if (result.value) {
+                            window.location.href = 'listar_tarjetas.html';
+                        }
+                    });
+                }
+            })
+            localStorage.setItem("eliminar", JSON.stringify(listar_tarjetas[index]));
+
         })
-        localStorage.setItem("eliminar", JSON.stringify(listar_tarjetas[index]));
 
-    })
-
-    celda_eliminar.appendChild(enlace_eliminar);
-    enlace_eliminar.appendChild(estilos_eliminar);
+        celda_eliminar.appendChild(btn_eliminar);
+        btn_eliminar.appendChild(estilos_eliminar);
 
 
+    }
 
 }
-
-}
-
-
 
 
 window.addEventListener('load', mostrarlista);
