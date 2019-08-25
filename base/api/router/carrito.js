@@ -72,5 +72,33 @@ router.get('/listar-carrito', function(req, res){
 
 });
 
+router.post('/eliminar-carrito', function(req, res){
+
+    let body = req.body;
+
+   
+    Carrito.findByIdAndRemove(body._id,
+    function(error) {
+        if(error){
+
+            console.log("elimino carrito");
+            res.json({
+                 success: false,
+                 msg: 'No se pudo eliminar el carrito'
+            });
+
+
+        }else {
+
+            res.json({ 
+                success: true, 
+                msg: 'El carrito fue elilminado'
+            });
+        }
+    }
+    )
+
+});
+
 
 module.exports = router;

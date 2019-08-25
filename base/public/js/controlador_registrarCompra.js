@@ -86,6 +86,8 @@ let guardarCompra =  async() => {
 
     disminuirInventarioSucursal(idSucursal, carrito.isbn, cantidad );
 
+    eliminarCarrito(carrito._id);
+
 
 
         Swal.fire({

@@ -37,6 +37,20 @@ let obtenerCarritos = async () => {
 
 };
 
+let eliminarCarrito = (p_id)=> {
+
+
+    axios({
+        method: 'post',
+        url:'http://localhost:4000/api/eliminar-carrito',
+        responseType: 'json',
+        data: {
+            _id: p_id
+        }
+    });
+
+};
+
 
 let listarCarrito = async (pidCliente) => {
 
