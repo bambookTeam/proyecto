@@ -29,8 +29,7 @@ const select_provincia = document.querySelector('#txt_provincia');
 const select_canton = document.querySelector('#txt_canton');
 const select_distrito = document.querySelector('#txt_distrito')
 
-const img_avatar = document.querySelector('#img_avatar');
-
+const img_avatar = document.querySelector('#img_avatar_admin_libreria');
 
 
 let validarCorreo = (pcorreo) => {
@@ -96,8 +95,6 @@ let validarIdentificacion = (pidentificacion) => {
 
     return error;
 };
-
-
 
 let validar = (pnombre_comercial, pnombre_fantasia, pdireccion, pidentificacion, pprimer_nombre, pprimer_apellido, psexo, pcorreo, pnombre_usuario, pprovincia, pcanton, pdistrito) => {
 
@@ -253,21 +250,27 @@ let saludar = () => {
     let correo = input_correo.value;
     let nombre_usuario = input_nombre_usuario.value;
 
+    let avatar = img_avatar.src;
+
     let provincia = select_provincia.value;
     let canton = select_canton.value;
     let distrito = select_distrito.value;
 
     let tipo = 1;
 
-    let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, correo, nombre_usuario, provincia, canton, distrito);
+    let estado = 1;
+
+    let error = validar(nombre_comercial, nombre_fantasia, direccion, identificacion, primer_nombre, primer_apellido, sexo, correo, nombre_usuario, provincia, canton, distrito);
+
+    let errorid = validarIdentificacion(identificacion);
 
     // error = validarCorreo(correo);
 
-    if (error == false) {
+    if (error == false && errorid == false) {
 
         registrarLibreria(nombre_comercial, identificacion, nombre_fantasia, direccion);
 
-        registroAdminLibreria(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombre_usuario, tipo);
+        registroAdminLibreria(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, sexo, identificacion, correo, provincia, canton, distrito, direccion, nombre_usuario, tipo, estado, avatar);
 
         obtenerBitacora();
         //location.replace('index.html');

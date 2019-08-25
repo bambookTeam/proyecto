@@ -9,6 +9,7 @@ router.param("_id", function (req, res, next, _id) {
     req.body._id = _id;
     next();
 });
+
 const transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: {
@@ -64,7 +65,7 @@ router.post('/registrar_usuario', function (req, res) {
                 from: 'bambooks.team@gmail.com',
                 to: nuevo_usuario.correo,
                 subject: 'Bienvenido a Bambooks',
-                text: ' Usar este pin para iniciar sesion: ' + body.contrasena
+                text: 'Usar este pin para iniciar sesion: ' + body.contrasena + 'Bienvenido \ Holi'
 
 
             };
@@ -88,6 +89,80 @@ router.post('/registrar_usuario', function (req, res) {
             );
             console.log("sirvió");
             // console.log(res);
+        }
+    });
+
+});
+
+router.post('/registrar_admin_libreria', function (req, res) {
+    let body = req.body;
+
+    console.log('Impresion datos')
+    console.log(body)
+
+    let nuevo_usuario = new Usuario({
+
+        identificacion: body.identificacion,
+        primerNombre: body.primerNombre,
+        segundoNombre: body.segundoNombre,
+        primerApellido: body.primerApellido,
+        segundoApellido: body.segundoApellido,
+        sexo: body.sexo,
+        correo: body.correo,
+
+        provincia: body.provincia,
+        canton: body.canton,
+        distrito: body.distrito,
+
+        nombreUsuario: body.nombreUsuario,
+        contrasena: body.contrasena,
+        tipo: body.tipo,
+        contador: body.contador,
+        estado: body.estado,
+        avatar: body.avatar
+    });
+
+    nuevo_usuario.save(function (err, usuarioDB) {
+
+        if (err) {
+            console.log('Error registro Admin Librería')
+            console.log(err)
+
+            return res.status(500).json(
+                {
+                    success: false,
+                    msj: 'El usuario no se pudo guardar',
+                    err
+                });
+        } else {
+            console.log('funcion guardar usuario');
+            let mailOptions = {
+
+                from: 'bambooks.team@gmail.com',
+                to: nuevo_usuario.correo,
+                subject: 'Bienvenido a Bambooks',
+                text: 'Bienvenido \n Usar este pin para iniciar sesion: ' + body.contrasena
+
+
+            };
+
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+
+                    console.log(error);
+                } else {
+
+                    console.log('Correo enviado')
+                }
+
+
+            });
+            res.json(
+                {
+                    success: true,
+                    msj: 'El usuario se guardó con éxito'
+                }
+            );
         }
     });
 
@@ -154,72 +229,7 @@ router.post('/habilitar-usuario', function (req, res) {
         }
     )
 });
-router.post('/registrar_admin_libreria', function (req, res) {
-    let body = req.body;
 
-   console.log('Impresion datos')
-    console.log(body)
-
-    let nuevo_usuario = new Usuario({
-        identificacion: body.identificacion,
-        primerNombre: body.primerNombre,
-        segundoNombre: body.segundoNombre,
-        primerApellido: body.primerApellido,
-        segundoApellido: body.segundoApellido,
-        sexo: body.sexo,
-        correo: body.correo,
-        nombreUsuario: body.nombreUsuario,
-
-        contrasena: body.contrasena,
-        tipo: body.tipo,
-        contador: body.contador
-    });
-
-    nuevo_usuario.save(function (err, usuarioDB) {
-
-        if (err) {
-            console.log('Error registro Admin Librería')
-            console.log(err)
-
-            return res.status(500).json(
-                {
-                    success: false,
-                    msj: 'El usuario no se pudo guardar',
-                    err
-                });
-        } else {
-            console.log('funcion guardar usuario');
-            let mailOptions = {
-
-                from: 'bambooks.team@gmail.com',
-                to: nuevo_usuario.correo,
-                subject: 'Bienvenido a Bambooks',
-                text: ' Usar este pin para iniciar sesion: ' + body.contrasena
-
-
-            };
-
-            transporter.sendMail(mailOptions, function (error, info) {
-                if (error) {
-
-                    console.log(error);
-                } else {
-
-                    console.log('Correo enviado')
-                }
-
-
-            });
-            res.json(
-                {
-                    success: true,
-                    msj: 'El usuario se guardó con éxito'
-                }
-            );
-        }
-    });
-
-});
 
 //iniciar-sesion
 router.post('/validar_credenciales', function (req, res) {
@@ -402,38 +412,38 @@ router.post('/actualizar-contador', function (req, res) {
 
 });
 
-router.post('/recuperar-contrasena', function(req, res){
-    
-    Usuario.updateOne({ _id: req.body._id}, {$set: {contrasena: req.body.contrasena}} ,
-        
-        function(error){
+router.post('/recuperar-contrasena', function (req, res) {
 
-            if(error) {
+    Usuario.updateOne({ _id: req.body._id }, { $set: { contrasena: req.body.contrasena } },
+
+        function (error) {
+
+            if (error) {
                 return res.status(500).json({
-                    success: false, 
+                    success: false,
                     msj: 'No se pudo restablecer la contrasena',
                     error
 
                 });
 
-            }else {
+            } else {
 
                 let mailOptions = {
-                   
+
                     from: 'bambooks.team@gmail.com',
                     to: req.body.correo,
                     subject: 'Bienvenido a Bambooks',
                     text: ' Se ha restablecido su contraseña utilice este pin para iniciar sesión: ' + req.body.contrasena
-    
+
 
                 };
 
-                transporter.sendMail(mailOptions, function(error, info){
+                transporter.sendMail(mailOptions, function (error, info) {
 
-                    if(error ){
+                    if (error) {
 
                         console.log(error);
-                    }else {
+                    } else {
 
                         console.log('Se ha restablecido la nueva contraseña')
                     }
@@ -456,15 +466,15 @@ router.post('/recuperar-contrasena', function(req, res){
         }
 
 
-        )
+    )
 
 });
 
-router.post('/eliminar-usuario', function(req, res) {
+router.post('/eliminar-usuario', function (req, res) {
     let body = req.body;
 
     Usuario.findByIdAndRemove(body._id,
-        function(error) {
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo borrar el usuario' });
             } else {
