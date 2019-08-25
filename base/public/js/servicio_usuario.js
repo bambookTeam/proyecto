@@ -7,6 +7,9 @@ let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pident
     let canton = "pcanton";
     let distrito = "pdistrito";
 
+
+    console.log(pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado);
+
     axios({
 
         method: 'post',
@@ -64,12 +67,14 @@ let modificarUsuarioCliente = (idCliente, pnombre1, pnombre2, papellido1, papell
     });
 };
 
-let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo) => {
+let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado, pavatar) => {
 
     let pcontrasenna = generarContrasenna();
-    let provincia = "pprovincia";
-    let canton = "pcanton";
-    let distrito = "pdistrito";
+    let provincia = pprovincia;
+    let canton = pcanton;
+    let distrito = pdistrito;
+
+    console.log(pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado, pavatar);
 
     axios({
 
@@ -91,7 +96,9 @@ let registroAdminLibreria = (pnombre1, pnombre2, papellido1, papellido2, psexo, 
             nombreUsuario: pnombreUsuario,
             contrasena: pcontrasenna,
             tipo: ptipo,
-            contador: 0
+            contador: 0,
+            estado: pestado,
+            avatar: pavatar
 
         }
     });
