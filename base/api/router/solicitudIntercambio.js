@@ -6,37 +6,52 @@ const express = require('express'),
 
 // Definicion de la ruta para registrar tarjetas
 
-router.post('/registrar_solicitud_intercambio', function (req, res) {
-    let body = req.body;
+
+
+router.post('/solicitud_intercambio', function (req, res) {
+
+    var body = req.body;
+
+    console.log("de nuevo");
+    console.log(body);
+
 
     let nueva_solicitud = new Solicitud({
-    idOwner :body.idOwner,
-    idLibroOwner: body.idLibroOwner,
-    idLibroSender:body.idLibroSender,
-    idSender: body.idSender,
-    fecha: body.fecha,
-    sucursal: body.sucursal,
-    libreria:body.librerias,
-    estado:body.estado
+        idOwner: body.idOwner,
+        idLibroSender: body.idLibroSender,
+        idSender: body.idSender,
+        fecha: body.fecha,
+        sucursal: body.sucursal,
+        estado: body.estado
     });
 
+    console.log("guardado de solicitud");
     nueva_solicitud.save(
-        function (err, solicitudesDB) {
+
+        function (err, tarjetaDB) {
             if (err) {
+                console.log("error  de tarjeta");
+                console.log(err);
                 return res.status(400).json({
                     success: false,
-                    msj: 'El intercambio no se pudo guardar',
+                    msj: 'La tarjeta no se pudo guardar',
                     err
-                })
+                });
+
+
             } else {
                 res.json({
                     success: true,
-                    msj: 'El intercambio se guardó con éxito'
-                });
+                    msj: 'La tarjeta se guardó con éxito'
+
+                })
+
+                console.log(res);
+                console.log("se guardó  de tarjeta");
             }
         }
     );
-});
+})
 
 router.get('/listar_solicitudes_intercambios', function (req, res) {
     Solicitud.find(function (err, solicitudesDB) {
