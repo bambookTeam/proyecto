@@ -1,6 +1,6 @@
 'use strict'
 
-import { brotliDecompressSync } from "zlib";
+
 
 let registroEnLinea = (pnombre1, pnombre2, papellido1, papellido2, psexo, pidentificacion, pcorreo, pprovincia, pcanton, pdistrito, pdireccion, pnombreUsuario, ptipo, pestado) => {
 

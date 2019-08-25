@@ -30,7 +30,7 @@ let mostrar_tabla = async () => {
     let idLibreria = localStorage.getItem('idLibreria');
 
     for (let i = 0; i < lista_sucursales.length; i++) {
-        if (lista_sucursales[i]['idLibreria'] == idLibreria) {
+        if (lista_sucursales[i].idLibreria == idLibreria) {
             let fila = tbody.insertRow();
             fila.insertCell().innerHTML = lista_sucursales[i]['nombre'];
             fila.insertCell().innerHTML = lista_sucursales[i]['direccion'];
@@ -44,6 +44,7 @@ let mostrar_tabla = async () => {
             localStorage.setItem('idSucursal',lista_sucursales[i]._id);
 
             btnSuscribirseLibreria.addEventListener('click', function () {
+                
                 Swal.fire({
                     title: '¿Está seguro que quiere suscribirse a esta sucursal?',
                     showCancelButton: true,
@@ -58,6 +59,7 @@ let mostrar_tabla = async () => {
 
                 }).then((result) => {
                     if (result.value) {
+                        sub_sucursal();
                         Swal.fire({
                             title: 'Te has suscrito a esta sucursal',
                             text:'Se te envió un correo con las ofertas y clubes de esta sucursal',

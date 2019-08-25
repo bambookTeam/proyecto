@@ -35,10 +35,6 @@ if(err){
 })
 
 router.post('/listar_ofertas', function (req, res) {
-
-    console.log("listar ofertas ejecutado 2 ");
-    console.log(req.body);
-
     Oferta.find({ id: req.body.id }, function (err, ofertasBD) {
         if (err) {
             console.log("error");
