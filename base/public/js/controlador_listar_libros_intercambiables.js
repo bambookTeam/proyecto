@@ -13,7 +13,7 @@ let idLibreria = urlParams.get('_id');
 
 let mostrar_tabla = async () => {
 
-    let librosComprados = await crearTablaLibros();
+    let librosComprados = await tabla();
     tbody.innerHTML = '';
 
    
