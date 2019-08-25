@@ -30,6 +30,9 @@ let listarLibrosCards = async () => {
         let tipo= document.createElement("p");
         tipo.innerHTML=listaLibrosCards[i].tipo;
 
+        let anio = document.createElement("p");
+        anio.innerHTML=listaLibrosCards[i].anno;
+
         let btn_perfil = document.createElement('button');
         btn_perfil.type = 'button';
         btn_perfil.innerHTML= "Ver Perfil";
@@ -46,6 +49,7 @@ let listarLibrosCards = async () => {
 
         libroInfoDiv.appendChild(h1);
         libroInfoDiv.appendChild(tipo);
+        libroInfoDiv.appendChild(anio);
         libroInfoDiv.appendChild(btn_perfil);
 
     }
@@ -88,6 +92,9 @@ let filtrar_LibrosCards = async () => {
         let tipo= document.createElement("p");
         tipo.innerHTML=listaLibrosCards[i].tipo;
 
+        let anio = document.createElement("p");
+        anio.innerHTML=listaLibrosCards[i].anno;
+
         let btn_perfil = document.createElement('button');
         btn_perfil.type = 'button';
         btn_perfil.innerHTML= "Ver Perfil";
@@ -104,6 +111,7 @@ let filtrar_LibrosCards = async () => {
 
         libroInfoDiv.appendChild(h1);
         libroInfoDiv.appendChild(tipo);
+        libroInfoDiv.appendChild(anio);
         libroInfoDiv.appendChild(btn_perfil);
 
 
