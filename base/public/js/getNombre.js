@@ -1,4 +1,4 @@
-let usuario_activo_123=sessionStorage.getItem('tipoUsuario')
+let usuario_activo_123=sessionStorage.getItem('tipoUsuario');
 let optionSucursales=document.querySelector('#optionSucursales');
 let optionLibrerias = document.querySelector('#optionlibrerias');
 let optionUsuarios = document.querySelector('#optionUsers');
@@ -39,7 +39,7 @@ window.addEventListener('load',function(){
             optionUsuarios.style.display="none";
             document.querySelector('#optionBitacora').style.display='none';
             document.querySelector('#refGeneros').href='listar_generos_adminlibre.html';
-            optionSucursales.href='listar_sucursales_admin.html';
+            optionSucursales.href='listar_sucursalesAdmin.html';
             optionMisLibros.style.display="none";
             optionInventario.href="inventario_libreria.html"
     

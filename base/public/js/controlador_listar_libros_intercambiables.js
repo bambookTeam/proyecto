@@ -37,6 +37,8 @@ let mostrar_tabla = async () => {
     librosComprados = await obtenerLibrosComprados();
     tbody.innerHTML = '';
 
+    let usuarios = await obtenerUsuarios();
+
 
 
 
@@ -115,3 +117,5 @@ let filtrar_tabla = async () => {
 window.addEventListener('load', mostrar_tabla);
 filtro.addEventListener('keyup', filtrar_tabla);
 }
+
+mostrar_tabla();

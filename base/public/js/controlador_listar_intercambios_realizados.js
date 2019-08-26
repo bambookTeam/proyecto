@@ -67,8 +67,8 @@ let filtrar_tabla = async () => {
 
             });
 
-            let celda_btn_solicitar = fila.insertCell();
-            let btn_solicitar = document.createElement('button', 'a');
+            celda_btn_solicitar = fila.insertCell();
+            btn_solicitar = document.createElement('button', 'a');
             btn_solicitar.innerText = 'Solicitar';
             btn_solicitar.type = 'button';
 
