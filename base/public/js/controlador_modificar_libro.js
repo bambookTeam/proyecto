@@ -3,32 +3,36 @@
 let usuario = JSON.parse(localStorage.getItem("usuario"));
 let lista_libros = [];
 let idLibro = localStorage.getItem('_idLibro');
+console.log(idLibro);
 
 
 let modificarLibro = async (id) => {
     // console.log(id);
     const input_titulo = document.querySelector('#txt_titulo').value;
     const input_edicion = document.querySelector('#txt_edicion').value;
-    const input_editorial = document.querySelector('#txt_editorial');
-    document.querySelector('#txt_autor').value;
+    const input_editorial = document.querySelector('#txt_editorial').value;
+    const input_autor=document.querySelector('#slt_autor').value;
     const input_anno = document.querySelector('#txt_anno_edicion').value;
     const input_idioma = document.querySelector('#txt_idioma').value;
     const input_isbn = document.querySelector('#txt_isbn').value;
-    document.querySelector('#txt_genero').value;
+    const input_genero=document.querySelector('#txt_genero').value;
     const input_tipo = document.querySelector('#txt_tipo').value;
     const input_cantidad = document.querySelector('#txt_existencia').value;
     const input_precio = document.getElementById('txt_precio').value;
     const portadaLibro = document.querySelector('#portada_preview').value;
     const contraportadaLibro = document.querySelector('#contraportada_preview').value;
 
+    
 
+ modificar_libro(idLibro, portadaLibro, contraportadaLibro, input_titulo, input_edicion, input_editorial, input_autor, input_anno, input_idioma, input_isbn, input_genero, input_tipo, input_cantidad, input_precio);
+    
                    //(pid, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pgenero, ptipo, pcantidad, pprecio , pportada, pcontraportada)
-    modificar_libro(pid, input_titulo.value, input_edicion.value, input_editorial.value, input_anno.value, input_anno.value, input_idioma.value, input_isbn.value, pgenero, input_tipo.value, input_cantidad.value, input_precio.value , portadaLibro.value, contraportadaLibro.value);
+    //modificar_libro(idLibro, input_titulo, input_edicion, input_editorial, input_anno, input_anno.value, input_idioma.value, input_isbn.value, pgenero, input_tipo.value, input_cantidad.value, input_precio.value , portadaLibro.value, contraportadaLibro.value);
 }
 
 document.querySelector("#btn_guardar").addEventListener("click", function () {
     modificarLibro(idLibro);
-    window.location.href = 'listar_libros.html';
+   // window.location.href = 'listar_libros.html';
     // window.location.addEventListener("click", saludar,);
 
 });
@@ -66,15 +70,15 @@ let showSelects = async () => {
     }
 
     for (let i = 0; i < arrayAutor.length; i++) {
-        contruirOpciones("txt_autor", arrayAutor[i].nombre_autor);
+        contruirOpciones("slt_autor", arrayAutor[i].nombre_autor);
     }
 
 }
 
-showSelects(); 
-
 
 let llenarFormulario = async () => {
+
+    showSelects(); 
 
     lista_libros = await obtenerLibros();
  
@@ -85,16 +89,20 @@ let llenarFormulario = async () => {
             document.querySelector('#txt_titulo').value = lista_libros[i].titulo;
             document.querySelector('#txt_edicion').value = lista_libros[i].edicion;
             document.querySelector('#txt_editorial').value = lista_libros[i].editorial;
-            document.querySelector('#txt_autor').value = lista_libros[i].autor;
-            document.querySelector('#txt_anno_edicion').value = lista_libros[i].edicion;
+           
+            let x=lista_libros[i].autor;
+            document.querySelector('#slt_autor').value = x;
+            console.log( lista_libros[i].autor);
+
+            document.querySelector('#txt_anno_edicion').value = lista_libros[i].anno;
             document.querySelector('#txt_idioma').value = lista_libros[i].idioma;
             document.querySelector('#txt_isbn').value = lista_libros[i].isbn;
             document.querySelector('#txt_genero').value = lista_libros[i].genero;
             document.querySelector('#txt_tipo').value = lista_libros[i].tipo;
-            document.querySelector('#txt_existencia').value = lista_libros[i].existencia;
+            document.querySelector('#txt_existencia').value = lista_libros[i].cantidad;
             document.getElementById('txt_precio').value = parseFloat(lista_libros[i].precio);
-            document.querySelector('#portada_preview').value = lista_libros[i].portada;
-            document.querySelector('#contraportada_preview').value = lista_libros[i].contraportada;
+            document.querySelector('#portada_preview').src= lista_libros[i].portada;
+            document.querySelector('#contraportada_preview').src = lista_libros[i].contraportada;
         }
 
     }
@@ -148,9 +156,9 @@ let validar = ( ptitulo, pedicion, peditorial, panno, pautor, pidioma, pisbn, pg
     //validar autor
     if (pautor == '') {
         error = true;
-        document.querySelector('#txt_autor').classList.add('input_error');
+        document.querySelector('#slt_autor').classList.add('input_error');
     } else {
-        document.querySelector('#txt_autor').classList.remove('input_error');
+        document.querySelector('#slt_autor').classList.remove('input_error');
     }
 
     //validar año de edición
@@ -215,4 +223,5 @@ let limpiar = () => {
     localStorage.removeItem("usuario");
 }
 
-llenarFormulario();
+window.addEventListener('load',llenarFormulario)
+

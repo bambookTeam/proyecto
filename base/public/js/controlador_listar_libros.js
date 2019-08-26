@@ -68,8 +68,6 @@ let mostrar_tabla = async () => {
 
         //Botón estado
 
-
-
         let celda_btn_estado = fila.insertCell();
         let btn_estado = document.createElement('button');
         btn_estado.type = 'button';
@@ -95,11 +93,6 @@ let mostrar_tabla = async () => {
 
         }
 
-
-
-
-
-
         //Botón eliminar
 
         let estilos_btn_eliminar = document.createElement('img');
@@ -122,7 +115,7 @@ let mostrar_tabla = async () => {
                 confirmButtonText: 'Sí, estoy seguro'
             }).then((result) => {
                 if (result.value) {
-                    eliminarLibro(lista_libros[i]._id);
+                    eliminar(lista_libros[i]._id);
 
                     Swal.fire(
                         'Libro eliminado exitosamente!',
@@ -134,10 +127,11 @@ let mostrar_tabla = async () => {
                     });
                 }
             })
-            // localStorage.setItem("eliminarLibro", JSON.stringify(lista_libros[i]));
+            localStorage.setItem("eliminarLibro", JSON.stringify(lista_libros[i]));
         })
         celda_btn_eliminar.appendChild(btn_eliminar);
         btn_eliminar.appendChild(estilos_btn_eliminar);
+
 
     }
 };
