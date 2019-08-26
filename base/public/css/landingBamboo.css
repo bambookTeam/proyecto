@@ -46,7 +46,7 @@ main{
     
     }
     .banner h2{
-    font-size:2em;
+    font-size:4em;
     font-weight:lighter;
     text-align:center;
     margin-top:50px;
@@ -56,7 +56,7 @@ main{
     }
     
     .banner p{
-      font-size:1em;
+      font-size:1.5em;
       font-weight:lighter;
       text-align:center;
       margin-right:25px;
@@ -67,7 +67,7 @@ main{
       }
     
       .banner span{
-        font-size:0.7em;
+        font-size:1em;
         font-weight:lighter;
         text-align:center;
         margin-right:25px;
@@ -108,14 +108,24 @@ main{
     grid-row: 1 / 12;
     grid-column: 4/-1;
     font-size: 1.7em;
-    background-color: #ffdfba;
     }
     
     #misionP,#visionP{
       display:none;
       width:75%;
       line-height: 1.2;
-     
+     text-align: center;
+    }
+
+     #visionP h4{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #misionP h4{
+      text-align: center;
+            margin-bottom: 20px;
+
     }
     
     .menu:hover > #misionP{
@@ -128,7 +138,11 @@ main{
     
     .menu:hover > #missionH{
       display:none;
-    
+      width: 100px;
+    }
+
+    #missionH img{
+      width: 100px;
     }
     
     .content:hover > #visionH{
@@ -141,7 +155,6 @@ main{
     grid-column: 1 /4;
     grid-row: 1 / 12;
     font-size: 1.7em;
-    background-color: #d3f6f3;
     }
     
     /**/
@@ -152,17 +165,27 @@ main{
     
     }
     h2{
-      margin-top:70px;
       font-size:45px;
       text-align: center;
     }
     
     .container .galerias {
-    background-color: #c9c9ff;
-      color:white;
-      text-align: center
+    background-color: ;
+        border-radius: 100px;
+        margin: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+      color: #000;
+      text-align: center;
+      border: 1px solid #000;
+      display: flow-root;
     }
     
+    .info-integrante img{
+      width: 100px;
+      border-radius: 50%;
+    }
+
     .info-integrante h2{
       font-size:2.3em;
     }
@@ -175,22 +198,27 @@ main{
     
     .caract-integrante{
       width:100%;
-      color:#fff;
-      display:none;
+      color:#000;
+      display: flow-root;
+      /* display:none; */
+    }
+
+    .caract-integrante h2{
+      margin-bottom: 20px;
     }
     
-    .galerias:hover > .info-integrante{
+    /* .galerias:hover > .info-integrante{
       display:none;
-    }
+    } */
     
-    .galerias:hover > .caract-integrante{
+    /* .galerias:hover > .caract-integrante{
       display:block;
-    }
+    } */
     
     .info{
       float:left;
       width:50%;
-      color:#fff;
+      color:#000;
     }
     .info h3{
       font-size:2em;
@@ -214,9 +242,14 @@ main{
       background-color: #494949;
       
     }
+
+.fondo_integrantes{
+  padding-top: 50px;
+    background: #fbc531;
+}
+
     .container{
-    padding-top:90px;
-    margin:20px;
+  padding-top: 30px;
     display: grid;
     grid-gap: 7px;
     grid-template-columns: repeat(2, 1fr);
