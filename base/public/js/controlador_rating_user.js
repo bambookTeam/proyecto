@@ -1,5 +1,6 @@
 'use strict';
 
+let btn_ratear_usuario=document.querySelector('#btn_rate_user')
 let rating1=document.querySelector('#rating-1');
 let rating2=document.querySelector('#rating-2');
 let rating3=document.querySelector('#rating-3');
@@ -80,13 +81,38 @@ let owo=async()=>{
     console.log(x)
 }
 
+let checkifintercambioExists = async (pidIntercambio) =>{
+    let listaRatings=[];
+    listaRatings=await obtener_ratings();
+    let error=false;
+
+
+    for (let index = 0; index < listaRatings.length; index++) {
+        if (listaRatings[index].idIntercambio==pidIntercambio) {
+            error=true;
+        } 
+    }
+    return error
+    
+}
+
 let ratear_Usuario=async()=>{
     let idRater=sessionStorage.getItem('id');
     let idRateado='1assaddsa1';
-    let idIntercambio="";
+    let idIntercambio='o';
+    let prating=valueRating;
+    let error=await checkifintercambioExists(idIntercambio);
+    if (error==true) {
+        console.log('c mamut')
+    } else {
+        registrar_rating_usuario (idRateado,idRater,idIntercambio,prating);
+    }
+    
+}
 
-
-
-    registrar_rating_usuario (idRateado,idRater,pidIntercambio,prating);
+let listar_ratings=async()=>{
+    let listaRatings=[];
+    listaRatings=await obtener_ratings();
 }
 window.addEventListener('load',owo);
+btn_ratear_usuario.addEventListener('click',ratear_Usuario)

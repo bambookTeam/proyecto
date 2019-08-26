@@ -11,7 +11,7 @@ let registrarCompra = (pidCliente, pisbn, pidSucursal, pidTarjeta, ptitulo, pcan
         data: {
 
             idCliente: pidCliente,
-            isbn: pisbn, 
+            isbn: pisbn,
             idSucursal: pidSucursal,
             idTarjeta: pidTarjeta,
             titulo: ptitulo,
@@ -23,43 +23,43 @@ let registrarCompra = (pidCliente, pisbn, pidSucursal, pidTarjeta, ptitulo, pcan
 };
 
 
-let obtenerLibrosComprados = async() => {
-    
-    try{
+let obtenerLibrosComprados = async () => {
 
-        const response = await axios ({
+    try {
+
+        const response = await axios({
             method: 'get',
             url: 'http://localhost:4000/api/listar_librosComprados',
             responseType: 'json'
         });
 
-        return response.data. lista_librosComprados;
+        return response.data.lista_librosComprados;
 
-    }catch (error){
-        
+    } catch (error) {
+
         console.log(error);
 
     }
 
 };
 
-let listarLibrosCliente= async( pidCliente) => {
+let listarLibrosCliente = async (pidCliente) => {
 
     let librosComprados = await obtenerLibrosComprados();
 
     let librosCliente = [];
     let cont = 0;
 
-    for( let i = 0; i < librosComprados.length; i++){
+    for (let i = 0; i < librosComprados.length; i++) {
 
-        if( librosComprados[i]['idCliente'] == pidCliente){
+        if (librosComprados[i]['idCliente'] == pidCliente) {
 
-            librosCliente[cont] = librosComprados[i];   
-            cont ++; 
+            librosCliente[cont] = librosComprados[i];
+            cont++;
         }
 
     }
-    
+
     return librosCliente;
 };
 
