@@ -17,3 +17,30 @@ let registrarTarjeta = (libro, fecha, idSolicitante, sucursal) => {
         }
     });
 };
+
+let obtenerSolicitudes = async () => {
+    try {
+        // fetch data from an url endpoint
+        const response = await axios({
+            method: 'get',
+            url: 'http://localhost:4000/api/listar_solicitudes_intercambios',
+            responseType: 'json',
+        });
+
+        return response.data.lista_solicitudes;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+let cambiarEstado = (pId, estado) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/cambiarEstado',
+        responseType: 'json',
+        data: {
+            _id: pId,
+            estado: estado
+        }
+    });
+};
