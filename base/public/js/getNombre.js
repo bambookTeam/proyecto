@@ -1,5 +1,6 @@
-let usuario_activo_123=sessionStorage.getItem('tipoUsuario')
-let optionSucursales=document.querySelector('#optionSucursales');
+let usuario_activo_123=sessionStorage.getItem('tipoUsuario');
+console.log(usuario_activo_123)
+let optionSucursales=document.querySelector('#sucursal_href');
 let optionLibrerias = document.querySelector('#optionlibrerias');
 let optionUsuarios = document.querySelector('#optionUsers');
 let optionGeneros = document.querySelector('#optionGeneros');
@@ -33,14 +34,14 @@ window.addEventListener('load',function(){
             document.querySelector('#signinpopup').style.height="58px";
             
         }
-        if (usuario_activo_123== 1) {
+        if (usuario_activo_123==1) {
             optionCategorias.style.display="none";
             optionAutores.style.display="none";
             optionIntercambio.style.display="none";
             optionUsuarios.style.display="none";
             document.querySelector('#optionBitacora').style.display='none';
             document.querySelector('#refGeneros').href='listar_generos_adminlibre.html';
-            optionSucursales.href='listar_sucursales_admin.html';
+            $(optionSucursales).attr("href", "listar_sucursales_admin.html");
             optionMisLibros.style.display="none";
             optionInventario.href="inventario_libreria.html";
             optionLibrerias.href='listar_libreria_adminLib.html';

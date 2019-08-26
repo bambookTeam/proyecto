@@ -117,6 +117,10 @@ main{
      text-align: center;
     }
 
+    #misionP:hover,#visionP:hover{
+      cursor:pointer;
+    }
+
      #visionP h4{
       text-align: center;
       margin-bottom: 20px;
@@ -156,7 +160,9 @@ main{
     grid-row: 1 / 12;
     font-size: 1.7em;
     }
-    
+    .misionVision:hover{
+      cursor:pointer;
+    }
     /**/
     .container > div {
     display: flex;
@@ -170,20 +176,21 @@ main{
     }
     
     .container .galerias {
-    background-color: ;
-        border-radius: 100px;
+    background-color:#fff ;
+        border-radius: 50px;
         margin: 10px;
-        padding: 20px;
+        padding: 5px;
         margin-bottom: 20px;
       color: #000;
       text-align: center;
       border: 1px solid #000;
       display: flow-root;
+
     }
     
     .info-integrante img{
       width: 100px;
-      border-radius: 50%;
+      border-radius:100%;
     }
 
     .info-integrante h2{
@@ -249,11 +256,13 @@ main{
 }
 
     .container{
+      margin:auto;
   padding-top: 30px;
     display: grid;
     grid-gap: 7px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows:400px 400px 400px ;
+    
     }
     
     .footer{
