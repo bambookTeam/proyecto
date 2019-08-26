@@ -5,16 +5,16 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registrar Sucursal</title>
+    <title>Solicitudes de Intercambio</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/registrar_sucursal.css">
+    <link rel="stylesheet" href="css/listar_libros.css">
+    <link rel="stylesheet" href="css/fix-libros.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 
-
-
 <body>
+
 
     <header>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -49,14 +49,15 @@
             <li class="parent" id="dropdown"><a href="#">Otros</a>
                 <ul class="child">
                     <li><a href="listar_libros_intercambiables.html">Intercambios</a></li>
-                    <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
+                    <li id='optionUsers'><a href="#">Usuarios</a></li>
                     <li id='optionBitacora'><a href="#">Bitácora</a></li>
                     <li id='optionReportes'><a href="#">Reportes</a></li>
-                    <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
+                    <li id='optionInventario'><a href="#">Inventario</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
+
 
     <main>
 
@@ -75,55 +76,26 @@
             </div>
 
         </div>
+        <h1>Solicitudes Recibidas</h1>
 
-        <div class="pantalla_dividida1">
+        <div class=""> <a href="solicitudes_recibidas.html">Recibidas</a></div>
 
-        </div>
+        <div class=""> <a href="solicitudes.html">Realizadas</a></div>
 
-        <div class="pantalla_dividida2">
+        <table id="tbl_libros">
+            <thead>
+                <tr>
+                    <th>Libro Solicitado</th>
+                    <th>Solicitante</th>
+                    <th>Fecha del intercambio</th>
+                    <th>Sucursal del intercambio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
 
-            <h1>Registrar Sucursal</h1>
-
-            <section id="datos">
-
-                <div>
-                    <label for="txt_nombre">Nombre</label>
-                    <input id="txt_nombre" type="text">
-                </div>
-
-                <div>
-                    <label for="txt_telefono">Teléfono</label>
-                    <input id="txt_telefono" type="text">
-                </div>
-
-                <div>
-                    <label for="txt_correo">Correo</label>
-                    <input id="txt_correo" type="text">
-                </div>
-
-                <div>
-                    <label for="txt_direccion">Dirección</label>
-                    <textarea id="txt_direccion"></textarea>
-                </div>
-
-            </section>
-
-            <section id="localizacion">
-
-                <div class="mapa">
-
-                    <div id="map">
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            <button id="btn_registrar"> Registrar </button>
-
-        </div>
-
+            </tbody>
+        </table>
 
     </main>
 
@@ -186,32 +158,29 @@
             <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
 
             <div class="line-soc"></div>
-            <div>
-                <!--
-
-            <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
-
-          <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
-          <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!-->
-            </div>
+            <!-- <div>
+              
+  
+          <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
+  
+        <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
+        <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!
+          </div> -->
         </div>
     </section>
 
-
     <script src="js/jquery-3.3.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCb9bx2gVqXRsr4OEeUnMErqARyRFSADmE&callback=initMap"
-        async defer></script>
-    <script src="js/map.js"></script>
-
-    <script src="js/servicio_sucursales.js"></script>
-    <script src="js/controlador_registrar_sucursal.js"></script>
-    <script src="js/controlador_cerrar_sesion.js"></script>
     <script src="js/getNombre.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/servicio_solicitud.js"></script>
+    <script src="js/servicio_usuario.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
+    <script src="js/controlador_listar_solicitudes_recibidas.js"></script>
+    <script src="js/servicio_libro.js"></script>
     <script src="js/clienteIniciado.js"></script>
 
 </body>
+
 
 </html>

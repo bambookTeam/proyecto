@@ -1,117 +1,134 @@
-
 main{
-
     display: flow-root;
     text-align: center;
 }
 
 main h1{
-
-    color: #76323F;
+    color: #000;
     font-size: 30px;
     font-weight: bold;
     margin: 30px;
+    margin-bottom: 60px;
+}
+
+.pantalla_dividida1{
+    float: left;
+    background-image: url(https://www.3wallpapers.fr/wp-content/uploads/2015/05/Library-iPhone-3Wallpapers-Parallax.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 1200px;
+    margin: 0 40px;
+}
+
+.pantalla_dividida2{
+    float: left;
+    width: 50%;
+    margin: 10px;
 }
 
 main h2{
-
-    color: #76323F;
+    color: #000;
     font-size: 30px;
     margin: 30px;
-
-
+    margin-bottom: 100px;
 }
 
 #datos_personales1 {
-
     width: 50%;
     float: left;
     text-align: center;
-
-
 }
 
 #datos_personales2 {
-
     width: 50%;
     float: left;
     text-align: center;
-
+    margin-bottom: 50px;
 }
 
 main input{
-    width: 60%;
+    width: 90%;
     height: 30px;
-    margin: 15px;
+    margin: 0 15px;
+    margin-bottom: 50px;
     padding: 5px;
-    border: 1px solid #76323F;
-    border-radius: 15px;
+    border: none;
+    border-bottom: 1px solid #000;
     background: none;
     outline: none;
-    
+}
+
+main textarea{
+    width: 90%;
+    height: 80px;
+    outline: none;
+    resize: none;
+    margin: 0 15px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+}
+
+main select{
+    width: 90%;
+    height: 30px;
+    margin: 0 15px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+    outline: none;
 }
 
 .input_error {
-    
-    border: 2px #e74c3c solid !important;
+    border: none;
+    border-bottom: 2px #e74c3c solid !important;
 }
 
-
-
-
-
-::-webkit-input-placeholder{
-    color: #76323F;
-}
-
-iframe{
-    margin: 15px;
-    width: 300px;
-    height: 160px;
-}
-
-
-main select{
-
-    width: 63%;
-    height: 42px;
-    margin: 15px;
-    padding: 5px;
-    border: 1px solid #76323F;
-    border-radius: 15px;
-    background: none;
-    color: #76323F;
-    outline: none;     
-}
 
 #img_avatar {
-
     height: 200px;
-
 }
 
-main button{
+#map {
+    height: 320px;
+    width: 100%;
+}
+
+#btn_seleccionar_avatar{
+    margin: 20px 0 95px 0;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+    background: none;
+    outline: none;
+}
+
+#btn_registrar{
     margin: 50px 0;
     padding: 10px;
-    border: 2px solid #76323F;
-    border-radius: 15px;
+    border: 2px solid #000;
     font-size: 20px;
-    color: #76323F;
+    color: #fff;
     font-weight: bold;
-    background: none;
-    outline: none; 
+    background: #000;
+    outline: none;
 }
 
-.boton_subir_avatar{
-
+#btn_registrar:hover{
     margin: 50px 0;
-    padding: 5px;
-    border: 2px solid #76323F;
-    border-radius: 15px;
-    font-size: 15px;
-    color: #76323F;
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    font-size: 20px;
+    color: #fff;
     font-weight: bold;
-    background: none;
-    outline: none; 
-
+    background: #f6b93b;
+    outline: none;
 }
