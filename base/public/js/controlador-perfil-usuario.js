@@ -12,10 +12,10 @@ const txt_correo = document.querySelector('#txt_correo');
 const txt_distrito = document.querySelector('#txt_distrito');
 const txt_direccion = document.querySelector('#txt_direccion');
 const txt_nombreUsuario = document.querySelector('#txt_nombreUsuario');
-const avatar = document.querySelector('#avatar');
+const img = document.querySelector('#avatar');
 const txt_provincia = document.querySelector('#txt_provincia');
 const txt_canton = document.querySelector('#txt_canton');
-let img = document.createElement('img');
+//let img = document.createElement('img');
 
 let llenar_perfil = async () => {
     let usuario = await obtenerUsuarioId(_id);
