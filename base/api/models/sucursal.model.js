@@ -9,7 +9,8 @@ let sucursal_schema = new mongoose.Schema({
     telefono: { type: String, required: true, unique: false },
     correo: { type: String, required: true, unique: false },
     direccion: { type: String, required: true, unique: false },
-    estado: { type: Number, required: true, unique: false }
+    estado: { type: Number, required: true, unique: false },
+    ubicacion: { type: String, required: true, unique: false }
 });
 
 
