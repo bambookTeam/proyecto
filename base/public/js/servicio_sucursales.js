@@ -15,7 +15,7 @@ let registrarSucursal = (pnombre, ptelefono, pcorreo, pdireccion) => {
             correo: pcorreo,
             direccion: pdireccion,
             estado: 1,
-            ubicacion: "{" + "lat:" + marker.position.lat() + "," + "lng:" + marker.position.lng() + "}"
+            ubicacion: "{" + "\"" + "lat" + "\"" + ":" + "\"" + JSON.stringify(marker.position.lat()) + "\"" + "," + "\"" + "lng" + "\"" + ":" + "\"" + JSON.stringify(marker.position.lng()) + "\"" + "}"
 
         }
     });
