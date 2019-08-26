@@ -26,9 +26,9 @@ let mostrar_tabla = async () => {
     for (let i = 0; i < lista_libros.length; i++) {
 
         // filtro para mostrar únicamente las solicitudes pendientes
-        if (lista_libros[i].idSender == sessionStorage.getItem("id") && lista_libros[i].estado == 0) {
+        if (lista_libros[i].idOwner == sessionStorage.getItem("id") && lista_libros[i].estado == 0) {
 
-            let usuario = usuarios.find(usuarios => usuarios._id === lista_libros[i].idOwner);
+            let usuario = usuarios.find(usuarios => usuarios._id === lista_libros[i].idSender);
 
             let fila = tbody.insertRow();
             fila.insertCell().innerHTML = lista_libros[i].idLibroSender;
