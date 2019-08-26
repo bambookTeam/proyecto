@@ -85,7 +85,7 @@ let sub_sucursal = async () => {
         } else {
             text="¡Gracias por suscribirte a la Sucursal: "+nombre_Sucursal+"! \n "
         +"Lamentablemente en este momento no hay Clubes de Lectura en curso.  \n"
-        +"Encuentre nuestras ofertas adjuntos";
+        +"Encuentre nuestras ofertas adjuntas";
         }
     } else {
         if (offerExist.length==0) {
