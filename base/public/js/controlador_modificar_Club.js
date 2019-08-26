@@ -17,7 +17,7 @@ let yyyy = today.getFullYear();
 today = yyyy + '-' + mm + '-' + dd;
 
 
-let sucursalActiva="";
+let sucursalActiva = "";
 let show_Sucursales_Librerias = async (valueLibreria) => {
 
 
@@ -51,7 +51,7 @@ let show_Sucursales_Librerias = async (valueLibreria) => {
 
     }
 
-    selectSucursal.value="me les cago"
+    selectSucursal.value = "me les cago"
 
 }
 
@@ -131,7 +131,7 @@ let fillform = async () => {
 
 
     selectLibreria.setAttribute("onchange", 'show_Sucursales_Librerias(value)');
-    
+
 
 
     let activeClub = localStorage.getItem('idClub');
@@ -164,7 +164,7 @@ let fillform = async () => {
         }
 
     }
-    
+
 
 }
 
@@ -247,14 +247,14 @@ let modClub = () => {
 
     if (error == false) {
 
-        /*
-setTimeout(function () {
+        modificarClub(pid, pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, pFrecuencia, ptema, pgenero, pcategoria, plibreria, psucursal);
+        setTimeout(function () {
 
             redirigir_perfil_club();
         }, 2000);
 
+
         
-        modificarClub(pid, pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, pFrecuencia, ptema, pgenero, pcategoria, plibreria, psucursal);
         Swal.fire({
             title: 'Se ha modificado el Club con exito',
             text: 'Se redirigirá al Perfil del Club',
@@ -267,9 +267,6 @@ setTimeout(function () {
             showConfirmButton: false,
             allowOutsideClick: false
         })
-        */
-        console.log(pid, pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, pFrecuencia, ptema, pgenero, pcategoria, plibreria, psucursal)
-        modificarClub(pid, pnombre_Club, pmodalidad, pfechaInicio, pfechaFin, pHora, pFrecuencia, ptema, pgenero, pcategoria, plibreria, psucursal);
     } else {
         Swal.fire({
             title: 'Por favor revise los campos en rojo',

@@ -115,7 +115,7 @@ let mostrar_tabla = async () => {
                 confirmButtonText: 'Sí, estoy seguro'
             }).then((result) => {
                 if (result.value) {
-                    eliminar(lista_libros[i]._id);
+                    eliminarLibro(lista_libros[i]._id);
 
                     Swal.fire(
                         'Libro eliminado exitosamente!',

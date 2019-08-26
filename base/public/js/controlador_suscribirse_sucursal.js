@@ -27,6 +27,22 @@ let getClubes = async (idSucursal) => {
 
     return listaClubesSucursal
 }
+let getCorreo=async()=>{
+    let listaUsers=[];
+    let correo="";
+    listaUsers=await obtenerUsuarios();
+
+    let usuarioActivo = sessionStorage.getItem('id')
+    for (let index = 0; index < listaUsers.length; index++) {
+        if (usuarioActivo==listaUsers[index]._id) {
+            correo=listaUsers[index].correo;
+        }
+        
+    }
+
+    return correo;
+}
+
 
 let sub_sucursal = async () => {
     let listaSucursales = [];
@@ -56,7 +72,7 @@ let sub_sucursal = async () => {
     }
     listaSent=listaSourceImages.toString();
     console.log(clubExist)
-    let pcorreo=getCorreo();
+    let pcorreo=await getCorreo();
     let listaOfertaExists="true";
 
 
@@ -132,22 +148,8 @@ let sub_sucursal = async () => {
        
         
     }
+    console.log(pcorreo); 
     suscribirse_a_sucursal(pcorreo, listaSent,text,listaOfertaExists);
 
 }
 
-let getCorreo=async()=>{
-    let listaUsers=[];
-    let correo="";
-    listaUsers=await obtenerUsuarios();
-
-    let usuarioActivo = localStorage.getItem('id')
-    for (let index = 0; index < listaUsers.length; index++) {
-        if (usuarioActivo==listaUsers[index]._id) {
-            correo=listaUsers[index].correo;
-        }
-        
-    }
-
-    return correo;
-}

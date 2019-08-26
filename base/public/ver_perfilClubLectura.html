@@ -9,8 +9,8 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/perfil_club.css">
+    <link rel="stylesheet" href="css/navbar.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -101,29 +101,28 @@
 
         </section>
 
-        <section>
-            <table id="tabla_usuarios">
 
-                    <thead>
-              
-                      <tr>
-                        <th>Nombre</th>
-              
-                      </tr>
-              
-                    </thead>
-              
-                    <tbody>
-              
-              
-                    </tbody>
-              
-              
-                  </table>
+        <section id="lista_eventos">
+
+            <h1>Eventos de este Club</h1>
+
+            <table id="tbl_eventos">
+                <thead>
+                    <tr>
+                        <th>Nombre del Evento</th>
+                        <th>Nombre del Libro</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+            </table>
+
         </section>
+        
 
     </main>
-
+    <script src="js/servicio-evento.js"></script>
     <script src="js/jquery-3.3.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/servicio-clubLectura.js"></script>
@@ -135,6 +134,7 @@
     <script src="js/clienteIniciado.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/controlador_listar_eventos.js"></script>
 
 
 
