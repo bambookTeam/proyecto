@@ -49,6 +49,8 @@ let eliminarCarrito = (p_id)=> {
         }
     });
 
+    location.replace('carrito.html');
+
 };
 
 

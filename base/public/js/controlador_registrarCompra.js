@@ -88,15 +88,17 @@ let guardarCompra =  async() => {
 
     eliminarCarrito(carrito._id);
 
+  
+
 
 
         Swal.fire({
-            title: 'Se ha registrado la compra',
+            title: 'Se ha concluido la compra efectivamente',
             type: 'success',
             text: ''
         })
 
-
+       
     }else {
 
         

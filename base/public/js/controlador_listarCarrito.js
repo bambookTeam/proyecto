@@ -41,6 +41,7 @@ for ( let i = 0; i<carrito.length; i++) {
         
         showSelects(carrito[i]['idLibreria'], carrito[i]['isbn']);
 
+      
                 
     });
 
