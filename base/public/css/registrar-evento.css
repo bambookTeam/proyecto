@@ -1,6 +1,29 @@
-
 main{
+    display: flow-root;
     text-align: center;
+}
+
+main h1{
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 30px;
+}
+
+.pantalla_dividida1{
+    float: left;
+    background-image: url(https://www.3wallpapers.fr/wp-content/uploads/2015/05/Library-iPhone-3Wallpapers-Parallax.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 1500px;
+    margin: 0 40px;
+}
+
+.pantalla_dividida2{
+    float: left;
+    width: 50%;
+    margin: 10px;
 }
 
 
