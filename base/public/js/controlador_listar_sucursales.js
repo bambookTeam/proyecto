@@ -105,6 +105,7 @@ let mostrar_tabla = async () => {
         celda_agregar.appendChild(boton_agregar);
 
         boton_agregar.addEventListener('click', function () {
+            localStorage.setItem("_idSucursal", lista_sucursales[i]._id);
             window.location.href = 'inventario_sucursal.html';
         });
         // Inventario

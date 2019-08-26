@@ -32,7 +32,7 @@ window.addEventListener('load',function(){
             document.querySelector('#signinpopup').style.height="58px";
             
         }
-        if (usuario_activo_123==1) {
+        if (usuario_activo_123== 1) {
             
             optionAutores.style.display="none";
             optionIntercambio.style.display="none";

@@ -80,11 +80,10 @@ let obtenerInventarioLibreria = async() => {
     try{
 
         const response = await axios ({
-
             method: 'get',
             url: 'http://localhost:4000/api/listar_inventarioLibreria',
             responseType: 'json'
-        });
+        })
 
         return response.data.lista_inventario; 
     }catch(error) {
@@ -116,7 +115,7 @@ let verificarInventario = async ( pisbn, pIdAdminLibreria, pcant) => {
 
     inventarioLibreria = await inventario();
 
-    let existe = verificarLibro(pisbn);
+    let existe = verificarLibroLibreria(pisbn);
 
     if( inventarioLibreria.length == 0 || existe == 0 ){
         
