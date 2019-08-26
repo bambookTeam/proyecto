@@ -45,7 +45,7 @@ window.addEventListener('load',function(){
     
            
         } else {
-            
+            optionInventario.href="inventario_general.html"
         }
 
         if(document.querySelector('#idVerPerfil')) {

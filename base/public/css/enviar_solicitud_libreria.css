@@ -138,6 +138,7 @@ main select{
     font-weight: bold;
     background: #000;
     outline: none;
+    cursor: pointer;
 }
 
 #btn_registrar:hover{
