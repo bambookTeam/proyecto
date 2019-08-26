@@ -13,7 +13,7 @@ let modificarAutor = async(id) =>{
     const input_nacionalidad = document.querySelector('#txt-nacionalidad-autor').value;
     const input_biografia = document.querySelector('#txt-biografia-autor').value;
     const input_premios = document.querySelector('#txt-premios-autor').value;
-    const input_foto = document.querySelector('#foto').value;
+    const input_foto = document.querySelector('#autor_foto_preview').value;
 
     modificar_autor(id, input_nombre, input_nombre_artistico, input_fecha_nacimiento, input_fecha_muerte, input_nacionalidad, input_biografia, input_premios, input_foto);
 }
@@ -29,14 +29,14 @@ let llenarFormulario = async () => {
 
     for (let i = 0; i < lista_autores.length; i++) {
         if (idAutor==lista_autores[i]._id) {
-            document.querySelector('#txt-nombre-autor').value = lista_autores[i].nombre;
-            document.querySelector('#txt-nombre-artistico-autor').value = lista_autores[i].nombre_artistico;
-            document.querySelector('#txt-nacimiento-autor').value = lista_autores[i].nacimiento;
-            document.querySelector('#txt-muerte-autor').value = lista_autores[i].muerte;
-            document.querySelector('#txt-nacionalidad-autor').value = lista_autores[i].nacionalidad;
-            document.querySelector('#txt-biografia-autor').value = lista_autores[i].biografia;
-            document.querySelector('#txt-premios-autor').value = lista_autores[i].premios;
-            document.querySelector('#foto').value = lista_autores[i].foto;
+            document.querySelector('#txt-nombre-autor').value = lista_autores[i].nombre_autor;
+            document.querySelector('#txt-nombre-artistico-autor').value = lista_autores[i].nombre_artistico_autor;
+            document.querySelector('#txt-nacimiento-autor').value = lista_autores[i].fecha_nacimiento.substring(0, 10);
+            document.querySelector('#txt-muerte-autor').value = lista_autores[i].fecha_muerte.substring(0, 10);
+            document.querySelector('#txt-nacionalidad-autor').value = lista_autores[i].nacionalidad_autor;
+            document.querySelector('#txt-biografia-autor').value = lista_autores[i].biografia_autor;
+            document.querySelector('#txt-premios-autor').value = lista_autores[i].premios_autor;
+            document.querySelector('#autor_foto_preview').value = lista_autores[i].foto_autor;
         }
         
     }

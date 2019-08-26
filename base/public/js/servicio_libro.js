@@ -11,6 +11,8 @@ let registrarLibro = (ptitulo, pedicion, peditorial, pautor, panno, pidioma, pis
 
 
         data: {
+            portada: pportada,
+            contraportada: pcontraportada,
             titulo: ptitulo,
             edicion: pedicion,
             editorial: peditorial,
@@ -74,6 +76,8 @@ let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidiom
 
         data: {
             _id: pid,
+            portada: pportada,
+            contraportada: pcontraportada,
             titulo: ptitulo,
             edicion: pedicion,
             editorial: peditorial,
@@ -85,8 +89,6 @@ let modificar_libro = (pid, ptitulo, pedicion, peditorial, pautor, panno, pidiom
             tipo: ptipo,
             cantidad: pcantidad,
             precio: pprecio,
-            portada: pportada,
-            contraportada: pcontraportada,
             estado: pestado
         }
     });
