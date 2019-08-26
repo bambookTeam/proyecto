@@ -89,12 +89,6 @@ main select{
   outline: none;
 }
 
-
-  .btnsForm{
-    /* float:right;
-    margin-right:50px;
-    margin-bottom:30px; */
-  }
   
 #btn_registrar{
     margin: 30px 0;
@@ -118,30 +112,54 @@ main select{
     background: #f6b93b;
     outline: none;
 }
+
+#btn_guardar{
+    margin: 30px 0;
+    padding: 10px;
+    border: 2px solid #000;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
+    cursor: pointer;
+}
+
+#btn_guardar:hover{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #f6b93b;
+    outline: none;
+}
   
-  .error{
+.error{
     display:none;
     color:red;
     margin:20px;
     font-size:10px;
-  }
+}
 
 
-  .input_error{
-  
+.input_error{
       border:solid 2px red;
-  }
-  .boton_subir_imagen{
+}
+
+.boton_subir_imagen{
     border:solid 1px #000;
     background-color:#fff;
     color:#000;
     height: 25px;
     width: 148px;
     margin-bottom:30px;
-  }
-  .boton_subir_imagen:hover{
+}
+  
+.boton_subir_imagen:hover{
     border:solid 1px #000;
     background-color:#000;
     color:#fff;
-  }
+}
   

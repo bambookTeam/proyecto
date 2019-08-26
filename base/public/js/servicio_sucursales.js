@@ -3,7 +3,7 @@
 let registrarSucursal = (pnombre, ptelefono, pcorreo, pdireccion) => {
     let idUsuarioActivo = localStorage.getItem("idLibreria");
 
-    console.log(idUsuarioActivo,pnombre,ptelefono,pcorreo,pdireccion);
+    console.log(idUsuarioActivo, pnombre, ptelefono, pcorreo, pdireccion);
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-sucursal',
@@ -14,7 +14,9 @@ let registrarSucursal = (pnombre, ptelefono, pcorreo, pdireccion) => {
             telefono: ptelefono,
             correo: pcorreo,
             direccion: pdireccion,
-            estado:1
+            estado: 1,
+            ubicacion: "{" + "lat:" + marker.position.lat() + "," + "lng:" + marker.position.lng() + "}"
+
         }
     });
 };
@@ -72,25 +74,25 @@ let obtenerSucursalesLibreria = async () => {
 
 let obtenerIdSucursalNombre = async (pnombreSucursal) => {
 
-let sucursales = await obtenerSucursales(); 
+    let sucursales = await obtenerSucursales();
 
-let idSucursal;
+    let idSucursal;
 
-for( let i = 0; i < sucursales.length; i++){
+    for (let i = 0; i < sucursales.length; i++) {
 
-    if( pnombreSucursal == sucursales[i]['nombre']) {
+        if (pnombreSucursal == sucursales[i]['nombre']) {
 
-        idSucursal = sucursales[i]['_id'];
+            idSucursal = sucursales[i]['_id'];
+        }
     }
-}
 
 
-return idSucursal;
-    
+    return idSucursal;
+
 };
 
 
-let obtenerSucursalesLibro = async ( idSucursales) => {
+let obtenerSucursalesLibro = async (idSucursales) => {
 
     //recibe los ids de las sucursales y devuelve los nombres de esas librerias
 
@@ -99,21 +101,20 @@ let obtenerSucursalesLibro = async ( idSucursales) => {
     let sucursales = await obtenerSucursales();
     let cont = 0;
 
-    for( let i = 0; i < idSucursales.length; i++){
-        
-        for ( let j = 0; j < sucursales.length; j++){
+    for (let i = 0; i < idSucursales.length; i++) {
 
-            if( idSucursales[i] == sucursales[j]['_id'])
-            {
+        for (let j = 0; j < sucursales.length; j++) {
+
+            if (idSucursales[i] == sucursales[j]['_id']) {
 
                 nombreSucursales[cont] = sucursales[i]['nombre'];
-                cont ++;
+                cont++;
             }
         }
 
     }
 
-return nombreSucursales;
+    return nombreSucursales;
 
 };
 
