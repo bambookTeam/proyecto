@@ -7,51 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registrar Librería</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/modificar_libreria.css">
+    <link rel="stylesheet" href="css/registrar_libreria.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 
 
 <body>
-        <header>
-                <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-                <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-                <a href="inicioCliente.html">
-                    <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
-                        id="barnesLogo">
-                </a>
-                <div class="sign-in-button">
-                    <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
-                </div>
-            </header>
 
-            <nav class="nav-menu">
-                <ul>
-                    <li class="parent" id="dropdown"><a href="#">Libros</a>
-                        <ul class="child">
-                            <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
-                            <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
-                        </ul>
-                    </li>
-                    <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
-                        <ul class="child">
-                            <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
-                        </ul>
-                    </li>
+    <header>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <a href="inicioCliente.html">
+            <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+                id="barnesLogo">
+        </a>
+        <div class="sign-in-button">
+            <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+        </div>
+    </header>
 
-                    <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
-
-                    </li>
-
-                    <li class="parent" id="dropdown"><a href="#">Otros</a>
-                        <ul class="child">
-                            <li><a href="intercambios.html">Intercambios</a></li>
-                            <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
-                            <li id='optionBitacora'><a href="#">Bitácora</a></li>
-                            <li id='optionReportes'><a href="#">Reportes</a></li>
-                            <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
-                        </ul>
-                    </li>
+    <nav class="nav-menu">
+        <ul>
+            <li class="parent" id="dropdown"><a href="#">Libros</a>
+                <ul class="child">
+                    <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
+                    <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
                 </ul>
             </li>
             <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
@@ -77,6 +58,7 @@
     </nav>
 
     <main>
+
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
@@ -93,29 +75,94 @@
 
         </div>
 
-        <h1>Modificar Librería</h1>
+        <div class="pantalla_dividida3">
 
-        <section id="datos_libreria">
+        </div>
 
-            <label for="txt_nombre_comercial"> Nombre Comercial</label>
-            <input id="txt_nombre_comercial" type="text">
+        <div class="pantalla_dividida2">
 
-            <label for="txt_nombre_fantasia">Nombre Fantasía</label>
-            <input id="txt_nombre_fantasia" type="text">
+            <h1>Modificar Librería</h1>
 
-            <label for="txt_direccion">Dirección</label>
-            <textarea name="" id="txt_direccion"></textarea>
+            <section id="datos_libreria">
 
-            <button id="btn_registrar"> Modificar </button>
+                <label for="txt_nombre_comercial"> Nombre Comercial</label>
+                <input id="txt_nombre_comercial" type="text">
 
-        </section>
+                <label for="txt_nombre_fantasia">Nombre Fantasía</label>
+                <input id="txt_nombre_fantasia" type="text">
 
+                <label for="txt_direccion">Dirección</label>
+                <textarea name="" id="txt_direccion"></textarea>
 
-        <footer></footer>
+                <button id="btn_registrar"> Modificar </button>
+
+            </section>
+
+        </div>
 
     </main>
 
-    <footer></footer>
+    <section id="footer">
+
+        <div class="footerLogo">
+            <img src="imgs/panda_blanco.png" width="150px">
+        </div>
+        <div class="footermap">
+
+            <div class="list">
+                <ul>
+                    <li class="uhead"><a href=""><span>Librerías</span></a></li>
+                    <ul>
+                        <li><a href="">Ver las librerías</a></li>
+                        <li><a href="registrar_libreria.html">Registrar mi librería</a></li>
+                        <li><a href="">Sucursales</a></li>
+                        <li><a href="">Ofertas</a></li>
+                    </ul>
+                </ul>
+
+            </div>
+
+            <div class="list">
+
+                <ul>
+                    <li class="uhead"><a href=""><span>Libros</span></a></li>
+                    <ul>
+                        <li><a href="">Ver todos los libros</a></li>
+                        <li><a href="">Categorías</a></li>
+                        <li><a href="">Géneros</a></li>
+                        <li><a href="">Más Vendidos</a></li>
+                        <li><a href="">Mejor Calificados</a></li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="list">
+                <ul>
+                    <li class="uhead"><a href=""><span>Clubes de Lectura</span></a></li>
+                    <ul>
+                        <li><a href="">Ver los clubes</a></li>
+                        <li><a href="">Crear mi club</a></li>
+                        <li><a href="">Unirme a un club</a></li>
+                        <li><a href="">Ver mis clubes</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+
+        <div class="socials">
+
+            <img src="https://img.icons8.com/ios-filled/40/ffffff/horizontal-line.png">
+
+            <img src="https://img.icons8.com/ios-filled/40/ffffff/facebook-new.png">
+
+            <img src="https://img.icons8.com/ios-filled/40/ffffff/instagram-new.png">
+
+            <img src="https://img.icons8.com/windows/40/ffffff/twitter.png">
+
+            <img src="https://img.icons8.com/ios-filled/40/ffffff/horizontal-line.png">
+
+        </div>
+    </section>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

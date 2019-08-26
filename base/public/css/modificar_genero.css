@@ -8,6 +8,7 @@ main h1{
     font-size: 30px;
     font-weight: bold;
     margin: 30px;
+    margin-bottom: 50px;
 }
 
 .pantalla_dividida1{
@@ -16,7 +17,7 @@ main h1{
     background-repeat: no-repeat;
     background-size: cover;
     width: 40%;
-    height: 400px;
+    height: 350px;
     margin: 0 40px;
 }
 
@@ -38,24 +39,7 @@ main input{
     outline: none;
 }
 
-main select{
-    width: 90%;
-    height: 30px;
-    margin: 0 15px;
-    margin-bottom: 50px;
-    padding: 5px;
-    border: none;
-    border-bottom: 1px solid #000;
-    background: none;
-    outline: none;
-}
-
-
-.input_error{
-    border: solid 1px red;
-}
-
-.btnEstilo{
+button{
     margin: 50px 0;
     padding: 10px;
     border: 2px solid #000;
@@ -67,7 +51,7 @@ main select{
     cursor: pointer;
 }
 
-.btnEstilo:hover{
+button:hover{
     margin: 50px 0;
     padding: 10px;
     border: 2px solid #f6b93b;
@@ -76,22 +60,4 @@ main select{
     font-weight: bold;
     background: #f6b93b;
     outline: none;
-}
-
-table {
-    width: 80%;
-    margin: auto;
-    border-collapse: collapse;
-}
-  
-th, td {
-    text-align: left;
-    padding: 15px;
-}
-  
-tr:nth-child(even){background-color: #f2f2f2}
-  
-th {
-    background-color: #f6b93b;
-    color: white;
 }

@@ -9,6 +9,12 @@ let redireccionar = async (libro) => {
     window.location.href = 'infolibro_solicitud.html';
 }
 
+
+let cambiarEstadoSolicitud = async (solicitud, estado) => {
+    cambiarEstado(solicitud, estado);
+    mostrar_tabla();
+}
+
 let mostrar_tabla = async () => {
 
     lista_libros = await obtenerSolicitudes();
@@ -19,10 +25,10 @@ let mostrar_tabla = async () => {
     lista_libros = lista_libros.reverse();
     for (let i = 0; i < lista_libros.length; i++) {
 
-        // filtro para no mostrar las solicitudes hechas por el usuario (esto es por la presión de tiempo)
-        if (lista_libros[i].idSender == sessionStorage.getItem("id")) {
+        // filtro para mostrar únicamente las solicitudes pendientes
+        if (lista_libros[i].idOwner == sessionStorage.getItem("id") && lista_libros[i].estado == 0) {
 
-            let usuario = usuarios.find(usuarios => usuarios._id === lista_libros[i].idOwner);
+            let usuario = usuarios.find(usuarios => usuarios._id === lista_libros[i].idSender);
 
             let fila = tbody.insertRow();
             fila.insertCell().innerHTML = lista_libros[i].idLibroSender;
@@ -30,11 +36,28 @@ let mostrar_tabla = async () => {
             fila.insertCell().innerHTML = lista_libros[i].fecha;
             fila.insertCell().innerHTML = lista_libros[i].sucursal;
             if (lista_libros[i].estado == 0) {
-                fila.insertCell().innerHTML = "Pendiente";
-            } else if (lista_libros[i].estado == 3) {
-                fila.insertCell().innerHTML = "Aceptada";
-            } else {
-                fila.insertCell().innerHTML = "Rechazada";
+                let celda_btn_solicitar = fila.insertCell();
+                let btn_solicitar = document.createElement('button', 'a');
+                btn_solicitar.innerText = 'Aceptar';
+                btn_solicitar.type = 'button';
+
+                let btn_rechazar = document.createElement('button', 'a');
+                btn_rechazar.innerText = 'Rechazar';
+                btn_rechazar.type = 'button';
+
+                btn_rechazar.addEventListener('click', function () {
+                    cambiarEstadoSolicitud(lista_libros[i], 2);
+                });
+
+                btn_solicitar.dataset._id = lista_libros[i]['_id'];
+
+                celda_btn_solicitar.appendChild(btn_rechazar);
+
+                celda_btn_solicitar.appendChild(btn_solicitar);
+
+                btn_solicitar.addEventListener('click', function () {
+                    cambiarEstadoSolicitud(lista_libros[i], 3);
+                });
             }
         }
     }

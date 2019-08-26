@@ -70,5 +70,24 @@ router.get('/listar_solicitudes_intercambios', function (req, res) {
     })
 });
 
+router.post('/cambiarEstado', function (req, res) {
+    let body = req.body;
+
+    Solicitud.findByIdAndUpdate(body._id, {
+        $set: {
+            estado: body.estado
+        }
+    },
+        function (error) {
+
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo actualizar el estado' });
+            } else {
+                res.json({ success: true, msg: 'El estado se actualizó correctamente' });
+            }
+        }
+    )
+});
+
 
 module.exports = router;

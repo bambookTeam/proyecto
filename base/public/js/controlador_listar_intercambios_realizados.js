@@ -20,7 +20,7 @@ let mostrar_tabla = async () => {
     for (let i = 0; i < lista_libros.length; i++) {
 
         // filtro para no mostrar las solicitudes hechas por el usuario (esto es por la presión de tiempo)
-        if (lista_libros[i].idSender == sessionStorage.getItem("id")) {
+        if (lista_libros[i].idSender == sessionStorage.getItem("id") && lista_libros[i].estado == 3) {
 
             let usuario = usuarios.find(usuarios => usuarios._id === lista_libros[i].idOwner);
 
@@ -29,13 +29,6 @@ let mostrar_tabla = async () => {
             fila.insertCell().innerHTML = usuario.primerNombre + " " + usuario.primerApellido;
             fila.insertCell().innerHTML = lista_libros[i].fecha;
             fila.insertCell().innerHTML = lista_libros[i].sucursal;
-            if (lista_libros[i].estado == 0) {
-                fila.insertCell().innerHTML = "Pendiente";
-            } else if (lista_libros[i].estado == 3) {
-                fila.insertCell().innerHTML = "Aceptada";
-            } else {
-                fila.insertCell().innerHTML = "Rechazada";
-            }
         }
     }
 }
