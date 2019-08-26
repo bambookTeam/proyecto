@@ -34,7 +34,7 @@ window.addEventListener('load',function(){
             
         }
         if (usuario_activo_123== 1) {
-            
+            optionCategorias.style.display="none";
             optionAutores.style.display="none";
             optionIntercambio.style.display="none";
             optionUsuarios.style.display="none";

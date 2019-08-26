@@ -176,8 +176,6 @@ function initMap() {
 }
 
 
-
-
 let llenar_perfil = async () => {
     let libreria = await obtenerLibreriaId(_id);
     if (libreria) {
