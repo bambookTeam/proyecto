@@ -1,11 +1,12 @@
-main{
-    text-align: center;
+h1{
+  color: #f6b93b;
+  font-size: 30px;
+  margin: 60px;
+  font-weight: bold;
 }
 
-main h1{
-    color: #000;
-    font-size: 30px;
-    margin: 30px;
+main{
+  text-align: center;
 }
 
 input{
@@ -19,19 +20,51 @@ input{
     outline: none;
 }
 
-table {
-    width: 80%;
-    margin: auto;
-    border-collapse: collapse;
+label{
+
+  margin: 70px;
+  color: #000;
+  font-size: 20px;
 }
-  
+
+input{
+  width: 30%;
+  height: 30px;
+  margin: 20px;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  background: none;
+  outline: none;
+}
+
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: center;
+  padding: 15px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #f6b93b;
+  color: white;
+}
+
+
 th, td {
     text-align: left;
     padding: 15px;
 }
-  
+
 tr:nth-child(even){background-color: #f2f2f2}
-  
+
 th {
     background-color: #f6b93b;
     color: white;
@@ -48,13 +81,13 @@ th {
   align-items: center;
   justify-content: center;
   visibility: hidden;
-  
+
   }
-  
+
   .overlay.active{
       visibility: visible;
   }
-  
+
   .popup{
       background: rgb(240, 238, 236);
       box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
@@ -63,9 +96,9 @@ th {
       text-align: center;
       width: 400px;
   }
-  
+
   .close {
-  
+
       color: #aaaaaa;
       font-size: 28px;
       font-weight: bold;
@@ -74,7 +107,7 @@ th {
       margin-left: 310px;
       margin-bottom: 20px;
     }
-  
+
     .close:hover,
     .close:focus {
       color: #000;

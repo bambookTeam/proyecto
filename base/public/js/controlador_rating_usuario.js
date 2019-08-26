@@ -8,8 +8,8 @@ let getRatingUsuario = async (idUser) =>{
     listaRatings=await obtener_ratings();
 
     for (let index = 0; index < listaRatings.length; index++) {
-        if (idUserRated) {
-            rating=idUserRated+rating;
+        if (listaRatings[index].idUserRated==idUser) {
+            rating=listaRatings[index].rating+rating;
             counter=counter+1;
         } 
     }
@@ -20,7 +20,7 @@ let getRatingUsuario = async (idUser) =>{
         rating=undefined
     }
 
-    return rating
+    return rating/counter
 }
 
 let owo=async()=>{

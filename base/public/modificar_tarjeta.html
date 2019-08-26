@@ -5,15 +5,17 @@
     <title>
         Modificar Tarjeta
     </title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/registrar_tarjeta.css">
+    <link rel="stylesheet" href="css/modificar_tarjeta.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/modificar_tarjeta.css">
 </head>
 
-<main>
+<body>
+
     <header>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -56,7 +58,9 @@
         </ul>
     </nav>
 
-    <div id="myModal" class="modal">
+    <main>
+
+        <div id="myModal" class="modal">
 
             <!-- Modal content -->
             <div class="modal-content" id="signinpopup">
@@ -71,125 +75,128 @@
             </div>
 
         </div>
-    <h1>Modificar Tarjeta</h1>
-    <form action="">
-        <div class="contenedor-inputs">
 
-            <div>
-                <label for="">Número de Tarjeta</label>
-                <input type="number" id="txt-numerotarjeta" placeholder="1111-2222-3333-4444"> </div>
-            <div>
+        <div class="pantalla_dividida1">
 
-                <div>
-                    <label for="">Fecha de Vencimiento</label>
-                    <input type="date" id="txt-fechadevencimiento">
-                </div>
+        </div>
 
-                <div>
-                    <label for="">Código CVV</label>
-                    <input type="number" id="txt-codigocvv" placeholder="352">
-                </div>
+        <div class="pantalla_dividida2">
+
+            <h1>Modificar Tarjeta</h1>
+
+            <form action="">
+
+                <div class="contenedor-inputs">
+
+                    <div>
+                        <label for="">Número de Tarjeta</label>
+                        <input type="number" id="txt-numerotarjeta" placeholder="1111-2222-3333-4444">
+                    </div>
+
+                    <div>
+
+                        <div>
+                            <label for="">Fecha de Vencimiento</label>
+                            <input type="date" id="txt-fechadevencimiento">
+                        </div>
+
+                        <div>
+                            <label for="">Código CVV</label>
+                            <input type="number" id="txt-codigocvv" placeholder="352">
+                        </div>
+
+                        <div>
+                            <button type="button" class="agregar" id="btn-agregar">Guardar Tarjeta</button>
+                        </div>
+
+                    </div>
+            </form>
+        </div>
+
+    </main>
+
+
+    <section id="footer">
+
+        <div class="footerLogo">
+            <img src="imgs/panda_blanco.png" width="150px">
+        </div>
+        <div class="footermap">
+
+            <div class="list">
+                <ul>
+                    <li class="uhead"><a href="">Librerías</a></li>
+                    <ul>
+                        <li><a href="">Ver las librerías</a></li>
+                        <li><a href="">Registrar mi librería</a></li>
+                        <li><a href="">Sucursales</a></li>
+                        <li><a href="">Ofertas</a></li>
+                    </ul>
+                </ul>
+
             </div>
-            <div>
-                <button type="button" class="agregar" id="btn-agregar">Guardar Tarjeta</button>
+
+            <div class="list">
+
+                <ul>
+                    <li class="uhead"><a href="">Libros</a></li>
+                    <ul>
+                        <li><a href="">Ver todos los libros</a></li>
+                        <li><a href="">Categorías</a></li>
+                        <li><a href="">Géneros</a></li>
+                        <li><a href="">Más Vendidos</a></li>
+                        <li><a href="">Mejor Calificados</a></li>
+                    </ul>
+                </ul>
             </div>
 
-
-
-        </div>
-        </div>
-
-        </div>
-
-    </form>
-
-</main>
-
-
-<section id="footer">
-
-    <div class="footerLogo">
-        <img src="imgs/panda_blanco.png" width="150px">
-    </div>
-    <div class="footermap">
-
-        <div class="list">
-            <ul>
-                <li class="uhead"><a href="">Librerías</a></li>
+            <div class="list">
                 <ul>
-                    <li><a href="">Ver las librerías</a></li>
-                    <li><a href="">Registrar mi librería</a></li>
-                    <li><a href="">Sucursales</a></li>
-                    <li><a href="">Ofertas</a></li>
+                    <li class="uhead"><a href="">Clubes de Lectura</a></li>
+                    <ul>
+                        <li><a href="">Ver los clubes</a></li>
+                        <li><a href="">Crear mi club</a></li>
+                        <li><a href="">Unirme a un club</a></li>
+                        <li><a href="">Ver mis clubes</a></li>
+                    </ul>
                 </ul>
-            </ul>
-
+            </div>
         </div>
 
-        <div class="list">
+        <div class="socials">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
 
-            <ul>
-                <li class="uhead"><a href="">Libros</a></li>
-                <ul>
-                    <li><a href="">Ver todos los libros</a></li>
-                    <li><a href="">Categorías</a></li>
-                    <li><a href="">Géneros</a></li>
-                    <li><a href="">Más Vendidos</a></li>
-                    <li><a href="">Mejor Calificados</a></li>
-                </ul>
-            </ul>
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png">
+
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png">
+
+            <img src="https://img.icons8.com/windows/20/ffffff/twitter.png">
+
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
+
+            <div class="line-soc"></div>
+            <div>
+                <!--
+    
+                <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
+    
+              <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
+              <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!-->
+            </div>
         </div>
-
-        <div class="list">
-            <ul>
-                <li class="uhead"><a href="">Clubes de Lectura</a></li>
-                <ul>
-                    <li><a href="">Ver los clubes</a></li>
-                    <li><a href="">Crear mi club</a></li>
-                    <li><a href="">Unirme a un club</a></li>
-                    <li><a href="">Ver mis clubes</a></li>
-                </ul>
-            </ul>
-        </div>
-    </div>
-
-    <div class="socials">
-        <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
-
-        <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png">
-
-        <img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png">
-
-        <img src="https://img.icons8.com/windows/20/ffffff/twitter.png">
-
-        <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
-
-        <div class="line-soc"></div>
-        <!-- <div>
-            
-
-        <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
-
-      <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
-      <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!
-        </div> -->
-    </div>
-</section>
-<footer></footer>
+    </section>
 
 
 
+    <script src="js/jquery-3.3.1.js"></script>
 
-<script src="js/jquery-3.3.1.js"></script>
-
-<!-- script controlador -->
-<script src="js/servicio_tarjeta.js"></script>
-<script src="js/clienteIniciado.js"></script>
-<script src="js/controlador_cerrar_sesion.js"></script>
-<script src="js/controlador_modificar_tarjeta.js"></script>
-<script src="js/getNombre.js"></script>
-<script src="js/controlador_cerrar_sesion.js"></script>
-
+    <!-- script controlador -->
+    <script src="js/servicio_tarjeta.js"></script>
+    <script src="js/clienteIniciado.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
+    <script src="js/controlador_modificar_tarjeta.js"></script>
+    <script src="js/getNombre.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
 
 </body>
 

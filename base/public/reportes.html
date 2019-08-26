@@ -5,15 +5,16 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registrar Librería</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/registrar_libreria.css">
+    <title>Reportes</title>
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/listar_libros.css">
+    <link rel="stylesheet" href="CSS/listar_reportes.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 
-
 <body>
+
 
     <header>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -33,6 +34,8 @@
                 <ul class="child">
                     <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
                     <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
+                    <li id="optionMisLibros"><a href="listar_librosComprados.html">Mis Libros</a></li>
+                    <li id="optionAutores"><a href="listar-autores.html"></a></li>
                 </ul>
             </li>
             <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
@@ -47,15 +50,17 @@
 
             <li class="parent" id="dropdown"><a href="#">Otros</a>
                 <ul class="child">
-                    <li><a href="listar_libros_intercambiables.html">Intercambios</a></li>
-                    <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
-                    <li id='optionBitacora'><a href="#">Bitácora</a></li>
+                    <li id='optionIntercambio'><a href="listar_libros_intercambiables.html">Intercambios</a></li>
+                    <li id='optionUsers'><a href="#">Usuarios</a></li>
+                    <li id='optionBitacora'><a href="listar_bitacora.html">Bitácora</a></li>
                     <li id='optionReportes'><a href="#">Reportes</a></li>
-                    <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
+                    <li><a href="inventario_general.html" id="optionInventario">Inventario</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
+
+
 
     <main>
 
@@ -74,31 +79,53 @@
             </div>
 
         </div>
+        <div id="btn_reportes">
 
-        <div class="pantalla_dividida3">
-
-        </div>
-
-        <div class="pantalla_dividida2">
-
-            <h1>Modificar Librería</h1>
-
-            <section id="datos_libreria">
-
-                <label for="txt_nombre_comercial"> Nombre Comercial</label>
-                <input id="txt_nombre_comercial" type="text">
-
-                <label for="txt_nombre_fantasia">Nombre Fantasía</label>
-                <input id="txt_nombre_fantasia" type="text">
-
-                <label for="txt_direccion">Dirección</label>
-                <textarea name="" id="txt_direccion"></textarea>
-
-                <button id="btn_registrar"> Modificar </button>
-
-            </section>
+        <button id="btn_best_sellers">Mostrar Best Sellers</button>
+        <button id="btn_best_rated">Mostrar Libros Mejores Calificados</button>
+        <button id="btn_mostrar_califs">Mostrar Calificaciones</button>
 
         </div>
+        <table id="tbl_reporte_best_sellers">
+               
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Titulo</th>
+                    <th>Cantidad Vendidas</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <table id="tbl_reporte_best_rated">
+            
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Titulo</th>
+                    <th>Calificacion Promedio</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <table id="tbl_reporte_califs">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Numero Calificaciones</th>
+                    <th>Calificacion</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
 
     </main>
 
@@ -111,10 +138,10 @@
 
             <div class="list">
                 <ul>
-                    <li class="uhead"><a href=""><span>Librerías</span></a></li>
+                    <li class="uhead"><a href="">Librerías</a></li>
                     <ul>
                         <li><a href="">Ver las librerías</a></li>
-                        <li><a href="registrar_libreria.html">Registrar mi librería</a></li>
+                        <li><a href="">Registrar mi librería</a></li>
                         <li><a href="">Sucursales</a></li>
                         <li><a href="">Ofertas</a></li>
                     </ul>
@@ -125,7 +152,7 @@
             <div class="list">
 
                 <ul>
-                    <li class="uhead"><a href=""><span>Libros</span></a></li>
+                    <li class="uhead"><a href="">Libros</a></li>
                     <ul>
                         <li><a href="">Ver todos los libros</a></li>
                         <li><a href="">Categorías</a></li>
@@ -138,7 +165,7 @@
 
             <div class="list">
                 <ul>
-                    <li class="uhead"><a href=""><span>Clubes de Lectura</span></a></li>
+                    <li class="uhead"><a href="">Clubes de Lectura</a></li>
                     <ul>
                         <li><a href="">Ver los clubes</a></li>
                         <li><a href="">Crear mi club</a></li>
@@ -150,38 +177,35 @@
         </div>
 
         <div class="socials">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
 
-            <img src="https://img.icons8.com/ios-filled/40/ffffff/horizontal-line.png">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook-new.png">
 
-            <img src="https://img.icons8.com/ios-filled/40/ffffff/facebook-new.png">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png">
 
-            <img src="https://img.icons8.com/ios-filled/40/ffffff/instagram-new.png">
+            <img src="https://img.icons8.com/windows/20/ffffff/twitter.png">
 
-            <img src="https://img.icons8.com/windows/40/ffffff/twitter.png">
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
 
-            <img src="https://img.icons8.com/ios-filled/40/ffffff/horizontal-line.png">
+            <div class="line-soc"></div>
 
         </div>
     </section>
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/servicio_libro.js"></script>
     <script src="js/jquery-3.3.1.js"></script>
-
-    <script src="js/servicio_librerias.js"></script>
-    <script src="js/controlador_modificar_libreria.js"></script>
-    <script src="js/servicio_usuario.js"></script>
-    <script src="js/servicio_bitacora.js"></script>
-
-
-
-    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js'
-        type='text/javascript'></script>
-    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-    <script src="js/servicio_avatar.js"></script>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/getNombre.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
     <script src="js/clienteIniciado.js"></script>
+
+    <script src="js/servicio_librosComprados.js"></script>
+    <script src="js/servicio_libro.js"></script>
+    <script src="js/servicio_rating_usuario.js"></script>
+    <script src="js/controlador_reportes.js"></script>
+    <script src="js/controlador_rating_usuario.js"></script>
+
 </body>
+
 
 </html>
