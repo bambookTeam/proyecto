@@ -2,93 +2,99 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>
-        Modificar Club de Lectura
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/reset.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    Modificar Club de Lectura
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/reset.css">
 
-    <link rel="stylesheet" href="css/registrar_clubLectura.css">
-    <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/registrar_clubLectura.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
-
-
-
-
 <body>
-    <header>
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-        <a href="#">
-            <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
-                id="barnesLogo">
-        </a>
-        <div class="sign-in-button">
-            <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
-        </div>
-    </header>
 
-    <nav class="nav-menu">
-        <ul>
-            <li class="parent" id="dropdown"><a href="#">Libros</a>
-                <ul class="child">
-                    <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
-                    <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
-                </ul>
-            </li>
-            <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
-                <ul class="child">
-                    <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
-                </ul>
-            </li>
+  <header>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <a href="#">
+      <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+        id="barnesLogo">
+    </a>
+    <div class="sign-in-button">
+      <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+    </div>
+  </header>
 
-            <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
-
-            </li>
-
-            <li class="parent" id="dropdown"><a href="#">Otros</a>
-                <ul class="child">
-                    <li><a href="listar_libros_intercambiables.html">Intercambios</a></li>
-                    <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
-                    <li id='optionBitacora'><a href="#">Bitácora</a></li>
-                    <li id='optionReportes'><a href="#">Reportes</a></li>
-                    <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
-                </ul>
-            </li>
+  <nav class="nav-menu">
+    <ul>
+      <li class="parent" id="dropdown"><a href="#">Libros</a>
+        <ul class="child">
+          <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
+          <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
         </ul>
-    </nav>
+      </li>
+      <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
+        <ul class="child">
+          <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
+        </ul>
+      </li>
 
+      <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
 
-    <main>
-        <div id="myModal" class="modal">
+      </li>
 
-            <!-- Modal content -->
-            <div class="modal-content" id="signinpopup">
+      <li class="parent" id="dropdown"><a href="#">Otros</a>
+        <ul class="child">
+          <li><a href="listar_libros_intercambiables.html">Intercambios</a></li>
+          <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
+          <li id='optionBitacora'><a href="#">Bitácora</a></li>
+          <li id='optionReportes'><a href="#">Reportes</a></li>
+          <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
-                <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
-                <div class="optionProfile"><a href="">Mi Carrito</a></div>
-                <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
-                <div class="optionProfile"><a href="">Mis compras</a></div>
-                <div class="optionProfile"><a href="">Mis libros</a></div>
-                <div class="optionProfile"><a href="misintercambios.html">Mis intercambios</a></div>
-                <button id="btn_cerrar">Cerrar Sesión</button>
-            </div>
+  <main>
 
-        </div>
+    <div id="myModal" class="modal">
 
+      <!-- Modal content -->
+      <div class="modal-content" id="signinpopup">
 
-    <div class="sign-in">
-        <h1>Modificar Club de Lectura</h1>
-        <div class="line"></div>
-        <form action="" id="formulario-ClubLectura">
-          <label for="txt-clubLectura">Nombre del Club de Lectura</label>
-          <input id="txt-clubLectura" type="text" placeholder="Nombre del Club" maxlength="60">
+        <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+        <div class="optionProfile"><a href="">Mi Carrito</a></div>
+        <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+        <div class="optionProfile"><a href="">Mis compras</a></div>
+        <div class="optionProfile"><a href="">Mis libros</a></div>
+        <div class="optionProfile"><a href="misintercambios.html">Mis intercambios</a></div>
+        <button id="btn_cerrar">Cerrar Sesión</button>
+      </div>
+
+    </div>
+
+    <div class="pantalla_dividida1">
+
+    </div>
+
+    <div class="pantalla_dividida2">
+
+      <h1>Modificar Club de Lectura</h1>
+
+      <form action="" id="formulario-ClubLectura">
+
+        <label for="txt-clubLectura">Nombre del Club de Lectura</label>
+        <input id="txt-clubLectura" type="text" maxlength="60">
+
+        <div class="contenedor_1">
+
           <h2 id="error_content" class="error">Por favor rellene los campos marcados</h2>
           <div>
             <label for="modalidad_Club">Modalidad</label>
@@ -97,24 +103,29 @@
               <option value="Virtual">Virtual</option>
             </select>
           </div>
+
           <h2 id="error_modalidad" class="error">Seleccione un valor de la lista</h2>
           <div class="dateInput">
             <label>Fecha de Inicio</label>
             <input type="date" id="fechaInicioClub">
           </div>
+
           <div class="dateInput">
             <label>Fecha de Fin</label>
             <input type="date" id="fechaFinClub">
           </div>
+
           <div class="dateErrors">
             <h2 id="error_fechaDia" class="error">La fecha no puede ser anterior al día de hoy</h2>
             <h2 id="error_fecha" class="error">Seleccione una fecha Válida</h2>
             <h2 id="error_fechaFin" class="error">La fecha de fin no puede ser antes que la de Inicio</h2>
           </div>
+
           <div id="horasClub">
-            <label for="">Hora:</label>
+            <label for="">Hora</label>
             <input type="time" value="08:30" step="600" id="horaClub">
           </div>
+
           <div id="frecuenciaClub">
             <label for="">Frecuencia</label>
             <select name="" id="frecuencia_club">
@@ -125,51 +136,125 @@
               <option value="Todos los Sábados">Todos los Sabados</option>
             </select>
           </div>
+
+        </div>
+
+        <div class="contenedor_2">
+
           <div id="lista_tema_clubes" class="listas">
             <label for="temas_club">Tema</label>
           </div>
+
           <div id="lista_genero_clubes" class="listas">
             <label for="generos_club">Géneros</label>
           </div>
+
           <div id="lista_categoria_club" class="listas">
             <label for="categorias_club">Categorías</label>
           </div>
+
           <div id="lista_libreria_club" class="listas">
             <label for="librerias_club">Librerias</label>
           </div>
+
           <div id="lista_sucursal_club" class="listas">
             <label for="sucursales_club">Sucursales</label>
           </div>
+
           <h2 id="error_listas" class="error">Seleccione un valor de la lista</h2>
-        </form>
-        <div class="btnsForm">
-          <button id="btnCancelClub" class="cancel">Cancelar</button>
-          <button id="btnCrearClub" class="submit">Modificar Club</button>
+
         </div>
+
+      </form>
+
+      <button id="btnCancelClub" class="cancel btnEstilo">Cancelar</button>
+
+      <button id="btnCrearClub" class="submit btnEstilo">Modificar Club</button>
+
+    </div>
+
+  </main>
+
+  <section id="footer">
+
+    <div class="footerLogo">
+      <img src="imgs/panda_blanco.png" width="150px">
+    </div>
+    <div class="footermap">
+
+      <div class="list">
+        <ul>
+          <li class="uhead"><a href=""><span>Librerías</span></a></li>
+          <ul>
+            <li><a href="">Ver las librerías</a></li>
+            <li><a href="registrar_libreria.html">Registrar mi librería</a></li>
+            <li><a href="">Sucursales</a></li>
+            <li><a href="">Ofertas</a></li>
+          </ul>
+        </ul>
+
       </div>
 
+      <div class="list">
+
+        <ul>
+          <li class="uhead"><a href=""><span>Libros</span></a></li>
+          <ul>
+            <li><a href="">Ver todos los libros</a></li>
+            <li><a href="">Categorías</a></li>
+            <li><a href="">Géneros</a></li>
+            <li><a href="">Más Vendidos</a></li>
+            <li><a href="">Mejor Calificados</a></li>
+          </ul>
+        </ul>
+      </div>
+
+      <div class="list">
+        <ul>
+          <li class="uhead"><a href=""><span>Clubes de Lectura</span></a></li>
+          <ul>
+            <li><a href="">Ver los clubes</a></li>
+            <li><a href="">Crear mi club</a></li>
+            <li><a href="">Unirme a un club</a></li>
+            <li><a href="">Ver mis clubes</a></li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+
+    <div class="socials">
+
+      <img src="https://img.icons8.com/ios-filled/40/ffffff/horizontal-line.png">
+
+      <img src="https://img.icons8.com/ios-filled/40/ffffff/facebook-new.png">
+
+      <img src="https://img.icons8.com/ios-filled/40/ffffff/instagram-new.png">
+
+      <img src="https://img.icons8.com/windows/40/ffffff/twitter.png">
+
+      <img src="https://img.icons8.com/ios-filled/40/ffffff/horizontal-line.png">
+
+    </div>
+  </section>
 
 
-    </main>
+  <script src="js/servicio_libro.js"></script>
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/servicio_librerias.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-    <footer></footer>
-    <script src="js/servicio_libro.js"></script>
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/servicio_librerias.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-
-    <script src="js/servicio-clubLectura.js"></script>
-    <script src="js/servicio_genero.js"></script>
-    <script src="js/servicio_sucursales.js"></script>
+  <script src="js/servicio-clubLectura.js"></script>
+  <script src="js/servicio_genero.js"></script>
+  <script src="js/servicio_sucursales.js"></script>
 
 
-    <script src="js/servicio_categoria.js"></script>
-    <script src="js/getNombre.js"></script>
-    <script src="js/servicio_sucursales.js"></script>
-    <script src="js/clienteIniciado.js"></script>
-    <script src="js/controlador_modificar_Club.js"></script>
-    <script src="js/controlador_cerrar_sesion.js"></script>
+  <script src="js/servicio_categoria.js"></script>
+  <script src="js/getNombre.js"></script>
+  <script src="js/servicio_sucursales.js"></script>
+  <script src="js/clienteIniciado.js"></script>
+  <script src="js/controlador_modificar_Club.js"></script>
+  <script src="js/controlador_cerrar_sesion.js"></script>
 
 </body>
 

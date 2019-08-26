@@ -8,6 +8,7 @@ main h1{
     font-size: 30px;
     font-weight: bold;
     margin: 30px;
+    margin-bottom: 50px;
 }
 
 .pantalla_dividida1{
@@ -16,7 +17,7 @@ main h1{
     background-repeat: no-repeat;
     background-size: cover;
     width: 40%;
-    height: 550px;
+    height: 350px;
     margin: 0 40px;
 }
 
