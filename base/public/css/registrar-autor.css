@@ -1,103 +1,112 @@
 body {
-    background-color: #fff
-  }
-  h1{
-      margin: 18px;
-  }
-  .sign-in {
-    width: 90%;
-    margin-left:10px auto 39px 20px;
-  }
-  .line{
-    background-color: #f6b93b;
-    height:2px;
-    width:100%;
-    margin-bottom:30px;
-  }
-  .sign-in h1 {
-    margin:20px;
-  }
- .sign-in  img{
-    width: 148px;
-    height: 221px;
+  background-color: #fff
 }
-  
-  input {
-    display: block;
-    width:800px;
-    padding:10px;
-    margin:10px 0;
-    margin-left:20px;
-  }
-  
-  select{
-    width:800px;
-    padding:10px;
-     margin:10px 0;
-     margin-left:20px;
-     appearance: none;
-     height:40px;
-     background-color:#fff;
-  }
-  
-  label{
-    display: block;
-    margin-left:20px;
-  }
-  .btnsForm{
-    /* float:right;
-    margin-right:50px;
-    margin-bottom:30px; */
-  }
-  
-  .btnsForm button{
-    padding:15px 45px;
-    border:solid 1px #000;
-    background-color:#fff;
-    color:#000;
-  }
-  
-  .btnsForm button:hover{
-      border:solid 1px #000;
-    background-color:#000;
-    color:#fff;
-  
-  }
-  
-  .error{
-    display:none;
-    color:red;
-    margin:20px;
-    font-size:10px;
-  }
 
+main{
+  display: flow-root;
+  text-align: center;
+}
 
-  .input_error{
-  
-      border:solid 2px red;
-  }
-  .boton_subir_imagen{
-    border:solid 1px #000;
-    background-color:#fff;
-    color:#000;
-    height: 35px;
-    width: 148px;
-    margin-bottom:30px;
-  }
-  
-  .boton_subir_imagen:hover{
-    border:solid 1px #000;
-    background-color:#000;
-    color:#fff;
-  }
-  
-  #datos_autor textarea{
-    display: block;
-      width:800px;
-      height: 75px;
-      /* padding:10px; */
-      margin:10px 0;
-      margin-left:20px;
-      outline: none;
-      resize: none;
-  }
+main h1{
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 30px;
+}
+
+.pantalla_dividida1{
+  float: left;
+  background-image: url(https://www.3wallpapers.fr/wp-content/uploads/2015/05/Library-iPhone-3Wallpapers-Parallax.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40%;
+  height: 1300px;
+  margin: 0 40px;
+}
+
+.pantalla_dividida2{
+  float: left;
+  width: 50%;
+  margin: 10px;
+}
+
+.subir_imagen{
+    margin-bottom: 40px;
+}
+
+#autor_foto_preview{
+    width: 200px;
+}
+
+.boton_subir_imagen{
+    padding: 5px;
+    background: none;
+    border: solid 1px #000;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+}
+
+main input{
+    width: 90%;
+    height: 30px;
+    margin: 0 15px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+    outline: none;
+}
+
+main textarea{
+    width: 90%;
+    height: 80px;
+    outline: none;
+    resize: none;
+    margin: 0 15px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+}
+
+main select{
+    width: 90%;
+    height: 30px;
+    margin: 0 15px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+    outline: none;
+}
+
+.input_error{
+  border:solid 2px red;
+}
+
+#btn-registrar-autor{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #000;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
+    cursor: pointer;
+}
+
+#btn-registrar-autor:hover{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #f6b93b;
+    outline: none;
+}
