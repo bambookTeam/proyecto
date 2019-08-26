@@ -55,6 +55,14 @@ let mostrar_tabla = async () => {
             
             registrarCarrito(sessionStorage.getItem('id'), lista_librosComprables[i]['isbn'], lista_librosComprables[i]['titulo'], lista_librosComprables[i]['precio'], idLibreria);
 
+            
+          Swal.fire({ //formato json
+            title: 'El libro se ha agregado al carrito',
+            type: 'success',
+            text: ''
+        })    
+        
+    
 
         });
 
@@ -111,6 +119,13 @@ let filtrar_tabla = async () => {
             registrarCarrito(sessionStorage.getItem('id'), lista_librosComprables[i]['isbn'], lista_librosComprables[i]['titulo'], lista_librosComprables[i]['precio'], idLibreria);
 
 
+          Swal.fire({ //formato json
+                title: 'El libro se ha agregado al carrito',
+                type: 'success',
+                text: ''
+            })    
+            
+        
 
                 });
 
