@@ -6,7 +6,7 @@ let id_ = urlParams.get('_id');
 let txt_titulo = document.querySelector('#txt_titulo');
 let txt_edicion = document.querySelector('#txt_edicion');
 let txt_editorial = document.querySelector('#txt_editorial');
-let txt_autor = document.querySelector('#txt_autor');
+let txt_autor = document.querySelector('#slt_autor');
 let txt_anno = document.querySelector('#txt_anno');
 let txt_idioma = document.querySelector('#txt_idioma');
 let txt_isbn = document.querySelector('#txt_isbn');
@@ -57,7 +57,7 @@ window.location.href ='ver-perfil-autor.html'
 
 //       let perfilAutor = document.createElement('href');
 //       perfilAutor.setAttribute('href', autor['nombre_autor']);
-//       perfilAutor.appendChild(txt_autor);
+//       perfilAutor.appendChild(slt_autor);
 // }
 // window.addEventListener('load', showAutor);
 

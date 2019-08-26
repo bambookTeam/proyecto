@@ -3,11 +3,9 @@
 const input_titulo = document.querySelector('#txt_titulo');
 const input_edicion = document.querySelector('#txt_edicion');
 const input_editorial = document.querySelector('#txt_editorial');
-//const input_autor = document.querySelector('#txt-nombre-autor');
 const input_anno = document.querySelector('#txt_anno_edicion');
 const input_idioma = document.querySelector('#txt_idioma');
 const input_isbn = document.querySelector('#txt_isbn');
-//const input_genero = document.querySelector('#txt_genero');
 const input_tipo = document.querySelector('#txt_tipo');
 const input_cantidad = document.querySelector('#txt_existencia');
 const input_precio = document.getElementById('txt_precio');
@@ -32,7 +30,7 @@ let showSelects = async () => {
     parentGenero.appendChild(selectGenero);
 
     let selectAutor = document.createElement('select');
-    selectAutor.setAttribute('id', 'txt_autor');
+    selectAutor.setAttribute('id', 'slt_autor');
     parentAutor.appendChild(selectAutor);
 
 
@@ -73,7 +71,7 @@ let showSelects = async () => {
 
 
                 //portada, contraportada, titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio
-let validar = (pportada, pcontraportada, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pgenero, ptipo, pcantidad, pprecio ) => {
+let validar = ( ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pgenero, ptipo, pcantidad, pprecio, pportada, pcontraportada) => {
 
     let error = false;
 
@@ -120,9 +118,9 @@ let validar = (pportada, pcontraportada, ptitulo, pedicion, peditorial, pautor, 
     //validar autor
     if (pautor == '') {
         error = true;
-        document.querySelector('#txt_autor').classList.add('input_error');
+        document.querySelector('#slt_autor').classList.add('input_error');
     } else {
-        document.querySelector('#txt_autor').classList.remove('input_error');
+        document.querySelector('#slt_autor').classList.remove('input_error');
     }
 
     //validar año de edición
@@ -185,12 +183,10 @@ let validar = (pportada, pcontraportada, ptitulo, pedicion, peditorial, pautor, 
 
 
 let saludar = () => {
-    let portada = portadaLibro.src;
-    let contraportada = contraportadaLibro.src;
     let titulo = input_titulo.value;
     let edicion = input_edicion.value;
     let editorial = input_editorial.value;
-    let autor = document.querySelector('#txt_autor').value;
+    let autor = document.querySelector('#slt_autor').value;
     let anno = input_anno.value;
     let idioma = input_idioma.value;
     let isbn = input_isbn.value;
@@ -198,12 +194,14 @@ let saludar = () => {
     let tipo = input_tipo.value;
     let cantidad = parseInt(input_cantidad.value);
     let precio = parseFloat(input_precio.value);
+    let portada = portadaLibro.src;
+    let contraportada = contraportadaLibro.src;
+    
 
-
-    let error = validar(portada, contraportada, titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio);
+    let error = validar(titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio, portada, contraportada);
 
     if (error == false) {
-        registrarLibro(portada, contraportada, titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio);
+        registrarLibro(titulo, edicion, editorial, autor, anno, idioma, isbn, genero, tipo, cantidad, precio, portada, contraportada);
         registrarInventario(isbn);
         Swal.fire({
             type: 'success',

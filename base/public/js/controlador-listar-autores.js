@@ -59,6 +59,7 @@ let mostrar_tabla = async () => {
 
 
         //Botón estado
+
         let celda_btn_estado = fila.insertCell();
         let btn_estado = document.createElement('button');
         btn_estado.type = 'button';
@@ -70,61 +71,58 @@ let mostrar_tabla = async () => {
 
         if (lista_autores[i].estado == 0) {
             btn_estado.addEventListener('click', function () {
-                habilitar_Libro(lista_autores[i]._id);
+                habilitar_autor(lista_autores[i]._id);
                 location.reload();
             });
 
         } else {
             btn_estado.innerText = "Desactivar"
             btn_estado.addEventListener('click', function () {
-                deshabilitar_Libro(lista_autores[i]._id);
+                deshabilitar_autor(lista_autores[i]._id);
                 location.reload();
 
             });
 
         }
 
-        //Botón eliminar
+         //Botón eliminar
 
-        let estilos_btn_eliminar = document.createElement('img');
-        estilos_btn_eliminar.setAttribute('src', './imgs/delete-icon.png')
+         let estilos_btn_eliminar = document.createElement('img');
+         estilos_btn_eliminar.setAttribute('src', './imgs/delete-icon.png')
 
-        let celda_btn_eliminar = fila.insertCell();
-        let btn_eliminar = document.createElement('button', 'a');
-        btn_eliminar.innerText = 'Eliminar';
-        btn_eliminar.href = '#';
-        btn_eliminar.type = 'button';
+         let celda_btn_eliminar = fila.insertCell();
+         let btn_eliminar = document.createElement('button', 'a');
+         btn_eliminar.innerText = 'Eliminar';
+         btn_eliminar.href = '#';
+         btn_eliminar.type = 'button';
 
-        btn_eliminar.addEventListener('click', function () {
-            Swal.fire({
-                title: '¿Está seguro que desea eliminar el autor?',
-                text: "Ésta acción no se puede revertir",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, estoy seguro'
-            }).then((result) => {
-                if (result.value) {
-                    eliminar(lista_autores[i]._id);
+         btn_eliminar.addEventListener('click', function () {
+             Swal.fire({
+                 title: '¿Está seguro que desea eliminar el autor?',
+                 text: "Ésta acción no se puede revertir",
+                 type: 'warning',
+                 showCancelButton: true,
+                 confirmButtonColor: '#3085d6',
+                 cancelButtonColor: '#d33',
+                 confirmButtonText: 'Sí, estoy seguro'
+             }).then((result) => {
+                 if (result.value) {
+                     eliminarAutor(lista_autores[i]._id);
 
-                    Swal.fire(
-                        'Autor eliminado exitosamente!',
-                        //'success'
-                    ).then((result) => {
-                        if (result.value) {
-                            window.location.href = 'listar-autores.html';
-                        }
-                    });
-                }
-            })
-            localStorage.setItem("eliminarAutor", JSON.stringify(lista_autores[i]));
-        })
-        celda_btn_eliminar.appendChild(btn_eliminar);
-        btn_eliminar.appendChild(estilos_btn_eliminar);
-
-
-
+                     Swal.fire(
+                         'autor eliminado exitosamente!',
+                         //'success'
+                     ).then((result) => {
+                         if (result.value) {
+                             window.location.href = 'listar-autores.html';
+                         }
+                     });
+                 }
+             })
+             localStorage.setItem("eliminarAutor", JSON.stringify(lista_autores[i]));
+         })
+         celda_btn_eliminar.appendChild(btn_eliminar);
+         btn_eliminar.appendChild(estilos_btn_eliminar);
 
     }
 
@@ -186,68 +184,68 @@ let filtrar_tabla = async () => {
 
             //Botón estado
             let celda_btn_estado = fila.insertCell();
-            let btn_estado = document.createElement('button');
-            btn_estado.type = 'button';
-            btn_estado.innerText = "Activar"
-            btn_estado.classList.add('botonEstado');
-            btn_estado.dataset._id = lista_autores[i]['_id'];
+        let btn_estado = document.createElement('button');
+        btn_estado.type = 'button';
+        btn_estado.innerText = "Activar"
+        btn_estado.classList.add('botonEstado');
+        btn_estado.dataset._id = lista_autores[i]['_id'];
 
-            celda_btn_estado.appendChild(btn_estado);
+        celda_btn_estado.appendChild(btn_estado);
 
-            if (lista_autores[i].estado == 0) {
-                btn_estado.addEventListener('click', function () {
-                    habilitar_Libro(lista_autores[i]._id);
-                    location.reload();
-                });
+        if (lista_autores[i].estado == 0) {
+            btn_estado.addEventListener('click', function () {
+                habilitar_autor(lista_autores[i]._id);
+                location.reload();
+            });
 
-            } else {
-                btn_estado.innerText = "Desactivar"
-                btn_estado.addEventListener('click', function () {
-                    deshabilitar_Libro(lista_autores[i]._id);
-                    location.reload();
+        } else {
+            btn_estado.innerText = "Desactivar"
+            btn_estado.addEventListener('click', function () {
+                deshabilitar_autor(lista_autores[i]._id);
+                location.reload();
 
-                });
+            });
 
-            }
+        }
 
             //Botón eliminar
 
             let estilos_btn_eliminar = document.createElement('img');
-            estilos_btn_eliminar.setAttribute('src', './imgs/delete-icon.png')
+         estilos_btn_eliminar.setAttribute('src', './imgs/delete-icon.png')
 
-            let celda_btn_eliminar = fila.insertCell();
-            let btn_eliminar = document.createElement('button', 'a');
-            btn_eliminar.innerText = 'Eliminar';
-            btn_eliminar.href = '#';
-            btn_eliminar.type = 'button';
+         let celda_btn_eliminar = fila.insertCell();
+         let btn_eliminar = document.createElement('button', 'a');
+         btn_eliminar.innerText = 'Eliminar';
+         btn_eliminar.href = '#';
+         btn_eliminar.type = 'button';
 
-            btn_eliminar.addEventListener('click', function () {
-                Swal.fire({
-                    title: '¿Está seguro que desea eliminar el autor?',
-                    text: "Ésta acción no se puede revertir",
-                    type: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Sí, estoy seguro'
-                }).then((result) => {
-                    if (result.value) {
-                        eliminar(lista_autores[i]._id);
+         btn_eliminar.addEventListener('click', function () {
+             Swal.fire({
+                 title: '¿Está seguro que desea eliminar el autor?',
+                 text: "Ésta acción no se puede revertir",
+                 type: 'warning',
+                 showCancelButton: true,
+                 confirmButtonColor: '#3085d6',
+                 cancelButtonColor: '#d33',
+                 confirmButtonText: 'Sí, estoy seguro'
+             }).then((result) => {
+                 if (result.value) {
+                     eliminarAutor(lista_autores[i]._id);
 
-                        Swal.fire(
-                            'Autor eliminado exitosamente!',
-                            //'success'
-                        ).then((result) => {
-                            if (result.value) {
-                                window.location.href = 'listar-autores.html';
-                            }
-                        });
-                    }
-                })
-                localStorage.setItem("eliminarAutor", JSON.stringify(lista_autores[i]));
-            })
-            celda_btn_eliminar.appendChild(btn_eliminar);
-            btn_eliminar.appendChild(estilos_btn_eliminar);
+                     Swal.fire(
+                         'autor eliminado exitosamente!',
+                         //'success'
+                     ).then((result) => {
+                         if (result.value) {
+                             window.location.href = 'listar-autores.html';
+                         }
+                     });
+                 }
+             })
+             localStorage.setItem("eliminarAutor", JSON.stringify(lista_autores[i]));
+         })
+         celda_btn_eliminar.appendChild(btn_eliminar);
+         btn_eliminar.appendChild(estilos_btn_eliminar);
 
 
 
