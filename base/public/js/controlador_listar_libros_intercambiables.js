@@ -34,7 +34,7 @@ let redireccionar = (libroIntercambio) => {
 
 let mostrar_tabla = async () => {
 
-    let librosComprados = await obtenerLibrosComprados();
+    librosComprados = await obtenerLibrosComprados();
     tbody.innerHTML = '';
 
 
@@ -76,29 +76,32 @@ let filtrar_tabla = async () => {
 
     for (let i = 0; i < librosComprados.length; i++) {
         if (librosComprados[i]['titulo'].toLowerCase().includes(filtro)) {
-            let fila = tbody.insertRow();
-            fila.insertCell().innerHTML = librosComprados[i]['titulo'];
-            fila.insertCell().innerHTML = librosComprados[i]['autor'];
-            fila.insertCell().innerHTML = librosComprados[i]['edicion'];
-            fila.insertCell().innerHTML = librosComprados[i]['genero'];
-            fila.insertCell().innerHTML = librosComprados[i]['año'];
-
-            //Botón ver perfil
 
 
-            let celda_btn_solicitar = fila.insertCell();
-            let btn_solicitar = document.createElement('button', 'a');
-            btn_solicitar.innerText = 'Solicitar';
-            btn_solicitar.type = 'button';
 
-            btn_solicitar.dataset._id = librosComprados[i]['_id'];
+            // filtro para no mostrar los libros comprados por el mismo usuario
+            if (librosComprados[i].idCliente != sessionStorage.getItem("id")) {
 
-            celda_btn_solicitar.appendChild(btn_solicitar);
+                let usuario = usuarios.find(usuarios => usuarios._id === librosComprados[i].idCliente);
 
-            btn_solicitar.addEventListener('click', function () {
-                redireccionar(librosComprados[i]);
+                let fila = tbody.insertRow();
+                fila.insertCell().innerHTML = librosComprados[i].titulo;
+                fila.insertCell().innerHTML = librosComprados[i].isbn;
+                fila.insertCell().innerHTML = usuario.primerNombre + " " + usuario.primerApellido;
 
-            });
+                //Botón ver perfil
+
+                let celda_btn_solicitar = fila.insertCell();
+                let btn_solicitar = document.createElement('button');
+                btn_solicitar.innerText = 'Solicitar intercambio';
+                btn_solicitar.type = 'button';
+
+                celda_btn_solicitar.appendChild(btn_solicitar);
+
+                btn_solicitar.addEventListener('click', function () {
+                    redireccionar(librosComprados[i]);
+                });
+            }
 
 
 
