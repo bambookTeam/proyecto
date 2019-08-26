@@ -116,9 +116,10 @@ let agregarMarcadoresMapa = (lista_sucursales) => {
     initMap();
     for (let i = 0; i < lista_sucursales.length; i++) {
         if (localStorage.getItem('idLibreria') == lista_sucursales[i].idLibreria) {
-            if (lista_sucursales.ubicacion) {
+            if (lista_sucursales[i].ubicacion) {
+                let pos = JSON.parse(lista_sucursales[i].ubicacion)
                 let marker = new google.maps.Marker({
-                    position: JSON.parse(lista_sucursales.ubicacion),
+                    position: pos,
                     map: map,
                     title: 'Ubicación',
                     draggable: true,

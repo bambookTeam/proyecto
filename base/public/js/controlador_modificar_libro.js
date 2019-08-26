@@ -24,7 +24,7 @@ let modificarLibro = async (id) => {
 
     
 
- modificar_libro(idLibro, portadaLibro, contraportadaLibro, input_titulo, input_edicion, input_editorial, input_autor, input_anno, input_idioma, input_isbn, input_genero, input_tipo, input_cantidad, input_precio);
+ modificar_libro(idLibro, input_titulo, input_edicion, input_editorial, input_autor, input_anno, input_idioma, input_isbn, input_genero, input_tipo, input_cantidad, input_precio), portadaLibro, contraportadaLibro;
     
                    //(pid, ptitulo, pedicion, peditorial, pautor, panno, pidioma, pisbn, pgenero, ptipo, pcantidad, pprecio , pportada, pcontraportada)
     //modificar_libro(idLibro, input_titulo, input_edicion, input_editorial, input_anno, input_anno.value, input_idioma.value, input_isbn.value, pgenero, input_tipo.value, input_cantidad.value, input_precio.value , portadaLibro.value, contraportadaLibro.value);
@@ -32,7 +32,7 @@ let modificarLibro = async (id) => {
 
 document.querySelector("#btn_guardar").addEventListener("click", function () {
     modificarLibro(idLibro);
-   // window.location.href = 'listar_libros.html';
+//    window.location.href = 'listar_libros.html';
     // window.location.addEventListener("click", saludar,);
 
 });
@@ -219,9 +219,9 @@ let validar = ( ptitulo, pedicion, peditorial, panno, pautor, pidioma, pisbn, pg
     return error;
 }
 
-let limpiar = () => {
-    localStorage.removeItem("usuario");
-}
+// let limpiar = () => {
+//     localStorage.removeItem("usuario");
+// }
 
 window.addEventListener('load',llenarFormulario)
 

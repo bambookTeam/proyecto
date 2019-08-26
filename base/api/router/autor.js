@@ -61,8 +61,8 @@ router.get('/listar-autores', function (req, res) {
     })
 });
 
-router.get('/buscar-autor-id/:_id', function(req, res) {
-    Autor.findById(req.body._id, function(err, autorBD) {
+router.get('/buscar-autor-id/:_id', function (req, res) {
+    Autor.findById(req.body._id, function (err, autorBD) {
         if (err) {
             return res.status(400).json({
                 success: false,
@@ -78,13 +78,13 @@ router.get('/buscar-autor-id/:_id', function(req, res) {
     })
 });
 
-router.post('/modificar_autor', function(req, res) {
+router.post('/modificar_autor', function (req, res) {
     let body = req.body;
 
     Autor.findByIdAndUpdate(body._id, {
-            $set: req.body
-        },
-        function(error) {
+        $set: req.body
+    },
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo modificar el autor' });
             } else {
@@ -94,15 +94,15 @@ router.post('/modificar_autor', function(req, res) {
     )
 });
 
-router.post('/deshabilitar_autor', function(req, res) {
+router.post('/deshabilitar_autor', function (req, res) {
     let body = req.body;
 
     Autor.findByIdAndUpdate(body._id, {
-            $set: {
-                estado: 'Deshabilitado'
-            }
-        },
-        function(error) {
+        $set: {
+            estado: 'Deshabilitado'
+        }
+    },
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo deshabilitar el autor' });
             } else {
@@ -112,15 +112,15 @@ router.post('/deshabilitar_autor', function(req, res) {
     )
 });
 
-router.post('/habilitar_autor', function(req, res) {
+router.post('/habilitar_autor', function (req, res) {
     let body = req.body;
 
     Autor.findByIdAndUpdate(body._id, {
-            $set: {
-                estado: 'Habilitado'
-            }
-        },
-        function(error) {
+        $set: {
+            estado: 'Habilitado'
+        }
+    },
+        function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo habilitar el autor' });
             } else {
@@ -129,4 +129,20 @@ router.post('/habilitar_autor', function(req, res) {
         }
     )
 });
+
+router.post('/eliminar_autor', function (req, res) {
+    let body = req.body;
+
+    Autor.findByIdAndRemove(body._id,        
+    
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el autor' });
+            } else {
+                res.json({ success: true, msg: 'El autor se ha eliminado con éxito' });
+            }
+        }
+    )
+});
+
 module.exports = router;
