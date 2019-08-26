@@ -20,7 +20,9 @@ let mostrar_tabla = async () => {
     for (let i = 0; i < lista_libros.length; i++) {
 
         // filtro para no mostrar las solicitudes hechas por el usuario (esto es por la presión de tiempo)
-        if (lista_libros[i].idSender == sessionStorage.getItem("id") && lista_libros[i].estado == 3) {
+        if (lista_libros[i].idSender == sessionStorage.getItem("id") && lista_libros[i].estado == 3 ||
+            lista_libros[i].idOwner == sessionStorage.getItem("id") && lista_libros[i].estado == 3
+        ) {
 
             let usuario = usuarios.find(usuarios => usuarios._id === lista_libros[i].idOwner);
 

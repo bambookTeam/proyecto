@@ -100,7 +100,6 @@ function initMap() {
 
 }
 
-initMap();
 
 
 
@@ -113,8 +112,19 @@ let llenar_perfil = async () => {
 };
 
 let agregarMarcadoresMapa = (lista_sucursales) => {
+
+    initMap();
     for (let i = 0; i < lista_sucursales.length; i++) {
-        const element = array[i];
+        if (localStorage.getItem('idLibreria') == lista_sucursales[i].idLibreria) {
+            if (lista_sucursales.ubicacion) {
+                let marker = new google.maps.Marker({
+                    position: JSON.parse(lista_sucursales.ubicacion),
+                    map: map,
+                    title: 'Ubicación',
+                    draggable: true,
+                });
+            }
+        }
     }
 };
 
@@ -126,7 +136,7 @@ let mostrar_tabla = async () => {
 
     lista_sucursales = await obtenerSucursales();
 
-    //agregarMarcadoresMapa(lista_sucursales);
+    agregarMarcadoresMapa(lista_sucursales);
 
     lista_sucursales = lista_sucursales.reverse();
 
