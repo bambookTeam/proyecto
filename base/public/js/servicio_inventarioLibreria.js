@@ -12,7 +12,8 @@ let registrarInventarioLibreria = (psibn, pIdAdminLibreria, pcant) => {
 
             isbn: psibn,
             idAdminLibreria: pIdAdminLibreria,
-            cant: pcant
+            cant: pcant,
+            precio: pprecio
         }
     });
 
@@ -32,6 +33,21 @@ let agregarInventarioLibreria = (p_id, pcant) => {
         }
 
 
+    });
+
+};
+
+let cambiarPrecio = (p_id, pprecio) => {
+    
+    axios({
+        method: 'post',
+        url: '',
+        responseType: 'json',
+        data: {
+
+            _id: p_id,
+            precio: pprecio
+        }
     });
 
 };
@@ -100,10 +116,15 @@ let verificarInventario = async ( pisbn, pIdAdminLibreria, pcant) => {
 
     inventarioLibreria = await inventario();
 
-    if( inventarioLibreria.length == 0){
+    let existe = verificarLibro(pisbn);
+
+    if( inventarioLibreria.length == 0 || existe == 0 ){
         
 
         registrarInventarioLibreria(pisbn, pIdAdminLibreria, pcant);
+
+        
+        location.replace('inventario_libreria.html');
 
 
     }else {
@@ -115,19 +136,32 @@ let verificarInventario = async ( pisbn, pIdAdminLibreria, pcant) => {
             
             agregarInventarioLibreria(inventarioLibreria[i]['_id'], inventarioLibreria[i]['cant'] + pcant);
 
-        }else {
+            i = inventarioLibreria.lengthl;
 
-            
-            registrarInventarioLibreria(pisbn, pIdAdminLibreria, pcant);
-
+            location.replace('inventario_libreria.html');
         }
 
     }
 
 }
 
+};
 
 
+let verificarLibroLibreria = (pisbn) => {
 
+    //Retorna 0 si el libro no existe en el inventario y 1 si el libro ya existe
+    let existe = 0;
+    
+    for ( let i = 0; i < inventarioLibreria.length; i++){
+
+        if(pisbn == inventarioLibreria[i]['isbn']){
+            
+            existe = 1;
+
+        }
+    }
+
+    return existe;
 
 };
