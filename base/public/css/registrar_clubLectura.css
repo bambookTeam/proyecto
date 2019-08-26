@@ -1,64 +1,97 @@
 body {
     background-color: #fff
   }
-  
-  .sign-in {
+
+main{
+    display: flow-root;
+    text-align: center;
+}
+
+main h1{
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 30px;
+    margin-bottom: 50px;
+}
+
+.pantalla_dividida1{
+    float: left;
+    background-image: url(https://www.3wallpapers.fr/wp-content/uploads/2015/05/Library-iPhone-3Wallpapers-Parallax.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 850px;
+    margin: 0 40px;
+}
+
+.pantalla_dividida2{
+    float: left;
+    width: 50%;
+    margin: 10px;
+}
+
+#formulario-ClubLectura{
+  display: flow-root;
+}
+
+.contenedor_1{
+  width: 45%;
+  float: left;
+}
+
+.contenedor_2{
+  width: 45%;
+  float: left;
+}
+
+main input{
     width: 90%;
-    margin-left:10px auto 39px 20px;
-  }
-  .line{
-    background-color: #f6b93b;
-    height:2px;
-    width:100%;
-    margin-bottom:30px;
-  }
-  .sign-in h1 {
-    margin:20px;
-  }
-  
-  
-  input {
-    display: block;
-    width:800px;
-    padding:10px;
-    margin:10px 0;
-    margin-left:20px;
-  }
-  
-  select{
-    width:800px;
-    padding:10px;
-     margin:10px 0;
-     margin-left:20px;
-     appearance: none;
-     height:30px;
-     background-color:#fff;
-  }
-  
-  label{
-    display: block;
-    margin-left:20px;
-  }
-  .btnsForm{
-    float:right;
-    margin-right:10px;
-    margin-bottom:30px;
-  }
-  
-  .btnsForm button{
-    padding:15px 45px;
-    border:solid 1px #000;
-    background-color:#fff;
-    color:#000;
-  }
-  
-  .btnsForm button:hover{
-      border:solid 1px #000;
-    background-color:#000;
-    color:#fff;
-  
-  }
-  
+    height: 30px;
+    margin: 0 15px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+    outline: none;
+}
+
+main select{
+    width: 90%;
+    height: 30px;
+    margin: 0 15px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+    outline: none;
+}
+
+.btnEstilo{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #000;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
+    cursor: pointer;
+}
+
+.btnEstilo:hover{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #f6b93b;
+    outline: none;
+}
+
   .error{
     display:none;
     color:red;

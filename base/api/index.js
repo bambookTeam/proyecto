@@ -29,6 +29,7 @@ const solicitudIntercambio_route = require('./router/solicitudIntercambio');
 
 const carrito_route = require('./router/carrito');
 const libroComprado_route = require('./router/libroComprado');
+const user_rating_route=require('./router/ratingUser')
 
 
 const app = express();
@@ -106,6 +107,7 @@ app.use('/api', chat_route);
 app.use('/api', inventario_libreria_route);
 app.use('/api', intercambios_route);
 app.use('/api', solicitudIntercambio_route);
+app.use('/api',user_rating_route)
 
 
 //localhost:3000/api/registrar-sucursal

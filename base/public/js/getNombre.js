@@ -1,21 +1,22 @@
-let usuario_activo=sessionStorage.getItem('tipoUsuario')
+let usuario_activo_123=sessionStorage.getItem('tipoUsuario')
 let optionSucursales=document.querySelector('#optionSucursales');
 let optionLibrerias = document.querySelector('#optionlibrerias');
 let optionUsuarios = document.querySelector('#optionUsers');
 let optionGeneros = document.querySelector('#optionGeneros');
 let optionCategorias = document.querySelector('#optionCategorias');
 let options=document.getElementsByClassName('optionProfile');
-let optionIntercambio=document.querySelector('#optionIntercambios');
+let optionIntercambio=document.querySelector('#optionIntercambio');
 let optionAutores=document.querySelector('#optionAutores');
-var numItems = $('.optionProfile').length;
-var items = $('.optionProfile')
+let optionMisLibros=document.querySelector('#optionMisLibros');
+let optionInventario=document.querySelector('#optionInventario');
+
 
 
 window.addEventListener('load',function(){
-    if(usuario_activo==2){
+    if(usuario_activo_123==2){
         
     optionSucursales.style.display="none";
-    optionLibrerias.href='%20clubesLectura.html';
+    optionLibrerias.href='listar_librerias_cliente.html';
     optionUsuarios.style.display="none";
     document.querySelector('#refGeneros').href='listar_generos_adminlibre.html';
     optionCategorias.style.display="none";
@@ -31,18 +32,20 @@ window.addEventListener('load',function(){
             document.querySelector('#signinpopup').style.height="58px";
             
         }
-        if (usuario_activo==1) {
+        if (usuario_activo_123==1) {
             
-            document.querySelector('#sucursal_href').setAttribute('href','listar_sucursales_admin.html');
             optionAutores.style.display="none";
             optionIntercambio.style.display="none";
             optionUsuarios.style.display="none";
             document.querySelector('#optionBitacora').style.display='none';
             document.querySelector('#refGeneros').href='listar_generos_adminlibre.html';
+            optionSucursales.href='listar_sucursales_admin.html';
+            optionMisLibros.style.display="none";
+            optionInventario.href="inventario_libreria.html"
     
            
         } else {
-            
+            optionInventario.href="inventario_general.html"
         }
 
         if(document.querySelector('#idVerPerfil')) {

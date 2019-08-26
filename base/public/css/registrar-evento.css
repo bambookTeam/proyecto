@@ -1,57 +1,97 @@
-
 main{
+    display: flow-root;
     text-align: center;
 }
 
-
-#lista_libros_evento{
-    width:100%;
-    margin:20px 0 ;
-    display: inline-block
+main h1{
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 30px;
 }
 
-#lista_libros_evento select{
-    width:30%;
-    margin:0 15px;
-}
-#lista_libros_evento label{
-    width:100%;
-}
-
-
-h1{
-    font-size:40px;
-    margin:40px 0;
+.pantalla_dividida1{
+    float: left;
+    background-image: url(https://www.3wallpapers.fr/wp-content/uploads/2015/05/Library-iPhone-3Wallpapers-Parallax.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 400px;
+    margin: 0 40px;
 }
 
-#event_Name{
-    width:50%;
-    padding:10px;
-    margin:10px 0;
+.pantalla_dividida2{
+    float: left;
+    width: 50%;
+    margin: 10px;
 }
+
+main input{
+    width: 90%;
+    height: 30px;
+    margin: 0 15px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+    outline: none;
+}
+
+main select{
+    width: 90%;
+    height: 30px;
+    margin: 0 15px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+    outline: none;
+}
+
 
 .input_error{
     border: solid 1px red;
 }
 
-#tbl_eventos{
-    margin:auto;
+.btnEstilo{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #000;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #000;
+    outline: none;
+    cursor: pointer;
 }
 
-#tbl_eventos th{
-    width:350px;
-    padding:10px;
-    background-color:#76323f;
-   color:#fff;
-   border:solid 1px #fff;
+.btnEstilo:hover{
+    margin: 50px 0;
+    padding: 10px;
+    border: 2px solid #f6b93b;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    background: #f6b93b;
+    outline: none;
 }
 
-#tbl_eventos tr:nth-child(even){
-    background-color: #f2f2f2;
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
 }
-
-#tbl_eventos th,#tbl_eventos td{
-    width:350px;
-    padding:10px;
+  
+th, td {
+    text-align: left;
+    padding: 15px;
 }
-
+  
+tr:nth-child(even){background-color: #f2f2f2}
+  
+th {
+    background-color: #f6b93b;
+    color: white;
+}

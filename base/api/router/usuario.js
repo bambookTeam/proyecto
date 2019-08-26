@@ -97,8 +97,6 @@ router.post('/registrar_usuario', function (req, res) {
 router.post('/registrar_admin_libreria', function (req, res) {
     let body = req.body;
 
-    console.log('Impresion datos')
-    console.log(body)
 
     let nuevo_usuario = new Usuario({
 
@@ -345,9 +343,6 @@ router.post('/buscar-usuario-perfil', function (req, res) {
     })
 });
 
-
-
-
 router.post('/crear-contrasenna', function (req, res) {
     Usuario.updateOne({ _id: req.body._id }, { $set: { contrasena: req.body.contrasena } },
 
@@ -373,7 +368,6 @@ router.post('/crear-contrasenna', function (req, res) {
     )
 
 });
-
 
 router.post('/actualizar-contador', function (req, res) {
     console.log("inicio funcion  contador");
@@ -482,6 +476,77 @@ router.post('/eliminar-usuario', function (req, res) {
             }
         }
     )
+});
+
+router.post('/suscribirse-sucursal', function (req, res) {
+    let body = req.body;
+
+    if (body.ofertas == "false") {  
+        let mailOptions = {
+
+            from: 'bambooks.team@gmail.com',
+            to: body.correo,
+            subject: 'Suscripción a una sucursal',
+            text: body.text,
+           
+
+        };
+        transporter.sendMail(mailOptions, function (error, info) {
+
+            if (error) {
+
+                console.log(error);
+            } else {
+
+                console.log('Se ha restablecido la nueva contraseña')
+            }
+        });
+    } else {
+        var arrayImageSources = req.body.listaImageSources.split(",");
+
+        let array = [];
+        for (let index = 0; index < arrayImageSources.length; index++) {
+
+            let arrayPush = {
+                filename: 'oferta-' + (index + 1) + '.png',
+                path: arrayImageSources[index]
+            }
+            array.push(arrayPush);
+
+        }
+
+        console.log(array);
+        let mailOptions = {
+
+            from: 'bambooks.team@gmail.com',
+            to: body.correo,
+            subject: 'Suscripción a una sucursal',
+            text: body.text,
+            attachments: array
+
+        };
+        transporter.sendMail(mailOptions, function (error, info) {
+
+            if (error) {
+
+                console.log(error);
+            } else {
+
+                console.log('Se ha restablecido la nueva contraseña')
+            }
+        });
+    }
+
+
+    return res.status(400).json({
+        success: true,
+        msj: 'Se restablecio la contrasenna'
+    });
+
+
+
+
+
 });
 
 module.exports = router;
