@@ -24,7 +24,7 @@ let validar = (pexistencias) => {
 
 let agregar = () => {
 
-    let existencias = input_existencias.value; 
+    let existencias = parseInt(input_existencias.value); 
     
     let inventario = JSON.parse(localStorage.getItem("inventario")); 
     console.log(inventario._id);
@@ -37,7 +37,9 @@ let agregar = () => {
 
         
 
-        agregarInventario(inventario._id, inventario.cant + existencias);
+        agregarInventario(inventario._id, parseInt(inventario.cant) + existencias);
+
+        location.replace('inventario_general.html')
 
         Swal.fire({ //formato Jason
             title: 'Se ha agregado con exito',

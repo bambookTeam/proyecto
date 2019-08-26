@@ -122,35 +122,10 @@ let inventarioSucursal = async (pidSucursal) => {
 let verificarInventarioSucursal =  async ( pisbn, pidLibreria, pidSucursal, pcant) => {
     
     //let listaInventarioSucursal = [];
+    
      listaInventarioSucursal = await inventarioSucursal(pidSucursal);
      let existe = verificarLibro(pisbn);
 
-     /*
-    if( listaInventarioSucursal.length == 0){
-
-        registrarInventarioSucursal(pisbn, pidLibreria, pidSucursal, pcant);
-
-
-    }else {
-
-        if( existe == 0){
-            
-            registrarInventarioSucursal(pisbn, pidLibreria, pidSucursal, pcant);
-
-        }else {
-
-            for( let i = 0; i< listaInventarioSucursal.length; i++){ 
-                
-                if()
-
-
-            }
-
-            agregarInventarioSucursal(listaInventarioSucursal[i]['_id'], listaInventarioSucursal[i])
-
-        }
-    }
-    */
 
     if( existe == 0 || listaInventarioSucursal.length == 0){
 

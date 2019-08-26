@@ -12,7 +12,8 @@ router.post('/registrar_inventarioLibreria', function(req, res){
     let inventario_libreria = new InventarioLibreria({
         isbn: body.isbn,
         idAdminLibreria: body.idAdminLibreria,
-        cant: body.cant
+        cant: body.cant,
+        precio: body.precio
 
         
     })

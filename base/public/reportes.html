@@ -5,15 +5,17 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Perfil Librería</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/visualizar_perfil_libreria.css">
+    <title>Reportes</title>
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/listar_libros.css">
+    <link rel="stylesheet" href="CSS/listar_reportes.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 
-
 <body>
+
+
     <header>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -32,6 +34,8 @@
                 <ul class="child">
                     <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
                     <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
+                    <li id="optionMisLibros"><a href="listar_librosComprados.html">Mis Libros</a></li>
+                    <li id="optionAutores"><a href="listar-autores.html"></a></li>
                 </ul>
             </li>
             <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
@@ -46,16 +50,20 @@
 
             <li class="parent" id="dropdown"><a href="#">Otros</a>
                 <ul class="child">
-                    <li><a href="intercambios.html">Intercambios</a></li>
-                    <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
-                    <li id='optionBitacora'><a href="#">Bitácora</a></li>
+                    <li id='optionIntercambio'><a href="listar_libros_intercambiables.html">Intercambios</a></li>
+                    <li id='optionUsers'><a href="#">Usuarios</a></li>
+                    <li id='optionBitacora'><a href="listar_bitacora.html">Bitácora</a></li>
                     <li id='optionReportes'><a href="#">Reportes</a></li>
-                    <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
+                    <li><a href="inventario_general.html" id="optionInventario">Inventario</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
+
+
+
     <main>
+
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
@@ -66,95 +74,58 @@
                 <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
                 <div class="optionProfile"><a href="">Mis compras</a></div>
                 <div class="optionProfile"><a href="">Mis libros</a></div>
-                <div class="optionProfile"><a href="">Mis intercambios</a></div>
+                <div class="optionProfile"><a href="misintercambios.html">Mis intercambios</a></div>
                 <button id="btn_cerrar">Cerrar Sesión</button>
             </div>
 
         </div>
-        <section id="info">
+        <div id="btn_reportes">
 
-            <h1> <span id="txt_nombre_comercial"></span> </h1>
+        <button id="btn_best_sellers">Mostrar Best Sellers</button>
+        <button id="btn_best_rated">Mostrar Libros Mejores Calificados</button>
+        <button id="btn_mostrar_califs">Mostrar Calificaciones</button>
 
-            <div id="map"></div>
+        </div>
+        <table id="tbl_reporte_best_sellers">
+               
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Titulo</th>
+                    <th>Cantidad Vendidas</th>
+                </tr>
+            </thead>
+            <tbody>
 
-            <p class="dato"> <span id="txt_direccion"></span></p>
+            </tbody>
+        </table>
 
-        </section>
+        <table id="tbl_reporte_best_rated">
+            
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Titulo</th>
+                    <th>Calificacion Promedio</th>
+                </tr>
+            </thead>
+            <tbody>
 
+            </tbody>
+        </table>
 
-        <section id="sucursales">
+        <table id="tbl_reporte_califs">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Numero Calificaciones</th>
+                    <th>Calificacion</th>
+                </tr>
+            </thead>
+            <tbody>
 
-            <table id="tbl_sucursales">
-
-                <thead>
-                    <th>Sucursales</th>
-                    <th></th>
-                </thead>
-
-                <tbody>
-
-                </tbody>
-
-            </table>
-
-        </section>
-
-
-
-        <section id="ofertas">
-
-            <button type="button" class="btn-registrar-oferta" id="btn-registrar-oferta">Registrar Oferta</button>
-
-            <div>
-                <img src="" alt="" id="image_preview2">
-            </div>
-
-
-            <div class="slideshow-container" id="daddy">
-
-                <h3>Ofertas</h3>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-
-            </div>
-
-            </div>
-
-            <div class="contenedor">
-
-                <div class="overlay" id="overlay">
-
-                    <div class="popup" id="popup">
-
-                        <span class="close" id="cerrar">&times;</span>
-
-                        <section>
-
-                            <div class="contenedor-inputs">
-
-                                <form>
-
-                                    <div class="subir_imagen">
-
-                                        <label for="">Archivo a subir:</label>
-                                        <figure class="image_holder">
-                                            <img src="imgs/noimage.png" alt="seleccionar imagen" id="image_preview">
-                                        </figure>
-
-
-                                        <button type="button" id="btn_seleccionar_imagen"
-                                            class="boton_subir_imagen">Seleccionar Imagen </button>
-                                        <button type="button" id="subir_oferta" class="btn_subir_oferta">Subir Oferta
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </tbody>
+        </table>
 
     </main>
 
@@ -217,44 +188,24 @@
             <img src="https://img.icons8.com/ios-filled/20/ffffff/horizontal-line.png">
 
             <div class="line-soc"></div>
-            <div>
-                <!--
 
-            <img src="https://image.flaticon.com/icons/png/128/747/747393.png" alt="" width="30px">
-
-          <img src="https://image.flaticon.com/icons/png/128/54/54422.png" width="30px" alt="">
-          <img src="https://i1.wp.com/www.galactosaemia.org/wp-content/uploads/2017/04/1491156621_Pinterest.png?fit=256%2C256&ssl=1" width="30px" alt="">!-->
-            </div>
         </div>
     </section>
-
-
+    <script src="js/servicio_libro.js"></script>
     <script src="js/jquery-3.3.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/servicio_librerias.js"></script>
-    <script src="js/servicio_oferta.js"></script>
-    <script src="js/servicio-clubLectura.js"></script>
-    <script src="js/servicio_sucursales.js"></script>
-    <script src="js/servicio_usuario.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCb9bx2gVqXRsr4OEeUnMErqARyRFSADmE&callback=initMap"
-        async defer></script>
-
-    <script src="js/controlador_cerrar_sesion.js"></script>
-    <script src="js/controlador_registrar_oferta.js"></script>
-    <script src="js/controlador_listarofertas.js"></script>
-    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js'
-        type='text/javascript'></script>
-    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-    <script src="js/servicio_img_prevista.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/getNombre.js"></script>
-    <script src="js/controlador_suscribirse_sucursal.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
     <script src="js/clienteIniciado.js"></script>
-    <script src="js/controlador_perfil_libreria.js"></script>
+
+    <script src="js/servicio_librosComprados.js"></script>
+    <script src="js/servicio_libro.js"></script>
+    <script src="js/servicio_rating_usuario.js"></script>
+    <script src="js/controlador_reportes.js"></script>
+    <script src="js/controlador_rating_usuario.js"></script>
 
 </body>
+
 
 </html>
