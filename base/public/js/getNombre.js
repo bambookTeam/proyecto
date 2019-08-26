@@ -1,5 +1,6 @@
 let usuario_activo_123=sessionStorage.getItem('tipoUsuario');
-let optionSucursales=document.querySelector('#optionSucursales');
+console.log(usuario_activo_123)
+let optionSucursales=document.querySelector('#sucursal_href');
 let optionLibrerias = document.querySelector('#optionlibrerias');
 let optionUsuarios = document.querySelector('#optionUsers');
 let optionGeneros = document.querySelector('#optionGeneros');
@@ -9,6 +10,7 @@ let optionIntercambio=document.querySelector('#optionIntercambio');
 let optionAutores=document.querySelector('#optionAutores');
 let optionMisLibros=document.querySelector('#optionMisLibros');
 let optionInventario=document.querySelector('#optionInventario');
+let optionLibros=document.querySelector('#option_libros');
 
 
 
@@ -24,7 +26,7 @@ window.addEventListener('load',function(){
     document.querySelector('#optionReportes').style.display='none';
     document.querySelector('#optionInventario').style.display='none';
     optionAutores.style.display="none";
-    
+    optionLibros.href='listar_librerias_cliente.html'
     }else{
         for (let index = 0; index < options.length; index++) {
             options[index].style.display='none';
@@ -32,8 +34,8 @@ window.addEventListener('load',function(){
             document.querySelector('#signinpopup').style.height="58px";
             
         }
-        if (usuario_activo_123== 1) {
-            
+        if (usuario_activo_123==1) {
+            optionCategorias.style.display="none";
             optionAutores.style.display="none";
             optionIntercambio.style.display="none";
             optionUsuarios.style.display="none";
@@ -41,8 +43,9 @@ window.addEventListener('load',function(){
             document.querySelector('#refGeneros').href='listar_generos_adminlibre.html';
             optionSucursales.href='listar_sucursalesAdmin.html';
             optionMisLibros.style.display="none";
-            optionInventario.href="inventario_libreria.html"
-    
+            optionInventario.href="inventario_libreria.html";
+            optionLibrerias.href='listar_libreria_adminLib.html';
+            optionLibros.href='listar_librerias_cliente.html'
            
         } else {
             optionInventario.href="inventario_general.html"
