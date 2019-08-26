@@ -3,72 +3,74 @@
     border-bottom: solid 2px #f6b93b;
 }
 
-
-
-
-
-
 main{
+    display: flow-root;
     text-align: center;
 }
 
-h1{
+main h1{
     color: #000;
     font-size: 30px;
     font-weight: bold;
-    margin: 60px;
+    margin: 30px;
+}
+
+.pantalla_dividida1{
+    float: left;
+    background-image: url(https://www.3wallpapers.fr/wp-content/uploads/2015/05/Library-iPhone-3Wallpapers-Parallax.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 650px;
+    margin: 0 40px;
+}
+
+.pantalla_dividida2{
+    float: left;
+    width: 50%;
+    margin: 10px;
+    display: flow-root;
 }
 
 #datos{
-    width: 50%;
+    width: 45%;
+    margin-right: 15px;
     float: left;
-    text-align: center;
 }
 
-/* #localizacion{
-    width: 50%;
+#localizacion{
+    width: 45%;
     float: left;
-    text-align: center;
-} */
-
-label{
-    width: 60px;
-    text-align: left;
-    display: inline-block;
 }
 
-input{
-    width: 300px;
+main input{
+    width: 90%;
     height: 30px;
-    margin: 15px;
+    margin: 0 15px;
+    margin-bottom: 50px;
     padding: 5px;
     border: none;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #000;
     background: none;
     outline: none;
 }
 
-textarea{
-    width: 300px;
+main textarea{
+    width: 90%;
     height: 80px;
-    margin: 0 15px;
-    padding: 5px;
-    border: none;
-    border-bottom: 2px solid #000;
-    background: none;
     outline: none;
     resize: none;
+    margin: 0 15px;
+    margin-bottom: 50px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
 }
 
 .input_error {
     border-bottom: 2px #e74c3c solid !important;
 }
-
-/* iframe{
-    width: 350px;
-    height: 150px;
-    border-radius: 15px;
-} */
 
 main button{
     margin: 50px 0;
@@ -79,6 +81,7 @@ main button{
     font-weight: bold;
     background: #000;
     outline: none;
+    cursor: pointer;
 }
 
 main button:hover{
@@ -92,3 +95,8 @@ main button:hover{
     outline: none;
 }
 
+
+#map {
+    height: 437px;
+    width: 100%;
+}
