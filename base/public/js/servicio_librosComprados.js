@@ -22,6 +22,30 @@ let registrarCompra = (pidCliente, pisbn, pidSucursal, pidTarjeta, ptitulo, pcan
 
 };
 
+let obtenerLibrosVendidos = async (pidLibreria) => {
+
+    
+    let librosComprados = await obtenerLibrosComprados();
+
+    let librosVendidos = [];
+
+    let cont = 0;
+    
+    for ( let i = 0; i < librosComprados.length; i++) {
+
+        if( librosComprados[i]['id'] == pidLibreria){
+            
+            lilbrosVendidos[cont] = librosComprados[i];
+
+            cont ++; 
+
+        }
+
+    }
+
+    return librosVendidos;
+
+};
 
 let obtenerLibrosComprados = async() => {
     
