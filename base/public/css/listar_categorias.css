@@ -3,6 +3,13 @@ main{
     text-align: center;
 }
 
+body{
+    text-align: center;
+    margin: 300px,left;
+
+}
+
+
 h1{
     color: #76323F;
     font-size: 30px;
