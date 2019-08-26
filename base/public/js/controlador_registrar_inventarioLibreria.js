@@ -48,7 +48,9 @@ let agregar = () => {
 
         //registrarInventarioLibreria(inventarioGeneral.isbn, sessionStorage.getItem('identificacion'), inventarioGeneral.cant + existencias);
     
-        verificarInventario(inventarioGeneral.isbn, sessionStorage.getItem('identificacion'), existencias, inventarioGeneral.precio);
+       // verificarInventario(inventarioGeneral.isbn, sessionStorage.getItem('identificacion'), existencias, inventarioGeneral.precio);
+
+        registrarInventarioLibreria(inventarioGeneral.isbn, sessionStorage.getItem('identificacion'), existencias, inventarioGeneral.precio);
 
 
         disminuirInventario(inventarioGeneral._id, inventarioGeneral.cant - existencias );
