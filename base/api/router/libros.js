@@ -30,7 +30,6 @@ router.post('/registrar_libro', function (req, res) {
     tipo: body.tipo,
     cantidad: body.cantidad,
     precio: body.precio,
-    portada: body.portada,
     estado: body.estado
   })
 

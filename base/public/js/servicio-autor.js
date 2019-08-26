@@ -1,6 +1,7 @@
 'use strict';
 
 let registrarAutor = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pnacionalidad, pbiografia, ppremios, pfoto) => {
+    let pestado = 1;
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/registrar-autor',
@@ -13,7 +14,9 @@ let registrarAutor = (pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muer
         nacionalidad_autor: pnacionalidad,
         biografia_autor: pbiografia,
         premios_autor: ppremios,
-        foto_autor: pfoto
+        foto_autor: pfoto,
+        estado: pestado
+
         }
     });
 };
@@ -49,6 +52,7 @@ let obtenerAutorId = async(_id) => {
 };
 
 let modificar_autor = (pid, pnombre, pnombre_artistico, pfecha_nacimiento, pfecha_muerte, pnacionalidad, pbiografia, ppremios, pfoto) => {
+    let pestado = 1;
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/modificar_autor',
@@ -63,7 +67,8 @@ let modificar_autor = (pid, pnombre, pnombre_artistico, pfecha_nacimiento, pfech
         nacionalidad_autor: pnacionalidad,
         biografia_autor: pbiografia,
         premios_autor: ppremios,
-        foto_autor: pfoto
+        foto_autor: pfoto,
+        estado: pestado
         }
     });
 };
@@ -83,6 +88,18 @@ let deshabilitar_autor = (pid) => {
     axios({
         method: 'post',
         url: 'http://localhost:4000/api/deshabilitar_autor',
+        responseType: 'json',
+        data: {
+            _id: pid
+
+        }
+    });
+};
+
+let eliminarAutor= (pid) => {
+    axios({
+        method: 'post',
+        url: 'http://localhost:4000/api/eliminar_autor',
         responseType: 'json',
         data: {
             _id: pid
