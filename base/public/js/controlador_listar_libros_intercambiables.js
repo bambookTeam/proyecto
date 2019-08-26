@@ -105,9 +105,10 @@ let filtrar_tabla = async () => {
 
         }
 
+    
     }
 
-}
 
 window.addEventListener('load', mostrar_tabla);
-txt_filtro.addEventListener('keyup', filtrar_tabla);
+filtro.addEventListener('keyup', filtrar_tabla);
+}

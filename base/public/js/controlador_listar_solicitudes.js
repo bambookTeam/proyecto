@@ -40,7 +40,7 @@ let mostrar_tabla = async () => {
     }
 }
 
-let filtrar_tabla = async () => {
+let filtrar = async () => {
 
     let filtro = txt_filtro.value.toLowerCase();
     tbody.innerHTML = '';
@@ -72,19 +72,7 @@ let filtrar_tabla = async () => {
 
             });
 
-            let celda_btn_solicitar = fila.insertCell();
-            let btn_solicitar = document.createElement('button', 'a');
-            btn_solicitar.innerText = 'Solicitar';
-            btn_solicitar.type = 'button';
-
-            btn_solicitar.dataset._id = lista_libros[i]['_id'];
-
-            celda_btn_solicitar.appendChild(btn_solicitar);
-
-            btn_solicitar.addEventListener('click', function () {
-                redireccionar(lista_libros[i]);
-
-            });
+    
 
 
 
@@ -96,4 +84,3 @@ let filtrar_tabla = async () => {
 }
 
 window.addEventListener('load', mostrar_tabla);
-txt_filtro.addEventListener('keyup', filtrar_tabla);
