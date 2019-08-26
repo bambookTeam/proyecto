@@ -40,10 +40,6 @@ let llenarFormulario = async () => {
         }
         
     }
-    limpiar();
 };
 
-let limpiar = () =>{
-    localStorage.removeItem("usario");
-}
-llenarFormulario();
+window.addEventListener('load',llenarFormulario)

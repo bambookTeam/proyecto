@@ -76,7 +76,7 @@ let mostrar_tabla = async () => {
         btn_estado.dataset._id = lista_libros[i]['_id'];
 
         celda_btn_estado.appendChild(btn_estado);
-        
+
         if (lista_libros[i].estado == 0) {
             btn_estado.addEventListener('click', function () {
                 habilitar_Libro(lista_libros[i]._id);
@@ -115,7 +115,7 @@ let mostrar_tabla = async () => {
                 confirmButtonText: 'Sí, estoy seguro'
             }).then((result) => {
                 if (result.value) {
-                    eliminar(lista_libros[i]._id);
+                    eliminarLibro(lista_libros[i]._id);
 
                     Swal.fire(
                         'Libro eliminado exitosamente!',
@@ -150,7 +150,7 @@ let filtrar_tabla = async () => {
             fila.insertCell().innerHTML = lista_libros[i]['autor'];
             fila.insertCell().innerHTML = lista_libros[i]['edicion'];
             fila.insertCell().innerHTML = lista_libros[i]['genero'];
-            fila.insertCell().innerHTML = lista_libros[i]['año'];
+            fila.insertCell().innerHTML = lista_libros[i]['anno'];
 
             //Botón ver perfil
 
@@ -192,6 +192,33 @@ let filtrar_tabla = async () => {
 
             })
 
+            //Botón estado
+
+            let celda_btn_estado = fila.insertCell();
+            let btn_estado = document.createElement('button');
+            btn_estado.type = 'button';
+            btn_estado.innerText = "Activar"
+            btn_estado.classList.add('botonEstado');
+            btn_estado.dataset._id = lista_libros[i]['_id'];
+
+            celda_btn_estado.appendChild(btn_estado);
+
+            if (lista_libros[i].estado == 0) {
+                btn_estado.addEventListener('click', function () {
+                    habilitar_Libro(lista_libros[i]._id);
+                    location.reload();
+                });
+
+            } else {
+                btn_estado.innerText = "Desactivar"
+                btn_estado.addEventListener('click', function () {
+                    deshabilitar_Libro(lista_libros[i]._id);
+                    location.reload();
+
+                });
+
+            }
+
             //Botón eliminar
 
             let estilos_btn_eliminar = document.createElement('img');
@@ -214,7 +241,7 @@ let filtrar_tabla = async () => {
                     confirmButtonText: 'Sí, estoy seguro'
                 }).then((result) => {
                     if (result.value) {
-                        eliminar(lista_libros[i]._id);
+                        eliminarLibro(lista_libros[i]._id);
 
                         Swal.fire(
                             'Libro eliminado exitosamente!',
