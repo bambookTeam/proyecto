@@ -12,7 +12,7 @@ let redireccionar = async (libro) => {
 
 let cambiarEstadoSolicitud = async (solicitud, estado) => {
     cambiarEstado(solicitud, estado);
-    mostrar_tabla();
+    location.reload();
 }
 
 let mostrar_tabla = async () => {
