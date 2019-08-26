@@ -18,7 +18,7 @@ let mostrar_tabla = async () => {
 
     lista_sucursales = await obtenerSucursales();
 
-    //agregarMarcadoresMapa(lista_sucursales);
+    agregarMarcadoresMapa(lista_sucursales);
 
     lista_sucursales = lista_sucursales.reverse();
 
@@ -77,7 +77,7 @@ let mostrar_tabla = async () => {
     }
 };
 
-window.addEventListener('load',mostrar_tabla)
+
 
 function hidemap(){
 
@@ -183,8 +183,6 @@ let llenar_perfil = async () => {
         direccion.innerHTML = libreria['direccion'];
     }
 };
-/*
-
 
 let agregarMarcadoresMapa = (lista_sucursales) => {
 
@@ -194,7 +192,7 @@ let agregarMarcadoresMapa = (lista_sucursales) => {
             let lloc = JSON.parse(lista_sucursales[i].ubicacion);
             if (lista_sucursales[i].ubicacion) {
                 let pos = JSON.parse(lista_sucursales[i].ubicacion);
-                let pos = { lat: parseFloat(lloc.lat), lng: parseFloat(lloc.lng) }// JSON.parse(lista_sucursales[i].ubicacion)
+                 pos = { lat: parseFloat(lloc.lat), lng: parseFloat(lloc.lng) }// JSON.parse(lista_sucursales[i].ubicacion)
                 let marker = new google.maps.Marker({
                     position: pos,
                     map: map,
@@ -206,8 +204,6 @@ let agregarMarcadoresMapa = (lista_sucursales) => {
     }
 };
 
-*/
-
-
+window.addEventListener('load',mostrar_tabla)
 
 llenar_perfil();
