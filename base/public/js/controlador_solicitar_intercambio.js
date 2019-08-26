@@ -5,20 +5,20 @@ let lista_libros = [];
 
 let intercambio;
 
-let  = async (id) => {
-    let response = await modificarIntercambio(intercambio._id, document.getElementById("txt-genero").value);
-    console.log(response);
-    if(response) {
-      window.location.href = 'intercambios.html'
-    }
+let = async (id) => {
+        let response = await modificarIntercambio(intercambio._id, document.getElementById("txt-genero").value);
+        console.log(response);
+        if (response) {
+                window.location.href = 'intercambios.html'
+        }
 
 }
 
 
-let mostrar_tabla =  () => {
+let mostrar_tabla = () => {
 
-    lista_libros = JSON.parse(localStorage.getItem("usuario"));
-    tbody.innerHTML = '';
+        lista_libros = JSON.parse(localStorage.getItem("usuario"));
+        tbody.innerHTML = '';
 
         let fila = tbody.insertRow();
         fila.insertCell().innerHTML = lista_libros.titulo;
@@ -26,14 +26,14 @@ let mostrar_tabla =  () => {
         fila.insertCell().innerHTML = lista_libros.edicion;
         fila.insertCell().innerHTML = lista_libros.genero;
         fila.insertCell().innerHTML = lista_libros.anno;
-        
+
 }
 
 // document.getElementById("btn-agregar").addEventListener("click", llamarModicarGenero);
 
 
 let limpiar = () => {
-    localStorage.removeItem("_idGenero");
+        localStorage.removeItem("_idGenero");
 }
 
 m
