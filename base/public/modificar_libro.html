@@ -7,7 +7,7 @@
   <title>Modificar Libro</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/modificar_libro.css">
+  <link rel="stylesheet" href="css/registrar_libro.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/footer.css">
 
@@ -16,161 +16,197 @@
 
 <body>
 
-    <header>
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
-        <a href="inicioCliente.html">
-            <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
-                id="barnesLogo">
-        </a>
-        <div class="sign-in-button">
-            <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
-        </div>
-    </header>
+  <header>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <a href="inicioCliente.html">
+      <img src="http://www.collegetownrochester.com/wp-content/uploads/barnes-638x321.png" width="120px"
+        id="barnesLogo">
+    </a>
+    <div class="sign-in-button">
+      <button id="myBtn"><img src="https://img.icons8.com/ios-filled/64/000000/user.png" width="25px"></button>
+    </div>
+  </header>
 
-    <nav class="nav-menu">
-        <ul>
-            <li class="parent" id="dropdown"><a href="#">Libros</a>
-                <ul class="child">
-                    <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
-                    <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
-                </ul>
-            </li>
-            <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
-                <ul class="child">
-                    <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
-                </ul>
-            </li>
-
-            <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
-
-            </li>
-
-            <li class="parent" id="dropdown"><a href="#">Otros</a>
-                <ul class="child">
-                    <li><a href="listar_libros_intercambiables.html">Intercambios</a></li>
-                    <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
-                    <li id='optionBitacora'><a href="#">Bitácora</a></li>
-                    <li id='optionReportes'><a href="#">Reportes</a></li>
-                    <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
-                </ul>
-            </li>
+  <nav class="nav-menu">
+    <ul>
+      <li class="parent" id="dropdown"><a href="#">Libros</a>
+        <ul class="child">
+          <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
+          <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
         </ul>
-    </nav>
+      </li>
+      <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
+        <ul class="child">
+          <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
+        </ul>
+      </li>
 
-    <main>
-      <div id="myModal" class="modal">
+      <li class="parent" id="dropdown"><a href="%20clubesLectura.html">Clubes de Lectura</a>
 
-          <!-- Modal content -->
-          <div class="modal-content" id="signinpopup">
+      </li>
 
-              <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
-              <div class="optionProfile"><a href="">Mi Carrito</a></div>
-              <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
-              <div class="optionProfile"><a href="">Mis compras</a></div>
-              <div class="optionProfile"><a href="">Mis libros</a></div>
-              <div class="optionProfile"><a href="misintercambios.html">Mis intercambios</a></div>
-              <button id="btn_cerrar">Cerrar Sesión</button>
-          </div>
+      <li class="parent" id="dropdown"><a href="#">Otros</a>
+        <ul class="child">
+          <li><a href="listar_libros_intercambiables.html">Intercambios</a></li>
+          <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
+          <li id='optionBitacora'><a href="#">Bitácora</a></li>
+          <li id='optionReportes'><a href="#">Reportes</a></li>
+          <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
+  <main>
+
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content" id="signinpopup">
+
+        <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+        <div class="optionProfile"><a href="">Mi Carrito</a></div>
+        <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+        <div class="optionProfile"><a href="">Mis compras</a></div>
+        <div class="optionProfile"><a href="">Mis libros</a></div>
+        <div class="optionProfile"><a href="misintercambios.html">Mis intercambios</a></div>
+        <button id="btn_cerrar">Cerrar Sesión</button>
       </div>
-    <div class="sign-in">
-      <h1>Nuevo Libro</h1>
-      <div class="line"></div>        
-      <form action="" id="formulario-ClubLectura">     
 
-        
-              <div class="subir_imagen">
-                <figure class="portada">
-                  <img src="imgs/img.png" alt="Seleccionar imagen" id="portada_preview">
-                </figure>
-                
-                <button type="button" id="btn_seleccionar_portada" class="boton_subir_imagen">Portada </button>
+    </div>
 
-                <figure class="portada">
-                  <img src="imgs/img.png" alt="Seleccionar imagen" id="contraportada_preview">
-                </figure>
-                <button type="button" id="btn_seleccionar_contraportada" class="boton_subir_imagen">Contraportada </button>
-              </div>
-            
-           
-            <div>
-              <label for="txt_titulo">Título:</label>
-              <input id="txt_titulo" type="text">
-            </div>
-            <div>
-              <label for="txt_edicion">Edición:</label>
-              <input id="txt_edicion" type="text">
-            </div>
-            <div>
-              <label for="txt_editorial">Editorial:</label>
-              <input id="txt_editorial" type="text">
-            </div>
-            <div id="lista_autores" class="listas">
-              <label for="txt_autor">Autor:</label>
-              <select name="autor" id="txt_autor">
-                <!-- <option value=""></option> -->
-                <!-- <option>Autor 1</option>
-                  <option>Autor 2</option>
-                  <option>Autor 3</option> -->
-              <!-- </select> -->
-            </div>
-            <div>
-              <label for="txt_anno_edicion">Año de edición:</label>
-              <input id="txt_anno_edicion" type="number">
-            </div>
-            <div>
-              <label for="idioma">Idioma:</label>
-              <select name="idioma" id="txt_idioma">
-                <option value="">--Seleccione un Idioma--</option>
-                <option>Español</option>
-                <option>Inglés</option>
-              </select>
-            </div>
-            <div>
-              <label for="txt_isbn">ISBN:</label>
-              <input id="txt_isbn" type="number">
+    <div class="pantalla_dividida1">
+
+    </div>
+
+    <div class="pantalla_dividida2">
+
+      <div class="sign-in">
+
+        <h1>Modificar Libro</h1>
+
+        <form action="" id="formulario-ClubLectura">
+
+
+          <div class="contenedor_img_1">
+
+            <figure class="portada">
+              <img src="imgs/img.png" alt="Seleccionar imagen" id="portada_preview">
+            </figure>
+
+            <button type="button" id="btn_seleccionar_portada" class="boton_subir_imagen">Portada </button>
+
           </div>
-          <div id="lista_genero" class="listas">
-            <label for="txt_genero">Género:</label>
-            <select name="genero" id="txt_genero"> -->
-              <!-- <option value=""></option> -->
-            </select>
-          </div>
-          <div>
-            <label for="tipo">Tipo:</label>
-            <select name="tipo" id="txt_tipo">
-              <option value="">--Seleccione una Tipo--</option>
-              <option value="bolsillo">Bolsillo</option>
-              <option value="Digital">Digital</option>
-              <option value="Pasta dura">Pasta dura</option>
-              <option value="Pasta gruesa">Pasta gruesa</option>
-            </select>
-          </div>
-          <div>
-            <label for="existencia">Existencia:</label>
-            <input id="txt_existencia" type="number">
-          </div>
-          <div>
-            <label for="precio">Precio:</label>
-            <input id="txt_precio" type="number">
+
+          <div class="contenedor_img_2">
+
+            <figure class="portada">
+              <img src="imgs/img.png" alt="Seleccionar imagen" id="contraportada_preview">
+            </figure>
+            <button type="button" id="btn_seleccionar_contraportada" class="boton_subir_imagen">Contraportada </button>
+
           </div>
 
         </form>
-        
-        <div class="btnsForm">
-         <button type="button" id="btn_guardar">Guardar</button>
-        </div>
+
       </div>
-  
-    
-    </main>
+
+      <div>
+        <label for="txt_titulo">Título</label>
+        <input id="txt_titulo" type="text">
+      </div>
+
+      <div class="datos_1">
+
+        <div>
+          <label for="txt_edicion">Edición</label>
+          <input id="txt_edicion" type="text">
+        </div>
+
+        <div>
+          <label for="txt_editorial">Editorial</label>
+          <input id="txt_editorial" type="text">
+        </div>
+
+        <div id="lista_autores" class="listas">
+          <label for="txt_autor">Autor</label>
+          <select name="autor" id="txt-nombre-autor">
+            <option value=""></option>
+            <option>Autor 1</option>
+            <option>Autor 2</option>
+            <option>Autor 3</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="txt_anno_edicion">Año de edición</label>
+          <input id="txt_anno_edicion" type="number">
+        </div>
+
+        <div>
+          <label for="idioma">Idioma</label>
+          <select name="idioma" id="txt_idioma">
+            <option value="">--Seleccione un idioma--</option>
+            <option>Español</option>
+            <option>Inglés</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="datos_2">
+
+        <div>
+          <label for="txt_isbn">ISBN</label>
+          <input id="txt_isbn" type="number">
+        </div>
+
+        <div id="lista_genero" class="listas">
+          <label for="txt_genero">Género</label>
+          <select name="genero" id="txt_genero">
+            <option value=""></option>
+          </select>
+        </div>
+
+        <div>
+          <label for="tipo">Tipo de pasta</label>
+          <select name="tipo" id="txt_tipo">
+            <option value="">--Seleccione un tipo--</option>
+            <option value="bolsillo">Bolsillo</option>
+            <option value="Digital">Digital</option>
+            <option value="Pasta dura">Pasta dura</option>
+            <option value="Pasta gruesa">Pasta gruesa</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="existencia">Existencia</label>
+          <input id="txt_existencia" type="number">
+        </div>
+
+        <div>
+          <label for="precio">Precio</label>
+          <input id="txt_precio" type="number">
+        </div>
+
+      </div>
+
+      <button type="button" id="btn_guardar">Guardar</button>
+
+    </div>
+
+
+    </div>
+
+
+  </main>
 
   <footer></footer>
 
   <script src="js/jquery-3.3.1.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="js/getNombre.js"></script> 
+  <script src="js/getNombre.js"></script>
   <!-- script controlador -->
   <script src="js/servicio_libro.js"></script>
   <script src="js/controlador_cerrar_sesion.js"></script>
@@ -185,7 +221,7 @@
   <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
   <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
   <script src="js/servicio_imagen.js"></script>
-<script src="js/clienteIniciado.js"></script>
+  <script src="js/clienteIniciado.js"></script>
 
 
 </body>

@@ -29,6 +29,15 @@ main h1{
     margin: 10px;
 }
 
+.pantalla_dividida3{
+    float: left;
+    background-image: url(https://www.3wallpapers.fr/wp-content/uploads/2015/05/Library-iPhone-3Wallpapers-Parallax.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 550px;
+    margin: 0 40px;
+}
 
 #datos_libreria{
     text-align: center;
