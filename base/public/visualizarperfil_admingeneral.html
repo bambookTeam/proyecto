@@ -31,15 +31,16 @@
 
     <nav class="nav-menu">
         <ul>
-            <li class="parent" id="dropdown"><a href="#">Libros</a>
+            <li class="parent" id="dropdown"><a href="listar_libros.html" id="option_libros">Libros</a>
                 <ul class="child">
-                    <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
                     <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
+                    <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
+                    <li id="optionAutores"><a href="listar-autores.html">Autores</a></li>
                 </ul>
             </li>
             <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
                 <ul class="child">
-                    <li id="optionSucursales"><a href="listar_sucursales.html ">Sucursales</a></li>
+                    <li id="optionSucursales"><a href="listar_sucursales.html " id="sucursal_href">Sucursales</a></li>
                 </ul>
             </li>
 
@@ -49,26 +50,28 @@
 
             <li class="parent" id="dropdown"><a href="#">Otros</a>
                 <ul class="child">
-                    <li><a href="listar_libros_intercambiables.html">Intercambios</a></li>
-                    <li id='optionUsers'><a href="listar-usuarios.html">Usuarios</a></li>
+                    <li id='optionIntercambio'><a href="listar_libros_intercambiables.html">Intercambios</a></li>
+                    <li id='optionUsers'><a href="#">Usuarios</a></li>
                     <li id='optionBitacora'><a href="#">Bitácora</a></li>
                     <li id='optionReportes'><a href="#">Reportes</a></li>
-                    <li id='optionInventario'><a href="inventario_general.html">Inventario</a></li>
+                    <li id=''><a href="inventario_libreria.html" id="optionInventario">Inventario</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
 
-    <div id="myModal" class="modal">
+    <main>
+
+        <div id="myModal" class="modal">
 
             <!-- Modal content -->
             <div class="modal-content" id="signinpopup">
 
                 <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
-                <div class="optionProfile"><a href="">Mi Carrito</a></div>
+                <div class="optionProfile"><a href="carrito.html">Mi Carrito</a></div>
                 <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
                 <div class="optionProfile"><a href="">Mis compras</a></div>
-                <div class="optionProfile"><a href="">Mis libros</a></div>
+                <div class="optionProfile"><a id="optionMisLibros" href="">Mis libros</a></div>
                 <div class="optionProfile"><a href="misintercambios.html">Mis intercambios</a></div>
                 <button id="btn_cerrar">Cerrar Sesión</button>
             </div>
@@ -96,7 +99,7 @@
     </div>
 
 
-    </header>
+   </main>
 
    
 

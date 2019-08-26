@@ -37,16 +37,16 @@
 
     <nav class="nav-menu">
         <ul>
-            <li class="parent" id="dropdown"><a href="#">Libros</a>
+            <li class="parent" id="dropdown"><a href="listar_libros.html" id="option_libros">Libros</a>
                 <ul class="child">
-                    <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
                     <li id="optionCategorias"><a href="listar_categoría.html">Categorías</a></li>
-                    <li id="optionMisLibros"><a href="listar_libros_comprados_cards.html">Mis Libros</a></li>
+                    <li id="optionGeneros"><a id="refGeneros" href="listar_genero.html">Géneros</a></li>
+                    <li id="optionAutores"><a href="listar-autores.html">Autores</a></li>
                 </ul>
             </li>
             <li class="parent"><a href="listar_librerias.html" id="optionlibrerias">Librerías</a>
                 <ul class="child">
-                    <li ><a id='optionSucursales' href="listar_sucursales.html ">Sucursales</a></li>
+                    <li id="optionSucursales"><a href="listar_sucursales.html " id="sucursal_href">Sucursales</a></li>
                 </ul>
             </li>
 
@@ -58,26 +58,15 @@
                 <ul class="child">
                     <li id='optionIntercambio'><a href="listar_libros_intercambiables.html">Intercambios</a></li>
                     <li id='optionUsers'><a href="#">Usuarios</a></li>
-                    <li id='optionBitacora'><a href="listar_bitacora.html">Bitácora</a></li>
+                    <li id='optionBitacora'><a href="#">Bitácora</a></li>
                     <li id='optionReportes'><a href="#">Reportes</a></li>
-                    <li ><a href="inventario_general.html" id="optionInventario">Inventario</a></li>
+                    <li id=''><a href="inventario_libreria.html" id="optionInventario">Inventario</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
 
-
     <main>
-
-
-        <section id="banner">
-            <div class="bannerContent">
-                <h1>Vienes buscando un libro y te vas siendo parte de una<span> familia </span>!</h1>
-                <button> Unirme a un Club </button>
-                <button> Ver Libros </button>
-            </div>
-        </section>
-
 
         <div id="myModal" class="modal">
 
@@ -88,12 +77,22 @@
                 <div class="optionProfile"><a href="carrito.html">Mi Carrito</a></div>
                 <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
                 <div class="optionProfile"><a href="">Mis compras</a></div>
-                <div class="optionProfile"><a href="">Mis libros</a></div>
+                <div class="optionProfile"><a id="optionMisLibros" href="">Mis libros</a></div>
                 <div class="optionProfile"><a href="misintercambios.html">Mis intercambios</a></div>
                 <button id="btn_cerrar">Cerrar Sesión</button>
             </div>
 
         </div>
+        <section id="banner">
+            <div class="bannerContent">
+                <h1>Vienes buscando un libro y te vas siendo parte de una<span> familia </span>!</h1>
+                <button> Unirme a un Club </button>
+                <button> Ver Libros </button>
+            </div>
+        </section>
+
+
+       
 
 
         <section id="info-barnes">
@@ -132,25 +131,25 @@
                     <h2>Mejor calificados</h2>
                     <div class="line"></div>
                     <img src="https://images.penguinrandomhouse.com/cover/9780399585050" alt="">
-                    <button>Ver Todos</button>
+                    
                 </div>
                 <div class="most-sold">
                     <h2>Más Vendidos</h2>
                     <div class="line"></div>
                     <img src="https://about.canva.com/wp-content/uploads/sites/3/2015/01/creative_bookcover.png" alt="">
-                    <button>Ver Todos</button>
+                    
                 </div>
                 <div class="best-rated">
                     <h2>Ver por Géneros</h2>
                     <div class="line"></div>
                     <img src="https://dbrbooks.files.wordpress.com/2014/07/eyeofstorm.jpg" alt="">
-                    <button>Ver Todos</button>
+                    <
                 </div>
                 <div class="best-rated">
                     <h2>Ver por Categorías</h2>
                     <div class="line"></div>
                     <img src="https://idobookcovers.com/wp-content/uploads/2017/01/Music-Book-Cover-Design.jpg" alt="">
-                    <button>Ver Todos</button>
+                    
                 </div>
             </div>
             <div class="banneroferta">
@@ -284,13 +283,13 @@
 
 </body>
 
-
+<script src="js/getNombre.js"></script>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="js/servicio_usuario.js"></script>
 <script src="js/clienteIniciado.js"></script>
 <script src="js/noback.js"></script>
-<script src="js/getNombre.js"></script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>

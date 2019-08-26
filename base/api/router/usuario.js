@@ -65,7 +65,7 @@ router.post('/registrar_usuario', function (req, res) {
                 from: 'bambooks.team@gmail.com',
                 to: nuevo_usuario.correo,
                 subject: 'Bienvenido a Bambooks',
-                text: 'Usar este pin para iniciar sesion: ' + body.contrasena + 'Bienvenido \ Holi'
+                text: 'Usar este pin para iniciar sesion: ' + body.contrasena + 'Bienvenido!'
 
 
             };

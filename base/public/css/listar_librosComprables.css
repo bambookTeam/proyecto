@@ -1,9 +1,10 @@
 main button{
-    padding: 10px;
-    font-size: 5px;
+    padding: 35px;
+    font-size: 25px;
     border: none;
     color: rgb(19, 18, 18) !important;
     font-weight: bold;
     background-color: transparent;
     outline: none;
 }
+

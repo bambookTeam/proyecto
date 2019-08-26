@@ -61,8 +61,10 @@ let listarClubes = async () => {
 
         let alreadyMember = false;
 
-
-
+        if (listaClubes[i].estado == 0) {
+            btnUnirseClub.disabled = true;
+            btnUnirseClub.innerText = 'El club esta desactivado'
+        } 
 
         for (let x = 0; x < listaMiembrosClubes.length; x++) {
             if (listaMiembrosClubes[x].idClub == listaClubes[i]._id && listaMiembrosClubes[x].idUsuario == pidMiembro) {
@@ -72,15 +74,20 @@ let listarClubes = async () => {
 
         if (listaClubes[i].idAdmin == pidMiembro) {
             alreadyMember = true;
+            btnUnirseClub.disabled = false;
 
         }
 
         if (alreadyMember == true) {
-            btnUnirseClub.innerText = "Ver Perfil";
-            btnUnirseClub.addEventListener('click', function () {
-                localStorage.setItem('idClub', listaClubes[i]._id);
-                location.replace('ver_perfilClubLectura.html');
-            });
+            if (listaClubes[i].idAdmin!=pidMiembro) {
+                btnUnirseClub.innerText = 'El club esta desactivado'
+            } else {
+                btnUnirseClub.innerText = "Ver Perfil";
+                btnUnirseClub.addEventListener('click', function () {
+                    localStorage.setItem('idClub', listaClubes[i]._id);
+                    location.replace('ver_perfilClubLectura.html');
+                });
+            }
         } else {
             btnUnirseClub.addEventListener('click', function () {
                 let pidClub = listaClubes[i]._id;
@@ -108,6 +115,8 @@ let listarClubes = async () => {
 
             });
         }
+
+
 
         clubInfoDiv.appendChild(h1);
         clubInfoDiv.appendChild(modalidadLinea);
@@ -276,6 +285,7 @@ let misClubes = async () => {
                 localStorage.setItem('idClub', listaClubes[i]._id);
                 location.replace('ver_perfilClubLectura.html');
             });
+             
         }
 
 
@@ -348,6 +358,12 @@ let misClubes = async () => {
                 div.appendChild(verClub);
                 div.appendChild(btnCrearEvento);
 
+                if (listaClubes[i].estado == 0) {
+                    verClub.disabled = true;
+                    verClub.innerText = 'El club esta desactivado';
+                    
+                }
+
                 btnCrearEvento.addEventListener('click', async function () {
                     let listaMiembrosClubes = [];
                     listaMiembrosClubes = await obtenerListaMiembros();
@@ -374,7 +390,7 @@ let misClubes = async () => {
                         imageAlt: 'Custom image',
                         confirmButtonColor: '#f6b93b',
                         cancelButtonColor: '#000',
-                        confirmButtonText: 'Yes, delete it!'
+                        confirmButtonText: 'Sí, estoy seguro'
 
                     }).then((result) => {
                         if (result.value) {

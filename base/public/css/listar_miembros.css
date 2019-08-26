@@ -1,0 +1,40 @@
+table {
+    width: 50%;
+    margin: auto;
+    border-collapse: collapse;
+    text-align: center;
+    
+}
+
+
+  
+th, td {
+    text-align: center;
+    padding: 15px;
+
+}
+  
+tr:nth-child(even){background-color: #f2f2f2;}
+  
+th {
+    background-color: #f6b93b;
+    color: white;
+}
+
+tbody tr{
+    margin-top:20px;
+}
+
+.btn_expulsar{
+    padding:10px 15px;
+    background-color:#fff;
+    border:solid 1px #000;
+    color:#000;
+    margin:0 10px;
+}
+.btn_expulsar:hover{
+    padding:10px 15px;
+    background-color:#000;
+    border:solid 1px #000;
+    color:#fff;
+}

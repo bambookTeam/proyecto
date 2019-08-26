@@ -2,7 +2,7 @@
 
 var inventarioLibreria = [];
 
-let registrarInventarioLibreria = (psibn, pIdAdminLibreria, pcant) => {
+let registrarInventarioLibreria = (psibn, pIdAdminLibreria, pcant, pprecio) => {
 
     axios({
         method: 'post',
@@ -80,13 +80,15 @@ let obtenerInventarioLibreria = async() => {
     try{
 
         const response = await axios ({
-
             method: 'get',
             url: 'http://localhost:4000/api/listar_inventarioLibreria',
             responseType: 'json'
-        });
+        })
+
+        console.log(response.data.lista_inventario);
 
         return response.data.lista_inventario; 
+        
     }catch(error) {
 
         console.log(error);
@@ -109,19 +111,19 @@ let disminuirInventarioLibreria = (p_id, pexistencias) => {
 
 };
 
-let verificarInventario = async ( pisbn, pIdAdminLibreria, pcant) => {
+let verificarInventario = async ( pisbn, pIdAdminLibreria, pcant, pprecio) => {
 
     //Se pdoria declarar inventarioLibreria aca y no tenerlo como una variable global
     
 
     inventarioLibreria = await inventario();
 
-    let existe = verificarLibro(pisbn);
+    let existe = verificarLibroLibreria(pisbn);
 
     if( inventarioLibreria.length == 0 || existe == 0 ){
         
 
-        registrarInventarioLibreria(pisbn, pIdAdminLibreria, pcant);
+        registrarInventarioLibreria(pisbn, pIdAdminLibreria, pcant, pprecio);
 
         
         location.replace('inventario_libreria.html');

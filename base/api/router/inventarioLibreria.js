@@ -49,6 +49,8 @@ router.post('/registrar_inventarioLibreria', function(req, res){
 }); 
 
 router.get('/listar_inventarioLibreria', function(req,res){
+
+    
     InventarioLibreria.find(function(err, inventarioLibreriaDB){
 
         if(err){
@@ -62,12 +64,15 @@ router.get('/listar_inventarioLibreria', function(req,res){
 
         }else {
 
+            //console.log(inventarioLibreriaDB);
+
             return res.json({
                 success: true,
                 lista_inventario: inventarioLibreriaDB
 
             });
 
+       
 
         }
     })
