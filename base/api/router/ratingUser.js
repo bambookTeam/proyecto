@@ -2,82 +2,53 @@
 
 const express = require('express'),
     router = express.Router(),
-    RatingUsuario = require('../models/ratinguser.model');
+    UserRating = require('../models/ratinguser.model');
 
 
-router.post('/crear-tablaCalificacion', function (req, res) {
+router.post('/registrar_rating', function (req, res) {
     let body = req.body;
 
-    let nuevo_ratingUsuario = new RatingUsuario({
-        idUsuarioRated: body.idUsuarioRated,
-        ratings: [{
-            idRater: body.idRater,
-            descripcion:body.descripcion,
-            calificacion: body.calificacion
-        }]
-
+    let nuevo_rating = new UserRating({
+        idUserRated:body.idUserRated,
+        idRater:body.idRater,
+        idIntercambio:body.idIntercambio,
+        rating:body.rating
     });
 
-    nuevo_ratingUsuario.save(
-        function (err, ratingUsuarioDB) {
+    nuevo_rating.save(
+        function (err, ratingUsersDB) {
             if (err) {
                 return res.status(400).json({
                     success: false,
-                    msj: 'La calificacion no se pudo guardar',
+                    msj: 'El rating no se pudo guardar',
                     err
                 })
             } else {
                 res.json({
                     success: true,
-                    msj: 'La calificacion se guardó con éxito'
+                    msj: 'El rating se guardó con éxito'
                 });
             }
         }
     );
 });
-router.get('/listar-calificaciones-usuarios', function (req, res) {
-    RatingUsuario.find(function (err, ratingUsuarioDB) {
+
+router.get('/listar_ratings', function (req, res) {
+    UserRating.find(function (err, ratingUsersDB) {
         if (err) {
             return res.status(400).json({
                 success: false,
-                msj: 'No se pueden listar los ratings de los usuarios',
+                msj: 'No se pueden listar los ratings',
                 err
             });
         } else {
             return res.json({
                 success: true,
-                lista_rating_usuarios: ratingUsuarioDB
+                lista_rating: ratingUsersDB
             });
         }
     })
 });
 
-router.post('/agregar-califacion-usuario', function (req, res) {
-    
-    RatingUsuario.update({ _id: req.body._id }, {
-        $push: {
-            'ratings': {
-                idRater: req.body.idRater,
-                descripcion: req.body.descripcion,
-                calificacion: req.body.calificacion
-            }
-        }
-    },
-        function (error) {
-            if (error) {
-                return res.status(400).json({
-                    success: false,
-                    msj: 'No se pudo agregar la calificacion',
-                    err
-                });
-            } else {
-                return res.json({
-                    success: true,
-                    msj: 'Se agregó correctamente la califacion'
-                });
-            }
-        }
-    )
-})
 
 module.exports = router;

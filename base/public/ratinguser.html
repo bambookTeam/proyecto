@@ -12,7 +12,7 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/rating_user.css">
+
     <link rel="stylesheet" href="css/navbar.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -64,6 +64,22 @@
     </nav>
 
     <main>
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content" id="signinpopup">
+
+                <div class="optionProfile" id="idVerPerfil"><a href="ver-perfil-usuario.html">Mi Perfil</a></div>
+                <div class="optionProfile"><a href="">Mi Carrito</a></div>
+                <div class="optionProfile"> <a href="listar_tarjetas.html">Mis Tarjetas</a></div>
+                <div class="optionProfile"><a href="">Mis compras</a></div>
+                <div class="optionProfile"><a href="">Mis libros</a></div>
+                <div class="optionProfile"><a href="misintercambios.html">Mis intercambios</a></div>
+                <button id="btn_cerrar">Cerrar Sesión</button>
+            </div>
+
+        </div>
+
         <section id="ratingUser">
             <img id="rating-1" src="https://img.icons8.com/dusk/28/000000/book.png" onmouseover="ratear1estrella()">
             <img id="rating-2" src="https://img.icons8.com/wired/28/000000/book.png" onmouseover="ratear2estrellas()">
@@ -72,11 +88,19 @@
             <img id="rating-5" src="https://img.icons8.com/wired/28/000000/book.png" onmouseover="ratear5estrellas()">
         </section>
 
+        <button id="btn_rate_user">Rate User</button>
+
 
     </main>
 
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/controlador_rating_user.js"></script>
+    <script src="js/servicio_rating_usuario.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/getNombre.js"></script>
+    <script src="js/clienteIniciado.js"></script>
+    <script src="js/controlador_cerrar_sesion.js"></script>
 </body>
 
 </html>
