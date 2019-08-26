@@ -17,7 +17,7 @@ let llenar_perfil = async() => {
     let autor = JSON.parse(localStorage.getItem("infoAutor"));
     if (autor) {
         txt_nombre.innerHTML = autor['nombre_autor'];
-        foto.innerHTML = autor['foto_autor'];
+        foto.setAttribute("src", autor['foto_autor']);
         txt_nombre_artistico.innerHTML = autor['nombre_artistico_autor'];
         txt_nacimiento.innerHTML = autor['fecha_nacimiento'];
         txt_muerte.innerHTML = autor['fecha_muerte'];
