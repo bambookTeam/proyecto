@@ -1,12 +1,11 @@
-h1{
-  color: #f6b93b;
-  font-size: 30px;
-  margin: 60px;
-  font-weight: bold;
+main{
+    text-align: center;
 }
 
-main{
-  text-align: center;
+main h1{
+    color: #000;
+    font-size: 30px;
+    margin: 30px;
 }
 
 input{

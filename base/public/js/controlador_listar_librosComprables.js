@@ -53,7 +53,7 @@ let mostrar_tabla = async () => {
         btn_carrito.addEventListener('click', function () {
          
             
-            registrarCarrito(sessionStorage.getItem('id'), lista_librosComprables[i]['isbn'], lista_librosComprables[i]['titulo'], lista_librosComprables[i]['precio']), idLibreria;
+            registrarCarrito(sessionStorage.getItem('id'), lista_librosComprables[i]['isbn'], lista_librosComprables[i]['titulo'], lista_librosComprables[i]['precio'], idLibreria);
 
 
         });
@@ -105,6 +105,12 @@ let filtrar_tabla = async () => {
                 btn_carrito.addEventListener('click', function () {
                   
                     //Agregar a carrito
+
+                    
+            
+            registrarCarrito(sessionStorage.getItem('id'), lista_librosComprables[i]['isbn'], lista_librosComprables[i]['titulo'], lista_librosComprables[i]['precio'], idLibreria);
+
+
 
                 });
 
