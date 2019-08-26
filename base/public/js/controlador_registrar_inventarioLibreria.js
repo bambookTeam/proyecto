@@ -64,6 +64,7 @@ let agregar = () => {
         })
 
 
+        location.replace('inventario_libreria.html');
     }else {
 
         Swal.fire({

@@ -1,9 +1,12 @@
-h1{
-    color: #76323F;
-    font-size: 30px;
-    margin: 30px;
-  }
-  
+main{
+  text-align: center;
+}
+
+main h1{
+  color: #000;
+  font-size: 30px;
+  margin: 30px;
+}
   main a{
     padding: 10px;
     border: 1px solid #76323F;
@@ -16,30 +19,56 @@ h1{
     text-decoration: none;
   }
   
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
+  label{
+
+    margin: 70px;
+    color: #000;
+    font-size: 20px;
   }
   
-  th, td {
-    text-align: center;
-    padding: 8px;
+  input{
+    width: 30%;
+    height: 30px;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    background: none;
+    outline: none;
   }
   
-  tr:nth-child(even){background-color: #f2f2f2}
   
-  th {
-    background-color: #76323F;
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: center;
+  padding: 15px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #f6b93b;
+  color: white;
+}
+
+
+th, td {
+    text-align: left;
+    padding: 15px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #f6b93b;
     color: white;
-  }
-  
-  
-  html {
-    min-height: 100%;
-    position: relative;
-  }
-  
+}
+
   body {
     margin: 0;
     margin-bottom: 40px;
